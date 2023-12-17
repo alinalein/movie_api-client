@@ -1,4 +1,4 @@
-### Movie-API-Client
+### Movie_API-Client
 This is the client-side of the Movie_API project. The application will incorporate multiple interface views, to manage data through the REST API endpoints defined earlier in the Movie_API server-side application.
 
 ### Technology Stack 🛠️
