@@ -11,13 +11,13 @@ export const MainView = () => {
         fetch("https://movie-api-lina-834bc70d6952.herokuapp.com/movies")
             .then((response) => response.json())
             .then((data) => {
-                const moviesFromApi = data.movies.map((movie) => {
+                const moviesFromApi = data.map((movie) => {
                     return {
                         id: movie._id,
                         Title: movie.Title,
                         Description: movie.Description,
-                        Genre: movie.Genre,
-                        Director: movie.Director,
+                        Genre: movie.Genre.Name,
+                        Director: movie.Director.Name,
                         Actors: movie.Actors,
                         ImagePath: movie.ImagePath,
                         Featured: movie.Featured
