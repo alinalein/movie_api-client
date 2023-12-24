@@ -1,4 +1,4 @@
-export const MovieCard = ({ movie, onMovieClick }) => {
+const MovieCard = ({ movie, onMovieClick }) => {
     return (
         <div
             onClick={() => {
@@ -9,3 +9,4 @@ export const MovieCard = ({ movie, onMovieClick }) => {
         </div>
     )
 }
+export default MovieCard;

@@ -2942,14 +2942,16 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$98a3.prelude(module);
 
 try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
 var _mainView = require("../dist/components/main-view/main-view");
+var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 const MovieApi = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainViewDefault.default), {}, void 0, false, {
         fileName: "src/index.jsx",
         lineNumber: 9,
         columnNumber: 12
@@ -2973,7 +2975,7 @@ $RefreshReg$(_c, "MovieApi");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","../dist/components/main-view/main-view":"j75Rs"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","../dist/components/main-view/main-view":"j75Rs","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27160,7 +27162,199 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"lJZlQ":[function() {},{}],"8tQVG":[function(require,module,exports) {
+},{}],"j75Rs":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c0bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c0bb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _movieCard = require("../movie-card/movie-card");
+var _movieCardDefault = parcelHelpers.interopDefault(_movieCard);
+var _movieView = require("../movie-view/movie-view");
+var _movieViewDefault = parcelHelpers.interopDefault(_movieView);
+var _s = $RefreshSig$();
+const MainView = ()=>{
+    _s();
+    const [movies, setMovies] = (0, _react.useState)([
+        {
+            _id: 1,
+            Title: "The Shawshank Redemption",
+            Description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+            Genre: "Drama",
+            Director: "Frank Darabont",
+            Actors: [
+                "Tim Robbins",
+                "Morgan Freeman"
+            ],
+            ImagePath: "https://irs.www.warnerbros.com/gallery-jpeg/the_shawshank_redemption_posterlarge_0-675188670.jpg",
+            Featured: true
+        },
+        {
+            _id: 2,
+            Title: "Inception",
+            Description: "A thief who enters the dreams of others to steal their secrets faces a new challenge: planting an idea in a target's mind.",
+            Genre: "Sci-Fi",
+            Director: "Christopher Nolan",
+            Actors: [
+                "Leonardo DiCaprio",
+                "Joseph Gordon-Levitt"
+            ],
+            ImagePath: "https://i.pinimg.com/originals/ea/11/d8/ea11d8c415a8ee9f880b90b12558e717.jpg",
+            Featured: false
+        },
+        {
+            _id: 3,
+            Title: "The Godfather",
+            Description: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+            Genre: "Crime",
+            Director: "Francis Ford Coppola",
+            Actors: [
+                "Marlon Brando",
+                "Al Pacino"
+            ],
+            ImagePath: "https://picfiles.alphacoders.com/137/thumb-1920-137115.jpg",
+            Featured: false
+        },
+        {
+            _id: 4,
+            Title: "The Dark Knight",
+            Description: "When the menace known as The Joker emerges, Batman must confront his greatest psychological and physical challenge.",
+            Genre: "Action",
+            Director: "Christopher Nolan",
+            Actors: [
+                "Christian Bale",
+                "Heath Ledger"
+            ],
+            ImagePath: "https://th.bing.com/th/id/OIP.yfBaChdkFemGi-NW6bJ-iwHaEo?rs=1&pid=ImgDetMain",
+            Featured: true
+        },
+        {
+            _id: 5,
+            Title: "Pulp Fiction",
+            Description: "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+            Genre: "Crime",
+            Director: "Quentin Tarantino",
+            Actors: [
+                "John Travolta",
+                "Samuel L. Jackson"
+            ],
+            ImagePath: "https://www.themoviedb.org/t/p/original/jlVOS4D6ledQGxGdL0EIte3TXfL.jpg",
+            Featured: false
+        }
+    ]);
+    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieViewDefault.default), {
+        movie: selectedMovie,
+        onBackClick: ()=>setSelectedMovie(null)
+    }, void 0, false, {
+        fileName: "dist/components/main-view/main-view.jsx",
+        lineNumber: 63,
+        columnNumber: 13
+    }, undefined);
+    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "The list is empty"
+    }, void 0, false, {
+        fileName: "dist/components/main-view/main-view.jsx",
+        lineNumber: 68,
+        columnNumber: 16
+    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCardDefault.default), {
+                movie: movie,
+                onMovieClick: (newSelectedMovie)=>{
+                    setSelectedMovie(newSelectedMovie);
+                }
+            }, movie._id, false, {
+                fileName: "dist/components/main-view/main-view.jsx",
+                lineNumber: 74,
+                columnNumber: 17
+            }, undefined))
+    }, void 0, false, {
+        fileName: "dist/components/main-view/main-view.jsx",
+        lineNumber: 72,
+        columnNumber: 9
+    }, undefined);
+};
+_s(MainView, "16YYvz02Sruhx7pBj2FigxN/mMI=");
+_c = MainView;
+exports.default = MainView;
+var _c;
+$RefreshReg$(_c, "MainView");
+
+  $parcel$ReactRefreshHelpers$c0bb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"6hXuv","../movie-view/movie-view":"bJ4w7","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"6hXuv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$602b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$602b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const MovieCard = ({ movie, onMovieClick })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        onClick: ()=>{
+            onMovieClick(movie);
+        },
+        children: movie.Title
+    }, void 0, false, {
+        fileName: "dist/components/movie-card/movie-card.jsx",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = MovieCard;
+exports.default = MovieCard;
+var _c;
+$RefreshReg$(_c, "MovieCard");
+
+  $parcel$ReactRefreshHelpers$602b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"2oWKC":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"8tQVG":[function(require,module,exports) {
 "use strict";
 var Refresh = require("9b5bd90f31d5e1f1");
 function debounce(func, delay) {
@@ -27298,196 +27492,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"9b5bd90f31d5e1f1":"hKm9E"}],"j75Rs":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c0bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c0bb.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MainView", ()=>MainView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _movieCard = require("../movie-card/movie-card");
-var _movieView = require("../movie-view/movie-view");
-var _s = $RefreshSig$();
-const MainView = ()=>{
-    _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            _id: 1,
-            Title: "The Shawshank Redemption",
-            Description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-            Genre: "Drama",
-            Director: "Frank Darabont",
-            Actors: [
-                "Tim Robbins",
-                "Morgan Freeman"
-            ],
-            ImagePath: "https://irs.www.warnerbros.com/gallery-jpeg/the_shawshank_redemption_posterlarge_0-675188670.jpg",
-            Featured: true
-        },
-        {
-            _id: 2,
-            Title: "Inception",
-            Description: "A thief who enters the dreams of others to steal their secrets faces a new challenge: planting an idea in a target's mind.",
-            Genre: "Sci-Fi",
-            Director: "Christopher Nolan",
-            Actors: [
-                "Leonardo DiCaprio",
-                "Joseph Gordon-Levitt"
-            ],
-            ImagePath: "https://i.pinimg.com/originals/ea/11/d8/ea11d8c415a8ee9f880b90b12558e717.jpg",
-            Featured: false
-        },
-        {
-            _id: 3,
-            Title: "The Godfather",
-            Description: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-            Genre: "Crime",
-            Director: "Francis Ford Coppola",
-            Actors: [
-                "Marlon Brando",
-                "Al Pacino"
-            ],
-            ImagePath: "https://picfiles.alphacoders.com/137/thumb-1920-137115.jpg",
-            Featured: false
-        },
-        {
-            _id: 4,
-            Title: "The Dark Knight",
-            Description: "When the menace known as The Joker emerges, Batman must confront his greatest psychological and physical challenge.",
-            Genre: "Action",
-            Director: "Christopher Nolan",
-            Actors: [
-                "Christian Bale",
-                "Heath Ledger"
-            ],
-            ImagePath: "https://th.bing.com/th/id/OIP.yfBaChdkFemGi-NW6bJ-iwHaEo?rs=1&pid=ImgDetMain",
-            Featured: true
-        },
-        {
-            _id: 5,
-            Title: "Pulp Fiction",
-            Description: "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-            Genre: "Crime",
-            Director: "Quentin Tarantino",
-            Actors: [
-                "John Travolta",
-                "Samuel L. Jackson"
-            ],
-            ImagePath: "https://www.themoviedb.org/t/p/original/jlVOS4D6ledQGxGdL0EIte3TXfL.jpg",
-            Featured: false
-        }
-    ]);
-    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
-        movie: selectedMovie,
-        onBackClick: ()=>setSelectedMovie(null)
-    }, void 0, false, {
-        fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 63,
-        columnNumber: 13
-    }, undefined);
-    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "The list is empty"
-    }, void 0, false, {
-        fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 68,
-        columnNumber: 16
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                movie: movie,
-                onMovieClick: (newSelectedMovie)=>{
-                    setSelectedMovie(newSelectedMovie);
-                }
-            }, movie._id, false, {
-                fileName: "dist/components/main-view/main-view.jsx",
-                lineNumber: 74,
-                columnNumber: 17
-            }, undefined))
-    }, void 0, false, {
-        fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 72,
-        columnNumber: 9
-    }, undefined);
-};
-_s(MainView, "16YYvz02Sruhx7pBj2FigxN/mMI=");
-_c = MainView;
-var _c;
-$RefreshReg$(_c, "MainView");
-
-  $parcel$ReactRefreshHelpers$c0bb.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"6hXuv","../movie-view/movie-view":"bJ4w7","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"6hXuv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$602b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$602b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const MovieCard = ({ movie, onMovieClick })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        onClick: ()=>{
-            onMovieClick(movie);
-        },
-        children: movie.Title
-    }, void 0, false, {
-        fileName: "dist/components/movie-card/movie-card.jsx",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
-};
-_c = MovieCard;
-var _c;
-$RefreshReg$(_c, "MovieCard");
-
-  $parcel$ReactRefreshHelpers$602b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"2oWKC":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"bJ4w7":[function(require,module,exports) {
+},{"9b5bd90f31d5e1f1":"hKm9E"}],"bJ4w7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$aaf8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27496,7 +27501,6 @@ $parcel$ReactRefreshHelpers$aaf8.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieView", ()=>MovieView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const MovieView = ({ movie, onBackClick })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27675,6 +27679,7 @@ const MovieView = ({ movie, onBackClick })=>{
     }, undefined);
 };
 _c = MovieView;
+exports.default = MovieView;
 var _c;
 $RefreshReg$(_c, "MovieView");
 
@@ -27683,6 +27688,6 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}]},["n5Ugn","feejL","d8Dch"], "d8Dch", "parcelRequirea671")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"lJZlQ":[function() {},{}]},["n5Ugn","feejL","d8Dch"], "d8Dch", "parcelRequirea671")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
