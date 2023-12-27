@@ -27,11 +27,11 @@ export const MainView = () => {
             })
     }, []);
 
-
     const getsimilarMovies = (selectedMovie, allMovies) => {
         return allMovies.filter(movie => movie.Genre === selectedMovie.Genre && movie.id !== selectedMovie.id)
     }
     if (selectedMovie) {
+        /* call the getsimilarMovies function from above*/
         const similarMovies = getsimilarMovies(selectedMovie, movies)
         return (
             <>
@@ -39,6 +39,7 @@ export const MainView = () => {
                 <hr />
                 <h2>Movies with the same Genre:</h2>
                 <div>
+                    {/* Apply the map function to every movie that matches the specified conditions in the array. */}
                     {similarMovies.map((similarMovie) => (
                         <MovieCard
                             key={similarMovie.id}

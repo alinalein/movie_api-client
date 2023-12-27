@@ -27200,7 +27200,7 @@ const MainView = ()=>{
         return allMovies.filter((movie)=>movie.Genre === selectedMovie.Genre && movie.id !== selectedMovie.id);
     };
     if (selectedMovie) {
-        const similarMovies = getsimilarMovies(selectedMovie, movies);
+        /* call the getsimilarMovies function from above*/ const similarMovies = getsimilarMovies(selectedMovie, movies);
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -27231,7 +27231,7 @@ const MainView = ()=>{
                             }
                         }, similarMovie.id, false, {
                             fileName: "dist/components/main-view/main-view.jsx",
-                            lineNumber: 43,
+                            lineNumber: 44,
                             columnNumber: 25
                         }, undefined))
                 }, void 0, false, {
@@ -27246,7 +27246,7 @@ const MainView = ()=>{
         children: "The list is empty"
     }, void 0, false, {
         fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 57,
+        lineNumber: 58,
         columnNumber: 16
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27257,12 +27257,12 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "dist/components/main-view/main-view.jsx",
-                lineNumber: 63,
+                lineNumber: 64,
                 columnNumber: 17
             }, undefined))
     }, void 0, false, {
         fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 61,
+        lineNumber: 62,
         columnNumber: 9
     }, undefined);
 };
