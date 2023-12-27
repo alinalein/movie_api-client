@@ -27179,18 +27179,19 @@ const MainView = ()=>{
     _s();
     const [movies, setMovies] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    (0, _react.useEffect)(()=>{
+    /*populate the movies array with the movies from the API */ (0, _react.useEffect)(()=>{
         fetch("https://movie-api-lina-834bc70d6952.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
             const moviesFromApi = data.map((movie)=>{
+                const featutedStatus = movie.Featured ? "Yes" : "No";
                 return {
                     id: movie._id,
                     Title: movie.Title,
                     Description: movie.Description,
                     Genre: movie.Genre.Name,
                     Director: movie.Director.Name,
-                    Actors: movie.Actors,
+                    Actors: movie.Actors.join(", "),
                     ImagePath: movie.ImagePath,
-                    Featured: movie.Featured
+                    Featured: featutedStatus
                 };
             });
             setMovies(moviesFromApi);
@@ -27208,19 +27209,19 @@ const MainView = ()=>{
                     onBackClick: ()=>setSelectedMovie(null)
                 }, void 0, false, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 38,
+                    lineNumber: 40,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 39,
+                    lineNumber: 41,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     children: "Movies with the same Genre:"
                 }, void 0, false, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 40,
+                    lineNumber: 42,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27231,12 +27232,12 @@ const MainView = ()=>{
                             }
                         }, similarMovie.id, false, {
                             fileName: "dist/components/main-view/main-view.jsx",
-                            lineNumber: 44,
+                            lineNumber: 46,
                             columnNumber: 25
                         }, undefined))
                 }, void 0, false, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 41,
+                    lineNumber: 43,
                     columnNumber: 17
                 }, undefined)
             ]
@@ -27246,7 +27247,7 @@ const MainView = ()=>{
         children: "The list is empty"
     }, void 0, false, {
         fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 58,
+        lineNumber: 60,
         columnNumber: 16
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27257,12 +27258,12 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "dist/components/main-view/main-view.jsx",
-                lineNumber: 64,
+                lineNumber: 66,
                 columnNumber: 17
             }, undefined))
     }, void 0, false, {
         fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 62,
+        lineNumber: 64,
         columnNumber: 9
     }, undefined);
 };
@@ -27309,7 +27310,8 @@ MovieCard.propTypes = {
         Genre: (0, _propTypesDefault.default).string.isRequired,
         Director: (0, _propTypesDefault.default).string.isRequired,
         ImagePath: (0, _propTypesDefault.default).string.isRequired,
-        Actors: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).string).isRequired
+        Actors: (0, _propTypesDefault.default).string.isRequired,
+        Featured: (0, _propTypesDefault.default).string.isRequired
     }).isRequired,
     onMovieClick: (0, _propTypesDefault.default).func.isRequired
 };
@@ -28433,7 +28435,8 @@ MovieView.propTypes = {
         Genre: (0, _propTypesDefault.default).string.isRequired,
         Director: (0, _propTypesDefault.default).string.isRequired,
         ImagePath: (0, _propTypesDefault.default).string.isRequired,
-        Actors: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).string).isRequired
+        Actors: (0, _propTypesDefault.default).string.isRequired,
+        Featured: (0, _propTypesDefault.default).string.isRequired
     }).isRequired,
     onBackClick: (0, _propTypesDefault.default).func.isRequired
 };

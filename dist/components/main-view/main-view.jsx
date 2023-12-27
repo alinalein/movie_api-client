@@ -7,20 +7,22 @@ export const MainView = () => {
 
     const [selectedMovie, setSelectedMovie] = useState(null);
 
+    /*populate the movies array with the movies from the API */
     useEffect(() => {
         fetch("https://movie-api-lina-834bc70d6952.herokuapp.com/movies")
             .then((response) => response.json())
             .then((data) => {
                 const moviesFromApi = data.map((movie) => {
+                    const featutedStatus = movie.Featured ? 'Yes' : 'No';
                     return {
                         id: movie._id,
                         Title: movie.Title,
                         Description: movie.Description,
                         Genre: movie.Genre.Name,
                         Director: movie.Director.Name,
-                        Actors: movie.Actors,
+                        Actors: movie.Actors.join(', '),
                         ImagePath: movie.ImagePath,
-                        Featured: movie.Featured
+                        Featured: featutedStatus
                     };
                 });
                 setMovies(moviesFromApi);
