@@ -27179,18 +27179,8 @@ var _signupView = require("../signup-view/signup-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    (0, _react.useEffect)(()=>{
-        let storedUser;
-        try {
-            storedUser = JSON.parse(localStorage.getItem("user")) || {};
-        } catch (error) {
-            console.error("Error parsing stored user data:", error);
-            storedUser = {};
-        }
-        console.log("Stored User:", storedUser);
-    }, []);
+    const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedToken = localStorage.getItem("token");
-    console.log("Stored Token:", storedToken);
     const [user, setUser] = (0, _react.useState)(null);
     const [token, setToken] = (0, _react.useState)(null);
     const [movies, setMovies] = (0, _react.useState)([]);
@@ -27227,7 +27217,7 @@ const MainView = ()=>{
         }
     }, void 0, false, {
         fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 56,
+        lineNumber: 47,
         columnNumber: 13
     }, undefined);
     const getsimilarMovies = (selectedMovie, allMovies)=>{
@@ -27242,19 +27232,19 @@ const MainView = ()=>{
                     onBackClick: ()=>setSelectedMovie(null)
                 }, void 0, false, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 71,
+                    lineNumber: 62,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 72,
+                    lineNumber: 63,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     children: "Movies with the same Genre:"
                 }, void 0, false, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 73,
+                    lineNumber: 64,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27266,12 +27256,12 @@ const MainView = ()=>{
                                 }
                             }, similarMovie.id, false, {
                                 fileName: "dist/components/main-view/main-view.jsx",
-                                lineNumber: 77,
+                                lineNumber: 68,
                                 columnNumber: 25
                             }, undefined)),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                             fileName: "dist/components/main-view/main-view.jsx",
-                            lineNumber: 85,
+                            lineNumber: 76,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27283,13 +27273,13 @@ const MainView = ()=>{
                             children: "Logout"
                         }, void 0, false, {
                             fileName: "dist/components/main-view/main-view.jsx",
-                            lineNumber: 86,
+                            lineNumber: 77,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 74,
+                    lineNumber: 65,
                     columnNumber: 17
                 }, undefined)
             ]
@@ -27299,7 +27289,7 @@ const MainView = ()=>{
         children: "The list is empty"
     }, void 0, false, {
         fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 94,
+        lineNumber: 85,
         columnNumber: 16
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27311,12 +27301,12 @@ const MainView = ()=>{
                     }
                 }, movie.id, false, {
                     fileName: "dist/components/main-view/main-view.jsx",
-                    lineNumber: 100,
+                    lineNumber: 91,
                     columnNumber: 17
                 }, undefined)),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "dist/components/main-view/main-view.jsx",
-                lineNumber: 108,
+                lineNumber: 99,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27328,17 +27318,17 @@ const MainView = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "dist/components/main-view/main-view.jsx",
-                lineNumber: 109,
+                lineNumber: 100,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "dist/components/main-view/main-view.jsx",
-        lineNumber: 98,
+        lineNumber: 89,
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "SkyiNZ2dMb/k0bIlF+DbrSPUxqE=");
+_s(MainView, "qXlxSr1HRHFcq0wZllxU017V8qo=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -28573,13 +28563,13 @@ const LoginView = ({ onLoggedIn })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "dist/components/login-view/login-view.jsx",
-                        lineNumber: 41,
+                        lineNumber: 44,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "dist/components/login-view/login-view.jsx",
-                lineNumber: 39,
+                lineNumber: 42,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -28594,13 +28584,13 @@ const LoginView = ({ onLoggedIn })=>{
                         maxLength: "20"
                     }, void 0, false, {
                         fileName: "dist/components/login-view/login-view.jsx",
-                        lineNumber: 47,
+                        lineNumber: 50,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "dist/components/login-view/login-view.jsx",
-                lineNumber: 45,
+                lineNumber: 48,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -28608,13 +28598,13 @@ const LoginView = ({ onLoggedIn })=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "dist/components/login-view/login-view.jsx",
-                lineNumber: 54,
+                lineNumber: 57,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "dist/components/login-view/login-view.jsx",
-        lineNumber: 38,
+        lineNumber: 41,
         columnNumber: 9
     }, undefined);
 };

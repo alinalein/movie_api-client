@@ -5,19 +5,10 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
-    useEffect(() => {
-        let storedUser;
-        try {
-            storedUser = JSON.parse(localStorage.getItem("user")) || {};
-        } catch (error) {
-            console.error("Error parsing stored user data:", error);
-            storedUser = {};
-        }
-        console.log("Stored User:", storedUser);
-    }, []);
+
+    const storedUser = JSON.parse(localStorage.getItem("user"))
 
     const storedToken = localStorage.getItem("token");
-    console.log("Stored Token:", storedToken);
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
     const [movies, setMovies] = useState([]);

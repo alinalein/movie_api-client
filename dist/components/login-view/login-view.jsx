@@ -15,9 +15,12 @@ export const LoginView = ({ onLoggedIn }) => {
 
         fetch("https://movie-api-lina-834bc70d6952.herokuapp.com/users/login", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(data)
-        }).then((response) => response.json())
+        })
+            .then((response) => response.json())
             .then((data) => {
                 console.log("Login response: ", data);
                 if (data.user) {
