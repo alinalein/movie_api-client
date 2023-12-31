@@ -21,13 +21,16 @@ export const LoginView = ({ onLoggedIn }) => {
             .then((data) => {
                 console.log("Login response: ", data);
                 if (data.user) {
-                    onLoggedIn(data.user, data.token)
+                    localStorage.setItem("user", JSON.stringify(data.user));
+                    localStorage.setItem("token", data.token);
+                    onLoggedIn(data.user, data.token);
                 } else {
-                    alert("No such user known")
+                    alert("No such user known");
                 }
             })
-            .catch((e) => {
-                alert("Error occurred: ", e);
+            .catch((error) => {
+                console.error("Error occurred during login:", error);
+                alert("An error occurred during login. Please try again.");
             })
     }
 
@@ -44,8 +47,8 @@ export const LoginView = ({ onLoggedIn }) => {
                 <input type="password" value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    minlength="3"
-                    maxlength="20"
+                    minLength="3"
+                    maxLength="20"
                 />
             </label>
             <button type="submit">Submit</button>

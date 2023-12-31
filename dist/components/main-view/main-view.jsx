@@ -5,13 +5,33 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([]);
+    useEffect(() => {
+        let storedUser;
+        try {
+            storedUser = JSON.parse(localStorage.getItem("user")) || {};
+        } catch (error) {
+            console.error("Error parsing stored user data:", error);
+            storedUser = {};
+        }
+        console.log("Stored User:", storedUser);
+    }, []);
 
+    const storedToken = localStorage.getItem("token");
+    console.log("Stored Token:", storedToken);
+    const [user, setUser] = useState(null);
+    const [token, setToken] = useState(null);
+    const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     /*populate the movies array with the movies from the API */
     useEffect(() => {
-        fetch("https://movie-api-lina-834bc70d6952.herokuapp.com/movies")
+
+        if (!token) {
+            return;
+        }
+        fetch("https://movie-api-lina-834bc70d6952.herokuapp.com/movies", {
+            headers: { Authorization: `Bearer ${token}` }
+        })
             .then((response) => response.json())
             .then((data) => {
                 const moviesFromApi = data.map((movie) => {
@@ -29,8 +49,17 @@ export const MainView = () => {
                 });
                 setMovies(moviesFromApi);
             })
-    }, []);
+    }, [token]);
 
+    if (!user) {
+        return (
+            <LoginView onLoggedIn={(user, token) => {
+                setUser(user);
+                setToken(token);
+            }}
+            />
+        )
+    }
     const getsimilarMovies = (selectedMovie, allMovies) => {
         return allMovies.filter(movie => movie.Genre === selectedMovie.Genre && movie.id !== selectedMovie.id)
     }
@@ -53,6 +82,9 @@ export const MainView = () => {
                             }}
                         />
                     ))}
+                    <br />
+                    <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
+
                 </div>
             </>
         )
@@ -73,7 +105,8 @@ export const MainView = () => {
                     }}
                 />
             ))}
-
+            <br />
+            <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
         </div>
     );
 };
