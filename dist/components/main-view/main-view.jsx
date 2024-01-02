@@ -7,7 +7,6 @@ import { SignupView } from "../signup-view/signup-view";
 export const MainView = () => {
 
     const storedUser = JSON.parse(localStorage.getItem("user"))
-
     const storedToken = localStorage.getItem("token");
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
@@ -44,11 +43,15 @@ export const MainView = () => {
 
     if (!user) {
         return (
-            <LoginView onLoggedIn={(user, token) => {
-                setUser(user);
-                setToken(token);
-            }}
-            />
+            <>
+                <LoginView onLoggedIn={(user, token) => {
+                    setUser(user);
+                    setToken(token);
+                }}
+                />
+                or
+                <SignupView />
+            </>
         )
     }
     const getsimilarMovies = (selectedMovie, allMovies) => {
