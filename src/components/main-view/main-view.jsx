@@ -5,9 +5,8 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
-    const storedUser = JSON.parse(localStorage.getItem("user"))
+    const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedToken = localStorage.getItem("token");
-    //Create state variable, called user with initial stale "null". Use to check if user is logged in or not.
     const [user, setUser] = useState(storedUser ? storedUser : null);
     //Create state variable, called token with initial state "null". Use to store token.
     const [token, setToken] = useState(storedToken ? storedToken : null);
