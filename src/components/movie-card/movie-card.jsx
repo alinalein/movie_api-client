@@ -10,7 +10,7 @@ export const MovieCard = ({ movie }) => {
                 <Card.Title>{movie.Title}</Card.Title>
                 <Card.Text>{movie.Description}</Card.Text>
 
-                <Link to={`/movies/${book.id}`}>
+                <Link to={`/movies/${movie.id}`}>
                     <Button variant="link">
                         View Details
                     </Button>

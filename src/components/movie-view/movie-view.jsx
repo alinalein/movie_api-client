@@ -4,7 +4,9 @@ import { useParams } from "react-router";
 
 export const MovieView = ({ movies }) => {
     const { movieId } = useParams();
-    const movie = movies.find((m) => m.id === movieId)
+
+    const movie = movies.find((m) => m.id === movieId);
+
     return (
         <div>
             <div>
@@ -55,6 +57,5 @@ MovieView.propTypes = {
         ImagePath: PropTypes.string.isRequired,
         Actors: PropTypes.string.isRequired,
         Featured: PropTypes.string.isRequired
-    }).isRequired,
-    onBackClick: PropTypes.func.isRequired
+    }).isRequired
 }

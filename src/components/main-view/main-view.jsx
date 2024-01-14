@@ -62,7 +62,7 @@ export const MainView = () => {
                 <Routes>
                     {/* Route to register */}
                     <Route
-                        path="/users/signup"
+                        path="/signup"
                         element={
                             <>
                                 {user ? (
@@ -78,7 +78,7 @@ export const MainView = () => {
                     />
                     {/* Route to login */}
                     <Route
-                        path="/users/login"
+                        path="/login"
                         element={
                             <>
                                 {user ? (
@@ -98,11 +98,11 @@ export const MainView = () => {
                     />
                     {/* Route to selected book  */}
                     <Route
-                        path="/movies/movieId"
+                        path="/movies/:movieId"
                         element={
                             <>
                                 {!user ? (
-                                    <Navigate to="/users/login" replace />
+                                    <Navigate to="/login" replace />
                                 ) : movies.length === 0 ? (
                                     <Col>The list is empty!</Col>
                                 ) : (
@@ -119,7 +119,7 @@ export const MainView = () => {
                         element={
                             <>
                                 {!user ? (
-                                    <Navigate to="/users/login" replace />
+                                    <Navigate to="/login" replace />
                                 ) : movies.length === 0 ? (
 
                                     <Col>The list is empty!</Col>
