@@ -114,6 +114,27 @@ export const MainView = () => {
                             </>
                         }
                     />
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/users/login" replace />
+                                ) : movies.length === 0 ? (
+
+                                    <Col>The list is empty!</Col>
+                                ) : (
+                                    <>
+                                        {movies.map((movie) => (
+                                            <Col className="mb-5" key={movie.id} md={3}>
+                                                <MovieCard movie={movie} />
+                                            </Col>
+                                        ))}
+                                    </>
+                                )}
+                            </>
+                        }
+                    />
                     {/* : selectedMovie ? (
                     <Col md={8} style={{ border: "1px solid green " }}>
                         <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
@@ -134,24 +155,6 @@ export const MainView = () => {
                         </div>
                     </Col>
                     )  */}
-                    : movies.length === 0 ? (
-
-                    <Col>The list is empty!</Col>
-                    ) : (
-                    <>
-                        {movies.map((movie) => (
-                            <Col className="mb-5" key={movie.id} md={3}>
-                                <MovieCard
-                                    movie={movie}
-                                    onMovieClick={(newSelectedMovie) => {
-                                        setSelectedMovie(newSelectedMovie);
-                                    }}
-                                />
-                            </Col>
-                        ))
-                        }
-                    </>
-                    )}
                 </Routes>
             </Row >
         </BrowserRouter>
