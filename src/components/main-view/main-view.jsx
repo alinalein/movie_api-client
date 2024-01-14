@@ -15,7 +15,6 @@ export const MainView = () => {
     //Create state variable, called token with initial state "null". Use to store token.
     const [token, setToken] = useState(storedToken ? storedToken : null);
     const [movies, setMovies] = useState([]);
-    // const [selectedMovie, setSelectedMovie] = useState(null);
 
     /*populate the movies array with the movies from the API */
     useEffect(() => {
@@ -45,13 +44,9 @@ export const MainView = () => {
             })
     }, [token]);
 
-
-    // const getsimilarMovies = (selectedMovie, allMovies) => {
-    //     return allMovies.filter(movie => movie.Genre === selectedMovie.Genre && movie.id !== selectedMovie.id)
-    // }
-
     return (
         <BrowserRouter>
+            {/* Call NavivationBar component & send the props */}
             <NavigationBar
                 user={user}
                 onLoggedOut={() => {
@@ -96,7 +91,7 @@ export const MainView = () => {
                             </>
                         }
                     />
-                    {/* Route to selected book  */}
+                    {/* Route to selected movie  */}
                     <Route
                         path="/movies/:movieId"
                         element={
@@ -114,6 +109,7 @@ export const MainView = () => {
                             </>
                         }
                     />
+                    {/* Route to show all movies  */}
                     <Route
                         path="/"
                         element={
@@ -135,26 +131,6 @@ export const MainView = () => {
                             </>
                         }
                     />
-                    {/* : selectedMovie ? (
-                    <Col md={8} style={{ border: "1px solid green " }}>
-                        <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
-                        <hr />
-                        <h2>Movies with the same Genre:</h2>
-                        <div>
-                            {getsimilarMovies(selectedMovie, movies).map((similarMovie) => (
-                                <MovieCard
-                                    key={similarMovie.id}
-                                    movie={similarMovie}
-                                    onMovieClick={(newSelectedMovie) => {
-                                        setSelectedMovie(newSelectedMovie);
-                                    }}
-                                />
-                            ))}
-                            <br />
-                            <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
-                        </div>
-                    </Col>
-                    )  */}
                 </Routes>
             </Row >
         </BrowserRouter>
