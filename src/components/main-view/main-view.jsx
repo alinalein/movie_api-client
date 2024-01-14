@@ -96,8 +96,24 @@ export const MainView = () => {
                             </>
                         }
                     />
-
-
+                    {/* Route to selected book  */}
+                    <Route
+                        path="/movies/movieId"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/users/login" replace />
+                                ) : movies.length === 0 ? (
+                                    <Col>The list is empty!</Col>
+                                ) : (
+                                    // send the movies array to MovieView
+                                    <Col md={8}>
+                                        <MovieView movies={movies} />
+                                    </Col>
+                                )}
+                            </>
+                        }
+                    />
                     {/* : selectedMovie ? (
                     <Col md={8} style={{ border: "1px solid green " }}>
                         <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
@@ -120,7 +136,7 @@ export const MainView = () => {
                     )  */}
                     : movies.length === 0 ? (
 
-                    <div>The list is empty</div>
+                    <Col>The list is empty!</Col>
                     ) : (
                     <>
                         {movies.map((movie) => (
