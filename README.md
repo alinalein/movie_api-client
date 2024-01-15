@@ -12,4 +12,5 @@ As a user, I want to be able to create a profile so I can save data about my fav
 
 ### Login Details for testing
 **Username:** ina123
+
 **Password:** ina123
