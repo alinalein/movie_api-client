@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Col } from 'react-bootstrap'
 
-export const ProfileView = ({ user, movies, setUser, token }) => {
+export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
 
     // formats the date from DB to a date 
     const formatDate = (dateString) => {
@@ -42,6 +42,7 @@ export const ProfileView = ({ user, movies, setUser, token }) => {
                 // If the update is successful, update the local state
                 setIsEditing(false);
                 setUser(updatedUser);
+                alert("You successfully updated your profile");
                 console.log("User state updated:", updatedUser);
             } else {
                 console.error('Failed to update user information');
@@ -51,8 +52,36 @@ export const ProfileView = ({ user, movies, setUser, token }) => {
         });
     };
 
+    const handleDeleteClick = (event) => {
+        event.preventDefault();
+
+        const userConfirmed = window.confirm("Do you really want to delete your profile?");
+
+        if (userConfirmed) {
+            fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/deregister/${username}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                }
+            }).then((response) => {
+                if (response.ok) {
+                    // If the update is successful, update the local state
+                    alert("You successfully deleted your profile");
+                    setUser(null);
+                    setToken(null);
+                    localStorage.clear();
+                } else {
+                    console.error('Failed to delete your profile');
+                }
+            }).catch(error => {
+                console.error('Error deleting user', error);
+            });
+        }
+    };
+
     return (
-        <div>
+        <Col>
             <h2>User Profile:</h2>
             <p>Username: {user.Username}</p>
             <p>Email: {user.Email}</p>
@@ -103,8 +132,12 @@ export const ProfileView = ({ user, movies, setUser, token }) => {
                     </Button>
                 </Form>
             ) : (
-                <Button variant="primary" onClick={handleEditClick}>Edit</Button>
+                <>
+                    <Button className="mr-5" onClick={handleEditClick}>Edit</Button>
+
+                    <Button className="ml-5" onClick={handleDeleteClick}>Delete Profile</Button>
+                </>
             )}
-        </div>
+        </Col>
     );
 };

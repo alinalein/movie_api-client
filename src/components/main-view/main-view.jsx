@@ -125,6 +125,7 @@ export const MainView = () => {
                                             setUser={setUser}
                                             movies={movies}
                                             token={token}
+                                            setToken={setToken}
                                         />
                                     </Col>
                                 )}
