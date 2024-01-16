@@ -11,6 +11,6 @@ As a user, I want to be able to access information about movies so that I can le
 As a user, I want to be able to create a profile so I can save data about my favorite movies.
 
 ### Login Details for testing
-**Username:** ina123
+**Username:** ina1234
 
-**Password:** ina123
+**Password:** ina1234
