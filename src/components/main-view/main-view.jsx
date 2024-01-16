@@ -6,6 +6,7 @@ import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ProfileView } from "../profile-view/profile-view";
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem("user"))
@@ -104,6 +105,27 @@ export const MainView = () => {
                                     // send the movies array to MovieView
                                     <Col md={8}>
                                         <MovieView movies={movies} />
+                                    </Col>
+                                )}
+                            </>
+                        }
+                    />
+                    {/* Route to the users profile -> call the profileview and send props to this*/}
+                    <Route
+                        path="/profile"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={5}>
+
+                                        <ProfileView
+                                            user={user}
+                                            setUser={setUser}
+                                            movies={movies}
+                                            token={token}
+                                        />
                                     </Col>
                                 )}
                             </>

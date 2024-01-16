@@ -13,6 +13,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                     <Nav className="me-auto">
                         {!user && (
                             <>
+                                {/* The links to have to match the paths in main-view */}
                                 <Nav.Link as={Link} to="/login">
                                     Login
                                 </Nav.Link>
@@ -26,7 +27,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                 <Nav.Link as={Link} to="/">
                                     Home
                                 </Nav.Link>
-                                <Nav.Link as={Link} to={`/${user.Username}`}>
+                                <Nav.Link as={Link} to={`/profile`}>
                                     Your Profile
                                 </Nav.Link>
                                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>

@@ -18,7 +18,7 @@ export const SignupView = () => {
             Birthday: birthday
         }
 
-        fetch("https://movie-api-lina-834bc70d6952.herokuapp.com/users/register", {
+        fetch("https://movie-api-lina-834bc70d6952.herokuapp.com/users/signup", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -44,7 +44,7 @@ export const SignupView = () => {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     required
-                    minLength="3"
+                    minLength="5"
                 />
             </Form.Group>
             <Form.Group controlId="formPassword">
