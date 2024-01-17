@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { Form, Button, Col } from 'react-bootstrap'
+import { MovieCard } from '../movie-card/movie-card';
 
 export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
+    const [username, setUsername] = useState(user.Username);
+    const [password, setPassword] = useState(user.Password);
+    const [email, setEmail] = useState(user.Email);
+    const [birthday, setBirthday] = useState(user.Birthday);
+    const [isEditing, setIsEditing] = useState(false);
+
+    let favoriteMovies = movies.filter(m => user.FavoriteMovies.includes(m.id));
+    console.log('User Object:', user);
+
+    const handleEditClick = () => {
+        setIsEditing(true);
+    };
 
     // formats the date from DB to a date 
     const formatDate = (dateString) => {
@@ -11,15 +23,6 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
         return formattedDate;
     };
 
-    const [username, setUsername] = useState(user.Username);
-    const [password, setPassword] = useState(user.Password);
-    const [email, setEmail] = useState(user.Email);
-    const [birthday, setBirthday] = useState(user.Birthday);
-    const [isEditing, setIsEditing] = useState(false);
-
-    const handleEditClick = () => {
-        setIsEditing(true);
-    };
     const handleSaveClick = (event) => {
         event.preventDefault();
 
@@ -55,6 +58,7 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
     const handleDeleteClick = (event) => {
         event.preventDefault();
 
+        // pop up window for delete confirmation
         const userConfirmed = window.confirm("Do you really want to delete your profile?");
 
         if (userConfirmed) {
@@ -138,6 +142,13 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
                     <Button className="ml-5" onClick={handleDeleteClick}>Delete Profile</Button>
                 </>
             )}
+            <>
+                {favoriteMovies.map((movie) => (
+                    <Col className="mb-5" key={movie.id} md={3}>
+                        <MovieCard movie={movie} token={token} user={user} />
+                    </Col>
+                ))}
+            </>
         </Col>
     );
 };

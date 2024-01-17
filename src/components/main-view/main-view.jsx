@@ -17,6 +17,7 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken ? storedToken : null);
     const [movies, setMovies] = useState([]);
 
+    console.log('user', user)
     /*populate the movies array with the movies from the API */
     useEffect(() => {
 
@@ -146,7 +147,7 @@ export const MainView = () => {
                                     <>
                                         {movies.map((movie) => (
                                             <Col className="mb-5" key={movie.id} md={3}>
-                                                <MovieCard movie={movie} />
+                                                <MovieCard movie={movie} token={token} user={user} />
                                             </Col>
                                         ))}
                                     </>

@@ -4,8 +4,10 @@ import { useParams } from "react-router";
 import { Button, Col, Card, Row } from "react-bootstrap";
 
 export const MovieView = ({ movies }) => {
+    // only access the param from the before set path (here in main)
     const { movieId } = useParams();
 
+    // got the whole movies array from main->here look for specific movie user klicked on by id-> then show details about this movie
     const movie = movies.find((m) => m.id === movieId);
 
     const findSimilarMovies = () => {
