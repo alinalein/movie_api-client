@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom"
+import { MovieView } from "../movie-view/movie-view";
 
-export const MovieCard = ({ movie, token, user }) => {
+export const MovieCard = ({ movie, token, user, setUser }) => {
 
     const handleAddToFavorites = async () => {
         try {
@@ -16,6 +17,8 @@ export const MovieCard = ({ movie, token, user }) => {
             if (response.ok) {
                 alert("added");
                 // Movie successfully added to favorites
+                const updatedUser = { ...user, FavoriteMovies: [...user.FavoriteMovies, movie.id] };
+                setUser(updatedUser);
                 console.log('Movie added to favorites');
             } else {
                 console.error('Failed to add movie to favorites');
@@ -37,6 +40,10 @@ export const MovieCard = ({ movie, token, user }) => {
 
             if (response.ok) {
                 alert("removed");
+                //updates the state of user -> so the UI changes when user removes the movie
+                // create copy of object user & keeps all movies from fav except the one where id is id of movie the user clicked on 
+                const updatedUser = { ...user, FavoriteMovies: user.FavoriteMovies.filter(id => id !== movie.id) };
+                setUser(updatedUser);
                 console.log('Movie removed from favorites');
             } else {
                 console.error('Failed to remove movie from favorites');
@@ -68,6 +75,7 @@ export const MovieCard = ({ movie, token, user }) => {
 
             </Card.Body>
         </Card>
+
     );
 };
 

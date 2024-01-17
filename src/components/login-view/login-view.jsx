@@ -36,6 +36,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 console.error("Error occurred during login:", error);
                 alert("An error occurred during login. Please try again.");
             })
+
     }
 
     return (

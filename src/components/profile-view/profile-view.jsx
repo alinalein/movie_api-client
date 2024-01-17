@@ -9,8 +9,8 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
     const [birthday, setBirthday] = useState(user.Birthday);
     const [isEditing, setIsEditing] = useState(false);
 
-    let favoriteMovies = movies.filter(m => user.FavoriteMovies.includes(m.id));
-    console.log('User Object:', user);
+    let favoriteMovies = movies.filter(m => user.FavoriteMovies.includes(m.id))
+    console.log('User profile-view:', user);
 
     const handleEditClick = () => {
         setIsEditing(true);
@@ -30,10 +30,11 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
             Username: username,
             Password: password,
             Email: email,
-            Birthday: birthday, // Corrected the colon here
+            Birthday: birthday,
+            FavoriteMovies: favoriteMovies
         };
 
-        fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/update/${username}`, {
+        fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/update/${user.Username}`, {
             method: "PUT",
             body: JSON.stringify(updatedUser),
             headers: {
@@ -62,7 +63,7 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
         const userConfirmed = window.confirm("Do you really want to delete your profile?");
 
         if (userConfirmed) {
-            fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/deregister/${username}`, {
+            fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/deregister/${user.Username}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -75,6 +76,7 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
                     setUser(null);
                     setToken(null);
                     localStorage.clear();
+
                 } else {
                     console.error('Failed to delete your profile');
                 }
@@ -144,8 +146,8 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
             )}
             <>
                 {favoriteMovies.map((movie) => (
-                    <Col className="mb-5" key={movie.id} md={3}>
-                        <MovieCard movie={movie} token={token} user={user} />
+                    <Col className="mb-5" key={movie.id} md={5}>
+                        <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                     </Col>
                 ))}
             </>
