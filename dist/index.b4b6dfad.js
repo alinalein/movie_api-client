@@ -27191,11 +27191,11 @@ var _movieView = require("../movie-view/movie-view");
 var _loginView = require("../login-view/login-view");
 var _signupView = require("../signup-view/signup-view");
 var _navigationBar = require("../navigation-bar/navigation-bar");
-var _reactBootstrap = require("react-bootstrap");
-var _reactRouterDom = require("react-router-dom");
 var _profileView = require("../profile-view/profile-view");
 var _userProfile = require("../profile-view/user-profile");
 var _editProfile = require("../profile-view/edit-profile");
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -45250,6 +45250,15 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                                 fileName: "src/components/navigation-bar/navigation-bar.jsx",
                                                 lineNumber: 41,
                                                 columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
+                                                as: (0, _reactRouterDom.Link),
+                                                to: "/delete-profile",
+                                                children: "Delete Profile"
+                                            }, void 0, false, {
+                                                fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                                lineNumber: 44,
+                                                columnNumber: 37
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
@@ -45262,7 +45271,7 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         children: "Logout"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 45,
+                                        lineNumber: 48,
                                         columnNumber: 33
                                     }, undefined)
                                 ]
@@ -45388,6 +45397,43 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
         children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "User Profile:"
+            }, void 0, false, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 90,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Username: ",
+                    user.Username
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 91,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Email: ",
+                    user.Email
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 92,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Birthday: ",
+                    formatDate(user.Birthday)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 93,
+                columnNumber: 13
+            }, undefined),
             isEditing ? // Pull values from the input fields 
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
                 onSubmit: handleSaveClick,
@@ -45654,6 +45700,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const EditProfile = ({ user, setUser, token })=>{
     _s();
@@ -45661,8 +45708,8 @@ const EditProfile = ({ user, setUser, token })=>{
     const [password, setPassword] = (0, _react.useState)(user.Password);
     const [email, setEmail] = (0, _react.useState)(user.Email);
     const [birthday, setBirthday] = (0, _react.useState)(user.Birthday);
-    // const [isEditing, setIsEditing] = useState(true);
-    // add only update when new value
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    // add only update when new value + check username not DB jet 
     const handleSaveClick = async (event)=>{
         event.preventDefault();
         const updatedUser = {
@@ -45682,9 +45729,9 @@ const EditProfile = ({ user, setUser, token })=>{
             });
             if (response.ok) {
                 // If the update is successful, update the local state
-                // setIsEditing(false);
                 setUser(updatedUser);
                 alert("You successfully updated your profile");
+                navigate("/user-profile");
                 console.log("User state updated:", updatedUser);
             } else console.error("Failed to update user information");
         } catch (error) {
@@ -45705,7 +45752,7 @@ const EditProfile = ({ user, setUser, token })=>{
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 51,
+                            lineNumber: 56,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -45716,13 +45763,13 @@ const EditProfile = ({ user, setUser, token })=>{
                             minLength: "5"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 52,
+                            lineNumber: 57,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/edit-profile.jsx",
-                    lineNumber: 50,
+                    lineNumber: 55,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -45732,7 +45779,7 @@ const EditProfile = ({ user, setUser, token })=>{
                             children: "Password:"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 61,
+                            lineNumber: 66,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -45741,13 +45788,13 @@ const EditProfile = ({ user, setUser, token })=>{
                             onChange: (e)=>setPassword(e.target.value)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 62,
+                            lineNumber: 67,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/edit-profile.jsx",
-                    lineNumber: 60,
+                    lineNumber: 65,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -45760,7 +45807,7 @@ const EditProfile = ({ user, setUser, token })=>{
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 69,
+                            lineNumber: 74,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -45769,13 +45816,13 @@ const EditProfile = ({ user, setUser, token })=>{
                             onChange: (e)=>setEmail(e.target.value)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 70,
+                            lineNumber: 75,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/edit-profile.jsx",
-                    lineNumber: 68,
+                    lineNumber: 73,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -45788,7 +45835,7 @@ const EditProfile = ({ user, setUser, token })=>{
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 77,
+                            lineNumber: 82,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -45797,13 +45844,13 @@ const EditProfile = ({ user, setUser, token })=>{
                             onChange: (e)=>setBirthday(e.target.value)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 78,
+                            lineNumber: 83,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/edit-profile.jsx",
-                    lineNumber: 76,
+                    lineNumber: 81,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -45812,22 +45859,26 @@ const EditProfile = ({ user, setUser, token })=>{
                     children: "Save Changes"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/edit-profile.jsx",
-                    lineNumber: 85,
+                    lineNumber: 90,
                     columnNumber: 17
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/profile-view/edit-profile.jsx",
-            lineNumber: 49,
+            lineNumber: 54,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/profile-view/edit-profile.jsx",
-        lineNumber: 48,
+        lineNumber: 53,
         columnNumber: 9
     }, undefined);
 };
-_s(EditProfile, "liv2JdM8/aRUhXNglA6p+zD50Y4=");
+_s(EditProfile, "m6ID8kc/SCj6+xkA55dloLAa3tg=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = EditProfile;
 var _c;
 $RefreshReg$(_c, "EditProfile");
@@ -45837,6 +45888,6 @@ $RefreshReg$(_c, "EditProfile");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"lJZlQ":[function() {},{}]},["1MqTG","feejL","d8Dch"], "d8Dch", "parcelRequirea671")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-router-dom":"9xmpe"}],"lJZlQ":[function() {},{}]},["1MqTG","feejL","d8Dch"], "d8Dch", "parcelRequirea671")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

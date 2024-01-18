@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Col } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 
 export const EditProfile = ({ user, setUser, token }) => {
 
@@ -7,9 +8,11 @@ export const EditProfile = ({ user, setUser, token }) => {
     const [password, setPassword] = useState(user.Password);
     const [email, setEmail] = useState(user.Email);
     const [birthday, setBirthday] = useState(user.Birthday);
-    // const [isEditing, setIsEditing] = useState(true);
 
-    // add only update when new value
+    const navigate = useNavigate();
+
+    // add only update when new value + check username not DB jet 
+
     const handleSaveClick = async (event) => {
         event.preventDefault();
 
@@ -32,9 +35,9 @@ export const EditProfile = ({ user, setUser, token }) => {
 
             if (response.ok) {
                 // If the update is successful, update the local state
-                // setIsEditing(false);
                 setUser(updatedUser);
                 alert("You successfully updated your profile");
+                navigate("/user-profile");
                 console.log("User state updated:", updatedUser);
             } else {
                 console.error('Failed to update user information');
@@ -43,6 +46,8 @@ export const EditProfile = ({ user, setUser, token }) => {
             console.error('Error updating user information', error);
         }
     };
+
+
 
     return (
         <Col>

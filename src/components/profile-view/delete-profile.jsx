@@ -34,6 +34,8 @@ export const DeleteProfile = ({ user, setUser, token, setToken }) => {
 
     return (
         <Col>
+            <Button className="ml-5" onClick={handleDeleteClick}>Delete Profile</Button>
+
         </Col>
     )
 }
