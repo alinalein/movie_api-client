@@ -8,6 +8,7 @@ import { ProfileView } from "../profile-view/profile-view";
 import { UserProfile } from "../profile-view/user-profile";
 import { EditProfile } from "../profile-view/edit-profile";
 import { FavoriteMovies } from "../profile-view/favorite-movies";
+import { DeleteProfile } from "../profile-view/delete-profile";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -205,6 +206,25 @@ export const MainView = () => {
                                         <FavoriteMovies
                                             user={user}
                                             movies={movies}
+                                            token={token}
+                                            setUser={setUser}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
+
+                    />
+                    <Route
+                        path="/delete-profile"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={5}>
+                                        <DeleteProfile
+                                            user={user}
                                             token={token}
                                             setUser={setUser}
                                         />

@@ -1,6 +1,6 @@
-import { Col } from "react-bootstrap";
+import { Col, Button } from "react-bootstrap";
 
-export const DeleteProfile = ({ user, setUser, token, setToken }) => {
+export const DeleteProfile = ({ user, setUser, token }) => {
 
     const handleDeleteClick = (event) => {
         event.preventDefault();
@@ -22,7 +22,6 @@ export const DeleteProfile = ({ user, setUser, token, setToken }) => {
                     setUser(null);
                     setToken(null);
                     localStorage.clear();
-
                 } else {
                     console.error('Failed to delete your profile');
                 }
@@ -35,7 +34,6 @@ export const DeleteProfile = ({ user, setUser, token, setToken }) => {
     return (
         <Col>
             <Button className="ml-5" onClick={handleDeleteClick}>Delete Profile</Button>
-
         </Col>
     )
 }
