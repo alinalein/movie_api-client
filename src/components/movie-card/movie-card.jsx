@@ -5,6 +5,8 @@ import { MovieView } from "../movie-view/movie-view";
 
 export const MovieCard = ({ movie, token, user, setUser }) => {
 
+    const isMovieInFavorites = user.FavoriteMovies.includes(movie.id);
+
     const handleAddToFavorites = async () => {
         try {
             const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/add/${movie.id}	`, {
@@ -66,12 +68,17 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
                     </Button>
                 </Link>
 
-                <Button variant="primary" onClick={handleAddToFavorites}>
-                    Add to Favorite
-                </Button>
-                <Button variant="" onClick={handleRemoveFromFavorites}>
-                    Delete from Favorites
-                </Button>
+                {!isMovieInFavorites && (
+                    <Button variant="primary" onClick={handleAddToFavorites}>
+                        Add to Favorite
+                    </Button>
+                )}
+
+                {isMovieInFavorites && (
+                    <Button variant="" onClick={handleRemoveFromFavorites}>
+                        Delete from Favorites
+                    </Button>
+                )}
 
             </Card.Body>
         </Card>

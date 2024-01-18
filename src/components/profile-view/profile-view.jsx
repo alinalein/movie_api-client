@@ -31,7 +31,7 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
             Password: password,
             Email: email,
             Birthday: birthday,
-            FavoriteMovies: favoriteMovies
+            FavoriteMovies: user.FavoriteMovies
         };
 
         fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/update/${user.Username}`, {
@@ -144,13 +144,16 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
                     <Button className="ml-5" onClick={handleDeleteClick}>Delete Profile</Button>
                 </>
             )}
-            <>
-                {favoriteMovies.map((movie) => (
-                    <Col className="mb-5" key={movie.id} md={5}>
-                        <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
-                    </Col>
-                ))}
-            </>
+            {/* only show component when user has fav movies  */}
+            {favoriteMovies.length > 0 && (
+                <>
+                    {favoriteMovies.map((movie) => (
+                        <Col className="mb-5" key={movie.id} md={5}>
+                            <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
+                        </Col>
+                    ))}
+                </>
+            )}
         </Col>
     );
 };

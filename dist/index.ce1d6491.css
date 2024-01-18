@@ -3,7 +3,7 @@
 }
 
 .movie-image {
-  height: 100%;
+  height: 300px;
 }
 
 :root, [data-bs-theme="light"] {

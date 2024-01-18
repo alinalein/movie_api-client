@@ -27464,6 +27464,7 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _movieView = require("../movie-view/movie-view");
 const MovieCard = ({ movie, token, user, setUser })=>{
+    const isMovieInFavorites = user.FavoriteMovies.includes(movie.id);
     const handleAddToFavorites = async ()=>{
         try {
             const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/add/${movie.id}	`, {
@@ -27522,7 +27523,7 @@ const MovieCard = ({ movie, token, user, setUser })=>{
                 src: movie.ImagePath
             }, void 0, false, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 58,
+                lineNumber: 60,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -27531,14 +27532,14 @@ const MovieCard = ({ movie, token, user, setUser })=>{
                         children: movie.Title
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 60,
+                        lineNumber: 62,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                         children: movie.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 61,
+                        lineNumber: 63,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27548,42 +27549,42 @@ const MovieCard = ({ movie, token, user, setUser })=>{
                             children: "View Details"
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 64,
+                            lineNumber: 66,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 63,
+                        lineNumber: 65,
                         columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                    !isMovieInFavorites && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "primary",
                         onClick: handleAddToFavorites,
                         children: "Add to Favorite"
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 69,
-                        columnNumber: 17
+                        lineNumber: 72,
+                        columnNumber: 21
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                    isMovieInFavorites && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "",
                         onClick: handleRemoveFromFavorites,
                         children: "Delete from Favorites"
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 72,
-                        columnNumber: 17
+                        lineNumber: 78,
+                        columnNumber: 21
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 59,
+                lineNumber: 61,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-card/movie-card.jsx",
-        lineNumber: 57,
+        lineNumber: 59,
         columnNumber: 9
     }, undefined);
 };
@@ -41821,7 +41822,7 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
             Password: password,
             Email: email,
             Birthday: birthday,
-            FavoriteMovies: favoriteMovies
+            FavoriteMovies: user.FavoriteMovies
         };
         fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/update/${user.Username}`, {
             method: "PUT",
@@ -42052,7 +42053,7 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                     }, undefined)
                 ]
             }, void 0, true),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            favoriteMovies.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                 children: favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                         className: "mb-5",
                         md: 5,
@@ -42063,13 +42064,13 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                             setUser: setUser
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 150,
-                            columnNumber: 25
+                            lineNumber: 152,
+                            columnNumber: 29
                         }, undefined)
                     }, movie.id, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 149,
-                        columnNumber: 21
+                        lineNumber: 151,
+                        columnNumber: 25
                     }, undefined))
             }, void 0, false)
         ]
