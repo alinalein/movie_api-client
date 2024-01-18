@@ -7,6 +7,7 @@ import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { ProfileView } from "../profile-view/profile-view";
 import { UserProfile } from "../profile-view/user-profile";
 import { EditProfile } from "../profile-view/edit-profile";
+import { FavoriteMovies } from "../profile-view/favorite-movies";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -186,6 +187,26 @@ export const MainView = () => {
                                             user={user}
                                             setUser={setUser}
                                             token={token}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
+
+                    />
+                    <Route
+                        path="/favorite-movies"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={5}>
+                                        <FavoriteMovies
+                                            user={user}
+                                            movies={movies}
+                                            token={token}
+                                            setUser={setUser}
                                         />
                                     </Col>
                                 )}

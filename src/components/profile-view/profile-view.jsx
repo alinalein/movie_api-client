@@ -87,10 +87,10 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
 
     return (
         <Col>
-            <h2>User Profile:</h2>
+            {/* <h2>User Profile:</h2>
             <p>Username: {user.Username}</p>
             <p>Email: {user.Email}</p>
-            <p>Birthday: {formatDate(user.Birthday)}</p>
+            <p>Birthday: {formatDate(user.Birthday)}</p> */}
 
             {isEditing ? (
                 // Pull values from the input fields 

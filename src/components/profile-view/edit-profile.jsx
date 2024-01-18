@@ -21,6 +21,7 @@ export const EditProfile = ({ user, setUser, token }) => {
             Password: password,
             Email: email,
             Birthday: birthday,
+            FavoriteMovies: user.FavoriteMoviess
         };
 
         try {
