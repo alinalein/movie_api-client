@@ -7,6 +7,8 @@ import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ProfileView } from "../profile-view/profile-view";
+import { UserProfile } from "../profile-view/user-profile";
+import { EditProfile } from "../profile-view/edit-profile";
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem("user"))
@@ -44,6 +46,28 @@ export const MainView = () => {
                 setMovies(moviesFromApi);
             })
     }, [token]);
+    const handleAddToFavorites = async () => {
+        try {
+            const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/add/${movie.id}	`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (response.ok) {
+                alert("added");
+                // Movie successfully added to favorites
+                const updatedUser = { ...user, FavoriteMovies: [...user.FavoriteMovies, movie.id] };
+                setUser(updatedUser);
+                console.log('Movie added to favorites');
+            } else {
+                console.error('Failed to add movie to favorites');
+            }
+        } catch (error) {
+            console.error('Error adding movie to favorites', error);
+        }
+    };
 
     return (
         <BrowserRouter>
@@ -131,6 +155,43 @@ export const MainView = () => {
                                 )}
                             </>
                         }
+
+                    />
+                    <Route
+                        path="/user-profile"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={5}>
+                                        <UserProfile
+                                            user={user}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
+
+                    />
+                    <Route
+                        path="/edit-profile"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={5}>
+                                        <EditProfile
+                                            user={user}
+                                            setUser={setUser}
+                                            token={token}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
+
                     />
                     {/* Route to show all movies  */}
                     <Route

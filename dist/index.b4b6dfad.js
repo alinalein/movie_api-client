@@ -27194,6 +27194,8 @@ var _navigationBar = require("../navigation-bar/navigation-bar");
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _profileView = require("../profile-view/profile-view");
+var _userProfile = require("../profile-view/user-profile");
+var _editProfile = require("../profile-view/edit-profile");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -27211,16 +27213,16 @@ const MainView = ()=>{
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>response.json()).then((data)=>{
-            const moviesFromApi = data.map((movie)=>{
-                const featutedStatus = movie.Featured ? "Yes" : "No";
+            const moviesFromApi = data.map((movie1)=>{
+                const featutedStatus = movie1.Featured ? "Yes" : "No";
                 return {
-                    id: movie._id,
-                    Title: movie.Title,
-                    Description: movie.Description,
-                    Genre: movie.Genre.Name,
-                    Director: movie.Director.Name,
-                    Actors: movie.Actors.join(", "),
-                    ImagePath: movie.ImagePath,
+                    id: movie1._id,
+                    Title: movie1.Title,
+                    Description: movie1.Description,
+                    Genre: movie1.Genre.Name,
+                    Director: movie1.Director.Name,
+                    Actors: movie1.Actors.join(", "),
+                    ImagePath: movie1.ImagePath,
                     Featured: featutedStatus
                 };
             });
@@ -27229,6 +27231,32 @@ const MainView = ()=>{
     }, [
         token
     ]);
+    const handleAddToFavorites = async ()=>{
+        try {
+            const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/add/${movie.id}	`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            if (response.ok) {
+                alert("added");
+                // Movie successfully added to favorites
+                const updatedUser = {
+                    ...user,
+                    FavoriteMovies: [
+                        ...user.FavoriteMovies,
+                        movie.id
+                    ]
+                };
+                setUser(updatedUser);
+                console.log("Movie added to favorites");
+            } else console.error("Failed to add movie to favorites");
+        } catch (error) {
+            console.error("Error adding movie to favorites", error);
+        }
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navigationBar.NavigationBar), {
@@ -27240,7 +27268,7 @@ const MainView = ()=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 51,
+                lineNumber: 75,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -27254,24 +27282,24 @@ const MainView = ()=>{
                                     to: "/"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 65,
+                                    lineNumber: 89,
                                     columnNumber: 37
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 68,
+                                        lineNumber: 92,
                                         columnNumber: 41
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 91,
                                     columnNumber: 37
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 60,
+                            lineNumber: 84,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27281,7 +27309,7 @@ const MainView = ()=>{
                                     to: "/"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 81,
+                                    lineNumber: 105,
                                     columnNumber: 37
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
@@ -27292,18 +27320,18 @@ const MainView = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 84,
+                                        lineNumber: 108,
                                         columnNumber: 41
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 83,
+                                    lineNumber: 107,
                                     columnNumber: 37
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 76,
+                            lineNumber: 100,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27314,13 +27342,13 @@ const MainView = ()=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 101,
+                                    lineNumber: 125,
                                     columnNumber: 37
                                 }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: "The list is empty!"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 103,
+                                    lineNumber: 127,
                                     columnNumber: 37
                                 }, void 0) : // send the movies array to MovieView
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -27329,18 +27357,18 @@ const MainView = ()=>{
                                         movies: movies
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 107,
+                                        lineNumber: 131,
                                         columnNumber: 41
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 106,
+                                    lineNumber: 130,
                                     columnNumber: 37
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 96,
+                            lineNumber: 120,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27351,7 +27379,7 @@ const MainView = ()=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 119,
+                                    lineNumber: 143,
                                     columnNumber: 37
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
@@ -27363,18 +27391,80 @@ const MainView = ()=>{
                                         setToken: setToken
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 123,
+                                        lineNumber: 147,
                                         columnNumber: 41
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 121,
+                                    lineNumber: 145,
                                     columnNumber: 37
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 114,
+                            lineNumber: 138,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/user-profile",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/login",
+                                    replace: true
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 165,
+                                    columnNumber: 37
+                                }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                    md: 5,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userProfile.UserProfile), {
+                                        user: user
+                                    }, void 0, false, {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 168,
+                                        columnNumber: 41
+                                    }, void 0)
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 167,
+                                    columnNumber: 37
+                                }, void 0)
+                            }, void 0, false)
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 160,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/edit-profile",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/login",
+                                    replace: true
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 182,
+                                    columnNumber: 37
+                                }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                    md: 5,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _editProfile.EditProfile), {
+                                        user: user,
+                                        setUser: setUser,
+                                        token: token
+                                    }, void 0, false, {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 185,
+                                        columnNumber: 41
+                                    }, void 0)
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 184,
+                                    columnNumber: 37
+                                }, void 0)
+                            }, void 0, false)
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 177,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27385,55 +27475,55 @@ const MainView = ()=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 141,
+                                    lineNumber: 202,
                                     columnNumber: 37
                                 }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: "The list is empty!"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 144,
+                                    lineNumber: 205,
                                     columnNumber: 37
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                                    children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                    children: movies.map((movie1)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                             className: "mb-5",
                                             md: 3,
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                                movie: movie,
+                                                movie: movie1,
                                                 token: token,
                                                 user: user,
                                                 setUser: setUser
                                             }, void 0, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 149,
+                                                lineNumber: 210,
                                                 columnNumber: 49
                                             }, void 0)
-                                        }, movie.id, false, {
+                                        }, movie1.id, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 148,
+                                            lineNumber: 209,
                                             columnNumber: 45
                                         }, void 0))
                                 }, void 0, false)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 136,
+                            lineNumber: 197,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 58,
+                    lineNumber: 82,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 57,
+                lineNumber: 81,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 49,
+        lineNumber: 73,
         columnNumber: 9
     }, undefined);
 };
@@ -27447,7 +27537,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","../profile-view/profile-view":"2vVqf"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","../profile-view/profile-view":"2vVqf","../profile-view/user-profile":"7Frwr","../profile-view/edit-profile":"30fNd"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28612,7 +28702,7 @@ var _toggleButtonGroupDefault = parcelHelpers.interopDefault(_toggleButtonGroup)
 var _tooltip = require("./Tooltip");
 var _tooltipDefault = parcelHelpers.interopDefault(_tooltip);
 
-},{"./Accordion":false,"./AccordionContext":false,"./AccordionCollapse":false,"./AccordionButton":false,"./Alert":false,"./Anchor":false,"./Badge":false,"./Breadcrumb":false,"./BreadcrumbItem":false,"./Button":"aPzUt","./ButtonGroup":false,"./ButtonToolbar":false,"./Card":"lAynp","./CardImg":false,"./CardGroup":false,"./Carousel":false,"./CarouselItem":false,"./CloseButton":false,"./Col":"2L2I6","./Collapse":false,"./Dropdown":false,"./DropdownButton":false,"./Fade":false,"./Form":"iBZ80","./FormControl":false,"./FormCheck":false,"./FormFloating":false,"./FloatingLabel":false,"./FormGroup":false,"./FormLabel":false,"./FormText":false,"./FormSelect":false,"./Container":"hEdsw","./Image":false,"./Figure":false,"./InputGroup":false,"./ListGroup":false,"./ListGroupItem":false,"./Modal":false,"./ModalBody":false,"./ModalDialog":false,"./ModalHeader":false,"./ModalFooter":false,"./ModalTitle":false,"./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":false,"./NavDropdown":false,"./NavItem":false,"./NavLink":false,"./Offcanvas":false,"./OffcanvasHeader":false,"./OffcanvasTitle":false,"./OffcanvasBody":false,"./Overlay":false,"./OverlayTrigger":false,"./PageItem":false,"./Pagination":false,"./Placeholder":false,"./PlaceholderButton":false,"./Popover":false,"./PopoverHeader":false,"./PopoverBody":false,"./ProgressBar":false,"./Ratio":false,"./Row":"cMC39","./Spinner":false,"./SplitButton":false,"./SSRProvider":false,"./Stack":false,"./Tab":false,"./TabContainer":false,"./TabContent":false,"./Table":false,"./TabPane":false,"./Tabs":false,"./ThemeProvider":false,"./Toast":false,"./ToastBody":false,"./ToastHeader":false,"./ToastContainer":false,"./ToggleButton":false,"./ToggleButtonGroup":false,"./Tooltip":false,"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aPzUt":[function(require,module,exports) {
+},{"./Accordion":false,"./AccordionContext":false,"./AccordionCollapse":false,"./AccordionButton":false,"./Alert":false,"./Anchor":false,"./Badge":false,"./Breadcrumb":false,"./BreadcrumbItem":false,"./Button":"aPzUt","./ButtonGroup":false,"./ButtonToolbar":false,"./Card":"lAynp","./CardImg":false,"./CardGroup":false,"./Carousel":false,"./CarouselItem":false,"./CloseButton":false,"./Col":"2L2I6","./Collapse":false,"./Dropdown":false,"./DropdownButton":false,"./Fade":false,"./Form":"iBZ80","./FormControl":false,"./FormCheck":false,"./FormFloating":false,"./FloatingLabel":false,"./FormGroup":false,"./FormLabel":false,"./FormText":false,"./FormSelect":false,"./Container":"hEdsw","./Image":false,"./Figure":false,"./InputGroup":false,"./ListGroup":false,"./ListGroupItem":false,"./Modal":false,"./ModalBody":false,"./ModalDialog":false,"./ModalHeader":false,"./ModalFooter":false,"./ModalTitle":false,"./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":false,"./NavDropdown":"8e6QB","./NavItem":false,"./NavLink":false,"./Offcanvas":false,"./OffcanvasHeader":false,"./OffcanvasTitle":false,"./OffcanvasBody":false,"./Overlay":false,"./OverlayTrigger":false,"./PageItem":false,"./Pagination":false,"./Placeholder":false,"./PlaceholderButton":false,"./Popover":false,"./PopoverHeader":false,"./PopoverBody":false,"./ProgressBar":false,"./Ratio":false,"./Row":"cMC39","./Spinner":false,"./SplitButton":false,"./SSRProvider":false,"./Stack":false,"./Tab":false,"./TabContainer":false,"./TabContent":false,"./Table":false,"./TabPane":false,"./Tabs":false,"./ThemeProvider":false,"./Toast":false,"./ToastBody":false,"./ToastHeader":false,"./ToastContainer":false,"./ToggleButton":false,"./ToggleButtonGroup":false,"./Tooltip":false,"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aPzUt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -31116,346 +31206,2885 @@ function safeFindDOMNode(componentOrElement) {
     return componentOrElement != null ? componentOrElement : null;
 }
 
-},{"react-dom":"j6uA9","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aH18S":[function(require,module,exports) {
+},{"react-dom":"j6uA9","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"88m2L":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
-var _transition = require("react-transition-group/Transition");
-var _transitionEndListener = require("./transitionEndListener");
-var _transitionEndListenerDefault = parcelHelpers.interopDefault(_transitionEndListener);
-var _triggerBrowserReflow = require("./triggerBrowserReflow");
-var _triggerBrowserReflowDefault = parcelHelpers.interopDefault(_triggerBrowserReflow);
-var _transitionWrapper = require("./TransitionWrapper");
-var _transitionWrapperDefault = parcelHelpers.interopDefault(_transitionWrapper);
-var _jsxRuntime = require("react/jsx-runtime");
-const defaultProps = {
-    in: false,
-    timeout: 300,
-    mountOnEnter: false,
-    unmountOnExit: false,
-    appear: false
-};
-const fadeStyles = {
-    [(0, _transition.ENTERING)]: "show",
-    [(0, _transition.ENTERED)]: "show"
-};
-const Fade = /*#__PURE__*/ _react.forwardRef(({ className, children, transitionClasses = {}, ...props }, ref)=>{
-    const handleEnter = (0, _react.useCallback)((node, isAppearing)=>{
-        (0, _triggerBrowserReflowDefault.default)(node);
-        props.onEnter == null || props.onEnter(node, isAppearing);
-    }, [
-        props
-    ]);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _transitionWrapperDefault.default), {
-        ref: ref,
-        addEndListener: (0, _transitionEndListenerDefault.default),
-        ...props,
-        onEnter: handleEnter,
-        childRef: children.ref,
-        children: (status, innerProps)=>/*#__PURE__*/ _react.cloneElement(children, {
-                ...innerProps,
-                className: (0, _classnamesDefault.default)("fade", className, children.props.className, fadeStyles[status], transitionClasses[status])
-            })
-    });
-});
-Fade.defaultProps = defaultProps;
-Fade.displayName = "Fade";
-exports.default = Fade;
-
-},{"classnames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iBZ80":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _react = require("react");
-var _formCheck = require("./FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var _formControl = require("./FormControl");
-var _formControlDefault = parcelHelpers.interopDefault(_formControl);
-var _formFloating = require("./FormFloating");
-var _formFloatingDefault = parcelHelpers.interopDefault(_formFloating);
-var _formGroup = require("./FormGroup");
-var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
-var _formLabel = require("./FormLabel");
-var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
-var _formRange = require("./FormRange");
-var _formRangeDefault = parcelHelpers.interopDefault(_formRange);
-var _formSelect = require("./FormSelect");
-var _formSelectDefault = parcelHelpers.interopDefault(_formSelect);
-var _formText = require("./FormText");
-var _formTextDefault = parcelHelpers.interopDefault(_formText);
-var _switch = require("./Switch");
-var _switchDefault = parcelHelpers.interopDefault(_switch);
-var _floatingLabel = require("./FloatingLabel");
-var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
-var _jsxRuntime = require("react/jsx-runtime");
-const propTypes = {
-    /**
-   * The Form `ref` will be forwarded to the underlying element,
-   * which means, unless it's rendered `as` a composite component,
-   * it will be a DOM node, when resolved.
-   *
-   * @type {ReactRef}
-   * @alias ref
-   */ _ref: (0, _propTypesDefault.default).any,
-    /**
-   * Mark a form as having been validated. Setting it to `true` will
-   * toggle any validation styles on the forms elements.
-   */ validated: (0, _propTypesDefault.default).bool,
-    as: (0, _propTypesDefault.default).elementType
-};
-const Form = /*#__PURE__*/ _react.forwardRef(({ className, validated, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "form", ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...props,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, validated && "was-validated")
-    }));
-Form.displayName = "Form";
-Form.propTypes = propTypes;
-exports.default = Object.assign(Form, {
-    Group: (0, _formGroupDefault.default),
-    Control: (0, _formControlDefault.default),
-    Floating: (0, _formFloatingDefault.default),
-    Check: (0, _formCheckDefault.default),
-    Switch: (0, _switchDefault.default),
-    Label: (0, _formLabelDefault.default),
-    Text: (0, _formTextDefault.default),
-    Range: (0, _formRangeDefault.default),
-    Select: (0, _formSelectDefault.default),
-    FloatingLabel: (0, _floatingLabelDefault.default)
-});
-
-},{"classnames":"jocGM","prop-types":"7wKI2","react":"21dqq","./FormCheck":"idkr0","./FormControl":"iynMc","./FormFloating":"aj346","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormRange":"8zsCO","./FormSelect":"hHWyB","./FormText":"ffeC7","./Switch":"9O81i","./FloatingLabel":"coYzo","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"idkr0":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _feedback = require("./Feedback");
-var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
-var _formCheckInput = require("./FormCheckInput");
-var _formCheckInputDefault = parcelHelpers.interopDefault(_formCheckInput);
-var _formCheckLabel = require("./FormCheckLabel");
-var _formCheckLabelDefault = parcelHelpers.interopDefault(_formCheckLabel);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _dropdown = require("@restart/ui/Dropdown");
+var _dropdownDefault = parcelHelpers.interopDefault(_dropdown);
+var _uncontrollable = require("uncontrollable");
+var _useEventCallback = require("@restart/hooks/useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _dropdownContext = require("./DropdownContext");
+var _dropdownContextDefault = parcelHelpers.interopDefault(_dropdownContext);
+var _dropdownItem = require("./DropdownItem");
+var _dropdownItemDefault = parcelHelpers.interopDefault(_dropdownItem);
+var _dropdownMenu = require("./DropdownMenu");
+var _dropdownMenuDefault = parcelHelpers.interopDefault(_dropdownMenu);
+var _dropdownToggle = require("./DropdownToggle");
+var _dropdownToggleDefault = parcelHelpers.interopDefault(_dropdownToggle);
+var _inputGroupContext = require("./InputGroupContext");
+var _inputGroupContextDefault = parcelHelpers.interopDefault(_inputGroupContext);
 var _themeProvider = require("./ThemeProvider");
-var _elementChildren = require("./ElementChildren");
+var _createWithBsPrefix = require("./createWithBsPrefix");
+var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
+var _types = require("./types");
 var _jsxRuntime = require("react/jsx-runtime");
-const FormCheck = /*#__PURE__*/ _react.forwardRef(({ id, bsPrefix, bsSwitchPrefix, inline = false, reverse = false, disabled = false, isValid = false, isInvalid = false, feedbackTooltip = false, feedback, feedbackType, className, style, title = "", type = "checkbox", label, children, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as = "input", ...props }, ref)=>{
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-check");
-    bsSwitchPrefix = (0, _themeProvider.useBootstrapPrefix)(bsSwitchPrefix, "form-switch");
-    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
-    const innerFormContext = (0, _react.useMemo)(()=>({
-            controlId: id || controlId
-        }), [
-        controlId,
-        id
-    ]);
-    const hasLabel = !children && label != null && label !== false || (0, _elementChildren.hasChildOfType)(children, (0, _formCheckLabelDefault.default));
-    const input = /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckInputDefault.default), {
-        ...props,
-        type: type === "switch" ? "checkbox" : type,
-        ref: ref,
-        isValid: isValid,
-        isInvalid: isInvalid,
-        disabled: disabled,
-        as: as
+const DropdownHeader = (0, _createWithBsPrefixDefault.default)("dropdown-header", {
+    defaultProps: {
+        role: "heading"
+    }
+});
+const DropdownDivider = (0, _createWithBsPrefixDefault.default)("dropdown-divider", {
+    Component: "hr",
+    defaultProps: {
+        role: "separator"
+    }
+});
+const DropdownItemText = (0, _createWithBsPrefixDefault.default)("dropdown-item-text", {
+    Component: "span"
+});
+const defaultProps = {
+    navbar: false,
+    align: "start",
+    autoClose: true
+};
+const Dropdown = /*#__PURE__*/ _react.forwardRef((pProps, ref)=>{
+    const { bsPrefix, drop, show, className, align, onSelect, onToggle, focusFirstItemOnShow, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    as: Component = "div", navbar: _4, autoClose, ...props } = (0, _uncontrollable.useUncontrolled)(pProps, {
+        show: "onToggle"
     });
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formContextDefault.default).Provider, {
-        value: innerFormContext,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-            style: style,
-            className: (0, _classnamesDefault.default)(className, hasLabel && bsPrefix, inline && `${bsPrefix}-inline`, reverse && `${bsPrefix}-reverse`, type === "switch" && bsSwitchPrefix),
-            children: children || /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _jsxRuntime.Fragment), {
-                children: [
-                    input,
-                    hasLabel && /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckLabelDefault.default), {
-                        title: title,
-                        children: label
-                    }),
-                    feedback && /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _feedbackDefault.default), {
-                        type: feedbackType,
-                        tooltip: feedbackTooltip,
-                        children: feedback
-                    })
-                ]
+    const isInputGroup = (0, _react.useContext)((0, _inputGroupContextDefault.default));
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "dropdown");
+    const isRTL = (0, _themeProvider.useIsRTL)();
+    const isClosingPermitted = (source)=>{
+        // autoClose=false only permits close on button click
+        if (autoClose === false) return source === "click"; // autoClose=inside doesn't permit close on rootClose
+        if (autoClose === "inside") return source !== "rootClose"; // autoClose=outside doesn't permit close on select
+        if (autoClose === "outside") return source !== "select";
+        return true;
+    };
+    const handleToggle = (0, _useEventCallbackDefault.default)((nextShow, meta)=>{
+        if (meta.originalEvent.currentTarget === document && (meta.source !== "keydown" || meta.originalEvent.key === "Escape")) meta.source = "rootClose";
+        if (isClosingPermitted(meta.source)) onToggle == null || onToggle(nextShow, meta);
+    });
+    const alignEnd = align === "end";
+    const placement = (0, _dropdownMenu.getDropdownMenuPlacement)(alignEnd, drop, isRTL);
+    const contextValue = (0, _react.useMemo)(()=>({
+            align,
+            drop,
+            isRTL
+        }), [
+        align,
+        drop,
+        isRTL
+    ]);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _dropdownContextDefault.default).Provider, {
+        value: contextValue,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _dropdownDefault.default), {
+            placement: placement,
+            show: show,
+            onSelect: onSelect,
+            onToggle: handleToggle,
+            focusFirstItemOnShow: focusFirstItemOnShow,
+            itemSelector: `.${prefix}-item:not(.disabled):not(:disabled)`,
+            children: isInputGroup ? props.children : /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+                ...props,
+                ref: ref,
+                className: (0, _classnamesDefault.default)(className, show && "show", (!drop || drop === "down") && prefix, drop === "up" && "dropup", drop === "end" && "dropend", drop === "start" && "dropstart")
             })
         })
     });
 });
-FormCheck.displayName = "FormCheck";
-exports.default = Object.assign(FormCheck, {
-    Input: (0, _formCheckInputDefault.default),
-    Label: (0, _formCheckLabelDefault.default)
+Dropdown.displayName = "Dropdown";
+Dropdown.defaultProps = defaultProps;
+exports.default = Object.assign(Dropdown, {
+    Toggle: (0, _dropdownToggleDefault.default),
+    Menu: (0, _dropdownMenuDefault.default),
+    Item: (0, _dropdownItemDefault.default),
+    ItemText: DropdownItemText,
+    Divider: DropdownDivider,
+    Header: DropdownHeader
 });
 
-},{"classnames":"jocGM","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","./ElementChildren":"fdyAp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aWeg2":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/Dropdown":"eizH2","uncontrollable":"b3yWY","@restart/hooks/useEventCallback":"7ONdq","./DropdownContext":"4Ufmn","./DropdownItem":"xQ9Cw","./DropdownMenu":"6UpAn","./DropdownToggle":"gCRNt","./InputGroupContext":"eWDkO","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","./types":"jwKaQ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eizH2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _querySelectorAll = require("dom-helpers/querySelectorAll");
+var _querySelectorAllDefault = parcelHelpers.interopDefault(_querySelectorAll);
+var _addEventListener = require("dom-helpers/addEventListener");
+var _addEventListenerDefault = parcelHelpers.interopDefault(_addEventListener);
 var _react = require("react");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _uncontrollable = require("uncontrollable");
+var _usePrevious = require("@restart/hooks/usePrevious");
+var _usePreviousDefault = parcelHelpers.interopDefault(_usePrevious);
+var _useForceUpdate = require("@restart/hooks/useForceUpdate");
+var _useForceUpdateDefault = parcelHelpers.interopDefault(_useForceUpdate);
+var _useEventListener = require("@restart/hooks/useEventListener");
+var _useEventListenerDefault = parcelHelpers.interopDefault(_useEventListener);
+var _useEventCallback = require("@restart/hooks/useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _dropdownContext = require("./DropdownContext");
+var _dropdownContextDefault = parcelHelpers.interopDefault(_dropdownContext);
+var _dropdownMenu = require("./DropdownMenu");
+var _dropdownMenuDefault = parcelHelpers.interopDefault(_dropdownMenu);
+var _dropdownToggle = require("./DropdownToggle");
+var _dropdownToggleDefault = parcelHelpers.interopDefault(_dropdownToggle);
+var _dropdownItem = require("./DropdownItem");
+var _dropdownItemDefault = parcelHelpers.interopDefault(_dropdownItem);
+var _selectableContext = require("./SelectableContext");
+var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
+var _dataKey = require("./DataKey");
+var _useWindow = require("./useWindow");
+var _useWindowDefault = parcelHelpers.interopDefault(_useWindow);
 var _jsxRuntime = require("react/jsx-runtime");
-const propTypes = {
+function useRefWithUpdate() {
+    const forceUpdate = (0, _useForceUpdateDefault.default)();
+    const ref = (0, _react.useRef)(null);
+    const attachRef = (0, _react.useCallback)((element)=>{
+        ref.current = element;
+        // ensure that a menu set triggers an update for consumers
+        forceUpdate();
+    }, [
+        forceUpdate
+    ]);
+    return [
+        ref,
+        attachRef
+    ];
+}
+/**
+ * @displayName Dropdown
+ * @public
+ */ function Dropdown({ defaultShow, show: rawShow, onSelect, onToggle: rawOnToggle, itemSelector = `* [${(0, _dataKey.dataAttr)("dropdown-item")}]`, focusFirstItemOnShow, placement = "bottom-start", children }) {
+    const window = (0, _useWindowDefault.default)();
+    const [show, onToggle] = (0, _uncontrollable.useUncontrolledProp)(rawShow, defaultShow, rawOnToggle);
+    // We use normal refs instead of useCallbackRef in order to populate the
+    // the value as quickly as possible, otherwise the effect to focus the element
+    // may run before the state value is set
+    const [menuRef, setMenu] = useRefWithUpdate();
+    const menuElement = menuRef.current;
+    const [toggleRef, setToggle] = useRefWithUpdate();
+    const toggleElement = toggleRef.current;
+    const lastShow = (0, _usePreviousDefault.default)(show);
+    const lastSourceEvent = (0, _react.useRef)(null);
+    const focusInDropdown = (0, _react.useRef)(false);
+    const onSelectCtx = (0, _react.useContext)((0, _selectableContextDefault.default));
+    const toggle = (0, _react.useCallback)((nextShow, event, source = event == null ? void 0 : event.type)=>{
+        onToggle(nextShow, {
+            originalEvent: event,
+            source
+        });
+    }, [
+        onToggle
+    ]);
+    const handleSelect = (0, _useEventCallbackDefault.default)((key, event)=>{
+        onSelect == null || onSelect(key, event);
+        toggle(false, event, "select");
+        if (!event.isPropagationStopped()) onSelectCtx == null || onSelectCtx(key, event);
+    });
+    const context = (0, _react.useMemo)(()=>({
+            toggle,
+            placement,
+            show,
+            menuElement,
+            toggleElement,
+            setMenu,
+            setToggle
+        }), [
+        toggle,
+        placement,
+        show,
+        menuElement,
+        toggleElement,
+        setMenu,
+        setToggle
+    ]);
+    if (menuElement && lastShow && !show) focusInDropdown.current = menuElement.contains(menuElement.ownerDocument.activeElement);
+    const focusToggle = (0, _useEventCallbackDefault.default)(()=>{
+        if (toggleElement && toggleElement.focus) toggleElement.focus();
+    });
+    const maybeFocusFirst = (0, _useEventCallbackDefault.default)(()=>{
+        const type = lastSourceEvent.current;
+        let focusType = focusFirstItemOnShow;
+        if (focusType == null) focusType = menuRef.current && (0, _dropdownToggle.isRoleMenu)(menuRef.current) ? "keyboard" : false;
+        if (focusType === false || focusType === "keyboard" && !/^key.+$/.test(type)) return;
+        const first = (0, _querySelectorAllDefault.default)(menuRef.current, itemSelector)[0];
+        if (first && first.focus) first.focus();
+    });
+    (0, _react.useEffect)(()=>{
+        if (show) maybeFocusFirst();
+        else if (focusInDropdown.current) {
+            focusInDropdown.current = false;
+            focusToggle();
+        }
+    // only `show` should be changing
+    }, [
+        show,
+        focusInDropdown,
+        focusToggle,
+        maybeFocusFirst
+    ]);
+    (0, _react.useEffect)(()=>{
+        lastSourceEvent.current = null;
+    });
+    const getNextFocusedChild = (current, offset)=>{
+        if (!menuRef.current) return null;
+        const items = (0, _querySelectorAllDefault.default)(menuRef.current, itemSelector);
+        let index = items.indexOf(current) + offset;
+        index = Math.max(0, Math.min(index, items.length));
+        return items[index];
+    };
+    (0, _useEventListenerDefault.default)((0, _react.useCallback)(()=>window.document, [
+        window
+    ]), "keydown", (event)=>{
+        var _menuRef$current, _toggleRef$current;
+        const { key } = event;
+        const target = event.target;
+        const fromMenu = (_menuRef$current = menuRef.current) == null ? void 0 : _menuRef$current.contains(target);
+        const fromToggle = (_toggleRef$current = toggleRef.current) == null ? void 0 : _toggleRef$current.contains(target);
+        // Second only to https://github.com/twbs/bootstrap/blob/8cfbf6933b8a0146ac3fbc369f19e520bd1ebdac/js/src/dropdown.js#L400
+        // in inscrutability
+        const isInput = /input|textarea/i.test(target.tagName);
+        if (isInput && (key === " " || key !== "Escape" && fromMenu || key === "Escape" && target.type === "search")) return;
+        if (!fromMenu && !fromToggle) return;
+        if (key === "Tab" && (!menuRef.current || !show)) return;
+        lastSourceEvent.current = event.type;
+        const meta = {
+            originalEvent: event,
+            source: event.type
+        };
+        switch(key){
+            case "ArrowUp":
+                {
+                    const next = getNextFocusedChild(target, -1);
+                    if (next && next.focus) next.focus();
+                    event.preventDefault();
+                    return;
+                }
+            case "ArrowDown":
+                event.preventDefault();
+                if (!show) onToggle(true, meta);
+                else {
+                    const next = getNextFocusedChild(target, 1);
+                    if (next && next.focus) next.focus();
+                }
+                return;
+            case "Tab":
+                // on keydown the target is the element being tabbed FROM, we need that
+                // to know if this event is relevant to this dropdown (e.g. in this menu).
+                // On `keyup` the target is the element being tagged TO which we use to check
+                // if focus has left the menu
+                (0, _addEventListenerDefault.default)(target.ownerDocument, "keyup", (e)=>{
+                    var _menuRef$current2;
+                    if (e.key === "Tab" && !e.target || !((_menuRef$current2 = menuRef.current) != null && _menuRef$current2.contains(e.target))) onToggle(false, meta);
+                }, {
+                    once: true
+                });
+                break;
+            case "Escape":
+                if (key === "Escape") {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                onToggle(false, meta);
+                break;
+            default:
+        }
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _selectableContextDefault.default).Provider, {
+        value: handleSelect,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _dropdownContextDefault.default).Provider, {
+            value: context,
+            children: children
+        })
+    });
+}
+Dropdown.displayName = "Dropdown";
+Dropdown.Menu = (0, _dropdownMenuDefault.default);
+Dropdown.Toggle = (0, _dropdownToggleDefault.default);
+Dropdown.Item = (0, _dropdownItemDefault.default);
+exports.default = Dropdown;
+
+},{"dom-helpers/querySelectorAll":"g5Sx6","dom-helpers/addEventListener":"c5x2p","react":"21dqq","uncontrollable":"hZZ1I","@restart/hooks/usePrevious":"gDCGm","@restart/hooks/useForceUpdate":"3Y4bz","@restart/hooks/useEventListener":"dBDI3","@restart/hooks/useEventCallback":"7ONdq","./DropdownContext":"dX4vI","./DropdownMenu":"6fCTW","./DropdownToggle":"8iWIY","./DropdownItem":"hDAPz","./SelectableContext":"8zLqy","./DataKey":"9vwZh","./useWindow":"4AsJ2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g5Sx6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>qsa);
+var toArray = Function.prototype.bind.call(Function.prototype.call, [].slice);
+function qsa(element, selector) {
+    return toArray(element.querySelectorAll(selector));
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hZZ1I":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "defaultKey", ()=>defaultKey);
+parcelHelpers.export(exports, "useUncontrolledProp", ()=>useUncontrolledProp);
+parcelHelpers.export(exports, "useUncontrolled", ()=>useUncontrolled);
+var _react = require("react");
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+function _toPropertyKey(arg) {
+    var key = _toPrimitive(arg, "string");
+    return typeof key === "symbol" ? key : String(key);
+}
+function _toPrimitive(input, hint) {
+    if (typeof input !== "object" || input === null) return input;
+    var prim = input[Symbol.toPrimitive];
+    if (prim !== undefined) {
+        var res = prim.call(input, hint || "default");
+        if (typeof res !== "object") return res;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return (hint === "string" ? String : Number)(input);
+}
+function defaultKey(key) {
+    return "default" + key.charAt(0).toUpperCase() + key.substr(1);
+}
+function useUncontrolledProp(propValue, defaultValue, handler) {
+    const wasPropRef = (0, _react.useRef)(propValue !== undefined);
+    const [stateValue, setState] = (0, _react.useState)(defaultValue);
+    const isProp = propValue !== undefined;
+    const wasProp = wasPropRef.current;
+    wasPropRef.current = isProp;
     /**
-   * Specify whether the feedback is for valid or invalid fields
-   *
-   * @type {('valid'|'invalid')}
-   */ type: (0, _propTypesDefault.default).string,
-    /** Display feedback as a tooltip. */ tooltip: (0, _propTypesDefault.default).bool,
-    as: (0, _propTypesDefault.default).elementType
-};
-const Feedback = /*#__PURE__*/ _react.forwardRef(({ as: Component = "div", className, type = "valid", tooltip = false, ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...props,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, `${type}-${tooltip ? "tooltip" : "feedback"}`)
+   * If a prop switches from controlled to Uncontrolled
+   * reset its value to the defaultValue
+   */ if (!isProp && wasProp && stateValue !== defaultValue) setState(defaultValue);
+    return [
+        isProp ? propValue : stateValue,
+        (0, _react.useCallback)((...args)=>{
+            const [value, ...rest] = args;
+            let returnValue = handler == null ? void 0 : handler(value, ...rest);
+            setState(value);
+            return returnValue;
+        }, [
+            handler
+        ])
+    ];
+}
+function useUncontrolled(props, config) {
+    return Object.keys(config).reduce((result, fieldName)=>{
+        const _ref = result, _defaultKey = defaultKey(fieldName), { [_defaultKey]: defaultValue, [fieldName]: propsValue } = _ref, rest = _objectWithoutPropertiesLoose(_ref, [
+            _defaultKey,
+            fieldName
+        ].map(_toPropertyKey));
+        const handlerName = config[fieldName];
+        const [value, handler] = useUncontrolledProp(propsValue, defaultValue, props[handlerName]);
+        return Object.assign({}, rest, {
+            [fieldName]: value,
+            [handlerName]: handler
+        });
+    }, props);
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gDCGm":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>usePrevious);
+var _react = require("react");
+function usePrevious(value) {
+    const ref = (0, _react.useRef)(null);
+    (0, _react.useEffect)(()=>{
+        ref.current = value;
+    });
+    return ref.current;
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3Y4bz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>useForceUpdate);
+var _react = require("react");
+function useForceUpdate() {
+    // The toggling state value is designed to defeat React optimizations for skipping
+    // updates when they are strictly equal to the last state value
+    const [, dispatch] = (0, _react.useReducer)((state)=>!state, false);
+    return dispatch;
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dBDI3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>useEventListener);
+var _react = require("react");
+var _useEventCallback = require("./useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+function useEventListener(eventTarget, event, listener, capture = false) {
+    const handler = (0, _useEventCallbackDefault.default)(listener);
+    (0, _react.useEffect)(()=>{
+        const target = typeof eventTarget === "function" ? eventTarget() : eventTarget;
+        target.addEventListener(event, handler, capture);
+        return ()=>target.removeEventListener(event, handler, capture);
+    }, [
+        eventTarget
+    ]);
+}
+
+},{"react":"21dqq","./useEventCallback":"7ONdq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7ONdq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>useEventCallback);
+var _react = require("react");
+var _useCommittedRef = require("./useCommittedRef");
+var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
+function useEventCallback(fn) {
+    const ref = (0, _useCommittedRefDefault.default)(fn);
+    return (0, _react.useCallback)(function(...args) {
+        return ref.current && ref.current(...args);
+    }, [
+        ref
+    ]);
+}
+
+},{"react":"21dqq","./useCommittedRef":"g5BYG","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g5BYG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+/**
+ * Creates a `Ref` whose value is updated in an effect, ensuring the most recent
+ * value is the one rendered with. Generally only required for Concurrent mode usage
+ * where previous work in `render()` may be discarded before being used.
+ *
+ * This is safe to access in an event handler.
+ *
+ * @param value The `Ref` value
+ */ function useCommittedRef(value) {
+    const ref = (0, _react.useRef)(value);
+    (0, _react.useEffect)(()=>{
+        ref.current = value;
+    }, [
+        value
+    ]);
+    return ref;
+}
+exports.default = useCommittedRef;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dX4vI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const DropdownContext = /*#__PURE__*/ _react.createContext(null);
+exports.default = DropdownContext;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6fCTW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+ * @memberOf Dropdown
+ * @param {object}  options
+ * @param {boolean} options.flip Automatically adjust the menu `drop` position based on viewport edge detection
+ * @param {[number, number]} options.offset Define an offset distance between the Menu and the Toggle
+ * @param {boolean} options.show Display the menu manually, ignored in the context of a `Dropdown`
+ * @param {boolean} options.usePopper opt in/out of using PopperJS to position menus. When disabled you must position it yourself.
+ * @param {string}  options.rootCloseEvent The pointer event to listen for when determining "clicks outside" the menu for triggering a close.
+ * @param {object}  options.popperConfig Options passed to the [`usePopper`](/api/usePopper) hook.
+ */ parcelHelpers.export(exports, "useDropdownMenu", ()=>useDropdownMenu);
+var _react = require("react");
+var _useCallbackRef = require("@restart/hooks/useCallbackRef");
+var _useCallbackRefDefault = parcelHelpers.interopDefault(_useCallbackRef);
+var _dropdownContext = require("./DropdownContext");
+var _dropdownContextDefault = parcelHelpers.interopDefault(_dropdownContext);
+var _usePopper = require("./usePopper");
+var _usePopperDefault = parcelHelpers.interopDefault(_usePopper);
+var _useClickOutside = require("./useClickOutside");
+var _useClickOutsideDefault = parcelHelpers.interopDefault(_useClickOutside);
+var _mergeOptionsWithPopperConfig = require("./mergeOptionsWithPopperConfig");
+var _mergeOptionsWithPopperConfigDefault = parcelHelpers.interopDefault(_mergeOptionsWithPopperConfig);
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "children"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+const noop = ()=>{};
+function useDropdownMenu(options = {}) {
+    const context = (0, _react.useContext)((0, _dropdownContextDefault.default));
+    const [arrowElement, attachArrowRef] = (0, _useCallbackRefDefault.default)();
+    const hasShownRef = (0, _react.useRef)(false);
+    const { flip, offset, rootCloseEvent, fixed = false, placement: placementOverride, popperConfig = {}, enableEventListeners = true, usePopper: shouldUsePopper = !!context } = options;
+    const show = (context == null ? void 0 : context.show) == null ? !!options.show : context.show;
+    if (show && !hasShownRef.current) hasShownRef.current = true;
+    const handleClose = (e)=>{
+        context == null || context.toggle(false, e);
+    };
+    const { placement, setMenu, menuElement, toggleElement } = context || {};
+    const popper = (0, _usePopperDefault.default)(toggleElement, menuElement, (0, _mergeOptionsWithPopperConfigDefault.default)({
+        placement: placementOverride || placement || "bottom-start",
+        enabled: shouldUsePopper,
+        enableEvents: enableEventListeners == null ? show : enableEventListeners,
+        offset,
+        flip,
+        fixed,
+        arrowElement,
+        popperConfig
     }));
-Feedback.displayName = "Feedback";
-Feedback.propTypes = propTypes;
-exports.default = Feedback;
+    const menuProps = Object.assign({
+        ref: setMenu || noop,
+        "aria-labelledby": toggleElement == null ? void 0 : toggleElement.id
+    }, popper.attributes.popper, {
+        style: popper.styles.popper
+    });
+    const metadata = {
+        show,
+        placement,
+        hasShown: hasShownRef.current,
+        toggle: context == null ? void 0 : context.toggle,
+        popper: shouldUsePopper ? popper : null,
+        arrowProps: shouldUsePopper ? Object.assign({
+            ref: attachArrowRef
+        }, popper.attributes.arrow, {
+            style: popper.styles.arrow
+        }) : {}
+    };
+    (0, _useClickOutsideDefault.default)(menuElement, handleClose, {
+        clickTrigger: rootCloseEvent,
+        disabled: !show
+    });
+    return [
+        menuProps,
+        metadata
+    ];
+}
+const defaultProps = {
+    usePopper: true
+};
+/**
+ * Also exported as `<Dropdown.Menu>` from `Dropdown`.
+ *
+ * @displayName DropdownMenu
+ * @memberOf Dropdown
+ */ function DropdownMenu(_ref) {
+    let { children } = _ref, options = _objectWithoutPropertiesLoose(_ref, _excluded);
+    const [props, meta] = useDropdownMenu(options);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _jsxRuntime.Fragment), {
+        children: children(props, meta)
+    });
+}
+DropdownMenu.displayName = "DropdownMenu";
+DropdownMenu.defaultProps = defaultProps;
+/** @component */ exports.default = DropdownMenu;
 
-},{"classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dPzD9":[function(require,module,exports) {
+},{"react":"21dqq","@restart/hooks/useCallbackRef":"82p6M","./DropdownContext":"dX4vI","./usePopper":"7aqz6","./useClickOutside":"ed4Oi","./mergeOptionsWithPopperConfig":"8jWN8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"82p6M":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+parcelHelpers.export(exports, "default", ()=>useCallbackRef);
 var _react = require("react");
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const FormCheckInput = /*#__PURE__*/ _react.forwardRef(({ id, bsPrefix, className, type = "checkbox", isValid = false, isInvalid = false, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "input", ...props }, ref)=>{
-    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-check-input");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...props,
-        ref: ref,
-        type: type,
-        id: id || controlId,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid")
-    });
+function useCallbackRef() {
+    return (0, _react.useState)(null);
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7aqz6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _dequal = require("dequal");
+var _useSafeState = require("@restart/hooks/useSafeState");
+var _useSafeStateDefault = parcelHelpers.interopDefault(_useSafeState);
+var _popper = require("./popper");
+const _excluded = [
+    "enabled",
+    "placement",
+    "strategy",
+    "modifiers"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+const disabledApplyStylesModifier = {
+    name: "applyStyles",
+    enabled: false,
+    phase: "afterWrite",
+    fn: ()=>undefined
+};
+// until docjs supports type exports...
+const ariaDescribedByModifier = {
+    name: "ariaDescribedBy",
+    enabled: true,
+    phase: "afterWrite",
+    effect: ({ state })=>()=>{
+            const { reference, popper } = state.elements;
+            if ("removeAttribute" in reference) {
+                const ids = (reference.getAttribute("aria-describedby") || "").split(",").filter((id)=>id.trim() !== popper.id);
+                if (!ids.length) reference.removeAttribute("aria-describedby");
+                else reference.setAttribute("aria-describedby", ids.join(","));
+            }
+        },
+    fn: ({ state })=>{
+        var _popper$getAttribute;
+        const { popper, reference } = state.elements;
+        const role = (_popper$getAttribute = popper.getAttribute("role")) == null ? void 0 : _popper$getAttribute.toLowerCase();
+        if (popper.id && role === "tooltip" && "setAttribute" in reference) {
+            const ids = reference.getAttribute("aria-describedby");
+            if (ids && ids.split(",").indexOf(popper.id) !== -1) return;
+            reference.setAttribute("aria-describedby", ids ? `${ids},${popper.id}` : popper.id);
+        }
+    }
+};
+const EMPTY_MODIFIERS = [];
+/**
+ * Position an element relative some reference element using Popper.js
+ *
+ * @param referenceElement
+ * @param popperElement
+ * @param {object}      options
+ * @param {object=}     options.modifiers Popper.js modifiers
+ * @param {boolean=}    options.enabled toggle the popper functionality on/off
+ * @param {string=}     options.placement The popper element placement relative to the reference element
+ * @param {string=}     options.strategy the positioning strategy
+ * @param {function=}   options.onCreate called when the popper is created
+ * @param {function=}   options.onUpdate called when the popper is updated
+ *
+ * @returns {UsePopperState} The popper state
+ */ function usePopper(referenceElement, popperElement, _ref = {}) {
+    let { enabled = true, placement = "bottom", strategy = "absolute", modifiers = EMPTY_MODIFIERS } = _ref, config = _objectWithoutPropertiesLoose(_ref, _excluded);
+    const prevModifiers = (0, _react.useRef)(modifiers);
+    const popperInstanceRef = (0, _react.useRef)();
+    const update = (0, _react.useCallback)(()=>{
+        var _popperInstanceRef$cu;
+        (_popperInstanceRef$cu = popperInstanceRef.current) == null || _popperInstanceRef$cu.update();
+    }, []);
+    const forceUpdate = (0, _react.useCallback)(()=>{
+        var _popperInstanceRef$cu2;
+        (_popperInstanceRef$cu2 = popperInstanceRef.current) == null || _popperInstanceRef$cu2.forceUpdate();
+    }, []);
+    const [popperState, setState] = (0, _useSafeStateDefault.default)((0, _react.useState)({
+        placement,
+        update,
+        forceUpdate,
+        attributes: {},
+        styles: {
+            popper: {},
+            arrow: {}
+        }
+    }));
+    const updateModifier = (0, _react.useMemo)(()=>({
+            name: "updateStateModifier",
+            enabled: true,
+            phase: "write",
+            requires: [
+                "computeStyles"
+            ],
+            fn: ({ state })=>{
+                const styles = {};
+                const attributes = {};
+                Object.keys(state.elements).forEach((element)=>{
+                    styles[element] = state.styles[element];
+                    attributes[element] = state.attributes[element];
+                });
+                setState({
+                    state,
+                    styles,
+                    attributes,
+                    update,
+                    forceUpdate,
+                    placement: state.placement
+                });
+            }
+        }), [
+        update,
+        forceUpdate,
+        setState
+    ]);
+    const nextModifiers = (0, _react.useMemo)(()=>{
+        if (!(0, _dequal.dequal)(prevModifiers.current, modifiers)) prevModifiers.current = modifiers;
+        return prevModifiers.current;
+    }, [
+        modifiers
+    ]);
+    (0, _react.useEffect)(()=>{
+        if (!popperInstanceRef.current || !enabled) return;
+        popperInstanceRef.current.setOptions({
+            placement,
+            strategy,
+            modifiers: [
+                ...nextModifiers,
+                updateModifier,
+                disabledApplyStylesModifier
+            ]
+        });
+    }, [
+        strategy,
+        placement,
+        updateModifier,
+        enabled,
+        nextModifiers
+    ]);
+    (0, _react.useEffect)(()=>{
+        if (!enabled || referenceElement == null || popperElement == null) return undefined;
+        popperInstanceRef.current = (0, _popper.createPopper)(referenceElement, popperElement, Object.assign({}, config, {
+            placement,
+            strategy,
+            modifiers: [
+                ...nextModifiers,
+                ariaDescribedByModifier,
+                updateModifier
+            ]
+        }));
+        return ()=>{
+            if (popperInstanceRef.current != null) {
+                popperInstanceRef.current.destroy();
+                popperInstanceRef.current = undefined;
+                setState((s)=>Object.assign({}, s, {
+                        attributes: {},
+                        styles: {
+                            popper: {}
+                        }
+                    }));
+            }
+        };
+    // This is only run once to _create_ the popper
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        enabled,
+        referenceElement,
+        popperElement
+    ]);
+    return popperState;
+}
+exports.default = usePopper;
+
+},{"react":"21dqq","dequal":"ceyyc","@restart/hooks/useSafeState":"OEC1E","./popper":"fMLGS","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ceyyc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "dequal", ()=>dequal);
+var has = Object.prototype.hasOwnProperty;
+function find(iter, tar, key) {
+    for (key of iter.keys()){
+        if (dequal(key, tar)) return key;
+    }
+}
+function dequal(foo, bar) {
+    var ctor, len, tmp;
+    if (foo === bar) return true;
+    if (foo && bar && (ctor = foo.constructor) === bar.constructor) {
+        if (ctor === Date) return foo.getTime() === bar.getTime();
+        if (ctor === RegExp) return foo.toString() === bar.toString();
+        if (ctor === Array) {
+            if ((len = foo.length) === bar.length) {
+                while(len-- && dequal(foo[len], bar[len]));
+            }
+            return len === -1;
+        }
+        if (ctor === Set) {
+            if (foo.size !== bar.size) return false;
+            for (len of foo){
+                tmp = len;
+                if (tmp && typeof tmp === "object") {
+                    tmp = find(bar, tmp);
+                    if (!tmp) return false;
+                }
+                if (!bar.has(tmp)) return false;
+            }
+            return true;
+        }
+        if (ctor === Map) {
+            if (foo.size !== bar.size) return false;
+            for (len of foo){
+                tmp = len[0];
+                if (tmp && typeof tmp === "object") {
+                    tmp = find(bar, tmp);
+                    if (!tmp) return false;
+                }
+                if (!dequal(len[1], bar.get(tmp))) return false;
+            }
+            return true;
+        }
+        if (ctor === ArrayBuffer) {
+            foo = new Uint8Array(foo);
+            bar = new Uint8Array(bar);
+        } else if (ctor === DataView) {
+            if ((len = foo.byteLength) === bar.byteLength) {
+                while(len-- && foo.getInt8(len) === bar.getInt8(len));
+            }
+            return len === -1;
+        }
+        if (ArrayBuffer.isView(foo)) {
+            if ((len = foo.byteLength) === bar.byteLength) {
+                while(len-- && foo[len] === bar[len]);
+            }
+            return len === -1;
+        }
+        if (!ctor || typeof foo === "object") {
+            len = 0;
+            for(ctor in foo){
+                if (has.call(foo, ctor) && ++len && !has.call(bar, ctor)) return false;
+                if (!(ctor in bar) || !dequal(foo[ctor], bar[ctor])) return false;
+            }
+            return Object.keys(bar).length === len;
+        }
+    }
+    return foo !== foo && bar !== bar;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"OEC1E":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useMounted = require("./useMounted");
+var _useMountedDefault = parcelHelpers.interopDefault(_useMounted);
+/**
+ * `useSafeState` takes the return value of a `useState` hook and wraps the
+ * setter to prevent updates onces the component has unmounted. Can used
+ * with `useMergeState` and `useStateAsync` as well
+ *
+ * @param state The return value of a useStateHook
+ *
+ * ```ts
+ * const [show, setShow] = useSafeState(useState(true));
+ * ```
+ */ function useSafeState(state) {
+    const isMounted = (0, _useMountedDefault.default)();
+    return [
+        state[0],
+        (0, _react.useCallback)((nextState)=>{
+            if (!isMounted()) return;
+            return state[1](nextState);
+        }, [
+            isMounted,
+            state[1]
+        ])
+    ];
+}
+exports.default = useSafeState;
+
+},{"react":"21dqq","./useMounted":"iK6A1","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iK6A1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>useMounted);
+var _react = require("react");
+function useMounted() {
+    const mounted = (0, _react.useRef)(true);
+    const isMounted = (0, _react.useRef)(()=>mounted.current);
+    (0, _react.useEffect)(()=>{
+        mounted.current = true;
+        return ()=>{
+            mounted.current = false;
+        };
+    }, []);
+    return isMounted.current;
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fMLGS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createPopper", ()=>createPopper);
+parcelHelpers.export(exports, "placements", ()=>(0, _enums.placements));
+var _arrow = require("@popperjs/core/lib/modifiers/arrow");
+var _arrowDefault = parcelHelpers.interopDefault(_arrow);
+var _computeStyles = require("@popperjs/core/lib/modifiers/computeStyles");
+var _computeStylesDefault = parcelHelpers.interopDefault(_computeStyles);
+var _eventListeners = require("@popperjs/core/lib/modifiers/eventListeners");
+var _eventListenersDefault = parcelHelpers.interopDefault(_eventListeners);
+var _flip = require("@popperjs/core/lib/modifiers/flip");
+var _flipDefault = parcelHelpers.interopDefault(_flip);
+var _hide = require("@popperjs/core/lib/modifiers/hide");
+var _hideDefault = parcelHelpers.interopDefault(_hide);
+var _offset = require("@popperjs/core/lib/modifiers/offset");
+var _offsetDefault = parcelHelpers.interopDefault(_offset);
+var _popperOffsets = require("@popperjs/core/lib/modifiers/popperOffsets");
+var _popperOffsetsDefault = parcelHelpers.interopDefault(_popperOffsets);
+var _preventOverflow = require("@popperjs/core/lib/modifiers/preventOverflow");
+var _preventOverflowDefault = parcelHelpers.interopDefault(_preventOverflow);
+var _enums = require("@popperjs/core/lib/enums");
+var _popperBase = require("@popperjs/core/lib/popper-base");
+const createPopper = (0, _popperBase.popperGenerator)({
+    defaultModifiers: [
+        (0, _hideDefault.default),
+        (0, _popperOffsetsDefault.default),
+        (0, _computeStylesDefault.default),
+        (0, _eventListenersDefault.default),
+        (0, _offsetDefault.default),
+        (0, _flipDefault.default),
+        (0, _preventOverflowDefault.default),
+        (0, _arrowDefault.default)
+    ]
 });
-FormCheckInput.displayName = "FormCheckInput";
-exports.default = FormCheckInput;
 
-},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gjvSt":[function(require,module,exports) {
+},{"@popperjs/core/lib/modifiers/arrow":"31HFW","@popperjs/core/lib/modifiers/computeStyles":"gDlm2","@popperjs/core/lib/modifiers/eventListeners":"hBKsL","@popperjs/core/lib/modifiers/flip":"fv5wq","@popperjs/core/lib/modifiers/hide":"2g4OF","@popperjs/core/lib/modifiers/offset":"3GKVY","@popperjs/core/lib/modifiers/popperOffsets":"6I679","@popperjs/core/lib/modifiers/preventOverflow":"1AMhb","@popperjs/core/lib/enums":false,"@popperjs/core/lib/popper-base":"9X7Du","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"31HFW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _react = require("react"); // TODO
-const FormContext = /*#__PURE__*/ _react.createContext({});
-exports.default = FormContext;
+var _getBasePlacementJs = require("../utils/getBasePlacement.js");
+var _getBasePlacementJsDefault = parcelHelpers.interopDefault(_getBasePlacementJs);
+var _getLayoutRectJs = require("../dom-utils/getLayoutRect.js");
+var _getLayoutRectJsDefault = parcelHelpers.interopDefault(_getLayoutRectJs);
+var _containsJs = require("../dom-utils/contains.js");
+var _containsJsDefault = parcelHelpers.interopDefault(_containsJs);
+var _getOffsetParentJs = require("../dom-utils/getOffsetParent.js");
+var _getOffsetParentJsDefault = parcelHelpers.interopDefault(_getOffsetParentJs);
+var _getMainAxisFromPlacementJs = require("../utils/getMainAxisFromPlacement.js");
+var _getMainAxisFromPlacementJsDefault = parcelHelpers.interopDefault(_getMainAxisFromPlacementJs);
+var _withinJs = require("../utils/within.js");
+var _mergePaddingObjectJs = require("../utils/mergePaddingObject.js");
+var _mergePaddingObjectJsDefault = parcelHelpers.interopDefault(_mergePaddingObjectJs);
+var _expandToHashMapJs = require("../utils/expandToHashMap.js");
+var _expandToHashMapJsDefault = parcelHelpers.interopDefault(_expandToHashMapJs);
+var _enumsJs = require("../enums.js"); // eslint-disable-next-line import/no-unused-modules
+var toPaddingObject = function toPaddingObject(padding, state) {
+    padding = typeof padding === "function" ? padding(Object.assign({}, state.rects, {
+        placement: state.placement
+    })) : padding;
+    return (0, _mergePaddingObjectJsDefault.default)(typeof padding !== "number" ? padding : (0, _expandToHashMapJsDefault.default)(padding, (0, _enumsJs.basePlacements)));
+};
+function arrow(_ref) {
+    var _state$modifiersData$;
+    var state = _ref.state, name = _ref.name, options = _ref.options;
+    var arrowElement = state.elements.arrow;
+    var popperOffsets = state.modifiersData.popperOffsets;
+    var basePlacement = (0, _getBasePlacementJsDefault.default)(state.placement);
+    var axis = (0, _getMainAxisFromPlacementJsDefault.default)(basePlacement);
+    var isVertical = [
+        (0, _enumsJs.left),
+        (0, _enumsJs.right)
+    ].indexOf(basePlacement) >= 0;
+    var len = isVertical ? "height" : "width";
+    if (!arrowElement || !popperOffsets) return;
+    var paddingObject = toPaddingObject(options.padding, state);
+    var arrowRect = (0, _getLayoutRectJsDefault.default)(arrowElement);
+    var minProp = axis === "y" ? (0, _enumsJs.top) : (0, _enumsJs.left);
+    var maxProp = axis === "y" ? (0, _enumsJs.bottom) : (0, _enumsJs.right);
+    var endDiff = state.rects.reference[len] + state.rects.reference[axis] - popperOffsets[axis] - state.rects.popper[len];
+    var startDiff = popperOffsets[axis] - state.rects.reference[axis];
+    var arrowOffsetParent = (0, _getOffsetParentJsDefault.default)(arrowElement);
+    var clientSize = arrowOffsetParent ? axis === "y" ? arrowOffsetParent.clientHeight || 0 : arrowOffsetParent.clientWidth || 0 : 0;
+    var centerToReference = endDiff / 2 - startDiff / 2; // Make sure the arrow doesn't overflow the popper if the center point is
+    // outside of the popper bounds
+    var min = paddingObject[minProp];
+    var max = clientSize - arrowRect[len] - paddingObject[maxProp];
+    var center = clientSize / 2 - arrowRect[len] / 2 + centerToReference;
+    var offset = (0, _withinJs.within)(min, center, max); // Prevents breaking syntax highlighting...
+    var axisProp = axis;
+    state.modifiersData[name] = (_state$modifiersData$ = {}, _state$modifiersData$[axisProp] = offset, _state$modifiersData$.centerOffset = offset - center, _state$modifiersData$);
+}
+function effect(_ref2) {
+    var state = _ref2.state, options = _ref2.options;
+    var _options$element = options.element, arrowElement = _options$element === void 0 ? "[data-popper-arrow]" : _options$element;
+    if (arrowElement == null) return;
+     // CSS selector
+    if (typeof arrowElement === "string") {
+        arrowElement = state.elements.popper.querySelector(arrowElement);
+        if (!arrowElement) return;
+    }
+    if (!(0, _containsJsDefault.default)(state.elements.popper, arrowElement)) return;
+    state.elements.arrow = arrowElement;
+} // eslint-disable-next-line import/no-unused-modules
+exports.default = {
+    name: "arrow",
+    enabled: true,
+    phase: "main",
+    fn: arrow,
+    effect: effect,
+    requires: [
+        "popperOffsets"
+    ],
+    requiresIfExists: [
+        "preventOverflow"
+    ]
+};
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fGhS2":[function(require,module,exports) {
+},{"../utils/getBasePlacement.js":"59Wp3","../dom-utils/getLayoutRect.js":"jvjuf","../dom-utils/contains.js":"4QxRR","../dom-utils/getOffsetParent.js":"laoYw","../utils/getMainAxisFromPlacement.js":"1Xlom","../utils/within.js":"3glSz","../utils/mergePaddingObject.js":"lEIf9","../utils/expandToHashMap.js":"iQlH5","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"59Wp3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const FormCheckLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, htmlFor, ...props }, ref)=>{
-    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-check-label");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("label", {
-        ...props,
-        ref: ref,
-        htmlFor: htmlFor || controlId,
-        className: (0, _classnamesDefault.default)(className, bsPrefix)
+parcelHelpers.export(exports, "default", ()=>getBasePlacement);
+var _enumsJs = require("../enums.js");
+function getBasePlacement(placement) {
+    return placement.split("-")[0];
+}
+
+},{"../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"lCAq5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "top", ()=>top);
+parcelHelpers.export(exports, "bottom", ()=>bottom);
+parcelHelpers.export(exports, "right", ()=>right);
+parcelHelpers.export(exports, "left", ()=>left);
+parcelHelpers.export(exports, "auto", ()=>auto);
+parcelHelpers.export(exports, "basePlacements", ()=>basePlacements);
+parcelHelpers.export(exports, "start", ()=>start);
+parcelHelpers.export(exports, "end", ()=>end);
+parcelHelpers.export(exports, "clippingParents", ()=>clippingParents);
+parcelHelpers.export(exports, "viewport", ()=>viewport);
+parcelHelpers.export(exports, "popper", ()=>popper);
+parcelHelpers.export(exports, "reference", ()=>reference);
+parcelHelpers.export(exports, "variationPlacements", ()=>variationPlacements);
+parcelHelpers.export(exports, "placements", ()=>placements);
+parcelHelpers.export(exports, "beforeRead", ()=>beforeRead);
+parcelHelpers.export(exports, "read", ()=>read);
+parcelHelpers.export(exports, "afterRead", ()=>afterRead);
+parcelHelpers.export(exports, "beforeMain", ()=>beforeMain);
+parcelHelpers.export(exports, "main", ()=>main);
+parcelHelpers.export(exports, "afterMain", ()=>afterMain);
+parcelHelpers.export(exports, "beforeWrite", ()=>beforeWrite);
+parcelHelpers.export(exports, "write", ()=>write);
+parcelHelpers.export(exports, "afterWrite", ()=>afterWrite);
+parcelHelpers.export(exports, "modifierPhases", ()=>modifierPhases);
+var top = "top";
+var bottom = "bottom";
+var right = "right";
+var left = "left";
+var auto = "auto";
+var basePlacements = [
+    top,
+    bottom,
+    right,
+    left
+];
+var start = "start";
+var end = "end";
+var clippingParents = "clippingParents";
+var viewport = "viewport";
+var popper = "popper";
+var reference = "reference";
+var variationPlacements = /*#__PURE__*/ basePlacements.reduce(function(acc, placement) {
+    return acc.concat([
+        placement + "-" + start,
+        placement + "-" + end
+    ]);
+}, []);
+var placements = /*#__PURE__*/ [].concat(basePlacements, [
+    auto
+]).reduce(function(acc, placement) {
+    return acc.concat([
+        placement,
+        placement + "-" + start,
+        placement + "-" + end
+    ]);
+}, []); // modifiers that need to read the DOM
+var beforeRead = "beforeRead";
+var read = "read";
+var afterRead = "afterRead"; // pure-logic modifiers
+var beforeMain = "beforeMain";
+var main = "main";
+var afterMain = "afterMain"; // modifier with the purpose to write to the DOM (or write into a framework state)
+var beforeWrite = "beforeWrite";
+var write = "write";
+var afterWrite = "afterWrite";
+var modifierPhases = [
+    beforeRead,
+    read,
+    afterRead,
+    beforeMain,
+    main,
+    afterMain,
+    beforeWrite,
+    write,
+    afterWrite
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jvjuf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getLayoutRect);
+var _getBoundingClientRectJs = require("./getBoundingClientRect.js"); // Returns the layout rect of an element relative to its offsetParent. Layout
+var _getBoundingClientRectJsDefault = parcelHelpers.interopDefault(_getBoundingClientRectJs);
+function getLayoutRect(element) {
+    var clientRect = (0, _getBoundingClientRectJsDefault.default)(element); // Use the clientRect sizes if it's not been transformed.
+    // Fixes https://github.com/popperjs/popper-core/issues/1223
+    var width = element.offsetWidth;
+    var height = element.offsetHeight;
+    if (Math.abs(clientRect.width - width) <= 1) width = clientRect.width;
+    if (Math.abs(clientRect.height - height) <= 1) height = clientRect.height;
+    return {
+        x: element.offsetLeft,
+        y: element.offsetTop,
+        width: width,
+        height: height
+    };
+}
+
+},{"./getBoundingClientRect.js":"9CFSQ","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9CFSQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getBoundingClientRect);
+var _instanceOfJs = require("./instanceOf.js");
+var _mathJs = require("../utils/math.js");
+var _getWindowJs = require("./getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+var _isLayoutViewportJs = require("./isLayoutViewport.js");
+var _isLayoutViewportJsDefault = parcelHelpers.interopDefault(_isLayoutViewportJs);
+function getBoundingClientRect(element, includeScale, isFixedStrategy) {
+    if (includeScale === void 0) includeScale = false;
+    if (isFixedStrategy === void 0) isFixedStrategy = false;
+    var clientRect = element.getBoundingClientRect();
+    var scaleX = 1;
+    var scaleY = 1;
+    if (includeScale && (0, _instanceOfJs.isHTMLElement)(element)) {
+        scaleX = element.offsetWidth > 0 ? (0, _mathJs.round)(clientRect.width) / element.offsetWidth || 1 : 1;
+        scaleY = element.offsetHeight > 0 ? (0, _mathJs.round)(clientRect.height) / element.offsetHeight || 1 : 1;
+    }
+    var _ref = (0, _instanceOfJs.isElement)(element) ? (0, _getWindowJsDefault.default)(element) : window, visualViewport = _ref.visualViewport;
+    var addVisualOffsets = !(0, _isLayoutViewportJsDefault.default)() && isFixedStrategy;
+    var x = (clientRect.left + (addVisualOffsets && visualViewport ? visualViewport.offsetLeft : 0)) / scaleX;
+    var y = (clientRect.top + (addVisualOffsets && visualViewport ? visualViewport.offsetTop : 0)) / scaleY;
+    var width = clientRect.width / scaleX;
+    var height = clientRect.height / scaleY;
+    return {
+        width: width,
+        height: height,
+        top: y,
+        right: x + width,
+        bottom: y + height,
+        left: x,
+        x: x,
+        y: y
+    };
+}
+
+},{"./instanceOf.js":"gYFUC","../utils/math.js":"gQqVe","./getWindow.js":"2SkOo","./isLayoutViewport.js":"3ipHv","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gYFUC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isElement", ()=>isElement);
+parcelHelpers.export(exports, "isHTMLElement", ()=>isHTMLElement);
+parcelHelpers.export(exports, "isShadowRoot", ()=>isShadowRoot);
+var _getWindowJs = require("./getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+function isElement(node) {
+    var OwnElement = (0, _getWindowJsDefault.default)(node).Element;
+    return node instanceof OwnElement || node instanceof Element;
+}
+function isHTMLElement(node) {
+    var OwnElement = (0, _getWindowJsDefault.default)(node).HTMLElement;
+    return node instanceof OwnElement || node instanceof HTMLElement;
+}
+function isShadowRoot(node) {
+    // IE 11 has no ShadowRoot
+    if (typeof ShadowRoot === "undefined") return false;
+    var OwnElement = (0, _getWindowJsDefault.default)(node).ShadowRoot;
+    return node instanceof OwnElement || node instanceof ShadowRoot;
+}
+
+},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2SkOo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getWindow);
+function getWindow(node) {
+    if (node == null) return window;
+    if (node.toString() !== "[object Window]") {
+        var ownerDocument = node.ownerDocument;
+        return ownerDocument ? ownerDocument.defaultView || window : window;
+    }
+    return node;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gQqVe":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "max", ()=>max);
+parcelHelpers.export(exports, "min", ()=>min);
+parcelHelpers.export(exports, "round", ()=>round);
+var max = Math.max;
+var min = Math.min;
+var round = Math.round;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3ipHv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>isLayoutViewport);
+var _userAgentJs = require("../utils/userAgent.js");
+var _userAgentJsDefault = parcelHelpers.interopDefault(_userAgentJs);
+function isLayoutViewport() {
+    return !/^((?!chrome|android).)*safari/i.test((0, _userAgentJsDefault.default)());
+}
+
+},{"../utils/userAgent.js":"1hEx0","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1hEx0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getUAString);
+function getUAString() {
+    var uaData = navigator.userAgentData;
+    if (uaData != null && uaData.brands && Array.isArray(uaData.brands)) return uaData.brands.map(function(item) {
+        return item.brand + "/" + item.version;
+    }).join(" ");
+    return navigator.userAgent;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"4QxRR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>contains);
+var _instanceOfJs = require("./instanceOf.js");
+function contains(parent, child) {
+    var rootNode = child.getRootNode && child.getRootNode(); // First, attempt with faster native method
+    if (parent.contains(child)) return true;
+    else if (rootNode && (0, _instanceOfJs.isShadowRoot)(rootNode)) {
+        var next = child;
+        do {
+            if (next && parent.isSameNode(next)) return true;
+             // $FlowFixMe[prop-missing]: need a better way to handle this...
+            next = next.parentNode || next.host;
+        }while (next);
+    } // Give up, the result is false
+    return false;
+}
+
+},{"./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"laoYw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getOffsetParent);
+var _getWindowJs = require("./getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+var _getNodeNameJs = require("./getNodeName.js");
+var _getNodeNameJsDefault = parcelHelpers.interopDefault(_getNodeNameJs);
+var _getComputedStyleJs = require("./getComputedStyle.js");
+var _getComputedStyleJsDefault = parcelHelpers.interopDefault(_getComputedStyleJs);
+var _instanceOfJs = require("./instanceOf.js");
+var _isTableElementJs = require("./isTableElement.js");
+var _isTableElementJsDefault = parcelHelpers.interopDefault(_isTableElementJs);
+var _getParentNodeJs = require("./getParentNode.js");
+var _getParentNodeJsDefault = parcelHelpers.interopDefault(_getParentNodeJs);
+var _userAgentJs = require("../utils/userAgent.js");
+var _userAgentJsDefault = parcelHelpers.interopDefault(_userAgentJs);
+function getTrueOffsetParent(element) {
+    if (!(0, _instanceOfJs.isHTMLElement)(element) || // https://github.com/popperjs/popper-core/issues/837
+    (0, _getComputedStyleJsDefault.default)(element).position === "fixed") return null;
+    return element.offsetParent;
+} // `.offsetParent` reports `null` for fixed elements, while absolute elements
+// return the containing block
+function getContainingBlock(element) {
+    var isFirefox = /firefox/i.test((0, _userAgentJsDefault.default)());
+    var isIE = /Trident/i.test((0, _userAgentJsDefault.default)());
+    if (isIE && (0, _instanceOfJs.isHTMLElement)(element)) {
+        // In IE 9, 10 and 11 fixed elements containing block is always established by the viewport
+        var elementCss = (0, _getComputedStyleJsDefault.default)(element);
+        if (elementCss.position === "fixed") return null;
+    }
+    var currentNode = (0, _getParentNodeJsDefault.default)(element);
+    if ((0, _instanceOfJs.isShadowRoot)(currentNode)) currentNode = currentNode.host;
+    while((0, _instanceOfJs.isHTMLElement)(currentNode) && [
+        "html",
+        "body"
+    ].indexOf((0, _getNodeNameJsDefault.default)(currentNode)) < 0){
+        var css = (0, _getComputedStyleJsDefault.default)(currentNode); // This is non-exhaustive but covers the most common CSS properties that
+        // create a containing block.
+        // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
+        if (css.transform !== "none" || css.perspective !== "none" || css.contain === "paint" || [
+            "transform",
+            "perspective"
+        ].indexOf(css.willChange) !== -1 || isFirefox && css.willChange === "filter" || isFirefox && css.filter && css.filter !== "none") return currentNode;
+        else currentNode = currentNode.parentNode;
+    }
+    return null;
+} // Gets the closest ancestor positioned element. Handles some edge cases,
+function getOffsetParent(element) {
+    var window = (0, _getWindowJsDefault.default)(element);
+    var offsetParent = getTrueOffsetParent(element);
+    while(offsetParent && (0, _isTableElementJsDefault.default)(offsetParent) && (0, _getComputedStyleJsDefault.default)(offsetParent).position === "static")offsetParent = getTrueOffsetParent(offsetParent);
+    if (offsetParent && ((0, _getNodeNameJsDefault.default)(offsetParent) === "html" || (0, _getNodeNameJsDefault.default)(offsetParent) === "body" && (0, _getComputedStyleJsDefault.default)(offsetParent).position === "static")) return window;
+    return offsetParent || getContainingBlock(element) || window;
+}
+
+},{"./getWindow.js":"2SkOo","./getNodeName.js":"a2Qom","./getComputedStyle.js":"3mZjB","./instanceOf.js":"gYFUC","./isTableElement.js":"2qBb7","./getParentNode.js":"bIHpd","../utils/userAgent.js":"1hEx0","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"a2Qom":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getNodeName);
+function getNodeName(element) {
+    return element ? (element.nodeName || "").toLowerCase() : null;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3mZjB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getComputedStyle);
+var _getWindowJs = require("./getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+function getComputedStyle(element) {
+    return (0, _getWindowJsDefault.default)(element).getComputedStyle(element);
+}
+
+},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2qBb7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>isTableElement);
+var _getNodeNameJs = require("./getNodeName.js");
+var _getNodeNameJsDefault = parcelHelpers.interopDefault(_getNodeNameJs);
+function isTableElement(element) {
+    return [
+        "table",
+        "td",
+        "th"
+    ].indexOf((0, _getNodeNameJsDefault.default)(element)) >= 0;
+}
+
+},{"./getNodeName.js":"a2Qom","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"bIHpd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getParentNode);
+var _getNodeNameJs = require("./getNodeName.js");
+var _getNodeNameJsDefault = parcelHelpers.interopDefault(_getNodeNameJs);
+var _getDocumentElementJs = require("./getDocumentElement.js");
+var _getDocumentElementJsDefault = parcelHelpers.interopDefault(_getDocumentElementJs);
+var _instanceOfJs = require("./instanceOf.js");
+function getParentNode(element) {
+    if ((0, _getNodeNameJsDefault.default)(element) === "html") return element;
+    return(// $FlowFixMe[incompatible-return]
+    // $FlowFixMe[prop-missing]
+    element.assignedSlot || // step into the shadow DOM of the parent of a slotted node
+    element.parentNode || ((0, _instanceOfJs.isShadowRoot)(element) ? element.host : null) || // ShadowRoot detected
+    // $FlowFixMe[incompatible-call]: HTMLElement is a Node
+    (0, _getDocumentElementJsDefault.default)(element) // fallback
+    );
+}
+
+},{"./getNodeName.js":"a2Qom","./getDocumentElement.js":"eJ9Y1","./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eJ9Y1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getDocumentElement);
+var _instanceOfJs = require("./instanceOf.js");
+function getDocumentElement(element) {
+    // $FlowFixMe[incompatible-return]: assume body is always available
+    return (((0, _instanceOfJs.isElement)(element) ? element.ownerDocument : element.document) || window.document).documentElement;
+}
+
+},{"./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1Xlom":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getMainAxisFromPlacement);
+function getMainAxisFromPlacement(placement) {
+    return [
+        "top",
+        "bottom"
+    ].indexOf(placement) >= 0 ? "x" : "y";
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3glSz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "within", ()=>within);
+parcelHelpers.export(exports, "withinMaxClamp", ()=>withinMaxClamp);
+var _mathJs = require("./math.js");
+function within(min, value, max) {
+    return (0, _mathJs.max)(min, (0, _mathJs.min)(value, max));
+}
+function withinMaxClamp(min, value, max) {
+    var v = within(min, value, max);
+    return v > max ? max : v;
+}
+
+},{"./math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"lEIf9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>mergePaddingObject);
+var _getFreshSideObjectJs = require("./getFreshSideObject.js");
+var _getFreshSideObjectJsDefault = parcelHelpers.interopDefault(_getFreshSideObjectJs);
+function mergePaddingObject(paddingObject) {
+    return Object.assign({}, (0, _getFreshSideObjectJsDefault.default)(), paddingObject);
+}
+
+},{"./getFreshSideObject.js":"g4xOt","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g4xOt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getFreshSideObject);
+function getFreshSideObject() {
+    return {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iQlH5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>expandToHashMap);
+function expandToHashMap(value, keys) {
+    return keys.reduce(function(hashMap, key) {
+        hashMap[key] = value;
+        return hashMap;
+    }, {});
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gDlm2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "mapToStyles", ()=>mapToStyles);
+var _enumsJs = require("../enums.js");
+var _getOffsetParentJs = require("../dom-utils/getOffsetParent.js");
+var _getOffsetParentJsDefault = parcelHelpers.interopDefault(_getOffsetParentJs);
+var _getWindowJs = require("../dom-utils/getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+var _getDocumentElementJs = require("../dom-utils/getDocumentElement.js");
+var _getDocumentElementJsDefault = parcelHelpers.interopDefault(_getDocumentElementJs);
+var _getComputedStyleJs = require("../dom-utils/getComputedStyle.js");
+var _getComputedStyleJsDefault = parcelHelpers.interopDefault(_getComputedStyleJs);
+var _getBasePlacementJs = require("../utils/getBasePlacement.js");
+var _getBasePlacementJsDefault = parcelHelpers.interopDefault(_getBasePlacementJs);
+var _getVariationJs = require("../utils/getVariation.js");
+var _getVariationJsDefault = parcelHelpers.interopDefault(_getVariationJs);
+var _mathJs = require("../utils/math.js"); // eslint-disable-next-line import/no-unused-modules
+var unsetSides = {
+    top: "auto",
+    right: "auto",
+    bottom: "auto",
+    left: "auto"
+}; // Round the offsets to the nearest suitable subpixel based on the DPR.
+// Zooming can change the DPR, but it seems to report a value that will
+// cleanly divide the values into the appropriate subpixels.
+function roundOffsetsByDPR(_ref, win) {
+    var x = _ref.x, y = _ref.y;
+    var dpr = win.devicePixelRatio || 1;
+    return {
+        x: (0, _mathJs.round)(x * dpr) / dpr || 0,
+        y: (0, _mathJs.round)(y * dpr) / dpr || 0
+    };
+}
+function mapToStyles(_ref2) {
+    var _Object$assign2;
+    var popper = _ref2.popper, popperRect = _ref2.popperRect, placement = _ref2.placement, variation = _ref2.variation, offsets = _ref2.offsets, position = _ref2.position, gpuAcceleration = _ref2.gpuAcceleration, adaptive = _ref2.adaptive, roundOffsets = _ref2.roundOffsets, isFixed = _ref2.isFixed;
+    var _offsets$x = offsets.x, x = _offsets$x === void 0 ? 0 : _offsets$x, _offsets$y = offsets.y, y = _offsets$y === void 0 ? 0 : _offsets$y;
+    var _ref3 = typeof roundOffsets === "function" ? roundOffsets({
+        x: x,
+        y: y
+    }) : {
+        x: x,
+        y: y
+    };
+    x = _ref3.x;
+    y = _ref3.y;
+    var hasX = offsets.hasOwnProperty("x");
+    var hasY = offsets.hasOwnProperty("y");
+    var sideX = (0, _enumsJs.left);
+    var sideY = (0, _enumsJs.top);
+    var win = window;
+    if (adaptive) {
+        var offsetParent = (0, _getOffsetParentJsDefault.default)(popper);
+        var heightProp = "clientHeight";
+        var widthProp = "clientWidth";
+        if (offsetParent === (0, _getWindowJsDefault.default)(popper)) {
+            offsetParent = (0, _getDocumentElementJsDefault.default)(popper);
+            if ((0, _getComputedStyleJsDefault.default)(offsetParent).position !== "static" && position === "absolute") {
+                heightProp = "scrollHeight";
+                widthProp = "scrollWidth";
+            }
+        } // $FlowFixMe[incompatible-cast]: force type refinement, we compare offsetParent with window above, but Flow doesn't detect it
+        offsetParent;
+        if (placement === (0, _enumsJs.top) || (placement === (0, _enumsJs.left) || placement === (0, _enumsJs.right)) && variation === (0, _enumsJs.end)) {
+            sideY = (0, _enumsJs.bottom);
+            var offsetY = isFixed && offsetParent === win && win.visualViewport ? win.visualViewport.height : offsetParent[heightProp];
+            y -= offsetY - popperRect.height;
+            y *= gpuAcceleration ? 1 : -1;
+        }
+        if (placement === (0, _enumsJs.left) || (placement === (0, _enumsJs.top) || placement === (0, _enumsJs.bottom)) && variation === (0, _enumsJs.end)) {
+            sideX = (0, _enumsJs.right);
+            var offsetX = isFixed && offsetParent === win && win.visualViewport ? win.visualViewport.width : offsetParent[widthProp];
+            x -= offsetX - popperRect.width;
+            x *= gpuAcceleration ? 1 : -1;
+        }
+    }
+    var commonStyles = Object.assign({
+        position: position
+    }, adaptive && unsetSides);
+    var _ref4 = roundOffsets === true ? roundOffsetsByDPR({
+        x: x,
+        y: y
+    }, (0, _getWindowJsDefault.default)(popper)) : {
+        x: x,
+        y: y
+    };
+    x = _ref4.x;
+    y = _ref4.y;
+    if (gpuAcceleration) {
+        var _Object$assign;
+        return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? "0" : "", _Object$assign[sideX] = hasX ? "0" : "", _Object$assign.transform = (win.devicePixelRatio || 1) <= 1 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
+    }
+    return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : "", _Object$assign2[sideX] = hasX ? x + "px" : "", _Object$assign2.transform = "", _Object$assign2));
+}
+function computeStyles(_ref5) {
+    var state = _ref5.state, options = _ref5.options;
+    var _options$gpuAccelerat = options.gpuAcceleration, gpuAcceleration = _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat, _options$adaptive = options.adaptive, adaptive = _options$adaptive === void 0 ? true : _options$adaptive, _options$roundOffsets = options.roundOffsets, roundOffsets = _options$roundOffsets === void 0 ? true : _options$roundOffsets;
+    var commonStyles = {
+        placement: (0, _getBasePlacementJsDefault.default)(state.placement),
+        variation: (0, _getVariationJsDefault.default)(state.placement),
+        popper: state.elements.popper,
+        popperRect: state.rects.popper,
+        gpuAcceleration: gpuAcceleration,
+        isFixed: state.options.strategy === "fixed"
+    };
+    if (state.modifiersData.popperOffsets != null) state.styles.popper = Object.assign({}, state.styles.popper, mapToStyles(Object.assign({}, commonStyles, {
+        offsets: state.modifiersData.popperOffsets,
+        position: state.options.strategy,
+        adaptive: adaptive,
+        roundOffsets: roundOffsets
+    })));
+    if (state.modifiersData.arrow != null) state.styles.arrow = Object.assign({}, state.styles.arrow, mapToStyles(Object.assign({}, commonStyles, {
+        offsets: state.modifiersData.arrow,
+        position: "absolute",
+        adaptive: false,
+        roundOffsets: roundOffsets
+    })));
+    state.attributes.popper = Object.assign({}, state.attributes.popper, {
+        "data-popper-placement": state.placement
     });
-});
-FormCheckLabel.displayName = "FormCheckLabel";
-exports.default = FormCheckLabel;
+} // eslint-disable-next-line import/no-unused-modules
+exports.default = {
+    name: "computeStyles",
+    enabled: true,
+    phase: "beforeWrite",
+    fn: computeStyles,
+    data: {}
+};
 
-},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fdyAp":[function(require,module,exports) {
+},{"../enums.js":"lCAq5","../dom-utils/getOffsetParent.js":"laoYw","../dom-utils/getWindow.js":"2SkOo","../dom-utils/getDocumentElement.js":"eJ9Y1","../dom-utils/getComputedStyle.js":"3mZjB","../utils/getBasePlacement.js":"59Wp3","../utils/getVariation.js":"hIo7Y","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hIo7Y":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "map", ()=>map);
-parcelHelpers.export(exports, "forEach", ()=>forEach);
-parcelHelpers.export(exports, "hasChildOfType", ()=>hasChildOfType);
-var _react = require("react");
-/**
- * Iterates through children that are typically specified as `props.children`,
- * but only maps over children that are "valid elements".
- *
- * The mapFunction provided index will be normalised to the components mapped,
- * so an invalid component would not increase the index.
- *
- */ function map(children, func) {
-    let index = 0;
-    return _react.Children.map(children, (child)=>/*#__PURE__*/ _react.isValidElement(child) ? func(child, index++) : child);
+parcelHelpers.export(exports, "default", ()=>getVariation);
+function getVariation(placement) {
+    return placement.split("-")[1];
 }
-/**
- * Iterates through children that are "valid elements".
- *
- * The provided forEachFunc(child, index) will be called for each
- * leaf child with the index reflecting the position relative to "valid components".
- */ function forEach(children, func) {
-    let index = 0;
-    _react.Children.forEach(children, (child)=>{
-        if (/*#__PURE__*/ _react.isValidElement(child)) func(child, index++);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hBKsL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _getWindowJs = require("../dom-utils/getWindow.js"); // eslint-disable-next-line import/no-unused-modules
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+var passive = {
+    passive: true
+};
+function effect(_ref) {
+    var state = _ref.state, instance = _ref.instance, options = _ref.options;
+    var _options$scroll = options.scroll, scroll = _options$scroll === void 0 ? true : _options$scroll, _options$resize = options.resize, resize = _options$resize === void 0 ? true : _options$resize;
+    var window = (0, _getWindowJsDefault.default)(state.elements.popper);
+    var scrollParents = [].concat(state.scrollParents.reference, state.scrollParents.popper);
+    if (scroll) scrollParents.forEach(function(scrollParent) {
+        scrollParent.addEventListener("scroll", instance.update, passive);
+    });
+    if (resize) window.addEventListener("resize", instance.update, passive);
+    return function() {
+        if (scroll) scrollParents.forEach(function(scrollParent) {
+            scrollParent.removeEventListener("scroll", instance.update, passive);
+        });
+        if (resize) window.removeEventListener("resize", instance.update, passive);
+    };
+} // eslint-disable-next-line import/no-unused-modules
+exports.default = {
+    name: "eventListeners",
+    enabled: true,
+    phase: "write",
+    fn: function fn() {},
+    effect: effect,
+    data: {}
+};
+
+},{"../dom-utils/getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fv5wq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _getOppositePlacementJs = require("../utils/getOppositePlacement.js");
+var _getOppositePlacementJsDefault = parcelHelpers.interopDefault(_getOppositePlacementJs);
+var _getBasePlacementJs = require("../utils/getBasePlacement.js");
+var _getBasePlacementJsDefault = parcelHelpers.interopDefault(_getBasePlacementJs);
+var _getOppositeVariationPlacementJs = require("../utils/getOppositeVariationPlacement.js");
+var _getOppositeVariationPlacementJsDefault = parcelHelpers.interopDefault(_getOppositeVariationPlacementJs);
+var _detectOverflowJs = require("../utils/detectOverflow.js");
+var _detectOverflowJsDefault = parcelHelpers.interopDefault(_detectOverflowJs);
+var _computeAutoPlacementJs = require("../utils/computeAutoPlacement.js");
+var _computeAutoPlacementJsDefault = parcelHelpers.interopDefault(_computeAutoPlacementJs);
+var _enumsJs = require("../enums.js");
+var _getVariationJs = require("../utils/getVariation.js"); // eslint-disable-next-line import/no-unused-modules
+var _getVariationJsDefault = parcelHelpers.interopDefault(_getVariationJs);
+function getExpandedFallbackPlacements(placement) {
+    if ((0, _getBasePlacementJsDefault.default)(placement) === (0, _enumsJs.auto)) return [];
+    var oppositePlacement = (0, _getOppositePlacementJsDefault.default)(placement);
+    return [
+        (0, _getOppositeVariationPlacementJsDefault.default)(placement),
+        oppositePlacement,
+        (0, _getOppositeVariationPlacementJsDefault.default)(oppositePlacement)
+    ];
+}
+function flip(_ref) {
+    var state = _ref.state, options = _ref.options, name = _ref.name;
+    if (state.modifiersData[name]._skip) return;
+    var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? true : _options$altAxis, specifiedFallbackPlacements = options.fallbackPlacements, padding = options.padding, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, _options$flipVariatio = options.flipVariations, flipVariations = _options$flipVariatio === void 0 ? true : _options$flipVariatio, allowedAutoPlacements = options.allowedAutoPlacements;
+    var preferredPlacement = state.options.placement;
+    var basePlacement = (0, _getBasePlacementJsDefault.default)(preferredPlacement);
+    var isBasePlacement = basePlacement === preferredPlacement;
+    var fallbackPlacements = specifiedFallbackPlacements || (isBasePlacement || !flipVariations ? [
+        (0, _getOppositePlacementJsDefault.default)(preferredPlacement)
+    ] : getExpandedFallbackPlacements(preferredPlacement));
+    var placements = [
+        preferredPlacement
+    ].concat(fallbackPlacements).reduce(function(acc, placement) {
+        return acc.concat((0, _getBasePlacementJsDefault.default)(placement) === (0, _enumsJs.auto) ? (0, _computeAutoPlacementJsDefault.default)(state, {
+            placement: placement,
+            boundary: boundary,
+            rootBoundary: rootBoundary,
+            padding: padding,
+            flipVariations: flipVariations,
+            allowedAutoPlacements: allowedAutoPlacements
+        }) : placement);
+    }, []);
+    var referenceRect = state.rects.reference;
+    var popperRect = state.rects.popper;
+    var checksMap = new Map();
+    var makeFallbackChecks = true;
+    var firstFittingPlacement = placements[0];
+    for(var i = 0; i < placements.length; i++){
+        var placement = placements[i];
+        var _basePlacement = (0, _getBasePlacementJsDefault.default)(placement);
+        var isStartVariation = (0, _getVariationJsDefault.default)(placement) === (0, _enumsJs.start);
+        var isVertical = [
+            (0, _enumsJs.top),
+            (0, _enumsJs.bottom)
+        ].indexOf(_basePlacement) >= 0;
+        var len = isVertical ? "width" : "height";
+        var overflow = (0, _detectOverflowJsDefault.default)(state, {
+            placement: placement,
+            boundary: boundary,
+            rootBoundary: rootBoundary,
+            altBoundary: altBoundary,
+            padding: padding
+        });
+        var mainVariationSide = isVertical ? isStartVariation ? (0, _enumsJs.right) : (0, _enumsJs.left) : isStartVariation ? (0, _enumsJs.bottom) : (0, _enumsJs.top);
+        if (referenceRect[len] > popperRect[len]) mainVariationSide = (0, _getOppositePlacementJsDefault.default)(mainVariationSide);
+        var altVariationSide = (0, _getOppositePlacementJsDefault.default)(mainVariationSide);
+        var checks = [];
+        if (checkMainAxis) checks.push(overflow[_basePlacement] <= 0);
+        if (checkAltAxis) checks.push(overflow[mainVariationSide] <= 0, overflow[altVariationSide] <= 0);
+        if (checks.every(function(check) {
+            return check;
+        })) {
+            firstFittingPlacement = placement;
+            makeFallbackChecks = false;
+            break;
+        }
+        checksMap.set(placement, checks);
+    }
+    if (makeFallbackChecks) {
+        // `2` may be desired in some cases – research later
+        var numberOfChecks = flipVariations ? 3 : 1;
+        var _loop = function _loop(_i) {
+            var fittingPlacement = placements.find(function(placement) {
+                var checks = checksMap.get(placement);
+                if (checks) return checks.slice(0, _i).every(function(check) {
+                    return check;
+                });
+            });
+            if (fittingPlacement) {
+                firstFittingPlacement = fittingPlacement;
+                return "break";
+            }
+        };
+        for(var _i = numberOfChecks; _i > 0; _i--){
+            var _ret = _loop(_i);
+            if (_ret === "break") break;
+        }
+    }
+    if (state.placement !== firstFittingPlacement) {
+        state.modifiersData[name]._skip = true;
+        state.placement = firstFittingPlacement;
+        state.reset = true;
+    }
+} // eslint-disable-next-line import/no-unused-modules
+exports.default = {
+    name: "flip",
+    enabled: true,
+    phase: "main",
+    fn: flip,
+    requiresIfExists: [
+        "offset"
+    ],
+    data: {
+        _skip: false
+    }
+};
+
+},{"../utils/getOppositePlacement.js":"a8CY0","../utils/getBasePlacement.js":"59Wp3","../utils/getOppositeVariationPlacement.js":"bKTLC","../utils/detectOverflow.js":"ltCuw","../utils/computeAutoPlacement.js":"gytMj","../enums.js":"lCAq5","../utils/getVariation.js":"hIo7Y","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"a8CY0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getOppositePlacement);
+var hash = {
+    left: "right",
+    right: "left",
+    bottom: "top",
+    top: "bottom"
+};
+function getOppositePlacement(placement) {
+    return placement.replace(/left|right|bottom|top/g, function(matched) {
+        return hash[matched];
     });
 }
-/**
- * Finds whether a component's `children` prop includes a React element of the
- * specified type.
- */ function hasChildOfType(children, type) {
-    return _react.Children.toArray(children).some((child)=>/*#__PURE__*/ _react.isValidElement(child) && child.type === type);
-}
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iynMc":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"bKTLC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+parcelHelpers.export(exports, "default", ()=>getOppositeVariationPlacement);
+var hash = {
+    start: "end",
+    end: "start"
+};
+function getOppositeVariationPlacement(placement) {
+    return placement.replace(/start|end/g, function(matched) {
+        return hash[matched];
+    });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ltCuw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>detectOverflow);
+var _getClippingRectJs = require("../dom-utils/getClippingRect.js");
+var _getClippingRectJsDefault = parcelHelpers.interopDefault(_getClippingRectJs);
+var _getDocumentElementJs = require("../dom-utils/getDocumentElement.js");
+var _getDocumentElementJsDefault = parcelHelpers.interopDefault(_getDocumentElementJs);
+var _getBoundingClientRectJs = require("../dom-utils/getBoundingClientRect.js");
+var _getBoundingClientRectJsDefault = parcelHelpers.interopDefault(_getBoundingClientRectJs);
+var _computeOffsetsJs = require("./computeOffsets.js");
+var _computeOffsetsJsDefault = parcelHelpers.interopDefault(_computeOffsetsJs);
+var _rectToClientRectJs = require("./rectToClientRect.js");
+var _rectToClientRectJsDefault = parcelHelpers.interopDefault(_rectToClientRectJs);
+var _enumsJs = require("../enums.js");
+var _instanceOfJs = require("../dom-utils/instanceOf.js");
+var _mergePaddingObjectJs = require("./mergePaddingObject.js");
+var _mergePaddingObjectJsDefault = parcelHelpers.interopDefault(_mergePaddingObjectJs);
+var _expandToHashMapJs = require("./expandToHashMap.js"); // eslint-disable-next-line import/no-unused-modules
+var _expandToHashMapJsDefault = parcelHelpers.interopDefault(_expandToHashMapJs);
+function detectOverflow(state, options) {
+    if (options === void 0) options = {};
+    var _options = options, _options$placement = _options.placement, placement = _options$placement === void 0 ? state.placement : _options$placement, _options$strategy = _options.strategy, strategy = _options$strategy === void 0 ? state.strategy : _options$strategy, _options$boundary = _options.boundary, boundary = _options$boundary === void 0 ? (0, _enumsJs.clippingParents) : _options$boundary, _options$rootBoundary = _options.rootBoundary, rootBoundary = _options$rootBoundary === void 0 ? (0, _enumsJs.viewport) : _options$rootBoundary, _options$elementConte = _options.elementContext, elementContext = _options$elementConte === void 0 ? (0, _enumsJs.popper) : _options$elementConte, _options$altBoundary = _options.altBoundary, altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary, _options$padding = _options.padding, padding = _options$padding === void 0 ? 0 : _options$padding;
+    var paddingObject = (0, _mergePaddingObjectJsDefault.default)(typeof padding !== "number" ? padding : (0, _expandToHashMapJsDefault.default)(padding, (0, _enumsJs.basePlacements)));
+    var altContext = elementContext === (0, _enumsJs.popper) ? (0, _enumsJs.reference) : (0, _enumsJs.popper);
+    var popperRect = state.rects.popper;
+    var element = state.elements[altBoundary ? altContext : elementContext];
+    var clippingClientRect = (0, _getClippingRectJsDefault.default)((0, _instanceOfJs.isElement)(element) ? element : element.contextElement || (0, _getDocumentElementJsDefault.default)(state.elements.popper), boundary, rootBoundary, strategy);
+    var referenceClientRect = (0, _getBoundingClientRectJsDefault.default)(state.elements.reference);
+    var popperOffsets = (0, _computeOffsetsJsDefault.default)({
+        reference: referenceClientRect,
+        element: popperRect,
+        strategy: "absolute",
+        placement: placement
+    });
+    var popperClientRect = (0, _rectToClientRectJsDefault.default)(Object.assign({}, popperRect, popperOffsets));
+    var elementClientRect = elementContext === (0, _enumsJs.popper) ? popperClientRect : referenceClientRect; // positive = overflowing the clipping rect
+    // 0 or negative = within the clipping rect
+    var overflowOffsets = {
+        top: clippingClientRect.top - elementClientRect.top + paddingObject.top,
+        bottom: elementClientRect.bottom - clippingClientRect.bottom + paddingObject.bottom,
+        left: clippingClientRect.left - elementClientRect.left + paddingObject.left,
+        right: elementClientRect.right - clippingClientRect.right + paddingObject.right
+    };
+    var offsetData = state.modifiersData.offset; // Offsets can be applied only to the popper element
+    if (elementContext === (0, _enumsJs.popper) && offsetData) {
+        var offset = offsetData[placement];
+        Object.keys(overflowOffsets).forEach(function(key) {
+            var multiply = [
+                (0, _enumsJs.right),
+                (0, _enumsJs.bottom)
+            ].indexOf(key) >= 0 ? 1 : -1;
+            var axis = [
+                (0, _enumsJs.top),
+                (0, _enumsJs.bottom)
+            ].indexOf(key) >= 0 ? "y" : "x";
+            overflowOffsets[key] += offset[axis] * multiply;
+        });
+    }
+    return overflowOffsets;
+}
+
+},{"../dom-utils/getClippingRect.js":"eeg2s","../dom-utils/getDocumentElement.js":"eJ9Y1","../dom-utils/getBoundingClientRect.js":"9CFSQ","./computeOffsets.js":"7jtXk","./rectToClientRect.js":"cQ3tg","../enums.js":"lCAq5","../dom-utils/instanceOf.js":"gYFUC","./mergePaddingObject.js":"lEIf9","./expandToHashMap.js":"iQlH5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eeg2s":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getClippingRect);
+var _enumsJs = require("../enums.js");
+var _getViewportRectJs = require("./getViewportRect.js");
+var _getViewportRectJsDefault = parcelHelpers.interopDefault(_getViewportRectJs);
+var _getDocumentRectJs = require("./getDocumentRect.js");
+var _getDocumentRectJsDefault = parcelHelpers.interopDefault(_getDocumentRectJs);
+var _listScrollParentsJs = require("./listScrollParents.js");
+var _listScrollParentsJsDefault = parcelHelpers.interopDefault(_listScrollParentsJs);
+var _getOffsetParentJs = require("./getOffsetParent.js");
+var _getOffsetParentJsDefault = parcelHelpers.interopDefault(_getOffsetParentJs);
+var _getDocumentElementJs = require("./getDocumentElement.js");
+var _getDocumentElementJsDefault = parcelHelpers.interopDefault(_getDocumentElementJs);
+var _getComputedStyleJs = require("./getComputedStyle.js");
+var _getComputedStyleJsDefault = parcelHelpers.interopDefault(_getComputedStyleJs);
+var _instanceOfJs = require("./instanceOf.js");
+var _getBoundingClientRectJs = require("./getBoundingClientRect.js");
+var _getBoundingClientRectJsDefault = parcelHelpers.interopDefault(_getBoundingClientRectJs);
+var _getParentNodeJs = require("./getParentNode.js");
+var _getParentNodeJsDefault = parcelHelpers.interopDefault(_getParentNodeJs);
+var _containsJs = require("./contains.js");
+var _containsJsDefault = parcelHelpers.interopDefault(_containsJs);
+var _getNodeNameJs = require("./getNodeName.js");
+var _getNodeNameJsDefault = parcelHelpers.interopDefault(_getNodeNameJs);
+var _rectToClientRectJs = require("../utils/rectToClientRect.js");
+var _rectToClientRectJsDefault = parcelHelpers.interopDefault(_rectToClientRectJs);
+var _mathJs = require("../utils/math.js");
+function getInnerBoundingClientRect(element, strategy) {
+    var rect = (0, _getBoundingClientRectJsDefault.default)(element, false, strategy === "fixed");
+    rect.top = rect.top + element.clientTop;
+    rect.left = rect.left + element.clientLeft;
+    rect.bottom = rect.top + element.clientHeight;
+    rect.right = rect.left + element.clientWidth;
+    rect.width = element.clientWidth;
+    rect.height = element.clientHeight;
+    rect.x = rect.left;
+    rect.y = rect.top;
+    return rect;
+}
+function getClientRectFromMixedType(element, clippingParent, strategy) {
+    return clippingParent === (0, _enumsJs.viewport) ? (0, _rectToClientRectJsDefault.default)((0, _getViewportRectJsDefault.default)(element, strategy)) : (0, _instanceOfJs.isElement)(clippingParent) ? getInnerBoundingClientRect(clippingParent, strategy) : (0, _rectToClientRectJsDefault.default)((0, _getDocumentRectJsDefault.default)((0, _getDocumentElementJsDefault.default)(element)));
+} // A "clipping parent" is an overflowable container with the characteristic of
+// clipping (or hiding) overflowing elements with a position different from
+// `initial`
+function getClippingParents(element) {
+    var clippingParents = (0, _listScrollParentsJsDefault.default)((0, _getParentNodeJsDefault.default)(element));
+    var canEscapeClipping = [
+        "absolute",
+        "fixed"
+    ].indexOf((0, _getComputedStyleJsDefault.default)(element).position) >= 0;
+    var clipperElement = canEscapeClipping && (0, _instanceOfJs.isHTMLElement)(element) ? (0, _getOffsetParentJsDefault.default)(element) : element;
+    if (!(0, _instanceOfJs.isElement)(clipperElement)) return [];
+     // $FlowFixMe[incompatible-return]: https://github.com/facebook/flow/issues/1414
+    return clippingParents.filter(function(clippingParent) {
+        return (0, _instanceOfJs.isElement)(clippingParent) && (0, _containsJsDefault.default)(clippingParent, clipperElement) && (0, _getNodeNameJsDefault.default)(clippingParent) !== "body";
+    });
+} // Gets the maximum area that the element is visible in due to any number of
+function getClippingRect(element, boundary, rootBoundary, strategy) {
+    var mainClippingParents = boundary === "clippingParents" ? getClippingParents(element) : [].concat(boundary);
+    var clippingParents = [].concat(mainClippingParents, [
+        rootBoundary
+    ]);
+    var firstClippingParent = clippingParents[0];
+    var clippingRect = clippingParents.reduce(function(accRect, clippingParent) {
+        var rect = getClientRectFromMixedType(element, clippingParent, strategy);
+        accRect.top = (0, _mathJs.max)(rect.top, accRect.top);
+        accRect.right = (0, _mathJs.min)(rect.right, accRect.right);
+        accRect.bottom = (0, _mathJs.min)(rect.bottom, accRect.bottom);
+        accRect.left = (0, _mathJs.max)(rect.left, accRect.left);
+        return accRect;
+    }, getClientRectFromMixedType(element, firstClippingParent, strategy));
+    clippingRect.width = clippingRect.right - clippingRect.left;
+    clippingRect.height = clippingRect.bottom - clippingRect.top;
+    clippingRect.x = clippingRect.left;
+    clippingRect.y = clippingRect.top;
+    return clippingRect;
+}
+
+},{"../enums.js":"lCAq5","./getViewportRect.js":"cnH2G","./getDocumentRect.js":"d94SC","./listScrollParents.js":"2di3T","./getOffsetParent.js":"laoYw","./getDocumentElement.js":"eJ9Y1","./getComputedStyle.js":"3mZjB","./instanceOf.js":"gYFUC","./getBoundingClientRect.js":"9CFSQ","./getParentNode.js":"bIHpd","./contains.js":"4QxRR","./getNodeName.js":"a2Qom","../utils/rectToClientRect.js":"cQ3tg","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cnH2G":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getViewportRect);
+var _getWindowJs = require("./getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+var _getDocumentElementJs = require("./getDocumentElement.js");
+var _getDocumentElementJsDefault = parcelHelpers.interopDefault(_getDocumentElementJs);
+var _getWindowScrollBarXJs = require("./getWindowScrollBarX.js");
+var _getWindowScrollBarXJsDefault = parcelHelpers.interopDefault(_getWindowScrollBarXJs);
+var _isLayoutViewportJs = require("./isLayoutViewport.js");
+var _isLayoutViewportJsDefault = parcelHelpers.interopDefault(_isLayoutViewportJs);
+function getViewportRect(element, strategy) {
+    var win = (0, _getWindowJsDefault.default)(element);
+    var html = (0, _getDocumentElementJsDefault.default)(element);
+    var visualViewport = win.visualViewport;
+    var width = html.clientWidth;
+    var height = html.clientHeight;
+    var x = 0;
+    var y = 0;
+    if (visualViewport) {
+        width = visualViewport.width;
+        height = visualViewport.height;
+        var layoutViewport = (0, _isLayoutViewportJsDefault.default)();
+        if (layoutViewport || !layoutViewport && strategy === "fixed") {
+            x = visualViewport.offsetLeft;
+            y = visualViewport.offsetTop;
+        }
+    }
+    return {
+        width: width,
+        height: height,
+        x: x + (0, _getWindowScrollBarXJsDefault.default)(element),
+        y: y
+    };
+}
+
+},{"./getWindow.js":"2SkOo","./getDocumentElement.js":"eJ9Y1","./getWindowScrollBarX.js":"sz4Ld","./isLayoutViewport.js":"3ipHv","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"sz4Ld":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getWindowScrollBarX);
+var _getBoundingClientRectJs = require("./getBoundingClientRect.js");
+var _getBoundingClientRectJsDefault = parcelHelpers.interopDefault(_getBoundingClientRectJs);
+var _getDocumentElementJs = require("./getDocumentElement.js");
+var _getDocumentElementJsDefault = parcelHelpers.interopDefault(_getDocumentElementJs);
+var _getWindowScrollJs = require("./getWindowScroll.js");
+var _getWindowScrollJsDefault = parcelHelpers.interopDefault(_getWindowScrollJs);
+function getWindowScrollBarX(element) {
+    // If <html> has a CSS width greater than the viewport, then this will be
+    // incorrect for RTL.
+    // Popper 1 is broken in this case and never had a bug report so let's assume
+    // it's not an issue. I don't think anyone ever specifies width on <html>
+    // anyway.
+    // Browsers where the left scrollbar doesn't cause an issue report `0` for
+    // this (e.g. Edge 2019, IE11, Safari)
+    return (0, _getBoundingClientRectJsDefault.default)((0, _getDocumentElementJsDefault.default)(element)).left + (0, _getWindowScrollJsDefault.default)(element).scrollLeft;
+}
+
+},{"./getBoundingClientRect.js":"9CFSQ","./getDocumentElement.js":"eJ9Y1","./getWindowScroll.js":"1XUtN","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1XUtN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getWindowScroll);
+var _getWindowJs = require("./getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+function getWindowScroll(node) {
+    var win = (0, _getWindowJsDefault.default)(node);
+    var scrollLeft = win.pageXOffset;
+    var scrollTop = win.pageYOffset;
+    return {
+        scrollLeft: scrollLeft,
+        scrollTop: scrollTop
+    };
+}
+
+},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"d94SC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getDocumentRect);
+var _getDocumentElementJs = require("./getDocumentElement.js");
+var _getDocumentElementJsDefault = parcelHelpers.interopDefault(_getDocumentElementJs);
+var _getComputedStyleJs = require("./getComputedStyle.js");
+var _getComputedStyleJsDefault = parcelHelpers.interopDefault(_getComputedStyleJs);
+var _getWindowScrollBarXJs = require("./getWindowScrollBarX.js");
+var _getWindowScrollBarXJsDefault = parcelHelpers.interopDefault(_getWindowScrollBarXJs);
+var _getWindowScrollJs = require("./getWindowScroll.js");
+var _getWindowScrollJsDefault = parcelHelpers.interopDefault(_getWindowScrollJs);
+var _mathJs = require("../utils/math.js"); // Gets the entire size of the scrollable document area, even extending outside
+function getDocumentRect(element) {
+    var _element$ownerDocumen;
+    var html = (0, _getDocumentElementJsDefault.default)(element);
+    var winScroll = (0, _getWindowScrollJsDefault.default)(element);
+    var body = (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body;
+    var width = (0, _mathJs.max)(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
+    var height = (0, _mathJs.max)(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
+    var x = -winScroll.scrollLeft + (0, _getWindowScrollBarXJsDefault.default)(element);
+    var y = -winScroll.scrollTop;
+    if ((0, _getComputedStyleJsDefault.default)(body || html).direction === "rtl") x += (0, _mathJs.max)(html.clientWidth, body ? body.clientWidth : 0) - width;
+    return {
+        width: width,
+        height: height,
+        x: x,
+        y: y
+    };
+}
+
+},{"./getDocumentElement.js":"eJ9Y1","./getComputedStyle.js":"3mZjB","./getWindowScrollBarX.js":"sz4Ld","./getWindowScroll.js":"1XUtN","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2di3T":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>listScrollParents);
+var _getScrollParentJs = require("./getScrollParent.js");
+var _getScrollParentJsDefault = parcelHelpers.interopDefault(_getScrollParentJs);
+var _getParentNodeJs = require("./getParentNode.js");
+var _getParentNodeJsDefault = parcelHelpers.interopDefault(_getParentNodeJs);
+var _getWindowJs = require("./getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+var _isScrollParentJs = require("./isScrollParent.js");
+var _isScrollParentJsDefault = parcelHelpers.interopDefault(_isScrollParentJs);
+function listScrollParents(element, list) {
+    var _element$ownerDocumen;
+    if (list === void 0) list = [];
+    var scrollParent = (0, _getScrollParentJsDefault.default)(element);
+    var isBody = scrollParent === ((_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body);
+    var win = (0, _getWindowJsDefault.default)(scrollParent);
+    var target = isBody ? [
+        win
+    ].concat(win.visualViewport || [], (0, _isScrollParentJsDefault.default)(scrollParent) ? scrollParent : []) : scrollParent;
+    var updatedList = list.concat(target);
+    return isBody ? updatedList : updatedList.concat(listScrollParents((0, _getParentNodeJsDefault.default)(target)));
+}
+
+},{"./getScrollParent.js":"jy4ZS","./getParentNode.js":"bIHpd","./getWindow.js":"2SkOo","./isScrollParent.js":"9rLGO","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jy4ZS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getScrollParent);
+var _getParentNodeJs = require("./getParentNode.js");
+var _getParentNodeJsDefault = parcelHelpers.interopDefault(_getParentNodeJs);
+var _isScrollParentJs = require("./isScrollParent.js");
+var _isScrollParentJsDefault = parcelHelpers.interopDefault(_isScrollParentJs);
+var _getNodeNameJs = require("./getNodeName.js");
+var _getNodeNameJsDefault = parcelHelpers.interopDefault(_getNodeNameJs);
+var _instanceOfJs = require("./instanceOf.js");
+function getScrollParent(node) {
+    if ([
+        "html",
+        "body",
+        "#document"
+    ].indexOf((0, _getNodeNameJsDefault.default)(node)) >= 0) // $FlowFixMe[incompatible-return]: assume body is always available
+    return node.ownerDocument.body;
+    if ((0, _instanceOfJs.isHTMLElement)(node) && (0, _isScrollParentJsDefault.default)(node)) return node;
+    return getScrollParent((0, _getParentNodeJsDefault.default)(node));
+}
+
+},{"./getParentNode.js":"bIHpd","./isScrollParent.js":"9rLGO","./getNodeName.js":"a2Qom","./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9rLGO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>isScrollParent);
+var _getComputedStyleJs = require("./getComputedStyle.js");
+var _getComputedStyleJsDefault = parcelHelpers.interopDefault(_getComputedStyleJs);
+function isScrollParent(element) {
+    // Firefox wants us to check `-x` and `-y` variations as well
+    var _getComputedStyle = (0, _getComputedStyleJsDefault.default)(element), overflow = _getComputedStyle.overflow, overflowX = _getComputedStyle.overflowX, overflowY = _getComputedStyle.overflowY;
+    return /auto|scroll|overlay|hidden/.test(overflow + overflowY + overflowX);
+}
+
+},{"./getComputedStyle.js":"3mZjB","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cQ3tg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>rectToClientRect);
+function rectToClientRect(rect) {
+    return Object.assign({}, rect, {
+        left: rect.x,
+        top: rect.y,
+        right: rect.x + rect.width,
+        bottom: rect.y + rect.height
+    });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7jtXk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>computeOffsets);
+var _getBasePlacementJs = require("./getBasePlacement.js");
+var _getBasePlacementJsDefault = parcelHelpers.interopDefault(_getBasePlacementJs);
+var _getVariationJs = require("./getVariation.js");
+var _getVariationJsDefault = parcelHelpers.interopDefault(_getVariationJs);
+var _getMainAxisFromPlacementJs = require("./getMainAxisFromPlacement.js");
+var _getMainAxisFromPlacementJsDefault = parcelHelpers.interopDefault(_getMainAxisFromPlacementJs);
+var _enumsJs = require("../enums.js");
+function computeOffsets(_ref) {
+    var reference = _ref.reference, element = _ref.element, placement = _ref.placement;
+    var basePlacement = placement ? (0, _getBasePlacementJsDefault.default)(placement) : null;
+    var variation = placement ? (0, _getVariationJsDefault.default)(placement) : null;
+    var commonX = reference.x + reference.width / 2 - element.width / 2;
+    var commonY = reference.y + reference.height / 2 - element.height / 2;
+    var offsets;
+    switch(basePlacement){
+        case 0, _enumsJs.top:
+            offsets = {
+                x: commonX,
+                y: reference.y - element.height
+            };
+            break;
+        case 0, _enumsJs.bottom:
+            offsets = {
+                x: commonX,
+                y: reference.y + reference.height
+            };
+            break;
+        case 0, _enumsJs.right:
+            offsets = {
+                x: reference.x + reference.width,
+                y: commonY
+            };
+            break;
+        case 0, _enumsJs.left:
+            offsets = {
+                x: reference.x - element.width,
+                y: commonY
+            };
+            break;
+        default:
+            offsets = {
+                x: reference.x,
+                y: reference.y
+            };
+    }
+    var mainAxis = basePlacement ? (0, _getMainAxisFromPlacementJsDefault.default)(basePlacement) : null;
+    if (mainAxis != null) {
+        var len = mainAxis === "y" ? "height" : "width";
+        switch(variation){
+            case 0, _enumsJs.start:
+                offsets[mainAxis] = offsets[mainAxis] - (reference[len] / 2 - element[len] / 2);
+                break;
+            case 0, _enumsJs.end:
+                offsets[mainAxis] = offsets[mainAxis] + (reference[len] / 2 - element[len] / 2);
+                break;
+            default:
+        }
+    }
+    return offsets;
+}
+
+},{"./getBasePlacement.js":"59Wp3","./getVariation.js":"hIo7Y","./getMainAxisFromPlacement.js":"1Xlom","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gytMj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>computeAutoPlacement);
+var _getVariationJs = require("./getVariation.js");
+var _getVariationJsDefault = parcelHelpers.interopDefault(_getVariationJs);
+var _enumsJs = require("../enums.js");
+var _detectOverflowJs = require("./detectOverflow.js");
+var _detectOverflowJsDefault = parcelHelpers.interopDefault(_detectOverflowJs);
+var _getBasePlacementJs = require("./getBasePlacement.js");
+var _getBasePlacementJsDefault = parcelHelpers.interopDefault(_getBasePlacementJs);
+function computeAutoPlacement(state, options) {
+    if (options === void 0) options = {};
+    var _options = options, placement = _options.placement, boundary = _options.boundary, rootBoundary = _options.rootBoundary, padding = _options.padding, flipVariations = _options.flipVariations, _options$allowedAutoP = _options.allowedAutoPlacements, allowedAutoPlacements = _options$allowedAutoP === void 0 ? (0, _enumsJs.placements) : _options$allowedAutoP;
+    var variation = (0, _getVariationJsDefault.default)(placement);
+    var placements = variation ? flipVariations ? (0, _enumsJs.variationPlacements) : (0, _enumsJs.variationPlacements).filter(function(placement) {
+        return (0, _getVariationJsDefault.default)(placement) === variation;
+    }) : (0, _enumsJs.basePlacements);
+    var allowedPlacements = placements.filter(function(placement) {
+        return allowedAutoPlacements.indexOf(placement) >= 0;
+    });
+    if (allowedPlacements.length === 0) allowedPlacements = placements;
+     // $FlowFixMe[incompatible-type]: Flow seems to have problems with two array unions...
+    var overflows = allowedPlacements.reduce(function(acc, placement) {
+        acc[placement] = (0, _detectOverflowJsDefault.default)(state, {
+            placement: placement,
+            boundary: boundary,
+            rootBoundary: rootBoundary,
+            padding: padding
+        })[(0, _getBasePlacementJsDefault.default)(placement)];
+        return acc;
+    }, {});
+    return Object.keys(overflows).sort(function(a, b) {
+        return overflows[a] - overflows[b];
+    });
+}
+
+},{"./getVariation.js":"hIo7Y","../enums.js":"lCAq5","./detectOverflow.js":"ltCuw","./getBasePlacement.js":"59Wp3","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2g4OF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _enumsJs = require("../enums.js");
+var _detectOverflowJs = require("../utils/detectOverflow.js");
+var _detectOverflowJsDefault = parcelHelpers.interopDefault(_detectOverflowJs);
+function getSideOffsets(overflow, rect, preventedOffsets) {
+    if (preventedOffsets === void 0) preventedOffsets = {
+        x: 0,
+        y: 0
+    };
+    return {
+        top: overflow.top - rect.height - preventedOffsets.y,
+        right: overflow.right - rect.width + preventedOffsets.x,
+        bottom: overflow.bottom - rect.height + preventedOffsets.y,
+        left: overflow.left - rect.width - preventedOffsets.x
+    };
+}
+function isAnySideFullyClipped(overflow) {
+    return [
+        (0, _enumsJs.top),
+        (0, _enumsJs.right),
+        (0, _enumsJs.bottom),
+        (0, _enumsJs.left)
+    ].some(function(side) {
+        return overflow[side] >= 0;
+    });
+}
+function hide(_ref) {
+    var state = _ref.state, name = _ref.name;
+    var referenceRect = state.rects.reference;
+    var popperRect = state.rects.popper;
+    var preventedOffsets = state.modifiersData.preventOverflow;
+    var referenceOverflow = (0, _detectOverflowJsDefault.default)(state, {
+        elementContext: "reference"
+    });
+    var popperAltOverflow = (0, _detectOverflowJsDefault.default)(state, {
+        altBoundary: true
+    });
+    var referenceClippingOffsets = getSideOffsets(referenceOverflow, referenceRect);
+    var popperEscapeOffsets = getSideOffsets(popperAltOverflow, popperRect, preventedOffsets);
+    var isReferenceHidden = isAnySideFullyClipped(referenceClippingOffsets);
+    var hasPopperEscaped = isAnySideFullyClipped(popperEscapeOffsets);
+    state.modifiersData[name] = {
+        referenceClippingOffsets: referenceClippingOffsets,
+        popperEscapeOffsets: popperEscapeOffsets,
+        isReferenceHidden: isReferenceHidden,
+        hasPopperEscaped: hasPopperEscaped
+    };
+    state.attributes.popper = Object.assign({}, state.attributes.popper, {
+        "data-popper-reference-hidden": isReferenceHidden,
+        "data-popper-escaped": hasPopperEscaped
+    });
+} // eslint-disable-next-line import/no-unused-modules
+exports.default = {
+    name: "hide",
+    enabled: true,
+    phase: "main",
+    requiresIfExists: [
+        "preventOverflow"
+    ],
+    fn: hide
+};
+
+},{"../enums.js":"lCAq5","../utils/detectOverflow.js":"ltCuw","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3GKVY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "distanceAndSkiddingToXY", ()=>distanceAndSkiddingToXY);
+var _getBasePlacementJs = require("../utils/getBasePlacement.js");
+var _getBasePlacementJsDefault = parcelHelpers.interopDefault(_getBasePlacementJs);
+var _enumsJs = require("../enums.js"); // eslint-disable-next-line import/no-unused-modules
+function distanceAndSkiddingToXY(placement, rects, offset) {
+    var basePlacement = (0, _getBasePlacementJsDefault.default)(placement);
+    var invertDistance = [
+        (0, _enumsJs.left),
+        (0, _enumsJs.top)
+    ].indexOf(basePlacement) >= 0 ? -1 : 1;
+    var _ref = typeof offset === "function" ? offset(Object.assign({}, rects, {
+        placement: placement
+    })) : offset, skidding = _ref[0], distance = _ref[1];
+    skidding = skidding || 0;
+    distance = (distance || 0) * invertDistance;
+    return [
+        (0, _enumsJs.left),
+        (0, _enumsJs.right)
+    ].indexOf(basePlacement) >= 0 ? {
+        x: distance,
+        y: skidding
+    } : {
+        x: skidding,
+        y: distance
+    };
+}
+function offset(_ref2) {
+    var state = _ref2.state, options = _ref2.options, name = _ref2.name;
+    var _options$offset = options.offset, offset = _options$offset === void 0 ? [
+        0,
+        0
+    ] : _options$offset;
+    var data = (0, _enumsJs.placements).reduce(function(acc, placement) {
+        acc[placement] = distanceAndSkiddingToXY(placement, state.rects, offset);
+        return acc;
+    }, {});
+    var _data$state$placement = data[state.placement], x = _data$state$placement.x, y = _data$state$placement.y;
+    if (state.modifiersData.popperOffsets != null) {
+        state.modifiersData.popperOffsets.x += x;
+        state.modifiersData.popperOffsets.y += y;
+    }
+    state.modifiersData[name] = data;
+} // eslint-disable-next-line import/no-unused-modules
+exports.default = {
+    name: "offset",
+    enabled: true,
+    phase: "main",
+    requires: [
+        "popperOffsets"
+    ],
+    fn: offset
+};
+
+},{"../utils/getBasePlacement.js":"59Wp3","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6I679":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _computeOffsetsJs = require("../utils/computeOffsets.js");
+var _computeOffsetsJsDefault = parcelHelpers.interopDefault(_computeOffsetsJs);
+function popperOffsets(_ref) {
+    var state = _ref.state, name = _ref.name;
+    // Offsets are the actual position the popper needs to have to be
+    // properly positioned near its reference element
+    // This is the most basic placement, and will be adjusted by
+    // the modifiers in the next step
+    state.modifiersData[name] = (0, _computeOffsetsJsDefault.default)({
+        reference: state.rects.reference,
+        element: state.rects.popper,
+        strategy: "absolute",
+        placement: state.placement
+    });
+} // eslint-disable-next-line import/no-unused-modules
+exports.default = {
+    name: "popperOffsets",
+    enabled: true,
+    phase: "read",
+    fn: popperOffsets,
+    data: {}
+};
+
+},{"../utils/computeOffsets.js":"7jtXk","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1AMhb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _enumsJs = require("../enums.js");
+var _getBasePlacementJs = require("../utils/getBasePlacement.js");
+var _getBasePlacementJsDefault = parcelHelpers.interopDefault(_getBasePlacementJs);
+var _getMainAxisFromPlacementJs = require("../utils/getMainAxisFromPlacement.js");
+var _getMainAxisFromPlacementJsDefault = parcelHelpers.interopDefault(_getMainAxisFromPlacementJs);
+var _getAltAxisJs = require("../utils/getAltAxis.js");
+var _getAltAxisJsDefault = parcelHelpers.interopDefault(_getAltAxisJs);
+var _withinJs = require("../utils/within.js");
+var _getLayoutRectJs = require("../dom-utils/getLayoutRect.js");
+var _getLayoutRectJsDefault = parcelHelpers.interopDefault(_getLayoutRectJs);
+var _getOffsetParentJs = require("../dom-utils/getOffsetParent.js");
+var _getOffsetParentJsDefault = parcelHelpers.interopDefault(_getOffsetParentJs);
+var _detectOverflowJs = require("../utils/detectOverflow.js");
+var _detectOverflowJsDefault = parcelHelpers.interopDefault(_detectOverflowJs);
+var _getVariationJs = require("../utils/getVariation.js");
+var _getVariationJsDefault = parcelHelpers.interopDefault(_getVariationJs);
+var _getFreshSideObjectJs = require("../utils/getFreshSideObject.js");
+var _getFreshSideObjectJsDefault = parcelHelpers.interopDefault(_getFreshSideObjectJs);
+var _mathJs = require("../utils/math.js");
+function preventOverflow(_ref) {
+    var state = _ref.state, options = _ref.options, name = _ref.name;
+    var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, padding = options.padding, _options$tether = options.tether, tether = _options$tether === void 0 ? true : _options$tether, _options$tetherOffset = options.tetherOffset, tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
+    var overflow = (0, _detectOverflowJsDefault.default)(state, {
+        boundary: boundary,
+        rootBoundary: rootBoundary,
+        padding: padding,
+        altBoundary: altBoundary
+    });
+    var basePlacement = (0, _getBasePlacementJsDefault.default)(state.placement);
+    var variation = (0, _getVariationJsDefault.default)(state.placement);
+    var isBasePlacement = !variation;
+    var mainAxis = (0, _getMainAxisFromPlacementJsDefault.default)(basePlacement);
+    var altAxis = (0, _getAltAxisJsDefault.default)(mainAxis);
+    var popperOffsets = state.modifiersData.popperOffsets;
+    var referenceRect = state.rects.reference;
+    var popperRect = state.rects.popper;
+    var tetherOffsetValue = typeof tetherOffset === "function" ? tetherOffset(Object.assign({}, state.rects, {
+        placement: state.placement
+    })) : tetherOffset;
+    var normalizedTetherOffsetValue = typeof tetherOffsetValue === "number" ? {
+        mainAxis: tetherOffsetValue,
+        altAxis: tetherOffsetValue
+    } : Object.assign({
+        mainAxis: 0,
+        altAxis: 0
+    }, tetherOffsetValue);
+    var offsetModifierState = state.modifiersData.offset ? state.modifiersData.offset[state.placement] : null;
+    var data = {
+        x: 0,
+        y: 0
+    };
+    if (!popperOffsets) return;
+    if (checkMainAxis) {
+        var _offsetModifierState$;
+        var mainSide = mainAxis === "y" ? (0, _enumsJs.top) : (0, _enumsJs.left);
+        var altSide = mainAxis === "y" ? (0, _enumsJs.bottom) : (0, _enumsJs.right);
+        var len = mainAxis === "y" ? "height" : "width";
+        var offset = popperOffsets[mainAxis];
+        var min = offset + overflow[mainSide];
+        var max = offset - overflow[altSide];
+        var additive = tether ? -popperRect[len] / 2 : 0;
+        var minLen = variation === (0, _enumsJs.start) ? referenceRect[len] : popperRect[len];
+        var maxLen = variation === (0, _enumsJs.start) ? -popperRect[len] : -referenceRect[len]; // We need to include the arrow in the calculation so the arrow doesn't go
+        // outside the reference bounds
+        var arrowElement = state.elements.arrow;
+        var arrowRect = tether && arrowElement ? (0, _getLayoutRectJsDefault.default)(arrowElement) : {
+            width: 0,
+            height: 0
+        };
+        var arrowPaddingObject = state.modifiersData["arrow#persistent"] ? state.modifiersData["arrow#persistent"].padding : (0, _getFreshSideObjectJsDefault.default)();
+        var arrowPaddingMin = arrowPaddingObject[mainSide];
+        var arrowPaddingMax = arrowPaddingObject[altSide]; // If the reference length is smaller than the arrow length, we don't want
+        // to include its full size in the calculation. If the reference is small
+        // and near the edge of a boundary, the popper can overflow even if the
+        // reference is not overflowing as well (e.g. virtual elements with no
+        // width or height)
+        var arrowLen = (0, _withinJs.within)(0, referenceRect[len], arrowRect[len]);
+        var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis : minLen - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis;
+        var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis : maxLen + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis;
+        var arrowOffsetParent = state.elements.arrow && (0, _getOffsetParentJsDefault.default)(state.elements.arrow);
+        var clientOffset = arrowOffsetParent ? mainAxis === "y" ? arrowOffsetParent.clientTop || 0 : arrowOffsetParent.clientLeft || 0 : 0;
+        var offsetModifierValue = (_offsetModifierState$ = offsetModifierState == null ? void 0 : offsetModifierState[mainAxis]) != null ? _offsetModifierState$ : 0;
+        var tetherMin = offset + minOffset - offsetModifierValue - clientOffset;
+        var tetherMax = offset + maxOffset - offsetModifierValue;
+        var preventedOffset = (0, _withinJs.within)(tether ? (0, _mathJs.min)(min, tetherMin) : min, offset, tether ? (0, _mathJs.max)(max, tetherMax) : max);
+        popperOffsets[mainAxis] = preventedOffset;
+        data[mainAxis] = preventedOffset - offset;
+    }
+    if (checkAltAxis) {
+        var _offsetModifierState$2;
+        var _mainSide = mainAxis === "x" ? (0, _enumsJs.top) : (0, _enumsJs.left);
+        var _altSide = mainAxis === "x" ? (0, _enumsJs.bottom) : (0, _enumsJs.right);
+        var _offset = popperOffsets[altAxis];
+        var _len = altAxis === "y" ? "height" : "width";
+        var _min = _offset + overflow[_mainSide];
+        var _max = _offset - overflow[_altSide];
+        var isOriginSide = [
+            (0, _enumsJs.top),
+            (0, _enumsJs.left)
+        ].indexOf(basePlacement) !== -1;
+        var _offsetModifierValue = (_offsetModifierState$2 = offsetModifierState == null ? void 0 : offsetModifierState[altAxis]) != null ? _offsetModifierState$2 : 0;
+        var _tetherMin = isOriginSide ? _min : _offset - referenceRect[_len] - popperRect[_len] - _offsetModifierValue + normalizedTetherOffsetValue.altAxis;
+        var _tetherMax = isOriginSide ? _offset + referenceRect[_len] + popperRect[_len] - _offsetModifierValue - normalizedTetherOffsetValue.altAxis : _max;
+        var _preventedOffset = tether && isOriginSide ? (0, _withinJs.withinMaxClamp)(_tetherMin, _offset, _tetherMax) : (0, _withinJs.within)(tether ? _tetherMin : _min, _offset, tether ? _tetherMax : _max);
+        popperOffsets[altAxis] = _preventedOffset;
+        data[altAxis] = _preventedOffset - _offset;
+    }
+    state.modifiersData[name] = data;
+} // eslint-disable-next-line import/no-unused-modules
+exports.default = {
+    name: "preventOverflow",
+    enabled: true,
+    phase: "main",
+    fn: preventOverflow,
+    requiresIfExists: [
+        "offset"
+    ]
+};
+
+},{"../enums.js":"lCAq5","../utils/getBasePlacement.js":"59Wp3","../utils/getMainAxisFromPlacement.js":"1Xlom","../utils/getAltAxis.js":"59FWE","../utils/within.js":"3glSz","../dom-utils/getLayoutRect.js":"jvjuf","../dom-utils/getOffsetParent.js":"laoYw","../utils/detectOverflow.js":"ltCuw","../utils/getVariation.js":"hIo7Y","../utils/getFreshSideObject.js":"g4xOt","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"59FWE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getAltAxis);
+function getAltAxis(axis) {
+    return axis === "x" ? "y" : "x";
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9X7Du":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// eslint-disable-next-line import/no-unused-modules
+parcelHelpers.export(exports, "createPopper", ()=>(0, _createPopperJs.createPopper));
+parcelHelpers.export(exports, "popperGenerator", ()=>(0, _createPopperJs.popperGenerator));
+parcelHelpers.export(exports, "detectOverflow", ()=>(0, _createPopperJs.detectOverflow));
+var _createPopperJs = require("./createPopper.js");
+
+},{"./createPopper.js":"cHuNp","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cHuNp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "popperGenerator", ()=>popperGenerator);
+parcelHelpers.export(exports, "createPopper", ()=>createPopper);
+parcelHelpers.export(exports, "detectOverflow", ()=>(0, _detectOverflowJsDefault.default));
+var _getCompositeRectJs = require("./dom-utils/getCompositeRect.js");
+var _getCompositeRectJsDefault = parcelHelpers.interopDefault(_getCompositeRectJs);
+var _getLayoutRectJs = require("./dom-utils/getLayoutRect.js");
+var _getLayoutRectJsDefault = parcelHelpers.interopDefault(_getLayoutRectJs);
+var _listScrollParentsJs = require("./dom-utils/listScrollParents.js");
+var _listScrollParentsJsDefault = parcelHelpers.interopDefault(_listScrollParentsJs);
+var _getOffsetParentJs = require("./dom-utils/getOffsetParent.js");
+var _getOffsetParentJsDefault = parcelHelpers.interopDefault(_getOffsetParentJs);
+var _orderModifiersJs = require("./utils/orderModifiers.js");
+var _orderModifiersJsDefault = parcelHelpers.interopDefault(_orderModifiersJs);
+var _debounceJs = require("./utils/debounce.js");
+var _debounceJsDefault = parcelHelpers.interopDefault(_debounceJs);
+var _mergeByNameJs = require("./utils/mergeByName.js");
+var _mergeByNameJsDefault = parcelHelpers.interopDefault(_mergeByNameJs);
+var _detectOverflowJs = require("./utils/detectOverflow.js");
+var _detectOverflowJsDefault = parcelHelpers.interopDefault(_detectOverflowJs);
+var _instanceOfJs = require("./dom-utils/instanceOf.js");
+var DEFAULT_OPTIONS = {
+    placement: "bottom",
+    modifiers: [],
+    strategy: "absolute"
+};
+function areValidElements() {
+    for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
+    return !args.some(function(element) {
+        return !(element && typeof element.getBoundingClientRect === "function");
+    });
+}
+function popperGenerator(generatorOptions) {
+    if (generatorOptions === void 0) generatorOptions = {};
+    var _generatorOptions = generatorOptions, _generatorOptions$def = _generatorOptions.defaultModifiers, defaultModifiers = _generatorOptions$def === void 0 ? [] : _generatorOptions$def, _generatorOptions$def2 = _generatorOptions.defaultOptions, defaultOptions = _generatorOptions$def2 === void 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
+    return function createPopper(reference, popper, options) {
+        if (options === void 0) options = defaultOptions;
+        var state = {
+            placement: "bottom",
+            orderedModifiers: [],
+            options: Object.assign({}, DEFAULT_OPTIONS, defaultOptions),
+            modifiersData: {},
+            elements: {
+                reference: reference,
+                popper: popper
+            },
+            attributes: {},
+            styles: {}
+        };
+        var effectCleanupFns = [];
+        var isDestroyed = false;
+        var instance = {
+            state: state,
+            setOptions: function setOptions(setOptionsAction) {
+                var options = typeof setOptionsAction === "function" ? setOptionsAction(state.options) : setOptionsAction;
+                cleanupModifierEffects();
+                state.options = Object.assign({}, defaultOptions, state.options, options);
+                state.scrollParents = {
+                    reference: (0, _instanceOfJs.isElement)(reference) ? (0, _listScrollParentsJsDefault.default)(reference) : reference.contextElement ? (0, _listScrollParentsJsDefault.default)(reference.contextElement) : [],
+                    popper: (0, _listScrollParentsJsDefault.default)(popper)
+                }; // Orders the modifiers based on their dependencies and `phase`
+                // properties
+                var orderedModifiers = (0, _orderModifiersJsDefault.default)((0, _mergeByNameJsDefault.default)([].concat(defaultModifiers, state.options.modifiers))); // Strip out disabled modifiers
+                state.orderedModifiers = orderedModifiers.filter(function(m) {
+                    return m.enabled;
+                });
+                runModifierEffects();
+                return instance.update();
+            },
+            // Sync update – it will always be executed, even if not necessary. This
+            // is useful for low frequency updates where sync behavior simplifies the
+            // logic.
+            // For high frequency updates (e.g. `resize` and `scroll` events), always
+            // prefer the async Popper#update method
+            forceUpdate: function forceUpdate() {
+                if (isDestroyed) return;
+                var _state$elements = state.elements, reference = _state$elements.reference, popper = _state$elements.popper; // Don't proceed if `reference` or `popper` are not valid elements
+                // anymore
+                if (!areValidElements(reference, popper)) return;
+                 // Store the reference and popper rects to be read by modifiers
+                state.rects = {
+                    reference: (0, _getCompositeRectJsDefault.default)(reference, (0, _getOffsetParentJsDefault.default)(popper), state.options.strategy === "fixed"),
+                    popper: (0, _getLayoutRectJsDefault.default)(popper)
+                }; // Modifiers have the ability to reset the current update cycle. The
+                // most common use case for this is the `flip` modifier changing the
+                // placement, which then needs to re-run all the modifiers, because the
+                // logic was previously ran for the previous placement and is therefore
+                // stale/incorrect
+                state.reset = false;
+                state.placement = state.options.placement; // On each update cycle, the `modifiersData` property for each modifier
+                // is filled with the initial data specified by the modifier. This means
+                // it doesn't persist and is fresh on each update.
+                // To ensure persistent data, use `${name}#persistent`
+                state.orderedModifiers.forEach(function(modifier) {
+                    return state.modifiersData[modifier.name] = Object.assign({}, modifier.data);
+                });
+                for(var index = 0; index < state.orderedModifiers.length; index++){
+                    if (state.reset === true) {
+                        state.reset = false;
+                        index = -1;
+                        continue;
+                    }
+                    var _state$orderedModifie = state.orderedModifiers[index], fn = _state$orderedModifie.fn, _state$orderedModifie2 = _state$orderedModifie.options, _options = _state$orderedModifie2 === void 0 ? {} : _state$orderedModifie2, name = _state$orderedModifie.name;
+                    if (typeof fn === "function") state = fn({
+                        state: state,
+                        options: _options,
+                        name: name,
+                        instance: instance
+                    }) || state;
+                }
+            },
+            // Async and optimistically optimized update – it will not be executed if
+            // not necessary (debounced to run at most once-per-tick)
+            update: (0, _debounceJsDefault.default)(function() {
+                return new Promise(function(resolve) {
+                    instance.forceUpdate();
+                    resolve(state);
+                });
+            }),
+            destroy: function destroy() {
+                cleanupModifierEffects();
+                isDestroyed = true;
+            }
+        };
+        if (!areValidElements(reference, popper)) return instance;
+        instance.setOptions(options).then(function(state) {
+            if (!isDestroyed && options.onFirstUpdate) options.onFirstUpdate(state);
+        }); // Modifiers have the ability to execute arbitrary code before the first
+        // update cycle runs. They will be executed in the same order as the update
+        // cycle. This is useful when a modifier adds some persistent data that
+        // other modifiers need to use, but the modifier is run after the dependent
+        // one.
+        function runModifierEffects() {
+            state.orderedModifiers.forEach(function(_ref) {
+                var name = _ref.name, _ref$options = _ref.options, options = _ref$options === void 0 ? {} : _ref$options, effect = _ref.effect;
+                if (typeof effect === "function") {
+                    var cleanupFn = effect({
+                        state: state,
+                        name: name,
+                        instance: instance,
+                        options: options
+                    });
+                    var noopFn = function noopFn() {};
+                    effectCleanupFns.push(cleanupFn || noopFn);
+                }
+            });
+        }
+        function cleanupModifierEffects() {
+            effectCleanupFns.forEach(function(fn) {
+                return fn();
+            });
+            effectCleanupFns = [];
+        }
+        return instance;
+    };
+}
+var createPopper = /*#__PURE__*/ popperGenerator(); // eslint-disable-next-line import/no-unused-modules
+
+},{"./dom-utils/getCompositeRect.js":"ijPls","./dom-utils/getLayoutRect.js":"jvjuf","./dom-utils/listScrollParents.js":"2di3T","./dom-utils/getOffsetParent.js":"laoYw","./utils/orderModifiers.js":"N0VO0","./utils/debounce.js":"g6Chr","./utils/mergeByName.js":"2zTVN","./utils/detectOverflow.js":false,"./dom-utils/instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ijPls":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getCompositeRect);
+var _getBoundingClientRectJs = require("./getBoundingClientRect.js");
+var _getBoundingClientRectJsDefault = parcelHelpers.interopDefault(_getBoundingClientRectJs);
+var _getNodeScrollJs = require("./getNodeScroll.js");
+var _getNodeScrollJsDefault = parcelHelpers.interopDefault(_getNodeScrollJs);
+var _getNodeNameJs = require("./getNodeName.js");
+var _getNodeNameJsDefault = parcelHelpers.interopDefault(_getNodeNameJs);
+var _instanceOfJs = require("./instanceOf.js");
+var _getWindowScrollBarXJs = require("./getWindowScrollBarX.js");
+var _getWindowScrollBarXJsDefault = parcelHelpers.interopDefault(_getWindowScrollBarXJs);
+var _getDocumentElementJs = require("./getDocumentElement.js");
+var _getDocumentElementJsDefault = parcelHelpers.interopDefault(_getDocumentElementJs);
+var _isScrollParentJs = require("./isScrollParent.js");
+var _isScrollParentJsDefault = parcelHelpers.interopDefault(_isScrollParentJs);
+var _mathJs = require("../utils/math.js");
+function isElementScaled(element) {
+    var rect = element.getBoundingClientRect();
+    var scaleX = (0, _mathJs.round)(rect.width) / element.offsetWidth || 1;
+    var scaleY = (0, _mathJs.round)(rect.height) / element.offsetHeight || 1;
+    return scaleX !== 1 || scaleY !== 1;
+} // Returns the composite rect of an element relative to its offsetParent.
+function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
+    if (isFixed === void 0) isFixed = false;
+    var isOffsetParentAnElement = (0, _instanceOfJs.isHTMLElement)(offsetParent);
+    var offsetParentIsScaled = (0, _instanceOfJs.isHTMLElement)(offsetParent) && isElementScaled(offsetParent);
+    var documentElement = (0, _getDocumentElementJsDefault.default)(offsetParent);
+    var rect = (0, _getBoundingClientRectJsDefault.default)(elementOrVirtualElement, offsetParentIsScaled, isFixed);
+    var scroll = {
+        scrollLeft: 0,
+        scrollTop: 0
+    };
+    var offsets = {
+        x: 0,
+        y: 0
+    };
+    if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
+        if ((0, _getNodeNameJsDefault.default)(offsetParent) !== "body" || // https://github.com/popperjs/popper-core/issues/1078
+        (0, _isScrollParentJsDefault.default)(documentElement)) scroll = (0, _getNodeScrollJsDefault.default)(offsetParent);
+        if ((0, _instanceOfJs.isHTMLElement)(offsetParent)) {
+            offsets = (0, _getBoundingClientRectJsDefault.default)(offsetParent, true);
+            offsets.x += offsetParent.clientLeft;
+            offsets.y += offsetParent.clientTop;
+        } else if (documentElement) offsets.x = (0, _getWindowScrollBarXJsDefault.default)(documentElement);
+    }
+    return {
+        x: rect.left + scroll.scrollLeft - offsets.x,
+        y: rect.top + scroll.scrollTop - offsets.y,
+        width: rect.width,
+        height: rect.height
+    };
+}
+
+},{"./getBoundingClientRect.js":"9CFSQ","./getNodeScroll.js":"bBjCr","./getNodeName.js":"a2Qom","./instanceOf.js":"gYFUC","./getWindowScrollBarX.js":"sz4Ld","./getDocumentElement.js":"eJ9Y1","./isScrollParent.js":"9rLGO","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"bBjCr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getNodeScroll);
+var _getWindowScrollJs = require("./getWindowScroll.js");
+var _getWindowScrollJsDefault = parcelHelpers.interopDefault(_getWindowScrollJs);
+var _getWindowJs = require("./getWindow.js");
+var _getWindowJsDefault = parcelHelpers.interopDefault(_getWindowJs);
+var _instanceOfJs = require("./instanceOf.js");
+var _getHTMLElementScrollJs = require("./getHTMLElementScroll.js");
+var _getHTMLElementScrollJsDefault = parcelHelpers.interopDefault(_getHTMLElementScrollJs);
+function getNodeScroll(node) {
+    if (node === (0, _getWindowJsDefault.default)(node) || !(0, _instanceOfJs.isHTMLElement)(node)) return (0, _getWindowScrollJsDefault.default)(node);
+    else return (0, _getHTMLElementScrollJsDefault.default)(node);
+}
+
+},{"./getWindowScroll.js":"1XUtN","./getWindow.js":"2SkOo","./instanceOf.js":"gYFUC","./getHTMLElementScroll.js":"6pwY2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6pwY2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getHTMLElementScroll);
+function getHTMLElementScroll(element) {
+    return {
+        scrollLeft: element.scrollLeft,
+        scrollTop: element.scrollTop
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"N0VO0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>orderModifiers);
+var _enumsJs = require("../enums.js"); // source: https://stackoverflow.com/questions/49875255
+function order(modifiers) {
+    var map = new Map();
+    var visited = new Set();
+    var result = [];
+    modifiers.forEach(function(modifier) {
+        map.set(modifier.name, modifier);
+    }); // On visiting object, check for its dependencies and visit them recursively
+    function sort(modifier) {
+        visited.add(modifier.name);
+        var requires = [].concat(modifier.requires || [], modifier.requiresIfExists || []);
+        requires.forEach(function(dep) {
+            if (!visited.has(dep)) {
+                var depModifier = map.get(dep);
+                if (depModifier) sort(depModifier);
+            }
+        });
+        result.push(modifier);
+    }
+    modifiers.forEach(function(modifier) {
+        if (!visited.has(modifier.name)) // check for visited object
+        sort(modifier);
+    });
+    return result;
+}
+function orderModifiers(modifiers) {
+    // order based on dependencies
+    var orderedModifiers = order(modifiers); // order based on phase
+    return (0, _enumsJs.modifierPhases).reduce(function(acc, phase) {
+        return acc.concat(orderedModifiers.filter(function(modifier) {
+            return modifier.phase === phase;
+        }));
+    }, []);
+}
+
+},{"../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g6Chr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>debounce);
+function debounce(fn) {
+    var pending;
+    return function() {
+        if (!pending) pending = new Promise(function(resolve) {
+            Promise.resolve().then(function() {
+                pending = undefined;
+                resolve(fn());
+            });
+        });
+        return pending;
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2zTVN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>mergeByName);
+function mergeByName(modifiers) {
+    var merged = modifiers.reduce(function(merged, current) {
+        var existing = merged[current.name];
+        merged[current.name] = existing ? Object.assign({}, existing, current, {
+            options: Object.assign({}, existing.options, current.options),
+            data: Object.assign({}, existing.data, current.data)
+        }) : current;
+        return merged;
+    }, {}); // IE11 does not support Object.values
+    return Object.keys(merged).map(function(key) {
+        return merged[key];
+    });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ed4Oi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getRefTarget", ()=>getRefTarget);
+var _contains = require("dom-helpers/contains");
+var _containsDefault = parcelHelpers.interopDefault(_contains);
+var _listen = require("dom-helpers/listen");
+var _listenDefault = parcelHelpers.interopDefault(_listen);
+var _ownerDocument = require("dom-helpers/ownerDocument");
+var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
 var _react = require("react");
+var _useEventCallback = require("@restart/hooks/useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
 var _warning = require("warning");
 var _warningDefault = parcelHelpers.interopDefault(_warning);
-var _feedback = require("./Feedback");
-var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const FormControl = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, type, size, htmlSize, id, className, isValid = false, isInvalid = false, plaintext, readOnly, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "input", ...props }, ref)=>{
-    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-control");
-    let classes;
-    if (plaintext) classes = {
-        [`${bsPrefix}-plaintext`]: true
-    };
-    else classes = {
-        [bsPrefix]: true,
-        [`${bsPrefix}-${size}`]: size
-    };
-    (0, _warningDefault.default)(controlId == null || !id, "`controlId` is ignored on `<FormControl>` when `id` is specified.");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...props,
-        type: type,
-        size: htmlSize,
-        ref: ref,
-        readOnly: readOnly,
-        id: id || controlId,
-        className: (0, _classnamesDefault.default)(className, classes, isValid && `is-valid`, isInvalid && `is-invalid`, type === "color" && `${bsPrefix}-color`)
+const noop = ()=>{};
+function isLeftClickEvent(event) {
+    return event.button === 0;
+}
+function isModifiedEvent(event) {
+    return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+}
+const getRefTarget = (ref)=>ref && ("current" in ref ? ref.current : ref);
+const InitialTriggerEvents = {
+    click: "mousedown",
+    mouseup: "mousedown",
+    pointerup: "pointerdown"
+};
+/**
+ * The `useClickOutside` hook registers your callback on the document that fires
+ * when a pointer event is registered outside of the provided ref or element.
+ *
+ * @param {Ref<HTMLElement>| HTMLElement} ref  The element boundary
+ * @param {function} onClickOutside
+ * @param {object=}  options
+ * @param {boolean=} options.disabled
+ * @param {string=}  options.clickTrigger The DOM event name (click, mousedown, etc) to attach listeners on
+ */ function useClickOutside(ref, onClickOutside = noop, { disabled, clickTrigger = "click" } = {}) {
+    const preventMouseClickOutsideRef = (0, _react.useRef)(false);
+    const waitingForTrigger = (0, _react.useRef)(false);
+    const handleMouseCapture = (0, _react.useCallback)((e)=>{
+        const currentTarget = getRefTarget(ref);
+        (0, _warningDefault.default)(!!currentTarget, "ClickOutside captured a close event but does not have a ref to compare it to. useClickOutside(), should be passed a ref that resolves to a DOM node");
+        preventMouseClickOutsideRef.current = !currentTarget || isModifiedEvent(e) || !isLeftClickEvent(e) || !!(0, _containsDefault.default)(currentTarget, e.target) || waitingForTrigger.current;
+        waitingForTrigger.current = false;
+    }, [
+        ref
+    ]);
+    const handleInitialMouse = (0, _useEventCallbackDefault.default)((e)=>{
+        const currentTarget = getRefTarget(ref);
+        if (currentTarget && (0, _containsDefault.default)(currentTarget, e.target)) waitingForTrigger.current = true;
     });
-});
-FormControl.displayName = "FormControl";
-exports.default = Object.assign(FormControl, {
-    Feedback: (0, _feedbackDefault.default)
-});
+    const handleMouse = (0, _useEventCallbackDefault.default)((e)=>{
+        if (!preventMouseClickOutsideRef.current) onClickOutside(e);
+    });
+    (0, _react.useEffect)(()=>{
+        var _ownerWindow$event, _ownerWindow$parent;
+        if (disabled || ref == null) return undefined;
+        const doc = (0, _ownerDocumentDefault.default)(getRefTarget(ref));
+        const ownerWindow = doc.defaultView || window;
+        // Store the current event to avoid triggering handlers immediately
+        // For things rendered in an iframe, the event might originate on the parent window
+        // so we should fall back to that global event if the local one doesn't exist
+        // https://github.com/facebook/react/issues/20074
+        let currentEvent = (_ownerWindow$event = ownerWindow.event) != null ? _ownerWindow$event : (_ownerWindow$parent = ownerWindow.parent) == null ? void 0 : _ownerWindow$parent.event;
+        let removeInitialTriggerListener = null;
+        if (InitialTriggerEvents[clickTrigger]) removeInitialTriggerListener = (0, _listenDefault.default)(doc, InitialTriggerEvents[clickTrigger], handleInitialMouse, true);
+        // Use capture for this listener so it fires before React's listener, to
+        // avoid false positives in the contains() check below if the target DOM
+        // element is removed in the React mouse callback.
+        const removeMouseCaptureListener = (0, _listenDefault.default)(doc, clickTrigger, handleMouseCapture, true);
+        const removeMouseListener = (0, _listenDefault.default)(doc, clickTrigger, (e)=>{
+            // skip if this event is the same as the one running when we added the handlers
+            if (e === currentEvent) {
+                currentEvent = undefined;
+                return;
+            }
+            handleMouse(e);
+        });
+        let mobileSafariHackListeners = [];
+        if ("ontouchstart" in doc.documentElement) mobileSafariHackListeners = [].slice.call(doc.body.children).map((el)=>(0, _listenDefault.default)(el, "mousemove", noop));
+        return ()=>{
+            removeInitialTriggerListener == null || removeInitialTriggerListener();
+            removeMouseCaptureListener();
+            removeMouseListener();
+            mobileSafariHackListeners.forEach((remove)=>remove());
+        };
+    }, [
+        ref,
+        disabled,
+        clickTrigger,
+        handleMouseCapture,
+        handleInitialMouse,
+        handleMouse
+    ]);
+}
+exports.default = useClickOutside;
 
-},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Feedback":"aWeg2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eUVzU":[function(require,module,exports) {
+},{"dom-helpers/contains":"KpRFS","dom-helpers/listen":"1i4e7","dom-helpers/ownerDocument":"2WpOk","react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","warning":"eUVzU","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"KpRFS":[function(require,module,exports) {
+/* eslint-disable no-bitwise, no-cond-assign */ /**
+ * Checks if an element contains another given element.
+ * 
+ * @param context the context element
+ * @param node the element to check
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>contains);
+function contains(context, node) {
+    // HTML DOM and SVG DOM may have different support levels,
+    // so we need to check on context instead of a document root element.
+    if (context.contains) return context.contains(node);
+    if (context.compareDocumentPosition) return context === node || !!(context.compareDocumentPosition(node) & 16);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eUVzU":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -31498,352 +34127,411 @@ if (__DEV__) {
 }
 module.exports = warning;
 
-},{}],"aj346":[function(require,module,exports) {
+},{}],"8jWN8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _createWithBsPrefix = require("./createWithBsPrefix");
-var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
-exports.default = (0, _createWithBsPrefixDefault.default)("form-floating");
-
-},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1qBHH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const FormGroup = /*#__PURE__*/ _react.forwardRef(({ controlId, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "div", ...props }, ref)=>{
-    const context = (0, _react.useMemo)(()=>({
-            controlId
-        }), [
-        controlId
-    ]);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formContextDefault.default).Provider, {
-        value: context,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-            ...props,
-            ref: ref
-        })
+parcelHelpers.export(exports, "toModifierMap", ()=>toModifierMap);
+parcelHelpers.export(exports, "toModifierArray", ()=>toModifierArray);
+parcelHelpers.export(exports, "default", ()=>mergeOptionsWithPopperConfig);
+function toModifierMap(modifiers) {
+    const result = {};
+    if (!Array.isArray(modifiers)) return modifiers || result;
+    // eslint-disable-next-line no-unused-expressions
+    modifiers == null || modifiers.forEach((m)=>{
+        result[m.name] = m;
     });
-});
-FormGroup.displayName = "FormGroup";
-exports.default = FormGroup;
-
-},{"react":"21dqq","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"66epi":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _warning = require("warning");
-var _warningDefault = parcelHelpers.interopDefault(_warning);
-var _col = require("./Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const defaultProps = {
-    column: false,
-    visuallyHidden: false
-};
-const FormLabel = /*#__PURE__*/ _react.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "label", bsPrefix, column, visuallyHidden, className, htmlFor, ...props }, ref)=>{
-    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-label");
-    let columnClass = "col-form-label";
-    if (typeof column === "string") columnClass = `${columnClass} ${columnClass}-${column}`;
-    const classes = (0, _classnamesDefault.default)(className, bsPrefix, visuallyHidden && "visually-hidden", column && columnClass);
-    (0, _warningDefault.default)(controlId == null || !htmlFor, "`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.");
-    htmlFor = htmlFor || controlId;
-    if (column) return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _colDefault.default), {
-        ref: ref,
-        as: "label",
-        className: classes,
-        htmlFor: htmlFor,
-        ...props
-    });
-    return(/*#__PURE__*/ // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
-    (0, _jsxRuntime.jsx)(Component, {
-        ref: ref,
-        className: classes,
-        htmlFor: htmlFor,
-        ...props
-    }));
-});
-FormLabel.displayName = "FormLabel";
-FormLabel.defaultProps = defaultProps;
-exports.default = FormLabel;
-
-},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8zsCO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const FormRange = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, id, ...props }, ref)=>{
-    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-range");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-        ...props,
-        type: "range",
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
-        id: id || controlId
-    });
-});
-FormRange.displayName = "FormRange";
-exports.default = FormRange;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hHWyB":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const FormSelect = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, size, htmlSize, className, isValid = false, isInvalid = false, id, ...props }, ref)=>{
-    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-select");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("select", {
-        ...props,
-        size: htmlSize,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, size && `${bsPrefix}-${size}`, isValid && `is-valid`, isInvalid && `is-invalid`),
-        id: id || controlId
-    });
-});
-FormSelect.displayName = "FormSelect";
-exports.default = FormSelect;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ffeC7":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const FormText = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, as: Component = "small", muted, ...props }, ref)=>{
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-text");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...props,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, muted && "text-muted")
-    });
-});
-FormText.displayName = "FormText";
-exports.default = FormText;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9O81i":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _formCheck = require("./FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var _jsxRuntime = require("react/jsx-runtime");
-const Switch = /*#__PURE__*/ _react.forwardRef((props, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckDefault.default), {
-        ...props,
-        ref: ref,
-        type: "switch"
-    }));
-Switch.displayName = "Switch";
-exports.default = Object.assign(Switch, {
-    Input: (0, _formCheckDefault.default).Input,
-    Label: (0, _formCheckDefault.default).Label
-});
-
-},{"react":"21dqq","./FormCheck":"idkr0","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"coYzo":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _formGroup = require("./FormGroup");
-var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, children, controlId, label, ...props }, ref)=>{
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-floating");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _formGroupDefault.default), {
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
-        controlId: controlId,
-        ...props,
-        children: [
-            children,
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("label", {
-                htmlFor: controlId,
-                children: label
-            })
-        ]
-    });
-});
-FloatingLabel.displayName = "FloatingLabel";
-exports.default = FloatingLabel;
-
-},{"classnames":"jocGM","react":"21dqq","./FormGroup":"1qBHH","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hEdsw":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const defaultProps = {
-    fluid: false
-};
-const Container = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, fluid, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "div", className, ...props }, ref)=>{
-    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "container");
-    const suffix = typeof fluid === "string" ? `-${fluid}` : "-fluid";
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ref: ref,
-        ...props,
-        className: (0, _classnamesDefault.default)(className, fluid ? `${prefix}${suffix}` : prefix)
-    });
-});
-Container.displayName = "Container";
-Container.defaultProps = defaultProps;
-exports.default = Container;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cXyL2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _all = require("prop-types-extra/lib/all");
-var _allDefault = parcelHelpers.interopDefault(_all);
-var _react = require("react");
-var _uncontrollable = require("uncontrollable");
-var _nav = require("@restart/ui/Nav");
-var _navDefault = parcelHelpers.interopDefault(_nav);
-var _themeProvider = require("./ThemeProvider");
-var _navbarContext = require("./NavbarContext");
-var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
-var _cardHeaderContext = require("./CardHeaderContext");
-var _cardHeaderContextDefault = parcelHelpers.interopDefault(_cardHeaderContext);
-var _navItem = require("./NavItem");
-var _navItemDefault = parcelHelpers.interopDefault(_navItem);
-var _navLink = require("./NavLink");
-var _navLinkDefault = parcelHelpers.interopDefault(_navLink);
-var _jsxRuntime = require("react/jsx-runtime");
-const defaultProps = {
-    justify: false,
-    fill: false
-};
-const Nav = /*#__PURE__*/ _react.forwardRef((uncontrolledProps, ref)=>{
-    const { as = "div", bsPrefix: initialBsPrefix, variant, fill, justify, navbar, navbarScroll, className, activeKey, ...props } = (0, _uncontrollable.useUncontrolled)(uncontrolledProps, {
-        activeKey: "onSelect"
-    });
-    const bsPrefix = (0, _themeProvider.useBootstrapPrefix)(initialBsPrefix, "nav");
-    let navbarBsPrefix;
-    let cardHeaderBsPrefix;
-    let isNavbar = false;
-    const navbarContext = (0, _react.useContext)((0, _navbarContextDefault.default));
-    const cardHeaderContext = (0, _react.useContext)((0, _cardHeaderContextDefault.default));
-    if (navbarContext) {
-        navbarBsPrefix = navbarContext.bsPrefix;
-        isNavbar = navbar == null ? true : navbar;
-    } else if (cardHeaderContext) ({ cardHeaderBsPrefix } = cardHeaderContext);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _navDefault.default), {
-        as: as,
-        ref: ref,
-        activeKey: activeKey,
-        className: (0, _classnamesDefault.default)(className, {
-            [bsPrefix]: !isNavbar,
-            [`${navbarBsPrefix}-nav`]: isNavbar,
-            [`${navbarBsPrefix}-nav-scroll`]: isNavbar && navbarScroll,
-            [`${cardHeaderBsPrefix}-${variant}`]: !!cardHeaderBsPrefix,
-            [`${bsPrefix}-${variant}`]: !!variant,
-            [`${bsPrefix}-fill`]: fill,
-            [`${bsPrefix}-justified`]: justify
-        }),
-        ...props
-    });
-});
-Nav.displayName = "Nav";
-Nav.defaultProps = defaultProps;
-exports.default = Object.assign(Nav, {
-    Item: (0, _navItemDefault.default),
-    Link: (0, _navLinkDefault.default)
-});
-
-},{"classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","uncontrollable":"b3yWY","@restart/ui/Nav":"fZdNd","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","./CardHeaderContext":"36cNB","./NavItem":"ew05W","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"37Ank":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = all;
-var _createChainableTypeChecker = require("d69c03d3e91a1136");
-var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
+    return result;
 }
-function all() {
-    for(var _len = arguments.length, validators = Array(_len), _key = 0; _key < _len; _key++)validators[_key] = arguments[_key];
-    function allPropTypes() {
-        for(var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
-        var error = null;
-        validators.forEach(function(validator) {
-            if (error != null) return;
-            var result = validator.apply(undefined, args);
-            if (result != null) error = result;
-        });
-        return error;
-    }
-    return (0, _createChainableTypeChecker2.default)(allPropTypes);
+function toModifierArray(map = {}) {
+    if (Array.isArray(map)) return map;
+    return Object.keys(map).map((k)=>{
+        map[k].name = k;
+        return map[k];
+    });
 }
-module.exports = exports["default"];
+function mergeOptionsWithPopperConfig({ enabled, enableEvents, placement, flip, offset, fixed, containerPadding, arrowElement, popperConfig = {} }) {
+    var _modifiers$eventListe, _modifiers$preventOve, _modifiers$preventOve2, _modifiers$offset, _modifiers$arrow;
+    const modifiers = toModifierMap(popperConfig.modifiers);
+    return Object.assign({}, popperConfig, {
+        placement,
+        enabled,
+        strategy: fixed ? "fixed" : popperConfig.strategy,
+        modifiers: toModifierArray(Object.assign({}, modifiers, {
+            eventListeners: {
+                enabled: enableEvents,
+                options: (_modifiers$eventListe = modifiers.eventListeners) == null ? void 0 : _modifiers$eventListe.options
+            },
+            preventOverflow: Object.assign({}, modifiers.preventOverflow, {
+                options: containerPadding ? Object.assign({
+                    padding: containerPadding
+                }, (_modifiers$preventOve = modifiers.preventOverflow) == null ? void 0 : _modifiers$preventOve.options) : (_modifiers$preventOve2 = modifiers.preventOverflow) == null ? void 0 : _modifiers$preventOve2.options
+            }),
+            offset: {
+                options: Object.assign({
+                    offset
+                }, (_modifiers$offset = modifiers.offset) == null ? void 0 : _modifiers$offset.options)
+            },
+            arrow: Object.assign({}, modifiers.arrow, {
+                enabled: !!arrowElement,
+                options: Object.assign({}, (_modifiers$arrow = modifiers.arrow) == null ? void 0 : _modifiers$arrow.options, {
+                    element: arrowElement
+                })
+            }),
+            flip: Object.assign({
+                enabled: !!flip
+            }, modifiers.flip)
+        }))
+    });
+}
 
-},{"d69c03d3e91a1136":"1m8lT"}],"1m8lT":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = createChainableTypeChecker;
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8iWIY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isRoleMenu", ()=>isRoleMenu);
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Wires up Dropdown toggle functionality, returning a set a props to attach
+ * to the element that functions as the dropdown toggle (generally a button).
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */ // Mostly taken from ReactPropTypes.
-function createChainableTypeChecker(validate) {
-    function checkType(isRequired, props, propName, componentName, location, propFullName) {
-        var componentNameSafe = componentName || "<<anonymous>>";
-        var propFullNameSafe = propFullName || propName;
-        if (props[propName] == null) {
-            if (isRequired) return new Error("Required " + location + " `" + propFullNameSafe + "` was not specified " + ("in `" + componentNameSafe + "`."));
-            return null;
+ * @memberOf Dropdown
+ */ parcelHelpers.export(exports, "useDropdownToggle", ()=>useDropdownToggle);
+var _react = require("react");
+var _ssr = require("./ssr");
+var _dropdownContext = require("./DropdownContext");
+var _dropdownContextDefault = parcelHelpers.interopDefault(_dropdownContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const isRoleMenu = (el)=>{
+    var _el$getAttribute;
+    return ((_el$getAttribute = el.getAttribute("role")) == null ? void 0 : _el$getAttribute.toLowerCase()) === "menu";
+};
+const noop = ()=>{};
+function useDropdownToggle() {
+    const id = (0, _ssr.useSSRSafeId)();
+    const { show = false, toggle = noop, setToggle, menuElement } = (0, _react.useContext)((0, _dropdownContextDefault.default)) || {};
+    const handleClick = (0, _react.useCallback)((e)=>{
+        toggle(!show, e);
+    }, [
+        show,
+        toggle
+    ]);
+    const props = {
+        id,
+        ref: setToggle || noop,
+        onClick: handleClick,
+        "aria-expanded": !!show
+    };
+    // This is maybe better down in an effect, but
+    // the component is going to update anyway when the menu element
+    // is set so might return new props.
+    if (menuElement && isRoleMenu(menuElement)) props["aria-haspopup"] = true;
+    return [
+        props,
+        {
+            show,
+            toggle
         }
-        for(var _len = arguments.length, args = Array(_len > 6 ? _len - 6 : 0), _key = 6; _key < _len; _key++)args[_key - 6] = arguments[_key];
-        return validate.apply(undefined, [
-            props,
-            propName,
-            componentNameSafe,
-            location,
-            propFullNameSafe
-        ].concat(args));
-    }
-    var chainedCheckType = checkType.bind(null, false);
-    chainedCheckType.isRequired = checkType.bind(null, true);
-    return chainedCheckType;
+    ];
 }
-module.exports = exports["default"];
+/**
+ * Also exported as `<Dropdown.Toggle>` from `Dropdown`.
+ *
+ * @displayName DropdownToggle
+ * @memberOf Dropdown
+ */ function DropdownToggle({ children }) {
+    const [props, meta] = useDropdownToggle();
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _jsxRuntime.Fragment), {
+        children: children(props, meta)
+    });
+}
+DropdownToggle.displayName = "DropdownToggle";
+/** @component */ exports.default = DropdownToggle;
 
-},{}],"b3yWY":[function(require,module,exports) {
+},{"react":"21dqq","./ssr":"eaHes","./DropdownContext":"dX4vI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eaHes":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useSSRSafeId", ()=>(0, _ssr.useSSRSafeId));
+parcelHelpers.export(exports, "useIsSSR", ()=>(0, _ssr.useIsSSR));
+parcelHelpers.export(exports, "SSRProvider", ()=>(0, _ssr.SSRProvider));
+var _ssr = require("@react-aria/ssr");
+
+},{"@react-aria/ssr":"dIzY2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dIzY2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SSRProvider", ()=>$b5e257d569688ac6$export$9f8ac96af4b1b2ae);
+parcelHelpers.export(exports, "useSSRSafeId", ()=>$b5e257d569688ac6$export$619500959fc48b26);
+parcelHelpers.export(exports, "useIsSSR", ()=>$b5e257d569688ac6$export$535bd6ca7f90a273);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ /*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ // We must avoid a circular dependency with @react-aria/utils, and this useLayoutEffect is
+// guarded by a check that it only runs on the client side.
+// eslint-disable-next-line rulesdir/useLayoutEffectRule
+// Default context value to use in case there is no SSRProvider. This is fine for
+// client-only apps. In order to support multiple copies of React Aria potentially
+// being on the page at once, the prefix is set to a random number. SSRProvider
+// will reset this to zero for consistency between server and client, so in the
+// SSR case multiple copies of React Aria is not supported.
+const $b5e257d569688ac6$var$defaultContext = {
+    prefix: String(Math.round(Math.random() * 10000000000)),
+    current: 0
+};
+const $b5e257d569688ac6$var$SSRContext = (0, _reactDefault.default).createContext($b5e257d569688ac6$var$defaultContext);
+const $b5e257d569688ac6$var$IsSSRContext = (0, _reactDefault.default).createContext(false);
+// This is only used in React < 18.
+function $b5e257d569688ac6$var$LegacySSRProvider(props) {
+    let cur = (0, _react.useContext)($b5e257d569688ac6$var$SSRContext);
+    let counter = $b5e257d569688ac6$var$useCounter(cur === $b5e257d569688ac6$var$defaultContext);
+    let [isSSR, setIsSSR] = (0, _react.useState)(true);
+    let value = (0, _react.useMemo)(()=>({
+            // If this is the first SSRProvider, start with an empty string prefix, otherwise
+            // append and increment the counter.
+            prefix: cur === $b5e257d569688ac6$var$defaultContext ? "" : `${cur.prefix}-${counter}`,
+            current: 0
+        }), [
+        cur,
+        counter
+    ]);
+    // If on the client, and the component was initially server rendered,
+    // then schedule a layout effect to update the component after hydration.
+    if (typeof document !== "undefined") (0, _react.useLayoutEffect)(()=>{
+        setIsSSR(false);
+    }, []);
+    return (0, _reactDefault.default).createElement($b5e257d569688ac6$var$SSRContext.Provider, {
+        value: value
+    }, (0, _reactDefault.default).createElement($b5e257d569688ac6$var$IsSSRContext.Provider, {
+        value: isSSR
+    }, props.children));
+}
+let $b5e257d569688ac6$var$warnedAboutSSRProvider = false;
+function $b5e257d569688ac6$export$9f8ac96af4b1b2ae(props) {
+    if (typeof (0, _reactDefault.default)["useId"] === "function") {
+        if (!$b5e257d569688ac6$var$warnedAboutSSRProvider) {
+            console.warn("In React 18, SSRProvider is not necessary and is a noop. You can remove it from your app.");
+            $b5e257d569688ac6$var$warnedAboutSSRProvider = true;
+        }
+        return (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, props.children);
+    }
+    return (0, _reactDefault.default).createElement($b5e257d569688ac6$var$LegacySSRProvider, props);
+}
+let $b5e257d569688ac6$var$canUseDOM = Boolean(typeof window !== "undefined" && window.document && window.document.createElement);
+let $b5e257d569688ac6$var$componentIds = new WeakMap();
+function $b5e257d569688ac6$var$useCounter(isDisabled = false) {
+    let ctx = (0, _react.useContext)($b5e257d569688ac6$var$SSRContext);
+    let ref = (0, _react.useRef)(null);
+    // eslint-disable-next-line rulesdir/pure-render
+    if (ref.current === null && !isDisabled) {
+        var _React___SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED_ReactCurrentOwner, _React___SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        // In strict mode, React renders components twice, and the ref will be reset to null on the second render.
+        // This means our id counter will be incremented twice instead of once. This is a problem because on the
+        // server, components are only rendered once and so ids generated on the server won't match the client.
+        // In React 18, useId was introduced to solve this, but it is not available in older versions. So to solve this
+        // we need to use some React internals to access the underlying Fiber instance, which is stable between renders.
+        // This is exposed as ReactCurrentOwner in development, which is all we need since StrictMode only runs in development.
+        // To ensure that we only increment the global counter once, we store the starting id for this component in
+        // a weak map associated with the Fiber. On the second render, we reset the global counter to this value.
+        // Since React runs the second render immediately after the first, this is safe.
+        // @ts-ignore
+        let currentOwner = (_React___SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = (0, _reactDefault.default).__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED) === null || _React___SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED === void 0 ? void 0 : (_React___SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED_ReactCurrentOwner = _React___SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner) === null || _React___SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED_ReactCurrentOwner === void 0 ? void 0 : _React___SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED_ReactCurrentOwner.current;
+        if (currentOwner) {
+            let prevComponentValue = $b5e257d569688ac6$var$componentIds.get(currentOwner);
+            if (prevComponentValue == null) $b5e257d569688ac6$var$componentIds.set(currentOwner, {
+                id: ctx.current,
+                state: currentOwner.memoizedState
+            });
+            else if (currentOwner.memoizedState !== prevComponentValue.state) {
+                // On the second render, the memoizedState gets reset by React.
+                // Reset the counter, and remove from the weak map so we don't
+                // do this for subsequent useId calls.
+                ctx.current = prevComponentValue.id;
+                $b5e257d569688ac6$var$componentIds.delete(currentOwner);
+            }
+        }
+        // eslint-disable-next-line rulesdir/pure-render
+        ref.current = ++ctx.current;
+    }
+    // eslint-disable-next-line rulesdir/pure-render
+    return ref.current;
+}
+function $b5e257d569688ac6$var$useLegacySSRSafeId(defaultId) {
+    let ctx = (0, _react.useContext)($b5e257d569688ac6$var$SSRContext);
+    // If we are rendering in a non-DOM environment, and there's no SSRProvider,
+    // provide a warning to hint to the developer to add one.
+    if (ctx === $b5e257d569688ac6$var$defaultContext && !$b5e257d569688ac6$var$canUseDOM) console.warn("When server rendering, you must wrap your application in an <SSRProvider> to ensure consistent ids are generated between the client and server.");
+    let counter = $b5e257d569688ac6$var$useCounter(!!defaultId);
+    let prefix = `react-aria${ctx.prefix}`;
+    return defaultId || `${prefix}-${counter}`;
+}
+function $b5e257d569688ac6$var$useModernSSRSafeId(defaultId) {
+    // @ts-ignore
+    let id = (0, _reactDefault.default).useId();
+    let [didSSR] = (0, _react.useState)($b5e257d569688ac6$export$535bd6ca7f90a273());
+    let prefix = didSSR || false ? "react-aria" : `react-aria${$b5e257d569688ac6$var$defaultContext.prefix}`;
+    return defaultId || `${prefix}-${id}`;
+}
+const $b5e257d569688ac6$export$619500959fc48b26 = typeof (0, _reactDefault.default)["useId"] === "function" ? $b5e257d569688ac6$var$useModernSSRSafeId : $b5e257d569688ac6$var$useLegacySSRSafeId;
+function $b5e257d569688ac6$var$getSnapshot() {
+    return false;
+}
+function $b5e257d569688ac6$var$getServerSnapshot() {
+    return true;
+}
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function $b5e257d569688ac6$var$subscribe(onStoreChange) {
+    // noop
+    return ()=>{};
+}
+function $b5e257d569688ac6$export$535bd6ca7f90a273() {
+    // In React 18, we can use useSyncExternalStore to detect if we're server rendering or hydrating.
+    if (typeof (0, _reactDefault.default)["useSyncExternalStore"] === "function") return (0, _reactDefault.default)["useSyncExternalStore"]($b5e257d569688ac6$var$subscribe, $b5e257d569688ac6$var$getSnapshot, $b5e257d569688ac6$var$getServerSnapshot);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    return (0, _react.useContext)($b5e257d569688ac6$var$IsSSRContext);
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hDAPz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+ * Create a dropdown item. Returns a set of props for the dropdown item component
+ * including an `onClick` handler that prevents selection when the item is disabled
+ */ parcelHelpers.export(exports, "useDropdownItem", ()=>useDropdownItem);
+var _react = require("react");
+var _useEventCallback = require("@restart/hooks/useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _selectableContext = require("./SelectableContext");
+var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
+var _navContext = require("./NavContext");
+var _navContextDefault = parcelHelpers.interopDefault(_navContext);
+var _button = require("./Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _dataKey = require("./DataKey");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "eventKey",
+    "disabled",
+    "onClick",
+    "active",
+    "as"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+function useDropdownItem({ key, href, active, disabled, onClick }) {
+    const onSelectCtx = (0, _react.useContext)((0, _selectableContextDefault.default));
+    const navContext = (0, _react.useContext)((0, _navContextDefault.default));
+    const { activeKey } = navContext || {};
+    const eventKey = (0, _selectableContext.makeEventKey)(key, href);
+    const isActive = active == null && key != null ? (0, _selectableContext.makeEventKey)(activeKey) === eventKey : active;
+    const handleClick = (0, _useEventCallbackDefault.default)((event)=>{
+        if (disabled) return;
+        onClick == null || onClick(event);
+        if (onSelectCtx && !event.isPropagationStopped()) onSelectCtx(eventKey, event);
+    });
+    return [
+        {
+            onClick: handleClick,
+            "aria-disabled": disabled || undefined,
+            "aria-selected": isActive,
+            [(0, _dataKey.dataAttr)("dropdown-item")]: ""
+        },
+        {
+            isActive
+        }
+    ];
+}
+const DropdownItem = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
+    let { eventKey, disabled, onClick, active, as: Component = (0, _buttonDefault.default) } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    const [dropdownItemProps] = useDropdownItem({
+        key: eventKey,
+        href: props.href,
+        disabled,
+        onClick,
+        active
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, Object.assign({}, props, {
+        ref: ref
+    }, dropdownItemProps));
+});
+DropdownItem.displayName = "DropdownItem";
+exports.default = DropdownItem;
+
+},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./SelectableContext":"8zLqy","./NavContext":"j1SMA","./Button":"8YUbR","./DataKey":"9vwZh","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8zLqy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "makeEventKey", ()=>makeEventKey);
+var _react = require("react");
+const SelectableContext = /*#__PURE__*/ _react.createContext(null);
+const makeEventKey = (eventKey, href = null)=>{
+    if (eventKey != null) return String(eventKey);
+    return href || null;
+};
+exports.default = SelectableContext;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"j1SMA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const NavContext = /*#__PURE__*/ _react.createContext(null);
+NavContext.displayName = "NavContext";
+exports.default = NavContext;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9vwZh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ATTRIBUTE_PREFIX", ()=>ATTRIBUTE_PREFIX);
+parcelHelpers.export(exports, "PROPERTY_PREFIX", ()=>PROPERTY_PREFIX);
+parcelHelpers.export(exports, "dataAttr", ()=>dataAttr);
+parcelHelpers.export(exports, "dataProp", ()=>dataProp);
+const ATTRIBUTE_PREFIX = `data-rr-ui-`;
+const PROPERTY_PREFIX = `rrUi`;
+function dataAttr(property) {
+    return `${ATTRIBUTE_PREFIX}${property}`;
+}
+function dataProp(property) {
+    return `${PROPERTY_PREFIX}${property}`;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"4AsJ2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "WindowProvider", ()=>WindowProvider);
+parcelHelpers.export(exports, "default", ()=>useWindow);
+var _react = require("react");
+var _canUseDOM = require("dom-helpers/canUseDOM");
+var _canUseDOMDefault = parcelHelpers.interopDefault(_canUseDOM);
+const Context = /*#__PURE__*/ (0, _react.createContext)((0, _canUseDOMDefault.default) ? window : undefined);
+const WindowProvider = Context.Provider;
+function useWindow() {
+    return (0, _react.useContext)(Context);
+}
+
+},{"react":"21dqq","dom-helpers/canUseDOM":"9AwUB","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"b3yWY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useUncontrolled", ()=>(0, _hookDefault.default));
@@ -32256,385 +34944,45 @@ function polyfill(Component) {
     return Component;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fZdNd":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _querySelectorAll = require("dom-helpers/querySelectorAll");
-var _querySelectorAllDefault = parcelHelpers.interopDefault(_querySelectorAll);
-var _react = require("react");
-var _useForceUpdate = require("@restart/hooks/useForceUpdate");
-var _useForceUpdateDefault = parcelHelpers.interopDefault(_useForceUpdate);
-var _useMergedRefs = require("@restart/hooks/useMergedRefs");
-var _useMergedRefsDefault = parcelHelpers.interopDefault(_useMergedRefs);
-var _navContext = require("./NavContext");
-var _navContextDefault = parcelHelpers.interopDefault(_navContext);
-var _selectableContext = require("./SelectableContext");
-var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
-var _tabContext = require("./TabContext");
-var _tabContextDefault = parcelHelpers.interopDefault(_tabContext);
-var _dataKey = require("./DataKey");
-var _navItem = require("./NavItem");
-var _navItemDefault = parcelHelpers.interopDefault(_navItem);
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "as",
-    "onSelect",
-    "activeKey",
-    "role",
-    "onKeyDown"
-];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const noop = ()=>{};
-const EVENT_KEY_ATTR = (0, _dataKey.dataAttr)("event-key");
-const Nav = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
-    let { // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-    as: Component = "div", onSelect, activeKey, role, onKeyDown } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
-    // A ref and forceUpdate for refocus, b/c we only want to trigger when needed
-    // and don't want to reset the set in the effect
-    const forceUpdate = (0, _useForceUpdateDefault.default)();
-    const needsRefocusRef = (0, _react.useRef)(false);
-    const parentOnSelect = (0, _react.useContext)((0, _selectableContextDefault.default));
-    const tabContext = (0, _react.useContext)((0, _tabContextDefault.default));
-    let getControlledId, getControllerId;
-    if (tabContext) {
-        role = role || "tablist";
-        activeKey = tabContext.activeKey;
-        // TODO: do we need to duplicate these?
-        getControlledId = tabContext.getControlledId;
-        getControllerId = tabContext.getControllerId;
-    }
-    const listNode = (0, _react.useRef)(null);
-    const getNextActiveTab = (offset)=>{
-        const currentListNode = listNode.current;
-        if (!currentListNode) return null;
-        const items = (0, _querySelectorAllDefault.default)(currentListNode, `[${EVENT_KEY_ATTR}]:not([aria-disabled=true])`);
-        const activeChild = currentListNode.querySelector("[aria-selected=true]");
-        if (!activeChild || activeChild !== document.activeElement) return null;
-        const index = items.indexOf(activeChild);
-        if (index === -1) return null;
-        let nextIndex = index + offset;
-        if (nextIndex >= items.length) nextIndex = 0;
-        if (nextIndex < 0) nextIndex = items.length - 1;
-        return items[nextIndex];
-    };
-    const handleSelect = (key, event)=>{
-        if (key == null) return;
-        onSelect == null || onSelect(key, event);
-        parentOnSelect == null || parentOnSelect(key, event);
-    };
-    const handleKeyDown = (event)=>{
-        onKeyDown == null || onKeyDown(event);
-        if (!tabContext) return;
-        let nextActiveChild;
-        switch(event.key){
-            case "ArrowLeft":
-            case "ArrowUp":
-                nextActiveChild = getNextActiveTab(-1);
-                break;
-            case "ArrowRight":
-            case "ArrowDown":
-                nextActiveChild = getNextActiveTab(1);
-                break;
-            default:
-                return;
-        }
-        if (!nextActiveChild) return;
-        event.preventDefault();
-        handleSelect(nextActiveChild.dataset[(0, _dataKey.dataProp)("EventKey")] || null, event);
-        needsRefocusRef.current = true;
-        forceUpdate();
-    };
-    (0, _react.useEffect)(()=>{
-        if (listNode.current && needsRefocusRef.current) {
-            const activeChild = listNode.current.querySelector(`[${EVENT_KEY_ATTR}][aria-selected=true]`);
-            activeChild == null || activeChild.focus();
-        }
-        needsRefocusRef.current = false;
-    });
-    const mergedRef = (0, _useMergedRefsDefault.default)(ref, listNode);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _selectableContextDefault.default).Provider, {
-        value: handleSelect,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _navContextDefault.default).Provider, {
-            value: {
-                role,
-                // used by NavLink to determine it's role
-                activeKey: (0, _selectableContext.makeEventKey)(activeKey),
-                getControlledId: getControlledId || noop,
-                getControllerId: getControllerId || noop
-            },
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, Object.assign({}, props, {
-                onKeyDown: handleKeyDown,
-                ref: mergedRef,
-                role: role
-            }))
-        })
-    });
-});
-Nav.displayName = "Nav";
-exports.default = Object.assign(Nav, {
-    Item: (0, _navItemDefault.default)
-});
-
-},{"dom-helpers/querySelectorAll":"g5Sx6","react":"21dqq","@restart/hooks/useForceUpdate":"3Y4bz","@restart/hooks/useMergedRefs":"6hhuo","./NavContext":"j1SMA","./SelectableContext":"8zLqy","./TabContext":"cI3G3","./DataKey":"9vwZh","./NavItem":"2cGYS","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g5Sx6":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>qsa);
-var toArray = Function.prototype.bind.call(Function.prototype.call, [].slice);
-function qsa(element, selector) {
-    return toArray(element.querySelectorAll(selector));
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3Y4bz":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>useForceUpdate);
-var _react = require("react");
-function useForceUpdate() {
-    // The toggling state value is designed to defeat React optimizations for skipping
-    // updates when they are strictly equal to the last state value
-    const [, dispatch] = (0, _react.useReducer)((state)=>!state, false);
-    return dispatch;
-}
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"j1SMA":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"4Ufmn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-const NavContext = /*#__PURE__*/ _react.createContext(null);
-NavContext.displayName = "NavContext";
-exports.default = NavContext;
+const DropdownContext = /*#__PURE__*/ _react.createContext({});
+DropdownContext.displayName = "DropdownContext";
+exports.default = DropdownContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8zLqy":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "makeEventKey", ()=>makeEventKey);
-var _react = require("react");
-const SelectableContext = /*#__PURE__*/ _react.createContext(null);
-const makeEventKey = (eventKey, href = null)=>{
-    if (eventKey != null) return String(eventKey);
-    return href || null;
-};
-exports.default = SelectableContext;
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cI3G3":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-const TabContext = /*#__PURE__*/ _react.createContext(null);
-exports.default = TabContext;
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9vwZh":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ATTRIBUTE_PREFIX", ()=>ATTRIBUTE_PREFIX);
-parcelHelpers.export(exports, "PROPERTY_PREFIX", ()=>PROPERTY_PREFIX);
-parcelHelpers.export(exports, "dataAttr", ()=>dataAttr);
-parcelHelpers.export(exports, "dataProp", ()=>dataProp);
-const ATTRIBUTE_PREFIX = `data-rr-ui-`;
-const PROPERTY_PREFIX = `rrUi`;
-function dataAttr(property) {
-    return `${ATTRIBUTE_PREFIX}${property}`;
-}
-function dataProp(property) {
-    return `${PROPERTY_PREFIX}${property}`;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2cGYS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useNavItem", ()=>useNavItem);
-var _react = require("react");
-var _useEventCallback = require("@restart/hooks/useEventCallback");
-var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
-var _navContext = require("./NavContext");
-var _navContextDefault = parcelHelpers.interopDefault(_navContext);
-var _selectableContext = require("./SelectableContext");
-var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
-var _button = require("./Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _dataKey = require("./DataKey");
-var _tabContext = require("./TabContext");
-var _tabContextDefault = parcelHelpers.interopDefault(_tabContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "as",
-    "active",
-    "eventKey"
-];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
-function useNavItem({ key, onClick, active, id, role, disabled }) {
-    const parentOnSelect = (0, _react.useContext)((0, _selectableContextDefault.default));
-    const navContext = (0, _react.useContext)((0, _navContextDefault.default));
-    const tabContext = (0, _react.useContext)((0, _tabContextDefault.default));
-    let isActive = active;
-    const props = {
-        role
-    };
-    if (navContext) {
-        if (!role && navContext.role === "tablist") props.role = "tab";
-        const contextControllerId = navContext.getControllerId(key != null ? key : null);
-        const contextControlledId = navContext.getControlledId(key != null ? key : null);
-        // @ts-ignore
-        props[(0, _dataKey.dataAttr)("event-key")] = key;
-        props.id = contextControllerId || id;
-        isActive = active == null && key != null ? navContext.activeKey === key : active;
-        /**
-     * Simplified scenario for `mountOnEnter`.
-     *
-     * While it would make sense to keep 'aria-controls' for tabs that have been mounted at least
-     * once, it would also complicate the code quite a bit, for very little gain.
-     * The following implementation is probably good enough.
-     *
-     * @see https://github.com/react-restart/ui/pull/40#issuecomment-1009971561
-     */ if (isActive || !(tabContext != null && tabContext.unmountOnExit) && !(tabContext != null && tabContext.mountOnEnter)) props["aria-controls"] = contextControlledId;
-    }
-    if (props.role === "tab") {
-        props["aria-selected"] = isActive;
-        if (!isActive) props.tabIndex = -1;
-        if (disabled) {
-            props.tabIndex = -1;
-            props["aria-disabled"] = true;
-        }
-    }
-    props.onClick = (0, _useEventCallbackDefault.default)((e)=>{
-        if (disabled) return;
-        onClick == null || onClick(e);
-        if (key == null) return;
-        if (parentOnSelect && !e.isPropagationStopped()) parentOnSelect(key, e);
-    });
-    return [
-        props,
-        {
-            isActive
-        }
-    ];
-}
-const NavItem = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
-    let { as: Component = (0, _buttonDefault.default), active, eventKey } = _ref, options = _objectWithoutPropertiesLoose(_ref, _excluded);
-    const [props, meta] = useNavItem(Object.assign({
-        key: (0, _selectableContext.makeEventKey)(eventKey, options.href),
-        active
-    }, options));
-    // @ts-ignore
-    props[(0, _dataKey.dataAttr)("active")] = meta.isActive;
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, Object.assign({}, options, props, {
-        ref: ref
-    }));
-});
-NavItem.displayName = "NavItem";
-exports.default = NavItem;
-
-},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./NavContext":"j1SMA","./SelectableContext":"8zLqy","./Button":"8YUbR","./DataKey":"9vwZh","./TabContext":"cI3G3","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7ONdq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>useEventCallback);
-var _react = require("react");
-var _useCommittedRef = require("./useCommittedRef");
-var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
-function useEventCallback(fn) {
-    const ref = (0, _useCommittedRefDefault.default)(fn);
-    return (0, _react.useCallback)(function(...args) {
-        return ref.current && ref.current(...args);
-    }, [
-        ref
-    ]);
-}
-
-},{"react":"21dqq","./useCommittedRef":"g5BYG","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g5BYG":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-/**
- * Creates a `Ref` whose value is updated in an effect, ensuring the most recent
- * value is the one rendered with. Generally only required for Concurrent mode usage
- * where previous work in `render()` may be discarded before being used.
- *
- * This is safe to access in an event handler.
- *
- * @param value The `Ref` value
- */ function useCommittedRef(value) {
-    const ref = (0, _react.useRef)(value);
-    (0, _react.useEffect)(()=>{
-        ref.current = value;
-    }, [
-        value
-    ]);
-    return ref;
-}
-exports.default = useCommittedRef;
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dpn1g":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react"); // TODO: check
-const context = /*#__PURE__*/ _react.createContext(null);
-context.displayName = "NavbarContext";
-exports.default = context;
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ew05W":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _createWithBsPrefix = require("./createWithBsPrefix");
-var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
-exports.default = (0, _createWithBsPrefixDefault.default)("nav-item");
-
-},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7geL8":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"xQ9Cw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
+var _dropdownItem = require("@restart/ui/DropdownItem");
 var _anchor = require("@restart/ui/Anchor");
 var _anchorDefault = parcelHelpers.interopDefault(_anchor);
-var _navItem = require("@restart/ui/NavItem");
-var _selectableContext = require("@restart/ui/SelectableContext");
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
-const defaultProps = {
-    disabled: false
-};
-const NavLink = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, as: Component = (0, _anchorDefault.default), active, eventKey, ...props }, ref)=>{
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "nav-link");
-    const [navItemProps, meta] = (0, _navItem.useNavItem)({
-        key: (0, _selectableContext.makeEventKey)(eventKey, props.href),
-        active,
-        ...props
+const DropdownItem = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, eventKey, disabled = false, onClick, active, as: Component = (0, _anchorDefault.default), ...props }, ref)=>{
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "dropdown-item");
+    const [dropdownItemProps, meta] = (0, _dropdownItem.useDropdownItem)({
+        key: eventKey,
+        href: props.href,
+        disabled,
+        onClick,
+        active
     });
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ...props,
-        ...navItemProps,
+        ...dropdownItemProps,
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, props.disabled && "disabled", meta.isActive && "active")
+        className: (0, _classnamesDefault.default)(className, prefix, meta.isActive && "active", disabled && "disabled")
     });
 });
-NavLink.displayName = "NavLink";
-NavLink.defaultProps = defaultProps;
-exports.default = NavLink;
+DropdownItem.displayName = "DropdownItem";
+exports.default = DropdownItem;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/Anchor":"cQOWi","@restart/ui/NavItem":"2cGYS","@restart/ui/SelectableContext":"8zLqy","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cQOWi":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownItem":"hDAPz","@restart/ui/Anchor":"cQOWi","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cQOWi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref);
@@ -32729,34 +35077,7 @@ var _useImageDefault = parcelHelpers.interopDefault(_useImage);
 var _useResizeObserver = require("./useResizeObserver");
 var _useResizeObserverDefault = parcelHelpers.interopDefault(_useResizeObserver);
 
-},{"./useCallbackRef":"82p6M","./useCommittedRef":"g5BYG","./useEventCallback":"7ONdq","./useEventListener":"dBDI3","./useGlobalListener":"iey73","./useInterval":"hnmo4","./useRafInterval":"4qbLw","./useMergeState":"7E8IK","./useMergeStateFromProps":"6f6Me","./useMounted":"iK6A1","./usePrevious":"gDCGm","./useImage":"iuAlv","./useResizeObserver":"edwGv","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"82p6M":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>useCallbackRef);
-var _react = require("react");
-function useCallbackRef() {
-    return (0, _react.useState)(null);
-}
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dBDI3":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>useEventListener);
-var _react = require("react");
-var _useEventCallback = require("./useEventCallback");
-var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
-function useEventListener(eventTarget, event, listener, capture = false) {
-    const handler = (0, _useEventCallbackDefault.default)(listener);
-    (0, _react.useEffect)(()=>{
-        const target = typeof eventTarget === "function" ? eventTarget() : eventTarget;
-        target.addEventListener(event, handler, capture);
-        return ()=>target.removeEventListener(event, handler, capture);
-    }, [
-        eventTarget
-    ]);
-}
-
-},{"react":"21dqq","./useEventCallback":"7ONdq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iey73":[function(require,module,exports) {
+},{"./useCallbackRef":"82p6M","./useCommittedRef":"g5BYG","./useEventCallback":"7ONdq","./useEventListener":"dBDI3","./useGlobalListener":"iey73","./useInterval":"hnmo4","./useRafInterval":"4qbLw","./useMergeState":"7E8IK","./useMergeStateFromProps":"6f6Me","./useMounted":"iK6A1","./usePrevious":"gDCGm","./useImage":"iuAlv","./useResizeObserver":"edwGv","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iey73":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useGlobalListener);
@@ -32924,37 +35245,7 @@ function useMergeStateFromProps(props, gDSFP, initialState) {
     ];
 }
 
-},{"./useMergeState":"7E8IK","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iK6A1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>useMounted);
-var _react = require("react");
-function useMounted() {
-    const mounted = (0, _react.useRef)(true);
-    const isMounted = (0, _react.useRef)(()=>mounted.current);
-    (0, _react.useEffect)(()=>{
-        mounted.current = true;
-        return ()=>{
-            mounted.current = false;
-        };
-    }, []);
-    return isMounted.current;
-}
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gDCGm":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>usePrevious);
-var _react = require("react");
-function usePrevious(value) {
-    const ref = (0, _react.useRef)(null);
-    (0, _react.useEffect)(()=>{
-        ref.current = value;
-    });
-    return ref.current;
-}
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iuAlv":[function(require,module,exports) {
+},{"./useMergeState":"7E8IK","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iuAlv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useImage);
@@ -33060,7 +35351,1183 @@ const isDOM = typeof document !== "undefined";
  * @category effects
  */ exports.default = isDOM || isReactNative ? (0, _react.useLayoutEffect) : (0, _react.useEffect);
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1mHjo":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6UpAn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getDropdownMenuPlacement", ()=>getDropdownMenuPlacement);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _dropdownMenu = require("@restart/ui/DropdownMenu");
+var _useIsomorphicEffect = require("@restart/hooks/useIsomorphicEffect");
+var _useIsomorphicEffectDefault = parcelHelpers.interopDefault(_useIsomorphicEffect);
+var _useMergedRefs = require("@restart/hooks/useMergedRefs");
+var _useMergedRefsDefault = parcelHelpers.interopDefault(_useMergedRefs);
+var _warning = require("warning");
+var _warningDefault = parcelHelpers.interopDefault(_warning);
+var _dropdownContext = require("./DropdownContext");
+var _dropdownContextDefault = parcelHelpers.interopDefault(_dropdownContext);
+var _inputGroupContext = require("./InputGroupContext");
+var _inputGroupContextDefault = parcelHelpers.interopDefault(_inputGroupContext);
+var _navbarContext = require("./NavbarContext");
+var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
+var _themeProvider = require("./ThemeProvider");
+var _useWrappedRefWithWarning = require("./useWrappedRefWithWarning");
+var _useWrappedRefWithWarningDefault = parcelHelpers.interopDefault(_useWrappedRefWithWarning);
+var _types = require("./types");
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    flip: true
+};
+function getDropdownMenuPlacement(alignEnd, dropDirection, isRTL) {
+    const topStart = isRTL ? "top-end" : "top-start";
+    const topEnd = isRTL ? "top-start" : "top-end";
+    const bottomStart = isRTL ? "bottom-end" : "bottom-start";
+    const bottomEnd = isRTL ? "bottom-start" : "bottom-end";
+    const leftStart = isRTL ? "right-start" : "left-start";
+    const leftEnd = isRTL ? "right-end" : "left-end";
+    const rightStart = isRTL ? "left-start" : "right-start";
+    const rightEnd = isRTL ? "left-end" : "right-end";
+    let placement = alignEnd ? bottomEnd : bottomStart;
+    if (dropDirection === "up") placement = alignEnd ? topEnd : topStart;
+    else if (dropDirection === "end") placement = alignEnd ? rightEnd : rightStart;
+    else if (dropDirection === "start") placement = alignEnd ? leftEnd : leftStart;
+    return placement;
+}
+const DropdownMenu = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, align, rootCloseEvent, flip, show: showProps, renderOnMount, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div", popperConfig, variant, ...props }, ref)=>{
+    let alignEnd = false;
+    const isNavbar = (0, _react.useContext)((0, _navbarContextDefault.default));
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "dropdown-menu");
+    const { align: contextAlign, drop, isRTL } = (0, _react.useContext)((0, _dropdownContextDefault.default));
+    align = align || contextAlign;
+    const isInputGroup = (0, _react.useContext)((0, _inputGroupContextDefault.default));
+    const alignClasses = [];
+    if (align) {
+        if (typeof align === "object") {
+            const keys = Object.keys(align);
+            (0, _warningDefault.default)(keys.length === 1, "There should only be 1 breakpoint when passing an object to `align`");
+            if (keys.length) {
+                const brkPoint = keys[0];
+                const direction = align[brkPoint]; // .dropdown-menu-end is required for responsively aligning
+                // left in addition to align left classes.
+                alignEnd = direction === "start";
+                alignClasses.push(`${prefix}-${brkPoint}-${direction}`);
+            }
+        } else if (align === "end") alignEnd = true;
+    }
+    const placement = getDropdownMenuPlacement(alignEnd, drop, isRTL);
+    const [menuProps, { hasShown, popper, show, toggle }] = (0, _dropdownMenu.useDropdownMenu)({
+        flip,
+        rootCloseEvent,
+        show: showProps,
+        usePopper: !isNavbar && alignClasses.length === 0,
+        offset: [
+            0,
+            2
+        ],
+        popperConfig,
+        placement
+    });
+    menuProps.ref = (0, _useMergedRefsDefault.default)((0, _useWrappedRefWithWarningDefault.default)(ref, "DropdownMenu"), menuProps.ref);
+    (0, _useIsomorphicEffectDefault.default)(()=>{
+        // Popper's initial position for the menu is incorrect when
+        // renderOnMount=true. Need to call update() to correct it.
+        if (show) popper == null || popper.update();
+    }, [
+        show
+    ]);
+    if (!hasShown && !renderOnMount && !isInputGroup) return null; // For custom components provide additional, non-DOM, props;
+    if (typeof Component !== "string") {
+        menuProps.show = show;
+        menuProps.close = ()=>toggle == null ? void 0 : toggle(false);
+        menuProps.align = align;
+    }
+    let style = props.style;
+    if (popper != null && popper.placement) {
+        // we don't need the default popper style,
+        // menus are display: none when not shown.
+        style = {
+            ...props.style,
+            ...menuProps.style
+        };
+        props["x-placement"] = popper.placement;
+    }
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        ...menuProps,
+        style: style // Bootstrap css requires this data attrib to style responsive menus.
+        ,
+        ...(alignClasses.length || isNavbar) && {
+            "data-bs-popper": "static"
+        },
+        className: (0, _classnamesDefault.default)(className, prefix, show && "show", alignEnd && `${prefix}-end`, variant && `${prefix}-${variant}`, ...alignClasses)
+    });
+});
+DropdownMenu.displayName = "DropdownMenu";
+DropdownMenu.defaultProps = defaultProps;
+exports.default = DropdownMenu;
+
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownMenu":"6fCTW","@restart/hooks/useIsomorphicEffect":"e8blq","@restart/hooks/useMergedRefs":"6hhuo","warning":"eUVzU","./DropdownContext":"4Ufmn","./InputGroupContext":"eWDkO","./NavbarContext":"dpn1g","./ThemeProvider":"dVixI","./useWrappedRefWithWarning":"a7ejw","./types":"jwKaQ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eWDkO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const context = /*#__PURE__*/ _react.createContext(null);
+context.displayName = "InputGroupContext";
+exports.default = context;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dpn1g":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react"); // TODO: check
+const context = /*#__PURE__*/ _react.createContext(null);
+context.displayName = "NavbarContext";
+exports.default = context;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"a7ejw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>useWrappedRefWithWarning);
+var _invariant = require("invariant");
+var _invariantDefault = parcelHelpers.interopDefault(_invariant);
+var _react = require("react");
+var _useMergedRefs = require("@restart/hooks/useMergedRefs");
+var _useMergedRefsDefault = parcelHelpers.interopDefault(_useMergedRefs);
+function useWrappedRefWithWarning(ref, componentName) {
+    const warningRef = (0, _react.useCallback)((refValue)=>{
+        !(refValue == null || !refValue.isReactComponent) && (0, _invariantDefault.default)(false, `${componentName} injected a ref to a provided \`as\` component that resolved to a component instance instead of a DOM element. ` + "Use `React.forwardRef` to provide the injected ref to the class component as a prop in order to pass it directly to a DOM element");
+    }, [
+        componentName
+    ]); // eslint-disable-next-line react-hooks/rules-of-hooks
+    return (0, _useMergedRefsDefault.default)(warningRef, ref);
+}
+
+},{"invariant":"d1QgR","react":"21dqq","@restart/hooks/useMergedRefs":"6hhuo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jwKaQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "alignPropType", ()=>alignPropType);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+const alignDirection = (0, _propTypesDefault.default).oneOf([
+    "start",
+    "end"
+]);
+const alignPropType = (0, _propTypesDefault.default).oneOfType([
+    alignDirection,
+    (0, _propTypesDefault.default).shape({
+        sm: alignDirection
+    }),
+    (0, _propTypesDefault.default).shape({
+        md: alignDirection
+    }),
+    (0, _propTypesDefault.default).shape({
+        lg: alignDirection
+    }),
+    (0, _propTypesDefault.default).shape({
+        xl: alignDirection
+    }),
+    (0, _propTypesDefault.default).shape({
+        xxl: alignDirection
+    }),
+    (0, _propTypesDefault.default).object
+]);
+
+},{"prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gCRNt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _dropdownToggle = require("@restart/ui/DropdownToggle");
+var _dropdownContext = require("@restart/ui/DropdownContext");
+var _dropdownContextDefault = parcelHelpers.interopDefault(_dropdownContext);
+var _useMergedRefs = require("@restart/hooks/useMergedRefs");
+var _useMergedRefsDefault = parcelHelpers.interopDefault(_useMergedRefs);
+var _button = require("./Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _inputGroupContext = require("./InputGroupContext");
+var _inputGroupContextDefault = parcelHelpers.interopDefault(_inputGroupContext);
+var _themeProvider = require("./ThemeProvider");
+var _useWrappedRefWithWarning = require("./useWrappedRefWithWarning");
+var _useWrappedRefWithWarningDefault = parcelHelpers.interopDefault(_useWrappedRefWithWarning);
+var _jsxRuntime = require("react/jsx-runtime");
+const DropdownToggle = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, split, className, childBsPrefix, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = (0, _buttonDefault.default), ...props }, ref)=>{
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "dropdown-toggle");
+    const dropdownContext = (0, _react.useContext)((0, _dropdownContextDefault.default));
+    const isInputGroup = (0, _react.useContext)((0, _inputGroupContextDefault.default));
+    if (childBsPrefix !== undefined) props.bsPrefix = childBsPrefix;
+    const [toggleProps] = (0, _dropdownToggle.useDropdownToggle)();
+    toggleProps.ref = (0, _useMergedRefsDefault.default)(toggleProps.ref, (0, _useWrappedRefWithWarningDefault.default)(ref, "DropdownToggle")); // This intentionally forwards size and variant (if set) to the
+    // underlying component, to allow it to render size and style variants.
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        className: (0, _classnamesDefault.default)(className, prefix, split && `${prefix}-split`, !!isInputGroup && (dropdownContext == null ? void 0 : dropdownContext.show) && "show"),
+        ...toggleProps,
+        ...props
+    });
+});
+DropdownToggle.displayName = "DropdownToggle";
+exports.default = DropdownToggle;
+
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownToggle":"8iWIY","@restart/ui/DropdownContext":"dX4vI","@restart/hooks/useMergedRefs":"6hhuo","./Button":"aPzUt","./InputGroupContext":"eWDkO","./ThemeProvider":"dVixI","./useWrappedRefWithWarning":"a7ejw","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aH18S":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _transition = require("react-transition-group/Transition");
+var _transitionEndListener = require("./transitionEndListener");
+var _transitionEndListenerDefault = parcelHelpers.interopDefault(_transitionEndListener);
+var _triggerBrowserReflow = require("./triggerBrowserReflow");
+var _triggerBrowserReflowDefault = parcelHelpers.interopDefault(_triggerBrowserReflow);
+var _transitionWrapper = require("./TransitionWrapper");
+var _transitionWrapperDefault = parcelHelpers.interopDefault(_transitionWrapper);
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    in: false,
+    timeout: 300,
+    mountOnEnter: false,
+    unmountOnExit: false,
+    appear: false
+};
+const fadeStyles = {
+    [(0, _transition.ENTERING)]: "show",
+    [(0, _transition.ENTERED)]: "show"
+};
+const Fade = /*#__PURE__*/ _react.forwardRef(({ className, children, transitionClasses = {}, ...props }, ref)=>{
+    const handleEnter = (0, _react.useCallback)((node, isAppearing)=>{
+        (0, _triggerBrowserReflowDefault.default)(node);
+        props.onEnter == null || props.onEnter(node, isAppearing);
+    }, [
+        props
+    ]);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _transitionWrapperDefault.default), {
+        ref: ref,
+        addEndListener: (0, _transitionEndListenerDefault.default),
+        ...props,
+        onEnter: handleEnter,
+        childRef: children.ref,
+        children: (status, innerProps)=>/*#__PURE__*/ _react.cloneElement(children, {
+                ...innerProps,
+                className: (0, _classnamesDefault.default)("fade", className, children.props.className, fadeStyles[status], transitionClasses[status])
+            })
+    });
+});
+Fade.defaultProps = defaultProps;
+Fade.displayName = "Fade";
+exports.default = Fade;
+
+},{"classnames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iBZ80":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _react = require("react");
+var _formCheck = require("./FormCheck");
+var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
+var _formControl = require("./FormControl");
+var _formControlDefault = parcelHelpers.interopDefault(_formControl);
+var _formFloating = require("./FormFloating");
+var _formFloatingDefault = parcelHelpers.interopDefault(_formFloating);
+var _formGroup = require("./FormGroup");
+var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
+var _formLabel = require("./FormLabel");
+var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
+var _formRange = require("./FormRange");
+var _formRangeDefault = parcelHelpers.interopDefault(_formRange);
+var _formSelect = require("./FormSelect");
+var _formSelectDefault = parcelHelpers.interopDefault(_formSelect);
+var _formText = require("./FormText");
+var _formTextDefault = parcelHelpers.interopDefault(_formText);
+var _switch = require("./Switch");
+var _switchDefault = parcelHelpers.interopDefault(_switch);
+var _floatingLabel = require("./FloatingLabel");
+var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
+var _jsxRuntime = require("react/jsx-runtime");
+const propTypes = {
+    /**
+   * The Form `ref` will be forwarded to the underlying element,
+   * which means, unless it's rendered `as` a composite component,
+   * it will be a DOM node, when resolved.
+   *
+   * @type {ReactRef}
+   * @alias ref
+   */ _ref: (0, _propTypesDefault.default).any,
+    /**
+   * Mark a form as having been validated. Setting it to `true` will
+   * toggle any validation styles on the forms elements.
+   */ validated: (0, _propTypesDefault.default).bool,
+    as: (0, _propTypesDefault.default).elementType
+};
+const Form = /*#__PURE__*/ _react.forwardRef(({ className, validated, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "form", ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, validated && "was-validated")
+    }));
+Form.displayName = "Form";
+Form.propTypes = propTypes;
+exports.default = Object.assign(Form, {
+    Group: (0, _formGroupDefault.default),
+    Control: (0, _formControlDefault.default),
+    Floating: (0, _formFloatingDefault.default),
+    Check: (0, _formCheckDefault.default),
+    Switch: (0, _switchDefault.default),
+    Label: (0, _formLabelDefault.default),
+    Text: (0, _formTextDefault.default),
+    Range: (0, _formRangeDefault.default),
+    Select: (0, _formSelectDefault.default),
+    FloatingLabel: (0, _floatingLabelDefault.default)
+});
+
+},{"classnames":"jocGM","prop-types":"7wKI2","react":"21dqq","./FormCheck":"idkr0","./FormControl":"iynMc","./FormFloating":"aj346","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormRange":"8zsCO","./FormSelect":"hHWyB","./FormText":"ffeC7","./Switch":"9O81i","./FloatingLabel":"coYzo","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"idkr0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _feedback = require("./Feedback");
+var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
+var _formCheckInput = require("./FormCheckInput");
+var _formCheckInputDefault = parcelHelpers.interopDefault(_formCheckInput);
+var _formCheckLabel = require("./FormCheckLabel");
+var _formCheckLabelDefault = parcelHelpers.interopDefault(_formCheckLabel);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _elementChildren = require("./ElementChildren");
+var _jsxRuntime = require("react/jsx-runtime");
+const FormCheck = /*#__PURE__*/ _react.forwardRef(({ id, bsPrefix, bsSwitchPrefix, inline = false, reverse = false, disabled = false, isValid = false, isInvalid = false, feedbackTooltip = false, feedback, feedbackType, className, style, title = "", type = "checkbox", label, children, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as = "input", ...props }, ref)=>{
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-check");
+    bsSwitchPrefix = (0, _themeProvider.useBootstrapPrefix)(bsSwitchPrefix, "form-switch");
+    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
+    const innerFormContext = (0, _react.useMemo)(()=>({
+            controlId: id || controlId
+        }), [
+        controlId,
+        id
+    ]);
+    const hasLabel = !children && label != null && label !== false || (0, _elementChildren.hasChildOfType)(children, (0, _formCheckLabelDefault.default));
+    const input = /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckInputDefault.default), {
+        ...props,
+        type: type === "switch" ? "checkbox" : type,
+        ref: ref,
+        isValid: isValid,
+        isInvalid: isInvalid,
+        disabled: disabled,
+        as: as
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formContextDefault.default).Provider, {
+        value: innerFormContext,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+            style: style,
+            className: (0, _classnamesDefault.default)(className, hasLabel && bsPrefix, inline && `${bsPrefix}-inline`, reverse && `${bsPrefix}-reverse`, type === "switch" && bsSwitchPrefix),
+            children: children || /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _jsxRuntime.Fragment), {
+                children: [
+                    input,
+                    hasLabel && /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckLabelDefault.default), {
+                        title: title,
+                        children: label
+                    }),
+                    feedback && /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _feedbackDefault.default), {
+                        type: feedbackType,
+                        tooltip: feedbackTooltip,
+                        children: feedback
+                    })
+                ]
+            })
+        })
+    });
+});
+FormCheck.displayName = "FormCheck";
+exports.default = Object.assign(FormCheck, {
+    Input: (0, _formCheckInputDefault.default),
+    Label: (0, _formCheckLabelDefault.default)
+});
+
+},{"classnames":"jocGM","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","./ElementChildren":"fdyAp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aWeg2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _jsxRuntime = require("react/jsx-runtime");
+const propTypes = {
+    /**
+   * Specify whether the feedback is for valid or invalid fields
+   *
+   * @type {('valid'|'invalid')}
+   */ type: (0, _propTypesDefault.default).string,
+    /** Display feedback as a tooltip. */ tooltip: (0, _propTypesDefault.default).bool,
+    as: (0, _propTypesDefault.default).elementType
+};
+const Feedback = /*#__PURE__*/ _react.forwardRef(({ as: Component = "div", className, type = "valid", tooltip = false, ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, `${type}-${tooltip ? "tooltip" : "feedback"}`)
+    }));
+Feedback.displayName = "Feedback";
+Feedback.propTypes = propTypes;
+exports.default = Feedback;
+
+},{"classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dPzD9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const FormCheckInput = /*#__PURE__*/ _react.forwardRef(({ id, bsPrefix, className, type = "checkbox", isValid = false, isInvalid = false, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "input", ...props }, ref)=>{
+    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-check-input");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        ref: ref,
+        type: type,
+        id: id || controlId,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid")
+    });
+});
+FormCheckInput.displayName = "FormCheckInput";
+exports.default = FormCheckInput;
+
+},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gjvSt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react"); // TODO
+const FormContext = /*#__PURE__*/ _react.createContext({});
+exports.default = FormContext;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fGhS2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const FormCheckLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, htmlFor, ...props }, ref)=>{
+    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-check-label");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("label", {
+        ...props,
+        ref: ref,
+        htmlFor: htmlFor || controlId,
+        className: (0, _classnamesDefault.default)(className, bsPrefix)
+    });
+});
+FormCheckLabel.displayName = "FormCheckLabel";
+exports.default = FormCheckLabel;
+
+},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fdyAp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "map", ()=>map);
+parcelHelpers.export(exports, "forEach", ()=>forEach);
+parcelHelpers.export(exports, "hasChildOfType", ()=>hasChildOfType);
+var _react = require("react");
+/**
+ * Iterates through children that are typically specified as `props.children`,
+ * but only maps over children that are "valid elements".
+ *
+ * The mapFunction provided index will be normalised to the components mapped,
+ * so an invalid component would not increase the index.
+ *
+ */ function map(children, func) {
+    let index = 0;
+    return _react.Children.map(children, (child)=>/*#__PURE__*/ _react.isValidElement(child) ? func(child, index++) : child);
+}
+/**
+ * Iterates through children that are "valid elements".
+ *
+ * The provided forEachFunc(child, index) will be called for each
+ * leaf child with the index reflecting the position relative to "valid components".
+ */ function forEach(children, func) {
+    let index = 0;
+    _react.Children.forEach(children, (child)=>{
+        if (/*#__PURE__*/ _react.isValidElement(child)) func(child, index++);
+    });
+}
+/**
+ * Finds whether a component's `children` prop includes a React element of the
+ * specified type.
+ */ function hasChildOfType(children, type) {
+    return _react.Children.toArray(children).some((child)=>/*#__PURE__*/ _react.isValidElement(child) && child.type === type);
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iynMc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _warning = require("warning");
+var _warningDefault = parcelHelpers.interopDefault(_warning);
+var _feedback = require("./Feedback");
+var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const FormControl = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, type, size, htmlSize, id, className, isValid = false, isInvalid = false, plaintext, readOnly, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "input", ...props }, ref)=>{
+    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-control");
+    let classes;
+    if (plaintext) classes = {
+        [`${bsPrefix}-plaintext`]: true
+    };
+    else classes = {
+        [bsPrefix]: true,
+        [`${bsPrefix}-${size}`]: size
+    };
+    (0, _warningDefault.default)(controlId == null || !id, "`controlId` is ignored on `<FormControl>` when `id` is specified.");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        type: type,
+        size: htmlSize,
+        ref: ref,
+        readOnly: readOnly,
+        id: id || controlId,
+        className: (0, _classnamesDefault.default)(className, classes, isValid && `is-valid`, isInvalid && `is-invalid`, type === "color" && `${bsPrefix}-color`)
+    });
+});
+FormControl.displayName = "FormControl";
+exports.default = Object.assign(FormControl, {
+    Feedback: (0, _feedbackDefault.default)
+});
+
+},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Feedback":"aWeg2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aj346":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _createWithBsPrefix = require("./createWithBsPrefix");
+var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
+exports.default = (0, _createWithBsPrefixDefault.default)("form-floating");
+
+},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1qBHH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const FormGroup = /*#__PURE__*/ _react.forwardRef(({ controlId, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div", ...props }, ref)=>{
+    const context = (0, _react.useMemo)(()=>({
+            controlId
+        }), [
+        controlId
+    ]);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formContextDefault.default).Provider, {
+        value: context,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+            ...props,
+            ref: ref
+        })
+    });
+});
+FormGroup.displayName = "FormGroup";
+exports.default = FormGroup;
+
+},{"react":"21dqq","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"66epi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _warning = require("warning");
+var _warningDefault = parcelHelpers.interopDefault(_warning);
+var _col = require("./Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    column: false,
+    visuallyHidden: false
+};
+const FormLabel = /*#__PURE__*/ _react.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "label", bsPrefix, column, visuallyHidden, className, htmlFor, ...props }, ref)=>{
+    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-label");
+    let columnClass = "col-form-label";
+    if (typeof column === "string") columnClass = `${columnClass} ${columnClass}-${column}`;
+    const classes = (0, _classnamesDefault.default)(className, bsPrefix, visuallyHidden && "visually-hidden", column && columnClass);
+    (0, _warningDefault.default)(controlId == null || !htmlFor, "`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.");
+    htmlFor = htmlFor || controlId;
+    if (column) return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _colDefault.default), {
+        ref: ref,
+        as: "label",
+        className: classes,
+        htmlFor: htmlFor,
+        ...props
+    });
+    return(/*#__PURE__*/ // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
+    (0, _jsxRuntime.jsx)(Component, {
+        ref: ref,
+        className: classes,
+        htmlFor: htmlFor,
+        ...props
+    }));
+});
+FormLabel.displayName = "FormLabel";
+FormLabel.defaultProps = defaultProps;
+exports.default = FormLabel;
+
+},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8zsCO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const FormRange = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, id, ...props }, ref)=>{
+    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-range");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+        ...props,
+        type: "range",
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        id: id || controlId
+    });
+});
+FormRange.displayName = "FormRange";
+exports.default = FormRange;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hHWyB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const FormSelect = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, size, htmlSize, className, isValid = false, isInvalid = false, id, ...props }, ref)=>{
+    const { controlId } = (0, _react.useContext)((0, _formContextDefault.default));
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-select");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("select", {
+        ...props,
+        size: htmlSize,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, size && `${bsPrefix}-${size}`, isValid && `is-valid`, isInvalid && `is-invalid`),
+        id: id || controlId
+    });
+});
+FormSelect.displayName = "FormSelect";
+exports.default = FormSelect;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ffeC7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const FormText = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, as: Component = "small", muted, ...props }, ref)=>{
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-text");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, muted && "text-muted")
+    });
+});
+FormText.displayName = "FormText";
+exports.default = FormText;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9O81i":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _formCheck = require("./FormCheck");
+var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
+var _jsxRuntime = require("react/jsx-runtime");
+const Switch = /*#__PURE__*/ _react.forwardRef((props, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckDefault.default), {
+        ...props,
+        ref: ref,
+        type: "switch"
+    }));
+Switch.displayName = "Switch";
+exports.default = Object.assign(Switch, {
+    Input: (0, _formCheckDefault.default).Input,
+    Label: (0, _formCheckDefault.default).Label
+});
+
+},{"react":"21dqq","./FormCheck":"idkr0","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"coYzo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _formGroup = require("./FormGroup");
+var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, children, controlId, label, ...props }, ref)=>{
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-floating");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _formGroupDefault.default), {
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        controlId: controlId,
+        ...props,
+        children: [
+            children,
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("label", {
+                htmlFor: controlId,
+                children: label
+            })
+        ]
+    });
+});
+FloatingLabel.displayName = "FloatingLabel";
+exports.default = FloatingLabel;
+
+},{"classnames":"jocGM","react":"21dqq","./FormGroup":"1qBHH","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hEdsw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    fluid: false
+};
+const Container = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, fluid, // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div", className, ...props }, ref)=>{
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "container");
+    const suffix = typeof fluid === "string" ? `-${fluid}` : "-fluid";
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ref: ref,
+        ...props,
+        className: (0, _classnamesDefault.default)(className, fluid ? `${prefix}${suffix}` : prefix)
+    });
+});
+Container.displayName = "Container";
+Container.defaultProps = defaultProps;
+exports.default = Container;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cXyL2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _all = require("prop-types-extra/lib/all");
+var _allDefault = parcelHelpers.interopDefault(_all);
+var _react = require("react");
+var _uncontrollable = require("uncontrollable");
+var _nav = require("@restart/ui/Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+var _themeProvider = require("./ThemeProvider");
+var _navbarContext = require("./NavbarContext");
+var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
+var _cardHeaderContext = require("./CardHeaderContext");
+var _cardHeaderContextDefault = parcelHelpers.interopDefault(_cardHeaderContext);
+var _navItem = require("./NavItem");
+var _navItemDefault = parcelHelpers.interopDefault(_navItem);
+var _navLink = require("./NavLink");
+var _navLinkDefault = parcelHelpers.interopDefault(_navLink);
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    justify: false,
+    fill: false
+};
+const Nav = /*#__PURE__*/ _react.forwardRef((uncontrolledProps, ref)=>{
+    const { as = "div", bsPrefix: initialBsPrefix, variant, fill, justify, navbar, navbarScroll, className, activeKey, ...props } = (0, _uncontrollable.useUncontrolled)(uncontrolledProps, {
+        activeKey: "onSelect"
+    });
+    const bsPrefix = (0, _themeProvider.useBootstrapPrefix)(initialBsPrefix, "nav");
+    let navbarBsPrefix;
+    let cardHeaderBsPrefix;
+    let isNavbar = false;
+    const navbarContext = (0, _react.useContext)((0, _navbarContextDefault.default));
+    const cardHeaderContext = (0, _react.useContext)((0, _cardHeaderContextDefault.default));
+    if (navbarContext) {
+        navbarBsPrefix = navbarContext.bsPrefix;
+        isNavbar = navbar == null ? true : navbar;
+    } else if (cardHeaderContext) ({ cardHeaderBsPrefix } = cardHeaderContext);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _navDefault.default), {
+        as: as,
+        ref: ref,
+        activeKey: activeKey,
+        className: (0, _classnamesDefault.default)(className, {
+            [bsPrefix]: !isNavbar,
+            [`${navbarBsPrefix}-nav`]: isNavbar,
+            [`${navbarBsPrefix}-nav-scroll`]: isNavbar && navbarScroll,
+            [`${cardHeaderBsPrefix}-${variant}`]: !!cardHeaderBsPrefix,
+            [`${bsPrefix}-${variant}`]: !!variant,
+            [`${bsPrefix}-fill`]: fill,
+            [`${bsPrefix}-justified`]: justify
+        }),
+        ...props
+    });
+});
+Nav.displayName = "Nav";
+Nav.defaultProps = defaultProps;
+exports.default = Object.assign(Nav, {
+    Item: (0, _navItemDefault.default),
+    Link: (0, _navLinkDefault.default)
+});
+
+},{"classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","uncontrollable":"b3yWY","@restart/ui/Nav":"fZdNd","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","./CardHeaderContext":"36cNB","./NavItem":"ew05W","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"37Ank":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = all;
+var _createChainableTypeChecker = require("d69c03d3e91a1136");
+var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function all() {
+    for(var _len = arguments.length, validators = Array(_len), _key = 0; _key < _len; _key++)validators[_key] = arguments[_key];
+    function allPropTypes() {
+        for(var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
+        var error = null;
+        validators.forEach(function(validator) {
+            if (error != null) return;
+            var result = validator.apply(undefined, args);
+            if (result != null) error = result;
+        });
+        return error;
+    }
+    return (0, _createChainableTypeChecker2.default)(allPropTypes);
+}
+module.exports = exports["default"];
+
+},{"d69c03d3e91a1136":"1m8lT"}],"1m8lT":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = createChainableTypeChecker;
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */ // Mostly taken from ReactPropTypes.
+function createChainableTypeChecker(validate) {
+    function checkType(isRequired, props, propName, componentName, location, propFullName) {
+        var componentNameSafe = componentName || "<<anonymous>>";
+        var propFullNameSafe = propFullName || propName;
+        if (props[propName] == null) {
+            if (isRequired) return new Error("Required " + location + " `" + propFullNameSafe + "` was not specified " + ("in `" + componentNameSafe + "`."));
+            return null;
+        }
+        for(var _len = arguments.length, args = Array(_len > 6 ? _len - 6 : 0), _key = 6; _key < _len; _key++)args[_key - 6] = arguments[_key];
+        return validate.apply(undefined, [
+            props,
+            propName,
+            componentNameSafe,
+            location,
+            propFullNameSafe
+        ].concat(args));
+    }
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+    return chainedCheckType;
+}
+module.exports = exports["default"];
+
+},{}],"fZdNd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _querySelectorAll = require("dom-helpers/querySelectorAll");
+var _querySelectorAllDefault = parcelHelpers.interopDefault(_querySelectorAll);
+var _react = require("react");
+var _useForceUpdate = require("@restart/hooks/useForceUpdate");
+var _useForceUpdateDefault = parcelHelpers.interopDefault(_useForceUpdate);
+var _useMergedRefs = require("@restart/hooks/useMergedRefs");
+var _useMergedRefsDefault = parcelHelpers.interopDefault(_useMergedRefs);
+var _navContext = require("./NavContext");
+var _navContextDefault = parcelHelpers.interopDefault(_navContext);
+var _selectableContext = require("./SelectableContext");
+var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
+var _tabContext = require("./TabContext");
+var _tabContextDefault = parcelHelpers.interopDefault(_tabContext);
+var _dataKey = require("./DataKey");
+var _navItem = require("./NavItem");
+var _navItemDefault = parcelHelpers.interopDefault(_navItem);
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "as",
+    "onSelect",
+    "activeKey",
+    "role",
+    "onKeyDown"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = ()=>{};
+const EVENT_KEY_ATTR = (0, _dataKey.dataAttr)("event-key");
+const Nav = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
+    let { // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    as: Component = "div", onSelect, activeKey, role, onKeyDown } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    // A ref and forceUpdate for refocus, b/c we only want to trigger when needed
+    // and don't want to reset the set in the effect
+    const forceUpdate = (0, _useForceUpdateDefault.default)();
+    const needsRefocusRef = (0, _react.useRef)(false);
+    const parentOnSelect = (0, _react.useContext)((0, _selectableContextDefault.default));
+    const tabContext = (0, _react.useContext)((0, _tabContextDefault.default));
+    let getControlledId, getControllerId;
+    if (tabContext) {
+        role = role || "tablist";
+        activeKey = tabContext.activeKey;
+        // TODO: do we need to duplicate these?
+        getControlledId = tabContext.getControlledId;
+        getControllerId = tabContext.getControllerId;
+    }
+    const listNode = (0, _react.useRef)(null);
+    const getNextActiveTab = (offset)=>{
+        const currentListNode = listNode.current;
+        if (!currentListNode) return null;
+        const items = (0, _querySelectorAllDefault.default)(currentListNode, `[${EVENT_KEY_ATTR}]:not([aria-disabled=true])`);
+        const activeChild = currentListNode.querySelector("[aria-selected=true]");
+        if (!activeChild || activeChild !== document.activeElement) return null;
+        const index = items.indexOf(activeChild);
+        if (index === -1) return null;
+        let nextIndex = index + offset;
+        if (nextIndex >= items.length) nextIndex = 0;
+        if (nextIndex < 0) nextIndex = items.length - 1;
+        return items[nextIndex];
+    };
+    const handleSelect = (key, event)=>{
+        if (key == null) return;
+        onSelect == null || onSelect(key, event);
+        parentOnSelect == null || parentOnSelect(key, event);
+    };
+    const handleKeyDown = (event)=>{
+        onKeyDown == null || onKeyDown(event);
+        if (!tabContext) return;
+        let nextActiveChild;
+        switch(event.key){
+            case "ArrowLeft":
+            case "ArrowUp":
+                nextActiveChild = getNextActiveTab(-1);
+                break;
+            case "ArrowRight":
+            case "ArrowDown":
+                nextActiveChild = getNextActiveTab(1);
+                break;
+            default:
+                return;
+        }
+        if (!nextActiveChild) return;
+        event.preventDefault();
+        handleSelect(nextActiveChild.dataset[(0, _dataKey.dataProp)("EventKey")] || null, event);
+        needsRefocusRef.current = true;
+        forceUpdate();
+    };
+    (0, _react.useEffect)(()=>{
+        if (listNode.current && needsRefocusRef.current) {
+            const activeChild = listNode.current.querySelector(`[${EVENT_KEY_ATTR}][aria-selected=true]`);
+            activeChild == null || activeChild.focus();
+        }
+        needsRefocusRef.current = false;
+    });
+    const mergedRef = (0, _useMergedRefsDefault.default)(ref, listNode);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _selectableContextDefault.default).Provider, {
+        value: handleSelect,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _navContextDefault.default).Provider, {
+            value: {
+                role,
+                // used by NavLink to determine it's role
+                activeKey: (0, _selectableContext.makeEventKey)(activeKey),
+                getControlledId: getControlledId || noop,
+                getControllerId: getControllerId || noop
+            },
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, Object.assign({}, props, {
+                onKeyDown: handleKeyDown,
+                ref: mergedRef,
+                role: role
+            }))
+        })
+    });
+});
+Nav.displayName = "Nav";
+exports.default = Object.assign(Nav, {
+    Item: (0, _navItemDefault.default)
+});
+
+},{"dom-helpers/querySelectorAll":"g5Sx6","react":"21dqq","@restart/hooks/useForceUpdate":"3Y4bz","@restart/hooks/useMergedRefs":"6hhuo","./NavContext":"j1SMA","./SelectableContext":"8zLqy","./TabContext":"cI3G3","./DataKey":"9vwZh","./NavItem":"2cGYS","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cI3G3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const TabContext = /*#__PURE__*/ _react.createContext(null);
+exports.default = TabContext;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2cGYS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useNavItem", ()=>useNavItem);
+var _react = require("react");
+var _useEventCallback = require("@restart/hooks/useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _navContext = require("./NavContext");
+var _navContextDefault = parcelHelpers.interopDefault(_navContext);
+var _selectableContext = require("./SelectableContext");
+var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
+var _button = require("./Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _dataKey = require("./DataKey");
+var _tabContext = require("./TabContext");
+var _tabContextDefault = parcelHelpers.interopDefault(_tabContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "as",
+    "active",
+    "eventKey"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+function useNavItem({ key, onClick, active, id, role, disabled }) {
+    const parentOnSelect = (0, _react.useContext)((0, _selectableContextDefault.default));
+    const navContext = (0, _react.useContext)((0, _navContextDefault.default));
+    const tabContext = (0, _react.useContext)((0, _tabContextDefault.default));
+    let isActive = active;
+    const props = {
+        role
+    };
+    if (navContext) {
+        if (!role && navContext.role === "tablist") props.role = "tab";
+        const contextControllerId = navContext.getControllerId(key != null ? key : null);
+        const contextControlledId = navContext.getControlledId(key != null ? key : null);
+        // @ts-ignore
+        props[(0, _dataKey.dataAttr)("event-key")] = key;
+        props.id = contextControllerId || id;
+        isActive = active == null && key != null ? navContext.activeKey === key : active;
+        /**
+     * Simplified scenario for `mountOnEnter`.
+     *
+     * While it would make sense to keep 'aria-controls' for tabs that have been mounted at least
+     * once, it would also complicate the code quite a bit, for very little gain.
+     * The following implementation is probably good enough.
+     *
+     * @see https://github.com/react-restart/ui/pull/40#issuecomment-1009971561
+     */ if (isActive || !(tabContext != null && tabContext.unmountOnExit) && !(tabContext != null && tabContext.mountOnEnter)) props["aria-controls"] = contextControlledId;
+    }
+    if (props.role === "tab") {
+        props["aria-selected"] = isActive;
+        if (!isActive) props.tabIndex = -1;
+        if (disabled) {
+            props.tabIndex = -1;
+            props["aria-disabled"] = true;
+        }
+    }
+    props.onClick = (0, _useEventCallbackDefault.default)((e)=>{
+        if (disabled) return;
+        onClick == null || onClick(e);
+        if (key == null) return;
+        if (parentOnSelect && !e.isPropagationStopped()) parentOnSelect(key, e);
+    });
+    return [
+        props,
+        {
+            isActive
+        }
+    ];
+}
+const NavItem = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
+    let { as: Component = (0, _buttonDefault.default), active, eventKey } = _ref, options = _objectWithoutPropertiesLoose(_ref, _excluded);
+    const [props, meta] = useNavItem(Object.assign({
+        key: (0, _selectableContext.makeEventKey)(eventKey, options.href),
+        active
+    }, options));
+    // @ts-ignore
+    props[(0, _dataKey.dataAttr)("active")] = meta.isActive;
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, Object.assign({}, options, props, {
+        ref: ref
+    }));
+});
+NavItem.displayName = "NavItem";
+exports.default = NavItem;
+
+},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./NavContext":"j1SMA","./SelectableContext":"8zLqy","./Button":"8YUbR","./DataKey":"9vwZh","./TabContext":"cI3G3","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ew05W":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _createWithBsPrefix = require("./createWithBsPrefix");
+var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
+exports.default = (0, _createWithBsPrefixDefault.default)("nav-item");
+
+},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7geL8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _anchor = require("@restart/ui/Anchor");
+var _anchorDefault = parcelHelpers.interopDefault(_anchor);
+var _navItem = require("@restart/ui/NavItem");
+var _selectableContext = require("@restart/ui/SelectableContext");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    disabled: false
+};
+const NavLink = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, as: Component = (0, _anchorDefault.default), active, eventKey, ...props }, ref)=>{
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "nav-link");
+    const [navItemProps, meta] = (0, _navItem.useNavItem)({
+        key: (0, _selectableContext.makeEventKey)(eventKey, props.href),
+        active,
+        ...props
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        ...navItemProps,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, props.disabled && "disabled", meta.isActive && "active")
+    });
+});
+NavLink.displayName = "NavLink";
+NavLink.defaultProps = defaultProps;
+exports.default = NavLink;
+
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/Anchor":"cQOWi","@restart/ui/NavItem":"2cGYS","@restart/ui/SelectableContext":"8zLqy","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1mHjo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -33825,23 +37292,7 @@ function activeElement(doc) {
     }
 }
 
-},{"./ownerDocument":"2WpOk","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"KpRFS":[function(require,module,exports) {
-/* eslint-disable no-bitwise, no-cond-assign */ /**
- * Checks if an element contains another given element.
- * 
- * @param context the context element
- * @param node the element to check
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>contains);
-function contains(context, node) {
-    // HTML DOM and SVG DOM may have different support levels,
-    // so we need to check on context instead of a document root element.
-    if (context.contains) return context.contains(node);
-    if (context.compareDocumentPosition) return context === node || !!(context.compareDocumentPosition(node) & 16);
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2OOXI":[function(require,module,exports) {
+},{"./ownerDocument":"2WpOk","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2OOXI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useWillUnmount);
@@ -34007,21 +37458,7 @@ function useWaitForDOMRef(ref, onResolved) {
     return resolvedRef;
 }
 
-},{"dom-helpers/ownerDocument":"2WpOk","dom-helpers/canUseDOM":"9AwUB","react":"21dqq","./useWindow":"4AsJ2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"4AsJ2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "WindowProvider", ()=>WindowProvider);
-parcelHelpers.export(exports, "default", ()=>useWindow);
-var _react = require("react");
-var _canUseDOM = require("dom-helpers/canUseDOM");
-var _canUseDOMDefault = parcelHelpers.interopDefault(_canUseDOM);
-const Context = /*#__PURE__*/ (0, _react.createContext)((0, _canUseDOMDefault.default) ? window : undefined);
-const WindowProvider = Context.Provider;
-function useWindow() {
-    return (0, _react.useContext)(Context);
-}
-
-},{"react":"21dqq","dom-helpers/canUseDOM":"9AwUB","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"j0Jao":[function(require,module,exports) {
+},{"dom-helpers/ownerDocument":"2WpOk","dom-helpers/canUseDOM":"9AwUB","react":"21dqq","./useWindow":"4AsJ2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"j0Jao":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useTransition", ()=>useTransition);
@@ -34378,7 +37815,53 @@ function removeClass(element, className) {
     else element.setAttribute("class", replaceClassName(element.className && element.className.baseVal || "", className));
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cMC39":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8e6QB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _dropdown = require("./Dropdown");
+var _dropdownDefault = parcelHelpers.interopDefault(_dropdown);
+var _navLink = require("./NavLink");
+var _navLinkDefault = parcelHelpers.interopDefault(_navLink);
+var _jsxRuntime = require("react/jsx-runtime");
+const NavDropdown = /*#__PURE__*/ _react.forwardRef(({ id, title, children, bsPrefix, className, rootCloseEvent, menuRole, disabled, active, renderMenuOnMount, menuVariant, ...props }, ref)=>{
+    /* NavItem has no additional logic, it's purely presentational. Can set nav item class here to support "as" */ const navItemPrefix = (0, _themeProvider.useBootstrapPrefix)(undefined, "nav-item");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _dropdownDefault.default), {
+        ref: ref,
+        ...props,
+        className: (0, _classnamesDefault.default)(className, navItemPrefix),
+        children: [
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _dropdownDefault.default).Toggle, {
+                id: id,
+                eventKey: null,
+                active: active,
+                disabled: disabled,
+                childBsPrefix: bsPrefix,
+                as: (0, _navLinkDefault.default),
+                children: title
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _dropdownDefault.default).Menu, {
+                role: menuRole,
+                renderOnMount: renderMenuOnMount,
+                rootCloseEvent: rootCloseEvent,
+                variant: menuVariant,
+                children: children
+            })
+        ]
+    });
+});
+NavDropdown.displayName = "NavDropdown";
+exports.default = Object.assign(NavDropdown, {
+    Item: (0, _dropdownDefault.default).Item,
+    ItemText: (0, _dropdownDefault.default).ItemText,
+    Divider: (0, _dropdownDefault.default).Divider,
+    Header: (0, _dropdownDefault.default).Header
+});
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./Dropdown":"88m2L","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cMC39":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -41664,6 +45147,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "NavigationBar", ()=>NavigationBar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 const NavigationBar = ({ user, onLoggedOut })=>{
@@ -41678,14 +45163,14 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                     children: "FilmPulse"
                 }, void 0, false, {
                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 8,
+                    lineNumber: 9,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Toggle, {
                     "aria-controls": "basic-navbar-nav"
                 }, void 0, false, {
                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 11,
+                    lineNumber: 12,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
@@ -41701,7 +45186,7 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         children: "Login"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 17,
+                                        lineNumber: 18,
                                         columnNumber: 33
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
@@ -41710,7 +45195,7 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         children: "Signup"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 20,
+                                        lineNumber: 21,
                                         columnNumber: 33
                                     }, undefined)
                                 ]
@@ -41723,16 +45208,53 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         children: "Home"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 27,
+                                        lineNumber: 28,
                                         columnNumber: 33
                                     }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
-                                        as: (0, _reactRouterDom.Link),
-                                        to: `/profile`,
-                                        children: "Your Profile"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown), {
+                                        title: "Your Profile",
+                                        id: "basic-nav-dropdown",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
+                                                as: (0, _reactRouterDom.Link),
+                                                to: "/profile",
+                                                children: "Profile"
+                                            }, void 0, false, {
+                                                fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                                lineNumber: 32,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
+                                                as: (0, _reactRouterDom.Link),
+                                                to: "/user-profile",
+                                                children: "User Profile"
+                                            }, void 0, false, {
+                                                fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                                lineNumber: 35,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
+                                                as: (0, _reactRouterDom.Link),
+                                                to: "/edit-profile",
+                                                children: "Edit Profile"
+                                            }, void 0, false, {
+                                                fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                                lineNumber: 38,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
+                                                as: (0, _reactRouterDom.Link),
+                                                to: "/favorite-movies",
+                                                children: "Favorite Movies"
+                                            }, void 0, false, {
+                                                fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                                lineNumber: 41,
+                                                columnNumber: 37
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 30,
+                                        lineNumber: 31,
                                         columnNumber: 33
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
@@ -41740,7 +45262,7 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         children: "Logout"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 33,
+                                        lineNumber: 45,
                                         columnNumber: 33
                                     }, undefined)
                                 ]
@@ -41748,23 +45270,23 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 12,
+                    lineNumber: 13,
                     columnNumber: 17
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 7,
+            lineNumber: 8,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 9
     }, undefined);
 };
@@ -41777,7 +45299,7 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"2vVqf":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react":"21dqq"}],"2vVqf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41801,7 +45323,6 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
     const [birthday, setBirthday] = (0, _react.useState)(user.Birthday);
     const [isEditing, setIsEditing] = (0, _react.useState)(false);
     let favoriteMovies = movies.filter((m)=>user.FavoriteMovies.includes(m.id));
-    console.log("User profile-view:", user);
     const handleEditClick = ()=>{
         setIsEditing(true);
     };
@@ -41867,43 +45388,6 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "User Profile:"
-            }, void 0, false, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 91,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: [
-                    "Username: ",
-                    user.Username
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 92,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: [
-                    "Email: ",
-                    user.Email
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 93,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: [
-                    "Birthday: ",
-                    formatDate(user.Birthday)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 94,
-                columnNumber: 13
-            }, undefined),
             isEditing ? // Pull values from the input fields 
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
                 onSubmit: handleSaveClick,
@@ -41915,7 +45399,7 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                                 children: " Username: "
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 100,
+                                lineNumber: 99,
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -41926,13 +45410,13 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                                 minLength: "5"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 101,
+                                lineNumber: 100,
                                 columnNumber: 25
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 99,
+                        lineNumber: 98,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -41942,7 +45426,7 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                                 children: "Password:"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 110,
+                                lineNumber: 109,
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -41951,13 +45435,13 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                                 onChange: (e)=>setPassword(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 111,
+                                lineNumber: 110,
                                 columnNumber: 25
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 109,
+                        lineNumber: 108,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -41967,7 +45451,7 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                                 children: " Email: "
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 118,
+                                lineNumber: 117,
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -41976,45 +45460,41 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                                 onChange: (e)=>setEmail(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 119,
+                                lineNumber: 118,
                                 columnNumber: 25
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 117,
+                        lineNumber: 116,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                         controlId: "formBirtday",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                                children: "Birthday:"
+                                children: [
+                                    "Current Birthday: ",
+                                    formatDate(user.Birthday)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/profile-view/profile-view.jsx",
+                                lineNumber: 125,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                type: "date",
+                                value: birthday,
+                                onChange: (e)=>setBirthday(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 126,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "mb-3",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                                    type: "date",
-                                    value: birthday,
-                                    onChange: (e)=>setBirthday(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 128,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 127,
                                 columnNumber: 25
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 125,
+                        lineNumber: 124,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -42023,13 +45503,13 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                         children: "Save Changes"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 136,
+                        lineNumber: 133,
                         columnNumber: 21
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 98,
+                lineNumber: 97,
                 columnNumber: 17
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                 children: [
@@ -42039,7 +45519,7 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                         children: "Edit"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 142,
+                        lineNumber: 139,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -42048,7 +45528,7 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                         children: "Delete Profile"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 144,
+                        lineNumber: 141,
                         columnNumber: 21
                     }, undefined)
                 ]
@@ -42064,19 +45544,19 @@ const ProfileView = ({ user, movies, setUser, token, setToken })=>{
                             setUser: setUser
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 152,
+                            lineNumber: 149,
                             columnNumber: 29
                         }, undefined)
                     }, movie.id, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 151,
+                        lineNumber: 148,
                         columnNumber: 25
                     }, undefined))
             }, void 0, false)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 90,
+        lineNumber: 89,
         columnNumber: 9
     }, undefined);
 };
@@ -42090,6 +45570,273 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"lJZlQ":[function() {},{}]},["1MqTG","feejL","d8Dch"], "d8Dch", "parcelRequirea671")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"7Frwr":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$61c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$61c6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "UserProfile", ()=>UserProfile);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+const UserProfile = ({ user })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "User Profile:"
+            }, void 0, false, {
+                fileName: "src/components/profile-view/user-profile.jsx",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Username: ",
+                    user.Username
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/user-profile.jsx",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Email: ",
+                    user.Email
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/user-profile.jsx",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Birthday: ",
+                    user.Birthday
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/user-profile.jsx",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/profile-view/user-profile.jsx",
+        lineNumber: 7,
+        columnNumber: 9
+    }, undefined);
+};
+_c = UserProfile;
+var _c;
+$RefreshReg$(_c, "UserProfile");
+
+  $parcel$ReactRefreshHelpers$61c6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"30fNd":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$18b9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$18b9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "EditProfile", ()=>EditProfile);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _s = $RefreshSig$();
+const EditProfile = ({ user, setUser, token })=>{
+    _s();
+    const [username, setUsername] = (0, _react.useState)(user.Username);
+    const [password, setPassword] = (0, _react.useState)(user.Password);
+    const [email, setEmail] = (0, _react.useState)(user.Email);
+    const [birthday, setBirthday] = (0, _react.useState)(user.Birthday);
+    // const [isEditing, setIsEditing] = useState(true);
+    // add only update when new value
+    const handleSaveClick = async (event)=>{
+        event.preventDefault();
+        const updatedUser = {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
+        };
+        try {
+            const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/update/${user.Username}`, {
+                method: "PUT",
+                body: JSON.stringify(updatedUser),
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            if (response.ok) {
+                // If the update is successful, update the local state
+                // setIsEditing(false);
+                setUser(updatedUser);
+                alert("You successfully updated your profile");
+                console.log("User state updated:", updatedUser);
+            } else console.error("Failed to update user information");
+        } catch (error) {
+            console.error("Error updating user information", error);
+        }
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
+            onSubmit: handleSaveClick,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                    controlId: "formUsername",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            children: [
+                                "Current Username: ",
+                                user.Username
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/profile-view/edit-profile.jsx",
+                            lineNumber: 51,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                            type: "text",
+                            placeholder: "Username",
+                            onChange: (e)=>setUsername(e.target.value),
+                            required: true,
+                            minLength: "5"
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/edit-profile.jsx",
+                            lineNumber: 52,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/profile-view/edit-profile.jsx",
+                    lineNumber: 50,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                    controlId: "formPassword",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            children: "Password:"
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/edit-profile.jsx",
+                            lineNumber: 61,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                            type: "password",
+                            placeholder: "Password",
+                            onChange: (e)=>setPassword(e.target.value)
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/edit-profile.jsx",
+                            lineNumber: 62,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/profile-view/edit-profile.jsx",
+                    lineNumber: 60,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                    controlId: "formEmail",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            children: [
+                                " Current Email: ",
+                                user.Email
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/profile-view/edit-profile.jsx",
+                            lineNumber: 69,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                            type: "email",
+                            placeholder: "Email",
+                            onChange: (e)=>setEmail(e.target.value)
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/edit-profile.jsx",
+                            lineNumber: 70,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/profile-view/edit-profile.jsx",
+                    lineNumber: 68,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                    controlId: "formBirtday",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                            children: [
+                                "Current Birthday: ",
+                                user.Birthday
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/profile-view/edit-profile.jsx",
+                            lineNumber: 77,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                            type: "date",
+                            placeholder: "Birthday",
+                            onChange: (e)=>setBirthday(e.target.value)
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/edit-profile.jsx",
+                            lineNumber: 78,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/profile-view/edit-profile.jsx",
+                    lineNumber: 76,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                    variant: "primary",
+                    type: "submit",
+                    children: "Save Changes"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/edit-profile.jsx",
+                    lineNumber: 85,
+                    columnNumber: 17
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/profile-view/edit-profile.jsx",
+            lineNumber: 49,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/profile-view/edit-profile.jsx",
+        lineNumber: 48,
+        columnNumber: 9
+    }, undefined);
+};
+_s(EditProfile, "liv2JdM8/aRUhXNglA6p+zD50Y4=");
+_c = EditProfile;
+var _c;
+$RefreshReg$(_c, "EditProfile");
+
+  $parcel$ReactRefreshHelpers$18b9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"lJZlQ":[function() {},{}]},["1MqTG","feejL","d8Dch"], "d8Dch", "parcelRequirea671")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

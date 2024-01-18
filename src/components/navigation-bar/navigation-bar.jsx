@@ -1,4 +1,5 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import React from "react";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
@@ -17,7 +18,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                 <Nav.Link as={Link} to="/login">
                                     Login
                                 </Nav.Link>
-                                <Nav.Link as={Link} to="/signup" >
+                                <Nav.Link as={Link} to="/signup">
                                     Signup
                                 </Nav.Link>
                             </>
@@ -27,9 +28,20 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                 <Nav.Link as={Link} to="/">
                                     Home
                                 </Nav.Link>
-                                <Nav.Link as={Link} to={`/profile`}>
-                                    Your Profile
-                                </Nav.Link>
+                                <NavDropdown title="Your Profile" id="basic-nav-dropdown">
+                                    <NavDropdown.Item as={Link} to="/profile">
+                                        Profile
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/user-profile">
+                                        User Profile
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/edit-profile">
+                                        Edit Profile
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/favorite-movies">
+                                        Favorite Movies
+                                    </NavDropdown.Item>
+                                </NavDropdown>
                                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
                             </>
                         )}
@@ -37,5 +49,5 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-    )
-}
+    );
+};

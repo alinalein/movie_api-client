@@ -10,7 +10,6 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
     const [isEditing, setIsEditing] = useState(false);
 
     let favoriteMovies = movies.filter(m => user.FavoriteMovies.includes(m.id))
-    console.log('User profile-view:', user);
 
     const handleEditClick = () => {
         setIsEditing(true);
@@ -88,10 +87,10 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
 
     return (
         <Col>
-            <h2>User Profile:</h2>
+            {/* <h2>User Profile:</h2>
             <p>Username: {user.Username}</p>
             <p>Email: {user.Email}</p>
-            <p>Birthday: {formatDate(user.Birthday)}</p>
+            <p>Birthday: {formatDate(user.Birthday)}</p> */}
 
             {isEditing ? (
                 // Pull values from the input fields 
@@ -123,14 +122,12 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
                         />
                     </Form.Group>
                     <Form.Group controlId="formBirtday">
-                        <Form.Label>Birthday:</Form.Label>
-                        <div className="mb-3">
-                            <Form.Control
-                                type="date"
-                                value={birthday}
-                                onChange={(e) => setBirthday(e.target.value)}
-                            />
-                        </div>
+                        <Form.Label>Current Birthday: {formatDate(user.Birthday)}</Form.Label>
+                        <Form.Control
+                            type="date"
+                            value={birthday}
+                            onChange={(e) => setBirthday(e.target.value)}
+                        />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">
