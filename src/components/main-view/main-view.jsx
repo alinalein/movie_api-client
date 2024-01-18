@@ -4,10 +4,9 @@ import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
-import { ProfileView } from "../profile-view/profile-view";
 import { UserProfile } from "../profile-view/user-profile";
 import { EditProfile } from "../profile-view/edit-profile";
-import { FavoriteMovies } from "../profile-view/favorite-movies";
+import { FavoriteMovies } from "../favorite-movies/favorite-movies";
 import { DeleteProfile } from "../profile-view/delete-profile";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -136,29 +135,7 @@ export const MainView = () => {
                             </>
                         }
                     />
-                    {/* Route to the users profile -> call the profileview and send props to this*/}
-                    <Route
-                        path="/profile"
-                        element={
-                            <>
-                                {!user ? (
-                                    <Navigate to="/login" replace />
-                                ) : (
-                                    <Col md={5}>
-
-                                        <ProfileView
-                                            user={user}
-                                            setUser={setUser}
-                                            movies={movies}
-                                            token={token}
-                                            setToken={setToken}
-                                        />
-                                    </Col>
-                                )}
-                            </>
-                        }
-
-                    />
+                    {/* Route to the profile of the user  */}
                     <Route
                         path="/user-profile"
                         element={
@@ -176,6 +153,7 @@ export const MainView = () => {
                         }
 
                     />
+                    {/* Route to edit the profile */}
                     <Route
                         path="/edit-profile"
                         element={
@@ -195,6 +173,7 @@ export const MainView = () => {
                         }
 
                     />
+                    {/* Route to favorite movies */}
                     <Route
                         path="/favorite-movies"
                         element={
@@ -213,8 +192,8 @@ export const MainView = () => {
                                 )}
                             </>
                         }
-
                     />
+                    {/* Route to delete the profile */}
                     <Route
                         path="/delete-profile"
                         element={

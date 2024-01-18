@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Form, Button, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
+import { formatDate } from '../../utils/helpers/helpers';
 
 export const EditProfile = ({ user, setUser, token }) => {
 
-    const [username, setUsername] = useState(user.Username);
-    const [password, setPassword] = useState(user.Password);
-    const [email, setEmail] = useState(user.Email);
-    const [birthday, setBirthday] = useState(user.Birthday);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [birthday, setBirthday] = useState("");
 
     const navigate = useNavigate();
 
@@ -21,7 +22,7 @@ export const EditProfile = ({ user, setUser, token }) => {
             Password: password,
             Email: email,
             Birthday: birthday,
-            FavoriteMovies: user.FavoriteMoviess
+            FavoriteMovies: user.FavoriteMovies
         };
 
         try {
@@ -52,12 +53,14 @@ export const EditProfile = ({ user, setUser, token }) => {
 
     return (
         <Col>
+            <h6>Only write input to the fields you would like to update</h6>
             <Form onSubmit={handleSaveClick}>
                 <Form.Group controlId="formUsername">
                     <Form.Label>Current Username: {user.Username}</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Username"
+                        value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
                         minLength="5"
@@ -68,6 +71,7 @@ export const EditProfile = ({ user, setUser, token }) => {
                     <Form.Control
                         type="password"
                         placeholder="Password"
+                        value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </Form.Group>
@@ -76,14 +80,16 @@ export const EditProfile = ({ user, setUser, token }) => {
                     <Form.Control
                         type="email"
                         placeholder="Email"
+                        value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </Form.Group>
                 <Form.Group controlId="formBirtday">
-                    <Form.Label>Current Birthday: {user.Birthday}</Form.Label>
+                    <Form.Label>Current Birthday: {formatDate(user.Birthday)}</Form.Label>
                     <Form.Control
                         type="date"
                         placeholder="Birthday"
+                        value={birthday}
                         onChange={(e) => setBirthday(e.target.value)}
                     />
                 </Form.Group>

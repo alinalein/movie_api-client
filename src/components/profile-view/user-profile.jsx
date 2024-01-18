@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
+import { formatDate } from '../../utils/helpers/helpers';
 
 export const UserProfile = ({ user }) => {
 
@@ -9,7 +10,7 @@ export const UserProfile = ({ user }) => {
             <h2>Your Profile:</h2>
             <p>Username: {user.Username}</p>
             <p>Email: {user.Email}</p>
-            <p>Birthday: {user.Birthday}</p>
+            <p>Birthday: {formatDate(user.Birthday)}</p>
         </Col>
     );
 }

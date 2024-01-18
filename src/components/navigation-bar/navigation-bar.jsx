@@ -28,23 +28,24 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                 <Nav.Link as={Link} to="/">
                                     Home
                                 </Nav.Link>
+                                <Nav.Link as={Link} to="/favorite-movies">
+                                    My Movie List
+                                </Nav.Link>
+                                <Nav.Link as={Link} to="/">
+                                    Search
+                                </Nav.Link>
                                 <NavDropdown title="Your Profile" id="basic-nav-dropdown">
-                                    <NavDropdown.Item as={Link} to="/profile">
-                                        Profile
-                                    </NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to="/user-profile">
                                         User Profile
                                     </NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to="/edit-profile">
                                         Edit Profile
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to="/favorite-movies">
-                                        Favorite Movies
-                                    </NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to="/delete-profile">
                                         Delete Profile
                                     </NavDropdown.Item>
                                 </NavDropdown>
+
                                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
                             </>
                         )}

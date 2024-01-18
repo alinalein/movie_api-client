@@ -3,10 +3,11 @@ import { Form, Button, Col } from 'react-bootstrap'
 import { MovieCard } from '../movie-card/movie-card';
 
 export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
-    const [username, setUsername] = useState(user.Username);
-    const [password, setPassword] = useState(user.Password);
-    const [email, setEmail] = useState(user.Email);
-    const [birthday, setBirthday] = useState(user.Birthday);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [birthday, setBirthday] = useState("");
+
     const [isEditing, setIsEditing] = useState(false);
 
     let favoriteMovies = movies.filter(m => user.FavoriteMovies.includes(m.id))
@@ -87,10 +88,10 @@ export const ProfileView = ({ user, movies, setUser, token, setToken }) => {
 
     return (
         <Col>
-            {/* <h2>User Profile:</h2>
+            <h2>User Profile:</h2>
             <p>Username: {user.Username}</p>
             <p>Email: {user.Email}</p>
-            <p>Birthday: {formatDate(user.Birthday)}</p> */}
+            <p>Birthday: {formatDate(user.Birthday)}</p>
 
             {isEditing ? (
                 // Pull values from the input fields 
