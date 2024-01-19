@@ -6,9 +6,9 @@ import { formatDate } from '../../utils/helpers/helpers';
 export const EditProfile = ({ user, setUser, token }) => {
 
     const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [password, setPassword] = useState(user.Password);
     const [email, setEmail] = useState("");
-    const [birthday, setBirthday] = useState("");
+    const [birthday, setBirthday] = useState(user.Birthday);
 
     const navigate = useNavigate();
 
@@ -41,22 +41,19 @@ export const EditProfile = ({ user, setUser, token }) => {
                 alert("You successfully updated your profile");
                 navigate("/user-profile");
                 console.log("User state updated:", updatedUser);
+            } else if (response.status === 401) {
+                const data = await response.json();
+                console.error('Unauthorized:', data.error);
+                alert(data.error);
+            } else if (response.status === 422) {
+                const data = await response.json();
+                console.error('Validation Error:', data.errors);
             } else {
                 console.error('Failed to update user information');
-                // Handle other errors, if needed
             }
 
-            // Check for validation errors
-            const data = await response.json();
-            if (data && data.errors && data.errors.length > 0) {
-                data.errors.forEach((error) => {
-                    alert(error.msg);
-                    console.error("Validation Error:", error.msg);
-                });
-            }
         } catch (error) {
             console.error('Error updating user information', error);
-            // Handle other errors, if needed
         }
     };
 
@@ -70,10 +67,11 @@ export const EditProfile = ({ user, setUser, token }) => {
                     <Form.Label>Current Username: {user.Username}</Form.Label>
                     <Form.Control
                         type="text"
-                        placeholder="Username"
+                        placeholder="Username must be at least 5 characters and contain only letters and numbers"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         minLength="5"
+                        required
                     />
                 </Form.Group>
                 <Form.Group controlId="formPassword">
@@ -83,16 +81,17 @@ export const EditProfile = ({ user, setUser, token }) => {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        minLength="8"
+
                     />
                 </Form.Group>
                 <Form.Group controlId="formEmail">
                     <Form.Label> Current Email: {user.Email}</Form.Label>
                     <Form.Control
                         type="email"
-                        placeholder="Email"
+                        placeholder=""
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                     />
                 </Form.Group>
                 <Form.Group controlId="formBirtday">

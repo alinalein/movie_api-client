@@ -56,6 +56,7 @@ export const SignupView = () => {
                 <Form.Control
                     type="text"
                     value={username}
+                    placeholder="Username must be at least 5 characters and contain only letters and numbers"
                     onChange={(e) => setUsername(e.target.value)}
                     required
                     minLength="5"
@@ -65,10 +66,11 @@ export const SignupView = () => {
                 <Form.Label>Password:</Form.Label>
                 <Form.Control
                     type="password"
+                    placeholder="Password must be at least 8 characters"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    minLength="5"
+                    minLength="8"
                 />
             </Form.Group>
             <Form.Group controlId="formEmail">
