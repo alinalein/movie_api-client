@@ -50,6 +50,7 @@ export const SignupView = () => {
 
     return (
         <Form onSubmit={handleSubmit}>
+            <h2>SIGNUP</h2>
             <Form.Group controlId="formUsername">
                 <Form.Label>Username: </Form.Label>
                 <Form.Control
@@ -67,6 +68,7 @@ export const SignupView = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    minLength="5"
                 />
             </Form.Group>
             <Form.Group controlId="formEmail">

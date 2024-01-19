@@ -26,6 +26,7 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken ? storedToken : null);
     const [movies, setMovies] = useState([]);
 
+    // handle state of scroll up button-> route /
     const [showScrollButton, setShowScrollButton] = useState(false);
     useEffect(() => {
         setShowScrollButton(movies.length > 0);

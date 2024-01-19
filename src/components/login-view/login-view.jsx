@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const LoginView = ({ onLoggedIn }) => {
 
@@ -41,6 +42,7 @@ export const LoginView = ({ onLoggedIn }) => {
 
     return (
         <Form onSubmit={handleSubmit}>
+            <h2>LOGIN</h2>
             <Form.Group controlId="formUsername">
                 <Form.Label> Username: </Form.Label>
                 <Form.Control
@@ -62,10 +64,18 @@ export const LoginView = ({ onLoggedIn }) => {
                     />
                 </div>
             </Form.Group>
-
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
+            <Row className="mb-3">
+                <Col>
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </Col>
+                <Col >
+                    <p>
+                        New to myFlix? <Link to="/signup">Signup!</Link>
+                    </p>
+                </Col>
+            </Row>
         </Form>
     )
 }

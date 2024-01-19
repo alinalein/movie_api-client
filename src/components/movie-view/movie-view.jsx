@@ -1,20 +1,19 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useParams } from "react-router";
 import { Button, Col, Card, Row } from "react-bootstrap";
 
 export const MovieView = ({ movies }) => {
     // only access the param from the before set path (here in main)
     const { movieId } = useParams();
-
+    const [showSimilarMovies, setShowSimilarMovies] = useState(false);
     // got the whole movies array from main->here look for specific movie user klicked on by id-> then show details about this movie
     const movie = movies.find((m) => m.id === movieId);
 
     const findSimilarMovies = () => {
         return movies.filter((m) => m.Genre === movie.Genre && m.id !== movie.id);
     };
-    const similarMovies = findSimilarMovies();
-
     return (
         <>
             <div>
@@ -53,11 +52,11 @@ export const MovieView = ({ movies }) => {
             <br />
 
             <Row className="justify-content-md-center">
-                {similarMovies.length > 0 && (
+                {showSimilarMovies && findSimilarMovies().length > 0 ? (
                     <>
                         <h2>Similar movies</h2>
-                        {similarMovies.map((similarMovie) => (
-                            <Col md={2} key={similarMovie.id}>
+                        {findSimilarMovies().map((similarMovie) => (
+                            <Col md={3} className="mb-5" key={similarMovie.id}>
                                 <Card className="h-100">
                                     <Card.Img variant="top" src={similarMovie.ImagePath} />
                                     <Card.Body>
@@ -71,6 +70,14 @@ export const MovieView = ({ movies }) => {
                             </Col>
                         ))}
                     </>
+                ) : (
+                    <Button
+                        variant="primary"
+                        className="similar-button"
+                        onClick={() => setShowSimilarMovies(true)}
+                    >
+                        Don't miss out, see similar movies!
+                    </Button>
                 )}
             </Row>
         </>
@@ -87,7 +94,6 @@ MovieView.propTypes = {
             Director: PropTypes.string.isRequired,
             ImagePath: PropTypes.string.isRequired,
             Actors: PropTypes.string.isRequired,
-            Featured: PropTypes.string.isRequired,
         })
     ).isRequired,
 };

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom"
-import { MovieView } from "../movie-view/movie-view";
 
 export const MovieCard = ({ movie, token, user, setUser }) => {
 
@@ -80,19 +79,8 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
                             Delete from Favorites
                         </Button>
                     )}
-
                 </Card.Body>
             </Card>
-
-            {/* <Button
-                variant="primary"
-                onClick={() => {
-                    window.scrollTo(0, 0);
-                }}
-            >
-                Scroll to Top
-            </Button>
-     */}
         </>
     );
 };
