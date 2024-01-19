@@ -14,7 +14,7 @@ import { MoviesAction } from "../movies-genre/action-genre";
 import { MoviesBiography } from "../movies-genre/biography-genre";
 import { MoviesCrime } from "../movies-genre/crime-genre";
 import { MoviesSciFi } from "../movies-genre/sci-fi-genre";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
@@ -25,6 +25,12 @@ export const MainView = () => {
     //Create state variable, called token with initial state "null". Use to store token.
     const [token, setToken] = useState(storedToken ? storedToken : null);
     const [movies, setMovies] = useState([]);
+
+    const [showScrollButton, setShowScrollButton] = useState(false);
+    useEffect(() => {
+        setShowScrollButton(movies.length > 0);
+    }, [movies]);
+
 
     /*populate the movies array with the movies from the API */
     useEffect(() => {
@@ -137,10 +143,20 @@ export const MainView = () => {
                                 ) : (
                                     <>
                                         {movies.map((movie) => (
-                                            <Col className="mb-5" key={movie.id} md={3}>
+                                            <Col className="mb-5" key={movie.id} md={3} >
                                                 <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                                             </Col>
                                         ))}
+                                        {showScrollButton && (
+                                            <Button
+                                                variant="primary" className="scroll-button"
+                                                onClick={() => {
+                                                    window.scrollTo(0, 0);
+                                                }}
+                                            >
+                                                Scroll to Top
+                                            </Button>
+                                        )}
                                     </>
                                 )}
                             </>

@@ -56,33 +56,44 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
     };
 
     return (
-        <Card className="h-100">
-            <Card.Img variant="top" src={movie.ImagePath} />
-            <Card.Body>
-                <Card.Title>{movie.Title}</Card.Title>
-                <Card.Text>{movie.Description}</Card.Text>
-                <Card.Text>{movie.Genre}</Card.Text>
-                <Link to={`/movies/${movie.id}`}>
-                    <Button variant="link">
-                        View Details
-                    </Button>
-                </Link>
+        <>
+            <Card className="h-100">
+                <Card.Img variant="top" src={movie.ImagePath} />
+                <Card.Body>
+                    <Card.Title>{movie.Title}</Card.Title>
+                    <Card.Text>{movie.Description}</Card.Text>
+                    <Card.Text>{movie.Genre}</Card.Text>
+                    <Link to={`/movies/${movie.id}`}>
+                        <Button variant="link">
+                            View Details
+                        </Button>
+                    </Link>
 
-                {!isMovieInFavorites && (
-                    <Button variant="primary" onClick={handleAddToFavorites}>
-                        Add to Favorite
-                    </Button>
-                )}
+                    {!isMovieInFavorites && (
+                        <Button variant="primary" onClick={handleAddToFavorites}>
+                            Add to Favorite
+                        </Button>
+                    )}
 
-                {isMovieInFavorites && (
-                    <Button variant="" onClick={handleRemoveFromFavorites}>
-                        Delete from Favorites
-                    </Button>
-                )}
+                    {isMovieInFavorites && (
+                        <Button variant="" onClick={handleRemoveFromFavorites}>
+                            Delete from Favorites
+                        </Button>
+                    )}
 
-            </Card.Body>
-        </Card>
+                </Card.Body>
+            </Card>
 
+            {/* <Button
+                variant="primary"
+                onClick={() => {
+                    window.scrollTo(0, 0);
+                }}
+            >
+                Scroll to Top
+            </Button>
+     */}
+        </>
     );
 };
 
