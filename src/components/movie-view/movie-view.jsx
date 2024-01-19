@@ -29,10 +29,6 @@ export const MovieView = ({ movies }) => {
                     <span>{movie.Title}</span>
                 </div>
                 <div>
-                    <span> Description: </span>
-                    <span>{movie.Description}</span>
-                </div>
-                <div>
                     <span> Genre: </span>
                     <span>{movie.Genre}</span>
                 </div>
@@ -45,8 +41,8 @@ export const MovieView = ({ movies }) => {
                     <span>{movie.Actors}</span>
                 </div>
                 <div>
-                    <span> Featured:</span>
-                    <span>{movie.Featured}</span>
+                    <span> Description: </span>
+                    <span>{movie.Description}</span>
                 </div>
                 <div>
                     <Link to={`/`}>
@@ -61,7 +57,7 @@ export const MovieView = ({ movies }) => {
                     <>
                         <h2>Similar movies</h2>
                         {similarMovies.map((similarMovie) => (
-                            <Col md={3} key={similarMovie.id}>
+                            <Col md={2} key={similarMovie.id}>
                                 <Card className="h-100">
                                     <Card.Img variant="top" src={similarMovie.ImagePath} />
                                     <Card.Body>

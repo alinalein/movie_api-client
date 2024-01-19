@@ -61,7 +61,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
             <Card.Body>
                 <Card.Title>{movie.Title}</Card.Title>
                 <Card.Text>{movie.Description}</Card.Text>
-
+                <Card.Text>{movie.Genre}</Card.Text>
                 <Link to={`/movies/${movie.id}`}>
                     <Button variant="link">
                         View Details

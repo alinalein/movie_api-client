@@ -32,11 +32,11 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                     My Movie List
                                 </Nav.Link>
                                 <NavDropdown title="Genres" id="basic-nav-dropdown">
-                                    <NavDropdown.Item as={Link} to="">Crime</NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to="">Biography</NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to="">Sci-Fi</NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to="">Action</NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to="">Drama</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/crime">Crime</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/biography">Biography</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/sci-fi">Sci-Fi</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/action">Action</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/drama">Drama</NavDropdown.Item>
                                 </NavDropdown>
                                 <Nav.Link as={Link} to="/">
                                     Search

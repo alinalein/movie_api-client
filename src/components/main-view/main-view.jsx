@@ -9,6 +9,11 @@ import { EditProfile } from "../profile-view/edit-profile";
 import { FavoriteMovies } from "../favorite-movies/favorite-movies";
 import { DeleteProfile } from "../profile-view/delete-profile";
 import { ScrollToTop } from "../scroll-top/scroll-top";
+import { MoviesDrama } from "../movies-genre/drama-genre";
+import { MoviesAction } from "../movies-genre/action-genre";
+import { MoviesBiography } from "../movies-genre/biography-genre";
+import { MoviesCrime } from "../movies-genre/crime-genre";
+import { MoviesSciFi } from "../movies-genre/sci-fi-genre";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -119,6 +124,28 @@ export const MainView = () => {
                             </>
                         }
                     />
+                    {/* Route to show all movies  */}
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : movies.length === 0 ? (
+
+                                    <Col>The list is empty!</Col>
+                                ) : (
+                                    <>
+                                        {movies.map((movie) => (
+                                            <Col className="mb-5" key={movie.id} md={3}>
+                                                <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
+                                            </Col>
+                                        ))}
+                                    </>
+                                )}
+                            </>
+                        }
+                    />
                     {/* Route to selected movie  */}
                     <Route
                         path="/movies/:movieId"
@@ -153,7 +180,6 @@ export const MainView = () => {
                                 )}
                             </>
                         }
-
                     />
                     {/* Route to edit the profile */}
                     <Route
@@ -173,7 +199,6 @@ export const MainView = () => {
                                 )}
                             </>
                         }
-
                     />
                     {/* Route to favorite movies */}
                     <Route
@@ -215,28 +240,104 @@ export const MainView = () => {
                         }
 
                     />
-                    {/* Route to show all movies  */}
+                    {/* Route tom movie Genres */}
                     <Route
-                        path="/"
+                        path="/drama"
                         element={
                             <>
                                 {!user ? (
                                     <Navigate to="/login" replace />
-                                ) : movies.length === 0 ? (
-
-                                    <Col>The list is empty!</Col>
                                 ) : (
-                                    <>
-                                        {movies.map((movie) => (
-                                            <Col className="mb-5" key={movie.id} md={3}>
-                                                <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
-                                            </Col>
-                                        ))}
-                                    </>
+                                    <Col md={3}>
+                                        <MoviesDrama
+                                            movies={movies}
+                                            user={user}
+                                            token={token}
+                                            setUser={setUser}
+                                        />
+                                    </Col>
                                 )}
                             </>
                         }
+
+                    /><Route
+                        path="/crime"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={3}>
+                                        <MoviesCrime
+                                            movies={movies}
+                                            user={user}
+                                            token={token}
+                                            setUser={setUser}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
+
+                    /><Route
+                        path="/biography"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={3}>
+                                        <MoviesBiography
+                                            movies={movies}
+                                            user={user}
+                                            token={token}
+                                            setUser={setUser}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
+
+                    /><Route
+                        path="/sci-fi"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={3}>
+                                        <MoviesSciFi
+                                            movies={movies}
+                                            user={user}
+                                            token={token}
+                                            setUser={setUser}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
+
+                    /><Route
+                        path="/action"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col md={3}>
+                                        <MoviesAction
+                                            movies={movies}
+                                            user={user}
+                                            token={token}
+                                            setUser={setUser}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
+
                     />
+
                 </Routes>
             </Row >
         </BrowserRouter>
