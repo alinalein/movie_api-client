@@ -26,13 +26,26 @@ export const SignupView = () => {
             }
         }).then((response) => {
             if (response.ok) {
-                alert("You have been signed up")
+                alert("You have been signed up");
                 window.location.reload();
+            } else if (response.status === 422) {
+                return response.json();
             } else {
-                alert("The signup failed")
-            };
-        });
-
+                alert("The signup failed");
+            }
+        })
+            .then((data) => {
+                if (data && data.errors && data.errors.length > 0) {
+                    data.errors.forEach((error) => {
+                        alert(error.msg)
+                        console.error("Validation Error:", error.msg);
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error("Error during signup:", error);
+                alert("An error occurred during signup");
+            });
     };
 
     return (

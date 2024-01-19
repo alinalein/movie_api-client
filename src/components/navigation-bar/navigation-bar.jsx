@@ -31,25 +31,35 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                 <Nav.Link as={Link} to="/favorite-movies">
                                     My Movie List
                                 </Nav.Link>
+                                <NavDropdown title="Genres" id="basic-nav-dropdown">
+                                    <NavDropdown.Item as={Link} to="">Crime</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="">Biography</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="">Sci-Fi</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="">Action</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="">Drama</NavDropdown.Item>
+                                </NavDropdown>
                                 <Nav.Link as={Link} to="/">
                                     Search
                                 </Nav.Link>
-                                <NavDropdown title="Your Profile" id="basic-nav-dropdown">
-                                    <NavDropdown.Item as={Link} to="/user-profile">
-                                        User Profile
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to="/edit-profile">
-                                        Edit Profile
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to="/delete-profile">
-                                        Delete Profile
-                                    </NavDropdown.Item>
-                                </NavDropdown>
-
-                                <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
                             </>
                         )}
                     </Nav>
+                    {user && (
+                        <Nav className="ml-auto">
+                            <NavDropdown title="Your Profile" id="basic-nav-dropdown">
+                                <NavDropdown.Item as={Link} to="/user-profile">
+                                    User Profile
+                                </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/edit-profile">
+                                    Edit Profile
+                                </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/delete-profile">
+                                    Delete Profile
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
+                        </Nav>
+                    )}
                 </Navbar.Collapse>
             </Container>
         </Navbar>

@@ -43,9 +43,20 @@ export const EditProfile = ({ user, setUser, token }) => {
                 console.log("User state updated:", updatedUser);
             } else {
                 console.error('Failed to update user information');
+                // Handle other errors, if needed
+            }
+
+            // Check for validation errors
+            const data = await response.json();
+            if (data && data.errors && data.errors.length > 0) {
+                data.errors.forEach((error) => {
+                    alert(error.msg);
+                    console.error("Validation Error:", error.msg);
+                });
             }
         } catch (error) {
             console.error('Error updating user information', error);
+            // Handle other errors, if needed
         }
     };
 
@@ -62,7 +73,6 @@ export const EditProfile = ({ user, setUser, token }) => {
                         placeholder="Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
-                        required
                         minLength="5"
                     />
                 </Form.Group>
@@ -73,6 +83,7 @@ export const EditProfile = ({ user, setUser, token }) => {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        minLength="8"
                     />
                 </Form.Group>
                 <Form.Group controlId="formEmail">

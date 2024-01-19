@@ -8,6 +8,7 @@ import { UserProfile } from "../profile-view/user-profile";
 import { EditProfile } from "../profile-view/edit-profile";
 import { FavoriteMovies } from "../favorite-movies/favorite-movies";
 import { DeleteProfile } from "../profile-view/delete-profile";
+import { ScrollToTop } from "../scroll-top/scroll-top";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -72,6 +73,7 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
+            <ScrollToTop />
             {/* Call NavivationBar component & send the props */}
             <NavigationBar
                 user={user}
