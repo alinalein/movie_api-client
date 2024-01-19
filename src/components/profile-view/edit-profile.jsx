@@ -38,6 +38,7 @@ export const EditProfile = ({ user, setUser, token }) => {
             if (response.ok) {
                 // If the update is successful, update the local state
                 setUser(updatedUser);
+                localStorage.setItem("user", JSON.stringify(updatedUser));
                 alert("You successfully updated your profile");
                 navigate("/user-profile");
                 console.log("User state updated:", updatedUser);
@@ -61,8 +62,8 @@ export const EditProfile = ({ user, setUser, token }) => {
 
     return (
         <Col>
-            <h6>Only write input to the fields you would like to update</h6>
-            <Form onSubmit={handleSaveClick}>
+            <h3>EDIT YOUR DETAILS</h3>
+            <Form onSubmit={handleSaveClick} >
                 <Form.Group controlId="formUsername">
                     <Form.Label>Current Username: {user.Username}</Form.Label>
                     <Form.Control
@@ -94,7 +95,7 @@ export const EditProfile = ({ user, setUser, token }) => {
                         required
                     />
                 </Form.Group>
-                <Form.Group controlId="formBirtday">
+                <Form.Group controlId="formBirtday" className="mb-2">
                     <Form.Label>Current Birthday: {formatDate(user.Birthday)}</Form.Label>
                     <Form.Control
                         type="date"

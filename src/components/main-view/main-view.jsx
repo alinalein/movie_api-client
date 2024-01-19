@@ -60,28 +60,7 @@ export const MainView = () => {
                 setMovies(moviesFromApi);
             })
     }, [token]);
-    const handleAddToFavorites = async () => {
-        try {
-            const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/add/${movie.id}	`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-            if (response.ok) {
-                alert("added");
-                // Movie successfully added to favorites
-                const updatedUser = { ...user, FavoriteMovies: [...user.FavoriteMovies, movie.id] };
-                setUser(updatedUser);
-                console.log('Movie added to favorites');
-            } else {
-                console.error('Failed to add movie to favorites');
-            }
-        } catch (error) {
-            console.error('Error adding movie to favorites', error);
-        }
-    };
+
 
     return (
         <BrowserRouter>
@@ -144,7 +123,7 @@ export const MainView = () => {
                                 ) : (
                                     <>
                                         {movies.map((movie) => (
-                                            <Col className="mb-5" key={movie.id} md={3} >
+                                            <Col className="mb-3" key={movie.id} md={3} >
                                                 <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                                             </Col>
                                         ))}

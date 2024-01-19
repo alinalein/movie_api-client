@@ -7,11 +7,11 @@ export const FavoriteMovies = ({ movies, user, token, setUser }) => {
     let favoriteMovies = movies.filter(m => user.FavoriteMovies.includes(m.id))
 
     return (
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center" >
 
             {favoriteMovies.length > 0 ? (
                 favoriteMovies.map((movie) => (
-                    <Col className="mb-5" key={movie.id} md={3}>
+                    <Col className="mb-5" key={movie.id} md={3} style={{ border: "2px blue red" }}>
                         <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                     </Col>
                 ))

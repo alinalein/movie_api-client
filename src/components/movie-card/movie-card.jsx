@@ -6,7 +6,9 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
 
     const isMovieInFavorites = user.FavoriteMovies.includes(movie.id);
 
-    const handleAddToFavorites = async () => {
+    console.log('fav:', user.FavoriteMovies)
+
+    const addToFavorites = async () => {
         try {
             const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/add/${movie.id}	`, {
                 method: 'PUT',
@@ -20,6 +22,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
                 // Movie successfully added to favorites
                 const updatedUser = { ...user, FavoriteMovies: [...user.FavoriteMovies, movie.id] };
                 setUser(updatedUser);
+                localStorage.setItem("user", JSON.stringify(updatedUser));
                 console.log('Movie added to favorites');
             } else {
                 console.error('Failed to add movie to favorites');
@@ -29,7 +32,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
         }
     };
 
-    const handleRemoveFromFavorites = async () => {
+    const removeFromFavorites = async () => {
         try {
             const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/remove/${movie.id}`, {
                 method: 'DELETE',
@@ -45,6 +48,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
                 // create copy of object user & keeps all movies from fav except the one where id is id of movie the user clicked on 
                 const updatedUser = { ...user, FavoriteMovies: user.FavoriteMovies.filter(id => id !== movie.id) };
                 setUser(updatedUser);
+                localStorage.setItem("user", JSON.stringify(updatedUser));
                 console.log('Movie removed from favorites');
             } else {
                 console.error('Failed to remove movie from favorites');
@@ -69,13 +73,13 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
                     </Link>
 
                     {!isMovieInFavorites && (
-                        <Button variant="primary" onClick={handleAddToFavorites}>
+                        <Button variant="primary" onClick={addToFavorites}>
                             Add to Favorite
                         </Button>
                     )}
 
                     {isMovieInFavorites && (
-                        <Button variant="" onClick={handleRemoveFromFavorites}>
+                        <Button variant="" onClick={removeFromFavorites}>
                             Delete from Favorites
                         </Button>
                     )}

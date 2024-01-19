@@ -1,4 +1,4 @@
-import { Col, Button } from "react-bootstrap";
+import { Col, Button, Row } from "react-bootstrap";
 
 export const DeleteProfile = ({ user, setUser, token }) => {
 
@@ -32,8 +32,11 @@ export const DeleteProfile = ({ user, setUser, token }) => {
     };
 
     return (
-        <Col>
-            <Button className="ml-5" onClick={handleDeleteClick}>Delete Profile</Button>
-        </Col>
+        <Row className="justify-content-md-center">
+            <Col>
+                <h3>DELETE YOUR PROFILE</h3>
+                <Button className="ml-5" onClick={handleDeleteClick}>Delete Profile</Button>
+            </Col>
+        </Row>
     )
 }
