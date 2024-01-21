@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 
 export const SignupView = () => {
     const [username, setUsername] = useState("");
@@ -49,32 +49,34 @@ export const SignupView = () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <h2>SIGNUP</h2>
-            <Form.Group controlId="formUsername">
-                <Form.Label>Username: </Form.Label>
+        <Form onSubmit={handleSubmit} className="mx-auto mt-5">
+            <h2 className="text-center mb-4">SIGNUP</h2>
+            <Form.Group controlId="formUsername" className="mb-2">
+                <Form.Label><strong> Username: </strong></Form.Label>
                 <Form.Control
                     type="text"
                     value={username}
-                    placeholder="Username must be at least 5 characters and contain only letters and numbers"
+                    placeholder="Username"
                     onChange={(e) => setUsername(e.target.value)}
                     required
                     minLength="5"
                 />
+                <small style={{ fontSize: 'small' }}>Username must be at least 5 characters and contain only letters and numbers</small>
             </Form.Group>
-            <Form.Group controlId="formPassword">
-                <Form.Label>Password:</Form.Label>
+            <Form.Group controlId="formPassword" className="mb-2">
+                <Form.Label><strong>Password:</strong></Form.Label>
                 <Form.Control
                     type="password"
-                    placeholder="Password must be at least 8 characters"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     minLength="8"
                 />
+                <small style={{ fontSize: 'small' }}>Password must be at least 8 characters</small>
             </Form.Group>
-            <Form.Group controlId="formEmail">
-                <Form.Label> Email: </Form.Label>
+            <Form.Group controlId="formEmail" className="mb-2">
+                <Form.Label> <strong>Email: </strong></Form.Label>
                 <Form.Control
                     type="email"
                     value={email}
@@ -83,7 +85,7 @@ export const SignupView = () => {
                 />
             </Form.Group>
             <Form.Group controlId="formBirtday">
-                <Form.Label>Birthday:</Form.Label>
+                <Form.Label><strong>Birthday:</strong></Form.Label>
                 <div className="mb-3">
                     <Form.Control
                         type="date"
@@ -92,9 +94,12 @@ export const SignupView = () => {
                         required
                     />
                 </div>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
+                <div className="d-flex justify-content-between">
+                    <Button variant="danger" type="submit">
+                        Submit
+                    </Button>
+                    <p>Have an account? <Link to="/login">Login!</Link></p>
+                </div>
             </Form.Group>
         </Form>
     )

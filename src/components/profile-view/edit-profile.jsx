@@ -65,10 +65,10 @@ export const EditProfile = ({ user, setUser, token }) => {
             <h3>EDIT YOUR DETAILS</h3>
             <Form onSubmit={handleSaveClick} >
                 <Form.Group controlId="formUsername">
-                    <Form.Label>Current Username: {user.Username}</Form.Label>
+                    <Form.Label><strong> Current Username:</strong> {user.Username}</Form.Label>
                     <Form.Control
                         type="text"
-                        placeholder="Username must be at least 5 characters and contain only letters and numbers"
+                        placeholder="Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         minLength="5"
@@ -76,7 +76,7 @@ export const EditProfile = ({ user, setUser, token }) => {
                     />
                 </Form.Group>
                 <Form.Group controlId="formPassword">
-                    <Form.Label>Password:</Form.Label>
+                    <Form.Label><strong>Password:</strong></Form.Label>
                     <Form.Control
                         type="password"
                         placeholder="Password"
@@ -86,17 +86,17 @@ export const EditProfile = ({ user, setUser, token }) => {
                     />
                 </Form.Group>
                 <Form.Group controlId="formEmail">
-                    <Form.Label> Current Email: {user.Email}</Form.Label>
+                    <Form.Label><strong>Current Email: </strong>{user.Email}</Form.Label>
                     <Form.Control
                         type="email"
-                        placeholder=""
+                        placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </Form.Group>
                 <Form.Group controlId="formBirtday" className="mb-2">
-                    <Form.Label>Current Birthday: {formatDate(user.Birthday)}</Form.Label>
+                    <Form.Label><strong>Current Birthday: </strong>{formatDate(user.Birthday)}</Form.Label>
                     <Form.Control
                         type="date"
                         placeholder="Birthday"

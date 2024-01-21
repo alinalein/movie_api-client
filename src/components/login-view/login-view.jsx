@@ -30,7 +30,7 @@ export const LoginView = ({ onLoggedIn }) => {
                     localStorage.setItem("token", data.token);
                     onLoggedIn(data.user, data.token);
                 } else {
-                    alert("No such user known");
+                    alert("Username or password is wrong");
                 }
             })
             .catch((error) => {
@@ -41,10 +41,11 @@ export const LoginView = ({ onLoggedIn }) => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <h2>LOGIN</h2>
-            <Form.Group controlId="formUsername">
-                <Form.Label> Username: </Form.Label>
+
+        <Form onSubmit={handleSubmit} className="mx-auto mt-5">
+            <h2 className="text-center mb-4">LOGIN</h2>
+            <Form.Group controlId="formUsername" className="mb-2">
+                <Form.Label><strong> Username:</strong></Form.Label>
                 <Form.Control
                     type="text"
                     value={username}
@@ -54,7 +55,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 />
             </Form.Group>
             <Form.Group controlId="formPassword">
-                <Form.Label>Password: </Form.Label>
+                <Form.Label><strong>Password: </strong></Form.Label>
                 <div className="mb-3">
                     <Form.Control
                         type="password"
@@ -65,7 +66,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 </div>
             </Form.Group>
             <div className="d-flex justify-content-between">
-                <Button variant="primary" type="submit">
+                <Button variant="danger" type="submit">
                     Submit
                 </Button>
                 <p>
@@ -73,5 +74,6 @@ export const LoginView = ({ onLoggedIn }) => {
                 </p>
             </div>
         </Form>
+
     )
 }
