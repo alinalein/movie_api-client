@@ -7,7 +7,7 @@ export const MoviesSciFi = ({ movies, token, user, setUser }) => {
     const dramaMovies = movies.filter(movie => movie.Genre === 'Sci-Fi');
 
     return (
-        <Row className="justify-content-center" style={{ border: "2px solid green" }}>
+        <Row className="justify-content-center">
             <h2>Sci-Fi Movies</h2>
             <p>Science fiction is a genre that uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science.'</p>
 

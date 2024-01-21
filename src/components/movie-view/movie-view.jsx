@@ -23,7 +23,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                 <Card className="h-100">
                     <Card.Img variant="top" src={movie.ImagePath} className="img-fluid" alt={movie.Title} />
                     <Card.Body>
-                        <Card.Title className="mb-3" style={{ fontSize: '2rem' }}>{movie.Title}</Card.Title>
+                        <Card.Title className="mb-3" style={{ fontSize: '1.5rem' }}>{movie.Title}</Card.Title>
                         <Card.Text className="mb-1"><strong>Genre: </strong>{movie.Genre}</Card.Text>
                         <Card.Text className="mb-1"><strong>Director: </strong>{movie.Director}</Card.Text>
                         <Card.Text className="mb-1"><strong>Actors: </strong>{movie.Actors}</Card.Text>
@@ -46,7 +46,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                 <>
                     <h2>Similar movies</h2>
                     {findSimilarMovies().map((similarmovie) => (
-                        <Col className="mb-3" key={similarmovie.id} md={2} >
+                        <Col className="mb-3" key={similarmovie.id} md={3} >
                             <MovieCard movie={similarmovie} token={token} user={user} setUser={setUser} />
                         </Col>
                     ))}

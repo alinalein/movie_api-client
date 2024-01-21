@@ -61,6 +61,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                 <NavDropdown.Item as={Link} to="/edit-profile">
                                     Edit Profile
                                 </NavDropdown.Item>
+                                <hr className="dropdown-divider" />
                                 <NavDropdown.Item as={Link} to="/delete-profile">
                                     Delete Profile
                                 </NavDropdown.Item>

@@ -19,7 +19,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                 return searchTerms.every(term => movieTitle.includes(term));
             });
             setSearchResults(filteredMovies);
-            setShowEmptySearchMessage(false);
+            setShowNoResultMessage(false);
         }
     };
 

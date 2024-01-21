@@ -64,18 +64,14 @@ export const LoginView = ({ onLoggedIn }) => {
                     />
                 </div>
             </Form.Group>
-            <Row className="mb-3">
-                <Col>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Col>
-                <Col >
-                    <p>
-                        New to myFlix? <Link to="/signup">Signup!</Link>
-                    </p>
-                </Col>
-            </Row>
+            <div className="d-flex justify-content-between">
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+                <p>
+                    New to myFlix? <Link to="/signup">Signup!</Link>
+                </p>
+            </div>
         </Form>
     )
 }

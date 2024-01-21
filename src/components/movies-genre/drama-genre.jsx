@@ -7,8 +7,8 @@ export const MoviesDrama = ({ movies, token, user, setUser }) => {
     const dramaMovies = movies.filter(movie => movie.Genre === 'Drama');
 
     return (
-        <Row className="justify-content-center" style={{ border: "2px solid green" }}>
-            <h2>Drama Movies</h2>
+        <Row className="justify-content-center" >
+            <h2 style={{ border: "2px solid green" }}>Drama Movies</h2>
             <p>Drama is a category of narrative fiction intended to be more serious than humorous in tone.</p>
 
             {dramaMovies.map(movie => (

@@ -7,7 +7,7 @@ export const MoviesBiography = ({ movies, token, user, setUser }) => {
     const dramaMovies = movies.filter(movie => movie.Genre === 'Biography');
 
     return (
-        <Row className="justify-content-center" style={{ border: "2px solid green" }}>
+        <Row className="justify-content-center" >
             <h2>Biography Movies</h2>
             <p>Biographical films are a genre that depicts the life of a notable person, real or imagined.</p>
 

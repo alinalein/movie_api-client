@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
+// import { FavoriteToggle } from "../toggle-favorite/toggle-favorite"
 import { MovieView } from "../movie-view/movie-view";
 import { SearchMovie } from "../search-movie/search-movie"
 import { LoginView } from "../login-view/login-view";
@@ -89,6 +90,21 @@ export const MainView = () => {
                             </>
                         }
                     />
+                    {/* <>
+                        {!user ? (
+                             <Navigate to="/login" replace />
+                        ) : (
+                            <>
+                                {movies.map((movie) => (
+                                    <React.Fragment key={movie.id}>
+                                        <Col className="mb-4" md={3}>
+                                            <FavoriteToggle movie={movie} token={token} user={user} setUser={setUser} />
+                                        </Col>
+                                    </React.Fragment>
+                                ))}
+                            </>
+                        )}
+                    </> */}
                     {/* Route to login */}
                     <Route
                         path="/login"

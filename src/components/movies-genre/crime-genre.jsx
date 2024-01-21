@@ -7,7 +7,7 @@ export const MoviesCrime = ({ movies, token, user, setUser }) => {
     const dramaMovies = movies.filter(movie => movie.Genre === 'Crime');
 
     return (
-        <Row className="justify-content-center" style={{ border: "2px solid green" }}>
+        <Row className="justify-content-center">
             <h2>Crime Movies</h2>
             <p>Crime films are a genre of film that focus on crime.</p>
 

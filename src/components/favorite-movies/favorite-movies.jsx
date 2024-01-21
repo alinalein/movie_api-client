@@ -8,17 +8,17 @@ export const FavoriteMovies = ({ movies, user, token, setUser }) => {
 
     return (
 
-        <Row className="justify-content-center" style={{ border: "2px solid green" }}>
+        <Row className="justify-content-center" >
 
             {favoriteMovies.length > 0 ? (
                 favoriteMovies.map((movie) => (
-                    <Col className="mb-3" key={movie.id} md={3} style={{ border: "2px solid blue" }}>
+                    <Col className="mb-3" key={movie.id} md={3} >
                         <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                     </Col>
                 ))
             ) : (
                 <Alert variant="info">
-                    You have not added any movies to your favorites so far.
+                    You have not added any movies to your favorites list so far.
                 </Alert>
             )}
 
