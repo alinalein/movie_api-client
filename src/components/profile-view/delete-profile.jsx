@@ -33,8 +33,9 @@ export const DeleteProfile = ({ user, setUser, token }) => {
 
     return (
         <Row className="justify-content-md-center">
+            <h3>DELETE YOUR PROFILE</h3>
             <Col>
-                <h3>DELETE YOUR PROFILE</h3>
+
                 <Button className="ml-5" onClick={handleDeleteClick}>Delete Profile</Button>
             </Col>
         </Row>

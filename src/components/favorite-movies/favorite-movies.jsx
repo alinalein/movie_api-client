@@ -7,11 +7,12 @@ export const FavoriteMovies = ({ movies, user, token, setUser }) => {
     let favoriteMovies = movies.filter(m => user.FavoriteMovies.includes(m.id))
 
     return (
-        <Row className="justify-content-md-center" >
+
+        <Row className="justify-content-center" style={{ border: "2px solid green" }}>
 
             {favoriteMovies.length > 0 ? (
                 favoriteMovies.map((movie) => (
-                    <Col className="mb-5" key={movie.id} md={3} style={{ border: "2px blue red" }}>
+                    <Col className="mb-3" key={movie.id} md={3} style={{ border: "2px solid blue" }}>
                         <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                     </Col>
                 ))
@@ -22,6 +23,7 @@ export const FavoriteMovies = ({ movies, user, token, setUser }) => {
             )}
 
         </Row>
+
     );
 };
 

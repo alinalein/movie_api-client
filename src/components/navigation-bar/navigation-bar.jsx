@@ -38,7 +38,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                     <NavDropdown.Item as={Link} to="/action">Action</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to="/drama">Drama</NavDropdown.Item>
                                 </NavDropdown>
-                                <Nav.Link as={Link} to="/">
+                                <Nav.Link as={Link} to="/search">
                                     Search
                                 </Nav.Link>
                             </>

@@ -1,5 +1,5 @@
 import { MovieCard } from '../movie-card/movie-card';
-import { Col } from "react-bootstrap"
+import { Col, Row } from "react-bootstrap"
 
 export const MoviesAction = ({ movies, token, user, setUser }) => {
     // Filter movies with the genre "Drama"
@@ -7,17 +7,18 @@ export const MoviesAction = ({ movies, token, user, setUser }) => {
     const dramaMovies = movies.filter(movie => movie.Genre === 'Action');
 
     return (
-        <div>
+        <Row className="justify-content-center" style={{ border: "2px solid green" }}>
             <h2>Action Movies</h2>
             <p>'Action films are a genre that typically involves a protagonist who is in a race against time, their own abilities, or other external forces.</p>
-            <ul>
-                {dramaMovies.map(movie => (
-                    <Col className="mb-5" key={movie.id} >
-                        <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
-                    </Col>
-                ))}
-            </ul>
-        </div>
+
+            {dramaMovies.map(movie => (
+                <Col className="mb-3" key={movie.id} md={3} >
+                    <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
+                </Col>
+            ))}
+        </Row>
+
+
     );
 };
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { SearchMovie } from "../search-movie/search-movie"
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
@@ -8,7 +9,6 @@ import { UserProfile } from "../profile-view/user-profile";
 import { EditProfile } from "../profile-view/edit-profile";
 import { FavoriteMovies } from "../favorite-movies/favorite-movies";
 import { DeleteProfile } from "../profile-view/delete-profile";
-import { ScrollToTop } from "../scroll-top/scroll-top";
 import { MoviesDrama } from "../movies-genre/drama-genre";
 import { MoviesAction } from "../movies-genre/action-genre";
 import { MoviesBiography } from "../movies-genre/biography-genre";
@@ -64,7 +64,6 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
-            <ScrollToTop />
             {/* Call NavivationBar component & send the props */}
             <NavigationBar
                 user={user}
@@ -123,7 +122,7 @@ export const MainView = () => {
                                 ) : (
                                     <>
                                         {movies.map((movie) => (
-                                            <Col className="mb-3" key={movie.id} md={3} >
+                                            <Col className="mb-4" key={movie.id} md={3} >
                                                 <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                                             </Col>
                                         ))}
@@ -153,8 +152,8 @@ export const MainView = () => {
                                     <Col>The list is empty!</Col>
                                 ) : (
                                     // send the movies array to MovieView
-                                    <Col md={8}>
-                                        <MovieView movies={movies} />
+                                    <Col style={{ border: "2px solid green" }} >
+                                        <MovieView movies={movies} user={user} token={token} setUser={setUser} />
                                     </Col>
                                 )}
                             </>
@@ -204,7 +203,7 @@ export const MainView = () => {
                                 {!user ? (
                                     <Navigate to="/login" replace />
                                 ) : (
-                                    <Col md={5}>
+                                    <Col>
                                         <FavoriteMovies
                                             user={user}
                                             movies={movies}
@@ -244,7 +243,7 @@ export const MainView = () => {
                                 {!user ? (
                                     <Navigate to="/login" replace />
                                 ) : (
-                                    <Col md={3}>
+                                    <Col >
                                         <MoviesDrama
                                             movies={movies}
                                             user={user}
@@ -256,14 +255,15 @@ export const MainView = () => {
                             </>
                         }
 
-                    /><Route
+                    />
+                    <Route
                         path="/crime"
                         element={
                             <>
                                 {!user ? (
                                     <Navigate to="/login" replace />
                                 ) : (
-                                    <Col md={3}>
+                                    <Col >
                                         <MoviesCrime
                                             movies={movies}
                                             user={user}
@@ -282,7 +282,7 @@ export const MainView = () => {
                                 {!user ? (
                                     <Navigate to="/login" replace />
                                 ) : (
-                                    <Col md={3}>
+                                    <Col >
                                         <MoviesBiography
                                             movies={movies}
                                             user={user}
@@ -301,7 +301,7 @@ export const MainView = () => {
                                 {!user ? (
                                     <Navigate to="/login" replace />
                                 ) : (
-                                    <Col md={3}>
+                                    <Col >
                                         <MoviesSciFi
                                             movies={movies}
                                             user={user}
@@ -320,7 +320,7 @@ export const MainView = () => {
                                 {!user ? (
                                     <Navigate to="/login" replace />
                                 ) : (
-                                    <Col md={3}>
+                                    <Col >
                                         <MoviesAction
                                             movies={movies}
                                             user={user}
@@ -333,7 +333,26 @@ export const MainView = () => {
                         }
 
                     />
+                    <Route
+                        path="/search"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col >
+                                        <SearchMovie
+                                            movies={movies}
+                                            user={user}
+                                            token={token}
+                                            setUser={setUser}
+                                        />
+                                    </Col>
+                                )}
+                            </>
+                        }
 
+                    />
                 </Routes>
             </Row >
         </BrowserRouter>

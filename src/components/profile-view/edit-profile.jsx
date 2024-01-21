@@ -6,7 +6,7 @@ import { formatDate } from '../../utils/helpers/helpers';
 export const EditProfile = ({ user, setUser, token }) => {
 
     const [username, setUsername] = useState("");
-    const [password, setPassword] = useState(user.Password);
+    const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState(user.Birthday);
 
