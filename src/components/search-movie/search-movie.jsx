@@ -5,13 +5,21 @@ import { MovieCard } from "../movie-card/movie-card";
 export const SearchMovie = ({ movies, token, user, setUser }) => {
     const [searchTitle, setSearchTitle] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [showNoResultMessage, setShowNoResultMessage] = useState(false);
 
     const handleSearch = () => {
-        if (searchTitle.trim() === '') {
+        const searchTerm = searchTitle.trim().toLowerCase();
+        if (searchTerm === '' || movies.every(movie => !movie.Title.toLowerCase().includes(searchTerm))) {
             setSearchResults([]);
+            setShowNoResultMessage(true);
         } else {
-            const filteredMovies = movies.filter(movie => movie.Title.toLowerCase().includes(searchTitle.toLowerCase()));
+            const filteredMovies = movies.filter(movie => {
+                const movieTitle = movie.Title.toLowerCase();
+                const searchTerms = searchTerm.split(' ');
+                return searchTerms.every(term => movieTitle.includes(term));
+            });
             setSearchResults(filteredMovies);
+            setShowEmptySearchMessage(false);
         }
     };
 
@@ -33,13 +41,13 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                     Search
                 </Button>
             </Form>
-            {searchResults.length === 0 && searchTitle.trim() !== '' && (
+            {showNoResultMessage && (
                 <Alert variant="info">
                     No movie matches your search.
                 </Alert>
             )}
             {searchResults.map((foundMovie) => (
-                <Col className="mb-3" key={similarmovie.id} md={3}>
+                <Col className="mb-3" key={foundMovie.id} md={3}>
                     <MovieCard movie={foundMovie} token={token} user={user} setUser={setUser} />
                 </Col>
             ))}

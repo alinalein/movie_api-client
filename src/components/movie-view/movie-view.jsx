@@ -19,22 +19,24 @@ export const MovieView = ({ movies, token, user, setUser }) => {
     return (
         <Row className="justify-content-md-center">
 
-            <Col className="mb-3" key={movie.id} md={3} >
+            <Col className="mb-3" key={movie.id} md={4} >
                 <Card className="h-100">
                     <Card.Img variant="top" src={movie.ImagePath} className="img-fluid" alt={movie.Title} />
                     <Card.Body>
-                        <Card.Title>{movie.Title}</Card.Title>
-                        <Card.Text>{movie.Description}</Card.Text>
-
-                        <div className="mb-2">
+                        <Card.Title className="mb-3" style={{ fontSize: '2rem' }}>{movie.Title}</Card.Title>
+                        <Card.Text className="mb-1"><strong>Genre: </strong>{movie.Genre}</Card.Text>
+                        <Card.Text className="mb-1"><strong>Director: </strong>{movie.Director}</Card.Text>
+                        <Card.Text className="mb-1"><strong>Actors: </strong>{movie.Actors}</Card.Text>
+                        <Card.Text className="mb-4"><strong>Description: </strong>{movie.Description}</Card.Text>
+                        {/* <div className="mb-2">
                             <strong>Genre:</strong> {movie.Genre}
                         </div>
 
                         <div className="mb-2">
                             <strong>Actors:</strong> {movie.Actors}
-                        </div>
+                        </div> */}
                         <Link to={`/`} >
-                            <Button className="mb-3">Go Back</Button>
+                            <Button className="mb-1">Go Back</Button>
                         </Link>
                     </Card.Body>
                 </Card>
@@ -44,7 +46,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                 <>
                     <h2>Similar movies</h2>
                     {findSimilarMovies().map((similarmovie) => (
-                        <Col className="mb-3" key={similarmovie.id} md={3} >
+                        <Col className="mb-3" key={similarmovie.id} md={2} >
                             <MovieCard movie={similarmovie} token={token} user={user} setUser={setUser} />
                         </Col>
                     ))}
