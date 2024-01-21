@@ -17,13 +17,13 @@ export const MovieView = ({ movies, token, user, setUser }) => {
         return movies.filter((m) => m.Genre === movie.Genre && m.id !== movie.id);
     };
     return (
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center ">
 
             <Col className="mb-3" key={movie.id} md={4} >
                 <Card className="h-100">
                     <Card.Img variant="top" src={movie.ImagePath} className="img-fluid" alt={movie.Title} />
                     <Card.Body>
-                        <Card.Title className="mb-3" style={{ fontSize: '1.5rem' }}>{movie.Title}</Card.Title>
+                        <Card.Title className="mb-3 text-center" style={{ fontSize: '1.5rem' }}>{movie.Title}</Card.Title>
                         <Card.Text className="mb-1"><strong>Genre: </strong>{movie.Genre}</Card.Text>
                         <Card.Text className="mb-1"><strong>Director: </strong>{movie.Director}</Card.Text>
                         <Card.Text className="mb-1"><strong>Actors: </strong>{movie.Actors}</Card.Text>
@@ -44,7 +44,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
 
             {showSimilarMovies && findSimilarMovies().length > 0 ? (
                 <>
-                    <h2>Similar movies</h2>
+                    <h2 className="text-center">Similar movies</h2>
                     {findSimilarMovies().map((similarmovie) => (
                         <Col className="mb-3" key={similarmovie.id} md={3} >
                             <MovieCard movie={similarmovie} token={token} user={user} setUser={setUser} />
@@ -52,13 +52,17 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                     ))}
                 </>
             ) : (
-                <Button
-                    variant="primary"
-                    className="similar-button"
-                    onClick={() => setShowSimilarMovies(true)}
-                >
-                    Don't miss out, see similar movies!
-                </Button>
+                <Row>
+                    <Col className="text-center">
+                        <Button
+                            variant="primary"
+                            className="similar-button"
+                            onClick={() => setShowSimilarMovies(true)}
+                        >
+                            Don't miss out, see similar movies!
+                        </Button>
+                    </Col>
+                </Row>
             )}
         </Row>
     )

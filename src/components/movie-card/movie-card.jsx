@@ -59,7 +59,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
             <Card className="h-100">
                 <Card.Img variant="top" src={movie.ImagePath} alt={movie.Title} />
                 <Card.Body>
-                    <Card.Title>{movie.Title}</Card.Title>
+                    <Card.Title className="text-center mb-4">{movie.Title}</Card.Title>
                     {/* <Card.Text>{movie.Description}</Card.Text> */}
                     <div className="d-flex justify-content-between">
                         <Link to={`/movies/${movie.id}`}>

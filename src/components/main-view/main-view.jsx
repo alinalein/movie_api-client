@@ -143,16 +143,18 @@ export const MainView = () => {
                                             </Col>
                                         ))}
                                         {showScrollButton && (
-                                            <Col className="mb-4" md={4} >
-                                                <Button
-                                                    variant="primary" className="scroll-button"
-                                                    onClick={() => {
-                                                        window.scrollTo(0, 0);
-                                                    }}
-                                                >
-                                                    Scroll to Top
-                                                </Button>
-                                            </Col>
+                                            <Row className="mb-4 text-center">
+                                                <Col md={4} >
+                                                    <Button
+                                                        variant="primary" className="scroll-button"
+                                                        onClick={() => {
+                                                            window.scrollTo(0, 0);
+                                                        }}
+                                                    >
+                                                        Scroll to Top
+                                                    </Button>
+                                                </Col>
+                                            </Row>
                                         )}
                                     </>
                                 )}

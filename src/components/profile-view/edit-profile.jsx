@@ -36,10 +36,11 @@ export const EditProfile = ({ user, setUser, token }) => {
             });
 
             if (response.ok) {
-                // If the update is successful, update the local state
+                // If the update is successful, update the local state & local storage
                 setUser(updatedUser);
                 localStorage.setItem("user", JSON.stringify(updatedUser));
                 alert("You successfully updated your profile");
+                // navigate to the user profile when update successfull 
                 navigate("/user-profile");
                 console.log("User state updated:", updatedUser);
             } else if (response.status === 401) {
@@ -61,10 +62,10 @@ export const EditProfile = ({ user, setUser, token }) => {
 
 
     return (
-        <Col>
-            <h3>EDIT YOUR DETAILS</h3>
+        <Col className="mx-auto mt-5">
+            <h2 className="text-center mb-4">EDIT YOUR DETAILS</h2>
             <Form onSubmit={handleSaveClick} >
-                <Form.Group controlId="formUsername">
+                <Form.Group controlId="formUsername" className="mb-2">
                     <Form.Label><strong> Current Username:</strong> {user.Username}</Form.Label>
                     <Form.Control
                         type="text"
@@ -74,8 +75,9 @@ export const EditProfile = ({ user, setUser, token }) => {
                         minLength="5"
                         required
                     />
+                    <small style={{ fontSize: 'small' }}>Username must be at least 5 characters and contain only letters and numbers</small>
                 </Form.Group>
-                <Form.Group controlId="formPassword">
+                <Form.Group controlId="formPassword" className="mb-2">
                     <Form.Label><strong>Password:</strong></Form.Label>
                     <Form.Control
                         type="password"
@@ -85,7 +87,7 @@ export const EditProfile = ({ user, setUser, token }) => {
 
                     />
                 </Form.Group>
-                <Form.Group controlId="formEmail">
+                <Form.Group controlId="formEmail" className="mb-2">
                     <Form.Label><strong>Current Email: </strong>{user.Email}</Form.Label>
                     <Form.Control
                         type="email"
@@ -95,7 +97,7 @@ export const EditProfile = ({ user, setUser, token }) => {
                         required
                     />
                 </Form.Group>
-                <Form.Group controlId="formBirtday" className="mb-2">
+                <Form.Group controlId="formBirtday" className="mb-3" >
                     <Form.Label><strong>Current Birthday: </strong>{formatDate(user.Birthday)}</Form.Label>
                     <Form.Control
                         type="date"
@@ -104,10 +106,11 @@ export const EditProfile = ({ user, setUser, token }) => {
                         onChange={(e) => setBirthday(e.target.value)}
                     />
                 </Form.Group>
-
-                <Button variant="primary" type="submit">
-                    Save Changes
-                </Button>
+                <div className="text-center">
+                    <Button variant="primary" type="submit">
+                        Save Changes
+                    </Button>
+                </div>
             </Form>
         </Col>
     );
