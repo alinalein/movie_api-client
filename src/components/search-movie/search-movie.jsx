@@ -27,50 +27,54 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
     return (
         <Row className="justify-content-md-center text-center" >
             <h3 className="mb-4">SEARCH FOR YOUR MOVIE</h3>
-            <Row>
-                <Col className="text-center" md={3}>
-                    <Form inline className="mb-3">
-                        <Form.Group controlId="formSearch" className="mx-auto"> {/* Add mx-auto class for centering */}
-                            <div className="mb-4 text-center">
-                                <FormControl
-                                    type="text"
-                                    placeholder="Search by title"
-                                    className="mr-sm-2"
-                                    style={{ maxWidth: '300px' }}
-                                    value={searchTitle}
-                                    onChange={(e) => setSearchTitle(e.target.value)}
-                                    onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                            e.preventDefault();
-                                            handleSearch();
-                                        }
-                                    }}
-                                />
-                            </div>
-                        </Form.Group>
+            <Col md={3}>
+                <Form inline className="mb-3 text-center">
+                    <Form.Group controlId="formSearch" className="mx-auto">
+                        <div className="mb-4 text-center">
+                            <FormControl
+                                type="text"
+                                placeholder="Search by title"
+                                className="mr-sm-2"
+                                // style={{ maxWidth: '300px' }}
+                                value={searchTitle}
+                                onChange={(e) => setSearchTitle(e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter") {
+                                        e.preventDefault();
+                                        handleSearch();
+                                    }
+                                }}
+                            />
+                        </div>
+                    </Form.Group>
 
-                        <Col className="mb-3">
-                            <Button variant="outline-success" onClick={handleSearch}>
-                                Search
-                            </Button>
-                        </Col>
-                    </Form>
-                </Col>
-            </Row>
-            {
-                showNoResultMessage && (
-                    <Alert variant="info">
-                        Unfortunately, no movie matches your search.
-                    </Alert>
-                )
-            }
-            {
-                searchResults.map((foundMovie) => (
-                    <Col className="mb-3" key={foundMovie.id} md={3}>
-                        <MovieCard movie={foundMovie} token={token} user={user} setUser={setUser} />
+                    <Col className="mb-4">
+                        <Button variant="outline-success" onClick={handleSearch}>
+                            Search
+                        </Button>
                     </Col>
-                ))
-            }
+                </Form>
+            </Col>
+            <Row className="justify-content-md-center text-center">
+                {
+                    showNoResultMessage && (
+                        <Col md={6}>
+                            <Alert variant="info" md={5}>
+                                Unfortunately, no movie matches your search.
+                            </Alert>
+                        </Col>
+                    )
+                }
+            </Row>
+            <Row className="justify-content-md-center text-center">
+                {
+                    searchResults.map((foundMovie) => (
+                        <Col className="mb-3" key={foundMovie.id} md={3}>
+                            <MovieCard movie={foundMovie} token={token} user={user} setUser={setUser} />
+                        </Col>
+                    ))
+                }
+            </Row>
         </Row >
 
     );
