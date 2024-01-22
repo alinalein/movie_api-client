@@ -7,10 +7,11 @@ export const MoviesDrama = ({ movies, token, user, setUser }) => {
     const dramaMovies = movies.filter(movie => movie.Genre === 'Drama');
 
     return (
-        <Row className="justify-content-center" >
-            <h2 style={{ border: "2px solid green" }}>Drama Movies</h2>
-            <p>Drama is a category of narrative fiction intended to be more serious than humorous in tone.</p>
-
+        <Row className="justify-content-center text-center" >
+            <div>
+                <h2 className="mb-2">Drama Movies</h2>
+                <p className="mb-4">Drama is a category of narrative fiction intended to be more serious than humorous in tone.</p>
+            </div>
             {dramaMovies.map(movie => (
                 <Col className="mb-3" key={movie.id} md={3}>
                     <MovieCard movie={movie} token={token} user={user} setUser={setUser} />

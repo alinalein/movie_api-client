@@ -7,10 +7,11 @@ export const MoviesSciFi = ({ movies, token, user, setUser }) => {
     const dramaMovies = movies.filter(movie => movie.Genre === 'Sci-Fi');
 
     return (
-        <Row className="justify-content-center">
-            <h2>Sci-Fi Movies</h2>
-            <p>Science fiction is a genre that uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science.'</p>
-
+        <Row className="justify-content-center text-center">
+            <div>
+                <h2 className="mb-2">Sci-Fi Movies</h2>
+                <p className="mb-4">Science fiction is a genre that uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science.'</p>
+            </div>
             {dramaMovies.map(movie => (
                 <Col className="mb-3" key={movie.id} md={3} >
                     <MovieCard movie={movie} token={token} user={user} setUser={setUser} />

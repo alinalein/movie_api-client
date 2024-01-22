@@ -8,6 +8,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
     const [showNoResultMessage, setShowNoResultMessage] = useState(false);
 
     const handleSearch = () => {
+
         const searchTerm = searchTitle.trim().toLowerCase();
         if (searchTerm === '' || movies.every(movie => !movie.Title.toLowerCase().includes(searchTerm))) {
             setSearchResults([]);
@@ -24,33 +25,53 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
     };
 
     return (
-        <Row className="justify-content-md-center">
-            <h3>SEARCH FOR A MOVIE BY TITLE</h3>
-            <Form inline className="mb-3">
-                <Form.Group controlId="formSearch">
-                    <Form.Label>Search</Form.Label>
-                    <FormControl
-                        type="text"
-                        placeholder="Search by title"
-                        className="mr-sm-2"
-                        value={searchTitle}
-                        onChange={(e) => setSearchTitle(e.target.value)}
-                    />
-                </Form.Group>
-                <Button variant="outline-success" onClick={handleSearch}>
-                    Search
-                </Button>
-            </Form>
-            {showNoResultMessage && (
-                <Alert variant="info">
-                    No movie matches your search.
-                </Alert>
-            )}
-            {searchResults.map((foundMovie) => (
-                <Col className="mb-3" key={foundMovie.id} md={3}>
-                    <MovieCard movie={foundMovie} token={token} user={user} setUser={setUser} />
+        <Row className="justify-content-md-center text-center" >
+            <h3 className="mb-4">SEARCH FOR YOUR MOVIE</h3>
+            <Row>
+                <Col className="text-center" md={3}>
+                    <Form inline className="mb-3">
+                        <Form.Group controlId="formSearch" className="mx-auto"> {/* Add mx-auto class for centering */}
+                            <div className="mb-4 text-center">
+                                <FormControl
+                                    type="text"
+                                    placeholder="Search by title"
+                                    className="mr-sm-2"
+                                    style={{ maxWidth: '300px' }}
+                                    value={searchTitle}
+                                    onChange={(e) => setSearchTitle(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter") {
+                                            e.preventDefault();
+                                            handleSearch();
+                                        }
+                                    }}
+                                />
+                            </div>
+                        </Form.Group>
+
+                        <Col className="mb-3">
+                            <Button variant="outline-success" onClick={handleSearch}>
+                                Search
+                            </Button>
+                        </Col>
+                    </Form>
                 </Col>
-            ))}
-        </Row>
+            </Row>
+            {
+                showNoResultMessage && (
+                    <Alert variant="info">
+                        Unfortunately, no movie matches your search.
+                    </Alert>
+                )
+            }
+            {
+                searchResults.map((foundMovie) => (
+                    <Col className="mb-3" key={foundMovie.id} md={3}>
+                        <MovieCard movie={foundMovie} token={token} user={user} setUser={setUser} />
+                    </Col>
+                ))
+            }
+        </Row >
+
     );
 };
