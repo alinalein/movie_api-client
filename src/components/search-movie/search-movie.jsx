@@ -27,13 +27,13 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
     return (
         <Row className="justify-content-md-center text-center" >
             <h3 className="mb-4">SEARCH FOR YOUR MOVIE</h3>
-            <Col md={3}>
+            <Col md={6} >
                 <Form inline className="mb-3 text-center">
                     <Form.Group controlId="formSearch" className="mx-auto">
                         <div className="mb-4 text-center">
                             <FormControl
                                 type="text"
-                                placeholder="Search by title"
+                                placeholder="Search by Title"
                                 className="mr-sm-2"
                                 // style={{ maxWidth: '300px' }}
                                 value={searchTitle}
@@ -49,8 +49,8 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                     </Form.Group>
 
                     <Col className="mb-4">
-                        <Button variant="outline-success" onClick={handleSearch}>
-                            Search
+                        <Button variant="primary" onClick={handleSearch}>
+                            Start The Search
                         </Button>
                     </Col>
                 </Form>
@@ -69,7 +69,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
             <Row className="justify-content-md-center text-center">
                 {
                     searchResults.map((foundMovie) => (
-                        <Col className="mb-3" key={foundMovie.id} md={3}>
+                        <Col className="mb-3" key={foundMovie.id} md={3} sm={6} xs={12}>
                             <MovieCard movie={foundMovie} token={token} user={user} setUser={setUser} />
                         </Col>
                     ))

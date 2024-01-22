@@ -10,10 +10,11 @@ export const MoviesSciFi = ({ movies, token, user, setUser }) => {
         <Row className="justify-content-center text-center">
             <div>
                 <h2 className="mb-2">Sci-Fi Movies</h2>
-                <p className="mb-4">Science fiction is a genre that uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science.'</p>
+                <p className="mb-4">
+                    Sci-Fi movies transport viewers into speculative worlds, exploring futuristic concepts and scientific possibilities through imaginative storytelling.</p>
             </div>
             {dramaMovies.map(movie => (
-                <Col className="mb-3" key={movie.id} md={3} >
+                <Col className="mb-3" key={movie.id} md={3} sm={6} xs={12}>
                     <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                 </Col>
             ))}

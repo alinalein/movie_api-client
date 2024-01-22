@@ -10,10 +10,12 @@ export const MoviesDrama = ({ movies, token, user, setUser }) => {
         <Row className="justify-content-center text-center" >
             <div>
                 <h2 className="mb-2">Drama Movies</h2>
-                <p className="mb-4">Drama is a category of narrative fiction intended to be more serious than humorous in tone.</p>
+                <p className="mb-4">
+                    Drama movies dive into the complexities of human emotions and relationships, filled with real-life depth and resonance.
+                </p>
             </div>
             {dramaMovies.map(movie => (
-                <Col className="mb-3" key={movie.id} md={3}>
+                <Col className="mb-3" key={movie.id} md={3} sm={6} xs={12}>
                     <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                 </Col>
             ))}

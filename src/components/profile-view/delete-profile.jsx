@@ -38,7 +38,7 @@ export const DeleteProfile = ({ user, setUser, token }) => {
             <p>We're sorry we have to say GOODBYE. </p>
             <p className="mb-4" >You are always welcome back!</p>
 
-            <Col>
+            <Col className="mb-2">
                 <Button onClick={handleDeleteClick}>Delete Profile</Button>
             </Col>
         </Row>

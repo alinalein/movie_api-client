@@ -11,14 +11,16 @@ export const FavoriteMovies = ({ movies, user, token, setUser }) => {
             {
                 favoriteMovies.length > 0 ? (
                     favoriteMovies.map((movie) => (
-                        <Col className="mb-3" key={movie.id} md={3} >
+                        <Col className="mb-3" key={movie.id} md={3} sm={6} xs={12}>
                             <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                         </Col>
                     ))
                 ) : (
-                    <Alert variant="info">
-                        You have not added any movies to your favorites list so far.
-                    </Alert>
+                    <Col md={6}>
+                        <Alert variant="info" className='text-center mt-5'>
+                            You have not added any movies to your favorites list so far.
+                        </Alert>
+                    </Col>
                 )
             }
 

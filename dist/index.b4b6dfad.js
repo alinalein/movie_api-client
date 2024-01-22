@@ -27341,6 +27341,8 @@ const MainView = ()=>{
                                         movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                                 className: "mb-4",
                                                 md: 3,
+                                                sm: 6,
+                                                xs: 12,
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                                     movie: movie,
                                                     token: token,
@@ -27357,9 +27359,8 @@ const MainView = ()=>{
                                                 columnNumber: 45
                                             }, void 0)),
                                         showScrollButton && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                                            className: "mb-4 text-center",
+                                            className: " justify-content-md-center mb-3 text-center",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                                md: 4,
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                                     variant: "primary",
                                                     className: "scroll-button",
@@ -27408,9 +27409,6 @@ const MainView = ()=>{
                                     columnNumber: 37
                                 }, void 0) : // send the movies array to MovieView
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                    style: {
-                                        border: "2px solid green"
-                                    },
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
                                         movies: movies,
                                         user: user,
@@ -44920,7 +44918,7 @@ const MovieView = ({ movies, token, user, setUser })=>{
         className: "justify-content-md-center ",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                className: "mb-3",
+                className: "mb-4",
                 md: 4,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
                     className: "h-100",
@@ -45023,12 +45021,12 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                         children: "Go Back"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 39,
+                                        lineNumber: 32,
                                         columnNumber: 29
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 38,
+                                    lineNumber: 31,
                                     columnNumber: 25
                                 }, undefined)
                             ]
@@ -45050,54 +45048,77 @@ const MovieView = ({ movies, token, user, setUser })=>{
             }, undefined),
             showSimilarMovies && findSimilarMovies().length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "text-center",
-                        children: "Similar movies"
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                        className: "justify-content-md-center mt-2",
+                        children: findSimilarMovies().map((similarmovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                className: "mb-3",
+                                md: 3,
+                                sm: 6,
+                                xs: 12,
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                    movie: similarmovie,
+                                    token: token,
+                                    user: user,
+                                    setUser: setUser
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 44,
+                                    columnNumber: 33
+                                }, undefined)
+                            }, similarmovie.id, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 43,
+                                columnNumber: 29
+                            }, undefined))
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 47,
+                        lineNumber: 40,
                         columnNumber: 21
                     }, undefined),
-                    findSimilarMovies().map((similarmovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                            className: "mb-3",
-                            md: 3,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                movie: similarmovie,
-                                token: token,
-                                user: user,
-                                setUser: setUser
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                            className: "text-center mb-3",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                variant: "danger",
+                                onClick: ()=>setShowSimilarMovies(false),
+                                children: "Close Similar Movies"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
                                 lineNumber: 50,
                                 columnNumber: 29
                             }, undefined)
-                        }, similarmovie.id, false, {
+                        }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 49,
                             columnNumber: 25
-                        }, undefined))
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 48,
+                        columnNumber: 21
+                    }, undefined)
                 ]
             }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "text-center",
+                    className: "text-center mb-3",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "primary",
                         className: "similar-button",
                         onClick: ()=>setShowSimilarMovies(true),
-                        children: "Don't miss out, see similar movies!"
+                        children: "Don't miss out, see Similar Movies!"
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 57,
+                        lineNumber: 62,
                         columnNumber: 25
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 56,
+                    lineNumber: 61,
                     columnNumber: 21
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 55,
+                lineNumber: 60,
                 columnNumber: 17
             }, undefined)
         ]
@@ -45914,7 +45935,7 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                md: 3,
+                md: 6,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
                     inline: true,
                     className: "mb-3 text-center",
@@ -45926,7 +45947,7 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                 className: "mb-4 text-center",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormControl), {
                                     type: "text",
-                                    placeholder: "Search by title",
+                                    placeholder: "Search by Title",
                                     className: "mr-sm-2",
                                     // style={{ maxWidth: '300px' }}
                                     value: searchTitle,
@@ -45955,9 +45976,9 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                             className: "mb-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                variant: "outline-success",
+                                variant: "primary",
                                 onClick: handleSearch,
-                                children: "Search"
+                                children: "Start The Search"
                             }, void 0, false, {
                                 fileName: "src/components/search-movie/search-movie.jsx",
                                 lineNumber: 52,
@@ -46007,6 +46028,8 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                 children: searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                         className: "mb-3",
                         md: 3,
+                        sm: 6,
+                        xs: 12,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                             movie: foundMovie,
                             token: token,
@@ -46109,6 +46132,7 @@ const UserProfile = ({ user })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                 to: "/edit-profile",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                    className: "mb-2",
                     children: "Update Profile"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/user-profile.jsx",
@@ -46218,7 +46242,7 @@ const EditProfile = ({ user, setUser, token })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 className: "text-center mb-4",
-                children: "EDIT YOUR DETAILS"
+                children: "EDIT YOUR PROFILE"
             }, void 0, false, {
                 fileName: "src/components/profile-view/edit-profile.jsx",
                 lineNumber: 66,
@@ -46383,7 +46407,7 @@ const EditProfile = ({ user, setUser, token })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "text-center",
+                        className: "text-center mb-2",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                             variant: "primary",
                             type: "submit",
@@ -46447,6 +46471,8 @@ const FavoriteMovies = ({ movies, user, token, setUser })=>{
         children: favoriteMovies.length > 0 ? favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                 className: "mb-3",
                 md: 3,
+                sm: 6,
+                xs: 12,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                     movie: movie,
                     token: token,
@@ -46461,9 +46487,17 @@ const FavoriteMovies = ({ movies, user, token, setUser })=>{
                 fileName: "src/components/favorite-movies/favorite-movies.jsx",
                 lineNumber: 14,
                 columnNumber: 25
-            }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
-            variant: "info",
-            children: "You have not added any movies to your favorites list so far."
+            }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+            md: 6,
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
+                variant: "info",
+                className: "text-center mt-5",
+                children: "You have not added any movies to your favorites list so far."
+            }, void 0, false, {
+                fileName: "src/components/favorite-movies/favorite-movies.jsx",
+                lineNumber: 20,
+                columnNumber: 25
+            }, undefined)
         }, void 0, false, {
             fileName: "src/components/favorite-movies/favorite-movies.jsx",
             lineNumber: 19,
@@ -46553,6 +46587,7 @@ const DeleteProfile = ({ user, setUser, token })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                className: "mb-2",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                     onClick: handleDeleteClick,
                     children: "Delete Profile"
@@ -46613,7 +46648,7 @@ const MoviesDrama = ({ movies, token, user, setUser })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         className: "mb-4",
-                        children: "Drama is a category of narrative fiction intended to be more serious than humorous in tone."
+                        children: "Drama movies dive into the complexities of human emotions and relationships, filled with real-life depth and resonance."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/drama-genre.jsx",
                         lineNumber: 13,
@@ -46628,6 +46663,8 @@ const MoviesDrama = ({ movies, token, user, setUser })=>{
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
                     md: 3,
+                    sm: 6,
+                    xs: 12,
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                         movie: movie,
                         token: token,
@@ -46635,12 +46672,12 @@ const MoviesDrama = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/drama-genre.jsx",
-                        lineNumber: 17,
+                        lineNumber: 19,
                         columnNumber: 21
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/drama-genre.jsx",
-                    lineNumber: 16,
+                    lineNumber: 18,
                     columnNumber: 17
                 }, undefined))
         ]
@@ -46690,7 +46727,7 @@ const MoviesAction = ({ movies, token, user, setUser })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         className: "mb-4",
-                        children: "'Action films are a genre that typically involves a protagonist who is in a race against time, their own abilities, or other external forces."
+                        children: "Action films guarantee an adrenaline-packed ride with intense thrills and high-stakes scenarios, ensuring an edge-of-your-seat cinematic adventure."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/action-genre.jsx",
                         lineNumber: 13,
@@ -46705,6 +46742,8 @@ const MoviesAction = ({ movies, token, user, setUser })=>{
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
                     md: 3,
+                    sm: 6,
+                    xs: 12,
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                         movie: movie,
                         token: token,
@@ -46712,12 +46751,12 @@ const MoviesAction = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/action-genre.jsx",
-                        lineNumber: 17,
+                        lineNumber: 19,
                         columnNumber: 21
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/action-genre.jsx",
-                    lineNumber: 16,
+                    lineNumber: 18,
                     columnNumber: 17
                 }, undefined))
         ]
@@ -46767,7 +46806,7 @@ const MoviesBiography = ({ movies, token, user, setUser })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         className: "mb-4",
-                        children: "Biographical films are a genre that depicts the life of a notable person, real or imagined."
+                        children: "Biographical films vividly portray captivating life stories, achievements, and legacies, offering an engaging cinematic experience."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/biography-genre.jsx",
                         lineNumber: 13,
@@ -46782,6 +46821,8 @@ const MoviesBiography = ({ movies, token, user, setUser })=>{
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
                     md: 3,
+                    sm: 6,
+                    xs: 12,
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                         movie: movie,
                         token: token,
@@ -46789,12 +46830,12 @@ const MoviesBiography = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/biography-genre.jsx",
-                        lineNumber: 17,
+                        lineNumber: 19,
                         columnNumber: 21
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/biography-genre.jsx",
-                    lineNumber: 16,
+                    lineNumber: 18,
                     columnNumber: 17
                 }, undefined))
         ]
@@ -46844,7 +46885,7 @@ const MoviesCrime = ({ movies, token, user, setUser })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         className: "mb-4",
-                        children: "Crime films are a genre of film that focus on crime."
+                        children: "Crime films promise a thrilling experience with suspenseful plots, mysterious twists, and a captivating exploration of criminal activities and investigations."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/crime-genre.jsx",
                         lineNumber: 13,
@@ -46859,6 +46900,8 @@ const MoviesCrime = ({ movies, token, user, setUser })=>{
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
                     md: 3,
+                    sm: 6,
+                    xs: 12,
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                         movie: movie,
                         token: token,
@@ -46866,12 +46909,12 @@ const MoviesCrime = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/crime-genre.jsx",
-                        lineNumber: 17,
+                        lineNumber: 19,
                         columnNumber: 21
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/crime-genre.jsx",
-                    lineNumber: 16,
+                    lineNumber: 18,
                     columnNumber: 17
                 }, undefined))
         ]
@@ -46921,7 +46964,7 @@ const MoviesSciFi = ({ movies, token, user, setUser })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         className: "mb-4",
-                        children: "Science fiction is a genre that uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science.'"
+                        children: "Sci-Fi movies transport viewers into speculative worlds, exploring futuristic concepts and scientific possibilities through imaginative storytelling."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
                         lineNumber: 13,
@@ -46936,6 +46979,8 @@ const MoviesSciFi = ({ movies, token, user, setUser })=>{
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
                     md: 3,
+                    sm: 6,
+                    xs: 12,
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                         movie: movie,
                         token: token,
@@ -46943,12 +46988,12 @@ const MoviesSciFi = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                        lineNumber: 17,
+                        lineNumber: 18,
                         columnNumber: 21
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                    lineNumber: 16,
+                    lineNumber: 17,
                     columnNumber: 17
                 }, undefined))
         ]

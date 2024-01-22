@@ -10,10 +10,12 @@ export const MoviesAction = ({ movies, token, user, setUser }) => {
         <Row className="justify-content-center text-center" >
             <div>
                 <h2 className="mb-2">Action Movies</h2>
-                <p className="mb-4">'Action films are a genre that typically involves a protagonist who is in a race against time, their own abilities, or other external forces.</p>
+                <p className="mb-4">
+                    Action films guarantee an adrenaline-packed ride with intense thrills and high-stakes scenarios, ensuring an edge-of-your-seat cinematic adventure.
+                </p>
             </div>
             {dramaMovies.map(movie => (
-                <Col className="mb-3" key={movie.id} md={3} >
+                <Col className="mb-3" key={movie.id} md={3} sm={6} xs={12}>
                     <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                 </Col>
             ))}

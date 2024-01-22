@@ -138,13 +138,13 @@ export const MainView = () => {
                                 ) : (
                                     <>
                                         {movies.map((movie) => (
-                                            <Col className="mb-4" key={movie.id} md={3} >
+                                            <Col className="mb-4" key={movie.id} md={3} sm={6} xs={12}>
                                                 <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                                             </Col>
                                         ))}
                                         {showScrollButton && (
-                                            <Row className="mb-4 text-center">
-                                                <Col md={4} >
+                                            <Row className=" justify-content-md-center mb-3 text-center">
+                                                <Col >
                                                     <Button
                                                         variant="primary" className="scroll-button"
                                                         onClick={() => {
@@ -172,7 +172,7 @@ export const MainView = () => {
                                     <Col>The list is empty!</Col>
                                 ) : (
                                     // send the movies array to MovieView
-                                    <Col style={{ border: "2px solid green" }} >
+                                    <Col>
                                         <MovieView movies={movies} user={user} token={token} setUser={setUser} />
                                     </Col>
                                 )}

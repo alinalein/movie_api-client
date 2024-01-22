@@ -10,10 +10,12 @@ export const MoviesBiography = ({ movies, token, user, setUser }) => {
         <Row className="justify-content-center text-center" >
             <div>
                 <h2 className="mb-2">Biography Movies</h2>
-                <p className="mb-4">Biographical films are a genre that depicts the life of a notable person, real or imagined.</p>
+                <p className="mb-4">
+                    Biographical films vividly portray captivating life stories, achievements, and legacies, offering an engaging cinematic experience.
+                </p>
             </div>
             {dramaMovies.map(movie => (
-                <Col className="mb-3" key={movie.id} md={3} >
+                <Col className="mb-3" key={movie.id} md={3} sm={6} xs={12}>
                     <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                 </Col>
             ))}

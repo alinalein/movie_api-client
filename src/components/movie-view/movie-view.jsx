@@ -19,7 +19,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
     return (
         <Row className="justify-content-md-center ">
 
-            <Col className="mb-3" key={movie.id} md={4} >
+            <Col className="mb-4" key={movie.id} md={4} >
                 <Card className="h-100">
                     <Card.Img variant="top" src={movie.ImagePath} className="img-fluid" alt={movie.Title} />
                     <Card.Body>
@@ -28,13 +28,6 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                         <Card.Text className="mb-1"><strong>Director: </strong>{movie.Director}</Card.Text>
                         <Card.Text className="mb-1"><strong>Actors: </strong>{movie.Actors}</Card.Text>
                         <Card.Text className="mb-4"><strong>Description: </strong>{movie.Description}</Card.Text>
-                        {/* <div className="mb-2">
-                            <strong>Genre:</strong> {movie.Genre}
-                        </div>
-
-                        <div className="mb-2">
-                            <strong>Actors:</strong> {movie.Actors}
-                        </div> */}
                         <Link to={`/`} >
                             <Button className="mb-1">Go Back</Button>
                         </Link>
@@ -44,22 +37,34 @@ export const MovieView = ({ movies, token, user, setUser }) => {
 
             {showSimilarMovies && findSimilarMovies().length > 0 ? (
                 <>
-                    <h2 className="text-center">Similar movies</h2>
-                    {findSimilarMovies().map((similarmovie) => (
-                        <Col className="mb-3" key={similarmovie.id} md={3} >
-                            <MovieCard movie={similarmovie} token={token} user={user} setUser={setUser} />
+                    <Row className="justify-content-md-center mt-2">
+                        {/* <h2 className="text-center mb-3">Similar movies</h2> */}
+                        {findSimilarMovies().map((similarmovie) => (
+                            <Col className="mb-3" key={similarmovie.id} md={3} sm={6} xs={12}>
+                                <MovieCard movie={similarmovie} token={token} user={user} setUser={setUser} />
+                            </Col>
+                        ))}
+                    </Row>
+                    <Row>
+                        <Col className="text-center mb-3">
+                            <Button
+                                variant="danger"
+                                onClick={() => setShowSimilarMovies(false)}
+                            >
+                                Close Similar Movies
+                            </Button>
                         </Col>
-                    ))}
+                    </Row>
                 </>
             ) : (
                 <Row>
-                    <Col className="text-center">
+                    <Col className="text-center mb-3">
                         <Button
                             variant="primary"
                             className="similar-button"
                             onClick={() => setShowSimilarMovies(true)}
                         >
-                            Don't miss out, see similar movies!
+                            Don't miss out, see Similar Movies!
                         </Button>
                     </Col>
                 </Row>

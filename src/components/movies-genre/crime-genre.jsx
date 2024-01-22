@@ -10,10 +10,12 @@ export const MoviesCrime = ({ movies, token, user, setUser }) => {
         <Row className="justify-content-center text-center">
             <div>
                 <h2 className="mb-2">Crime Movies</h2>
-                <p className="mb-4">Crime films are a genre of film that focus on crime.</p>
+                <p className="mb-4">
+                    Crime films promise a thrilling experience with suspenseful plots, mysterious twists, and a captivating exploration of criminal activities and investigations.
+                </p>
             </div>
             {dramaMovies.map(movie => (
-                <Col className="mb-3" key={movie.id} md={3} >
+                <Col className="mb-3" key={movie.id} md={3} sm={6} xs={12}>
                     <MovieCard movie={movie} token={token} user={user} setUser={setUser} />
                 </Col>
             ))}

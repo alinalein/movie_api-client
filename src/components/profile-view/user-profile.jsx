@@ -12,7 +12,7 @@ export const UserProfile = ({ user }) => {
             <p className="mb-3">Username: {user.Username}</p>
             <p className="mb-3">Email: {user.Email}</p>
             <p className="mb-4">Birthday: {formatDate(user.Birthday)}</p>
-            <Link to="/edit-profile"><Button>Update Profile</Button></Link>
+            <Link to="/edit-profile"><Button className='mb-2'>Update Profile</Button></Link>
 
         </Col>
     );

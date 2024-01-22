@@ -63,7 +63,7 @@ export const EditProfile = ({ user, setUser, token }) => {
 
     return (
         <Col className="mx-auto mt-5">
-            <h2 className="text-center mb-4">EDIT YOUR DETAILS</h2>
+            <h2 className="text-center mb-4">EDIT YOUR PROFILE</h2>
             <Form onSubmit={handleSaveClick} >
                 <Form.Group controlId="formUsername" className="mb-2">
                     <Form.Label><strong> Current Username:</strong> {user.Username}</Form.Label>
@@ -106,7 +106,7 @@ export const EditProfile = ({ user, setUser, token }) => {
                         onChange={(e) => setBirthday(e.target.value)}
                     />
                 </Form.Group>
-                <div className="text-center">
+                <div className="text-center mb-2">
                     <Button variant="primary" type="submit">
                         Save Changes
                     </Button>
