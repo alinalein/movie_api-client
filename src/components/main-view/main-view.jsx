@@ -72,7 +72,7 @@ export const MainView = () => {
                     setUser(null); setToken(null); localStorage.clear();
                 }}
             />
-            <Row className="justify-content-md-center mt-4">
+            <Row className="justify-content-md-center mt-4  ">
                 <Routes>
                     {/* Route to register */}
                     <Route
@@ -146,7 +146,7 @@ export const MainView = () => {
                                             <Row className=" justify-content-md-center mb-3 text-center">
                                                 <Col >
                                                     <Button
-                                                        variant="primary" className="scroll-button"
+                                                        variant="info" className="scroll-button"
                                                         onClick={() => {
                                                             window.scrollTo(0, 0);
                                                         }}

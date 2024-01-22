@@ -8,9 +8,9 @@ export const MoviesSciFi = ({ movies, token, user, setUser }) => {
 
     return (
         <Row className="justify-content-center text-center">
-            <div>
-                <h2 className="mb-2">Sci-Fi Movies</h2>
-                <p className="mb-4">
+            <div className='div__header mb-4'>
+                <h2 className="mb-2 h2__text">Sci-Fi Movies</h2>
+                <p >
                     Sci-Fi movies transport viewers into speculative worlds, exploring futuristic concepts and scientific possibilities through imaginative storytelling.</p>
             </div>
             {dramaMovies.map(movie => (

@@ -1,5 +1,6 @@
 import { MovieCard } from '../movie-card/movie-card';
 import { Col, Row } from "react-bootstrap"
+import "./movies-gerne.scss"
 
 export const MoviesDrama = ({ movies, token, user, setUser }) => {
     // Filter movies with the genre "Drama"
@@ -8,9 +9,9 @@ export const MoviesDrama = ({ movies, token, user, setUser }) => {
 
     return (
         <Row className="justify-content-center text-center" >
-            <div>
-                <h2 className="mb-2">Drama Movies</h2>
-                <p className="mb-4">
+            <div className='div__header mb-4'>
+                <h2 className="mb-2 h2__text-gerne">Drama Movies</h2>
+                <p >
                     Drama movies dive into the complexities of human emotions and relationships, filled with real-life depth and resonance.
                 </p>
             </div>

@@ -8,9 +8,9 @@ export const MoviesCrime = ({ movies, token, user, setUser }) => {
 
     return (
         <Row className="justify-content-center text-center">
-            <div>
-                <h2 className="mb-2">Crime Movies</h2>
-                <p className="mb-4">
+            <div className='div__header mb-4'>
+                <h2 className="mb-2 h2__text-gerne">Crime Movies</h2>
+                <p>
                     Crime films promise a thrilling experience with suspenseful plots, mysterious twists, and a captivating exploration of criminal activities and investigations.
                 </p>
             </div>

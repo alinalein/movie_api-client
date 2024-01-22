@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { Button, Col, Card, Row, } from "react-bootstrap";
 import { MovieCard } from "../movie-card/movie-card";
-
+import "./movie-view.scss"
 
 export const MovieView = ({ movies, token, user, setUser }) => {
     // only access the param from the before set path (here in main)
@@ -19,17 +19,17 @@ export const MovieView = ({ movies, token, user, setUser }) => {
     return (
         <Row className="justify-content-md-center ">
 
-            <Col className="mb-4" key={movie.id} md={4} >
+            <Col className="mb-4 movie__shadow" key={movie.id} md={4} >
                 <Card className="h-100">
                     <Card.Img variant="top" src={movie.ImagePath} className="img-fluid" alt={movie.Title} />
-                    <Card.Body>
-                        <Card.Title className="mb-3 text-center" style={{ fontSize: '1.5rem' }}>{movie.Title}</Card.Title>
+                    <Card.Body className="card__body">
+                        <Card.Title className="mb-3 text-center" style={{ fontSize: '1.5rem', color: "#00adb5" }}>{movie.Title}</Card.Title>
                         <Card.Text className="mb-1"><strong>Genre: </strong>{movie.Genre}</Card.Text>
                         <Card.Text className="mb-1"><strong>Director: </strong>{movie.Director}</Card.Text>
                         <Card.Text className="mb-1"><strong>Actors: </strong>{movie.Actors}</Card.Text>
                         <Card.Text className="mb-4"><strong>Description: </strong>{movie.Description}</Card.Text>
                         <Link to={`/`} >
-                            <Button className="mb-1">Go Back</Button>
+                            <Button variant="outline-info" className="mb-1">Go Back</Button>
                         </Link>
                     </Card.Body>
                 </Card>
@@ -40,7 +40,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                     <Row className="justify-content-md-center mt-2">
                         {/* <h2 className="text-center mb-3">Similar movies</h2> */}
                         {findSimilarMovies().map((similarmovie) => (
-                            <Col className="mb-3" key={similarmovie.id} md={3} sm={6} xs={12}>
+                            <Col className="mb-3" key={similarmovie.id} md={2} sm={6} xs={12}>
                                 <MovieCard movie={similarmovie} token={token} user={user} setUser={setUser} />
                             </Col>
                         ))}
@@ -48,7 +48,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                     <Row>
                         <Col className="text-center mb-3">
                             <Button
-                                variant="danger"
+                                variant="info"
                                 onClick={() => setShowSimilarMovies(false)}
                             >
                                 Close Similar Movies
@@ -60,8 +60,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                 <Row>
                     <Col className="text-center mb-3">
                         <Button
-                            variant="primary"
-                            className="similar-button"
+                            variant="info"
                             onClick={() => setShowSimilarMovies(true)}
                         >
                             Don't miss out, see Similar Movies!

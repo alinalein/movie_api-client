@@ -1,0 +1,23 @@
+$color: white;
+$backgroud-color: black;
+
+
+.form__text,
+p,
+.small__text {
+    color: $color;
+}
+
+.h2__text {
+    color: #0dcaf0;
+}
+
+.small__text {
+    font-size: small;
+}
+
+.div_component {
+    background-color: $backgroud-color;
+    border-radius: 10px;
+    padding: 4%;
+}

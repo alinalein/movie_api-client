@@ -26,7 +26,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
 
     return (
         <Row className="justify-content-md-center text-center" >
-            <h3 className="mb-4">SEARCH FOR YOUR MOVIE</h3>
+            <h3 className="mb-4 h2__text">SEARCH FOR YOUR MOVIE</h3>
             <Col md={6} >
                 <Form inline className="mb-3 text-center">
                     <Form.Group controlId="formSearch" className="mx-auto">
@@ -49,7 +49,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                     </Form.Group>
 
                     <Col className="mb-4">
-                        <Button variant="primary" onClick={handleSearch}>
+                        <Button variant="info" onClick={handleSearch}>
                             Start The Search
                         </Button>
                     </Col>

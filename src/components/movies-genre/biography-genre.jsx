@@ -8,9 +8,9 @@ export const MoviesBiography = ({ movies, token, user, setUser }) => {
 
     return (
         <Row className="justify-content-center text-center" >
-            <div>
-                <h2 className="mb-2">Biography Movies</h2>
-                <p className="mb-4">
+            <div className='div__header mb-4'>
+                <h2 className="mb-2 h2__text-gerne">Biography Movies</h2>
+                <p >
                     Biographical films vividly portray captivating life stories, achievements, and legacies, offering an engaging cinematic experience.
                 </p>
             </div>

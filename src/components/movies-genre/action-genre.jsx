@@ -8,9 +8,9 @@ export const MoviesAction = ({ movies, token, user, setUser }) => {
 
     return (
         <Row className="justify-content-center text-center" >
-            <div>
-                <h2 className="mb-2">Action Movies</h2>
-                <p className="mb-4">
+            <div className='div__header mb-4' >
+                <h2 className="mb-2 h2__text-gerne">Action Movies</h2>
+                <p >
                     Action films guarantee an adrenaline-packed ride with intense thrills and high-stakes scenarios, ensuring an edge-of-your-seat cinematic adventure.
                 </p>
             </div>

@@ -1,4 +1,5 @@
 import { Col, Button, Row } from "react-bootstrap";
+import "./profile-view.scss"
 
 export const DeleteProfile = ({ user, setUser, token }) => {
 
@@ -32,15 +33,17 @@ export const DeleteProfile = ({ user, setUser, token }) => {
     };
 
     return (
-        <Row className="justify-content-md-center text-center mx-auto mt-5">
-            <h2 className="mb-4">DELETE YOUR PROFILE</h2>
-            <p>Do you you really want to delete your account?</p>
-            <p>We're sorry we have to say GOODBYE. </p>
-            <p className="mb-4" >You are always welcome back!</p>
+        <div className="div_component">
+            <Row className="justify-content-md-center text-center mx-auto mt-2">
+                <h2 className="mb-4 h2__text">DELETE YOUR PROFILE</h2>
+                <p>Do you you really want to delete your account?</p>
+                <p>We're sorry we have to say GOODBYE. </p>
+                <p className="mb-4" >You are always welcome back!</p>
 
-            <Col className="mb-2">
-                <Button onClick={handleDeleteClick}>Delete Profile</Button>
-            </Col>
-        </Row>
+                <Col className="mb-2">
+                    <Button variant="info" onClick={handleDeleteClick}>Delete Profile</Button>
+                </Col>
+            </Row>
+        </div>
     )
 }
