@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { Button, Col, Card, Row, } from "react-bootstrap";
 import { MovieCard } from "../movie-card/movie-card";
+import { FavoriteToggle } from "../toggle-favorite/toggle-favorite"
 import "./movie-view.scss"
 
 export const MovieView = ({ movies, token, user, setUser }) => {
@@ -31,6 +32,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                         <Link to={`/`} >
                             <Button variant="outline-info" className="mb-1">Go Back</Button>
                         </Link>
+                        <FavoriteToggle user={user} setUser={setUser} token={token} movie={movie} />
                     </Card.Body>
                 </Card>
             </Col>
@@ -40,7 +42,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                     <Row className="justify-content-md-center mt-2">
                         {/* <h2 className="text-center mb-3">Similar movies</h2> */}
                         {findSimilarMovies().map((similarmovie) => (
-                            <Col className="mb-3" key={similarmovie.id} md={2} sm={6} xs={12}>
+                            <Col className="mb-3 movie_img--size" key={similarmovie.id} md={2} sm={6} xs={12}>
                                 <MovieCard movie={similarmovie} token={token} user={user} setUser={setUser} />
                             </Col>
                         ))}

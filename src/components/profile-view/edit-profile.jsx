@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Col } from 'react-bootstrap'
+import { Form, Button, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import { formatDate } from '../../utils/helpers/helpers';
 
@@ -60,8 +60,7 @@ export const EditProfile = ({ user, setUser, token }) => {
 
 
     return (
-        // <div className="div_component">
-        <Col className="mx-auto mt-2 div_component">
+        <Row className="mt-2 profile_component">
             <h2 className="text-center mb-4 h2__text" >EDIT YOUR PROFILE</h2>
             <Form onSubmit={handleSaveClick} >
                 <Form.Group controlId="formUsername" className="mb-2 form__text">
@@ -77,9 +76,6 @@ export const EditProfile = ({ user, setUser, token }) => {
                     <small className='small__text'>Username, please choose at least 5 characters, only letters and numbers
                     </small>
                 </Form.Group>
-
-
-
                 <Form.Group controlId="formEmail" className="mb-2 form__text">
                     <Form.Label><strong>Current Email: </strong><span className="profile__details">{user.Email}</span></Form.Label>
                     <Form.Control
@@ -106,7 +102,7 @@ export const EditProfile = ({ user, setUser, token }) => {
                     </Button>
                 </div>
             </Form>
-        </Col>
-        // </div>
+
+        </Row>
     );
 }

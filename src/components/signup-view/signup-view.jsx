@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const SignupView = () => {
@@ -49,7 +49,7 @@ export const SignupView = () => {
     };
 
     return (
-        <div className="div_component mt-3">
+        <Row className="profile_component mt-3">
             <Form onSubmit={handleSubmit} className="mx-auto ">
                 <h2 className="text-center mb-4 h2__text">SIGNUP</h2>
                 <Form.Group controlId="formUsername" className="mb-2">
@@ -104,6 +104,6 @@ export const SignupView = () => {
                     </div>
                 </Form.Group>
             </Form>
-        </div>
+        </Row>
     )
 }

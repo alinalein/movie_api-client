@@ -1,10 +1,11 @@
-.h2__text-gerne {
-    color: #0dcaf0;
-}
-
-.div__header {
+.genre__header {
     background-color: black;
     padding-bottom: 0px;
     padding-top: 8px;
     border-radius: 10px;
+
+    .h2__text-gerne {
+        color: #0dcaf0;
+    }
+
 }

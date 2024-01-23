@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, FormControl, Button, Row, Col, Row, Alert } from 'react-bootstrap';
 import { MovieCard } from "../movie-card/movie-card";
-
+import "./search-movie.scss"
 
 export const SearchMovie = ({ movies, token, user, setUser }) => {
     const [searchTitle, setSearchTitle] = useState('');
@@ -10,44 +10,54 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
 
     const handleSearch = () => {
 
-        const searchTerm = searchTitle.trim().toLowerCase();
-        if (searchTerm === '' || movies.every(movie => !movie.Title.toLowerCase().includes(searchTerm))) {
+        const searchInput = searchTitle.trim().toLowerCase();
+        if (searchInput === '' || movies.every(movie => !movie.Title.toLowerCase().includes(searchInput))) {
             setSearchResults([]);
             setShowNoResultMessage(true);
         } else {
             const filteredMovies = movies.filter(movie => {
                 const movieTitle = movie.Title.toLowerCase();
-                const searchTerms = searchTerm.split(' ');
-                return searchTerms.every(term => movieTitle.includes(term));
+                const searchInput = searchTerm.split(' ');
+                return searchInput.every(term => movieTitle.includes(term));
             });
             setSearchResults(filteredMovies);
             setShowNoResultMessage(false);
         }
     };
+    const handleClear = () => {
+        setSearchTitle('');
+    };
 
     return (
-        <Row className="justify-content-md-center text-center mb-4">
-            <Row className="justify-content-md-center div__header">
-                <h3 className="mb-4 h2__text">SEARCH FOR YOUR MOVIE</h3>
-                <Col md={6} >
-                    <Form inline className="mb-3 text-center">
+        <>
+            <Row className="justify-content-md-center mb-4 text-center">
+                <Col md={6} className='search__header'>
+                    <h3 className="mb-4 h2__text">SEARCH FOR YOUR MOVIE</h3>
+                    <Form className="mb-3 text-center">
                         <Form.Group controlId="formSearch" className="mx-auto">
-                            <div className="mb-4 text-center">
-                                <FormControl
-                                    type="text"
-                                    placeholder="Search by Title"
-                                    className="mr-sm-2"
-                                    // style={{ maxWidth: '300px' }}
-                                    value={searchTitle}
-                                    onChange={(e) => setSearchTitle(e.target.value)}
-                                    onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                            e.preventDefault();
-                                            handleSearch();
-                                        }
-                                    }}
-                                />
-                            </div>
+                            <Row className="mb-3 text-center">
+                                <Col md={11} className="search__input">
+                                    <FormControl
+                                        type="text"
+                                        placeholder="Search by Title"
+                                        className="mr-sm-2"
+                                        // style={{ maxWidth: '300px' }}
+                                        value={searchTitle}
+                                        onChange={(e) => setSearchTitle(e.target.value)}
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Enter") {
+                                                e.preventDefault();
+                                                handleSearch();
+                                            }
+                                        }}
+                                    />
+                                </Col>
+                                <Col md={1} className="clear-button">
+                                    <Button variant="link" className="clear-button" onClick={handleClear}>
+                                        x
+                                    </Button>
+                                </Col>
+                            </Row>
                         </Form.Group>
 
                         <Col >
@@ -78,7 +88,6 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                     ))
                 }
             </Row>
-        </Row >
-
+        </>
     );
 };
