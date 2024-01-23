@@ -2,14 +2,14 @@ import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Search } from "react-bootstrap-icons"
-
+import "./navigation-bar.scss"
 export const NavigationBar = ({ user, onLoggedOut }) => {
 
     return (
-        <Navbar bg="light" expand="lg">
-            <Container>
-                <Navbar.Brand as={Link} to="/" style={{ fontSize: '24px' }}>
-                    myFlix
+        <Navbar data-bs-theme="dark" expand="lg" style={{ padding: "0px" }} >
+            <Container style={{ background: "black" }} className="nav__container">
+                <Navbar.Brand as={Link} to="/" >
+                    <span className="logo">myFlix</span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -41,7 +41,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                     <NavDropdown.Item as={Link} to="/drama">Drama</NavDropdown.Item>
                                 </NavDropdown>
                                 <Nav.Link as={Link} to="/search">
-                                    Search  <Search color="black" size={15} />
+                                    Search  <Search color="white" size={15} />
                                 </Nav.Link>
                             </>
                         )}

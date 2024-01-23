@@ -68,11 +68,11 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                     </Form>
                 </Col>
             </Row >
-            <Row className="justify-content-md-center text-center">
+            <Row className="justify-content-md-center text-center mt-5">
                 {
                     showNoResultMessage && (
                         <Col md={6}>
-                            <Alert variant="info" md={5}>
+                            <Alert md={5} style={{ background: "black", color: "#0dcaf0" }}>
                                 Unfortunately, no movie matches your search.
                             </Alert>
                         </Col>

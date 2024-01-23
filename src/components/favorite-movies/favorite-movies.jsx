@@ -16,8 +16,8 @@ export const FavoriteMovies = ({ movies, user, token, setUser }) => {
                         </Col>
                     ))
                 ) : (
-                    <Col md={6}>
-                        <Alert variant="info" className='text-center mt-5'>
+                    <Col md={6} className='mt-5'>
+                        <Alert variant="info" className='text-center mt-5' style={{ background: "#0dcaf0", color: "black" }}>
                             You have not added any movies to your favorites list so far.
                         </Alert>
                     </Col>

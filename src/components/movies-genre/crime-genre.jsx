@@ -11,7 +11,7 @@ export const MoviesCrime = ({ movies, token, user, setUser }) => {
             <Row className='genre__header mb-4'>
                 <h2 className="mb-2 h2__text-gerne">Crime Movies</h2>
                 <p>
-                    Crime films promise a thrilling experience with suspenseful plots, mysterious twists, and a captivating exploration of criminal activities and investigations.
+                    Crime films promise a thrilling experience with suspenseful plots, mysterious twists, and a captivating exploration of criminal activities/investigations.
                 </p>
             </Row>
             {dramaMovies.map(movie => (

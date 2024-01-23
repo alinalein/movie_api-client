@@ -29,10 +29,12 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                         <Card.Text className="mb-1"><strong>Director: </strong>{movie.Director}</Card.Text>
                         <Card.Text className="mb-1"><strong>Actors: </strong>{movie.Actors}</Card.Text>
                         <Card.Text className="mb-4"><strong>Description: </strong>{movie.Description}</Card.Text>
-                        <Link to={`/`} >
-                            <Button variant="outline-info" className="mb-1">Go Back</Button>
-                        </Link>
-                        <FavoriteToggle user={user} setUser={setUser} token={token} movie={movie} />
+                        <div className="d-flex justify-content-between">
+                            <Link to={`/`} >
+                                <Button variant="outline-info" className="mb-1">Go Back</Button>
+                            </Link>
+                            <FavoriteToggle user={user} setUser={setUser} token={token} movie={movie} />
+                        </div>
                     </Card.Body>
                 </Card>
             </Col>

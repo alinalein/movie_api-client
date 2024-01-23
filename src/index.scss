@@ -1,13 +1,12 @@
-$primary: DeepSkyBlue;
+$primary: #0dcaf0;
 $body-bg: #222831;
 $body-color: white;
 
 @import "~bootstrap/scss/bootstrap.scss";
-$bodycolor: #222831;
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: $body-bg
+    background-color: #222831;
 }

@@ -1,6 +1,7 @@
-$bodycolor: black;
-@import '~bootstrap/scss/bootstrap.scss';
-
 .movie__shadow {
     box-shadow: -5px -5px 20px 10px white;
+
+    .card__body {
+        background-color: black;
+    }
 }
