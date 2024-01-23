@@ -65,7 +65,7 @@ export const EditProfile = ({ user, setUser, token }) => {
             <h2 className="text-center mb-4 h2__text" >EDIT YOUR PROFILE</h2>
             <Form onSubmit={handleSaveClick} >
                 <Form.Group controlId="formUsername" className="mb-2 form__text">
-                    <Form.Label><strong> Current Username:</strong> {user.Username}</Form.Label>
+                    <Form.Label><strong> Current Username:</strong> <span className="profile__details">{user.Username}</span></Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Username"
@@ -73,6 +73,8 @@ export const EditProfile = ({ user, setUser, token }) => {
                         onChange={(e) => setUsername(e.target.value)}
                         minLength="5"
                         required
+                        className='form__input'
+                        style={{ backgroundColor: '#222831', color: 'white' }}
                     />
                     <small className='small__text'>Username, please choose at least 5 characters, only letters and numbers
                     </small>
@@ -81,22 +83,24 @@ export const EditProfile = ({ user, setUser, token }) => {
 
 
                 <Form.Group controlId="formEmail" className="mb-2 form__text">
-                    <Form.Label><strong>Current Email: </strong>{user.Email}</Form.Label>
+                    <Form.Label><strong>Current Email: </strong><span className="profile__details">{user.Email}</span></Form.Label>
                     <Form.Control
                         type="email"
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        className='form__input'
+
                     />
                     <small>Optional field</small>
                 </Form.Group>
-                <Form.Group controlId="formBirtday" className="mb-3 form__text" >
-                    <Form.Label><strong>Current Birthday: </strong>{formatDate(user.Birthday)}</Form.Label>
+                <Form.Group controlId="formBirtday" className="mb-3 form__text">
+                    <Form.Label><strong>Current Birthday: </strong><span className="profile__details">{formatDate(user.Birthday)}</span></Form.Label>
                     <Form.Control
                         type="date"
                         placeholder="Birthday"
                         value={birthday}
-                        onChange={(e) => setBirthday(e.target.value)}
+                        onChange={(e) => setBirthday(e.target.value)} className='form__input'
                     />
                     <small>Optional field</small>
                 </Form.Group>

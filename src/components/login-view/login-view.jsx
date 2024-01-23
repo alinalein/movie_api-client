@@ -41,39 +41,39 @@ export const LoginView = ({ onLoggedIn }) => {
     }
 
     return (
-
-        <Form onSubmit={handleSubmit} className="mx-auto mt-5">
-            <h2 className="text-center mb-4">LOGIN</h2>
-            <Form.Group controlId="formUsername" className="mb-2">
-                <Form.Label><strong> Username:</strong></Form.Label>
-                <Form.Control
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                    minLength="3"
-                />
-            </Form.Group>
-            <Form.Group controlId="formPassword">
-                <Form.Label><strong>Password: </strong></Form.Label>
-                <div className="mb-3">
+        <div className="div_component">
+            <Form onSubmit={handleSubmit} className="mx-auto mt-5">
+                <h2 className="text-center mb-4 h2__text">LOGIN</h2>
+                <Form.Group controlId="formUsername" className="mb-2">
+                    <Form.Label className="form__text"><strong> Username:</strong></Form.Label>
                     <Form.Control
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         required
+                        minLength="3"
                     />
+                </Form.Group>
+                <Form.Group controlId="formPassword">
+                    <Form.Label className="form__text"><strong>Password: </strong></Form.Label>
+                    <div className="mb-3">
+                        <Form.Control
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                </Form.Group>
+                <div className="d-flex justify-content-between">
+                    <Button variant="info" type="submit">
+                        Submit
+                    </Button>
+                    <p>
+                        New to myFlix? <Link to="/signup">Signup!</Link>
+                    </p>
                 </div>
-            </Form.Group>
-            <div className="d-flex justify-content-between">
-                <Button variant="danger" type="submit">
-                    Submit
-                </Button>
-                <p>
-                    New to myFlix? <Link to="/signup">Signup!</Link>
-                </p>
-            </div>
-        </Form>
-
+            </Form>
+        </div>
     )
 }

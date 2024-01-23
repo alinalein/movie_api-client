@@ -13218,7 +13218,7 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.h2__text {
+.form__link, .h2__text, .profile__details {
   color: #0dcaf0;
 }
 
