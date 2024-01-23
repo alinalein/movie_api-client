@@ -4,6 +4,7 @@ This is the client-side of the Movie_API project. The application will incorpora
 ### Technology Stack 🛠️
 - **Parcel** : A fast, zero-config web application bundler
 - **React** : JavaScript library for building user interfaces, developed and maintained by Facebook
+- **Bootstrap** 
 
 ### User stories 💃 🕺
 As a user, I want to be able to access information about movies so that I can learn more about movies I’ve watched or am interested in.
