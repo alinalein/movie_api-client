@@ -72,7 +72,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                 {
                     showNoResultMessage && (
                         <Col md={6}>
-                            <Alert md={5} style={{ background: "black", color: "#0dcaf0" }}>
+                            <Alert md={5} style={{ background: "black", color: "#ffffff8c", border: "black" }}>
                                 Unfortunately, no movie matches your search.
                             </Alert>
                         </Col>

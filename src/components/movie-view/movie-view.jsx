@@ -24,7 +24,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                 <Card className="h-100">
                     <Card.Img variant="top" src={movie.ImagePath} className="img-fluid" alt={movie.Title} />
                     <Card.Body className="card__body">
-                        <Card.Title className="mb-3 text-center" style={{ fontSize: '1.5rem', color: "#00adb5" }}>{movie.Title}</Card.Title>
+                        <Card.Title className="mb-3 text-center" style={{ fontSize: '1.5rem', color: "white" }}>{movie.Title}</Card.Title>
                         <Card.Text className="mb-1"><strong>Genre: </strong>{movie.Genre}</Card.Text>
                         <Card.Text className="mb-1"><strong>Director: </strong>{movie.Director}</Card.Text>
                         <Card.Text className="mb-1"><strong>Actors: </strong>{movie.Actors}</Card.Text>
