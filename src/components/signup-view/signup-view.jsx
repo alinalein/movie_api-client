@@ -49,8 +49,8 @@ export const SignupView = () => {
     };
 
     return (
-        <div className="div_component">
-            <Form onSubmit={handleSubmit} className="mx-auto mt-5">
+        <div className="div_component mt-3">
+            <Form onSubmit={handleSubmit} className="mx-auto ">
                 <h2 className="text-center mb-4 h2__text">SIGNUP</h2>
                 <Form.Group controlId="formUsername" className="mb-2">
                     <Form.Label className="form__text"><strong> Username: </strong></Form.Label>
@@ -62,7 +62,7 @@ export const SignupView = () => {
                         required
                         minLength="5"
                     />
-                    <small className="small__text ">Username must be at least 5 characters and contain only letters and numbers</small>
+                    <small className="small__text ">Username, please choose at least 5 characters, only letters and numbers</small>
                 </Form.Group>
                 <Form.Group controlId="formPassword" className="mb-2">
                     <Form.Label className="form__text"><strong>Password:</strong></Form.Label>
@@ -74,13 +74,14 @@ export const SignupView = () => {
                         required
                         minLength="8"
                     />
-                    <small className="small__text ">Password must be at least 8 characters</small>
+                    <small className="small__text ">Password, please choose at least 8 characters</small>
                 </Form.Group>
                 <Form.Group controlId="formEmail" className="mb-2">
                     <Form.Label className="form__text"> <strong>Email: </strong></Form.Label>
                     <Form.Control
                         type="email"
                         value={email}
+                        placeholder="Email"
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
@@ -99,7 +100,7 @@ export const SignupView = () => {
                         <Button variant="info" type="submit">
                             Submit
                         </Button>
-                        <p>Have an account? <Link style={{ color: "white" }} className="form__link" to="/login">Login!</Link></p>
+                        <p>Have an account? <Link to="/login">Login!</Link></p>
                     </div>
                 </Form.Group>
             </Form>

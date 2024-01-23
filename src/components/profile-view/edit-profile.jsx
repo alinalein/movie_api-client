@@ -73,8 +73,6 @@ export const EditProfile = ({ user, setUser, token }) => {
                         onChange={(e) => setUsername(e.target.value)}
                         minLength="5"
                         required
-                        className='form__input'
-                        style={{ backgroundColor: '#222831', color: 'white' }}
                     />
                     <small className='small__text'>Username, please choose at least 5 characters, only letters and numbers
                     </small>
@@ -89,8 +87,6 @@ export const EditProfile = ({ user, setUser, token }) => {
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className='form__input'
-
                     />
                     <small>Optional field</small>
                 </Form.Group>

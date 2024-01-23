@@ -41,14 +41,15 @@ export const LoginView = ({ onLoggedIn }) => {
     }
 
     return (
-        <div className="div_component">
-            <Form onSubmit={handleSubmit} className="mx-auto mt-5">
+        <div className="div_component mt-3">
+            <Form onSubmit={handleSubmit} className="mx-auto">
                 <h2 className="text-center mb-4 h2__text">LOGIN</h2>
                 <Form.Group controlId="formUsername" className="mb-2">
                     <Form.Label className="form__text"><strong> Username:</strong></Form.Label>
                     <Form.Control
                         type="text"
                         value={username}
+                        placeholder="Username"
                         onChange={(e) => setUsername(e.target.value)}
                         required
                         minLength="3"
@@ -60,6 +61,7 @@ export const LoginView = ({ onLoggedIn }) => {
                         <Form.Control
                             type="password"
                             value={password}
+                            placeholder="Password"
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />

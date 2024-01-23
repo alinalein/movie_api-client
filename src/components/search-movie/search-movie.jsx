@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, FormControl, Button, Row, Col, Row, Alert } from 'react-bootstrap';
 import { MovieCard } from "../movie-card/movie-card";
 
+
 export const SearchMovie = ({ movies, token, user, setUser }) => {
     const [searchTitle, setSearchTitle] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -25,36 +26,38 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
     };
 
     return (
-        <Row className="justify-content-md-center text-center" >
-            <h3 className="mb-4 h2__text">SEARCH FOR YOUR MOVIE</h3>
-            <Col md={6} >
-                <Form inline className="mb-3 text-center">
-                    <Form.Group controlId="formSearch" className="mx-auto">
-                        <div className="mb-4 text-center">
-                            <FormControl
-                                type="text"
-                                placeholder="Search by Title"
-                                className="mr-sm-2"
-                                // style={{ maxWidth: '300px' }}
-                                value={searchTitle}
-                                onChange={(e) => setSearchTitle(e.target.value)}
-                                onKeyDown={(e) => {
-                                    if (e.key === "Enter") {
-                                        e.preventDefault();
-                                        handleSearch();
-                                    }
-                                }}
-                            />
-                        </div>
-                    </Form.Group>
+        <Row className="justify-content-md-center text-center mb-4">
+            <Row className="justify-content-md-center div__header">
+                <h3 className="mb-4 h2__text">SEARCH FOR YOUR MOVIE</h3>
+                <Col md={6} >
+                    <Form inline className="mb-3 text-center">
+                        <Form.Group controlId="formSearch" className="mx-auto">
+                            <div className="mb-4 text-center">
+                                <FormControl
+                                    type="text"
+                                    placeholder="Search by Title"
+                                    className="mr-sm-2"
+                                    // style={{ maxWidth: '300px' }}
+                                    value={searchTitle}
+                                    onChange={(e) => setSearchTitle(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter") {
+                                            e.preventDefault();
+                                            handleSearch();
+                                        }
+                                    }}
+                                />
+                            </div>
+                        </Form.Group>
 
-                    <Col className="mb-4">
-                        <Button variant="info" onClick={handleSearch}>
-                            Start The Search
-                        </Button>
-                    </Col>
-                </Form>
-            </Col>
+                        <Col >
+                            <Button variant="info" onClick={handleSearch}>
+                                Start The Search
+                            </Button>
+                        </Col>
+                    </Form>
+                </Col>
+            </Row >
             <Row className="justify-content-md-center text-center">
                 {
                     showNoResultMessage && (
