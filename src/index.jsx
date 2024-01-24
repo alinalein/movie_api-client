@@ -1,4 +1,6 @@
 import { createRoot } from 'react-dom/client';
+import React from 'react';
+import { useState, useEffect } from "react"
 import { MainView } from './components/main-view/main-view';
 import { Container } from "react-bootstrap";
 
@@ -8,9 +10,16 @@ import "./index.scss";
 
 // Main component (will eventually use all the others)
 const MovieApi = () => {
+    const storedUser = JSON.parse(localStorage.getItem("user"))
+    const [user, setUser] = useState(storedUser ? storedUser : null);
+
+    // when user not logged in add class background-image to body of page
+    useEffect(() => {
+        document.body.classList.toggle('background-image', !user);
+    }, [user]);
     return (
-        <Container style={{ border: "1px solid red" }}>
-            <MainView />
+        <Container >
+            <MainView user={user} setUser={setUser} />
         </Container>
     );
 };
