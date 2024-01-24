@@ -1,4 +1,3 @@
-import { Button } from "react-bootstrap";
 import { BookmarkStar, BookmarkStarFill } from "react-bootstrap-icons"
 export const FavoriteToggle = ({ movie, token, user, setUser }) => {
 

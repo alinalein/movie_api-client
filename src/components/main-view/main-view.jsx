@@ -18,11 +18,11 @@ import { MoviesSciFi } from "../movies-genre/sci-fi-genre";
 import { Row, Col, Button } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-export const MainView = () => {
-    const storedUser = JSON.parse(localStorage.getItem("user"))
+export const MainView = ({ user, setUser }) => {
+    // const storedUser = JSON.parse(localStorage.getItem("user"))
     const storedToken = localStorage.getItem("token");
     //Create state variable, called user with initial stale "null". Use to check if user is logged in or not.
-    const [user, setUser] = useState(storedUser ? storedUser : null);
+    // const [user, setUser] = useState(storedUser ? storedUser : null);
     //Create state variable, called token with initial state "null". Use to store token.
     const [token, setToken] = useState(storedToken ? storedToken : null);
     const [movies, setMovies] = useState([]);

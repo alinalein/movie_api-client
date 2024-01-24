@@ -7,7 +7,7 @@ export const EditProfile = ({ user, setUser, token }) => {
 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
-    const [birthday, setBirthday] = useState(user.Birthday);
+    const [birthday, setBirthday] = useState("");
 
     const navigate = useNavigate();
 
@@ -17,12 +17,13 @@ export const EditProfile = ({ user, setUser, token }) => {
         event.preventDefault();
 
         const updatedUser = {
-            Username: username,
-            Email: email,
-            Birthday: birthday,
+            Username: username !== "" ? username : user.Username,
+            Email: email !== "" ? email : user.Email,
+            Birthday: birthday !== "" ? birthday : user.Birthday,
             FavoriteMovies: user.FavoriteMovies
         };
 
+        console.log('updated user:', updatedUser)
         try {
             const response = await fetch(`https://movie-api-lina-834bc70d6952.herokuapp.com/users/update/${user.Username}`, {
                 method: "PUT",

@@ -13218,6 +13218,12 @@ textarea.form-control-lg {
   background-color: #000;
 }
 
+.login_component {
+  background-color: #000000c7;
+  border-radius: 10px;
+  padding: 4%;
+}
+
 .nav__container {
   border-radius: 10px;
 }
@@ -26480,6 +26486,11 @@ body {
   background-color: #222831;
   margin: 0;
   padding: 0;
+}
+
+.background-image {
+  background-image: url("final.406f7ff0.webp");
+  background-size: cover;
 }
 
 /*# sourceMappingURL=index.e3f97e84.css.map */

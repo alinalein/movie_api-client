@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Form, Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./login-view.scss"
 
 export const LoginView = ({ onLoggedIn }) => {
 
@@ -41,7 +42,7 @@ export const LoginView = ({ onLoggedIn }) => {
     }
 
     return (
-        <Row className="profile_component mt-3">
+        <Row className="login_component mt-3">
             <Form onSubmit={handleSubmit} className="mx-auto">
                 <h2 className="text-center mb-4 h2__text">LOGIN</h2>
                 <Form.Group controlId="formUsername" className="mb-2">
