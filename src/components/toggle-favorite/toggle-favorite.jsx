@@ -1,4 +1,6 @@
 import { BookmarkStar, BookmarkStarFill } from "react-bootstrap-icons"
+import "./toggle-favorite.scss"
+
 export const FavoriteToggle = ({ movie, token, user, setUser }) => {
 
     const isMovieInFavorites = user.FavoriteMovies.includes(movie.id);
@@ -54,9 +56,9 @@ export const FavoriteToggle = ({ movie, token, user, setUser }) => {
     return (
         <>
             {isMovieInFavorites ? (
-                <BookmarkStarFill color="#0dcaf0" size={35} onClick={removeFromFavorites} />
+                <BookmarkStarFill className="favorite__icon" color="#0dcaf0" size={35} onClick={removeFromFavorites} />
             ) : (
-                <BookmarkStar color="white" size={35} onClick={addToFavorites} />
+                <BookmarkStar className="favorite__icon" color="white" size={35} onClick={addToFavorites} />
 
             )}
         </>

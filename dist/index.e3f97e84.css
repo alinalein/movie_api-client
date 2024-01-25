@@ -13210,6 +13210,14 @@ textarea.form-control-lg {
   background-color: #000;
 }
 
+.favorite__icon {
+  transition: transform .15s ease-out;
+}
+
+.favorite__icon:hover {
+  transform: scale(1.2);
+}
+
 .movie__shadow {
   box-shadow: -5px -5px 20px 10px #fff;
 }

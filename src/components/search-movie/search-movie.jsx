@@ -17,8 +17,8 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
         } else {
             const filteredMovies = movies.filter(movie => {
                 const movieTitle = movie.Title.toLowerCase();
-                const searchInput = searchTerm.split(' ');
-                return searchInput.every(term => movieTitle.includes(term));
+                const searchInputs = searchInput.split(' ');
+                return searchInputs.every(input => movieTitle.includes(input));
             });
             setSearchResults(filteredMovies);
             setShowNoResultMessage(false);
