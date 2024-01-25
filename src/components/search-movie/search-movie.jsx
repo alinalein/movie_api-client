@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Form, FormControl, Button, Row, Col, Row, Alert } from 'react-bootstrap';
+import { Form, FormControl, Button, Row, Col, Alert } from 'react-bootstrap';
+
+
 import { MovieCard } from "../movie-card/movie-card";
 import "./search-movie.scss"
 
@@ -26,6 +28,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
     };
     const handleClear = () => {
         setSearchTitle('');
+        setShowNoResultMessage(false);
     };
 
     return (
@@ -41,17 +44,22 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                                         type="text"
                                         placeholder="Search by Title"
                                         className="mr-sm-2"
-                                        // style={{ maxWidth: '300px' }}
                                         value={searchTitle}
-                                        onChange={(e) => setSearchTitle(e.target.value)}
+                                        onChange={(e) => {
+                                            setSearchTitle(e.target.value);
+                                            handleSearch()
+                                        }}
+
                                         onKeyDown={(e) => {
-                                            if (e.key === "Enter") {
+                                            if (e.key === 'Enter') {
                                                 e.preventDefault();
                                                 handleSearch();
                                             }
                                         }}
                                     />
+
                                 </Col>
+
                                 <Col md={1} className="clear-button">
                                     <Button variant="link" className="clear-button" onClick={handleClear}>
                                         x
@@ -60,11 +68,11 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                             </Row>
                         </Form.Group>
 
-                        <Col >
+                        {/* <Col >
                             <Button variant="info" onClick={handleSearch}>
                                 Start The Search
                             </Button>
-                        </Col>
+                        </Col> */}
                     </Form>
                 </Col>
             </Row >

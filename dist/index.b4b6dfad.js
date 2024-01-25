@@ -52112,6 +52112,7 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
     };
     const handleClear = ()=>{
         setSearchTitle("");
+        setShowNoResultMessage(false);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -52126,103 +52127,88 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                             children: "SEARCH FOR YOUR MOVIE"
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 35,
+                            lineNumber: 38,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
                             className: "mb-3 text-center",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                                    controlId: "formSearch",
-                                    className: "mx-auto",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                                        className: "mb-3 text-center",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                                md: 11,
-                                                className: "search__input",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormControl), {
-                                                    type: "text",
-                                                    placeholder: "Search by Title",
-                                                    className: "mr-sm-2",
-                                                    // style={{ maxWidth: '300px' }}
-                                                    value: searchTitle,
-                                                    onChange: (e)=>setSearchTitle(e.target.value),
-                                                    onKeyDown: (e)=>{
-                                                        if (e.key === "Enter") {
-                                                            e.preventDefault();
-                                                            handleSearch();
-                                                        }
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                                controlId: "formSearch",
+                                className: "mx-auto",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                                    className: "mb-3 text-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                            md: 11,
+                                            className: "search__input",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormControl), {
+                                                type: "text",
+                                                placeholder: "Search by Title",
+                                                className: "mr-sm-2",
+                                                value: searchTitle,
+                                                onChange: (e)=>{
+                                                    setSearchTitle(e.target.value);
+                                                    handleSearch();
+                                                },
+                                                onKeyDown: (e)=>{
+                                                    if (e.key === "Enter") {
+                                                        e.preventDefault();
+                                                        handleSearch();
                                                     }
-                                                }, void 0, false, {
-                                                    fileName: "src/components/search-movie/search-movie.jsx",
-                                                    lineNumber: 40,
-                                                    columnNumber: 37
-                                                }, undefined)
+                                                }
                                             }, void 0, false, {
                                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 39,
-                                                columnNumber: 33
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                                md: 1,
-                                                className: "clear-button",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                                    variant: "link",
-                                                    className: "clear-button",
-                                                    onClick: handleClear,
-                                                    children: "x"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/search-movie/search-movie.jsx",
-                                                    lineNumber: 56,
-                                                    columnNumber: 37
-                                                }, undefined)
-                                            }, void 0, false, {
-                                                fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 55,
-                                                columnNumber: 33
+                                                lineNumber: 43,
+                                                columnNumber: 37
                                             }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "src/components/search-movie/search-movie.jsx",
-                                        lineNumber: 38,
-                                        columnNumber: 29
-                                    }, undefined)
-                                }, void 0, false, {
+                                        }, void 0, false, {
+                                            fileName: "src/components/search-movie/search-movie.jsx",
+                                            lineNumber: 42,
+                                            columnNumber: 33
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                            md: 1,
+                                            className: "clear-button",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                                variant: "link",
+                                                className: "clear-button",
+                                                onClick: handleClear,
+                                                children: "x"
+                                            }, void 0, false, {
+                                                fileName: "src/components/search-movie/search-movie.jsx",
+                                                lineNumber: 64,
+                                                columnNumber: 37
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/components/search-movie/search-movie.jsx",
+                                            lineNumber: 63,
+                                            columnNumber: 33
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/components/search-movie/search-movie.jsx",
-                                    lineNumber: 37,
-                                    columnNumber: 25
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                        variant: "info",
-                                        onClick: handleSearch,
-                                        children: "Start The Search"
-                                    }, void 0, false, {
-                                        fileName: "src/components/search-movie/search-movie.jsx",
-                                        lineNumber: 64,
-                                        columnNumber: 29
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/components/search-movie/search-movie.jsx",
-                                    lineNumber: 63,
-                                    columnNumber: 25
+                                    lineNumber: 41,
+                                    columnNumber: 29
                                 }, undefined)
-                            ]
-                        }, void 0, true, {
+                            }, void 0, false, {
+                                fileName: "src/components/search-movie/search-movie.jsx",
+                                lineNumber: 40,
+                                columnNumber: 25
+                            }, undefined)
+                        }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 36,
+                            lineNumber: 39,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 34,
+                    lineNumber: 37,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 33,
+                lineNumber: 36,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -52239,17 +52225,17 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                         children: "Unfortunately, no movie matches your search."
                     }, void 0, false, {
                         fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 75,
+                        lineNumber: 83,
                         columnNumber: 29
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 74,
+                    lineNumber: 82,
                     columnNumber: 25
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 71,
+                lineNumber: 79,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -52266,17 +52252,17 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                             setUser: setUser
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 86,
+                            lineNumber: 94,
                             columnNumber: 29
                         }, undefined)
                     }, foundMovie.id, false, {
                         fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 85,
+                        lineNumber: 93,
                         columnNumber: 25
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 82,
+                lineNumber: 90,
                 columnNumber: 13
             }, undefined)
         ]
