@@ -44771,6 +44771,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FavoriteToggle", ()=>FavoriteToggle);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactBootstrapIcons = require("react-bootstrap-icons");
+var _toggleFavoriteScss = require("./toggle-favorite.scss");
 const FavoriteToggle = ({ movie, token, user, setUser })=>{
     const isMovieInFavorites = user.FavoriteMovies.includes(movie.id);
     const addToFavorites = async ()=>{
@@ -44825,20 +44826,22 @@ const FavoriteToggle = ({ movie, token, user, setUser })=>{
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: isMovieInFavorites ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrapIcons.BookmarkStarFill), {
+            className: "favorite__icon",
             color: "#0dcaf0",
             size: 35,
             onClick: removeFromFavorites
         }, void 0, false, {
             fileName: "src/components/toggle-favorite/toggle-favorite.jsx",
-            lineNumber: 57,
+            lineNumber: 59,
             columnNumber: 17
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrapIcons.BookmarkStar), {
+            className: "favorite__icon",
             color: "white",
             size: 35,
             onClick: addToFavorites
         }, void 0, false, {
             fileName: "src/components/toggle-favorite/toggle-favorite.jsx",
-            lineNumber: 59,
+            lineNumber: 61,
             columnNumber: 17
         }, undefined)
     }, void 0, false);
@@ -44852,7 +44855,7 @@ $RefreshReg$(_c, "FavoriteToggle");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-bootstrap-icons":"c9Gza"}],"c9Gza":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-bootstrap-icons":"c9Gza","./toggle-favorite.scss":"XYrBW"}],"c9Gza":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Icon0CircleFill", ()=>(0, _0CircleFillDefault.default));
@@ -51028,7 +51031,7 @@ Search.defaultProps = {
 };
 exports.default = Search;
 
-},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ggaUx":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"XYrBW":[function() {},{}],"ggaUx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51894,7 +51897,7 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                             as: (0, _reactRouterDom.Link),
                                             to: "/favorite-movies",
-                                            children: "My Movie List"
+                                            children: "My List"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
                                             lineNumber: 33,
@@ -52100,8 +52103,8 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
         } else {
             const filteredMovies = movies.filter((movie)=>{
                 const movieTitle = movie.Title.toLowerCase();
-                const searchInput = searchTerm.split(" ");
-                return searchInput.every((term)=>movieTitle.includes(term));
+                const searchInputs = searchInput.split(" ");
+                return searchInputs.every((input)=>movieTitle.includes(input));
             });
             setSearchResults(filteredMovies);
             setShowNoResultMessage(false);
