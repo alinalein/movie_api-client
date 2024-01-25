@@ -2,16 +2,16 @@ $primary: #0dcaf0;
 $body-bg: #222831;
 $body-color: white;
 
-@import "~bootstrap/scss/bootstrap.scss";
+@import '~bootstrap/scss/bootstrap.scss';
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #222831;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #222831;
 }
 
 .background-image {
-    background-image: url("../img/final.webp");
-    background-size: cover;
+  background-image: url('../img/final.webp');
+  background-size: cover;
 }

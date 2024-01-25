@@ -2,22 +2,22 @@ $color: #ffffff8c;
 $backgroud-color: black;
 
 .profile_component {
-    background-color: $backgroud-color;
-    border-radius: 10px;
-    padding: 4%;
+  background-color: $backgroud-color;
+  border-radius: 10px;
+  padding: 4%;
 
-    .small__text {
-        font-size: small;
-    }
+  .small__text {
+    font-size: small;
+  }
 }
 
 .form__text,
 p,
 .small__text {
-    color: $color;
+  color: $color;
 }
 
 .h2__text,
 .profile__details {
-    color: #0dcaf0;
+  color: #0dcaf0;
 }

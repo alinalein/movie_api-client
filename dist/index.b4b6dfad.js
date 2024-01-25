@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"1MqTG":[function(require,module,exports) {
+})({"5qIsR":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -578,9 +578,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"feejL":[function(require,module,exports) {
-var Refresh = require("ec4f6e2ab2d030f2");
-var ErrorOverlay = require("f0daf4df4a08b51d");
+},{}],"1xC6H":[function(require,module,exports) {
+var Refresh = require("6d18d6bd340e7473");
+var ErrorOverlay = require("74ad5ea14201648c");
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -599,11 +599,11 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"ec4f6e2ab2d030f2":"hKm9E","f0daf4df4a08b51d":"lPSzN"}],"hKm9E":[function(require,module,exports) {
+},{"6d18d6bd340e7473":"3FsDI","74ad5ea14201648c":"7i2ML"}],"3FsDI":[function(require,module,exports) {
 "use strict";
-module.exports = require("fdc329593f717a50");
+module.exports = require("bc819d12737f82d");
 
-},{"fdc329593f717a50":"hiSeu"}],"hiSeu":[function(require,module,exports) {
+},{"bc819d12737f82d":"dtx5b"}],"dtx5b":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -1063,8 +1063,8 @@ module.exports = require("fdc329593f717a50");
     exports.setSignature = setSignature;
 })();
 
-},{}],"lPSzN":[function(require,module,exports) {
-var process = require("9b91a09698243cf");
+},{}],"7i2ML":[function(require,module,exports) {
+var process = require("e985fd95d100752a");
 !function(e, t) {
     module.exports = t();
 }(window, function() {
@@ -2794,7 +2794,7 @@ var process = require("9b91a09698243cf");
     ]);
 });
 
-},{"9b91a09698243cf":"d5jf4"}],"d5jf4":[function(require,module,exports) {
+},{"e985fd95d100752a":"d5jf4"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -2973,13 +2973,13 @@ const MovieApi = ()=>{
             setUser: setUser
         }, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 22,
-            columnNumber: 13
+            lineNumber: 21,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 21,
-        columnNumber: 9
+        lineNumber: 20,
+        columnNumber: 5
     }, undefined);
 };
 _s(MovieApi, "4KEL5J9Q0AQ3rUw0OojgyKQDXZE=");
@@ -2990,7 +2990,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MovieApi, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 32,
+    lineNumber: 31,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -3001,7 +3001,7 @@ $RefreshReg$(_c, "MovieApi");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","react-bootstrap":"3AD9A","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","react-bootstrap":"3AD9A","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27271,8 +27271,8 @@ const MainView = ({ user, setUser })=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 69,
-                columnNumber: 13
+                lineNumber: 66,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 className: "justify-content-md-center mt-4  ",
@@ -27285,25 +27285,25 @@ const MainView = ({ user, setUser })=>{
                                     to: "/"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 83,
-                                    columnNumber: 37
+                                    lineNumber: 82,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 86,
-                                        columnNumber: 41
+                                        lineNumber: 85,
+                                        columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 85,
-                                    columnNumber: 37
+                                    lineNumber: 84,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 78,
-                            columnNumber: 21
+                            lineNumber: 77,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/login",
@@ -27312,8 +27312,8 @@ const MainView = ({ user, setUser })=>{
                                     to: "/"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 114,
-                                    columnNumber: 37
+                                    lineNumber: 112,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
@@ -27323,19 +27323,19 @@ const MainView = ({ user, setUser })=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 117,
-                                        columnNumber: 41
+                                        lineNumber: 115,
+                                        columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 116,
-                                    columnNumber: 37
+                                    lineNumber: 114,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 109,
-                            columnNumber: 21
+                            lineNumber: 107,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/",
@@ -27345,14 +27345,14 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 134,
-                                    columnNumber: 37
+                                    lineNumber: 132,
+                                    columnNumber: 19
                                 }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: "The list is empty!"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 137,
-                                    columnNumber: 37
+                                    lineNumber: 134,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: [
                                         movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -27367,13 +27367,13 @@ const MainView = ({ user, setUser })=>{
                                                     setUser: setUser
                                                 }, void 0, false, {
                                                     fileName: "src/components/main-view/main-view.jsx",
-                                                    lineNumber: 142,
-                                                    columnNumber: 49
+                                                    lineNumber: 145,
+                                                    columnNumber: 25
                                                 }, void 0)
                                             }, movie.id, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 141,
-                                                columnNumber: 45
+                                                lineNumber: 138,
+                                                columnNumber: 23
                                             }, void 0)),
                                         showScrollButton && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                                             className: " justify-content-md-center mb-3 text-center",
@@ -27387,26 +27387,26 @@ const MainView = ({ user, setUser })=>{
                                                     children: "Scroll to Top"
                                                 }, void 0, false, {
                                                     fileName: "src/components/main-view/main-view.jsx",
-                                                    lineNumber: 148,
-                                                    columnNumber: 53
+                                                    lineNumber: 156,
+                                                    columnNumber: 27
                                                 }, void 0)
                                             }, void 0, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 147,
-                                                columnNumber: 49
+                                                lineNumber: 155,
+                                                columnNumber: 25
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 146,
-                                            columnNumber: 45
+                                            lineNumber: 154,
+                                            columnNumber: 23
                                         }, void 0)
                                     ]
                                 }, void 0, true)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 129,
-                            columnNumber: 21
+                            lineNumber: 127,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/movies/:movieId",
@@ -27416,14 +27416,14 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 170,
-                                    columnNumber: 37
+                                    lineNumber: 179,
+                                    columnNumber: 19
                                 }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: "The list is empty!"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 172,
-                                    columnNumber: 37
+                                    lineNumber: 181,
+                                    columnNumber: 19
                                 }, void 0) : // send the movies array to MovieView
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -27433,19 +27433,19 @@ const MainView = ({ user, setUser })=>{
                                         setUser: setUser
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 176,
-                                        columnNumber: 41
+                                        lineNumber: 185,
+                                        columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 175,
-                                    columnNumber: 37
+                                    lineNumber: 184,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 165,
-                            columnNumber: 21
+                            lineNumber: 174,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/user-profile",
@@ -27455,27 +27455,27 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 188,
-                                    columnNumber: 37
+                                    lineNumber: 202,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userProfile.UserProfile), {
                                         user: user
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 191,
-                                        columnNumber: 41
+                                        lineNumber: 205,
+                                        columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 190,
-                                    columnNumber: 37
+                                    lineNumber: 204,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 183,
-                            columnNumber: 21
+                            lineNumber: 197,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/edit-profile",
@@ -27485,8 +27485,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 205,
-                                    columnNumber: 37
+                                    lineNumber: 217,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _editProfile.EditProfile), {
@@ -27495,19 +27495,19 @@ const MainView = ({ user, setUser })=>{
                                         token: token
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 208,
-                                        columnNumber: 41
+                                        lineNumber: 220,
+                                        columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 207,
-                                    columnNumber: 37
+                                    lineNumber: 219,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 200,
-                            columnNumber: 21
+                            lineNumber: 212,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/favorite-movies",
@@ -27517,8 +27517,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 224,
-                                    columnNumber: 37
+                                    lineNumber: 232,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favoriteMovies.FavoriteMovies), {
                                         user: user,
@@ -27527,19 +27527,19 @@ const MainView = ({ user, setUser })=>{
                                         setUser: setUser
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 227,
-                                        columnNumber: 41
+                                        lineNumber: 235,
+                                        columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 226,
-                                    columnNumber: 37
+                                    lineNumber: 234,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 219,
-                            columnNumber: 21
+                            lineNumber: 227,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/delete-profile",
@@ -27549,8 +27549,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 244,
-                                    columnNumber: 37
+                                    lineNumber: 252,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 5,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _deleteProfile.DeleteProfile), {
@@ -27559,19 +27559,19 @@ const MainView = ({ user, setUser })=>{
                                         setUser: setUser
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 247,
-                                        columnNumber: 41
+                                        lineNumber: 255,
+                                        columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 246,
-                                    columnNumber: 37
+                                    lineNumber: 254,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 239,
-                            columnNumber: 21
+                            lineNumber: 247,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/drama",
@@ -27581,8 +27581,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 264,
-                                    columnNumber: 37
+                                    lineNumber: 271,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dramaGenre.MoviesDrama), {
                                         movies: movies,
@@ -27591,19 +27591,19 @@ const MainView = ({ user, setUser })=>{
                                         setUser: setUser
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 267,
-                                        columnNumber: 41
+                                        lineNumber: 274,
+                                        columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 266,
-                                    columnNumber: 37
+                                    lineNumber: 273,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 259,
-                            columnNumber: 21
+                            lineNumber: 266,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/crime",
@@ -27613,8 +27613,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 284,
-                                    columnNumber: 37
+                                    lineNumber: 290,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _crimeGenre.MoviesCrime), {
                                     movies: movies,
                                     user: user,
@@ -27622,14 +27622,14 @@ const MainView = ({ user, setUser })=>{
                                     setUser: setUser
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 286,
-                                    columnNumber: 37
+                                    lineNumber: 292,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 279,
-                            columnNumber: 21
+                            lineNumber: 285,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/biography",
@@ -27639,8 +27639,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 301,
-                                    columnNumber: 37
+                                    lineNumber: 307,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _biographyGenre.MoviesBiography), {
                                     movies: movies,
                                     user: user,
@@ -27648,14 +27648,14 @@ const MainView = ({ user, setUser })=>{
                                     setUser: setUser
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 303,
-                                    columnNumber: 37
+                                    lineNumber: 309,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 296,
-                            columnNumber: 23
+                            lineNumber: 302,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/sci-fi",
@@ -27665,8 +27665,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 318,
-                                    columnNumber: 37
+                                    lineNumber: 324,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sciFiGenre.MoviesSciFi), {
                                     movies: movies,
                                     user: user,
@@ -27674,14 +27674,14 @@ const MainView = ({ user, setUser })=>{
                                     setUser: setUser
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 320,
-                                    columnNumber: 37
+                                    lineNumber: 326,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 313,
-                            columnNumber: 23
+                            lineNumber: 319,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/action",
@@ -27691,8 +27691,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 335,
-                                    columnNumber: 37
+                                    lineNumber: 341,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _actionGenre.MoviesAction), {
                                     movies: movies,
                                     user: user,
@@ -27700,14 +27700,14 @@ const MainView = ({ user, setUser })=>{
                                     setUser: setUser
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 337,
-                                    columnNumber: 37
+                                    lineNumber: 343,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 330,
-                            columnNumber: 23
+                            lineNumber: 336,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/search",
@@ -27717,8 +27717,8 @@ const MainView = ({ user, setUser })=>{
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 353,
-                                    columnNumber: 37
+                                    lineNumber: 358,
+                                    columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchMovie.SearchMovie), {
                                     movies: movies,
                                     user: user,
@@ -27726,31 +27726,31 @@ const MainView = ({ user, setUser })=>{
                                     setUser: setUser
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 355,
-                                    columnNumber: 37
+                                    lineNumber: 360,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 348,
-                            columnNumber: 21
+                            lineNumber: 353,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 76,
-                    columnNumber: 17
+                    lineNumber: 75,
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 75,
-                columnNumber: 13
+                lineNumber: 74,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 67,
-        columnNumber: 9
+        lineNumber: 64,
+        columnNumber: 5
     }, undefined);
 };
 _s(MainView, "f7Dj4OCn3sjyNwgYD/hiNRhvhP4=");
@@ -27763,7 +27763,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","../search-movie/search-movie":"eXeEX","../profile-view/user-profile":"7Frwr","../profile-view/edit-profile":"30fNd","../favorite-movies/favorite-movies":"dhuz5","../profile-view/delete-profile":"eSmSC","../movies-genre/drama-genre":"UeQQb","../movies-genre/action-genre":"03JoT","../movies-genre/biography-genre":"ylcsM","../movies-genre/crime-genre":"jxwcM","../movies-genre/sci-fi-genre":"1fHNd"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","../search-movie/search-movie":"eXeEX","../profile-view/user-profile":"7Frwr","../profile-view/edit-profile":"30fNd","../favorite-movies/favorite-movies":"dhuz5","../profile-view/delete-profile":"eSmSC","../movies-genre/drama-genre":"UeQQb","../movies-genre/action-genre":"03JoT","../movies-genre/biography-genre":"ylcsM","../movies-genre/crime-genre":"jxwcM","../movies-genre/sci-fi-genre":"1fHNd"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27791,8 +27791,8 @@ const MovieCard = ({ movie, token, user, setUser })=>{
                     alt: movie.Title
                 }, void 0, false, {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 12,
-                    columnNumber: 17
+                    lineNumber: 11,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                     className: "card__body",
@@ -27805,8 +27805,8 @@ const MovieCard = ({ movie, token, user, setUser })=>{
                             children: movie.Title
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 14,
-                            columnNumber: 21
+                            lineNumber: 13,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "d-flex justify-content-between",
@@ -27818,13 +27818,13 @@ const MovieCard = ({ movie, token, user, setUser })=>{
                                         children: "Details"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 18,
-                                        columnNumber: 29
+                                        lineNumber: 19,
+                                        columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 17,
-                                    columnNumber: 25
+                                    lineNumber: 18,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _toggleFavorite.FavoriteToggle), {
                                     user: user,
@@ -27833,26 +27833,26 @@ const MovieCard = ({ movie, token, user, setUser })=>{
                                     movie: movie
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 22,
-                                    columnNumber: 25
+                                    lineNumber: 21,
+                                    columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 16,
-                            columnNumber: 21
+                            lineNumber: 17,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 13,
-                    columnNumber: 17
+                    lineNumber: 12,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 11,
-            columnNumber: 13
+            lineNumber: 10,
+            columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
@@ -27875,7 +27875,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-router-dom":"9xmpe","./movie-card.scss":"d6HH4","../toggle-favorite/toggle-favorite":"56uk4"}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","./movie-card.scss":"d6HH4","../toggle-favorite/toggle-favorite":"56uk4"}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -28879,7 +28879,7 @@ var _toggleButtonGroupDefault = parcelHelpers.interopDefault(_toggleButtonGroup)
 var _tooltip = require("./Tooltip");
 var _tooltipDefault = parcelHelpers.interopDefault(_tooltip);
 
-},{"./Accordion":false,"./AccordionContext":false,"./AccordionCollapse":false,"./AccordionButton":false,"./Alert":"e3Xec","./Anchor":false,"./Badge":false,"./Breadcrumb":false,"./BreadcrumbItem":false,"./Button":"aPzUt","./ButtonGroup":false,"./ButtonToolbar":false,"./Card":"lAynp","./CardImg":false,"./CardGroup":false,"./Carousel":false,"./CarouselItem":false,"./CloseButton":false,"./Col":"2L2I6","./Collapse":false,"./Dropdown":false,"./DropdownButton":false,"./Fade":false,"./Form":"iBZ80","./FormControl":"iynMc","./FormCheck":false,"./FormFloating":false,"./FloatingLabel":false,"./FormGroup":false,"./FormLabel":false,"./FormText":false,"./FormSelect":false,"./Container":"hEdsw","./Image":false,"./Figure":false,"./InputGroup":false,"./ListGroup":false,"./ListGroupItem":false,"./Modal":false,"./ModalBody":false,"./ModalDialog":false,"./ModalHeader":false,"./ModalFooter":false,"./ModalTitle":false,"./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":false,"./NavDropdown":"8e6QB","./NavItem":false,"./NavLink":false,"./Offcanvas":false,"./OffcanvasHeader":false,"./OffcanvasTitle":false,"./OffcanvasBody":false,"./Overlay":false,"./OverlayTrigger":false,"./PageItem":false,"./Pagination":false,"./Placeholder":false,"./PlaceholderButton":false,"./Popover":false,"./PopoverHeader":false,"./PopoverBody":false,"./ProgressBar":false,"./Ratio":false,"./Row":"cMC39","./Spinner":false,"./SplitButton":false,"./SSRProvider":false,"./Stack":false,"./Tab":false,"./TabContainer":false,"./TabContent":false,"./Table":false,"./TabPane":false,"./Tabs":false,"./ThemeProvider":false,"./Toast":false,"./ToastBody":false,"./ToastHeader":false,"./ToastContainer":false,"./ToggleButton":false,"./ToggleButtonGroup":false,"./Tooltip":false,"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"e3Xec":[function(require,module,exports) {
+},{"./Accordion":false,"./AccordionContext":false,"./AccordionCollapse":false,"./AccordionButton":false,"./Alert":"e3Xec","./Anchor":false,"./Badge":false,"./Breadcrumb":false,"./BreadcrumbItem":false,"./Button":"aPzUt","./ButtonGroup":false,"./ButtonToolbar":false,"./Card":"lAynp","./CardImg":false,"./CardGroup":false,"./Carousel":false,"./CarouselItem":false,"./CloseButton":false,"./Col":"2L2I6","./Collapse":false,"./Dropdown":false,"./DropdownButton":false,"./Fade":false,"./Form":"iBZ80","./FormControl":"iynMc","./FormCheck":false,"./FormFloating":false,"./FloatingLabel":false,"./FormGroup":false,"./FormLabel":false,"./FormText":false,"./FormSelect":false,"./Container":"hEdsw","./Image":false,"./Figure":false,"./InputGroup":false,"./ListGroup":false,"./ListGroupItem":false,"./Modal":false,"./ModalBody":false,"./ModalDialog":false,"./ModalHeader":false,"./ModalFooter":false,"./ModalTitle":false,"./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":false,"./NavDropdown":"8e6QB","./NavItem":false,"./NavLink":false,"./Offcanvas":false,"./OffcanvasHeader":false,"./OffcanvasTitle":false,"./OffcanvasBody":false,"./Overlay":false,"./OverlayTrigger":false,"./PageItem":false,"./Pagination":false,"./Placeholder":false,"./PlaceholderButton":false,"./Popover":false,"./PopoverHeader":false,"./PopoverBody":false,"./ProgressBar":false,"./Ratio":false,"./Row":"cMC39","./Spinner":false,"./SplitButton":false,"./SSRProvider":false,"./Stack":false,"./Tab":false,"./TabContainer":false,"./TabContent":false,"./Table":false,"./TabPane":false,"./Tabs":false,"./ThemeProvider":false,"./Toast":false,"./ToastBody":false,"./ToastHeader":false,"./ToastContainer":false,"./ToggleButton":false,"./ToggleButtonGroup":false,"./Tooltip":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e3Xec":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -28953,7 +28953,7 @@ exports.default = Object.assign(Alert, {
     Heading: AlertHeading
 });
 
-},{"classnames":"jocGM","react":"21dqq","uncontrollable":"b3yWY","@restart/hooks/useEventCallback":"7ONdq","@restart/ui/Anchor":"cQOWi","./ThemeProvider":"dVixI","./Fade":"aH18S","./CloseButton":"1wmVl","./divWithClassName":"eDg7t","./createWithBsPrefix":"itt7e","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jocGM":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","uncontrollable":"b3yWY","@restart/hooks/useEventCallback":"7ONdq","@restart/ui/Anchor":"cQOWi","./ThemeProvider":"dVixI","./Fade":"aH18S","./CloseButton":"1wmVl","./divWithClassName":"eDg7t","./createWithBsPrefix":"itt7e","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jocGM":[function(require,module,exports) {
 /*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
@@ -29004,7 +29004,7 @@ var _hookDefault = parcelHelpers.interopDefault(_hook);
 var _uncontrollable = require("./uncontrollable");
 var _uncontrollableDefault = parcelHelpers.interopDefault(_uncontrollable);
 
-},{"./hook":"cv9oS","./uncontrollable":"aqbCD","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cv9oS":[function(require,module,exports) {
+},{"./hook":"cv9oS","./uncontrollable":"aqbCD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cv9oS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useUncontrolledProp", ()=>useUncontrolledProp);
@@ -29065,7 +29065,7 @@ function useUncontrolled(props, config) {
     }, props);
 }
 
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fTBFS":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fTBFS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_extends);
@@ -29080,7 +29080,7 @@ function _extends() {
     return _extends.apply(this, arguments);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2oWKC":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -29127,7 +29127,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
     return target;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7UQ73":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7UQ73":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "uncontrolledPropTypes", ()=>uncontrolledPropTypes);
@@ -29172,7 +29172,7 @@ function canAcceptRef(component) {
     return !!component && (typeof component !== "function" || component.prototype && component.prototype.isReactComponent);
 }
 
-},{"invariant":"d1QgR","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"d1QgR":[function(require,module,exports) {
+},{"invariant":"d1QgR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d1QgR":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -29360,7 +29360,7 @@ function uncontrollable(Component, controlledValues, methods) {
     return WrappedComponent;
 }
 
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","react":"21dqq","react-lifecycles-compat":"3f3fU","invariant":"d1QgR","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9u2Z8":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","react":"21dqq","react-lifecycles-compat":"3f3fU","invariant":"d1QgR","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9u2Z8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_inheritsLoose);
@@ -29372,7 +29372,7 @@ function _inheritsLoose(subClass, superClass) {
     (0, _setPrototypeOfJsDefault.default)(subClass, superClass);
 }
 
-},{"./setPrototypeOf.js":"3XDFA","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3XDFA":[function(require,module,exports) {
+},{"./setPrototypeOf.js":"3XDFA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3XDFA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_setPrototypeOf);
@@ -29384,7 +29384,7 @@ function _setPrototypeOf(o, p) {
     return _setPrototypeOf(o, p);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3f3fU":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3f3fU":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -29477,7 +29477,7 @@ function polyfill(Component) {
     return Component;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7ONdq":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7ONdq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useEventCallback);
@@ -29493,7 +29493,7 @@ function useEventCallback(fn) {
     ]);
 }
 
-},{"react":"21dqq","./useCommittedRef":"g5BYG","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g5BYG":[function(require,module,exports) {
+},{"react":"21dqq","./useCommittedRef":"g5BYG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g5BYG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -29516,7 +29516,7 @@ var _react = require("react");
 }
 exports.default = useCommittedRef;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cQOWi":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cQOWi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref);
@@ -29568,7 +29568,7 @@ function isTrivialHref(href) {
 Anchor.displayName = "Anchor";
 exports.default = Anchor;
 
-},{"react":"21dqq","@restart/hooks":"5ErkJ","./Button":"8YUbR","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"5ErkJ":[function(require,module,exports) {
+},{"react":"21dqq","@restart/hooks":"5ErkJ","./Button":"8YUbR","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ErkJ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useCallbackRef", ()=>(0, _useCallbackRefDefault.default));
@@ -29611,7 +29611,7 @@ var _useImageDefault = parcelHelpers.interopDefault(_useImage);
 var _useResizeObserver = require("./useResizeObserver");
 var _useResizeObserverDefault = parcelHelpers.interopDefault(_useResizeObserver);
 
-},{"./useCallbackRef":"82p6M","./useCommittedRef":"g5BYG","./useEventCallback":"7ONdq","./useEventListener":"dBDI3","./useGlobalListener":"iey73","./useInterval":"hnmo4","./useRafInterval":"4qbLw","./useMergeState":"7E8IK","./useMergeStateFromProps":"6f6Me","./useMounted":"iK6A1","./usePrevious":"gDCGm","./useImage":"iuAlv","./useResizeObserver":"edwGv","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"82p6M":[function(require,module,exports) {
+},{"./useCallbackRef":"82p6M","./useCommittedRef":"g5BYG","./useEventCallback":"7ONdq","./useEventListener":"dBDI3","./useGlobalListener":"iey73","./useInterval":"hnmo4","./useRafInterval":"4qbLw","./useMergeState":"7E8IK","./useMergeStateFromProps":"6f6Me","./useMounted":"iK6A1","./usePrevious":"gDCGm","./useImage":"iuAlv","./useResizeObserver":"edwGv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"82p6M":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useCallbackRef);
@@ -29620,7 +29620,7 @@ function useCallbackRef() {
     return (0, _react.useState)(null);
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dBDI3":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dBDI3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useEventListener);
@@ -29638,7 +29638,7 @@ function useEventListener(eventTarget, event, listener, capture = false) {
     ]);
 }
 
-},{"react":"21dqq","./useEventCallback":"7ONdq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iey73":[function(require,module,exports) {
+},{"react":"21dqq","./useEventCallback":"7ONdq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iey73":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useGlobalListener);
@@ -29650,7 +29650,7 @@ function useGlobalListener(event, handler, capture = false) {
     return (0, _useEventListenerDefault.default)(documentTarget, event, handler, capture);
 }
 
-},{"./useEventListener":"dBDI3","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hnmo4":[function(require,module,exports) {
+},{"./useEventListener":"dBDI3","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hnmo4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -29736,7 +29736,7 @@ var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
 }
 exports.default = useInterval;
 
-},{"react":"21dqq","./useCommittedRef":"g5BYG","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"4qbLw":[function(require,module,exports) {
+},{"react":"21dqq","./useCommittedRef":"g5BYG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4qbLw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -29767,7 +29767,7 @@ function useRafInterval(fn, ms, paused = false) {
 }
 exports.default = useRafInterval;
 
-},{"react":"21dqq","./useCommittedRef":"g5BYG","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7E8IK":[function(require,module,exports) {
+},{"react":"21dqq","./useCommittedRef":"g5BYG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7E8IK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useMergeState);
@@ -29790,7 +29790,7 @@ function useMergeState(initialState) {
     ];
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6f6Me":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6f6Me":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useMergeStateFromProps);
@@ -29806,7 +29806,7 @@ function useMergeStateFromProps(props, gDSFP, initialState) {
     ];
 }
 
-},{"./useMergeState":"7E8IK","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iK6A1":[function(require,module,exports) {
+},{"./useMergeState":"7E8IK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iK6A1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useMounted);
@@ -29823,7 +29823,7 @@ function useMounted() {
     return isMounted.current;
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gDCGm":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gDCGm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>usePrevious);
@@ -29836,7 +29836,7 @@ function usePrevious(value) {
     return ref.current;
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iuAlv":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iuAlv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useImage);
@@ -29888,7 +29888,7 @@ function useImage(imageOrUrl, crossOrigin) {
     return state;
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"edwGv":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"edwGv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useResizeObserver);
@@ -29924,7 +29924,7 @@ function useResizeObserver(element) {
     return rect;
 }
 
-},{"react":"21dqq","./useIsomorphicEffect":"e8blq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"e8blq":[function(require,module,exports) {
+},{"react":"21dqq","./useIsomorphicEffect":"e8blq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e8blq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -29942,7 +29942,7 @@ const isDOM = typeof document !== "undefined";
  * @category effects
  */ exports.default = isDOM || isReactNative ? (0, _react.useLayoutEffect) : (0, _react.useEffect);
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8YUbR":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8YUbR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref);
@@ -30032,7 +30032,7 @@ const Button = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
 Button.displayName = "Button";
 exports.default = Button;
 
-},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6AEwr":[function(require,module,exports) {
+},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6AEwr":[function(require,module,exports) {
 "use strict";
 module.exports = require("c4c10cbba9862d5f");
 
@@ -30961,7 +30961,7 @@ function createBootstrapComponent(Component, opts) {
 }
 exports.default = ThemeProvider;
 
-},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aH18S":[function(require,module,exports) {
+},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aH18S":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -31009,7 +31009,7 @@ Fade.defaultProps = defaultProps;
 Fade.displayName = "Fade";
 exports.default = Fade;
 
-},{"classnames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cKsrS":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cKsrS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "UNMOUNTED", ()=>UNMOUNTED);
@@ -31525,14 +31525,14 @@ Transition.ENTERED = ENTERED;
 Transition.EXITING = EXITING;
 exports.default = Transition;
 
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","prop-types":"7wKI2","react":"21dqq","react-dom":"j6uA9","./config":"cepoZ","./utils/PropTypes":"9Zqaa","./TransitionGroupContext":"47LXo","./utils/reflow":"V4VjQ","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cepoZ":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","prop-types":"7wKI2","react":"21dqq","react-dom":"j6uA9","./config":"cepoZ","./utils/PropTypes":"9Zqaa","./TransitionGroupContext":"47LXo","./utils/reflow":"V4VjQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cepoZ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = {
     disabled: false
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9Zqaa":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9Zqaa":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "timeoutsShape", ()=>timeoutsShape);
@@ -31564,14 +31564,14 @@ var classNamesShape = (0, _propTypesDefault.default).oneOfType([
     })
 ]);
 
-},{"prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"47LXo":[function(require,module,exports) {
+},{"prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"47LXo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 exports.default = (0, _reactDefault.default).createContext(null);
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"V4VjQ":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"V4VjQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "forceReflow", ()=>forceReflow);
@@ -31579,7 +31579,7 @@ var forceReflow = function forceReflow(node) {
     return node.scrollTop;
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"68oh7":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"68oh7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>transitionEndListener);
@@ -31603,7 +31603,7 @@ function transitionEndListener(element, handler) {
     }, duration + delay);
 }
 
-},{"dom-helpers/css":"klmhr","dom-helpers/transitionEnd":"7hVJq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"klmhr":[function(require,module,exports) {
+},{"dom-helpers/css":"klmhr","dom-helpers/transitionEnd":"7hVJq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"klmhr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _getComputedStyle = require("./getComputedStyle");
@@ -31627,7 +31627,7 @@ function style(node, property) {
 }
 exports.default = style;
 
-},{"./getComputedStyle":"adqGa","./hyphenateStyle":"hbsNp","./isTransform":"gnxjD","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"adqGa":[function(require,module,exports) {
+},{"./getComputedStyle":"adqGa","./hyphenateStyle":"hbsNp","./isTransform":"gnxjD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"adqGa":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getComputedStyle);
@@ -31637,7 +31637,7 @@ function getComputedStyle(node, psuedoElement) {
     return (0, _ownerWindowDefault.default)(node).getComputedStyle(node, psuedoElement);
 }
 
-},{"./ownerWindow":"3nPSD","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3nPSD":[function(require,module,exports) {
+},{"./ownerWindow":"3nPSD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3nPSD":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>ownerWindow);
@@ -31648,7 +31648,7 @@ function ownerWindow(node) {
     return doc && doc.defaultView || window;
 }
 
-},{"./ownerDocument":"2WpOk","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2WpOk":[function(require,module,exports) {
+},{"./ownerDocument":"2WpOk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2WpOk":[function(require,module,exports) {
 /**
  * Returns the owner document of a given element.
  * 
@@ -31660,7 +31660,7 @@ function ownerDocument(node) {
     return node && node.ownerDocument || document;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hbsNp":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hbsNp":[function(require,module,exports) {
 /**
  * Copyright 2013-2014, Facebook, Inc.
  * All rights reserved.
@@ -31675,7 +31675,7 @@ function hyphenateStyleName(string) {
     return (0, _hyphenateDefault.default)(string).replace(msPattern, "-ms-");
 }
 
-},{"./hyphenate":"3UJRr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3UJRr":[function(require,module,exports) {
+},{"./hyphenate":"3UJRr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UJRr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>hyphenate);
@@ -31684,7 +31684,7 @@ function hyphenate(string) {
     return string.replace(rUpper, "-$1").toLowerCase();
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gnxjD":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gnxjD":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>isTransform);
@@ -31693,7 +31693,7 @@ function isTransform(value) {
     return !!(value && supportedTransforms.test(value));
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7hVJq":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7hVJq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>transitionEnd);
@@ -31734,7 +31734,7 @@ function transitionEnd(element, handler, duration, padding) {
     };
 }
 
-},{"./css":"klmhr","./listen":"1i4e7","./triggerEvent":"lQ70W","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1i4e7":[function(require,module,exports) {
+},{"./css":"klmhr","./listen":"1i4e7","./triggerEvent":"lQ70W","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1i4e7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _addEventListener = require("./addEventListener");
@@ -31749,7 +31749,7 @@ function listen(node, eventName, handler, options) {
 }
 exports.default = listen;
 
-},{"./addEventListener":"c5x2p","./removeEventListener":"la8JB","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"c5x2p":[function(require,module,exports) {
+},{"./addEventListener":"c5x2p","./removeEventListener":"la8JB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c5x2p":[function(require,module,exports) {
 /* eslint-disable no-return-assign */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "optionsSupported", ()=>optionsSupported);
@@ -31798,12 +31798,12 @@ try {
 }
 exports.default = addEventListener;
 
-},{"./canUseDOM":"9AwUB","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9AwUB":[function(require,module,exports) {
+},{"./canUseDOM":"9AwUB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9AwUB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = !!(typeof window !== "undefined" && window.document && window.document.createElement);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"la8JB":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"la8JB":[function(require,module,exports) {
 /**
  * A `removeEventListener` ponyfill
  * 
@@ -31820,7 +31820,7 @@ function removeEventListener(node, eventName, handler, options) {
 }
 exports.default = removeEventListener;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"lQ70W":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lQ70W":[function(require,module,exports) {
 /**
  * Triggers an event on a given element.
  * 
@@ -31841,7 +31841,7 @@ function triggerEvent(node, eventName, bubbles, cancelable) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eWjs5":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eWjs5":[function(require,module,exports) {
 // reading a dimension prop will cause the browser to recalculate,
 // which will let our animations work
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -31852,7 +31852,7 @@ function triggerBrowserReflow(node) {
     node.offsetHeight;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jKUqZ":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jKUqZ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -31916,7 +31916,7 @@ const TransitionWrapper = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(({
 });
 exports.default = TransitionWrapper;
 
-},{"react":"21dqq","react-transition-group/Transition":"cKsrS","@restart/hooks/useMergedRefs":"6hhuo","./safeFindDOMNode":"XsXw9","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6hhuo":[function(require,module,exports) {
+},{"react":"21dqq","react-transition-group/Transition":"cKsrS","@restart/hooks/useMergedRefs":"6hhuo","./safeFindDOMNode":"XsXw9","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6hhuo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "mergeRefs", ()=>mergeRefs);
@@ -31955,7 +31955,7 @@ function mergeRefs(refA, refB) {
 }
 exports.default = useMergedRefs;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"XsXw9":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"XsXw9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>safeFindDOMNode);
@@ -31966,7 +31966,7 @@ function safeFindDOMNode(componentOrElement) {
     return componentOrElement != null ? componentOrElement : null;
 }
 
-},{"react-dom":"j6uA9","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1wmVl":[function(require,module,exports) {
+},{"react-dom":"j6uA9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1wmVl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _propTypes = require("prop-types");
@@ -32000,7 +32000,7 @@ CloseButton.propTypes = propTypes;
 CloseButton.defaultProps = defaultProps;
 exports.default = CloseButton;
 
-},{"prop-types":"7wKI2","react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eDg7t":[function(require,module,exports) {
+},{"prop-types":"7wKI2","react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eDg7t":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -32013,7 +32013,7 @@ exports.default = (className)=>/*#__PURE__*/ _react.forwardRef((p, ref)=>/*#__PU
             className: (0, _classnamesDefault.default)(p.className, className)
         }));
 
-},{"react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"itt7e":[function(require,module,exports) {
+},{"react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"itt7e":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>createWithBsPrefix);
@@ -32039,7 +32039,7 @@ function createWithBsPrefix(prefix, { displayName = pascalCase(prefix), Componen
     return BsComponent;
 }
 
-},{"classnames":"jocGM","dom-helpers/camelize":"kbWDq","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"kbWDq":[function(require,module,exports) {
+},{"classnames":"jocGM","dom-helpers/camelize":"kbWDq","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kbWDq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>camelize);
@@ -32050,7 +32050,7 @@ function camelize(string) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aPzUt":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aPzUt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -32082,7 +32082,7 @@ Button.displayName = "Button";
 Button.defaultProps = defaultProps;
 exports.default = Button;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/Button":"8YUbR","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"lAynp":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/Button":"8YUbR","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lAynp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -32144,7 +32144,7 @@ exports.default = Object.assign(Card, {
     ImgOverlay: CardImgOverlay
 });
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","./divWithClassName":"eDg7t","./CardImg":"1reTi","./CardHeader":"dXnnx","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1reTi":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","./divWithClassName":"eDg7t","./CardImg":"1reTi","./CardHeader":"dXnnx","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1reTi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -32163,7 +32163,7 @@ const CardImg = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, variant,
 CardImg.displayName = "CardImg";
 exports.default = CardImg;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dXnnx":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXnnx":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -32193,7 +32193,7 @@ as: Component = "div", ...props }, ref)=>{
 CardHeader.displayName = "CardHeader";
 exports.default = CardHeader;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./CardHeaderContext":"36cNB","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"36cNB":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./CardHeaderContext":"36cNB","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"36cNB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -32201,7 +32201,7 @@ const context = /*#__PURE__*/ _react.createContext(null);
 context.displayName = "CardHeaderContext";
 exports.default = context;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2L2I6":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2L2I6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useCol", ()=>useCol);
@@ -32252,7 +32252,7 @@ const Col = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
 Col.displayName = "Col";
 exports.default = Col;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"acuzI":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"acuzI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -32359,7 +32359,7 @@ const Collapse = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(({ onEnter,
 Collapse.defaultProps = defaultProps;
 exports.default = Collapse;
 
-},{"classnames":"jocGM","dom-helpers/css":"klmhr","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./createChainedFunction":"1KNLM","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1KNLM":[function(require,module,exports) {
+},{"classnames":"jocGM","dom-helpers/css":"klmhr","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./createChainedFunction":"1KNLM","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1KNLM":[function(require,module,exports) {
 /**
  * Safe chained function
  *
@@ -32383,7 +32383,7 @@ function createChainedFunction(...funcs) {
 }
 exports.default = createChainedFunction;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"88m2L":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"88m2L":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -32486,7 +32486,7 @@ exports.default = Object.assign(Dropdown, {
     Header: DropdownHeader
 });
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/Dropdown":"eizH2","uncontrollable":"b3yWY","@restart/hooks/useEventCallback":"7ONdq","./DropdownContext":"4Ufmn","./DropdownItem":"xQ9Cw","./DropdownMenu":"6UpAn","./DropdownToggle":"gCRNt","./InputGroupContext":"eWDkO","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","./types":"jwKaQ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eizH2":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/Dropdown":"eizH2","uncontrollable":"b3yWY","@restart/hooks/useEventCallback":"7ONdq","./DropdownContext":"4Ufmn","./DropdownItem":"xQ9Cw","./DropdownMenu":"6UpAn","./DropdownToggle":"gCRNt","./InputGroupContext":"eWDkO","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","./types":"jwKaQ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eizH2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _querySelectorAll = require("dom-helpers/querySelectorAll");
@@ -32685,7 +32685,7 @@ Dropdown.Toggle = (0, _dropdownToggleDefault.default);
 Dropdown.Item = (0, _dropdownItemDefault.default);
 exports.default = Dropdown;
 
-},{"dom-helpers/querySelectorAll":"g5Sx6","dom-helpers/addEventListener":"c5x2p","react":"21dqq","uncontrollable":"hZZ1I","@restart/hooks/usePrevious":"gDCGm","@restart/hooks/useForceUpdate":"3Y4bz","@restart/hooks/useEventListener":"dBDI3","@restart/hooks/useEventCallback":"7ONdq","./DropdownContext":"dX4vI","./DropdownMenu":"6fCTW","./DropdownToggle":"8iWIY","./DropdownItem":"hDAPz","./SelectableContext":"8zLqy","./DataKey":"9vwZh","./useWindow":"4AsJ2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g5Sx6":[function(require,module,exports) {
+},{"dom-helpers/querySelectorAll":"g5Sx6","dom-helpers/addEventListener":"c5x2p","react":"21dqq","uncontrollable":"hZZ1I","@restart/hooks/usePrevious":"gDCGm","@restart/hooks/useForceUpdate":"3Y4bz","@restart/hooks/useEventListener":"dBDI3","@restart/hooks/useEventCallback":"7ONdq","./DropdownContext":"dX4vI","./DropdownMenu":"6fCTW","./DropdownToggle":"8iWIY","./DropdownItem":"hDAPz","./SelectableContext":"8zLqy","./DataKey":"9vwZh","./useWindow":"4AsJ2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g5Sx6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>qsa);
@@ -32694,7 +32694,7 @@ function qsa(element, selector) {
     return toArray(element.querySelectorAll(selector));
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hZZ1I":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hZZ1I":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "defaultKey", ()=>defaultKey);
@@ -32767,7 +32767,7 @@ function useUncontrolled(props, config) {
     }, props);
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3Y4bz":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3Y4bz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useForceUpdate);
@@ -32779,14 +32779,14 @@ function useForceUpdate() {
     return dispatch;
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dX4vI":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dX4vI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 const DropdownContext = /*#__PURE__*/ _react.createContext(null);
 exports.default = DropdownContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6fCTW":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6fCTW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /**
@@ -32894,7 +32894,7 @@ DropdownMenu.displayName = "DropdownMenu";
 DropdownMenu.defaultProps = defaultProps;
 /** @component */ exports.default = DropdownMenu;
 
-},{"react":"21dqq","@restart/hooks/useCallbackRef":"82p6M","./DropdownContext":"dX4vI","./usePopper":"7aqz6","./useClickOutside":"ed4Oi","./mergeOptionsWithPopperConfig":"8jWN8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7aqz6":[function(require,module,exports) {
+},{"react":"21dqq","@restart/hooks/useCallbackRef":"82p6M","./DropdownContext":"dX4vI","./usePopper":"7aqz6","./useClickOutside":"ed4Oi","./mergeOptionsWithPopperConfig":"8jWN8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7aqz6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -33073,7 +33073,7 @@ const EMPTY_MODIFIERS = [];
 }
 exports.default = usePopper;
 
-},{"react":"21dqq","dequal":"ceyyc","@restart/hooks/useSafeState":"OEC1E","./popper":"fMLGS","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ceyyc":[function(require,module,exports) {
+},{"react":"21dqq","dequal":"ceyyc","@restart/hooks/useSafeState":"OEC1E","./popper":"fMLGS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ceyyc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "dequal", ()=>dequal);
@@ -33146,7 +33146,7 @@ function dequal(foo, bar) {
     return foo !== foo && bar !== bar;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"OEC1E":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"OEC1E":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -33177,7 +33177,7 @@ var _useMountedDefault = parcelHelpers.interopDefault(_useMounted);
 }
 exports.default = useSafeState;
 
-},{"react":"21dqq","./useMounted":"iK6A1","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fMLGS":[function(require,module,exports) {
+},{"react":"21dqq","./useMounted":"iK6A1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fMLGS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createPopper", ()=>createPopper);
@@ -33213,7 +33213,7 @@ const createPopper = (0, _popperBase.popperGenerator)({
     ]
 });
 
-},{"@popperjs/core/lib/modifiers/arrow":"31HFW","@popperjs/core/lib/modifiers/computeStyles":"gDlm2","@popperjs/core/lib/modifiers/eventListeners":"hBKsL","@popperjs/core/lib/modifiers/flip":"fv5wq","@popperjs/core/lib/modifiers/hide":"2g4OF","@popperjs/core/lib/modifiers/offset":"3GKVY","@popperjs/core/lib/modifiers/popperOffsets":"6I679","@popperjs/core/lib/modifiers/preventOverflow":"1AMhb","@popperjs/core/lib/enums":false,"@popperjs/core/lib/popper-base":"9X7Du","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"31HFW":[function(require,module,exports) {
+},{"@popperjs/core/lib/modifiers/arrow":"31HFW","@popperjs/core/lib/modifiers/computeStyles":"gDlm2","@popperjs/core/lib/modifiers/eventListeners":"hBKsL","@popperjs/core/lib/modifiers/flip":"fv5wq","@popperjs/core/lib/modifiers/hide":"2g4OF","@popperjs/core/lib/modifiers/offset":"3GKVY","@popperjs/core/lib/modifiers/popperOffsets":"6I679","@popperjs/core/lib/modifiers/preventOverflow":"1AMhb","@popperjs/core/lib/enums":false,"@popperjs/core/lib/popper-base":"9X7Du","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"31HFW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _getBasePlacementJs = require("../utils/getBasePlacement.js");
@@ -33294,7 +33294,7 @@ exports.default = {
     ]
 };
 
-},{"../utils/getBasePlacement.js":"59Wp3","../dom-utils/getLayoutRect.js":"jvjuf","../dom-utils/contains.js":"4QxRR","../dom-utils/getOffsetParent.js":"laoYw","../utils/getMainAxisFromPlacement.js":"1Xlom","../utils/within.js":"3glSz","../utils/mergePaddingObject.js":"lEIf9","../utils/expandToHashMap.js":"iQlH5","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"59Wp3":[function(require,module,exports) {
+},{"../utils/getBasePlacement.js":"59Wp3","../dom-utils/getLayoutRect.js":"jvjuf","../dom-utils/contains.js":"4QxRR","../dom-utils/getOffsetParent.js":"laoYw","../utils/getMainAxisFromPlacement.js":"1Xlom","../utils/within.js":"3glSz","../utils/mergePaddingObject.js":"lEIf9","../utils/expandToHashMap.js":"iQlH5","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"59Wp3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getBasePlacement);
@@ -33303,7 +33303,7 @@ function getBasePlacement(placement) {
     return placement.split("-")[0];
 }
 
-},{"../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"lCAq5":[function(require,module,exports) {
+},{"../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lCAq5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "top", ()=>top);
@@ -33383,7 +33383,7 @@ var modifierPhases = [
     afterWrite
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jvjuf":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jvjuf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getLayoutRect);
@@ -33404,7 +33404,7 @@ function getLayoutRect(element) {
     };
 }
 
-},{"./getBoundingClientRect.js":"9CFSQ","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9CFSQ":[function(require,module,exports) {
+},{"./getBoundingClientRect.js":"9CFSQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9CFSQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getBoundingClientRect);
@@ -33442,7 +33442,7 @@ function getBoundingClientRect(element, includeScale, isFixedStrategy) {
     };
 }
 
-},{"./instanceOf.js":"gYFUC","../utils/math.js":"gQqVe","./getWindow.js":"2SkOo","./isLayoutViewport.js":"3ipHv","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gYFUC":[function(require,module,exports) {
+},{"./instanceOf.js":"gYFUC","../utils/math.js":"gQqVe","./getWindow.js":"2SkOo","./isLayoutViewport.js":"3ipHv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gYFUC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isElement", ()=>isElement);
@@ -33465,7 +33465,7 @@ function isShadowRoot(node) {
     return node instanceof OwnElement || node instanceof ShadowRoot;
 }
 
-},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2SkOo":[function(require,module,exports) {
+},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2SkOo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getWindow);
@@ -33478,7 +33478,7 @@ function getWindow(node) {
     return node;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gQqVe":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gQqVe":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "max", ()=>max);
@@ -33488,7 +33488,7 @@ var max = Math.max;
 var min = Math.min;
 var round = Math.round;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3ipHv":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3ipHv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>isLayoutViewport);
@@ -33498,7 +33498,7 @@ function isLayoutViewport() {
     return !/^((?!chrome|android).)*safari/i.test((0, _userAgentJsDefault.default)());
 }
 
-},{"../utils/userAgent.js":"1hEx0","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1hEx0":[function(require,module,exports) {
+},{"../utils/userAgent.js":"1hEx0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1hEx0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getUAString);
@@ -33510,7 +33510,7 @@ function getUAString() {
     return navigator.userAgent;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"4QxRR":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4QxRR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>contains);
@@ -33529,7 +33529,7 @@ function contains(parent, child) {
     return false;
 }
 
-},{"./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"laoYw":[function(require,module,exports) {
+},{"./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"laoYw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getOffsetParent);
@@ -33585,7 +33585,7 @@ function getOffsetParent(element) {
     return offsetParent || getContainingBlock(element) || window;
 }
 
-},{"./getWindow.js":"2SkOo","./getNodeName.js":"a2Qom","./getComputedStyle.js":"3mZjB","./instanceOf.js":"gYFUC","./isTableElement.js":"2qBb7","./getParentNode.js":"bIHpd","../utils/userAgent.js":"1hEx0","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"a2Qom":[function(require,module,exports) {
+},{"./getWindow.js":"2SkOo","./getNodeName.js":"a2Qom","./getComputedStyle.js":"3mZjB","./instanceOf.js":"gYFUC","./isTableElement.js":"2qBb7","./getParentNode.js":"bIHpd","../utils/userAgent.js":"1hEx0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a2Qom":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getNodeName);
@@ -33593,7 +33593,7 @@ function getNodeName(element) {
     return element ? (element.nodeName || "").toLowerCase() : null;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3mZjB":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3mZjB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getComputedStyle);
@@ -33603,7 +33603,7 @@ function getComputedStyle(element) {
     return (0, _getWindowJsDefault.default)(element).getComputedStyle(element);
 }
 
-},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2qBb7":[function(require,module,exports) {
+},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2qBb7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>isTableElement);
@@ -33617,7 +33617,7 @@ function isTableElement(element) {
     ].indexOf((0, _getNodeNameJsDefault.default)(element)) >= 0;
 }
 
-},{"./getNodeName.js":"a2Qom","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"bIHpd":[function(require,module,exports) {
+},{"./getNodeName.js":"a2Qom","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bIHpd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getParentNode);
@@ -33637,7 +33637,7 @@ function getParentNode(element) {
     );
 }
 
-},{"./getNodeName.js":"a2Qom","./getDocumentElement.js":"eJ9Y1","./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eJ9Y1":[function(require,module,exports) {
+},{"./getNodeName.js":"a2Qom","./getDocumentElement.js":"eJ9Y1","./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eJ9Y1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getDocumentElement);
@@ -33647,7 +33647,7 @@ function getDocumentElement(element) {
     return (((0, _instanceOfJs.isElement)(element) ? element.ownerDocument : element.document) || window.document).documentElement;
 }
 
-},{"./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1Xlom":[function(require,module,exports) {
+},{"./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1Xlom":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getMainAxisFromPlacement);
@@ -33658,7 +33658,7 @@ function getMainAxisFromPlacement(placement) {
     ].indexOf(placement) >= 0 ? "x" : "y";
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3glSz":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3glSz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "within", ()=>within);
@@ -33672,7 +33672,7 @@ function withinMaxClamp(min, value, max) {
     return v > max ? max : v;
 }
 
-},{"./math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"lEIf9":[function(require,module,exports) {
+},{"./math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lEIf9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>mergePaddingObject);
@@ -33682,7 +33682,7 @@ function mergePaddingObject(paddingObject) {
     return Object.assign({}, (0, _getFreshSideObjectJsDefault.default)(), paddingObject);
 }
 
-},{"./getFreshSideObject.js":"g4xOt","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g4xOt":[function(require,module,exports) {
+},{"./getFreshSideObject.js":"g4xOt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g4xOt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getFreshSideObject);
@@ -33695,7 +33695,7 @@ function getFreshSideObject() {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iQlH5":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iQlH5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>expandToHashMap);
@@ -33706,7 +33706,7 @@ function expandToHashMap(value, keys) {
     }, {});
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gDlm2":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gDlm2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "mapToStyles", ()=>mapToStyles);
@@ -33836,7 +33836,7 @@ exports.default = {
     data: {}
 };
 
-},{"../enums.js":"lCAq5","../dom-utils/getOffsetParent.js":"laoYw","../dom-utils/getWindow.js":"2SkOo","../dom-utils/getDocumentElement.js":"eJ9Y1","../dom-utils/getComputedStyle.js":"3mZjB","../utils/getBasePlacement.js":"59Wp3","../utils/getVariation.js":"hIo7Y","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hIo7Y":[function(require,module,exports) {
+},{"../enums.js":"lCAq5","../dom-utils/getOffsetParent.js":"laoYw","../dom-utils/getWindow.js":"2SkOo","../dom-utils/getDocumentElement.js":"eJ9Y1","../dom-utils/getComputedStyle.js":"3mZjB","../utils/getBasePlacement.js":"59Wp3","../utils/getVariation.js":"hIo7Y","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hIo7Y":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getVariation);
@@ -33844,7 +33844,7 @@ function getVariation(placement) {
     return placement.split("-")[1];
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hBKsL":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hBKsL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _getWindowJs = require("../dom-utils/getWindow.js"); // eslint-disable-next-line import/no-unused-modules
@@ -33877,7 +33877,7 @@ exports.default = {
     data: {}
 };
 
-},{"../dom-utils/getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fv5wq":[function(require,module,exports) {
+},{"../dom-utils/getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fv5wq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _getOppositePlacementJs = require("../utils/getOppositePlacement.js");
@@ -33999,7 +33999,7 @@ exports.default = {
     }
 };
 
-},{"../utils/getOppositePlacement.js":"a8CY0","../utils/getBasePlacement.js":"59Wp3","../utils/getOppositeVariationPlacement.js":"bKTLC","../utils/detectOverflow.js":"ltCuw","../utils/computeAutoPlacement.js":"gytMj","../enums.js":"lCAq5","../utils/getVariation.js":"hIo7Y","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"a8CY0":[function(require,module,exports) {
+},{"../utils/getOppositePlacement.js":"a8CY0","../utils/getBasePlacement.js":"59Wp3","../utils/getOppositeVariationPlacement.js":"bKTLC","../utils/detectOverflow.js":"ltCuw","../utils/computeAutoPlacement.js":"gytMj","../enums.js":"lCAq5","../utils/getVariation.js":"hIo7Y","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a8CY0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getOppositePlacement);
@@ -34015,7 +34015,7 @@ function getOppositePlacement(placement) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"bKTLC":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bKTLC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getOppositeVariationPlacement);
@@ -34029,7 +34029,7 @@ function getOppositeVariationPlacement(placement) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ltCuw":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ltCuw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>detectOverflow);
@@ -34091,7 +34091,7 @@ function detectOverflow(state, options) {
     return overflowOffsets;
 }
 
-},{"../dom-utils/getClippingRect.js":"eeg2s","../dom-utils/getDocumentElement.js":"eJ9Y1","../dom-utils/getBoundingClientRect.js":"9CFSQ","./computeOffsets.js":"7jtXk","./rectToClientRect.js":"cQ3tg","../enums.js":"lCAq5","../dom-utils/instanceOf.js":"gYFUC","./mergePaddingObject.js":"lEIf9","./expandToHashMap.js":"iQlH5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eeg2s":[function(require,module,exports) {
+},{"../dom-utils/getClippingRect.js":"eeg2s","../dom-utils/getDocumentElement.js":"eJ9Y1","../dom-utils/getBoundingClientRect.js":"9CFSQ","./computeOffsets.js":"7jtXk","./rectToClientRect.js":"cQ3tg","../enums.js":"lCAq5","../dom-utils/instanceOf.js":"gYFUC","./mergePaddingObject.js":"lEIf9","./expandToHashMap.js":"iQlH5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eeg2s":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getClippingRect);
@@ -34171,7 +34171,7 @@ function getClippingRect(element, boundary, rootBoundary, strategy) {
     return clippingRect;
 }
 
-},{"../enums.js":"lCAq5","./getViewportRect.js":"cnH2G","./getDocumentRect.js":"d94SC","./listScrollParents.js":"2di3T","./getOffsetParent.js":"laoYw","./getDocumentElement.js":"eJ9Y1","./getComputedStyle.js":"3mZjB","./instanceOf.js":"gYFUC","./getBoundingClientRect.js":"9CFSQ","./getParentNode.js":"bIHpd","./contains.js":"4QxRR","./getNodeName.js":"a2Qom","../utils/rectToClientRect.js":"cQ3tg","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cnH2G":[function(require,module,exports) {
+},{"../enums.js":"lCAq5","./getViewportRect.js":"cnH2G","./getDocumentRect.js":"d94SC","./listScrollParents.js":"2di3T","./getOffsetParent.js":"laoYw","./getDocumentElement.js":"eJ9Y1","./getComputedStyle.js":"3mZjB","./instanceOf.js":"gYFUC","./getBoundingClientRect.js":"9CFSQ","./getParentNode.js":"bIHpd","./contains.js":"4QxRR","./getNodeName.js":"a2Qom","../utils/rectToClientRect.js":"cQ3tg","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cnH2G":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getViewportRect);
@@ -34208,7 +34208,7 @@ function getViewportRect(element, strategy) {
     };
 }
 
-},{"./getWindow.js":"2SkOo","./getDocumentElement.js":"eJ9Y1","./getWindowScrollBarX.js":"sz4Ld","./isLayoutViewport.js":"3ipHv","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"sz4Ld":[function(require,module,exports) {
+},{"./getWindow.js":"2SkOo","./getDocumentElement.js":"eJ9Y1","./getWindowScrollBarX.js":"sz4Ld","./isLayoutViewport.js":"3ipHv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"sz4Ld":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getWindowScrollBarX);
@@ -34229,7 +34229,7 @@ function getWindowScrollBarX(element) {
     return (0, _getBoundingClientRectJsDefault.default)((0, _getDocumentElementJsDefault.default)(element)).left + (0, _getWindowScrollJsDefault.default)(element).scrollLeft;
 }
 
-},{"./getBoundingClientRect.js":"9CFSQ","./getDocumentElement.js":"eJ9Y1","./getWindowScroll.js":"1XUtN","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1XUtN":[function(require,module,exports) {
+},{"./getBoundingClientRect.js":"9CFSQ","./getDocumentElement.js":"eJ9Y1","./getWindowScroll.js":"1XUtN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1XUtN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getWindowScroll);
@@ -34245,7 +34245,7 @@ function getWindowScroll(node) {
     };
 }
 
-},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"d94SC":[function(require,module,exports) {
+},{"./getWindow.js":"2SkOo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d94SC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getDocumentRect);
@@ -34276,7 +34276,7 @@ function getDocumentRect(element) {
     };
 }
 
-},{"./getDocumentElement.js":"eJ9Y1","./getComputedStyle.js":"3mZjB","./getWindowScrollBarX.js":"sz4Ld","./getWindowScroll.js":"1XUtN","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2di3T":[function(require,module,exports) {
+},{"./getDocumentElement.js":"eJ9Y1","./getComputedStyle.js":"3mZjB","./getWindowScrollBarX.js":"sz4Ld","./getWindowScroll.js":"1XUtN","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2di3T":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>listScrollParents);
@@ -34301,7 +34301,7 @@ function listScrollParents(element, list) {
     return isBody ? updatedList : updatedList.concat(listScrollParents((0, _getParentNodeJsDefault.default)(target)));
 }
 
-},{"./getScrollParent.js":"jy4ZS","./getParentNode.js":"bIHpd","./getWindow.js":"2SkOo","./isScrollParent.js":"9rLGO","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jy4ZS":[function(require,module,exports) {
+},{"./getScrollParent.js":"jy4ZS","./getParentNode.js":"bIHpd","./getWindow.js":"2SkOo","./isScrollParent.js":"9rLGO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jy4ZS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getScrollParent);
@@ -34323,7 +34323,7 @@ function getScrollParent(node) {
     return getScrollParent((0, _getParentNodeJsDefault.default)(node));
 }
 
-},{"./getParentNode.js":"bIHpd","./isScrollParent.js":"9rLGO","./getNodeName.js":"a2Qom","./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9rLGO":[function(require,module,exports) {
+},{"./getParentNode.js":"bIHpd","./isScrollParent.js":"9rLGO","./getNodeName.js":"a2Qom","./instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9rLGO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>isScrollParent);
@@ -34335,7 +34335,7 @@ function isScrollParent(element) {
     return /auto|scroll|overlay|hidden/.test(overflow + overflowY + overflowX);
 }
 
-},{"./getComputedStyle.js":"3mZjB","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cQ3tg":[function(require,module,exports) {
+},{"./getComputedStyle.js":"3mZjB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cQ3tg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>rectToClientRect);
@@ -34348,7 +34348,7 @@ function rectToClientRect(rect) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7jtXk":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7jtXk":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>computeOffsets);
@@ -34413,7 +34413,7 @@ function computeOffsets(_ref) {
     return offsets;
 }
 
-},{"./getBasePlacement.js":"59Wp3","./getVariation.js":"hIo7Y","./getMainAxisFromPlacement.js":"1Xlom","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gytMj":[function(require,module,exports) {
+},{"./getBasePlacement.js":"59Wp3","./getVariation.js":"hIo7Y","./getMainAxisFromPlacement.js":"1Xlom","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gytMj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>computeAutoPlacement);
@@ -34450,7 +34450,7 @@ function computeAutoPlacement(state, options) {
     });
 }
 
-},{"./getVariation.js":"hIo7Y","../enums.js":"lCAq5","./detectOverflow.js":"ltCuw","./getBasePlacement.js":"59Wp3","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2g4OF":[function(require,module,exports) {
+},{"./getVariation.js":"hIo7Y","../enums.js":"lCAq5","./detectOverflow.js":"ltCuw","./getBasePlacement.js":"59Wp3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2g4OF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _enumsJs = require("../enums.js");
@@ -34514,7 +34514,7 @@ exports.default = {
     fn: hide
 };
 
-},{"../enums.js":"lCAq5","../utils/detectOverflow.js":"ltCuw","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"3GKVY":[function(require,module,exports) {
+},{"../enums.js":"lCAq5","../utils/detectOverflow.js":"ltCuw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3GKVY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "distanceAndSkiddingToXY", ()=>distanceAndSkiddingToXY);
@@ -34570,7 +34570,7 @@ exports.default = {
     fn: offset
 };
 
-},{"../utils/getBasePlacement.js":"59Wp3","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6I679":[function(require,module,exports) {
+},{"../utils/getBasePlacement.js":"59Wp3","../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6I679":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _computeOffsetsJs = require("../utils/computeOffsets.js");
@@ -34596,7 +34596,7 @@ exports.default = {
     data: {}
 };
 
-},{"../utils/computeOffsets.js":"7jtXk","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1AMhb":[function(require,module,exports) {
+},{"../utils/computeOffsets.js":"7jtXk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1AMhb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _enumsJs = require("../enums.js");
@@ -34718,7 +34718,7 @@ exports.default = {
     ]
 };
 
-},{"../enums.js":"lCAq5","../utils/getBasePlacement.js":"59Wp3","../utils/getMainAxisFromPlacement.js":"1Xlom","../utils/getAltAxis.js":"59FWE","../utils/within.js":"3glSz","../dom-utils/getLayoutRect.js":"jvjuf","../dom-utils/getOffsetParent.js":"laoYw","../utils/detectOverflow.js":"ltCuw","../utils/getVariation.js":"hIo7Y","../utils/getFreshSideObject.js":"g4xOt","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"59FWE":[function(require,module,exports) {
+},{"../enums.js":"lCAq5","../utils/getBasePlacement.js":"59Wp3","../utils/getMainAxisFromPlacement.js":"1Xlom","../utils/getAltAxis.js":"59FWE","../utils/within.js":"3glSz","../dom-utils/getLayoutRect.js":"jvjuf","../dom-utils/getOffsetParent.js":"laoYw","../utils/detectOverflow.js":"ltCuw","../utils/getVariation.js":"hIo7Y","../utils/getFreshSideObject.js":"g4xOt","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"59FWE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getAltAxis);
@@ -34726,7 +34726,7 @@ function getAltAxis(axis) {
     return axis === "x" ? "y" : "x";
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9X7Du":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9X7Du":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // eslint-disable-next-line import/no-unused-modules
@@ -34735,7 +34735,7 @@ parcelHelpers.export(exports, "popperGenerator", ()=>(0, _createPopperJs.popperG
 parcelHelpers.export(exports, "detectOverflow", ()=>(0, _createPopperJs.detectOverflow));
 var _createPopperJs = require("./createPopper.js");
 
-},{"./createPopper.js":"cHuNp","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cHuNp":[function(require,module,exports) {
+},{"./createPopper.js":"cHuNp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cHuNp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "popperGenerator", ()=>popperGenerator);
@@ -34895,7 +34895,7 @@ function popperGenerator(generatorOptions) {
 }
 var createPopper = /*#__PURE__*/ popperGenerator(); // eslint-disable-next-line import/no-unused-modules
 
-},{"./dom-utils/getCompositeRect.js":"ijPls","./dom-utils/getLayoutRect.js":"jvjuf","./dom-utils/listScrollParents.js":"2di3T","./dom-utils/getOffsetParent.js":"laoYw","./utils/orderModifiers.js":"N0VO0","./utils/debounce.js":"g6Chr","./utils/mergeByName.js":"2zTVN","./utils/detectOverflow.js":false,"./dom-utils/instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ijPls":[function(require,module,exports) {
+},{"./dom-utils/getCompositeRect.js":"ijPls","./dom-utils/getLayoutRect.js":"jvjuf","./dom-utils/listScrollParents.js":"2di3T","./dom-utils/getOffsetParent.js":"laoYw","./utils/orderModifiers.js":"N0VO0","./utils/debounce.js":"g6Chr","./utils/mergeByName.js":"2zTVN","./utils/detectOverflow.js":false,"./dom-utils/instanceOf.js":"gYFUC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ijPls":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getCompositeRect);
@@ -34950,7 +34950,7 @@ function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
     };
 }
 
-},{"./getBoundingClientRect.js":"9CFSQ","./getNodeScroll.js":"bBjCr","./getNodeName.js":"a2Qom","./instanceOf.js":"gYFUC","./getWindowScrollBarX.js":"sz4Ld","./getDocumentElement.js":"eJ9Y1","./isScrollParent.js":"9rLGO","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"bBjCr":[function(require,module,exports) {
+},{"./getBoundingClientRect.js":"9CFSQ","./getNodeScroll.js":"bBjCr","./getNodeName.js":"a2Qom","./instanceOf.js":"gYFUC","./getWindowScrollBarX.js":"sz4Ld","./getDocumentElement.js":"eJ9Y1","./isScrollParent.js":"9rLGO","../utils/math.js":"gQqVe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bBjCr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getNodeScroll);
@@ -34966,7 +34966,7 @@ function getNodeScroll(node) {
     else return (0, _getHTMLElementScrollJsDefault.default)(node);
 }
 
-},{"./getWindowScroll.js":"1XUtN","./getWindow.js":"2SkOo","./instanceOf.js":"gYFUC","./getHTMLElementScroll.js":"6pwY2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6pwY2":[function(require,module,exports) {
+},{"./getWindowScroll.js":"1XUtN","./getWindow.js":"2SkOo","./instanceOf.js":"gYFUC","./getHTMLElementScroll.js":"6pwY2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6pwY2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>getHTMLElementScroll);
@@ -34977,7 +34977,7 @@ function getHTMLElementScroll(element) {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"N0VO0":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"N0VO0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>orderModifiers);
@@ -35016,7 +35016,7 @@ function orderModifiers(modifiers) {
     }, []);
 }
 
-},{"../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"g6Chr":[function(require,module,exports) {
+},{"../enums.js":"lCAq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g6Chr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>debounce);
@@ -35033,7 +35033,7 @@ function debounce(fn) {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2zTVN":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2zTVN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>mergeByName);
@@ -35051,7 +35051,7 @@ function mergeByName(modifiers) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ed4Oi":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ed4Oi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getRefTarget", ()=>getRefTarget);
@@ -35149,7 +35149,7 @@ const InitialTriggerEvents = {
 }
 exports.default = useClickOutside;
 
-},{"dom-helpers/contains":"KpRFS","dom-helpers/listen":"1i4e7","dom-helpers/ownerDocument":"2WpOk","react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","warning":"eUVzU","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"KpRFS":[function(require,module,exports) {
+},{"dom-helpers/contains":"KpRFS","dom-helpers/listen":"1i4e7","dom-helpers/ownerDocument":"2WpOk","react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","warning":"eUVzU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"KpRFS":[function(require,module,exports) {
 /* eslint-disable no-bitwise, no-cond-assign */ /**
  * Checks if an element contains another given element.
  * 
@@ -35165,7 +35165,7 @@ function contains(context, node) {
     if (context.compareDocumentPosition) return context === node || !!(context.compareDocumentPosition(node) & 16);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eUVzU":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eUVzU":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -35265,7 +35265,7 @@ function mergeOptionsWithPopperConfig({ enabled, enableEvents, placement, flip, 
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8iWIY":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8iWIY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isRoleMenu", ()=>isRoleMenu);
@@ -35326,7 +35326,7 @@ function useDropdownToggle() {
 DropdownToggle.displayName = "DropdownToggle";
 /** @component */ exports.default = DropdownToggle;
 
-},{"react":"21dqq","./ssr":"eaHes","./DropdownContext":"dX4vI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eaHes":[function(require,module,exports) {
+},{"react":"21dqq","./ssr":"eaHes","./DropdownContext":"dX4vI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eaHes":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useSSRSafeId", ()=>(0, _ssr.useSSRSafeId));
@@ -35334,7 +35334,7 @@ parcelHelpers.export(exports, "useIsSSR", ()=>(0, _ssr.useIsSSR));
 parcelHelpers.export(exports, "SSRProvider", ()=>(0, _ssr.SSRProvider));
 var _ssr = require("@react-aria/ssr");
 
-},{"@react-aria/ssr":"dIzY2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dIzY2":[function(require,module,exports) {
+},{"@react-aria/ssr":"dIzY2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dIzY2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SSRProvider", ()=>$b5e257d569688ac6$export$9f8ac96af4b1b2ae);
@@ -35486,7 +35486,7 @@ function $b5e257d569688ac6$export$535bd6ca7f90a273() {
     return (0, _react.useContext)($b5e257d569688ac6$var$IsSSRContext);
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hDAPz":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hDAPz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /**
@@ -35562,7 +35562,7 @@ const DropdownItem = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
 DropdownItem.displayName = "DropdownItem";
 exports.default = DropdownItem;
 
-},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./SelectableContext":"8zLqy","./NavContext":"j1SMA","./Button":"8YUbR","./DataKey":"9vwZh","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8zLqy":[function(require,module,exports) {
+},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./SelectableContext":"8zLqy","./NavContext":"j1SMA","./Button":"8YUbR","./DataKey":"9vwZh","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8zLqy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "makeEventKey", ()=>makeEventKey);
@@ -35574,7 +35574,7 @@ const makeEventKey = (eventKey, href = null)=>{
 };
 exports.default = SelectableContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"j1SMA":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j1SMA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -35582,7 +35582,7 @@ const NavContext = /*#__PURE__*/ _react.createContext(null);
 NavContext.displayName = "NavContext";
 exports.default = NavContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9vwZh":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9vwZh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ATTRIBUTE_PREFIX", ()=>ATTRIBUTE_PREFIX);
@@ -35598,7 +35598,7 @@ function dataProp(property) {
     return `${PROPERTY_PREFIX}${property}`;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"4AsJ2":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4AsJ2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "WindowProvider", ()=>WindowProvider);
@@ -35612,7 +35612,7 @@ function useWindow() {
     return (0, _react.useContext)(Context);
 }
 
-},{"react":"21dqq","dom-helpers/canUseDOM":"9AwUB","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"4Ufmn":[function(require,module,exports) {
+},{"react":"21dqq","dom-helpers/canUseDOM":"9AwUB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4Ufmn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -35620,7 +35620,7 @@ const DropdownContext = /*#__PURE__*/ _react.createContext({});
 DropdownContext.displayName = "DropdownContext";
 exports.default = DropdownContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"xQ9Cw":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"xQ9Cw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -35650,7 +35650,7 @@ const DropdownItem = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, eve
 DropdownItem.displayName = "DropdownItem";
 exports.default = DropdownItem;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownItem":"hDAPz","@restart/ui/Anchor":"cQOWi","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6UpAn":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownItem":"hDAPz","@restart/ui/Anchor":"cQOWi","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6UpAn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getDropdownMenuPlacement", ()=>getDropdownMenuPlacement);
@@ -35767,7 +35767,7 @@ DropdownMenu.displayName = "DropdownMenu";
 DropdownMenu.defaultProps = defaultProps;
 exports.default = DropdownMenu;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownMenu":"6fCTW","@restart/hooks/useIsomorphicEffect":"e8blq","@restart/hooks/useMergedRefs":"6hhuo","warning":"eUVzU","./DropdownContext":"4Ufmn","./InputGroupContext":"eWDkO","./NavbarContext":"dpn1g","./ThemeProvider":"dVixI","./useWrappedRefWithWarning":"a7ejw","./types":"jwKaQ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eWDkO":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownMenu":"6fCTW","@restart/hooks/useIsomorphicEffect":"e8blq","@restart/hooks/useMergedRefs":"6hhuo","warning":"eUVzU","./DropdownContext":"4Ufmn","./InputGroupContext":"eWDkO","./NavbarContext":"dpn1g","./ThemeProvider":"dVixI","./useWrappedRefWithWarning":"a7ejw","./types":"jwKaQ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eWDkO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -35775,7 +35775,7 @@ const context = /*#__PURE__*/ _react.createContext(null);
 context.displayName = "InputGroupContext";
 exports.default = context;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dpn1g":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dpn1g":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react"); // TODO: check
@@ -35783,7 +35783,7 @@ const context = /*#__PURE__*/ _react.createContext(null);
 context.displayName = "NavbarContext";
 exports.default = context;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"a7ejw":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a7ejw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useWrappedRefWithWarning);
@@ -35801,7 +35801,7 @@ function useWrappedRefWithWarning(ref, componentName) {
     return (0, _useMergedRefsDefault.default)(warningRef, ref);
 }
 
-},{"invariant":"d1QgR","react":"21dqq","@restart/hooks/useMergedRefs":"6hhuo","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jwKaQ":[function(require,module,exports) {
+},{"invariant":"d1QgR","react":"21dqq","@restart/hooks/useMergedRefs":"6hhuo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jwKaQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "alignPropType", ()=>alignPropType);
@@ -35831,7 +35831,7 @@ const alignPropType = (0, _propTypesDefault.default).oneOfType([
     (0, _propTypesDefault.default).object
 ]);
 
-},{"prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gCRNt":[function(require,module,exports) {
+},{"prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gCRNt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -35868,7 +35868,7 @@ as: Component = (0, _buttonDefault.default), ...props }, ref)=>{
 DropdownToggle.displayName = "DropdownToggle";
 exports.default = DropdownToggle;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownToggle":"8iWIY","@restart/ui/DropdownContext":"dX4vI","@restart/hooks/useMergedRefs":"6hhuo","./Button":"aPzUt","./InputGroupContext":"eWDkO","./ThemeProvider":"dVixI","./useWrappedRefWithWarning":"a7ejw","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iBZ80":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/DropdownToggle":"8iWIY","@restart/ui/DropdownContext":"dX4vI","@restart/hooks/useMergedRefs":"6hhuo","./Button":"aPzUt","./InputGroupContext":"eWDkO","./ThemeProvider":"dVixI","./useWrappedRefWithWarning":"a7ejw","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iBZ80":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -35933,7 +35933,7 @@ exports.default = Object.assign(Form, {
     FloatingLabel: (0, _floatingLabelDefault.default)
 });
 
-},{"classnames":"jocGM","prop-types":"7wKI2","react":"21dqq","./FormCheck":"idkr0","./FormControl":"iynMc","./FormFloating":"aj346","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormRange":"8zsCO","./FormSelect":"hHWyB","./FormText":"ffeC7","./Switch":"9O81i","./FloatingLabel":"coYzo","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"idkr0":[function(require,module,exports) {
+},{"classnames":"jocGM","prop-types":"7wKI2","react":"21dqq","./FormCheck":"idkr0","./FormControl":"iynMc","./FormFloating":"aj346","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormRange":"8zsCO","./FormSelect":"hHWyB","./FormText":"ffeC7","./Switch":"9O81i","./FloatingLabel":"coYzo","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"idkr0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -35999,7 +35999,7 @@ exports.default = Object.assign(FormCheck, {
     Label: (0, _formCheckLabelDefault.default)
 });
 
-},{"classnames":"jocGM","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","./ElementChildren":"fdyAp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aWeg2":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","./ElementChildren":"fdyAp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aWeg2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36026,7 +36026,7 @@ Feedback.displayName = "Feedback";
 Feedback.propTypes = propTypes;
 exports.default = Feedback;
 
-},{"classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dPzD9":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dPzD9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36051,14 +36051,14 @@ as: Component = "input", ...props }, ref)=>{
 FormCheckInput.displayName = "FormCheckInput";
 exports.default = FormCheckInput;
 
-},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"gjvSt":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gjvSt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react"); // TODO
 const FormContext = /*#__PURE__*/ _react.createContext({});
 exports.default = FormContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fGhS2":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fGhS2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36081,7 +36081,7 @@ const FormCheckLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, h
 FormCheckLabel.displayName = "FormCheckLabel";
 exports.default = FormCheckLabel;
 
-},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fdyAp":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fdyAp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "map", ()=>map);
@@ -36117,7 +36117,7 @@ var _react = require("react");
     return _react.Children.toArray(children).some((child)=>/*#__PURE__*/ _react.isValidElement(child) && child.type === type);
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iynMc":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iynMc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36159,14 +36159,14 @@ exports.default = Object.assign(FormControl, {
     Feedback: (0, _feedbackDefault.default)
 });
 
-},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Feedback":"aWeg2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"aj346":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Feedback":"aWeg2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aj346":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _createWithBsPrefix = require("./createWithBsPrefix");
 var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
 exports.default = (0, _createWithBsPrefixDefault.default)("form-floating");
 
-},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1qBHH":[function(require,module,exports) {
+},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1qBHH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -36191,7 +36191,7 @@ as: Component = "div", ...props }, ref)=>{
 FormGroup.displayName = "FormGroup";
 exports.default = FormGroup;
 
-},{"react":"21dqq","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"66epi":[function(require,module,exports) {
+},{"react":"21dqq","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"66epi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36237,7 +36237,7 @@ FormLabel.displayName = "FormLabel";
 FormLabel.defaultProps = defaultProps;
 exports.default = FormLabel;
 
-},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8zsCO":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8zsCO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36261,7 +36261,7 @@ const FormRange = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, id, ..
 FormRange.displayName = "FormRange";
 exports.default = FormRange;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hHWyB":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hHWyB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36285,7 +36285,7 @@ const FormSelect = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, size, htmlSize, 
 FormSelect.displayName = "FormSelect";
 exports.default = FormSelect;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ffeC7":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ffeC7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36304,7 +36304,7 @@ const FormText = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, as: Com
 FormText.displayName = "FormText";
 exports.default = FormText;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9O81i":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9O81i":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -36322,7 +36322,7 @@ exports.default = Object.assign(Switch, {
     Label: (0, _formCheckDefault.default).Label
 });
 
-},{"react":"21dqq","./FormCheck":"idkr0","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"coYzo":[function(require,module,exports) {
+},{"react":"21dqq","./FormCheck":"idkr0","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"coYzo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36351,7 +36351,7 @@ const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, ch
 FloatingLabel.displayName = "FloatingLabel";
 exports.default = FloatingLabel;
 
-},{"classnames":"jocGM","react":"21dqq","./FormGroup":"1qBHH","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hEdsw":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./FormGroup":"1qBHH","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hEdsw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36376,7 +36376,7 @@ Container.displayName = "Container";
 Container.defaultProps = defaultProps;
 exports.default = Container;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cXyL2":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cXyL2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36438,7 +36438,7 @@ exports.default = Object.assign(Nav, {
     Link: (0, _navLinkDefault.default)
 });
 
-},{"classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","uncontrollable":"b3yWY","@restart/ui/Nav":"fZdNd","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","./CardHeaderContext":"36cNB","./NavItem":"ew05W","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"37Ank":[function(require,module,exports) {
+},{"classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","uncontrollable":"b3yWY","@restart/ui/Nav":"fZdNd","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","./CardHeaderContext":"36cNB","./NavItem":"ew05W","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"37Ank":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -36635,14 +36635,14 @@ exports.default = Object.assign(Nav, {
     Item: (0, _navItemDefault.default)
 });
 
-},{"dom-helpers/querySelectorAll":"g5Sx6","react":"21dqq","@restart/hooks/useForceUpdate":"3Y4bz","@restart/hooks/useMergedRefs":"6hhuo","./NavContext":"j1SMA","./SelectableContext":"8zLqy","./TabContext":"cI3G3","./DataKey":"9vwZh","./NavItem":"2cGYS","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cI3G3":[function(require,module,exports) {
+},{"dom-helpers/querySelectorAll":"g5Sx6","react":"21dqq","@restart/hooks/useForceUpdate":"3Y4bz","@restart/hooks/useMergedRefs":"6hhuo","./NavContext":"j1SMA","./SelectableContext":"8zLqy","./TabContext":"cI3G3","./DataKey":"9vwZh","./NavItem":"2cGYS","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cI3G3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 const TabContext = /*#__PURE__*/ _react.createContext(null);
 exports.default = TabContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2cGYS":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2cGYS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useNavItem", ()=>useNavItem);
@@ -36738,14 +36738,14 @@ const NavItem = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
 NavItem.displayName = "NavItem";
 exports.default = NavItem;
 
-},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./NavContext":"j1SMA","./SelectableContext":"8zLqy","./Button":"8YUbR","./DataKey":"9vwZh","./TabContext":"cI3G3","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"ew05W":[function(require,module,exports) {
+},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./NavContext":"j1SMA","./SelectableContext":"8zLqy","./Button":"8YUbR","./DataKey":"9vwZh","./TabContext":"cI3G3","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ew05W":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _createWithBsPrefix = require("./createWithBsPrefix");
 var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
 exports.default = (0, _createWithBsPrefixDefault.default)("nav-item");
 
-},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7geL8":[function(require,module,exports) {
+},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7geL8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36778,7 +36778,7 @@ NavLink.displayName = "NavLink";
 NavLink.defaultProps = defaultProps;
 exports.default = NavLink;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/Anchor":"cQOWi","@restart/ui/NavItem":"2cGYS","@restart/ui/SelectableContext":"8zLqy","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1mHjo":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/Anchor":"cQOWi","@restart/ui/NavItem":"2cGYS","@restart/ui/SelectableContext":"8zLqy","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1mHjo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36862,7 +36862,7 @@ exports.default = Object.assign(Navbar, {
     Toggle: (0, _navbarToggleDefault.default)
 });
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/SelectableContext":"8zLqy","uncontrollable":"b3yWY","./createWithBsPrefix":"itt7e","./NavbarBrand":"iOo4v","./NavbarCollapse":"eNSCC","./NavbarToggle":"7vOXv","./NavbarOffcanvas":"fOxoE","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"iOo4v":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/ui/SelectableContext":"8zLqy","uncontrollable":"b3yWY","./createWithBsPrefix":"itt7e","./NavbarBrand":"iOo4v","./NavbarCollapse":"eNSCC","./NavbarToggle":"7vOXv","./NavbarOffcanvas":"fOxoE","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iOo4v":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36882,7 +36882,7 @@ const NavbarBrand = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, as, 
 NavbarBrand.displayName = "NavbarBrand";
 exports.default = NavbarBrand;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eNSCC":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eNSCC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -36908,7 +36908,7 @@ const NavbarCollapse = /*#__PURE__*/ _react.forwardRef(({ children, bsPrefix, ..
 NavbarCollapse.displayName = "NavbarCollapse";
 exports.default = NavbarCollapse;
 
-},{"react":"21dqq","./Collapse":"acuzI","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7vOXv":[function(require,module,exports) {
+},{"react":"21dqq","./Collapse":"acuzI","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7vOXv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36947,7 +36947,7 @@ NavbarToggle.displayName = "NavbarToggle";
 NavbarToggle.defaultProps = defaultProps;
 exports.default = NavbarToggle;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fOxoE":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fOxoE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -36968,7 +36968,7 @@ const NavbarOffcanvas = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
 NavbarOffcanvas.displayName = "NavbarOffcanvas";
 exports.default = NavbarOffcanvas;
 
-},{"react":"21dqq","./Offcanvas":"eC3RS","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eC3RS":[function(require,module,exports) {
+},{"react":"21dqq","./Offcanvas":"eC3RS","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eC3RS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -37119,7 +37119,7 @@ exports.default = Object.assign(Offcanvas, {
     Title: (0, _offcanvasTitleDefault.default)
 });
 
-},{"classnames":"jocGM","@restart/hooks/useBreakpoint":"2c4de","@restart/hooks/useEventCallback":"7ONdq","react":"21dqq","@restart/ui/Modal":"crj1M","./Fade":"aH18S","./OffcanvasBody":"fX7Bo","./OffcanvasToggling":"eGvzt","./ModalContext":"2U4Zk","./NavbarContext":"dpn1g","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./ThemeProvider":"dVixI","./BootstrapModalManager":"lr1Yp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2c4de":[function(require,module,exports) {
+},{"classnames":"jocGM","@restart/hooks/useBreakpoint":"2c4de","@restart/hooks/useEventCallback":"7ONdq","react":"21dqq","@restart/ui/Modal":"crj1M","./Fade":"aH18S","./OffcanvasBody":"fX7Bo","./OffcanvasToggling":"eGvzt","./ModalContext":"2U4Zk","./NavbarContext":"dpn1g","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./ThemeProvider":"dVixI","./BootstrapModalManager":"lr1Yp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2c4de":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /**
@@ -37230,7 +37230,7 @@ const useBreakpoint = createBreakpointHook({
 });
 exports.default = useBreakpoint;
 
-},{"./useMediaQuery":"etGLg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"etGLg":[function(require,module,exports) {
+},{"./useMediaQuery":"etGLg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"etGLg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useMediaQuery);
@@ -37275,7 +37275,7 @@ function useMediaQuery(query, targetWindow = typeof window === "undefined" ? und
     return matches;
 }
 
-},{"./useIsomorphicEffect":"e8blq","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"crj1M":[function(require,module,exports) {
+},{"./useIsomorphicEffect":"e8blq","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"crj1M":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /* eslint-disable @typescript-eslint/no-use-before-define, react/prop-types */ var _activeElement = require("dom-helpers/activeElement");
@@ -37523,7 +37523,7 @@ exports.default = Object.assign(Modal, {
     Manager: (0, _modalManagerDefault.default)
 });
 
-},{"dom-helpers/activeElement":"5ShA6","dom-helpers/contains":"KpRFS","dom-helpers/canUseDOM":"9AwUB","dom-helpers/listen":"1i4e7","react":"21dqq","react-dom":"j6uA9","@restart/hooks/useMounted":"iK6A1","@restart/hooks/useWillUnmount":"2OOXI","@restart/hooks/usePrevious":"gDCGm","@restart/hooks/useEventCallback":"7ONdq","./ModalManager":"5alMm","./useWaitForDOMRef":"83lRQ","./useWindow":"4AsJ2","./ImperativeTransition":"j0Jao","./utils":"2Fmci","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"5ShA6":[function(require,module,exports) {
+},{"dom-helpers/activeElement":"5ShA6","dom-helpers/contains":"KpRFS","dom-helpers/canUseDOM":"9AwUB","dom-helpers/listen":"1i4e7","react":"21dqq","react-dom":"j6uA9","@restart/hooks/useMounted":"iK6A1","@restart/hooks/useWillUnmount":"2OOXI","@restart/hooks/usePrevious":"gDCGm","@restart/hooks/useEventCallback":"7ONdq","./ModalManager":"5alMm","./useWaitForDOMRef":"83lRQ","./useWindow":"4AsJ2","./ImperativeTransition":"j0Jao","./utils":"2Fmci","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ShA6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>activeElement);
@@ -37543,7 +37543,7 @@ function activeElement(doc) {
     }
 }
 
-},{"./ownerDocument":"2WpOk","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2OOXI":[function(require,module,exports) {
+},{"./ownerDocument":"2WpOk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2OOXI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useWillUnmount);
@@ -37555,7 +37555,7 @@ function useWillUnmount(fn) {
     (0, _react.useEffect)(()=>()=>onUnmount.current(), []);
 }
 
-},{"./useUpdatedRef":"cfaLu","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cfaLu":[function(require,module,exports) {
+},{"./useUpdatedRef":"cfaLu","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cfaLu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>useUpdatedRef);
@@ -37566,7 +37566,7 @@ function useUpdatedRef(value) {
     return valueRef;
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"5alMm":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5alMm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OPEN_DATA_ATTRIBUTE", ()=>OPEN_DATA_ATTRIBUTE);
@@ -37655,7 +37655,7 @@ const OPEN_DATA_ATTRIBUTE = (0, _dataKey.dataAttr)("modal-open");
 }
 exports.default = ModalManager;
 
-},{"dom-helpers/css":"klmhr","./DataKey":"9vwZh","./getScrollbarWidth":"9IxEN","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"9IxEN":[function(require,module,exports) {
+},{"dom-helpers/css":"klmhr","./DataKey":"9vwZh","./getScrollbarWidth":"9IxEN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9IxEN":[function(require,module,exports) {
 /**
  * Get the width of the vertical window scrollbar if it's visible
  */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -37666,7 +37666,7 @@ function getBodyScrollbarWidth(ownerDocument = document) {
     return Math.abs(window.innerWidth - ownerDocument.documentElement.clientWidth);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"83lRQ":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"83lRQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "resolveContainerRef", ()=>resolveContainerRef);
@@ -37709,7 +37709,7 @@ function useWaitForDOMRef(ref, onResolved) {
     return resolvedRef;
 }
 
-},{"dom-helpers/ownerDocument":"2WpOk","dom-helpers/canUseDOM":"9AwUB","react":"21dqq","./useWindow":"4AsJ2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"j0Jao":[function(require,module,exports) {
+},{"dom-helpers/ownerDocument":"2WpOk","dom-helpers/canUseDOM":"9AwUB","react":"21dqq","./useWindow":"4AsJ2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j0Jao":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useTransition", ()=>useTransition);
@@ -37789,7 +37789,7 @@ function renderTransition(Component, runTransition, props) {
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _noopTransitionDefault.default), Object.assign({}, props));
 }
 
-},{"@restart/hooks/useMergedRefs":"6hhuo","@restart/hooks/useEventCallback":"7ONdq","@restart/hooks/useIsomorphicEffect":"e8blq","react":"21dqq","./NoopTransition":"cwnaj","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cwnaj":[function(require,module,exports) {
+},{"@restart/hooks/useMergedRefs":"6hhuo","@restart/hooks/useEventCallback":"7ONdq","@restart/hooks/useIsomorphicEffect":"e8blq","react":"21dqq","./NoopTransition":"cwnaj","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cwnaj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _useEventCallback = require("@restart/hooks/useEventCallback");
@@ -37819,7 +37819,7 @@ function NoopTransition({ children, in: inProp, onExited, mountOnEnter, unmountO
 }
 exports.default = NoopTransition;
 
-},{"@restart/hooks/useEventCallback":"7ONdq","@restart/hooks/useMergedRefs":"6hhuo","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2Fmci":[function(require,module,exports) {
+},{"@restart/hooks/useEventCallback":"7ONdq","@restart/hooks/useMergedRefs":"6hhuo","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2Fmci":[function(require,module,exports) {
 /* eslint-disable import/prefer-default-export */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isEscKey", ()=>isEscKey);
@@ -37827,14 +37827,14 @@ function isEscKey(e) {
     return e.code === "Escape" || e.keyCode === 27;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"fX7Bo":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fX7Bo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _createWithBsPrefix = require("./createWithBsPrefix");
 var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
 exports.default = (0, _createWithBsPrefixDefault.default)("offcanvas-body");
 
-},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eGvzt":[function(require,module,exports) {
+},{"./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eGvzt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -37874,7 +37874,7 @@ OffcanvasToggling.defaultProps = defaultProps;
 OffcanvasToggling.displayName = "OffcanvasToggling";
 exports.default = OffcanvasToggling;
 
-},{"classnames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./TransitionWrapper":"jKUqZ","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"2U4Zk":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./TransitionWrapper":"jKUqZ","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2U4Zk":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -37884,7 +37884,7 @@ const ModalContext = /*#__PURE__*/ _react.createContext({
 });
 exports.default = ModalContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"a6xAh":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a6xAh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -37910,7 +37910,7 @@ OffcanvasHeader.displayName = "OffcanvasHeader";
 OffcanvasHeader.defaultProps = defaultProps;
 exports.default = OffcanvasHeader;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./AbstractModalHeader":"hPF8S","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"hPF8S":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./AbstractModalHeader":"hPF8S","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hPF8S":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -37947,7 +37947,7 @@ const AbstractModalHeader = /*#__PURE__*/ _react.forwardRef(({ closeLabel, close
 AbstractModalHeader.defaultProps = defaultProps;
 exports.default = AbstractModalHeader;
 
-},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./CloseButton":"1wmVl","./ModalContext":"2U4Zk","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"77qdX":[function(require,module,exports) {
+},{"react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./CloseButton":"1wmVl","./ModalContext":"2U4Zk","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"77qdX":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _createWithBsPrefix = require("./createWithBsPrefix");
@@ -37959,7 +37959,7 @@ exports.default = (0, _createWithBsPrefixDefault.default)("offcanvas-title", {
     Component: DivStyledAsH5
 });
 
-},{"./createWithBsPrefix":"itt7e","./divWithClassName":"eDg7t","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"lr1Yp":[function(require,module,exports) {
+},{"./createWithBsPrefix":"itt7e","./divWithClassName":"eDg7t","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lr1Yp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getSharedManager", ()=>getSharedManager);
@@ -38025,7 +38025,7 @@ function getSharedManager(options) {
 }
 exports.default = BootstrapModalManager;
 
-},{"dom-helpers/addClass":"7dIIz","dom-helpers/css":"klmhr","dom-helpers/querySelectorAll":"g5Sx6","dom-helpers/removeClass":"66hgg","@restart/ui/ModalManager":"5alMm","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"7dIIz":[function(require,module,exports) {
+},{"dom-helpers/addClass":"7dIIz","dom-helpers/css":"klmhr","dom-helpers/querySelectorAll":"g5Sx6","dom-helpers/removeClass":"66hgg","@restart/ui/ModalManager":"5alMm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7dIIz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>addClass);
@@ -38039,7 +38039,7 @@ function addClass(element, className) {
     }
 }
 
-},{"./hasClass":"6sJz4","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"6sJz4":[function(require,module,exports) {
+},{"./hasClass":"6sJz4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6sJz4":[function(require,module,exports) {
 /**
  * Checks if a given element has a CSS class.
  * 
@@ -38053,7 +38053,7 @@ function hasClass(element, className) {
     return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"66hgg":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"66hgg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>removeClass);
@@ -38066,7 +38066,7 @@ function removeClass(element, className) {
     else element.setAttribute("class", replaceClassName(element.className && element.className.baseVal || "", className));
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8e6QB":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8e6QB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -38112,7 +38112,7 @@ exports.default = Object.assign(NavDropdown, {
     Header: (0, _dropdownDefault.default).Header
 });
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./Dropdown":"88m2L","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"cMC39":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./Dropdown":"88m2L","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cMC39":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -38145,9 +38145,9 @@ as: Component = "div", ...props }, ref)=>{
 Row.displayName = "Row";
 exports.default = Row;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"8tQVG":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
 "use strict";
-var Refresh = require("9b5bd90f31d5e1f1");
+var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
     {
         let timeout = undefined;
@@ -38283,7 +38283,471 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"9b5bd90f31d5e1f1":"hKm9E"}],"9xmpe":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"jEdJI"}],"jEdJI":[function(require,module,exports) {
+"use strict";
+module.exports = require("9e039173d01172ab");
+
+},{"9e039173d01172ab":"uTjV2"}],"uTjV2":[function(require,module,exports) {
+/** @license React v0.9.0
+ * react-refresh-runtime.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // ATTENTION
+    // When adding new symbols to this file,
+    // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    var REACT_FRAGMENT_TYPE = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
+    if (typeof Symbol === "function" && Symbol.for) {
+        var symbolFor = Symbol.for;
+        REACT_ELEMENT_TYPE = symbolFor("react.element");
+        REACT_PORTAL_TYPE = symbolFor("react.portal");
+        REACT_FRAGMENT_TYPE = symbolFor("react.fragment");
+        REACT_STRICT_MODE_TYPE = symbolFor("react.strict_mode");
+        REACT_PROFILER_TYPE = symbolFor("react.profiler");
+        REACT_PROVIDER_TYPE = symbolFor("react.provider");
+        REACT_CONTEXT_TYPE = symbolFor("react.context");
+        REACT_FORWARD_REF_TYPE = symbolFor("react.forward_ref");
+        REACT_SUSPENSE_TYPE = symbolFor("react.suspense");
+        REACT_SUSPENSE_LIST_TYPE = symbolFor("react.suspense_list");
+        REACT_MEMO_TYPE = symbolFor("react.memo");
+        REACT_LAZY_TYPE = symbolFor("react.lazy");
+        REACT_BLOCK_TYPE = symbolFor("react.block");
+        REACT_SERVER_BLOCK_TYPE = symbolFor("react.server.block");
+        REACT_FUNDAMENTAL_TYPE = symbolFor("react.fundamental");
+        REACT_SCOPE_TYPE = symbolFor("react.scope");
+        REACT_OPAQUE_ID_TYPE = symbolFor("react.opaque.id");
+        REACT_DEBUG_TRACING_MODE_TYPE = symbolFor("react.debug_trace_mode");
+        REACT_OFFSCREEN_TYPE = symbolFor("react.offscreen");
+        REACT_LEGACY_HIDDEN_TYPE = symbolFor("react.legacy_hidden");
+    }
+    var PossiblyWeakMap = typeof WeakMap === "function" ? WeakMap : Map; // We never remove these associations.
+    // It's OK to reference families, but use WeakMap/Set for types.
+    var allFamiliesByID = new Map();
+    var allFamiliesByType = new PossiblyWeakMap();
+    var allSignaturesByType = new PossiblyWeakMap(); // This WeakMap is read by React, so we only put families
+    // that have actually been edited here. This keeps checks fast.
+    // $FlowIssue
+    var updatedFamiliesByType = new PossiblyWeakMap(); // This is cleared on every performReactRefresh() call.
+    // It is an array of [Family, NextType] tuples.
+    var pendingUpdates = []; // This is injected by the renderer via DevTools global hook.
+    var helpersByRendererID = new Map();
+    var helpersByRoot = new Map(); // We keep track of mounted roots so we can schedule updates.
+    var mountedRoots = new Set(); // If a root captures an error, we remember it so we can retry on edit.
+    var failedRoots = new Set(); // In environments that support WeakMap, we also remember the last element for every root.
+    // It needs to be weak because we do this even for roots that failed to mount.
+    // If there is no WeakMap, we won't attempt to do retrying.
+    // $FlowIssue
+    var rootElements = typeof WeakMap === "function" ? new WeakMap() : null;
+    var isPerformingRefresh = false;
+    function computeFullKey(signature) {
+        if (signature.fullKey !== null) return signature.fullKey;
+        var fullKey = signature.ownKey;
+        var hooks;
+        try {
+            hooks = signature.getCustomHooks();
+        } catch (err) {
+            // This can happen in an edge case, e.g. if expression like Foo.useSomething
+            // depends on Foo which is lazily initialized during rendering.
+            // In that case just assume we'll have to remount.
+            signature.forceReset = true;
+            signature.fullKey = fullKey;
+            return fullKey;
+        }
+        for(var i = 0; i < hooks.length; i++){
+            var hook = hooks[i];
+            if (typeof hook !== "function") {
+                // Something's wrong. Assume we need to remount.
+                signature.forceReset = true;
+                signature.fullKey = fullKey;
+                return fullKey;
+            }
+            var nestedHookSignature = allSignaturesByType.get(hook);
+            if (nestedHookSignature === undefined) continue;
+            var nestedHookKey = computeFullKey(nestedHookSignature);
+            if (nestedHookSignature.forceReset) signature.forceReset = true;
+            fullKey += "\n---\n" + nestedHookKey;
+        }
+        signature.fullKey = fullKey;
+        return fullKey;
+    }
+    function haveEqualSignatures(prevType, nextType) {
+        var prevSignature = allSignaturesByType.get(prevType);
+        var nextSignature = allSignaturesByType.get(nextType);
+        if (prevSignature === undefined && nextSignature === undefined) return true;
+        if (prevSignature === undefined || nextSignature === undefined) return false;
+        if (computeFullKey(prevSignature) !== computeFullKey(nextSignature)) return false;
+        if (nextSignature.forceReset) return false;
+        return true;
+    }
+    function isReactClass(type) {
+        return type.prototype && type.prototype.isReactComponent;
+    }
+    function canPreserveStateBetween(prevType, nextType) {
+        if (isReactClass(prevType) || isReactClass(nextType)) return false;
+        if (haveEqualSignatures(prevType, nextType)) return true;
+        return false;
+    }
+    function resolveFamily(type) {
+        // Only check updated types to keep lookups fast.
+        return updatedFamiliesByType.get(type);
+    } // If we didn't care about IE11, we could use new Map/Set(iterable).
+    function cloneMap(map) {
+        var clone = new Map();
+        map.forEach(function(value, key) {
+            clone.set(key, value);
+        });
+        return clone;
+    }
+    function cloneSet(set) {
+        var clone = new Set();
+        set.forEach(function(value) {
+            clone.add(value);
+        });
+        return clone;
+    }
+    function performReactRefresh() {
+        if (pendingUpdates.length === 0) return null;
+        if (isPerformingRefresh) return null;
+        isPerformingRefresh = true;
+        try {
+            var staleFamilies = new Set();
+            var updatedFamilies = new Set();
+            var updates = pendingUpdates;
+            pendingUpdates = [];
+            updates.forEach(function(_ref) {
+                var family = _ref[0], nextType = _ref[1];
+                // Now that we got a real edit, we can create associations
+                // that will be read by the React reconciler.
+                var prevType = family.current;
+                updatedFamiliesByType.set(prevType, family);
+                updatedFamiliesByType.set(nextType, family);
+                family.current = nextType; // Determine whether this should be a re-render or a re-mount.
+                if (canPreserveStateBetween(prevType, nextType)) updatedFamilies.add(family);
+                else staleFamilies.add(family);
+            }); // TODO: rename these fields to something more meaningful.
+            var update = {
+                updatedFamilies: updatedFamilies,
+                // Families that will re-render preserving state
+                staleFamilies: staleFamilies // Families that will be remounted
+            };
+            helpersByRendererID.forEach(function(helpers) {
+                // Even if there are no roots, set the handler on first update.
+                // This ensures that if *new* roots are mounted, they'll use the resolve handler.
+                helpers.setRefreshHandler(resolveFamily);
+            });
+            var didError = false;
+            var firstError = null; // We snapshot maps and sets that are mutated during commits.
+            // If we don't do this, there is a risk they will be mutated while
+            // we iterate over them. For example, trying to recover a failed root
+            // may cause another root to be added to the failed list -- an infinite loop.
+            var failedRootsSnapshot = cloneSet(failedRoots);
+            var mountedRootsSnapshot = cloneSet(mountedRoots);
+            var helpersByRootSnapshot = cloneMap(helpersByRoot);
+            failedRootsSnapshot.forEach(function(root) {
+                var helpers = helpersByRootSnapshot.get(root);
+                if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
+                failedRoots.has(root);
+                if (rootElements === null) return;
+                if (!rootElements.has(root)) return;
+                var element = rootElements.get(root);
+                try {
+                    helpers.scheduleRoot(root, element);
+                } catch (err) {
+                    if (!didError) {
+                        didError = true;
+                        firstError = err;
+                    } // Keep trying other roots.
+                }
+            });
+            mountedRootsSnapshot.forEach(function(root) {
+                var helpers = helpersByRootSnapshot.get(root);
+                if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
+                mountedRoots.has(root);
+                try {
+                    helpers.scheduleRefresh(root, update);
+                } catch (err) {
+                    if (!didError) {
+                        didError = true;
+                        firstError = err;
+                    } // Keep trying other roots.
+                }
+            });
+            if (didError) throw firstError;
+            return update;
+        } finally{
+            isPerformingRefresh = false;
+        }
+    }
+    function register(type, id) {
+        if (type === null) return;
+        if (typeof type !== "function" && typeof type !== "object") return;
+         // This can happen in an edge case, e.g. if we register
+        // return value of a HOC but it returns a cached component.
+        // Ignore anything but the first registration for each type.
+        if (allFamiliesByType.has(type)) return;
+         // Create family or remember to update it.
+        // None of this bookkeeping affects reconciliation
+        // until the first performReactRefresh() call above.
+        var family = allFamiliesByID.get(id);
+        if (family === undefined) {
+            family = {
+                current: type
+            };
+            allFamiliesByID.set(id, family);
+        } else pendingUpdates.push([
+            family,
+            type
+        ]);
+        allFamiliesByType.set(type, family); // Visit inner types because we might not have registered them.
+        if (typeof type === "object" && type !== null) switch(type.$$typeof){
+            case REACT_FORWARD_REF_TYPE:
+                register(type.render, id + "$render");
+                break;
+            case REACT_MEMO_TYPE:
+                register(type.type, id + "$type");
+                break;
+        }
+    }
+    function setSignature(type, key) {
+        var forceReset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+        var getCustomHooks = arguments.length > 3 ? arguments[3] : undefined;
+        allSignaturesByType.set(type, {
+            forceReset: forceReset,
+            ownKey: key,
+            fullKey: null,
+            getCustomHooks: getCustomHooks || function() {
+                return [];
+            }
+        });
+    } // This is lazily called during first render for a type.
+    // It captures Hook list at that time so inline requires don't break comparisons.
+    function collectCustomHooksForSignature(type) {
+        var signature = allSignaturesByType.get(type);
+        if (signature !== undefined) computeFullKey(signature);
+    }
+    function getFamilyByID(id) {
+        return allFamiliesByID.get(id);
+    }
+    function getFamilyByType(type) {
+        return allFamiliesByType.get(type);
+    }
+    function findAffectedHostInstances(families) {
+        var affectedInstances = new Set();
+        mountedRoots.forEach(function(root) {
+            var helpers = helpersByRoot.get(root);
+            if (helpers === undefined) throw new Error("Could not find helpers for a root. This is a bug in React Refresh.");
+            var instancesForRoot = helpers.findHostInstancesForRefresh(root, families);
+            instancesForRoot.forEach(function(inst) {
+                affectedInstances.add(inst);
+            });
+        });
+        return affectedInstances;
+    }
+    function injectIntoGlobalHook(globalObject) {
+        // For React Native, the global hook will be set up by require('react-devtools-core').
+        // That code will run before us. So we need to monkeypatch functions on existing hook.
+        // For React Web, the global hook will be set up by the extension.
+        // This will also run before us.
+        var hook = globalObject.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+        if (hook === undefined) {
+            // However, if there is no DevTools extension, we'll need to set up the global hook ourselves.
+            // Note that in this case it's important that renderer code runs *after* this method call.
+            // Otherwise, the renderer will think that there is no global hook, and won't do the injection.
+            var nextID = 0;
+            globalObject.__REACT_DEVTOOLS_GLOBAL_HOOK__ = hook = {
+                renderers: new Map(),
+                supportsFiber: true,
+                inject: function(injected) {
+                    return nextID++;
+                },
+                onScheduleFiberRoot: function(id, root, children) {},
+                onCommitFiberRoot: function(id, root, maybePriorityLevel, didError) {},
+                onCommitFiberUnmount: function() {}
+            };
+        } // Here, we just want to get a reference to scheduleRefresh.
+        var oldInject = hook.inject;
+        hook.inject = function(injected) {
+            var id = oldInject.apply(this, arguments);
+            if (typeof injected.scheduleRefresh === "function" && typeof injected.setRefreshHandler === "function") // This version supports React Refresh.
+            helpersByRendererID.set(id, injected);
+            return id;
+        }; // Do the same for any already injected roots.
+        // This is useful if ReactDOM has already been initialized.
+        // https://github.com/facebook/react/issues/17626
+        hook.renderers.forEach(function(injected, id) {
+            if (typeof injected.scheduleRefresh === "function" && typeof injected.setRefreshHandler === "function") // This version supports React Refresh.
+            helpersByRendererID.set(id, injected);
+        }); // We also want to track currently mounted roots.
+        var oldOnCommitFiberRoot = hook.onCommitFiberRoot;
+        var oldOnScheduleFiberRoot = hook.onScheduleFiberRoot || function() {};
+        hook.onScheduleFiberRoot = function(id, root, children) {
+            if (!isPerformingRefresh) {
+                // If it was intentionally scheduled, don't attempt to restore.
+                // This includes intentionally scheduled unmounts.
+                failedRoots.delete(root);
+                if (rootElements !== null) rootElements.set(root, children);
+            }
+            return oldOnScheduleFiberRoot.apply(this, arguments);
+        };
+        hook.onCommitFiberRoot = function(id, root, maybePriorityLevel, didError) {
+            var helpers = helpersByRendererID.get(id);
+            if (helpers === undefined) return;
+            helpersByRoot.set(root, helpers);
+            var current = root.current;
+            var alternate = current.alternate; // We need to determine whether this root has just (un)mounted.
+            // This logic is copy-pasted from similar logic in the DevTools backend.
+            // If this breaks with some refactoring, you'll want to update DevTools too.
+            if (alternate !== null) {
+                var wasMounted = alternate.memoizedState != null && alternate.memoizedState.element != null;
+                var isMounted = current.memoizedState != null && current.memoizedState.element != null;
+                if (!wasMounted && isMounted) {
+                    // Mount a new root.
+                    mountedRoots.add(root);
+                    failedRoots.delete(root);
+                } else if (wasMounted && isMounted) ;
+                else if (wasMounted && !isMounted) {
+                    // Unmount an existing root.
+                    mountedRoots.delete(root);
+                    if (didError) // We'll remount it on future edits.
+                    failedRoots.add(root);
+                    else helpersByRoot.delete(root);
+                } else if (!wasMounted && !isMounted) {
+                    if (didError) // We'll remount it on future edits.
+                    failedRoots.add(root);
+                }
+            } else // Mount a new root.
+            mountedRoots.add(root);
+            return oldOnCommitFiberRoot.apply(this, arguments);
+        };
+    }
+    function hasUnrecoverableErrors() {
+        // TODO: delete this after removing dependency in RN.
+        return false;
+    } // Exposed for testing.
+    function _getMountedRootCount() {
+        return mountedRoots.size;
+    } // This is a wrapper over more primitive functions for setting signature.
+    // Signatures let us decide whether the Hook order has changed on refresh.
+    //
+    // This function is intended to be used as a transform target, e.g.:
+    // var _s = createSignatureFunctionForTransform()
+    //
+    // function Hello() {
+    //   const [foo, setFoo] = useState(0);
+    //   const value = useCustomHook();
+    //   _s(); /* Second call triggers collecting the custom Hook list.
+    //          * This doesn't happen during the module evaluation because we
+    //          * don't want to change the module order with inline requires.
+    //          * Next calls are noops. */
+    //   return <h1>Hi</h1>;
+    // }
+    //
+    // /* First call specifies the signature: */
+    // _s(
+    //   Hello,
+    //   'useState{[foo, setFoo]}(0)',
+    //   () => [useCustomHook], /* Lazy to avoid triggering inline requires */
+    // );
+    function createSignatureFunctionForTransform() {
+        // We'll fill in the signature in two steps.
+        // First, we'll know the signature itself. This happens outside the component.
+        // Then, we'll know the references to custom Hooks. This happens inside the component.
+        // After that, the returned function will be a fast path no-op.
+        var status = "needsSignature";
+        var savedType;
+        var hasCustomHooks;
+        return function(type, key, forceReset, getCustomHooks) {
+            switch(status){
+                case "needsSignature":
+                    if (type !== undefined) {
+                        // If we received an argument, this is the initial registration call.
+                        savedType = type;
+                        hasCustomHooks = typeof getCustomHooks === "function";
+                        setSignature(type, key, forceReset, getCustomHooks); // The next call we expect is from inside a function, to fill in the custom Hooks.
+                        status = "needsCustomHooks";
+                    }
+                    break;
+                case "needsCustomHooks":
+                    if (hasCustomHooks) collectCustomHooksForSignature(savedType);
+                    status = "resolved";
+                    break;
+            }
+            return type;
+        };
+    }
+    function isLikelyComponentType(type) {
+        switch(typeof type){
+            case "function":
+                // First, deal with classes.
+                if (type.prototype != null) {
+                    if (type.prototype.isReactComponent) // React class.
+                    return true;
+                    var ownNames = Object.getOwnPropertyNames(type.prototype);
+                    if (ownNames.length > 1 || ownNames[0] !== "constructor") // This looks like a class.
+                    return false;
+                     // eslint-disable-next-line no-proto
+                    if (type.prototype.__proto__ !== Object.prototype) // It has a superclass.
+                    return false;
+                     // Pass through.
+                // This looks like a regular function with empty prototype.
+                } // For plain functions and arrows, use name as a heuristic.
+                var name = type.name || type.displayName;
+                return typeof name === "string" && /^[A-Z]/.test(name);
+            case "object":
+                if (type != null) switch(type.$$typeof){
+                    case REACT_FORWARD_REF_TYPE:
+                    case REACT_MEMO_TYPE:
+                        // Definitely React components.
+                        return true;
+                    default:
+                        return false;
+                }
+                return false;
+            default:
+                return false;
+        }
+    }
+    exports._getMountedRootCount = _getMountedRootCount;
+    exports.collectCustomHooksForSignature = collectCustomHooksForSignature;
+    exports.createSignatureFunctionForTransform = createSignatureFunctionForTransform;
+    exports.findAffectedHostInstances = findAffectedHostInstances;
+    exports.getFamilyByID = getFamilyByID;
+    exports.getFamilyByType = getFamilyByType;
+    exports.hasUnrecoverableErrors = hasUnrecoverableErrors;
+    exports.injectIntoGlobalHook = injectIntoGlobalHook;
+    exports.isLikelyComponentType = isLikelyComponentType;
+    exports.performReactRefresh = performReactRefresh;
+    exports.register = register;
+    exports.setSignature = setSignature;
+})();
+
+},{}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.21.2
  *
@@ -39691,7 +40155,7 @@ let savedScrollPositions = {};
     return (0, _router.matchPath)(path.pathname, nextPath) != null || (0, _router.matchPath)(path.pathname, currentPath) != null;
 }
 
-},{"react":"21dqq","react-dom":"j6uA9","react-router":"dbWyW","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"dbWyW":[function(require,module,exports) {
+},{"react":"21dqq","react-dom":"j6uA9","react-router":"dbWyW","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dbWyW":[function(require,module,exports) {
 /**
  * React Router v6.21.2
  *
@@ -40938,7 +41402,7 @@ function createMemoryRouter(routes, opts) {
     }).initialize();
 }
 
-},{"react":"21dqq","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"5ncDG":[function(require,module,exports) {
+},{"react":"21dqq","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ncDG":[function(require,module,exports) {
 /**
  * @remix-run/router v1.14.2
  *
@@ -44759,7 +45223,7 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"d6HH4":[function() {},{}],"56uk4":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d6HH4":[function() {},{}],"56uk4":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e512 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44811,7 +45275,7 @@ const FavoriteToggle = ({ movie, token, user, setUser })=>{
             });
             if (response.ok) {
                 //updates the state of user -> so the UI changes when user removes the movie
-                // create copy of object user & keeps all movies from fav except the one where id is id of movie the user clicked on 
+                // create copy of object user & keeps all movies from fav except the one where id is id of movie the user clicked on
                 const updatedUser = {
                     ...user,
                     FavoriteMovies: user.FavoriteMovies.filter((id)=>id !== movie.id)
@@ -44832,8 +45296,8 @@ const FavoriteToggle = ({ movie, token, user, setUser })=>{
             onClick: removeFromFavorites
         }, void 0, false, {
             fileName: "src/components/toggle-favorite/toggle-favorite.jsx",
-            lineNumber: 59,
-            columnNumber: 17
+            lineNumber: 70,
+            columnNumber: 9
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrapIcons.BookmarkStar), {
             className: "favorite__icon",
             color: "white",
@@ -44841,8 +45305,8 @@ const FavoriteToggle = ({ movie, token, user, setUser })=>{
             onClick: addToFavorites
         }, void 0, false, {
             fileName: "src/components/toggle-favorite/toggle-favorite.jsx",
-            lineNumber: 61,
-            columnNumber: 17
+            lineNumber: 77,
+            columnNumber: 9
         }, undefined)
     }, void 0, false);
 };
@@ -44855,7 +45319,7 @@ $RefreshReg$(_c, "FavoriteToggle");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-bootstrap-icons":"c9Gza","./toggle-favorite.scss":"XYrBW"}],"c9Gza":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap-icons":"c9Gza","./toggle-favorite.scss":"XYrBW"}],"c9Gza":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Icon0CircleFill", ()=>(0, _0CircleFillDefault.default));
@@ -50718,7 +51182,7 @@ var _zoomInDefault = parcelHelpers.interopDefault(_zoomIn);
 var _zoomOut = require("./icons/zoom-out");
 var _zoomOutDefault = parcelHelpers.interopDefault(_zoomOut);
 
-},{"./icons/0-circle-fill":false,"./icons/0-circle":false,"./icons/0-square-fill":false,"./icons/0-square":false,"./icons/1-circle-fill":false,"./icons/1-circle":false,"./icons/1-square-fill":false,"./icons/1-square":false,"./icons/123":false,"./icons/2-circle-fill":false,"./icons/2-circle":false,"./icons/2-square-fill":false,"./icons/2-square":false,"./icons/3-circle-fill":false,"./icons/3-circle":false,"./icons/3-square-fill":false,"./icons/3-square":false,"./icons/4-circle-fill":false,"./icons/4-circle":false,"./icons/4-square-fill":false,"./icons/4-square":false,"./icons/5-circle-fill":false,"./icons/5-circle":false,"./icons/5-square-fill":false,"./icons/5-square":false,"./icons/6-circle-fill":false,"./icons/6-circle":false,"./icons/6-square-fill":false,"./icons/6-square":false,"./icons/7-circle-fill":false,"./icons/7-circle":false,"./icons/7-square-fill":false,"./icons/7-square":false,"./icons/8-circle-fill":false,"./icons/8-circle":false,"./icons/8-square-fill":false,"./icons/8-square":false,"./icons/9-circle-fill":false,"./icons/9-circle":false,"./icons/9-square-fill":false,"./icons/9-square":false,"./icons/activity":false,"./icons/airplane-engines-fill":false,"./icons/airplane-engines":false,"./icons/airplane-fill":false,"./icons/airplane":false,"./icons/alarm-fill":false,"./icons/alarm":false,"./icons/alexa":false,"./icons/align-bottom":false,"./icons/align-center":false,"./icons/align-end":false,"./icons/align-middle":false,"./icons/align-start":false,"./icons/align-top":false,"./icons/alipay":false,"./icons/alt":false,"./icons/amd":false,"./icons/android":false,"./icons/android2":false,"./icons/app-indicator":false,"./icons/app":false,"./icons/apple":false,"./icons/archive-fill":false,"./icons/archive":false,"./icons/arrow-90deg-down":false,"./icons/arrow-90deg-left":false,"./icons/arrow-90deg-right":false,"./icons/arrow-90deg-up":false,"./icons/arrow-bar-down":false,"./icons/arrow-bar-left":false,"./icons/arrow-bar-right":false,"./icons/arrow-bar-up":false,"./icons/arrow-clockwise":false,"./icons/arrow-counterclockwise":false,"./icons/arrow-down-circle-fill":false,"./icons/arrow-down-circle":false,"./icons/arrow-down-left-circle-fill":false,"./icons/arrow-down-left-circle":false,"./icons/arrow-down-left-square-fill":false,"./icons/arrow-down-left-square":false,"./icons/arrow-down-left":false,"./icons/arrow-down-right-circle-fill":false,"./icons/arrow-down-right-circle":false,"./icons/arrow-down-right-square-fill":false,"./icons/arrow-down-right-square":false,"./icons/arrow-down-right":false,"./icons/arrow-down-short":false,"./icons/arrow-down-square-fill":false,"./icons/arrow-down-square":false,"./icons/arrow-down-up":false,"./icons/arrow-down":false,"./icons/arrow-left-circle-fill":false,"./icons/arrow-left-circle":false,"./icons/arrow-left-right":false,"./icons/arrow-left-short":false,"./icons/arrow-left-square-fill":false,"./icons/arrow-left-square":false,"./icons/arrow-left":false,"./icons/arrow-repeat":false,"./icons/arrow-return-left":false,"./icons/arrow-return-right":false,"./icons/arrow-right-circle-fill":false,"./icons/arrow-right-circle":false,"./icons/arrow-right-short":false,"./icons/arrow-right-square-fill":false,"./icons/arrow-right-square":false,"./icons/arrow-right":false,"./icons/arrow-through-heart-fill":false,"./icons/arrow-through-heart":false,"./icons/arrow-up-circle-fill":false,"./icons/arrow-up-circle":false,"./icons/arrow-up-left-circle-fill":false,"./icons/arrow-up-left-circle":false,"./icons/arrow-up-left-square-fill":false,"./icons/arrow-up-left-square":false,"./icons/arrow-up-left":false,"./icons/arrow-up-right-circle-fill":false,"./icons/arrow-up-right-circle":false,"./icons/arrow-up-right-square-fill":false,"./icons/arrow-up-right-square":false,"./icons/arrow-up-right":false,"./icons/arrow-up-short":false,"./icons/arrow-up-square-fill":false,"./icons/arrow-up-square":false,"./icons/arrow-up":false,"./icons/arrows-angle-contract":false,"./icons/arrows-angle-expand":false,"./icons/arrows-collapse":false,"./icons/arrows-expand":false,"./icons/arrows-fullscreen":false,"./icons/arrows-move":false,"./icons/aspect-ratio-fill":false,"./icons/aspect-ratio":false,"./icons/asterisk":false,"./icons/at":false,"./icons/award-fill":false,"./icons/award":false,"./icons/back":false,"./icons/backspace-fill":false,"./icons/backspace-reverse-fill":false,"./icons/backspace-reverse":false,"./icons/backspace":false,"./icons/badge-3d-fill":false,"./icons/badge-3d":false,"./icons/badge-4k-fill":false,"./icons/badge-4k":false,"./icons/badge-8k-fill":false,"./icons/badge-8k":false,"./icons/badge-ad-fill":false,"./icons/badge-ad":false,"./icons/badge-ar-fill":false,"./icons/badge-ar":false,"./icons/badge-cc-fill":false,"./icons/badge-cc":false,"./icons/badge-hd-fill":false,"./icons/badge-hd":false,"./icons/badge-sd-fill":false,"./icons/badge-sd":false,"./icons/badge-tm-fill":false,"./icons/badge-tm":false,"./icons/badge-vo-fill":false,"./icons/badge-vo":false,"./icons/badge-vr-fill":false,"./icons/badge-vr":false,"./icons/badge-wc-fill":false,"./icons/badge-wc":false,"./icons/bag-check-fill":false,"./icons/bag-check":false,"./icons/bag-dash-fill":false,"./icons/bag-dash":false,"./icons/bag-fill":false,"./icons/bag-heart-fill":false,"./icons/bag-heart":false,"./icons/bag-plus-fill":false,"./icons/bag-plus":false,"./icons/bag-x-fill":false,"./icons/bag-x":false,"./icons/bag":false,"./icons/balloon-fill":false,"./icons/balloon-heart-fill":false,"./icons/balloon-heart":false,"./icons/balloon":false,"./icons/bandaid-fill":false,"./icons/bandaid":false,"./icons/bank":false,"./icons/bank2":false,"./icons/bar-chart-fill":false,"./icons/bar-chart-line-fill":false,"./icons/bar-chart-line":false,"./icons/bar-chart-steps":false,"./icons/bar-chart":false,"./icons/basket-fill":false,"./icons/basket":false,"./icons/basket2-fill":false,"./icons/basket2":false,"./icons/basket3-fill":false,"./icons/basket3":false,"./icons/battery-charging":false,"./icons/battery-full":false,"./icons/battery-half":false,"./icons/battery":false,"./icons/behance":false,"./icons/bell-fill":false,"./icons/bell-slash-fill":false,"./icons/bell-slash":false,"./icons/bell":false,"./icons/bezier":false,"./icons/bezier2":false,"./icons/bicycle":false,"./icons/binoculars-fill":false,"./icons/binoculars":false,"./icons/blockquote-left":false,"./icons/blockquote-right":false,"./icons/bluetooth":false,"./icons/body-text":false,"./icons/book-fill":false,"./icons/book-half":false,"./icons/book":false,"./icons/bookmark-check-fill":false,"./icons/bookmark-check":false,"./icons/bookmark-dash-fill":false,"./icons/bookmark-dash":false,"./icons/bookmark-fill":false,"./icons/bookmark-heart-fill":false,"./icons/bookmark-heart":false,"./icons/bookmark-plus-fill":false,"./icons/bookmark-plus":false,"./icons/bookmark-star-fill":"1c43K","./icons/bookmark-star":"lifnY","./icons/bookmark-x-fill":false,"./icons/bookmark-x":false,"./icons/bookmark":false,"./icons/bookmarks-fill":false,"./icons/bookmarks":false,"./icons/bookshelf":false,"./icons/boombox-fill":false,"./icons/boombox":false,"./icons/bootstrap-fill":false,"./icons/bootstrap-reboot":false,"./icons/bootstrap":false,"./icons/border-all":false,"./icons/border-bottom":false,"./icons/border-center":false,"./icons/border-inner":false,"./icons/border-left":false,"./icons/border-middle":false,"./icons/border-outer":false,"./icons/border-right":false,"./icons/border-style":false,"./icons/border-top":false,"./icons/border-width":false,"./icons/border":false,"./icons/bounding-box-circles":false,"./icons/bounding-box":false,"./icons/box-arrow-down-left":false,"./icons/box-arrow-down-right":false,"./icons/box-arrow-down":false,"./icons/box-arrow-in-down-left":false,"./icons/box-arrow-in-down-right":false,"./icons/box-arrow-in-down":false,"./icons/box-arrow-in-left":false,"./icons/box-arrow-in-right":false,"./icons/box-arrow-in-up-left":false,"./icons/box-arrow-in-up-right":false,"./icons/box-arrow-in-up":false,"./icons/box-arrow-left":false,"./icons/box-arrow-right":false,"./icons/box-arrow-up-left":false,"./icons/box-arrow-up-right":false,"./icons/box-arrow-up":false,"./icons/box-fill":false,"./icons/box-seam-fill":false,"./icons/box-seam":false,"./icons/box":false,"./icons/box2-fill":false,"./icons/box2-heart-fill":false,"./icons/box2-heart":false,"./icons/box2":false,"./icons/boxes":false,"./icons/braces-asterisk":false,"./icons/braces":false,"./icons/bricks":false,"./icons/briefcase-fill":false,"./icons/briefcase":false,"./icons/brightness-alt-high-fill":false,"./icons/brightness-alt-high":false,"./icons/brightness-alt-low-fill":false,"./icons/brightness-alt-low":false,"./icons/brightness-high-fill":false,"./icons/brightness-high":false,"./icons/brightness-low-fill":false,"./icons/brightness-low":false,"./icons/broadcast-pin":false,"./icons/broadcast":false,"./icons/browser-chrome":false,"./icons/browser-edge":false,"./icons/browser-firefox":false,"./icons/browser-safari":false,"./icons/brush-fill":false,"./icons/brush":false,"./icons/bucket-fill":false,"./icons/bucket":false,"./icons/bug-fill":false,"./icons/bug":false,"./icons/building-add":false,"./icons/building-check":false,"./icons/building-dash":false,"./icons/building-down":false,"./icons/building-exclamation":false,"./icons/building-fill-add":false,"./icons/building-fill-check":false,"./icons/building-fill-dash":false,"./icons/building-fill-down":false,"./icons/building-fill-exclamation":false,"./icons/building-fill-gear":false,"./icons/building-fill-lock":false,"./icons/building-fill-slash":false,"./icons/building-fill-up":false,"./icons/building-fill-x":false,"./icons/building-fill":false,"./icons/building-gear":false,"./icons/building-lock":false,"./icons/building-slash":false,"./icons/building-up":false,"./icons/building-x":false,"./icons/building":false,"./icons/buildings-fill":false,"./icons/buildings":false,"./icons/bullseye":false,"./icons/bus-front-fill":false,"./icons/bus-front":false,"./icons/c-circle-fill":false,"./icons/c-circle":false,"./icons/c-square-fill":false,"./icons/c-square":false,"./icons/calculator-fill":false,"./icons/calculator":false,"./icons/calendar-check-fill":false,"./icons/calendar-check":false,"./icons/calendar-date-fill":false,"./icons/calendar-date":false,"./icons/calendar-day-fill":false,"./icons/calendar-day":false,"./icons/calendar-event-fill":false,"./icons/calendar-event":false,"./icons/calendar-fill":false,"./icons/calendar-heart-fill":false,"./icons/calendar-heart":false,"./icons/calendar-minus-fill":false,"./icons/calendar-minus":false,"./icons/calendar-month-fill":false,"./icons/calendar-month":false,"./icons/calendar-plus-fill":false,"./icons/calendar-plus":false,"./icons/calendar-range-fill":false,"./icons/calendar-range":false,"./icons/calendar-week-fill":false,"./icons/calendar-week":false,"./icons/calendar-x-fill":false,"./icons/calendar-x":false,"./icons/calendar":false,"./icons/calendar2-check-fill":false,"./icons/calendar2-check":false,"./icons/calendar2-date-fill":false,"./icons/calendar2-date":false,"./icons/calendar2-day-fill":false,"./icons/calendar2-day":false,"./icons/calendar2-event-fill":false,"./icons/calendar2-event":false,"./icons/calendar2-fill":false,"./icons/calendar2-heart-fill":false,"./icons/calendar2-heart":false,"./icons/calendar2-minus-fill":false,"./icons/calendar2-minus":false,"./icons/calendar2-month-fill":false,"./icons/calendar2-month":false,"./icons/calendar2-plus-fill":false,"./icons/calendar2-plus":false,"./icons/calendar2-range-fill":false,"./icons/calendar2-range":false,"./icons/calendar2-week-fill":false,"./icons/calendar2-week":false,"./icons/calendar2-x-fill":false,"./icons/calendar2-x":false,"./icons/calendar2":false,"./icons/calendar3-event-fill":false,"./icons/calendar3-event":false,"./icons/calendar3-fill":false,"./icons/calendar3-range-fill":false,"./icons/calendar3-range":false,"./icons/calendar3-week-fill":false,"./icons/calendar3-week":false,"./icons/calendar3":false,"./icons/calendar4-event":false,"./icons/calendar4-range":false,"./icons/calendar4-week":false,"./icons/calendar4":false,"./icons/camera-fill":false,"./icons/camera-reels-fill":false,"./icons/camera-reels":false,"./icons/camera-video-fill":false,"./icons/camera-video-off-fill":false,"./icons/camera-video-off":false,"./icons/camera-video":false,"./icons/camera":false,"./icons/camera2":false,"./icons/capslock-fill":false,"./icons/capslock":false,"./icons/capsule-pill":false,"./icons/capsule":false,"./icons/car-front-fill":false,"./icons/car-front":false,"./icons/card-checklist":false,"./icons/card-heading":false,"./icons/card-image":false,"./icons/card-list":false,"./icons/card-text":false,"./icons/caret-down-fill":false,"./icons/caret-down-square-fill":false,"./icons/caret-down-square":false,"./icons/caret-down":false,"./icons/caret-left-fill":false,"./icons/caret-left-square-fill":false,"./icons/caret-left-square":false,"./icons/caret-left":false,"./icons/caret-right-fill":false,"./icons/caret-right-square-fill":false,"./icons/caret-right-square":false,"./icons/caret-right":false,"./icons/caret-up-fill":false,"./icons/caret-up-square-fill":false,"./icons/caret-up-square":false,"./icons/caret-up":false,"./icons/cart-check-fill":false,"./icons/cart-check":false,"./icons/cart-dash-fill":false,"./icons/cart-dash":false,"./icons/cart-fill":false,"./icons/cart-plus-fill":false,"./icons/cart-plus":false,"./icons/cart-x-fill":false,"./icons/cart-x":false,"./icons/cart":false,"./icons/cart2":false,"./icons/cart3":false,"./icons/cart4":false,"./icons/cash-coin":false,"./icons/cash-stack":false,"./icons/cash":false,"./icons/cassette-fill":false,"./icons/cassette":false,"./icons/cast":false,"./icons/cc-circle-fill":false,"./icons/cc-circle":false,"./icons/cc-square-fill":false,"./icons/cc-square":false,"./icons/chat-dots-fill":false,"./icons/chat-dots":false,"./icons/chat-fill":false,"./icons/chat-heart-fill":false,"./icons/chat-heart":false,"./icons/chat-left-dots-fill":false,"./icons/chat-left-dots":false,"./icons/chat-left-fill":false,"./icons/chat-left-heart-fill":false,"./icons/chat-left-heart":false,"./icons/chat-left-quote-fill":false,"./icons/chat-left-quote":false,"./icons/chat-left-text-fill":false,"./icons/chat-left-text":false,"./icons/chat-left":false,"./icons/chat-quote-fill":false,"./icons/chat-quote":false,"./icons/chat-right-dots-fill":false,"./icons/chat-right-dots":false,"./icons/chat-right-fill":false,"./icons/chat-right-heart-fill":false,"./icons/chat-right-heart":false,"./icons/chat-right-quote-fill":false,"./icons/chat-right-quote":false,"./icons/chat-right-text-fill":false,"./icons/chat-right-text":false,"./icons/chat-right":false,"./icons/chat-square-dots-fill":false,"./icons/chat-square-dots":false,"./icons/chat-square-fill":false,"./icons/chat-square-heart-fill":false,"./icons/chat-square-heart":false,"./icons/chat-square-quote-fill":false,"./icons/chat-square-quote":false,"./icons/chat-square-text-fill":false,"./icons/chat-square-text":false,"./icons/chat-square":false,"./icons/chat-text-fill":false,"./icons/chat-text":false,"./icons/chat":false,"./icons/check-all":false,"./icons/check-circle-fill":false,"./icons/check-circle":false,"./icons/check-lg":false,"./icons/check-square-fill":false,"./icons/check-square":false,"./icons/check":false,"./icons/check2-all":false,"./icons/check2-circle":false,"./icons/check2-square":false,"./icons/check2":false,"./icons/chevron-bar-contract":false,"./icons/chevron-bar-down":false,"./icons/chevron-bar-expand":false,"./icons/chevron-bar-left":false,"./icons/chevron-bar-right":false,"./icons/chevron-bar-up":false,"./icons/chevron-compact-down":false,"./icons/chevron-compact-left":false,"./icons/chevron-compact-right":false,"./icons/chevron-compact-up":false,"./icons/chevron-contract":false,"./icons/chevron-double-down":false,"./icons/chevron-double-left":false,"./icons/chevron-double-right":false,"./icons/chevron-double-up":false,"./icons/chevron-down":false,"./icons/chevron-expand":false,"./icons/chevron-left":false,"./icons/chevron-right":false,"./icons/chevron-up":false,"./icons/circle-fill":false,"./icons/circle-half":false,"./icons/circle-square":false,"./icons/circle":false,"./icons/clipboard-check-fill":false,"./icons/clipboard-check":false,"./icons/clipboard-data-fill":false,"./icons/clipboard-data":false,"./icons/clipboard-fill":false,"./icons/clipboard-heart-fill":false,"./icons/clipboard-heart":false,"./icons/clipboard-minus-fill":false,"./icons/clipboard-minus":false,"./icons/clipboard-plus-fill":false,"./icons/clipboard-plus":false,"./icons/clipboard-pulse":false,"./icons/clipboard-x-fill":false,"./icons/clipboard-x":false,"./icons/clipboard":false,"./icons/clipboard2-check-fill":false,"./icons/clipboard2-check":false,"./icons/clipboard2-data-fill":false,"./icons/clipboard2-data":false,"./icons/clipboard2-fill":false,"./icons/clipboard2-heart-fill":false,"./icons/clipboard2-heart":false,"./icons/clipboard2-minus-fill":false,"./icons/clipboard2-minus":false,"./icons/clipboard2-plus-fill":false,"./icons/clipboard2-plus":false,"./icons/clipboard2-pulse-fill":false,"./icons/clipboard2-pulse":false,"./icons/clipboard2-x-fill":false,"./icons/clipboard2-x":false,"./icons/clipboard2":false,"./icons/clock-fill":false,"./icons/clock-history":false,"./icons/clock":false,"./icons/cloud-arrow-down-fill":false,"./icons/cloud-arrow-down":false,"./icons/cloud-arrow-up-fill":false,"./icons/cloud-arrow-up":false,"./icons/cloud-check-fill":false,"./icons/cloud-check":false,"./icons/cloud-download-fill":false,"./icons/cloud-download":false,"./icons/cloud-drizzle-fill":false,"./icons/cloud-drizzle":false,"./icons/cloud-fill":false,"./icons/cloud-fog-fill":false,"./icons/cloud-fog":false,"./icons/cloud-fog2-fill":false,"./icons/cloud-fog2":false,"./icons/cloud-hail-fill":false,"./icons/cloud-hail":false,"./icons/cloud-haze-fill":false,"./icons/cloud-haze":false,"./icons/cloud-haze2-fill":false,"./icons/cloud-haze2":false,"./icons/cloud-lightning-fill":false,"./icons/cloud-lightning-rain-fill":false,"./icons/cloud-lightning-rain":false,"./icons/cloud-lightning":false,"./icons/cloud-minus-fill":false,"./icons/cloud-minus":false,"./icons/cloud-moon-fill":false,"./icons/cloud-moon":false,"./icons/cloud-plus-fill":false,"./icons/cloud-plus":false,"./icons/cloud-rain-fill":false,"./icons/cloud-rain-heavy-fill":false,"./icons/cloud-rain-heavy":false,"./icons/cloud-rain":false,"./icons/cloud-slash-fill":false,"./icons/cloud-slash":false,"./icons/cloud-sleet-fill":false,"./icons/cloud-sleet":false,"./icons/cloud-snow-fill":false,"./icons/cloud-snow":false,"./icons/cloud-sun-fill":false,"./icons/cloud-sun":false,"./icons/cloud-upload-fill":false,"./icons/cloud-upload":false,"./icons/cloud":false,"./icons/clouds-fill":false,"./icons/clouds":false,"./icons/cloudy-fill":false,"./icons/cloudy":false,"./icons/code-slash":false,"./icons/code-square":false,"./icons/code":false,"./icons/coin":false,"./icons/collection-fill":false,"./icons/collection-play-fill":false,"./icons/collection-play":false,"./icons/collection":false,"./icons/columns-gap":false,"./icons/columns":false,"./icons/command":false,"./icons/compass-fill":false,"./icons/compass":false,"./icons/cone-striped":false,"./icons/cone":false,"./icons/controller":false,"./icons/cpu-fill":false,"./icons/cpu":false,"./icons/credit-card-2-back-fill":false,"./icons/credit-card-2-back":false,"./icons/credit-card-2-front-fill":false,"./icons/credit-card-2-front":false,"./icons/credit-card-fill":false,"./icons/credit-card":false,"./icons/crop":false,"./icons/cup-fill":false,"./icons/cup-hot-fill":false,"./icons/cup-hot":false,"./icons/cup-straw":false,"./icons/cup":false,"./icons/currency-bitcoin":false,"./icons/currency-dollar":false,"./icons/currency-euro":false,"./icons/currency-exchange":false,"./icons/currency-pound":false,"./icons/currency-rupee":false,"./icons/currency-yen":false,"./icons/cursor-fill":false,"./icons/cursor-text":false,"./icons/cursor":false,"./icons/dash-circle-dotted":false,"./icons/dash-circle-fill":false,"./icons/dash-circle":false,"./icons/dash-lg":false,"./icons/dash-square-dotted":false,"./icons/dash-square-fill":false,"./icons/dash-square":false,"./icons/dash":false,"./icons/database-add":false,"./icons/database-check":false,"./icons/database-dash":false,"./icons/database-down":false,"./icons/database-exclamation":false,"./icons/database-fill-add":false,"./icons/database-fill-check":false,"./icons/database-fill-dash":false,"./icons/database-fill-down":false,"./icons/database-fill-exclamation":false,"./icons/database-fill-gear":false,"./icons/database-fill-lock":false,"./icons/database-fill-slash":false,"./icons/database-fill-up":false,"./icons/database-fill-x":false,"./icons/database-fill":false,"./icons/database-gear":false,"./icons/database-lock":false,"./icons/database-slash":false,"./icons/database-up":false,"./icons/database-x":false,"./icons/database":false,"./icons/device-hdd-fill":false,"./icons/device-hdd":false,"./icons/device-ssd-fill":false,"./icons/device-ssd":false,"./icons/diagram-2-fill":false,"./icons/diagram-2":false,"./icons/diagram-3-fill":false,"./icons/diagram-3":false,"./icons/diamond-fill":false,"./icons/diamond-half":false,"./icons/diamond":false,"./icons/dice-1-fill":false,"./icons/dice-1":false,"./icons/dice-2-fill":false,"./icons/dice-2":false,"./icons/dice-3-fill":false,"./icons/dice-3":false,"./icons/dice-4-fill":false,"./icons/dice-4":false,"./icons/dice-5-fill":false,"./icons/dice-5":false,"./icons/dice-6-fill":false,"./icons/dice-6":false,"./icons/disc-fill":false,"./icons/disc":false,"./icons/discord":false,"./icons/display-fill":false,"./icons/display":false,"./icons/displayport-fill":false,"./icons/displayport":false,"./icons/distribute-horizontal":false,"./icons/distribute-vertical":false,"./icons/door-closed-fill":false,"./icons/door-closed":false,"./icons/door-open-fill":false,"./icons/door-open":false,"./icons/dot":false,"./icons/download":false,"./icons/dpad-fill":false,"./icons/dpad":false,"./icons/dribbble":false,"./icons/dropbox":false,"./icons/droplet-fill":false,"./icons/droplet-half":false,"./icons/droplet":false,"./icons/ear-fill":false,"./icons/ear":false,"./icons/earbuds":false,"./icons/easel-fill":false,"./icons/easel":false,"./icons/easel2-fill":false,"./icons/easel2":false,"./icons/easel3-fill":false,"./icons/easel3":false,"./icons/egg-fill":false,"./icons/egg-fried":false,"./icons/egg":false,"./icons/eject-fill":false,"./icons/eject":false,"./icons/emoji-angry-fill":false,"./icons/emoji-angry":false,"./icons/emoji-dizzy-fill":false,"./icons/emoji-dizzy":false,"./icons/emoji-expressionless-fill":false,"./icons/emoji-expressionless":false,"./icons/emoji-frown-fill":false,"./icons/emoji-frown":false,"./icons/emoji-heart-eyes-fill":false,"./icons/emoji-heart-eyes":false,"./icons/emoji-kiss-fill":false,"./icons/emoji-kiss":false,"./icons/emoji-laughing-fill":false,"./icons/emoji-laughing":false,"./icons/emoji-neutral-fill":false,"./icons/emoji-neutral":false,"./icons/emoji-smile-fill":false,"./icons/emoji-smile-upside-down-fill":false,"./icons/emoji-smile-upside-down":false,"./icons/emoji-smile":false,"./icons/emoji-sunglasses-fill":false,"./icons/emoji-sunglasses":false,"./icons/emoji-wink-fill":false,"./icons/emoji-wink":false,"./icons/envelope-at-fill":false,"./icons/envelope-at":false,"./icons/envelope-check-fill":false,"./icons/envelope-check":false,"./icons/envelope-dash-fill":false,"./icons/envelope-dash":false,"./icons/envelope-exclamation-fill":false,"./icons/envelope-exclamation":false,"./icons/envelope-fill":false,"./icons/envelope-heart-fill":false,"./icons/envelope-heart":false,"./icons/envelope-open-fill":false,"./icons/envelope-open-heart-fill":false,"./icons/envelope-open-heart":false,"./icons/envelope-open":false,"./icons/envelope-paper-fill":false,"./icons/envelope-paper-heart-fill":false,"./icons/envelope-paper-heart":false,"./icons/envelope-paper":false,"./icons/envelope-plus-fill":false,"./icons/envelope-plus":false,"./icons/envelope-slash-fill":false,"./icons/envelope-slash":false,"./icons/envelope-x-fill":false,"./icons/envelope-x":false,"./icons/envelope":false,"./icons/eraser-fill":false,"./icons/eraser":false,"./icons/escape":false,"./icons/ethernet":false,"./icons/ev-front-fill":false,"./icons/ev-front":false,"./icons/ev-station-fill":false,"./icons/ev-station":false,"./icons/exclamation-circle-fill":false,"./icons/exclamation-circle":false,"./icons/exclamation-diamond-fill":false,"./icons/exclamation-diamond":false,"./icons/exclamation-lg":false,"./icons/exclamation-octagon-fill":false,"./icons/exclamation-octagon":false,"./icons/exclamation-square-fill":false,"./icons/exclamation-square":false,"./icons/exclamation-triangle-fill":false,"./icons/exclamation-triangle":false,"./icons/exclamation":false,"./icons/exclude":false,"./icons/explicit-fill":false,"./icons/explicit":false,"./icons/eye-fill":false,"./icons/eye-slash-fill":false,"./icons/eye-slash":false,"./icons/eye":false,"./icons/eyedropper":false,"./icons/eyeglasses":false,"./icons/facebook":false,"./icons/fan":false,"./icons/fast-forward-btn-fill":false,"./icons/fast-forward-btn":false,"./icons/fast-forward-circle-fill":false,"./icons/fast-forward-circle":false,"./icons/fast-forward-fill":false,"./icons/fast-forward":false,"./icons/file-arrow-down-fill":false,"./icons/file-arrow-down":false,"./icons/file-arrow-up-fill":false,"./icons/file-arrow-up":false,"./icons/file-bar-graph-fill":false,"./icons/file-bar-graph":false,"./icons/file-binary-fill":false,"./icons/file-binary":false,"./icons/file-break-fill":false,"./icons/file-break":false,"./icons/file-check-fill":false,"./icons/file-check":false,"./icons/file-code-fill":false,"./icons/file-code":false,"./icons/file-diff-fill":false,"./icons/file-diff":false,"./icons/file-earmark-arrow-down-fill":false,"./icons/file-earmark-arrow-down":false,"./icons/file-earmark-arrow-up-fill":false,"./icons/file-earmark-arrow-up":false,"./icons/file-earmark-bar-graph-fill":false,"./icons/file-earmark-bar-graph":false,"./icons/file-earmark-binary-fill":false,"./icons/file-earmark-binary":false,"./icons/file-earmark-break-fill":false,"./icons/file-earmark-break":false,"./icons/file-earmark-check-fill":false,"./icons/file-earmark-check":false,"./icons/file-earmark-code-fill":false,"./icons/file-earmark-code":false,"./icons/file-earmark-diff-fill":false,"./icons/file-earmark-diff":false,"./icons/file-earmark-easel-fill":false,"./icons/file-earmark-easel":false,"./icons/file-earmark-excel-fill":false,"./icons/file-earmark-excel":false,"./icons/file-earmark-fill":false,"./icons/file-earmark-font-fill":false,"./icons/file-earmark-font":false,"./icons/file-earmark-image-fill":false,"./icons/file-earmark-image":false,"./icons/file-earmark-lock-fill":false,"./icons/file-earmark-lock":false,"./icons/file-earmark-lock2-fill":false,"./icons/file-earmark-lock2":false,"./icons/file-earmark-medical-fill":false,"./icons/file-earmark-medical":false,"./icons/file-earmark-minus-fill":false,"./icons/file-earmark-minus":false,"./icons/file-earmark-music-fill":false,"./icons/file-earmark-music":false,"./icons/file-earmark-pdf-fill":false,"./icons/file-earmark-pdf":false,"./icons/file-earmark-person-fill":false,"./icons/file-earmark-person":false,"./icons/file-earmark-play-fill":false,"./icons/file-earmark-play":false,"./icons/file-earmark-plus-fill":false,"./icons/file-earmark-plus":false,"./icons/file-earmark-post-fill":false,"./icons/file-earmark-post":false,"./icons/file-earmark-ppt-fill":false,"./icons/file-earmark-ppt":false,"./icons/file-earmark-richtext-fill":false,"./icons/file-earmark-richtext":false,"./icons/file-earmark-ruled-fill":false,"./icons/file-earmark-ruled":false,"./icons/file-earmark-slides-fill":false,"./icons/file-earmark-slides":false,"./icons/file-earmark-spreadsheet-fill":false,"./icons/file-earmark-spreadsheet":false,"./icons/file-earmark-text-fill":false,"./icons/file-earmark-text":false,"./icons/file-earmark-word-fill":false,"./icons/file-earmark-word":false,"./icons/file-earmark-x-fill":false,"./icons/file-earmark-x":false,"./icons/file-earmark-zip-fill":false,"./icons/file-earmark-zip":false,"./icons/file-earmark":false,"./icons/file-easel-fill":false,"./icons/file-easel":false,"./icons/file-excel-fill":false,"./icons/file-excel":false,"./icons/file-fill":false,"./icons/file-font-fill":false,"./icons/file-font":false,"./icons/file-image-fill":false,"./icons/file-image":false,"./icons/file-lock-fill":false,"./icons/file-lock":false,"./icons/file-lock2-fill":false,"./icons/file-lock2":false,"./icons/file-medical-fill":false,"./icons/file-medical":false,"./icons/file-minus-fill":false,"./icons/file-minus":false,"./icons/file-music-fill":false,"./icons/file-music":false,"./icons/file-pdf-fill":false,"./icons/file-pdf":false,"./icons/file-person-fill":false,"./icons/file-person":false,"./icons/file-play-fill":false,"./icons/file-play":false,"./icons/file-plus-fill":false,"./icons/file-plus":false,"./icons/file-post-fill":false,"./icons/file-post":false,"./icons/file-ppt-fill":false,"./icons/file-ppt":false,"./icons/file-richtext-fill":false,"./icons/file-richtext":false,"./icons/file-ruled-fill":false,"./icons/file-ruled":false,"./icons/file-slides-fill":false,"./icons/file-slides":false,"./icons/file-spreadsheet-fill":false,"./icons/file-spreadsheet":false,"./icons/file-text-fill":false,"./icons/file-text":false,"./icons/file-word-fill":false,"./icons/file-word":false,"./icons/file-x-fill":false,"./icons/file-x":false,"./icons/file-zip-fill":false,"./icons/file-zip":false,"./icons/file":false,"./icons/files-alt":false,"./icons/files":false,"./icons/filetype-aac":false,"./icons/filetype-ai":false,"./icons/filetype-bmp":false,"./icons/filetype-cs":false,"./icons/filetype-css":false,"./icons/filetype-csv":false,"./icons/filetype-doc":false,"./icons/filetype-docx":false,"./icons/filetype-exe":false,"./icons/filetype-gif":false,"./icons/filetype-heic":false,"./icons/filetype-html":false,"./icons/filetype-java":false,"./icons/filetype-jpg":false,"./icons/filetype-js":false,"./icons/filetype-json":false,"./icons/filetype-jsx":false,"./icons/filetype-key":false,"./icons/filetype-m4p":false,"./icons/filetype-md":false,"./icons/filetype-mdx":false,"./icons/filetype-mov":false,"./icons/filetype-mp3":false,"./icons/filetype-mp4":false,"./icons/filetype-otf":false,"./icons/filetype-pdf":false,"./icons/filetype-php":false,"./icons/filetype-png":false,"./icons/filetype-ppt":false,"./icons/filetype-pptx":false,"./icons/filetype-psd":false,"./icons/filetype-py":false,"./icons/filetype-raw":false,"./icons/filetype-rb":false,"./icons/filetype-sass":false,"./icons/filetype-scss":false,"./icons/filetype-sh":false,"./icons/filetype-sql":false,"./icons/filetype-svg":false,"./icons/filetype-tiff":false,"./icons/filetype-tsx":false,"./icons/filetype-ttf":false,"./icons/filetype-txt":false,"./icons/filetype-wav":false,"./icons/filetype-woff":false,"./icons/filetype-xls":false,"./icons/filetype-xlsx":false,"./icons/filetype-xml":false,"./icons/filetype-yml":false,"./icons/film":false,"./icons/filter-circle-fill":false,"./icons/filter-circle":false,"./icons/filter-left":false,"./icons/filter-right":false,"./icons/filter-square-fill":false,"./icons/filter-square":false,"./icons/filter":false,"./icons/fingerprint":false,"./icons/fire":false,"./icons/flag-fill":false,"./icons/flag":false,"./icons/flower1":false,"./icons/flower2":false,"./icons/flower3":false,"./icons/folder-check":false,"./icons/folder-fill":false,"./icons/folder-minus":false,"./icons/folder-plus":false,"./icons/folder-symlink-fill":false,"./icons/folder-symlink":false,"./icons/folder-x":false,"./icons/folder":false,"./icons/folder2-open":false,"./icons/folder2":false,"./icons/fonts":false,"./icons/forward-fill":false,"./icons/forward":false,"./icons/front":false,"./icons/fuel-pump-diesel-fill":false,"./icons/fuel-pump-diesel":false,"./icons/fuel-pump-fill":false,"./icons/fuel-pump":false,"./icons/fullscreen-exit":false,"./icons/fullscreen":false,"./icons/funnel-fill":false,"./icons/funnel":false,"./icons/gear-fill":false,"./icons/gear-wide-connected":false,"./icons/gear-wide":false,"./icons/gear":false,"./icons/gem":false,"./icons/gender-ambiguous":false,"./icons/gender-female":false,"./icons/gender-male":false,"./icons/gender-trans":false,"./icons/geo-alt-fill":false,"./icons/geo-alt":false,"./icons/geo-fill":false,"./icons/geo":false,"./icons/gift-fill":false,"./icons/gift":false,"./icons/git":false,"./icons/github":false,"./icons/globe-americas":false,"./icons/globe-asia-australia":false,"./icons/globe-central-south-asia":false,"./icons/globe-europe-africa":false,"./icons/globe":false,"./icons/globe2":false,"./icons/google-play":false,"./icons/google":false,"./icons/gpu-card":false,"./icons/graph-down-arrow":false,"./icons/graph-down":false,"./icons/graph-up-arrow":false,"./icons/graph-up":false,"./icons/grid-1x2-fill":false,"./icons/grid-1x2":false,"./icons/grid-3x2-gap-fill":false,"./icons/grid-3x2-gap":false,"./icons/grid-3x2":false,"./icons/grid-3x3-gap-fill":false,"./icons/grid-3x3-gap":false,"./icons/grid-3x3":false,"./icons/grid-fill":false,"./icons/grid":false,"./icons/grip-horizontal":false,"./icons/grip-vertical":false,"./icons/h-circle-fill":false,"./icons/h-circle":false,"./icons/h-square-fill":false,"./icons/h-square":false,"./icons/hammer":false,"./icons/hand-index-fill":false,"./icons/hand-index-thumb-fill":false,"./icons/hand-index-thumb":false,"./icons/hand-index":false,"./icons/hand-thumbs-down-fill":false,"./icons/hand-thumbs-down":false,"./icons/hand-thumbs-up-fill":false,"./icons/hand-thumbs-up":false,"./icons/handbag-fill":false,"./icons/handbag":false,"./icons/hash":false,"./icons/hdd-fill":false,"./icons/hdd-network-fill":false,"./icons/hdd-network":false,"./icons/hdd-rack-fill":false,"./icons/hdd-rack":false,"./icons/hdd-stack-fill":false,"./icons/hdd-stack":false,"./icons/hdd":false,"./icons/hdmi-fill":false,"./icons/hdmi":false,"./icons/headphones":false,"./icons/headset-vr":false,"./icons/headset":false,"./icons/heart-arrow":false,"./icons/heart-fill":false,"./icons/heart-half":false,"./icons/heart-pulse-fill":false,"./icons/heart-pulse":false,"./icons/heart":false,"./icons/heartbreak-fill":false,"./icons/heartbreak":false,"./icons/hearts":false,"./icons/heptagon-fill":false,"./icons/heptagon-half":false,"./icons/heptagon":false,"./icons/hexagon-fill":false,"./icons/hexagon-half":false,"./icons/hexagon":false,"./icons/hospital-fill":false,"./icons/hospital":false,"./icons/hourglass-bottom":false,"./icons/hourglass-split":false,"./icons/hourglass-top":false,"./icons/hourglass":false,"./icons/house-add-fill":false,"./icons/house-add":false,"./icons/house-check-fill":false,"./icons/house-check":false,"./icons/house-dash-fill":false,"./icons/house-dash":false,"./icons/house-door-fill":false,"./icons/house-door":false,"./icons/house-down-fill":false,"./icons/house-down":false,"./icons/house-exclamation-fill":false,"./icons/house-exclamation":false,"./icons/house-fill":false,"./icons/house-gear-fill":false,"./icons/house-gear":false,"./icons/house-heart-fill":false,"./icons/house-heart":false,"./icons/house-lock-fill":false,"./icons/house-lock":false,"./icons/house-slash-fill":false,"./icons/house-slash":false,"./icons/house-up-fill":false,"./icons/house-up":false,"./icons/house-x-fill":false,"./icons/house-x":false,"./icons/house":false,"./icons/houses-fill":false,"./icons/houses":false,"./icons/hr":false,"./icons/hurricane":false,"./icons/hypnotize":false,"./icons/image-alt":false,"./icons/image-fill":false,"./icons/image":false,"./icons/images":false,"./icons/inbox-fill":false,"./icons/inbox":false,"./icons/inboxes-fill":false,"./icons/inboxes":false,"./icons/incognito":false,"./icons/indent":false,"./icons/infinity":false,"./icons/info-circle-fill":false,"./icons/info-circle":false,"./icons/info-lg":false,"./icons/info-square-fill":false,"./icons/info-square":false,"./icons/info":false,"./icons/input-cursor-text":false,"./icons/input-cursor":false,"./icons/instagram":false,"./icons/intersect":false,"./icons/journal-album":false,"./icons/journal-arrow-down":false,"./icons/journal-arrow-up":false,"./icons/journal-bookmark-fill":false,"./icons/journal-bookmark":false,"./icons/journal-check":false,"./icons/journal-code":false,"./icons/journal-medical":false,"./icons/journal-minus":false,"./icons/journal-plus":false,"./icons/journal-richtext":false,"./icons/journal-text":false,"./icons/journal-x":false,"./icons/journal":false,"./icons/journals":false,"./icons/joystick":false,"./icons/justify-left":false,"./icons/justify-right":false,"./icons/justify":false,"./icons/kanban-fill":false,"./icons/kanban":false,"./icons/key-fill":false,"./icons/key":false,"./icons/keyboard-fill":false,"./icons/keyboard":false,"./icons/ladder":false,"./icons/lamp-fill":false,"./icons/lamp":false,"./icons/laptop-fill":false,"./icons/laptop":false,"./icons/layer-backward":false,"./icons/layer-forward":false,"./icons/layers-fill":false,"./icons/layers-half":false,"./icons/layers":false,"./icons/layout-sidebar-inset-reverse":false,"./icons/layout-sidebar-inset":false,"./icons/layout-sidebar-reverse":false,"./icons/layout-sidebar":false,"./icons/layout-split":false,"./icons/layout-text-sidebar-reverse":false,"./icons/layout-text-sidebar":false,"./icons/layout-text-window-reverse":false,"./icons/layout-text-window":false,"./icons/layout-three-columns":false,"./icons/layout-wtf":false,"./icons/life-preserver":false,"./icons/lightbulb-fill":false,"./icons/lightbulb-off-fill":false,"./icons/lightbulb-off":false,"./icons/lightbulb":false,"./icons/lightning-charge-fill":false,"./icons/lightning-charge":false,"./icons/lightning-fill":false,"./icons/lightning":false,"./icons/line":false,"./icons/link-45deg":false,"./icons/link":false,"./icons/linkedin":false,"./icons/list-check":false,"./icons/list-columns-reverse":false,"./icons/list-columns":false,"./icons/list-nested":false,"./icons/list-ol":false,"./icons/list-stars":false,"./icons/list-task":false,"./icons/list-ul":false,"./icons/list":false,"./icons/lock-fill":false,"./icons/lock":false,"./icons/lungs-fill":false,"./icons/lungs":false,"./icons/magic":false,"./icons/magnet-fill":false,"./icons/magnet":false,"./icons/mailbox":false,"./icons/mailbox2":false,"./icons/map-fill":false,"./icons/map":false,"./icons/markdown-fill":false,"./icons/markdown":false,"./icons/mask":false,"./icons/mastodon":false,"./icons/medium":false,"./icons/megaphone-fill":false,"./icons/megaphone":false,"./icons/memory":false,"./icons/menu-app-fill":false,"./icons/menu-app":false,"./icons/menu-button-fill":false,"./icons/menu-button-wide-fill":false,"./icons/menu-button-wide":false,"./icons/menu-button":false,"./icons/menu-down":false,"./icons/menu-up":false,"./icons/messenger":false,"./icons/meta":false,"./icons/mic-fill":false,"./icons/mic-mute-fill":false,"./icons/mic-mute":false,"./icons/mic":false,"./icons/microsoft-teams":false,"./icons/microsoft":false,"./icons/minecart-loaded":false,"./icons/minecart":false,"./icons/modem-fill":false,"./icons/modem":false,"./icons/moisture":false,"./icons/moon-fill":false,"./icons/moon-stars-fill":false,"./icons/moon-stars":false,"./icons/moon":false,"./icons/mortarboard-fill":false,"./icons/mortarboard":false,"./icons/motherboard-fill":false,"./icons/motherboard":false,"./icons/mouse-fill":false,"./icons/mouse":false,"./icons/mouse2-fill":false,"./icons/mouse2":false,"./icons/mouse3-fill":false,"./icons/mouse3":false,"./icons/music-note-beamed":false,"./icons/music-note-list":false,"./icons/music-note":false,"./icons/music-player-fill":false,"./icons/music-player":false,"./icons/newspaper":false,"./icons/nintendo-switch":false,"./icons/node-minus-fill":false,"./icons/node-minus":false,"./icons/node-plus-fill":false,"./icons/node-plus":false,"./icons/nut-fill":false,"./icons/nut":false,"./icons/nvidia":false,"./icons/octagon-fill":false,"./icons/octagon-half":false,"./icons/octagon":false,"./icons/optical-audio-fill":false,"./icons/optical-audio":false,"./icons/option":false,"./icons/outlet":false,"./icons/p-circle-fill":false,"./icons/p-circle":false,"./icons/p-square-fill":false,"./icons/p-square":false,"./icons/paint-bucket":false,"./icons/palette-fill":false,"./icons/palette":false,"./icons/palette2":false,"./icons/paperclip":false,"./icons/paragraph":false,"./icons/pass-fill":false,"./icons/pass":false,"./icons/patch-check-fill":false,"./icons/patch-check":false,"./icons/patch-exclamation-fill":false,"./icons/patch-exclamation":false,"./icons/patch-minus-fill":false,"./icons/patch-minus":false,"./icons/patch-plus-fill":false,"./icons/patch-plus":false,"./icons/patch-question-fill":false,"./icons/patch-question":false,"./icons/pause-btn-fill":false,"./icons/pause-btn":false,"./icons/pause-circle-fill":false,"./icons/pause-circle":false,"./icons/pause-fill":false,"./icons/pause":false,"./icons/paypal":false,"./icons/pc-display-horizontal":false,"./icons/pc-display":false,"./icons/pc-horizontal":false,"./icons/pc":false,"./icons/pci-card":false,"./icons/peace-fill":false,"./icons/peace":false,"./icons/pen-fill":false,"./icons/pen":false,"./icons/pencil-fill":false,"./icons/pencil-square":false,"./icons/pencil":false,"./icons/pentagon-fill":false,"./icons/pentagon-half":false,"./icons/pentagon":false,"./icons/people-fill":false,"./icons/people":false,"./icons/percent":false,"./icons/person-add":false,"./icons/person-badge-fill":false,"./icons/person-badge":false,"./icons/person-bounding-box":false,"./icons/person-check-fill":false,"./icons/person-check":false,"./icons/person-circle":false,"./icons/person-dash-fill":false,"./icons/person-dash":false,"./icons/person-down":false,"./icons/person-exclamation":false,"./icons/person-fill-add":false,"./icons/person-fill-check":false,"./icons/person-fill-dash":false,"./icons/person-fill-down":false,"./icons/person-fill-exclamation":false,"./icons/person-fill-gear":false,"./icons/person-fill-lock":false,"./icons/person-fill-slash":false,"./icons/person-fill-up":false,"./icons/person-fill-x":false,"./icons/person-fill":false,"./icons/person-gear":false,"./icons/person-heart":false,"./icons/person-hearts":false,"./icons/person-lines-fill":false,"./icons/person-lock":false,"./icons/person-plus-fill":false,"./icons/person-plus":false,"./icons/person-rolodex":false,"./icons/person-slash":false,"./icons/person-square":"eTgsZ","./icons/person-up":false,"./icons/person-vcard-fill":false,"./icons/person-vcard":false,"./icons/person-video":false,"./icons/person-video2":false,"./icons/person-video3":false,"./icons/person-workspace":false,"./icons/person-x-fill":false,"./icons/person-x":false,"./icons/person":false,"./icons/phone-fill":false,"./icons/phone-flip":false,"./icons/phone-landscape-fill":false,"./icons/phone-landscape":false,"./icons/phone-vibrate-fill":false,"./icons/phone-vibrate":false,"./icons/phone":false,"./icons/pie-chart-fill":false,"./icons/pie-chart":false,"./icons/piggy-bank-fill":false,"./icons/piggy-bank":false,"./icons/pin-angle-fill":false,"./icons/pin-angle":false,"./icons/pin-fill":false,"./icons/pin-map-fill":false,"./icons/pin-map":false,"./icons/pin":false,"./icons/pinterest":false,"./icons/pip-fill":false,"./icons/pip":false,"./icons/play-btn-fill":false,"./icons/play-btn":false,"./icons/play-circle-fill":false,"./icons/play-circle":false,"./icons/play-fill":false,"./icons/play":false,"./icons/playstation":false,"./icons/plug-fill":false,"./icons/plug":false,"./icons/plugin":false,"./icons/plus-circle-dotted":false,"./icons/plus-circle-fill":false,"./icons/plus-circle":false,"./icons/plus-lg":false,"./icons/plus-slash-minus":false,"./icons/plus-square-dotted":false,"./icons/plus-square-fill":false,"./icons/plus-square":false,"./icons/plus":false,"./icons/postage-fill":false,"./icons/postage-heart-fill":false,"./icons/postage-heart":false,"./icons/postage":false,"./icons/postcard-fill":false,"./icons/postcard-heart-fill":false,"./icons/postcard-heart":false,"./icons/postcard":false,"./icons/power":false,"./icons/prescription":false,"./icons/prescription2":false,"./icons/printer-fill":false,"./icons/printer":false,"./icons/projector-fill":false,"./icons/projector":false,"./icons/puzzle-fill":false,"./icons/puzzle":false,"./icons/qr-code-scan":false,"./icons/qr-code":false,"./icons/question-circle-fill":false,"./icons/question-circle":false,"./icons/question-diamond-fill":false,"./icons/question-diamond":false,"./icons/question-lg":false,"./icons/question-octagon-fill":false,"./icons/question-octagon":false,"./icons/question-square-fill":false,"./icons/question-square":false,"./icons/question":false,"./icons/quora":false,"./icons/quote":false,"./icons/r-circle-fill":false,"./icons/r-circle":false,"./icons/r-square-fill":false,"./icons/r-square":false,"./icons/radioactive":false,"./icons/rainbow":false,"./icons/receipt-cutoff":false,"./icons/receipt":false,"./icons/reception-0":false,"./icons/reception-1":false,"./icons/reception-2":false,"./icons/reception-3":false,"./icons/reception-4":false,"./icons/record-btn-fill":false,"./icons/record-btn":false,"./icons/record-circle-fill":false,"./icons/record-circle":false,"./icons/record-fill":false,"./icons/record":false,"./icons/record2-fill":false,"./icons/record2":false,"./icons/recycle":false,"./icons/reddit":false,"./icons/regex":false,"./icons/repeat-1":false,"./icons/repeat":false,"./icons/reply-all-fill":false,"./icons/reply-all":false,"./icons/reply-fill":false,"./icons/reply":false,"./icons/rewind-btn-fill":false,"./icons/rewind-btn":false,"./icons/rewind-circle-fill":false,"./icons/rewind-circle":false,"./icons/rewind-fill":false,"./icons/rewind":false,"./icons/robot":false,"./icons/rocket-fill":false,"./icons/rocket-takeoff-fill":false,"./icons/rocket-takeoff":false,"./icons/rocket":false,"./icons/router-fill":false,"./icons/router":false,"./icons/rss-fill":false,"./icons/rss":false,"./icons/rulers":false,"./icons/safe-fill":false,"./icons/safe":false,"./icons/safe2-fill":false,"./icons/safe2":false,"./icons/save-fill":false,"./icons/save":false,"./icons/save2-fill":false,"./icons/save2":false,"./icons/scissors":false,"./icons/scooter":false,"./icons/screwdriver":false,"./icons/sd-card-fill":false,"./icons/sd-card":false,"./icons/search-heart-fill":false,"./icons/search-heart":false,"./icons/search":"jsdpp","./icons/segmented-nav":false,"./icons/send-check-fill":false,"./icons/send-check":false,"./icons/send-dash-fill":false,"./icons/send-dash":false,"./icons/send-exclamation-fill":false,"./icons/send-exclamation":false,"./icons/send-fill":false,"./icons/send-plus-fill":false,"./icons/send-plus":false,"./icons/send-slash-fill":false,"./icons/send-slash":false,"./icons/send-x-fill":false,"./icons/send-x":false,"./icons/send":false,"./icons/server":false,"./icons/share-fill":false,"./icons/share":false,"./icons/shield-check":false,"./icons/shield-exclamation":false,"./icons/shield-fill-check":false,"./icons/shield-fill-exclamation":false,"./icons/shield-fill-minus":false,"./icons/shield-fill-plus":false,"./icons/shield-fill-x":false,"./icons/shield-fill":false,"./icons/shield-lock-fill":false,"./icons/shield-lock":false,"./icons/shield-minus":false,"./icons/shield-plus":false,"./icons/shield-shaded":false,"./icons/shield-slash-fill":false,"./icons/shield-slash":false,"./icons/shield-x":false,"./icons/shield":false,"./icons/shift-fill":false,"./icons/shift":false,"./icons/shop-window":false,"./icons/shop":false,"./icons/shuffle":false,"./icons/sign-dead-end-fill":false,"./icons/sign-dead-end":false,"./icons/sign-do-not-enter-fill":false,"./icons/sign-do-not-enter":false,"./icons/sign-intersection-fill":false,"./icons/sign-intersection-side-fill":false,"./icons/sign-intersection-side":false,"./icons/sign-intersection-t-fill":false,"./icons/sign-intersection-t":false,"./icons/sign-intersection-y-fill":false,"./icons/sign-intersection-y":false,"./icons/sign-intersection":false,"./icons/sign-merge-left-fill":false,"./icons/sign-merge-left":false,"./icons/sign-merge-right-fill":false,"./icons/sign-merge-right":false,"./icons/sign-no-left-turn-fill":false,"./icons/sign-no-left-turn":false,"./icons/sign-no-parking-fill":false,"./icons/sign-no-parking":false,"./icons/sign-no-right-turn-fill":false,"./icons/sign-no-right-turn":false,"./icons/sign-railroad-fill":false,"./icons/sign-railroad":false,"./icons/sign-stop-fill":false,"./icons/sign-stop-lights-fill":false,"./icons/sign-stop-lights":false,"./icons/sign-stop":false,"./icons/sign-turn-left-fill":false,"./icons/sign-turn-left":false,"./icons/sign-turn-right-fill":false,"./icons/sign-turn-right":false,"./icons/sign-turn-slight-left-fill":false,"./icons/sign-turn-slight-left":false,"./icons/sign-turn-slight-right-fill":false,"./icons/sign-turn-slight-right":false,"./icons/sign-yield-fill":false,"./icons/sign-yield":false,"./icons/signal":false,"./icons/signpost-2-fill":false,"./icons/signpost-2":false,"./icons/signpost-fill":false,"./icons/signpost-split-fill":false,"./icons/signpost-split":false,"./icons/signpost":false,"./icons/sim-fill":false,"./icons/sim":false,"./icons/sina-weibo":false,"./icons/skip-backward-btn-fill":false,"./icons/skip-backward-btn":false,"./icons/skip-backward-circle-fill":false,"./icons/skip-backward-circle":false,"./icons/skip-backward-fill":false,"./icons/skip-backward":false,"./icons/skip-end-btn-fill":false,"./icons/skip-end-btn":false,"./icons/skip-end-circle-fill":false,"./icons/skip-end-circle":false,"./icons/skip-end-fill":false,"./icons/skip-end":false,"./icons/skip-forward-btn-fill":false,"./icons/skip-forward-btn":false,"./icons/skip-forward-circle-fill":false,"./icons/skip-forward-circle":false,"./icons/skip-forward-fill":false,"./icons/skip-forward":false,"./icons/skip-start-btn-fill":false,"./icons/skip-start-btn":false,"./icons/skip-start-circle-fill":false,"./icons/skip-start-circle":false,"./icons/skip-start-fill":false,"./icons/skip-start":false,"./icons/skype":false,"./icons/slack":false,"./icons/slash-circle-fill":false,"./icons/slash-circle":false,"./icons/slash-lg":false,"./icons/slash-square-fill":false,"./icons/slash-square":false,"./icons/slash":false,"./icons/sliders":false,"./icons/sliders2-vertical":false,"./icons/sliders2":false,"./icons/smartwatch":false,"./icons/snapchat":false,"./icons/snow":false,"./icons/snow2":false,"./icons/snow3":false,"./icons/sort-alpha-down-alt":false,"./icons/sort-alpha-down":false,"./icons/sort-alpha-up-alt":false,"./icons/sort-alpha-up":false,"./icons/sort-down-alt":false,"./icons/sort-down":false,"./icons/sort-numeric-down-alt":false,"./icons/sort-numeric-down":false,"./icons/sort-numeric-up-alt":false,"./icons/sort-numeric-up":false,"./icons/sort-up-alt":false,"./icons/sort-up":false,"./icons/soundwave":false,"./icons/speaker-fill":false,"./icons/speaker":false,"./icons/speedometer":false,"./icons/speedometer2":false,"./icons/spellcheck":false,"./icons/spotify":false,"./icons/square-fill":false,"./icons/square-half":false,"./icons/square":false,"./icons/stack-overflow":false,"./icons/stack":false,"./icons/star-fill":false,"./icons/star-half":false,"./icons/star":false,"./icons/stars":false,"./icons/steam":false,"./icons/stickies-fill":false,"./icons/stickies":false,"./icons/sticky-fill":false,"./icons/sticky":false,"./icons/stop-btn-fill":false,"./icons/stop-btn":false,"./icons/stop-circle-fill":false,"./icons/stop-circle":false,"./icons/stop-fill":false,"./icons/stop":false,"./icons/stoplights-fill":false,"./icons/stoplights":false,"./icons/stopwatch-fill":false,"./icons/stopwatch":false,"./icons/strava":false,"./icons/stripe":false,"./icons/subscript":false,"./icons/subtract":false,"./icons/suit-club-fill":false,"./icons/suit-club":false,"./icons/suit-diamond-fill":false,"./icons/suit-diamond":false,"./icons/suit-heart-fill":false,"./icons/suit-heart":false,"./icons/suit-spade-fill":false,"./icons/suit-spade":false,"./icons/sun-fill":false,"./icons/sun":false,"./icons/sunglasses":false,"./icons/sunrise-fill":false,"./icons/sunrise":false,"./icons/sunset-fill":false,"./icons/sunset":false,"./icons/superscript":false,"./icons/symmetry-horizontal":false,"./icons/symmetry-vertical":false,"./icons/table":false,"./icons/tablet-fill":false,"./icons/tablet-landscape-fill":false,"./icons/tablet-landscape":false,"./icons/tablet":false,"./icons/tag-fill":false,"./icons/tag":false,"./icons/tags-fill":false,"./icons/tags":false,"./icons/taxi-front-fill":false,"./icons/taxi-front":false,"./icons/telegram":false,"./icons/telephone-fill":false,"./icons/telephone-forward-fill":false,"./icons/telephone-forward":false,"./icons/telephone-inbound-fill":false,"./icons/telephone-inbound":false,"./icons/telephone-minus-fill":false,"./icons/telephone-minus":false,"./icons/telephone-outbound-fill":false,"./icons/telephone-outbound":false,"./icons/telephone-plus-fill":false,"./icons/telephone-plus":false,"./icons/telephone-x-fill":false,"./icons/telephone-x":false,"./icons/telephone":false,"./icons/tencent-qq":false,"./icons/terminal-dash":false,"./icons/terminal-fill":false,"./icons/terminal-plus":false,"./icons/terminal-split":false,"./icons/terminal-x":false,"./icons/terminal":false,"./icons/text-center":false,"./icons/text-indent-left":false,"./icons/text-indent-right":false,"./icons/text-left":false,"./icons/text-paragraph":false,"./icons/text-right":false,"./icons/text-wrap":false,"./icons/textarea-resize":false,"./icons/textarea-t":false,"./icons/textarea":false,"./icons/thermometer-half":false,"./icons/thermometer-high":false,"./icons/thermometer-low":false,"./icons/thermometer-snow":false,"./icons/thermometer-sun":false,"./icons/thermometer":false,"./icons/three-dots-vertical":false,"./icons/three-dots":false,"./icons/thunderbolt-fill":false,"./icons/thunderbolt":false,"./icons/ticket-detailed-fill":false,"./icons/ticket-detailed":false,"./icons/ticket-fill":false,"./icons/ticket-perforated-fill":false,"./icons/ticket-perforated":false,"./icons/ticket":false,"./icons/tiktok":false,"./icons/toggle-off":false,"./icons/toggle-on":false,"./icons/toggle2-off":false,"./icons/toggle2-on":false,"./icons/toggles":false,"./icons/toggles2":false,"./icons/tools":false,"./icons/tornado":false,"./icons/train-freight-front-fill":false,"./icons/train-freight-front":false,"./icons/train-front-fill":false,"./icons/train-front":false,"./icons/train-lightrail-front-fill":false,"./icons/train-lightrail-front":false,"./icons/translate":false,"./icons/trash-fill":false,"./icons/trash":false,"./icons/trash2-fill":false,"./icons/trash2":false,"./icons/trash3-fill":false,"./icons/trash3":false,"./icons/tree-fill":false,"./icons/tree":false,"./icons/trello":false,"./icons/triangle-fill":false,"./icons/triangle-half":false,"./icons/triangle":false,"./icons/trophy-fill":false,"./icons/trophy":false,"./icons/tropical-storm":false,"./icons/truck-flatbed":false,"./icons/truck-front-fill":false,"./icons/truck-front":false,"./icons/truck":false,"./icons/tsunami":false,"./icons/tv-fill":false,"./icons/tv":false,"./icons/twitch":false,"./icons/twitter":false,"./icons/type-bold":false,"./icons/type-h1":false,"./icons/type-h2":false,"./icons/type-h3":false,"./icons/type-italic":false,"./icons/type-strikethrough":false,"./icons/type-underline":false,"./icons/type":false,"./icons/ubuntu":false,"./icons/ui-checks-grid":false,"./icons/ui-checks":false,"./icons/ui-radios-grid":false,"./icons/ui-radios":false,"./icons/umbrella-fill":false,"./icons/umbrella":false,"./icons/unindent":false,"./icons/union":false,"./icons/unity":false,"./icons/universal-access-circle":false,"./icons/universal-access":false,"./icons/unlock-fill":false,"./icons/unlock":false,"./icons/upc-scan":false,"./icons/upc":false,"./icons/upload":false,"./icons/usb-c-fill":false,"./icons/usb-c":false,"./icons/usb-drive-fill":false,"./icons/usb-drive":false,"./icons/usb-fill":false,"./icons/usb-micro-fill":false,"./icons/usb-micro":false,"./icons/usb-mini-fill":false,"./icons/usb-mini":false,"./icons/usb-plug-fill":false,"./icons/usb-plug":false,"./icons/usb-symbol":false,"./icons/usb":false,"./icons/valentine":false,"./icons/valentine2":false,"./icons/vector-pen":false,"./icons/view-list":false,"./icons/view-stacked":false,"./icons/vimeo":false,"./icons/vinyl-fill":false,"./icons/vinyl":false,"./icons/virus":false,"./icons/virus2":false,"./icons/voicemail":false,"./icons/volume-down-fill":false,"./icons/volume-down":false,"./icons/volume-mute-fill":false,"./icons/volume-mute":false,"./icons/volume-off-fill":false,"./icons/volume-off":false,"./icons/volume-up-fill":false,"./icons/volume-up":false,"./icons/vr":false,"./icons/wallet-fill":false,"./icons/wallet":false,"./icons/wallet2":false,"./icons/watch":false,"./icons/water":false,"./icons/webcam-fill":false,"./icons/webcam":false,"./icons/wechat":false,"./icons/whatsapp":false,"./icons/wifi-1":false,"./icons/wifi-2":false,"./icons/wifi-off":false,"./icons/wifi":false,"./icons/wikipedia":false,"./icons/wind":false,"./icons/window-dash":false,"./icons/window-desktop":false,"./icons/window-dock":false,"./icons/window-fullscreen":false,"./icons/window-plus":false,"./icons/window-sidebar":false,"./icons/window-split":false,"./icons/window-stack":false,"./icons/window-x":false,"./icons/window":false,"./icons/windows":false,"./icons/wordpress":false,"./icons/wrench-adjustable-circle-fill":false,"./icons/wrench-adjustable-circle":false,"./icons/wrench-adjustable":false,"./icons/wrench":false,"./icons/x-circle-fill":false,"./icons/x-circle":false,"./icons/x-diamond-fill":false,"./icons/x-diamond":false,"./icons/x-lg":false,"./icons/x-octagon-fill":false,"./icons/x-octagon":false,"./icons/x-square-fill":false,"./icons/x-square":false,"./icons/x":false,"./icons/xbox":false,"./icons/yelp":false,"./icons/yin-yang":false,"./icons/youtube":false,"./icons/zoom-in":false,"./icons/zoom-out":false,"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"1c43K":[function(require,module,exports) {
+},{"./icons/0-circle-fill":false,"./icons/0-circle":false,"./icons/0-square-fill":false,"./icons/0-square":false,"./icons/1-circle-fill":false,"./icons/1-circle":false,"./icons/1-square-fill":false,"./icons/1-square":false,"./icons/123":false,"./icons/2-circle-fill":false,"./icons/2-circle":false,"./icons/2-square-fill":false,"./icons/2-square":false,"./icons/3-circle-fill":false,"./icons/3-circle":false,"./icons/3-square-fill":false,"./icons/3-square":false,"./icons/4-circle-fill":false,"./icons/4-circle":false,"./icons/4-square-fill":false,"./icons/4-square":false,"./icons/5-circle-fill":false,"./icons/5-circle":false,"./icons/5-square-fill":false,"./icons/5-square":false,"./icons/6-circle-fill":false,"./icons/6-circle":false,"./icons/6-square-fill":false,"./icons/6-square":false,"./icons/7-circle-fill":false,"./icons/7-circle":false,"./icons/7-square-fill":false,"./icons/7-square":false,"./icons/8-circle-fill":false,"./icons/8-circle":false,"./icons/8-square-fill":false,"./icons/8-square":false,"./icons/9-circle-fill":false,"./icons/9-circle":false,"./icons/9-square-fill":false,"./icons/9-square":false,"./icons/activity":false,"./icons/airplane-engines-fill":false,"./icons/airplane-engines":false,"./icons/airplane-fill":false,"./icons/airplane":false,"./icons/alarm-fill":false,"./icons/alarm":false,"./icons/alexa":false,"./icons/align-bottom":false,"./icons/align-center":false,"./icons/align-end":false,"./icons/align-middle":false,"./icons/align-start":false,"./icons/align-top":false,"./icons/alipay":false,"./icons/alt":false,"./icons/amd":false,"./icons/android":false,"./icons/android2":false,"./icons/app-indicator":false,"./icons/app":false,"./icons/apple":false,"./icons/archive-fill":false,"./icons/archive":false,"./icons/arrow-90deg-down":false,"./icons/arrow-90deg-left":false,"./icons/arrow-90deg-right":false,"./icons/arrow-90deg-up":false,"./icons/arrow-bar-down":false,"./icons/arrow-bar-left":false,"./icons/arrow-bar-right":false,"./icons/arrow-bar-up":false,"./icons/arrow-clockwise":false,"./icons/arrow-counterclockwise":false,"./icons/arrow-down-circle-fill":false,"./icons/arrow-down-circle":false,"./icons/arrow-down-left-circle-fill":false,"./icons/arrow-down-left-circle":false,"./icons/arrow-down-left-square-fill":false,"./icons/arrow-down-left-square":false,"./icons/arrow-down-left":false,"./icons/arrow-down-right-circle-fill":false,"./icons/arrow-down-right-circle":false,"./icons/arrow-down-right-square-fill":false,"./icons/arrow-down-right-square":false,"./icons/arrow-down-right":false,"./icons/arrow-down-short":false,"./icons/arrow-down-square-fill":false,"./icons/arrow-down-square":false,"./icons/arrow-down-up":false,"./icons/arrow-down":false,"./icons/arrow-left-circle-fill":false,"./icons/arrow-left-circle":false,"./icons/arrow-left-right":false,"./icons/arrow-left-short":false,"./icons/arrow-left-square-fill":false,"./icons/arrow-left-square":false,"./icons/arrow-left":false,"./icons/arrow-repeat":false,"./icons/arrow-return-left":false,"./icons/arrow-return-right":false,"./icons/arrow-right-circle-fill":false,"./icons/arrow-right-circle":false,"./icons/arrow-right-short":false,"./icons/arrow-right-square-fill":false,"./icons/arrow-right-square":false,"./icons/arrow-right":false,"./icons/arrow-through-heart-fill":false,"./icons/arrow-through-heart":false,"./icons/arrow-up-circle-fill":false,"./icons/arrow-up-circle":false,"./icons/arrow-up-left-circle-fill":false,"./icons/arrow-up-left-circle":false,"./icons/arrow-up-left-square-fill":false,"./icons/arrow-up-left-square":false,"./icons/arrow-up-left":false,"./icons/arrow-up-right-circle-fill":false,"./icons/arrow-up-right-circle":false,"./icons/arrow-up-right-square-fill":false,"./icons/arrow-up-right-square":false,"./icons/arrow-up-right":false,"./icons/arrow-up-short":false,"./icons/arrow-up-square-fill":false,"./icons/arrow-up-square":false,"./icons/arrow-up":false,"./icons/arrows-angle-contract":false,"./icons/arrows-angle-expand":false,"./icons/arrows-collapse":false,"./icons/arrows-expand":false,"./icons/arrows-fullscreen":false,"./icons/arrows-move":false,"./icons/aspect-ratio-fill":false,"./icons/aspect-ratio":false,"./icons/asterisk":false,"./icons/at":false,"./icons/award-fill":false,"./icons/award":false,"./icons/back":false,"./icons/backspace-fill":false,"./icons/backspace-reverse-fill":false,"./icons/backspace-reverse":false,"./icons/backspace":false,"./icons/badge-3d-fill":false,"./icons/badge-3d":false,"./icons/badge-4k-fill":false,"./icons/badge-4k":false,"./icons/badge-8k-fill":false,"./icons/badge-8k":false,"./icons/badge-ad-fill":false,"./icons/badge-ad":false,"./icons/badge-ar-fill":false,"./icons/badge-ar":false,"./icons/badge-cc-fill":false,"./icons/badge-cc":false,"./icons/badge-hd-fill":false,"./icons/badge-hd":false,"./icons/badge-sd-fill":false,"./icons/badge-sd":false,"./icons/badge-tm-fill":false,"./icons/badge-tm":false,"./icons/badge-vo-fill":false,"./icons/badge-vo":false,"./icons/badge-vr-fill":false,"./icons/badge-vr":false,"./icons/badge-wc-fill":false,"./icons/badge-wc":false,"./icons/bag-check-fill":false,"./icons/bag-check":false,"./icons/bag-dash-fill":false,"./icons/bag-dash":false,"./icons/bag-fill":false,"./icons/bag-heart-fill":false,"./icons/bag-heart":false,"./icons/bag-plus-fill":false,"./icons/bag-plus":false,"./icons/bag-x-fill":false,"./icons/bag-x":false,"./icons/bag":false,"./icons/balloon-fill":false,"./icons/balloon-heart-fill":false,"./icons/balloon-heart":false,"./icons/balloon":false,"./icons/bandaid-fill":false,"./icons/bandaid":false,"./icons/bank":false,"./icons/bank2":false,"./icons/bar-chart-fill":false,"./icons/bar-chart-line-fill":false,"./icons/bar-chart-line":false,"./icons/bar-chart-steps":false,"./icons/bar-chart":false,"./icons/basket-fill":false,"./icons/basket":false,"./icons/basket2-fill":false,"./icons/basket2":false,"./icons/basket3-fill":false,"./icons/basket3":false,"./icons/battery-charging":false,"./icons/battery-full":false,"./icons/battery-half":false,"./icons/battery":false,"./icons/behance":false,"./icons/bell-fill":false,"./icons/bell-slash-fill":false,"./icons/bell-slash":false,"./icons/bell":false,"./icons/bezier":false,"./icons/bezier2":false,"./icons/bicycle":false,"./icons/binoculars-fill":false,"./icons/binoculars":false,"./icons/blockquote-left":false,"./icons/blockquote-right":false,"./icons/bluetooth":false,"./icons/body-text":false,"./icons/book-fill":false,"./icons/book-half":false,"./icons/book":false,"./icons/bookmark-check-fill":false,"./icons/bookmark-check":false,"./icons/bookmark-dash-fill":false,"./icons/bookmark-dash":false,"./icons/bookmark-fill":false,"./icons/bookmark-heart-fill":false,"./icons/bookmark-heart":false,"./icons/bookmark-plus-fill":false,"./icons/bookmark-plus":false,"./icons/bookmark-star-fill":"1c43K","./icons/bookmark-star":"lifnY","./icons/bookmark-x-fill":false,"./icons/bookmark-x":false,"./icons/bookmark":false,"./icons/bookmarks-fill":false,"./icons/bookmarks":false,"./icons/bookshelf":false,"./icons/boombox-fill":false,"./icons/boombox":false,"./icons/bootstrap-fill":false,"./icons/bootstrap-reboot":false,"./icons/bootstrap":false,"./icons/border-all":false,"./icons/border-bottom":false,"./icons/border-center":false,"./icons/border-inner":false,"./icons/border-left":false,"./icons/border-middle":false,"./icons/border-outer":false,"./icons/border-right":false,"./icons/border-style":false,"./icons/border-top":false,"./icons/border-width":false,"./icons/border":false,"./icons/bounding-box-circles":false,"./icons/bounding-box":false,"./icons/box-arrow-down-left":false,"./icons/box-arrow-down-right":false,"./icons/box-arrow-down":false,"./icons/box-arrow-in-down-left":false,"./icons/box-arrow-in-down-right":false,"./icons/box-arrow-in-down":false,"./icons/box-arrow-in-left":false,"./icons/box-arrow-in-right":false,"./icons/box-arrow-in-up-left":false,"./icons/box-arrow-in-up-right":false,"./icons/box-arrow-in-up":false,"./icons/box-arrow-left":false,"./icons/box-arrow-right":false,"./icons/box-arrow-up-left":false,"./icons/box-arrow-up-right":false,"./icons/box-arrow-up":false,"./icons/box-fill":false,"./icons/box-seam-fill":false,"./icons/box-seam":false,"./icons/box":false,"./icons/box2-fill":false,"./icons/box2-heart-fill":false,"./icons/box2-heart":false,"./icons/box2":false,"./icons/boxes":false,"./icons/braces-asterisk":false,"./icons/braces":false,"./icons/bricks":false,"./icons/briefcase-fill":false,"./icons/briefcase":false,"./icons/brightness-alt-high-fill":false,"./icons/brightness-alt-high":false,"./icons/brightness-alt-low-fill":false,"./icons/brightness-alt-low":false,"./icons/brightness-high-fill":false,"./icons/brightness-high":false,"./icons/brightness-low-fill":false,"./icons/brightness-low":false,"./icons/broadcast-pin":false,"./icons/broadcast":false,"./icons/browser-chrome":false,"./icons/browser-edge":false,"./icons/browser-firefox":false,"./icons/browser-safari":false,"./icons/brush-fill":false,"./icons/brush":false,"./icons/bucket-fill":false,"./icons/bucket":false,"./icons/bug-fill":false,"./icons/bug":false,"./icons/building-add":false,"./icons/building-check":false,"./icons/building-dash":false,"./icons/building-down":false,"./icons/building-exclamation":false,"./icons/building-fill-add":false,"./icons/building-fill-check":false,"./icons/building-fill-dash":false,"./icons/building-fill-down":false,"./icons/building-fill-exclamation":false,"./icons/building-fill-gear":false,"./icons/building-fill-lock":false,"./icons/building-fill-slash":false,"./icons/building-fill-up":false,"./icons/building-fill-x":false,"./icons/building-fill":false,"./icons/building-gear":false,"./icons/building-lock":false,"./icons/building-slash":false,"./icons/building-up":false,"./icons/building-x":false,"./icons/building":false,"./icons/buildings-fill":false,"./icons/buildings":false,"./icons/bullseye":false,"./icons/bus-front-fill":false,"./icons/bus-front":false,"./icons/c-circle-fill":false,"./icons/c-circle":false,"./icons/c-square-fill":false,"./icons/c-square":false,"./icons/calculator-fill":false,"./icons/calculator":false,"./icons/calendar-check-fill":false,"./icons/calendar-check":false,"./icons/calendar-date-fill":false,"./icons/calendar-date":false,"./icons/calendar-day-fill":false,"./icons/calendar-day":false,"./icons/calendar-event-fill":false,"./icons/calendar-event":false,"./icons/calendar-fill":false,"./icons/calendar-heart-fill":false,"./icons/calendar-heart":false,"./icons/calendar-minus-fill":false,"./icons/calendar-minus":false,"./icons/calendar-month-fill":false,"./icons/calendar-month":false,"./icons/calendar-plus-fill":false,"./icons/calendar-plus":false,"./icons/calendar-range-fill":false,"./icons/calendar-range":false,"./icons/calendar-week-fill":false,"./icons/calendar-week":false,"./icons/calendar-x-fill":false,"./icons/calendar-x":false,"./icons/calendar":false,"./icons/calendar2-check-fill":false,"./icons/calendar2-check":false,"./icons/calendar2-date-fill":false,"./icons/calendar2-date":false,"./icons/calendar2-day-fill":false,"./icons/calendar2-day":false,"./icons/calendar2-event-fill":false,"./icons/calendar2-event":false,"./icons/calendar2-fill":false,"./icons/calendar2-heart-fill":false,"./icons/calendar2-heart":false,"./icons/calendar2-minus-fill":false,"./icons/calendar2-minus":false,"./icons/calendar2-month-fill":false,"./icons/calendar2-month":false,"./icons/calendar2-plus-fill":false,"./icons/calendar2-plus":false,"./icons/calendar2-range-fill":false,"./icons/calendar2-range":false,"./icons/calendar2-week-fill":false,"./icons/calendar2-week":false,"./icons/calendar2-x-fill":false,"./icons/calendar2-x":false,"./icons/calendar2":false,"./icons/calendar3-event-fill":false,"./icons/calendar3-event":false,"./icons/calendar3-fill":false,"./icons/calendar3-range-fill":false,"./icons/calendar3-range":false,"./icons/calendar3-week-fill":false,"./icons/calendar3-week":false,"./icons/calendar3":false,"./icons/calendar4-event":false,"./icons/calendar4-range":false,"./icons/calendar4-week":false,"./icons/calendar4":false,"./icons/camera-fill":false,"./icons/camera-reels-fill":false,"./icons/camera-reels":false,"./icons/camera-video-fill":false,"./icons/camera-video-off-fill":false,"./icons/camera-video-off":false,"./icons/camera-video":false,"./icons/camera":false,"./icons/camera2":false,"./icons/capslock-fill":false,"./icons/capslock":false,"./icons/capsule-pill":false,"./icons/capsule":false,"./icons/car-front-fill":false,"./icons/car-front":false,"./icons/card-checklist":false,"./icons/card-heading":false,"./icons/card-image":false,"./icons/card-list":false,"./icons/card-text":false,"./icons/caret-down-fill":false,"./icons/caret-down-square-fill":false,"./icons/caret-down-square":false,"./icons/caret-down":false,"./icons/caret-left-fill":false,"./icons/caret-left-square-fill":false,"./icons/caret-left-square":false,"./icons/caret-left":false,"./icons/caret-right-fill":false,"./icons/caret-right-square-fill":false,"./icons/caret-right-square":false,"./icons/caret-right":false,"./icons/caret-up-fill":false,"./icons/caret-up-square-fill":false,"./icons/caret-up-square":false,"./icons/caret-up":false,"./icons/cart-check-fill":false,"./icons/cart-check":false,"./icons/cart-dash-fill":false,"./icons/cart-dash":false,"./icons/cart-fill":false,"./icons/cart-plus-fill":false,"./icons/cart-plus":false,"./icons/cart-x-fill":false,"./icons/cart-x":false,"./icons/cart":false,"./icons/cart2":false,"./icons/cart3":false,"./icons/cart4":false,"./icons/cash-coin":false,"./icons/cash-stack":false,"./icons/cash":false,"./icons/cassette-fill":false,"./icons/cassette":false,"./icons/cast":false,"./icons/cc-circle-fill":false,"./icons/cc-circle":false,"./icons/cc-square-fill":false,"./icons/cc-square":false,"./icons/chat-dots-fill":false,"./icons/chat-dots":false,"./icons/chat-fill":false,"./icons/chat-heart-fill":false,"./icons/chat-heart":false,"./icons/chat-left-dots-fill":false,"./icons/chat-left-dots":false,"./icons/chat-left-fill":false,"./icons/chat-left-heart-fill":false,"./icons/chat-left-heart":false,"./icons/chat-left-quote-fill":false,"./icons/chat-left-quote":false,"./icons/chat-left-text-fill":false,"./icons/chat-left-text":false,"./icons/chat-left":false,"./icons/chat-quote-fill":false,"./icons/chat-quote":false,"./icons/chat-right-dots-fill":false,"./icons/chat-right-dots":false,"./icons/chat-right-fill":false,"./icons/chat-right-heart-fill":false,"./icons/chat-right-heart":false,"./icons/chat-right-quote-fill":false,"./icons/chat-right-quote":false,"./icons/chat-right-text-fill":false,"./icons/chat-right-text":false,"./icons/chat-right":false,"./icons/chat-square-dots-fill":false,"./icons/chat-square-dots":false,"./icons/chat-square-fill":false,"./icons/chat-square-heart-fill":false,"./icons/chat-square-heart":false,"./icons/chat-square-quote-fill":false,"./icons/chat-square-quote":false,"./icons/chat-square-text-fill":false,"./icons/chat-square-text":false,"./icons/chat-square":false,"./icons/chat-text-fill":false,"./icons/chat-text":false,"./icons/chat":false,"./icons/check-all":false,"./icons/check-circle-fill":false,"./icons/check-circle":false,"./icons/check-lg":false,"./icons/check-square-fill":false,"./icons/check-square":false,"./icons/check":false,"./icons/check2-all":false,"./icons/check2-circle":false,"./icons/check2-square":false,"./icons/check2":false,"./icons/chevron-bar-contract":false,"./icons/chevron-bar-down":false,"./icons/chevron-bar-expand":false,"./icons/chevron-bar-left":false,"./icons/chevron-bar-right":false,"./icons/chevron-bar-up":false,"./icons/chevron-compact-down":false,"./icons/chevron-compact-left":false,"./icons/chevron-compact-right":false,"./icons/chevron-compact-up":false,"./icons/chevron-contract":false,"./icons/chevron-double-down":false,"./icons/chevron-double-left":false,"./icons/chevron-double-right":false,"./icons/chevron-double-up":false,"./icons/chevron-down":false,"./icons/chevron-expand":false,"./icons/chevron-left":false,"./icons/chevron-right":false,"./icons/chevron-up":false,"./icons/circle-fill":false,"./icons/circle-half":false,"./icons/circle-square":false,"./icons/circle":false,"./icons/clipboard-check-fill":false,"./icons/clipboard-check":false,"./icons/clipboard-data-fill":false,"./icons/clipboard-data":false,"./icons/clipboard-fill":false,"./icons/clipboard-heart-fill":false,"./icons/clipboard-heart":false,"./icons/clipboard-minus-fill":false,"./icons/clipboard-minus":false,"./icons/clipboard-plus-fill":false,"./icons/clipboard-plus":false,"./icons/clipboard-pulse":false,"./icons/clipboard-x-fill":false,"./icons/clipboard-x":false,"./icons/clipboard":false,"./icons/clipboard2-check-fill":false,"./icons/clipboard2-check":false,"./icons/clipboard2-data-fill":false,"./icons/clipboard2-data":false,"./icons/clipboard2-fill":false,"./icons/clipboard2-heart-fill":false,"./icons/clipboard2-heart":false,"./icons/clipboard2-minus-fill":false,"./icons/clipboard2-minus":false,"./icons/clipboard2-plus-fill":false,"./icons/clipboard2-plus":false,"./icons/clipboard2-pulse-fill":false,"./icons/clipboard2-pulse":false,"./icons/clipboard2-x-fill":false,"./icons/clipboard2-x":false,"./icons/clipboard2":false,"./icons/clock-fill":false,"./icons/clock-history":false,"./icons/clock":false,"./icons/cloud-arrow-down-fill":false,"./icons/cloud-arrow-down":false,"./icons/cloud-arrow-up-fill":false,"./icons/cloud-arrow-up":false,"./icons/cloud-check-fill":false,"./icons/cloud-check":false,"./icons/cloud-download-fill":false,"./icons/cloud-download":false,"./icons/cloud-drizzle-fill":false,"./icons/cloud-drizzle":false,"./icons/cloud-fill":false,"./icons/cloud-fog-fill":false,"./icons/cloud-fog":false,"./icons/cloud-fog2-fill":false,"./icons/cloud-fog2":false,"./icons/cloud-hail-fill":false,"./icons/cloud-hail":false,"./icons/cloud-haze-fill":false,"./icons/cloud-haze":false,"./icons/cloud-haze2-fill":false,"./icons/cloud-haze2":false,"./icons/cloud-lightning-fill":false,"./icons/cloud-lightning-rain-fill":false,"./icons/cloud-lightning-rain":false,"./icons/cloud-lightning":false,"./icons/cloud-minus-fill":false,"./icons/cloud-minus":false,"./icons/cloud-moon-fill":false,"./icons/cloud-moon":false,"./icons/cloud-plus-fill":false,"./icons/cloud-plus":false,"./icons/cloud-rain-fill":false,"./icons/cloud-rain-heavy-fill":false,"./icons/cloud-rain-heavy":false,"./icons/cloud-rain":false,"./icons/cloud-slash-fill":false,"./icons/cloud-slash":false,"./icons/cloud-sleet-fill":false,"./icons/cloud-sleet":false,"./icons/cloud-snow-fill":false,"./icons/cloud-snow":false,"./icons/cloud-sun-fill":false,"./icons/cloud-sun":false,"./icons/cloud-upload-fill":false,"./icons/cloud-upload":false,"./icons/cloud":false,"./icons/clouds-fill":false,"./icons/clouds":false,"./icons/cloudy-fill":false,"./icons/cloudy":false,"./icons/code-slash":false,"./icons/code-square":false,"./icons/code":false,"./icons/coin":false,"./icons/collection-fill":false,"./icons/collection-play-fill":false,"./icons/collection-play":false,"./icons/collection":false,"./icons/columns-gap":false,"./icons/columns":false,"./icons/command":false,"./icons/compass-fill":false,"./icons/compass":false,"./icons/cone-striped":false,"./icons/cone":false,"./icons/controller":false,"./icons/cpu-fill":false,"./icons/cpu":false,"./icons/credit-card-2-back-fill":false,"./icons/credit-card-2-back":false,"./icons/credit-card-2-front-fill":false,"./icons/credit-card-2-front":false,"./icons/credit-card-fill":false,"./icons/credit-card":false,"./icons/crop":false,"./icons/cup-fill":false,"./icons/cup-hot-fill":false,"./icons/cup-hot":false,"./icons/cup-straw":false,"./icons/cup":false,"./icons/currency-bitcoin":false,"./icons/currency-dollar":false,"./icons/currency-euro":false,"./icons/currency-exchange":false,"./icons/currency-pound":false,"./icons/currency-rupee":false,"./icons/currency-yen":false,"./icons/cursor-fill":false,"./icons/cursor-text":false,"./icons/cursor":false,"./icons/dash-circle-dotted":false,"./icons/dash-circle-fill":false,"./icons/dash-circle":false,"./icons/dash-lg":false,"./icons/dash-square-dotted":false,"./icons/dash-square-fill":false,"./icons/dash-square":false,"./icons/dash":false,"./icons/database-add":false,"./icons/database-check":false,"./icons/database-dash":false,"./icons/database-down":false,"./icons/database-exclamation":false,"./icons/database-fill-add":false,"./icons/database-fill-check":false,"./icons/database-fill-dash":false,"./icons/database-fill-down":false,"./icons/database-fill-exclamation":false,"./icons/database-fill-gear":false,"./icons/database-fill-lock":false,"./icons/database-fill-slash":false,"./icons/database-fill-up":false,"./icons/database-fill-x":false,"./icons/database-fill":false,"./icons/database-gear":false,"./icons/database-lock":false,"./icons/database-slash":false,"./icons/database-up":false,"./icons/database-x":false,"./icons/database":false,"./icons/device-hdd-fill":false,"./icons/device-hdd":false,"./icons/device-ssd-fill":false,"./icons/device-ssd":false,"./icons/diagram-2-fill":false,"./icons/diagram-2":false,"./icons/diagram-3-fill":false,"./icons/diagram-3":false,"./icons/diamond-fill":false,"./icons/diamond-half":false,"./icons/diamond":false,"./icons/dice-1-fill":false,"./icons/dice-1":false,"./icons/dice-2-fill":false,"./icons/dice-2":false,"./icons/dice-3-fill":false,"./icons/dice-3":false,"./icons/dice-4-fill":false,"./icons/dice-4":false,"./icons/dice-5-fill":false,"./icons/dice-5":false,"./icons/dice-6-fill":false,"./icons/dice-6":false,"./icons/disc-fill":false,"./icons/disc":false,"./icons/discord":false,"./icons/display-fill":false,"./icons/display":false,"./icons/displayport-fill":false,"./icons/displayport":false,"./icons/distribute-horizontal":false,"./icons/distribute-vertical":false,"./icons/door-closed-fill":false,"./icons/door-closed":false,"./icons/door-open-fill":false,"./icons/door-open":false,"./icons/dot":false,"./icons/download":false,"./icons/dpad-fill":false,"./icons/dpad":false,"./icons/dribbble":false,"./icons/dropbox":false,"./icons/droplet-fill":false,"./icons/droplet-half":false,"./icons/droplet":false,"./icons/ear-fill":false,"./icons/ear":false,"./icons/earbuds":false,"./icons/easel-fill":false,"./icons/easel":false,"./icons/easel2-fill":false,"./icons/easel2":false,"./icons/easel3-fill":false,"./icons/easel3":false,"./icons/egg-fill":false,"./icons/egg-fried":false,"./icons/egg":false,"./icons/eject-fill":false,"./icons/eject":false,"./icons/emoji-angry-fill":false,"./icons/emoji-angry":false,"./icons/emoji-dizzy-fill":false,"./icons/emoji-dizzy":false,"./icons/emoji-expressionless-fill":false,"./icons/emoji-expressionless":false,"./icons/emoji-frown-fill":false,"./icons/emoji-frown":false,"./icons/emoji-heart-eyes-fill":false,"./icons/emoji-heart-eyes":false,"./icons/emoji-kiss-fill":false,"./icons/emoji-kiss":false,"./icons/emoji-laughing-fill":false,"./icons/emoji-laughing":false,"./icons/emoji-neutral-fill":false,"./icons/emoji-neutral":false,"./icons/emoji-smile-fill":false,"./icons/emoji-smile-upside-down-fill":false,"./icons/emoji-smile-upside-down":false,"./icons/emoji-smile":false,"./icons/emoji-sunglasses-fill":false,"./icons/emoji-sunglasses":false,"./icons/emoji-wink-fill":false,"./icons/emoji-wink":false,"./icons/envelope-at-fill":false,"./icons/envelope-at":false,"./icons/envelope-check-fill":false,"./icons/envelope-check":false,"./icons/envelope-dash-fill":false,"./icons/envelope-dash":false,"./icons/envelope-exclamation-fill":false,"./icons/envelope-exclamation":false,"./icons/envelope-fill":false,"./icons/envelope-heart-fill":false,"./icons/envelope-heart":false,"./icons/envelope-open-fill":false,"./icons/envelope-open-heart-fill":false,"./icons/envelope-open-heart":false,"./icons/envelope-open":false,"./icons/envelope-paper-fill":false,"./icons/envelope-paper-heart-fill":false,"./icons/envelope-paper-heart":false,"./icons/envelope-paper":false,"./icons/envelope-plus-fill":false,"./icons/envelope-plus":false,"./icons/envelope-slash-fill":false,"./icons/envelope-slash":false,"./icons/envelope-x-fill":false,"./icons/envelope-x":false,"./icons/envelope":false,"./icons/eraser-fill":false,"./icons/eraser":false,"./icons/escape":false,"./icons/ethernet":false,"./icons/ev-front-fill":false,"./icons/ev-front":false,"./icons/ev-station-fill":false,"./icons/ev-station":false,"./icons/exclamation-circle-fill":false,"./icons/exclamation-circle":false,"./icons/exclamation-diamond-fill":false,"./icons/exclamation-diamond":false,"./icons/exclamation-lg":false,"./icons/exclamation-octagon-fill":false,"./icons/exclamation-octagon":false,"./icons/exclamation-square-fill":false,"./icons/exclamation-square":false,"./icons/exclamation-triangle-fill":false,"./icons/exclamation-triangle":false,"./icons/exclamation":false,"./icons/exclude":false,"./icons/explicit-fill":false,"./icons/explicit":false,"./icons/eye-fill":false,"./icons/eye-slash-fill":false,"./icons/eye-slash":false,"./icons/eye":false,"./icons/eyedropper":false,"./icons/eyeglasses":false,"./icons/facebook":false,"./icons/fan":false,"./icons/fast-forward-btn-fill":false,"./icons/fast-forward-btn":false,"./icons/fast-forward-circle-fill":false,"./icons/fast-forward-circle":false,"./icons/fast-forward-fill":false,"./icons/fast-forward":false,"./icons/file-arrow-down-fill":false,"./icons/file-arrow-down":false,"./icons/file-arrow-up-fill":false,"./icons/file-arrow-up":false,"./icons/file-bar-graph-fill":false,"./icons/file-bar-graph":false,"./icons/file-binary-fill":false,"./icons/file-binary":false,"./icons/file-break-fill":false,"./icons/file-break":false,"./icons/file-check-fill":false,"./icons/file-check":false,"./icons/file-code-fill":false,"./icons/file-code":false,"./icons/file-diff-fill":false,"./icons/file-diff":false,"./icons/file-earmark-arrow-down-fill":false,"./icons/file-earmark-arrow-down":false,"./icons/file-earmark-arrow-up-fill":false,"./icons/file-earmark-arrow-up":false,"./icons/file-earmark-bar-graph-fill":false,"./icons/file-earmark-bar-graph":false,"./icons/file-earmark-binary-fill":false,"./icons/file-earmark-binary":false,"./icons/file-earmark-break-fill":false,"./icons/file-earmark-break":false,"./icons/file-earmark-check-fill":false,"./icons/file-earmark-check":false,"./icons/file-earmark-code-fill":false,"./icons/file-earmark-code":false,"./icons/file-earmark-diff-fill":false,"./icons/file-earmark-diff":false,"./icons/file-earmark-easel-fill":false,"./icons/file-earmark-easel":false,"./icons/file-earmark-excel-fill":false,"./icons/file-earmark-excel":false,"./icons/file-earmark-fill":false,"./icons/file-earmark-font-fill":false,"./icons/file-earmark-font":false,"./icons/file-earmark-image-fill":false,"./icons/file-earmark-image":false,"./icons/file-earmark-lock-fill":false,"./icons/file-earmark-lock":false,"./icons/file-earmark-lock2-fill":false,"./icons/file-earmark-lock2":false,"./icons/file-earmark-medical-fill":false,"./icons/file-earmark-medical":false,"./icons/file-earmark-minus-fill":false,"./icons/file-earmark-minus":false,"./icons/file-earmark-music-fill":false,"./icons/file-earmark-music":false,"./icons/file-earmark-pdf-fill":false,"./icons/file-earmark-pdf":false,"./icons/file-earmark-person-fill":false,"./icons/file-earmark-person":false,"./icons/file-earmark-play-fill":false,"./icons/file-earmark-play":false,"./icons/file-earmark-plus-fill":false,"./icons/file-earmark-plus":false,"./icons/file-earmark-post-fill":false,"./icons/file-earmark-post":false,"./icons/file-earmark-ppt-fill":false,"./icons/file-earmark-ppt":false,"./icons/file-earmark-richtext-fill":false,"./icons/file-earmark-richtext":false,"./icons/file-earmark-ruled-fill":false,"./icons/file-earmark-ruled":false,"./icons/file-earmark-slides-fill":false,"./icons/file-earmark-slides":false,"./icons/file-earmark-spreadsheet-fill":false,"./icons/file-earmark-spreadsheet":false,"./icons/file-earmark-text-fill":false,"./icons/file-earmark-text":false,"./icons/file-earmark-word-fill":false,"./icons/file-earmark-word":false,"./icons/file-earmark-x-fill":false,"./icons/file-earmark-x":false,"./icons/file-earmark-zip-fill":false,"./icons/file-earmark-zip":false,"./icons/file-earmark":false,"./icons/file-easel-fill":false,"./icons/file-easel":false,"./icons/file-excel-fill":false,"./icons/file-excel":false,"./icons/file-fill":false,"./icons/file-font-fill":false,"./icons/file-font":false,"./icons/file-image-fill":false,"./icons/file-image":false,"./icons/file-lock-fill":false,"./icons/file-lock":false,"./icons/file-lock2-fill":false,"./icons/file-lock2":false,"./icons/file-medical-fill":false,"./icons/file-medical":false,"./icons/file-minus-fill":false,"./icons/file-minus":false,"./icons/file-music-fill":false,"./icons/file-music":false,"./icons/file-pdf-fill":false,"./icons/file-pdf":false,"./icons/file-person-fill":false,"./icons/file-person":false,"./icons/file-play-fill":false,"./icons/file-play":false,"./icons/file-plus-fill":false,"./icons/file-plus":false,"./icons/file-post-fill":false,"./icons/file-post":false,"./icons/file-ppt-fill":false,"./icons/file-ppt":false,"./icons/file-richtext-fill":false,"./icons/file-richtext":false,"./icons/file-ruled-fill":false,"./icons/file-ruled":false,"./icons/file-slides-fill":false,"./icons/file-slides":false,"./icons/file-spreadsheet-fill":false,"./icons/file-spreadsheet":false,"./icons/file-text-fill":false,"./icons/file-text":false,"./icons/file-word-fill":false,"./icons/file-word":false,"./icons/file-x-fill":false,"./icons/file-x":false,"./icons/file-zip-fill":false,"./icons/file-zip":false,"./icons/file":false,"./icons/files-alt":false,"./icons/files":false,"./icons/filetype-aac":false,"./icons/filetype-ai":false,"./icons/filetype-bmp":false,"./icons/filetype-cs":false,"./icons/filetype-css":false,"./icons/filetype-csv":false,"./icons/filetype-doc":false,"./icons/filetype-docx":false,"./icons/filetype-exe":false,"./icons/filetype-gif":false,"./icons/filetype-heic":false,"./icons/filetype-html":false,"./icons/filetype-java":false,"./icons/filetype-jpg":false,"./icons/filetype-js":false,"./icons/filetype-json":false,"./icons/filetype-jsx":false,"./icons/filetype-key":false,"./icons/filetype-m4p":false,"./icons/filetype-md":false,"./icons/filetype-mdx":false,"./icons/filetype-mov":false,"./icons/filetype-mp3":false,"./icons/filetype-mp4":false,"./icons/filetype-otf":false,"./icons/filetype-pdf":false,"./icons/filetype-php":false,"./icons/filetype-png":false,"./icons/filetype-ppt":false,"./icons/filetype-pptx":false,"./icons/filetype-psd":false,"./icons/filetype-py":false,"./icons/filetype-raw":false,"./icons/filetype-rb":false,"./icons/filetype-sass":false,"./icons/filetype-scss":false,"./icons/filetype-sh":false,"./icons/filetype-sql":false,"./icons/filetype-svg":false,"./icons/filetype-tiff":false,"./icons/filetype-tsx":false,"./icons/filetype-ttf":false,"./icons/filetype-txt":false,"./icons/filetype-wav":false,"./icons/filetype-woff":false,"./icons/filetype-xls":false,"./icons/filetype-xlsx":false,"./icons/filetype-xml":false,"./icons/filetype-yml":false,"./icons/film":false,"./icons/filter-circle-fill":false,"./icons/filter-circle":false,"./icons/filter-left":false,"./icons/filter-right":false,"./icons/filter-square-fill":false,"./icons/filter-square":false,"./icons/filter":false,"./icons/fingerprint":false,"./icons/fire":false,"./icons/flag-fill":false,"./icons/flag":false,"./icons/flower1":false,"./icons/flower2":false,"./icons/flower3":false,"./icons/folder-check":false,"./icons/folder-fill":false,"./icons/folder-minus":false,"./icons/folder-plus":false,"./icons/folder-symlink-fill":false,"./icons/folder-symlink":false,"./icons/folder-x":false,"./icons/folder":false,"./icons/folder2-open":false,"./icons/folder2":false,"./icons/fonts":false,"./icons/forward-fill":false,"./icons/forward":false,"./icons/front":false,"./icons/fuel-pump-diesel-fill":false,"./icons/fuel-pump-diesel":false,"./icons/fuel-pump-fill":false,"./icons/fuel-pump":false,"./icons/fullscreen-exit":false,"./icons/fullscreen":false,"./icons/funnel-fill":false,"./icons/funnel":false,"./icons/gear-fill":false,"./icons/gear-wide-connected":false,"./icons/gear-wide":false,"./icons/gear":false,"./icons/gem":false,"./icons/gender-ambiguous":false,"./icons/gender-female":false,"./icons/gender-male":false,"./icons/gender-trans":false,"./icons/geo-alt-fill":false,"./icons/geo-alt":false,"./icons/geo-fill":false,"./icons/geo":false,"./icons/gift-fill":false,"./icons/gift":false,"./icons/git":false,"./icons/github":false,"./icons/globe-americas":false,"./icons/globe-asia-australia":false,"./icons/globe-central-south-asia":false,"./icons/globe-europe-africa":false,"./icons/globe":false,"./icons/globe2":false,"./icons/google-play":false,"./icons/google":false,"./icons/gpu-card":false,"./icons/graph-down-arrow":false,"./icons/graph-down":false,"./icons/graph-up-arrow":false,"./icons/graph-up":false,"./icons/grid-1x2-fill":false,"./icons/grid-1x2":false,"./icons/grid-3x2-gap-fill":false,"./icons/grid-3x2-gap":false,"./icons/grid-3x2":false,"./icons/grid-3x3-gap-fill":false,"./icons/grid-3x3-gap":false,"./icons/grid-3x3":false,"./icons/grid-fill":false,"./icons/grid":false,"./icons/grip-horizontal":false,"./icons/grip-vertical":false,"./icons/h-circle-fill":false,"./icons/h-circle":false,"./icons/h-square-fill":false,"./icons/h-square":false,"./icons/hammer":false,"./icons/hand-index-fill":false,"./icons/hand-index-thumb-fill":false,"./icons/hand-index-thumb":false,"./icons/hand-index":false,"./icons/hand-thumbs-down-fill":false,"./icons/hand-thumbs-down":false,"./icons/hand-thumbs-up-fill":false,"./icons/hand-thumbs-up":false,"./icons/handbag-fill":false,"./icons/handbag":false,"./icons/hash":false,"./icons/hdd-fill":false,"./icons/hdd-network-fill":false,"./icons/hdd-network":false,"./icons/hdd-rack-fill":false,"./icons/hdd-rack":false,"./icons/hdd-stack-fill":false,"./icons/hdd-stack":false,"./icons/hdd":false,"./icons/hdmi-fill":false,"./icons/hdmi":false,"./icons/headphones":false,"./icons/headset-vr":false,"./icons/headset":false,"./icons/heart-arrow":false,"./icons/heart-fill":false,"./icons/heart-half":false,"./icons/heart-pulse-fill":false,"./icons/heart-pulse":false,"./icons/heart":false,"./icons/heartbreak-fill":false,"./icons/heartbreak":false,"./icons/hearts":false,"./icons/heptagon-fill":false,"./icons/heptagon-half":false,"./icons/heptagon":false,"./icons/hexagon-fill":false,"./icons/hexagon-half":false,"./icons/hexagon":false,"./icons/hospital-fill":false,"./icons/hospital":false,"./icons/hourglass-bottom":false,"./icons/hourglass-split":false,"./icons/hourglass-top":false,"./icons/hourglass":false,"./icons/house-add-fill":false,"./icons/house-add":false,"./icons/house-check-fill":false,"./icons/house-check":false,"./icons/house-dash-fill":false,"./icons/house-dash":false,"./icons/house-door-fill":false,"./icons/house-door":false,"./icons/house-down-fill":false,"./icons/house-down":false,"./icons/house-exclamation-fill":false,"./icons/house-exclamation":false,"./icons/house-fill":false,"./icons/house-gear-fill":false,"./icons/house-gear":false,"./icons/house-heart-fill":false,"./icons/house-heart":false,"./icons/house-lock-fill":false,"./icons/house-lock":false,"./icons/house-slash-fill":false,"./icons/house-slash":false,"./icons/house-up-fill":false,"./icons/house-up":false,"./icons/house-x-fill":false,"./icons/house-x":false,"./icons/house":false,"./icons/houses-fill":false,"./icons/houses":false,"./icons/hr":false,"./icons/hurricane":false,"./icons/hypnotize":false,"./icons/image-alt":false,"./icons/image-fill":false,"./icons/image":false,"./icons/images":false,"./icons/inbox-fill":false,"./icons/inbox":false,"./icons/inboxes-fill":false,"./icons/inboxes":false,"./icons/incognito":false,"./icons/indent":false,"./icons/infinity":false,"./icons/info-circle-fill":false,"./icons/info-circle":false,"./icons/info-lg":false,"./icons/info-square-fill":false,"./icons/info-square":false,"./icons/info":false,"./icons/input-cursor-text":false,"./icons/input-cursor":false,"./icons/instagram":false,"./icons/intersect":false,"./icons/journal-album":false,"./icons/journal-arrow-down":false,"./icons/journal-arrow-up":false,"./icons/journal-bookmark-fill":false,"./icons/journal-bookmark":false,"./icons/journal-check":false,"./icons/journal-code":false,"./icons/journal-medical":false,"./icons/journal-minus":false,"./icons/journal-plus":false,"./icons/journal-richtext":false,"./icons/journal-text":false,"./icons/journal-x":false,"./icons/journal":false,"./icons/journals":false,"./icons/joystick":false,"./icons/justify-left":false,"./icons/justify-right":false,"./icons/justify":false,"./icons/kanban-fill":false,"./icons/kanban":false,"./icons/key-fill":false,"./icons/key":false,"./icons/keyboard-fill":false,"./icons/keyboard":false,"./icons/ladder":false,"./icons/lamp-fill":false,"./icons/lamp":false,"./icons/laptop-fill":false,"./icons/laptop":false,"./icons/layer-backward":false,"./icons/layer-forward":false,"./icons/layers-fill":false,"./icons/layers-half":false,"./icons/layers":false,"./icons/layout-sidebar-inset-reverse":false,"./icons/layout-sidebar-inset":false,"./icons/layout-sidebar-reverse":false,"./icons/layout-sidebar":false,"./icons/layout-split":false,"./icons/layout-text-sidebar-reverse":false,"./icons/layout-text-sidebar":false,"./icons/layout-text-window-reverse":false,"./icons/layout-text-window":false,"./icons/layout-three-columns":false,"./icons/layout-wtf":false,"./icons/life-preserver":false,"./icons/lightbulb-fill":false,"./icons/lightbulb-off-fill":false,"./icons/lightbulb-off":false,"./icons/lightbulb":false,"./icons/lightning-charge-fill":false,"./icons/lightning-charge":false,"./icons/lightning-fill":false,"./icons/lightning":false,"./icons/line":false,"./icons/link-45deg":false,"./icons/link":false,"./icons/linkedin":false,"./icons/list-check":false,"./icons/list-columns-reverse":false,"./icons/list-columns":false,"./icons/list-nested":false,"./icons/list-ol":false,"./icons/list-stars":false,"./icons/list-task":false,"./icons/list-ul":false,"./icons/list":false,"./icons/lock-fill":false,"./icons/lock":false,"./icons/lungs-fill":false,"./icons/lungs":false,"./icons/magic":false,"./icons/magnet-fill":false,"./icons/magnet":false,"./icons/mailbox":false,"./icons/mailbox2":false,"./icons/map-fill":false,"./icons/map":false,"./icons/markdown-fill":false,"./icons/markdown":false,"./icons/mask":false,"./icons/mastodon":false,"./icons/medium":false,"./icons/megaphone-fill":false,"./icons/megaphone":false,"./icons/memory":false,"./icons/menu-app-fill":false,"./icons/menu-app":false,"./icons/menu-button-fill":false,"./icons/menu-button-wide-fill":false,"./icons/menu-button-wide":false,"./icons/menu-button":false,"./icons/menu-down":false,"./icons/menu-up":false,"./icons/messenger":false,"./icons/meta":false,"./icons/mic-fill":false,"./icons/mic-mute-fill":false,"./icons/mic-mute":false,"./icons/mic":false,"./icons/microsoft-teams":false,"./icons/microsoft":false,"./icons/minecart-loaded":false,"./icons/minecart":false,"./icons/modem-fill":false,"./icons/modem":false,"./icons/moisture":false,"./icons/moon-fill":false,"./icons/moon-stars-fill":false,"./icons/moon-stars":false,"./icons/moon":false,"./icons/mortarboard-fill":false,"./icons/mortarboard":false,"./icons/motherboard-fill":false,"./icons/motherboard":false,"./icons/mouse-fill":false,"./icons/mouse":false,"./icons/mouse2-fill":false,"./icons/mouse2":false,"./icons/mouse3-fill":false,"./icons/mouse3":false,"./icons/music-note-beamed":false,"./icons/music-note-list":false,"./icons/music-note":false,"./icons/music-player-fill":false,"./icons/music-player":false,"./icons/newspaper":false,"./icons/nintendo-switch":false,"./icons/node-minus-fill":false,"./icons/node-minus":false,"./icons/node-plus-fill":false,"./icons/node-plus":false,"./icons/nut-fill":false,"./icons/nut":false,"./icons/nvidia":false,"./icons/octagon-fill":false,"./icons/octagon-half":false,"./icons/octagon":false,"./icons/optical-audio-fill":false,"./icons/optical-audio":false,"./icons/option":false,"./icons/outlet":false,"./icons/p-circle-fill":false,"./icons/p-circle":false,"./icons/p-square-fill":false,"./icons/p-square":false,"./icons/paint-bucket":false,"./icons/palette-fill":false,"./icons/palette":false,"./icons/palette2":false,"./icons/paperclip":false,"./icons/paragraph":false,"./icons/pass-fill":false,"./icons/pass":false,"./icons/patch-check-fill":false,"./icons/patch-check":false,"./icons/patch-exclamation-fill":false,"./icons/patch-exclamation":false,"./icons/patch-minus-fill":false,"./icons/patch-minus":false,"./icons/patch-plus-fill":false,"./icons/patch-plus":false,"./icons/patch-question-fill":false,"./icons/patch-question":false,"./icons/pause-btn-fill":false,"./icons/pause-btn":false,"./icons/pause-circle-fill":false,"./icons/pause-circle":false,"./icons/pause-fill":false,"./icons/pause":false,"./icons/paypal":false,"./icons/pc-display-horizontal":false,"./icons/pc-display":false,"./icons/pc-horizontal":false,"./icons/pc":false,"./icons/pci-card":false,"./icons/peace-fill":false,"./icons/peace":false,"./icons/pen-fill":false,"./icons/pen":false,"./icons/pencil-fill":false,"./icons/pencil-square":false,"./icons/pencil":false,"./icons/pentagon-fill":false,"./icons/pentagon-half":false,"./icons/pentagon":false,"./icons/people-fill":false,"./icons/people":false,"./icons/percent":false,"./icons/person-add":false,"./icons/person-badge-fill":false,"./icons/person-badge":false,"./icons/person-bounding-box":false,"./icons/person-check-fill":false,"./icons/person-check":false,"./icons/person-circle":false,"./icons/person-dash-fill":false,"./icons/person-dash":false,"./icons/person-down":false,"./icons/person-exclamation":false,"./icons/person-fill-add":false,"./icons/person-fill-check":false,"./icons/person-fill-dash":false,"./icons/person-fill-down":false,"./icons/person-fill-exclamation":false,"./icons/person-fill-gear":false,"./icons/person-fill-lock":false,"./icons/person-fill-slash":false,"./icons/person-fill-up":false,"./icons/person-fill-x":false,"./icons/person-fill":false,"./icons/person-gear":false,"./icons/person-heart":false,"./icons/person-hearts":false,"./icons/person-lines-fill":false,"./icons/person-lock":false,"./icons/person-plus-fill":false,"./icons/person-plus":false,"./icons/person-rolodex":false,"./icons/person-slash":false,"./icons/person-square":"eTgsZ","./icons/person-up":false,"./icons/person-vcard-fill":false,"./icons/person-vcard":false,"./icons/person-video":false,"./icons/person-video2":false,"./icons/person-video3":false,"./icons/person-workspace":false,"./icons/person-x-fill":false,"./icons/person-x":false,"./icons/person":false,"./icons/phone-fill":false,"./icons/phone-flip":false,"./icons/phone-landscape-fill":false,"./icons/phone-landscape":false,"./icons/phone-vibrate-fill":false,"./icons/phone-vibrate":false,"./icons/phone":false,"./icons/pie-chart-fill":false,"./icons/pie-chart":false,"./icons/piggy-bank-fill":false,"./icons/piggy-bank":false,"./icons/pin-angle-fill":false,"./icons/pin-angle":false,"./icons/pin-fill":false,"./icons/pin-map-fill":false,"./icons/pin-map":false,"./icons/pin":false,"./icons/pinterest":false,"./icons/pip-fill":false,"./icons/pip":false,"./icons/play-btn-fill":false,"./icons/play-btn":false,"./icons/play-circle-fill":false,"./icons/play-circle":false,"./icons/play-fill":false,"./icons/play":false,"./icons/playstation":false,"./icons/plug-fill":false,"./icons/plug":false,"./icons/plugin":false,"./icons/plus-circle-dotted":false,"./icons/plus-circle-fill":false,"./icons/plus-circle":false,"./icons/plus-lg":false,"./icons/plus-slash-minus":false,"./icons/plus-square-dotted":false,"./icons/plus-square-fill":false,"./icons/plus-square":false,"./icons/plus":false,"./icons/postage-fill":false,"./icons/postage-heart-fill":false,"./icons/postage-heart":false,"./icons/postage":false,"./icons/postcard-fill":false,"./icons/postcard-heart-fill":false,"./icons/postcard-heart":false,"./icons/postcard":false,"./icons/power":false,"./icons/prescription":false,"./icons/prescription2":false,"./icons/printer-fill":false,"./icons/printer":false,"./icons/projector-fill":false,"./icons/projector":false,"./icons/puzzle-fill":false,"./icons/puzzle":false,"./icons/qr-code-scan":false,"./icons/qr-code":false,"./icons/question-circle-fill":false,"./icons/question-circle":false,"./icons/question-diamond-fill":false,"./icons/question-diamond":false,"./icons/question-lg":false,"./icons/question-octagon-fill":false,"./icons/question-octagon":false,"./icons/question-square-fill":false,"./icons/question-square":false,"./icons/question":false,"./icons/quora":false,"./icons/quote":false,"./icons/r-circle-fill":false,"./icons/r-circle":false,"./icons/r-square-fill":false,"./icons/r-square":false,"./icons/radioactive":false,"./icons/rainbow":false,"./icons/receipt-cutoff":false,"./icons/receipt":false,"./icons/reception-0":false,"./icons/reception-1":false,"./icons/reception-2":false,"./icons/reception-3":false,"./icons/reception-4":false,"./icons/record-btn-fill":false,"./icons/record-btn":false,"./icons/record-circle-fill":false,"./icons/record-circle":false,"./icons/record-fill":false,"./icons/record":false,"./icons/record2-fill":false,"./icons/record2":false,"./icons/recycle":false,"./icons/reddit":false,"./icons/regex":false,"./icons/repeat-1":false,"./icons/repeat":false,"./icons/reply-all-fill":false,"./icons/reply-all":false,"./icons/reply-fill":false,"./icons/reply":false,"./icons/rewind-btn-fill":false,"./icons/rewind-btn":false,"./icons/rewind-circle-fill":false,"./icons/rewind-circle":false,"./icons/rewind-fill":false,"./icons/rewind":false,"./icons/robot":false,"./icons/rocket-fill":false,"./icons/rocket-takeoff-fill":false,"./icons/rocket-takeoff":false,"./icons/rocket":false,"./icons/router-fill":false,"./icons/router":false,"./icons/rss-fill":false,"./icons/rss":false,"./icons/rulers":false,"./icons/safe-fill":false,"./icons/safe":false,"./icons/safe2-fill":false,"./icons/safe2":false,"./icons/save-fill":false,"./icons/save":false,"./icons/save2-fill":false,"./icons/save2":false,"./icons/scissors":false,"./icons/scooter":false,"./icons/screwdriver":false,"./icons/sd-card-fill":false,"./icons/sd-card":false,"./icons/search-heart-fill":false,"./icons/search-heart":false,"./icons/search":"jsdpp","./icons/segmented-nav":false,"./icons/send-check-fill":false,"./icons/send-check":false,"./icons/send-dash-fill":false,"./icons/send-dash":false,"./icons/send-exclamation-fill":false,"./icons/send-exclamation":false,"./icons/send-fill":false,"./icons/send-plus-fill":false,"./icons/send-plus":false,"./icons/send-slash-fill":false,"./icons/send-slash":false,"./icons/send-x-fill":false,"./icons/send-x":false,"./icons/send":false,"./icons/server":false,"./icons/share-fill":false,"./icons/share":false,"./icons/shield-check":false,"./icons/shield-exclamation":false,"./icons/shield-fill-check":false,"./icons/shield-fill-exclamation":false,"./icons/shield-fill-minus":false,"./icons/shield-fill-plus":false,"./icons/shield-fill-x":false,"./icons/shield-fill":false,"./icons/shield-lock-fill":false,"./icons/shield-lock":false,"./icons/shield-minus":false,"./icons/shield-plus":false,"./icons/shield-shaded":false,"./icons/shield-slash-fill":false,"./icons/shield-slash":false,"./icons/shield-x":false,"./icons/shield":false,"./icons/shift-fill":false,"./icons/shift":false,"./icons/shop-window":false,"./icons/shop":false,"./icons/shuffle":false,"./icons/sign-dead-end-fill":false,"./icons/sign-dead-end":false,"./icons/sign-do-not-enter-fill":false,"./icons/sign-do-not-enter":false,"./icons/sign-intersection-fill":false,"./icons/sign-intersection-side-fill":false,"./icons/sign-intersection-side":false,"./icons/sign-intersection-t-fill":false,"./icons/sign-intersection-t":false,"./icons/sign-intersection-y-fill":false,"./icons/sign-intersection-y":false,"./icons/sign-intersection":false,"./icons/sign-merge-left-fill":false,"./icons/sign-merge-left":false,"./icons/sign-merge-right-fill":false,"./icons/sign-merge-right":false,"./icons/sign-no-left-turn-fill":false,"./icons/sign-no-left-turn":false,"./icons/sign-no-parking-fill":false,"./icons/sign-no-parking":false,"./icons/sign-no-right-turn-fill":false,"./icons/sign-no-right-turn":false,"./icons/sign-railroad-fill":false,"./icons/sign-railroad":false,"./icons/sign-stop-fill":false,"./icons/sign-stop-lights-fill":false,"./icons/sign-stop-lights":false,"./icons/sign-stop":false,"./icons/sign-turn-left-fill":false,"./icons/sign-turn-left":false,"./icons/sign-turn-right-fill":false,"./icons/sign-turn-right":false,"./icons/sign-turn-slight-left-fill":false,"./icons/sign-turn-slight-left":false,"./icons/sign-turn-slight-right-fill":false,"./icons/sign-turn-slight-right":false,"./icons/sign-yield-fill":false,"./icons/sign-yield":false,"./icons/signal":false,"./icons/signpost-2-fill":false,"./icons/signpost-2":false,"./icons/signpost-fill":false,"./icons/signpost-split-fill":false,"./icons/signpost-split":false,"./icons/signpost":false,"./icons/sim-fill":false,"./icons/sim":false,"./icons/sina-weibo":false,"./icons/skip-backward-btn-fill":false,"./icons/skip-backward-btn":false,"./icons/skip-backward-circle-fill":false,"./icons/skip-backward-circle":false,"./icons/skip-backward-fill":false,"./icons/skip-backward":false,"./icons/skip-end-btn-fill":false,"./icons/skip-end-btn":false,"./icons/skip-end-circle-fill":false,"./icons/skip-end-circle":false,"./icons/skip-end-fill":false,"./icons/skip-end":false,"./icons/skip-forward-btn-fill":false,"./icons/skip-forward-btn":false,"./icons/skip-forward-circle-fill":false,"./icons/skip-forward-circle":false,"./icons/skip-forward-fill":false,"./icons/skip-forward":false,"./icons/skip-start-btn-fill":false,"./icons/skip-start-btn":false,"./icons/skip-start-circle-fill":false,"./icons/skip-start-circle":false,"./icons/skip-start-fill":false,"./icons/skip-start":false,"./icons/skype":false,"./icons/slack":false,"./icons/slash-circle-fill":false,"./icons/slash-circle":false,"./icons/slash-lg":false,"./icons/slash-square-fill":false,"./icons/slash-square":false,"./icons/slash":false,"./icons/sliders":false,"./icons/sliders2-vertical":false,"./icons/sliders2":false,"./icons/smartwatch":false,"./icons/snapchat":false,"./icons/snow":false,"./icons/snow2":false,"./icons/snow3":false,"./icons/sort-alpha-down-alt":false,"./icons/sort-alpha-down":false,"./icons/sort-alpha-up-alt":false,"./icons/sort-alpha-up":false,"./icons/sort-down-alt":false,"./icons/sort-down":false,"./icons/sort-numeric-down-alt":false,"./icons/sort-numeric-down":false,"./icons/sort-numeric-up-alt":false,"./icons/sort-numeric-up":false,"./icons/sort-up-alt":false,"./icons/sort-up":false,"./icons/soundwave":false,"./icons/speaker-fill":false,"./icons/speaker":false,"./icons/speedometer":false,"./icons/speedometer2":false,"./icons/spellcheck":false,"./icons/spotify":false,"./icons/square-fill":false,"./icons/square-half":false,"./icons/square":false,"./icons/stack-overflow":false,"./icons/stack":false,"./icons/star-fill":false,"./icons/star-half":false,"./icons/star":false,"./icons/stars":false,"./icons/steam":false,"./icons/stickies-fill":false,"./icons/stickies":false,"./icons/sticky-fill":false,"./icons/sticky":false,"./icons/stop-btn-fill":false,"./icons/stop-btn":false,"./icons/stop-circle-fill":false,"./icons/stop-circle":false,"./icons/stop-fill":false,"./icons/stop":false,"./icons/stoplights-fill":false,"./icons/stoplights":false,"./icons/stopwatch-fill":false,"./icons/stopwatch":false,"./icons/strava":false,"./icons/stripe":false,"./icons/subscript":false,"./icons/subtract":false,"./icons/suit-club-fill":false,"./icons/suit-club":false,"./icons/suit-diamond-fill":false,"./icons/suit-diamond":false,"./icons/suit-heart-fill":false,"./icons/suit-heart":false,"./icons/suit-spade-fill":false,"./icons/suit-spade":false,"./icons/sun-fill":false,"./icons/sun":false,"./icons/sunglasses":false,"./icons/sunrise-fill":false,"./icons/sunrise":false,"./icons/sunset-fill":false,"./icons/sunset":false,"./icons/superscript":false,"./icons/symmetry-horizontal":false,"./icons/symmetry-vertical":false,"./icons/table":false,"./icons/tablet-fill":false,"./icons/tablet-landscape-fill":false,"./icons/tablet-landscape":false,"./icons/tablet":false,"./icons/tag-fill":false,"./icons/tag":false,"./icons/tags-fill":false,"./icons/tags":false,"./icons/taxi-front-fill":false,"./icons/taxi-front":false,"./icons/telegram":false,"./icons/telephone-fill":false,"./icons/telephone-forward-fill":false,"./icons/telephone-forward":false,"./icons/telephone-inbound-fill":false,"./icons/telephone-inbound":false,"./icons/telephone-minus-fill":false,"./icons/telephone-minus":false,"./icons/telephone-outbound-fill":false,"./icons/telephone-outbound":false,"./icons/telephone-plus-fill":false,"./icons/telephone-plus":false,"./icons/telephone-x-fill":false,"./icons/telephone-x":false,"./icons/telephone":false,"./icons/tencent-qq":false,"./icons/terminal-dash":false,"./icons/terminal-fill":false,"./icons/terminal-plus":false,"./icons/terminal-split":false,"./icons/terminal-x":false,"./icons/terminal":false,"./icons/text-center":false,"./icons/text-indent-left":false,"./icons/text-indent-right":false,"./icons/text-left":false,"./icons/text-paragraph":false,"./icons/text-right":false,"./icons/text-wrap":false,"./icons/textarea-resize":false,"./icons/textarea-t":false,"./icons/textarea":false,"./icons/thermometer-half":false,"./icons/thermometer-high":false,"./icons/thermometer-low":false,"./icons/thermometer-snow":false,"./icons/thermometer-sun":false,"./icons/thermometer":false,"./icons/three-dots-vertical":false,"./icons/three-dots":false,"./icons/thunderbolt-fill":false,"./icons/thunderbolt":false,"./icons/ticket-detailed-fill":false,"./icons/ticket-detailed":false,"./icons/ticket-fill":false,"./icons/ticket-perforated-fill":false,"./icons/ticket-perforated":false,"./icons/ticket":false,"./icons/tiktok":false,"./icons/toggle-off":false,"./icons/toggle-on":false,"./icons/toggle2-off":false,"./icons/toggle2-on":false,"./icons/toggles":false,"./icons/toggles2":false,"./icons/tools":false,"./icons/tornado":false,"./icons/train-freight-front-fill":false,"./icons/train-freight-front":false,"./icons/train-front-fill":false,"./icons/train-front":false,"./icons/train-lightrail-front-fill":false,"./icons/train-lightrail-front":false,"./icons/translate":false,"./icons/trash-fill":false,"./icons/trash":false,"./icons/trash2-fill":false,"./icons/trash2":false,"./icons/trash3-fill":false,"./icons/trash3":false,"./icons/tree-fill":false,"./icons/tree":false,"./icons/trello":false,"./icons/triangle-fill":false,"./icons/triangle-half":false,"./icons/triangle":false,"./icons/trophy-fill":false,"./icons/trophy":false,"./icons/tropical-storm":false,"./icons/truck-flatbed":false,"./icons/truck-front-fill":false,"./icons/truck-front":false,"./icons/truck":false,"./icons/tsunami":false,"./icons/tv-fill":false,"./icons/tv":false,"./icons/twitch":false,"./icons/twitter":false,"./icons/type-bold":false,"./icons/type-h1":false,"./icons/type-h2":false,"./icons/type-h3":false,"./icons/type-italic":false,"./icons/type-strikethrough":false,"./icons/type-underline":false,"./icons/type":false,"./icons/ubuntu":false,"./icons/ui-checks-grid":false,"./icons/ui-checks":false,"./icons/ui-radios-grid":false,"./icons/ui-radios":false,"./icons/umbrella-fill":false,"./icons/umbrella":false,"./icons/unindent":false,"./icons/union":false,"./icons/unity":false,"./icons/universal-access-circle":false,"./icons/universal-access":false,"./icons/unlock-fill":false,"./icons/unlock":false,"./icons/upc-scan":false,"./icons/upc":false,"./icons/upload":false,"./icons/usb-c-fill":false,"./icons/usb-c":false,"./icons/usb-drive-fill":false,"./icons/usb-drive":false,"./icons/usb-fill":false,"./icons/usb-micro-fill":false,"./icons/usb-micro":false,"./icons/usb-mini-fill":false,"./icons/usb-mini":false,"./icons/usb-plug-fill":false,"./icons/usb-plug":false,"./icons/usb-symbol":false,"./icons/usb":false,"./icons/valentine":false,"./icons/valentine2":false,"./icons/vector-pen":false,"./icons/view-list":false,"./icons/view-stacked":false,"./icons/vimeo":false,"./icons/vinyl-fill":false,"./icons/vinyl":false,"./icons/virus":false,"./icons/virus2":false,"./icons/voicemail":false,"./icons/volume-down-fill":false,"./icons/volume-down":false,"./icons/volume-mute-fill":false,"./icons/volume-mute":false,"./icons/volume-off-fill":false,"./icons/volume-off":false,"./icons/volume-up-fill":false,"./icons/volume-up":false,"./icons/vr":false,"./icons/wallet-fill":false,"./icons/wallet":false,"./icons/wallet2":false,"./icons/watch":false,"./icons/water":false,"./icons/webcam-fill":false,"./icons/webcam":false,"./icons/wechat":false,"./icons/whatsapp":false,"./icons/wifi-1":false,"./icons/wifi-2":false,"./icons/wifi-off":false,"./icons/wifi":false,"./icons/wikipedia":false,"./icons/wind":false,"./icons/window-dash":false,"./icons/window-desktop":false,"./icons/window-dock":false,"./icons/window-fullscreen":false,"./icons/window-plus":false,"./icons/window-sidebar":false,"./icons/window-split":false,"./icons/window-stack":false,"./icons/window-x":false,"./icons/window":false,"./icons/windows":false,"./icons/wordpress":false,"./icons/wrench-adjustable-circle-fill":false,"./icons/wrench-adjustable-circle":false,"./icons/wrench-adjustable":false,"./icons/wrench":false,"./icons/x-circle-fill":false,"./icons/x-circle":false,"./icons/x-diamond-fill":false,"./icons/x-diamond":false,"./icons/x-lg":false,"./icons/x-octagon-fill":false,"./icons/x-octagon":false,"./icons/x-square-fill":false,"./icons/x-square":false,"./icons/x":false,"./icons/xbox":false,"./icons/yelp":false,"./icons/yin-yang":false,"./icons/youtube":false,"./icons/zoom-in":false,"./icons/zoom-out":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1c43K":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -50796,7 +51260,7 @@ BookmarkStarFill.defaultProps = {
 };
 exports.default = BookmarkStarFill;
 
-},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"lifnY":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lifnY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -50875,7 +51339,7 @@ BookmarkStar.defaultProps = {
 };
 exports.default = BookmarkStar;
 
-},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"eTgsZ":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eTgsZ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -50954,7 +51418,7 @@ PersonSquare.defaultProps = {
 };
 exports.default = PersonSquare;
 
-},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"jsdpp":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jsdpp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -51031,7 +51495,7 @@ Search.defaultProps = {
 };
 exports.default = Search;
 
-},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"XYrBW":[function() {},{}],"ggaUx":[function(require,module,exports) {
+},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"XYrBW":[function() {},{}],"ggaUx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51078,8 +51542,8 @@ const MovieView = ({ movies, token, user, setUser })=>{
                             alt: movie.Title
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 25,
-                            columnNumber: 21
+                            lineNumber: 24,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                             className: "card__body",
@@ -51093,8 +51557,8 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                     children: movie.Title
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 27,
-                                    columnNumber: 25
+                                    lineNumber: 31,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                                     className: "mb-1",
@@ -51103,15 +51567,15 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                             children: "Genre: "
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 28,
-                                            columnNumber: 53
+                                            lineNumber: 38,
+                                            columnNumber: 15
                                         }, undefined),
                                         movie.Genre
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 28,
-                                    columnNumber: 25
+                                    lineNumber: 37,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                                     className: "mb-1",
@@ -51120,15 +51584,15 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                             children: "Director: "
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 29,
-                                            columnNumber: 53
+                                            lineNumber: 42,
+                                            columnNumber: 15
                                         }, undefined),
                                         movie.Director
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 29,
-                                    columnNumber: 25
+                                    lineNumber: 41,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                                     className: "mb-1",
@@ -51137,15 +51601,15 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                             children: "Actors: "
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 30,
-                                            columnNumber: 53
+                                            lineNumber: 46,
+                                            columnNumber: 15
                                         }, undefined),
                                         movie.Actors
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 30,
-                                    columnNumber: 25
+                                    lineNumber: 45,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                                     className: "mb-4",
@@ -51154,15 +51618,15 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                             children: "Description: "
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 31,
-                                            columnNumber: 53
+                                            lineNumber: 50,
+                                            columnNumber: 15
                                         }, undefined),
                                         movie.Description
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 31,
-                                    columnNumber: 25
+                                    lineNumber: 49,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "d-flex justify-content-between",
@@ -51175,13 +51639,13 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                                 children: "Go Back"
                                             }, void 0, false, {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 34,
-                                                columnNumber: 33
+                                                lineNumber: 55,
+                                                columnNumber: 17
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 33,
-                                            columnNumber: 29
+                                            lineNumber: 54,
+                                            columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _toggleFavorite.FavoriteToggle), {
                                             user: user,
@@ -51190,31 +51654,31 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                             movie: movie
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 36,
-                                            columnNumber: 29
+                                            lineNumber: 59,
+                                            columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 32,
-                                    columnNumber: 25
+                                    lineNumber: 53,
+                                    columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 26,
-                            columnNumber: 21
+                            lineNumber: 30,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 24,
-                    columnNumber: 17
+                    lineNumber: 23,
+                    columnNumber: 9
                 }, undefined)
             }, movie.id, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 23,
-                columnNumber: 13
+                lineNumber: 22,
+                columnNumber: 7
             }, undefined),
             showSimilarMovies && findSimilarMovies().length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                 children: [
@@ -51232,18 +51696,18 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                     setUser: setUser
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 48,
-                                    columnNumber: 33
+                                    lineNumber: 82,
+                                    columnNumber: 17
                                 }, undefined)
                             }, similarmovie.id, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 47,
-                                columnNumber: 29
+                                lineNumber: 75,
+                                columnNumber: 15
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 44,
-                        columnNumber: 21
+                        lineNumber: 72,
+                        columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -51254,18 +51718,18 @@ const MovieView = ({ movies, token, user, setUser })=>{
                                 children: "Close Similar Movies"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 54,
-                                columnNumber: 29
+                                lineNumber: 93,
+                                columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 53,
-                            columnNumber: 25
+                            lineNumber: 92,
+                            columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 52,
-                        columnNumber: 21
+                        lineNumber: 91,
+                        columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -51277,24 +51741,24 @@ const MovieView = ({ movies, token, user, setUser })=>{
                         children: "Don't miss out, see Similar Movies!"
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 66,
-                        columnNumber: 25
+                        lineNumber: 105,
+                        columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 65,
-                    columnNumber: 21
+                    lineNumber: 104,
+                    columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 64,
-                columnNumber: 17
+                lineNumber: 103,
+                columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-view/movie-view.jsx",
         lineNumber: 21,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
 _s(MovieView, "7cN/8X/MRlcJJV/SL5I2rGvJqTY=", false, function() {
@@ -51322,7 +51786,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-router-dom":"9xmpe","react-router":"dbWyW","react-bootstrap":"3AD9A","react":"21dqq","../movie-card/movie-card":"bwuIu","./movie-view.scss":"jnlR5","../toggle-favorite/toggle-favorite":"56uk4"}],"jnlR5":[function() {},{}],"9YtA0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","react-router":"dbWyW","react-bootstrap":"3AD9A","react":"21dqq","../movie-card/movie-card":"bwuIu","./movie-view.scss":"jnlR5","../toggle-favorite/toggle-favorite":"56uk4"}],"jnlR5":[function() {},{}],"9YtA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51377,8 +51841,8 @@ const LoginView = ({ onLoggedIn })=>{
                     children: "LOGIN"
                 }, void 0, false, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 47,
-                    columnNumber: 17
+                    lineNumber: 45,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     controlId: "formUsername",
@@ -51390,13 +51854,13 @@ const LoginView = ({ onLoggedIn })=>{
                                 children: " Username:"
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 49,
-                                columnNumber: 56
+                                lineNumber: 48,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 49,
-                            columnNumber: 21
+                            lineNumber: 47,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                             type: "text",
@@ -51408,13 +51872,13 @@ const LoginView = ({ onLoggedIn })=>{
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
                             lineNumber: 50,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 48,
-                    columnNumber: 17
+                    lineNumber: 46,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     controlId: "formPassword",
@@ -51425,13 +51889,13 @@ const LoginView = ({ onLoggedIn })=>{
                                 children: "Password: "
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 60,
-                                columnNumber: 56
+                                lineNumber: 61,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
                             lineNumber: 60,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "mb-3",
@@ -51443,19 +51907,19 @@ const LoginView = ({ onLoggedIn })=>{
                                 required: true
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 62,
-                                columnNumber: 25
+                                lineNumber: 64,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 61,
-                            columnNumber: 21
+                            lineNumber: 63,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 59,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "d-flex justify-content-between",
@@ -51466,8 +51930,8 @@ const LoginView = ({ onLoggedIn })=>{
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 72,
-                            columnNumber: 21
+                            lineNumber: 74,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: [
@@ -51477,34 +51941,34 @@ const LoginView = ({ onLoggedIn })=>{
                                     children: "Signup!"
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 76,
-                                    columnNumber: 40
+                                    lineNumber: 78,
+                                    columnNumber: 28
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 75,
-                            columnNumber: 21
+                            lineNumber: 77,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 71,
-                    columnNumber: 17
+                    lineNumber: 73,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 46,
-            columnNumber: 13
+            lineNumber: 44,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 45,
-        columnNumber: 9
+        lineNumber: 43,
+        columnNumber: 5
     }, undefined);
 };
-_s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
+_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
 _c = LoginView;
 var _c;
 $RefreshReg$(_c, "LoginView");
@@ -51514,7 +51978,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-router-dom":"9xmpe","./login-view.scss":"e57ax"}],"e57ax":[function() {},{}],"4OGiN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","./login-view.scss":"e57ax"}],"e57ax":[function() {},{}],"4OGiN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51576,8 +52040,8 @@ const SignupView = ()=>{
                     children: "SIGNUP"
                 }, void 0, false, {
                     fileName: "src/components/signup-view/signup-view.jsx",
-                    lineNumber: 54,
-                    columnNumber: 17
+                    lineNumber: 55,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     controlId: "formUsername",
@@ -51589,13 +52053,13 @@ const SignupView = ()=>{
                                 children: " Username: "
                             }, void 0, false, {
                                 fileName: "src/components/signup-view/signup-view.jsx",
-                                lineNumber: 56,
-                                columnNumber: 56
+                                lineNumber: 58,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 56,
-                            columnNumber: 21
+                            lineNumber: 57,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                             type: "text",
@@ -51606,22 +52070,22 @@ const SignupView = ()=>{
                             minLength: "5"
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 57,
-                            columnNumber: 21
+                            lineNumber: 60,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
                             className: "small__text ",
                             children: "Username, please choose at least 5 characters, only letters and numbers"
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 65,
-                            columnNumber: 21
+                            lineNumber: 68,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/signup-view/signup-view.jsx",
-                    lineNumber: 55,
-                    columnNumber: 17
+                    lineNumber: 56,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     controlId: "formPassword",
@@ -51633,13 +52097,13 @@ const SignupView = ()=>{
                                 children: "Password:"
                             }, void 0, false, {
                                 fileName: "src/components/signup-view/signup-view.jsx",
-                                lineNumber: 68,
-                                columnNumber: 56
+                                lineNumber: 75,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 68,
-                            columnNumber: 21
+                            lineNumber: 74,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                             type: "password",
@@ -51650,22 +52114,22 @@ const SignupView = ()=>{
                             minLength: "8"
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 69,
-                            columnNumber: 21
+                            lineNumber: 77,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
                             className: "small__text ",
                             children: "Password, please choose at least 8 characters"
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 77,
-                            columnNumber: 21
+                            lineNumber: 85,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/signup-view/signup-view.jsx",
-                    lineNumber: 67,
-                    columnNumber: 17
+                    lineNumber: 73,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     controlId: "formEmail",
@@ -51679,14 +52143,14 @@ const SignupView = ()=>{
                                     children: "Email: "
                                 }, void 0, false, {
                                     fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 80,
-                                    columnNumber: 57
+                                    lineNumber: 92,
+                                    columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 80,
-                            columnNumber: 21
+                            lineNumber: 90,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                             type: "email",
@@ -51696,14 +52160,14 @@ const SignupView = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 81,
-                            columnNumber: 21
+                            lineNumber: 94,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/signup-view/signup-view.jsx",
-                    lineNumber: 79,
-                    columnNumber: 17
+                    lineNumber: 89,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     controlId: "formBirtday",
@@ -51714,13 +52178,13 @@ const SignupView = ()=>{
                                 children: "Birthday:"
                             }, void 0, false, {
                                 fileName: "src/components/signup-view/signup-view.jsx",
-                                lineNumber: 90,
-                                columnNumber: 56
+                                lineNumber: 104,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 90,
-                            columnNumber: 21
+                            lineNumber: 103,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "mb-3",
@@ -51731,13 +52195,13 @@ const SignupView = ()=>{
                                 required: true
                             }, void 0, false, {
                                 fileName: "src/components/signup-view/signup-view.jsx",
-                                lineNumber: 92,
-                                columnNumber: 25
+                                lineNumber: 107,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 91,
-                            columnNumber: 21
+                            lineNumber: 106,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "d-flex justify-content-between",
@@ -51748,8 +52212,8 @@ const SignupView = ()=>{
                                     children: "Submit"
                                 }, void 0, false, {
                                     fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 100,
-                                    columnNumber: 25
+                                    lineNumber: 115,
+                                    columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     children: [
@@ -51759,40 +52223,40 @@ const SignupView = ()=>{
                                             children: "Login!"
                                         }, void 0, false, {
                                             fileName: "src/components/signup-view/signup-view.jsx",
-                                            lineNumber: 103,
-                                            columnNumber: 45
+                                            lineNumber: 119,
+                                            columnNumber: 32
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 103,
-                                    columnNumber: 25
+                                    lineNumber: 118,
+                                    columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 99,
-                            columnNumber: 21
+                            lineNumber: 114,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/signup-view/signup-view.jsx",
-                    lineNumber: 89,
-                    columnNumber: 17
+                    lineNumber: 102,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/signup-view/signup-view.jsx",
-            lineNumber: 53,
-            columnNumber: 13
+            lineNumber: 54,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/signup-view/signup-view.jsx",
-        lineNumber: 52,
-        columnNumber: 9
+        lineNumber: 53,
+        columnNumber: 5
     }, undefined);
 };
-_s(SignupView, "jsOQN3GC2XlBG9ITlzCdpyJOnso=");
+_s(SignupView, "tdA1KK8yaZidqYo0wscqshHt/KE=");
 _c = SignupView;
 var _c;
 $RefreshReg$(_c, "SignupView");
@@ -51802,7 +52266,7 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-router-dom":"9xmpe"}],"bsPVM":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"bsPVM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$abf5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51840,20 +52304,20 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                         children: "myFlix"
                     }, void 0, false, {
                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                        lineNumber: 12,
-                        columnNumber: 21
+                        lineNumber: 11,
+                        columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 11,
-                    columnNumber: 17
+                    lineNumber: 10,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Toggle, {
                     "aria-controls": "basic-navbar-nav"
                 }, void 0, false, {
                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 14,
-                    columnNumber: 17
+                    lineNumber: 13,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
                     id: "basic-navbar-nav",
@@ -51869,8 +52333,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                             children: "Login"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 20,
-                                            columnNumber: 33
+                                            lineNumber: 19,
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                             as: (0, _reactRouterDom.Link),
@@ -51878,8 +52342,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                             children: "Signup"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 23,
-                                            columnNumber: 33
+                                            lineNumber: 22,
+                                            columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true),
@@ -51891,8 +52355,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                             children: "Home"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 30,
-                                            columnNumber: 33
+                                            lineNumber: 29,
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                             as: (0, _reactRouterDom.Link),
@@ -51900,8 +52364,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                             children: "My List"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 33,
-                                            columnNumber: 33
+                                            lineNumber: 32,
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown), {
                                             title: "Genres",
@@ -51913,8 +52377,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                                     children: "Crime"
                                                 }, void 0, false, {
                                                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                                    lineNumber: 37,
-                                                    columnNumber: 37
+                                                    lineNumber: 36,
+                                                    columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
                                                     as: (0, _reactRouterDom.Link),
@@ -51922,8 +52386,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                                     children: "Biography"
                                                 }, void 0, false, {
                                                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                                    lineNumber: 38,
-                                                    columnNumber: 37
+                                                    lineNumber: 39,
+                                                    columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
                                                     as: (0, _reactRouterDom.Link),
@@ -51931,8 +52395,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                                     children: "Sci-Fi"
                                                 }, void 0, false, {
                                                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                                    lineNumber: 39,
-                                                    columnNumber: 37
+                                                    lineNumber: 42,
+                                                    columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
                                                     as: (0, _reactRouterDom.Link),
@@ -51940,8 +52404,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                                     children: "Action"
                                                 }, void 0, false, {
                                                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                                    lineNumber: 40,
-                                                    columnNumber: 37
+                                                    lineNumber: 45,
+                                                    columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
                                                     as: (0, _reactRouterDom.Link),
@@ -51949,41 +52413,41 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                                     children: "Drama"
                                                 }, void 0, false, {
                                                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                                    lineNumber: 41,
-                                                    columnNumber: 37
+                                                    lineNumber: 48,
+                                                    columnNumber: 19
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 36,
-                                            columnNumber: 33
+                                            lineNumber: 35,
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                             as: (0, _reactRouterDom.Link),
                                             to: "/search",
                                             children: [
-                                                "Search  ",
+                                                "Search ",
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrapIcons.Search), {
                                                     color: "white",
                                                     size: 15
                                                 }, void 0, false, {
                                                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                                    lineNumber: 44,
-                                                    columnNumber: 45
+                                                    lineNumber: 53,
+                                                    columnNumber: 26
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 43,
-                                            columnNumber: 33
+                                            lineNumber: 52,
+                                            columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                            lineNumber: 16,
-                            columnNumber: 21
+                            lineNumber: 15,
+                            columnNumber: 11
                         }, undefined),
                         user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav), {
                             className: "ml-auto",
@@ -51998,8 +52462,8 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                             children: "User Profile"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 53,
-                                            columnNumber: 33
+                                            lineNumber: 61,
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
                                             as: (0, _reactRouterDom.Link),
@@ -52007,15 +52471,15 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                             children: "Edit Profile"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 56,
-                                            columnNumber: 33
+                                            lineNumber: 64,
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
                                             className: "dropdown-divider"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 59,
-                                            columnNumber: 33
+                                            lineNumber: 67,
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavDropdown).Item, {
                                             as: (0, _reactRouterDom.Link),
@@ -52023,45 +52487,45 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                             children: "Delete Profile"
                                         }, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 60,
-                                            columnNumber: 33
+                                            lineNumber: 68,
+                                            columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                    lineNumber: 52,
-                                    columnNumber: 29
+                                    lineNumber: 60,
+                                    columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                     onClick: onLoggedOut,
                                     children: "Logout"
                                 }, void 0, false, {
                                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                    lineNumber: 64,
-                                    columnNumber: 29
+                                    lineNumber: 72,
+                                    columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                            lineNumber: 50,
-                            columnNumber: 25
+                            lineNumber: 59,
+                            columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                    lineNumber: 15,
-                    columnNumber: 17
+                    lineNumber: 14,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 10,
-            columnNumber: 13
+            lineNumber: 9,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-        lineNumber: 9,
-        columnNumber: 9
+        lineNumber: 8,
+        columnNumber: 5
     }, undefined);
 };
 _c = NavigationBar;
@@ -52073,7 +52537,7 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react":"21dqq","react-bootstrap-icons":"c9Gza","./navigation-bar.scss":"dnXvl"}],"dnXvl":[function() {},{}],"eXeEX":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-bootstrap-icons":"c9Gza","./navigation-bar.scss":"dnXvl"}],"dnXvl":[function() {},{}],"eXeEX":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c891 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52127,8 +52591,8 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                             children: "SEARCH FOR YOUR MOVIE"
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 38,
-                            columnNumber: 21
+                            lineNumber: 39,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
                             className: "mb-3 text-center",
@@ -52158,13 +52622,13 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                                 }
                                             }, void 0, false, {
                                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 43,
-                                                columnNumber: 37
+                                                lineNumber: 44,
+                                                columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 42,
-                                            columnNumber: 33
+                                            lineNumber: 43,
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                             md: 1,
@@ -52176,40 +52640,40 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                                 children: "x"
                                             }, void 0, false, {
                                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 64,
-                                                columnNumber: 37
+                                                lineNumber: 63,
+                                                columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 63,
-                                            columnNumber: 33
+                                            lineNumber: 62,
+                                            columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/search-movie/search-movie.jsx",
-                                    lineNumber: 41,
-                                    columnNumber: 29
+                                    lineNumber: 42,
+                                    columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                lineNumber: 40,
-                                columnNumber: 25
+                                lineNumber: 41,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 39,
-                            columnNumber: 21
+                            lineNumber: 40,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 37,
-                    columnNumber: 17
+                    lineNumber: 38,
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 36,
-                columnNumber: 13
+                lineNumber: 37,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 className: "justify-content-md-center text-center mt-5",
@@ -52225,18 +52689,18 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                         children: "Unfortunately, no movie matches your search."
                     }, void 0, false, {
                         fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 83,
-                        columnNumber: 29
+                        lineNumber: 85,
+                        columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 82,
-                    columnNumber: 25
+                    lineNumber: 84,
+                    columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 79,
-                columnNumber: 13
+                lineNumber: 82,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 className: "justify-content-md-center text-center",
@@ -52252,18 +52716,18 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                             setUser: setUser
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 94,
-                            columnNumber: 29
+                            lineNumber: 101,
+                            columnNumber: 13
                         }, undefined)
                     }, foundMovie.id, false, {
                         fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 93,
-                        columnNumber: 25
+                        lineNumber: 100,
+                        columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 90,
-                columnNumber: 13
+                lineNumber: 98,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
@@ -52278,7 +52742,7 @@ $RefreshReg$(_c, "SearchMovie");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","./search-movie.scss":"ehmNM"}],"ehmNM":[function() {},{}],"7Frwr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./search-movie.scss":"ehmNM"}],"ehmNM":[function() {},{}],"7Frwr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$61c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52307,8 +52771,8 @@ const UserProfile = ({ user })=>{
                     children: "Your Profile"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/user-profile.jsx",
-                    lineNumber: 13,
-                    columnNumber: 17
+                    lineNumber: 12,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrapIcons.PersonSquare), {
                     color: "white",
@@ -52316,8 +52780,8 @@ const UserProfile = ({ user })=>{
                     className: "mb-3"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/user-profile.jsx",
-                    lineNumber: 14,
-                    columnNumber: 17
+                    lineNumber: 13,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     className: "mb-3",
@@ -52327,21 +52791,21 @@ const UserProfile = ({ user })=>{
                         }, void 0, false, {
                             fileName: "src/components/profile-view/user-profile.jsx",
                             lineNumber: 15,
-                            columnNumber: 37
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             className: "profile__details",
                             children: user.Username
                         }, void 0, false, {
                             fileName: "src/components/profile-view/user-profile.jsx",
-                            lineNumber: 15,
-                            columnNumber: 64
+                            lineNumber: 16,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/user-profile.jsx",
-                    lineNumber: 15,
-                    columnNumber: 17
+                    lineNumber: 14,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     className: "mb-3",
@@ -52350,22 +52814,22 @@ const UserProfile = ({ user })=>{
                             children: "Email: "
                         }, void 0, false, {
                             fileName: "src/components/profile-view/user-profile.jsx",
-                            lineNumber: 16,
-                            columnNumber: 37
+                            lineNumber: 19,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             className: "profile__details",
                             children: user.Email
                         }, void 0, false, {
                             fileName: "src/components/profile-view/user-profile.jsx",
-                            lineNumber: 16,
-                            columnNumber: 61
+                            lineNumber: 20,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/user-profile.jsx",
-                    lineNumber: 16,
-                    columnNumber: 17
+                    lineNumber: 18,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     className: "mb-4",
@@ -52374,22 +52838,22 @@ const UserProfile = ({ user })=>{
                             children: "Birthday: "
                         }, void 0, false, {
                             fileName: "src/components/profile-view/user-profile.jsx",
-                            lineNumber: 17,
-                            columnNumber: 37
+                            lineNumber: 23,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             className: "profile__details",
                             children: (0, _helpers.formatDate)(user.Birthday)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/user-profile.jsx",
-                            lineNumber: 17,
-                            columnNumber: 64
+                            lineNumber: 24,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/user-profile.jsx",
-                    lineNumber: 17,
-                    columnNumber: 17
+                    lineNumber: 22,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     to: "/edit-profile",
@@ -52399,24 +52863,24 @@ const UserProfile = ({ user })=>{
                         children: "Update Profile"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/user-profile.jsx",
-                        lineNumber: 18,
-                        columnNumber: 42
+                        lineNumber: 27,
+                        columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/profile-view/user-profile.jsx",
-                    lineNumber: 18,
-                    columnNumber: 17
+                    lineNumber: 26,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/profile-view/user-profile.jsx",
-            lineNumber: 12,
-            columnNumber: 13
+            lineNumber: 11,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/profile-view/user-profile.jsx",
-        lineNumber: 11,
-        columnNumber: 9
+        lineNumber: 10,
+        columnNumber: 5
     }, undefined);
 };
 _c = UserProfile;
@@ -52428,7 +52892,7 @@ $RefreshReg$(_c, "UserProfile");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../../utils/helpers/helpers":"ft3Un","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","react-bootstrap-icons":"c9Gza"}],"ft3Un":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../../utils/helpers/helpers":"ft3Un","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap-icons":"c9Gza"}],"ft3Un":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "formatDate", ()=>formatDate);
@@ -52442,7 +52906,7 @@ const formatDate = (dateString)=>{
     return formattedDate;
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC"}],"30fNd":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"30fNd":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$18b9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52465,7 +52929,7 @@ const EditProfile = ({ user, setUser, token })=>{
     const [email, setEmail] = (0, _react.useState)("");
     const [birthday, setBirthday] = (0, _react.useState)("");
     const navigate = (0, _reactRouterDom.useNavigate)();
-    // add only update when new value + check username not DB jet 
+    // add only update when new value + check username not DB jet
     const handleSaveClick = async (event)=>{
         event.preventDefault();
         const updatedUser = {
@@ -52489,7 +52953,7 @@ const EditProfile = ({ user, setUser, token })=>{
                 setUser(updatedUser);
                 localStorage.setItem("user", JSON.stringify(updatedUser));
                 alert("You successfully updated your profile");
-                // navigate to the user profile when update successfull 
+                // navigate to the user profile when update successfull
                 navigate("/user-profile");
                 console.log("User state updated:", updatedUser);
             } else if (response.status === 401) {
@@ -52512,8 +52976,8 @@ const EditProfile = ({ user, setUser, token })=>{
                 children: "EDIT YOUR PROFILE"
             }, void 0, false, {
                 fileName: "src/components/profile-view/edit-profile.jsx",
-                lineNumber: 65,
-                columnNumber: 13
+                lineNumber: 64,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
                 onSubmit: handleSaveClick,
@@ -52529,7 +52993,7 @@ const EditProfile = ({ user, setUser, token })=>{
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/edit-profile.jsx",
                                         lineNumber: 68,
-                                        columnNumber: 33
+                                        columnNumber: 13
                                     }, undefined),
                                     " ",
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -52537,14 +53001,14 @@ const EditProfile = ({ user, setUser, token })=>{
                                         children: user.Username
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/edit-profile.jsx",
-                                        lineNumber: 68,
-                                        columnNumber: 69
+                                        lineNumber: 69,
+                                        columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 68,
-                                columnNumber: 21
+                                lineNumber: 67,
+                                columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                 type: "text",
@@ -52555,22 +53019,22 @@ const EditProfile = ({ user, setUser, token })=>{
                                 required: true
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 69,
-                                columnNumber: 21
+                                lineNumber: 71,
+                                columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
                                 className: "small__text",
                                 children: "Username, please choose at least 5 characters, only letters and numbers"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 77,
-                                columnNumber: 21
+                                lineNumber: 79,
+                                columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/edit-profile.jsx",
-                        lineNumber: 67,
-                        columnNumber: 17
+                        lineNumber: 66,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                         controlId: "formEmail",
@@ -52582,22 +53046,22 @@ const EditProfile = ({ user, setUser, token })=>{
                                         children: "Current Email: "
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/edit-profile.jsx",
-                                        lineNumber: 81,
-                                        columnNumber: 33
+                                        lineNumber: 86,
+                                        columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "profile__details",
                                         children: user.Email
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/edit-profile.jsx",
-                                        lineNumber: 81,
-                                        columnNumber: 65
+                                        lineNumber: 87,
+                                        columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 81,
-                                columnNumber: 21
+                                lineNumber: 85,
+                                columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                 type: "email",
@@ -52606,21 +53070,21 @@ const EditProfile = ({ user, setUser, token })=>{
                                 onChange: (e)=>setEmail(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 82,
-                                columnNumber: 21
+                                lineNumber: 89,
+                                columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
                                 children: "Optional field"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 88,
-                                columnNumber: 21
+                                lineNumber: 95,
+                                columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/edit-profile.jsx",
-                        lineNumber: 80,
-                        columnNumber: 17
+                        lineNumber: 84,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                         controlId: "formBirtday",
@@ -52632,22 +53096,22 @@ const EditProfile = ({ user, setUser, token })=>{
                                         children: "Current Birthday: "
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/edit-profile.jsx",
-                                        lineNumber: 91,
-                                        columnNumber: 33
+                                        lineNumber: 99,
+                                        columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "profile__details",
                                         children: (0, _helpers.formatDate)(user.Birthday)
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/edit-profile.jsx",
-                                        lineNumber: 91,
-                                        columnNumber: 68
+                                        lineNumber: 100,
+                                        columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 91,
-                                columnNumber: 21
+                                lineNumber: 98,
+                                columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                 type: "date",
@@ -52657,21 +53121,21 @@ const EditProfile = ({ user, setUser, token })=>{
                                 className: "form__input"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 92,
-                                columnNumber: 21
+                                lineNumber: 104,
+                                columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
                                 children: "Optional field"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/edit-profile.jsx",
-                                lineNumber: 98,
-                                columnNumber: 21
+                                lineNumber: 111,
+                                columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/edit-profile.jsx",
-                        lineNumber: 90,
-                        columnNumber: 17
+                        lineNumber: 97,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "text-center mb-2",
@@ -52681,28 +53145,28 @@ const EditProfile = ({ user, setUser, token })=>{
                             children: "Save Changes"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/edit-profile.jsx",
-                            lineNumber: 101,
-                            columnNumber: 21
+                            lineNumber: 114,
+                            columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/edit-profile.jsx",
-                        lineNumber: 100,
-                        columnNumber: 17
+                        lineNumber: 113,
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/edit-profile.jsx",
-                lineNumber: 66,
-                columnNumber: 13
+                lineNumber: 65,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/edit-profile.jsx",
-        lineNumber: 64,
-        columnNumber: 9
+        lineNumber: 63,
+        columnNumber: 5
     }, undefined);
 };
-_s(EditProfile, "E+0OystzAchOXSGabhrLEhknDAQ=", false, function() {
+_s(EditProfile, "iJTXbDZxDT48/bDq0HDezkGkUJg=", false, function() {
     return [
         (0, _reactRouterDom.useNavigate)
     ];
@@ -52716,7 +53180,7 @@ $RefreshReg$(_c, "EditProfile");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","../../utils/helpers/helpers":"ft3Un","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"dhuz5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","../../utils/helpers/helpers":"ft3Un","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dhuz5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2ce5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52747,13 +53211,13 @@ const FavoriteMovies = ({ movies, user, token, setUser })=>{
                     setUser: setUser
                 }, void 0, false, {
                     fileName: "src/components/favorite-movies/favorite-movies.jsx",
-                    lineNumber: 15,
-                    columnNumber: 29
+                    lineNumber: 19,
+                    columnNumber: 13
                 }, undefined)
             }, movie.id, false, {
                 fileName: "src/components/favorite-movies/favorite-movies.jsx",
-                lineNumber: 14,
-                columnNumber: 25
+                lineNumber: 12,
+                columnNumber: 11
             }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
             md: 6,
             className: "mt-5",
@@ -52767,18 +53231,18 @@ const FavoriteMovies = ({ movies, user, token, setUser })=>{
                 children: "You have not added any movies to your favorites list so far."
             }, void 0, false, {
                 fileName: "src/components/favorite-movies/favorite-movies.jsx",
-                lineNumber: 20,
-                columnNumber: 25
+                lineNumber: 29,
+                columnNumber: 11
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/favorite-movies/favorite-movies.jsx",
-            lineNumber: 19,
-            columnNumber: 21
+            lineNumber: 28,
+            columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/favorite-movies/favorite-movies.jsx",
-        lineNumber: 10,
-        columnNumber: 9
+        lineNumber: 9,
+        columnNumber: 5
     }, undefined);
 };
 _c = FavoriteMovies;
@@ -52790,7 +53254,7 @@ $RefreshReg$(_c, "FavoriteMovies");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"eSmSC":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eSmSC":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5738 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52834,30 +53298,30 @@ const DeleteProfile = ({ user, setUser, token })=>{
                 children: "DELETE YOUR PROFILE"
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 37,
-                columnNumber: 13
+                lineNumber: 43,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: "Do you you really want to delete your account?"
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 38,
-                columnNumber: 13
+                lineNumber: 44,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: "We're sorry we have to say GOODBYE. "
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 39,
-                columnNumber: 13
+                lineNumber: 45,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 className: "mb-4",
                 children: "You are always welcome back!"
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 40,
-                columnNumber: 13
+                lineNumber: 46,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                 className: "mb-2",
@@ -52867,19 +53331,19 @@ const DeleteProfile = ({ user, setUser, token })=>{
                     children: "Delete Profile"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/delete-profile.jsx",
-                    lineNumber: 43,
-                    columnNumber: 17
+                    lineNumber: 49,
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 42,
-                columnNumber: 13
+                lineNumber: 48,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/delete-profile.jsx",
-        lineNumber: 36,
-        columnNumber: 9
+        lineNumber: 42,
+        columnNumber: 5
     }, undefined);
 };
 _c = DeleteProfile;
@@ -52891,7 +53355,7 @@ $RefreshReg$(_c, "DeleteProfile");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","./profile-view.scss":"eyKYH","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"eyKYH":[function() {},{}],"UeQQb":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","./profile-view.scss":"eyKYH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eyKYH":[function() {},{}],"UeQQb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4932 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52920,20 +53384,20 @@ const MoviesDrama = ({ movies, token, user, setUser })=>{
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/drama-genre.jsx",
                         lineNumber: 13,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Drama movies dive into the complexities of human emotions and relationships, filled with real-life depth and resonance."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/drama-genre.jsx",
                         lineNumber: 14,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/drama-genre.jsx",
                 lineNumber: 12,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
@@ -52947,19 +53411,19 @@ const MoviesDrama = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/drama-genre.jsx",
-                        lineNumber: 20,
-                        columnNumber: 21
+                        lineNumber: 21,
+                        columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/drama-genre.jsx",
-                    lineNumber: 19,
-                    columnNumber: 17
+                    lineNumber: 20,
+                    columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/movies-genre/drama-genre.jsx",
         lineNumber: 11,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
 _c = MoviesDrama;
@@ -52971,7 +53435,7 @@ $RefreshReg$(_c, "MoviesDrama");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG","./movies-gerne.scss":"cJett"}],"cJett":[function() {},{}],"03JoT":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./movies-gerne.scss":"cJett"}],"cJett":[function() {},{}],"03JoT":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a147 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52999,20 +53463,20 @@ const MoviesAction = ({ movies, token, user, setUser })=>{
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/action-genre.jsx",
                         lineNumber: 12,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Action films guarantee an adrenaline-packed ride with intense thrills and high-stakes scenarios, ensuring an edge-of-your-seat cinematic adventure."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/action-genre.jsx",
                         lineNumber: 13,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/action-genre.jsx",
                 lineNumber: 11,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
@@ -53026,19 +53490,19 @@ const MoviesAction = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/action-genre.jsx",
-                        lineNumber: 19,
-                        columnNumber: 21
+                        lineNumber: 21,
+                        columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/action-genre.jsx",
-                    lineNumber: 18,
-                    columnNumber: 17
+                    lineNumber: 20,
+                    columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/movies-genre/action-genre.jsx",
         lineNumber: 10,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
 _c = MoviesAction;
@@ -53050,7 +53514,7 @@ $RefreshReg$(_c, "MoviesAction");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"ylcsM":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ylcsM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b529 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53078,20 +53542,20 @@ const MoviesBiography = ({ movies, token, user, setUser })=>{
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/biography-genre.jsx",
                         lineNumber: 12,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Biographical films vividly portray captivating life stories, achievements, and legacies, offering an engaging cinematic experience."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/biography-genre.jsx",
                         lineNumber: 13,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/biography-genre.jsx",
                 lineNumber: 11,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
@@ -53105,19 +53569,19 @@ const MoviesBiography = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/biography-genre.jsx",
-                        lineNumber: 19,
-                        columnNumber: 21
+                        lineNumber: 20,
+                        columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/biography-genre.jsx",
-                    lineNumber: 18,
-                    columnNumber: 17
+                    lineNumber: 19,
+                    columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/movies-genre/biography-genre.jsx",
         lineNumber: 10,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
 _c = MoviesBiography;
@@ -53129,7 +53593,7 @@ $RefreshReg$(_c, "MoviesBiography");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"jxwcM":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jxwcM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c9c7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53157,20 +53621,20 @@ const MoviesCrime = ({ movies, token, user, setUser })=>{
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/crime-genre.jsx",
                         lineNumber: 12,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Crime films promise a thrilling experience with suspenseful plots, mysterious twists, and a captivating exploration of criminal activities/investigations."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/crime-genre.jsx",
                         lineNumber: 13,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/crime-genre.jsx",
                 lineNumber: 11,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
@@ -53184,19 +53648,19 @@ const MoviesCrime = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/crime-genre.jsx",
-                        lineNumber: 19,
-                        columnNumber: 21
+                        lineNumber: 21,
+                        columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/crime-genre.jsx",
-                    lineNumber: 18,
-                    columnNumber: 17
+                    lineNumber: 20,
+                    columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/movies-genre/crime-genre.jsx",
         lineNumber: 10,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
 _c = MoviesCrime;
@@ -53208,7 +53672,7 @@ $RefreshReg$(_c, "MoviesCrime");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"1fHNd":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1fHNd":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0b88 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53236,20 +53700,20 @@ const MoviesSciFi = ({ movies, token, user, setUser })=>{
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
                         lineNumber: 12,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Sci-Fi movies transport viewers into speculative worlds, exploring futuristic concepts and scientific possibilities through imaginative storytelling."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
                         lineNumber: 13,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/sci-fi-genre.jsx",
                 lineNumber: 11,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     className: "mb-3",
@@ -53263,19 +53727,19 @@ const MoviesSciFi = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                        lineNumber: 18,
-                        columnNumber: 21
+                        lineNumber: 21,
+                        columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                    lineNumber: 17,
-                    columnNumber: 17
+                    lineNumber: 20,
+                    columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
         lineNumber: 10,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
 _c = MoviesSciFi;
@@ -53287,6 +53751,6 @@ $RefreshReg$(_c, "MoviesSciFi");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2oWKC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8tQVG"}],"lJZlQ":[function() {},{}]},["1MqTG","feejL","d8Dch"], "d8Dch", "parcelRequirea671")
+},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}]},["5qIsR","1xC6H","d8Dch"], "d8Dch", "parcelRequirea671")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
