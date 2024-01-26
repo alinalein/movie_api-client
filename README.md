@@ -47,3 +47,4 @@ npm start
 ```
 
 ## Link to the live APP 🎞️
+https://myflix-alinalein.netlify.app/login
