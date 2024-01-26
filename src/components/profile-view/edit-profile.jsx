@@ -9,7 +9,7 @@ export const EditProfile = ({ user, setUser, token }) => {
   const [birthday, setBirthday] = useState('')
 
   const navigate = useNavigate()
-
+  console.log('user-prop:', user)
   // add only update when new value + check username not DB jet
 
   const handleSaveClick = async (event) => {
@@ -18,8 +18,7 @@ export const EditProfile = ({ user, setUser, token }) => {
     const updatedUser = {
       Username: username !== '' ? username : user.Username,
       Email: email !== '' ? email : user.Email,
-      Birthday: birthday !== '' ? birthday : user.Birthday,
-      FavoriteMovies: user.FavoriteMovies,
+      Birthday: birthday !== '' ? birthday : user.Birthday
     }
 
     console.log('updated user:', updatedUser)
@@ -38,12 +37,14 @@ export const EditProfile = ({ user, setUser, token }) => {
 
       if (response.ok) {
         // If the update is successful, update the local state & local storage
-        setUser(updatedUser)
-        localStorage.setItem('user', JSON.stringify(updatedUser))
+        const data = await response.json();
+        console.log('data:', data)
+        setUser(data)
+        localStorage.setItem('user', JSON.stringify(data))
         alert('You successfully updated your profile')
         // navigate to the user profile when update successfull
         navigate('/user-profile')
-        console.log('User state updated:', updatedUser)
+        console.log('User state updated:', data)
       } else if (response.status === 401) {
         const data = await response.json()
         console.error('Unauthorized:', data.error)

@@ -12,7 +12,7 @@
     "type": "git",
     "url": "movie_api-client"
   },
-  "author": "",
+  "author": "alina l.",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.2",
