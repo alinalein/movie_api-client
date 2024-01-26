@@ -16,9 +16,9 @@ export const EditProfile = ({ user, setUser, token }) => {
     event.preventDefault()
 
     const updatedUser = {
-      Username: username !== '' ? username : user.Username,
-      Email: email !== '' ? email : user.Email,
-      Birthday: birthday !== '' ? birthday : user.Birthday
+      Username: username,
+      Email: email,
+      Birthday: birthday,
     }
 
     console.log('updated user:', updatedUser)
@@ -36,7 +36,7 @@ export const EditProfile = ({ user, setUser, token }) => {
       )
 
       if (response.ok) {
-        // If the update is successful, update the local state & local storage
+        // If the update is successful, get tha response data from server & update localstorage
         const data = await response.json();
         console.log('data:', data)
         setUser(data)
