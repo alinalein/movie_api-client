@@ -47,5 +47,5 @@ npm start
 ```
 
 ## Link to the live APP 🎞️
-[Come visit my page! :DI](https://myflix-alinalein.netlify.app/login)
+[Come visit my page! :D](https://myflix-alinalein.netlify.app/login)
 
