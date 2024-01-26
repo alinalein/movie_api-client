@@ -7,7 +7,7 @@ This is the client-side of the Movie_API project. The application will incorpora
 - **Parcel** : A fast, zero-config web application bundler
 - **React** : JavaScript library for building user interfaces, developed and maintained by Facebook
 - **Bootstrap** : Front-end framework for efficient web development with built-in components and responsive design features.
-- 
+  
 ## Getting started 😎
 
 ### Clone the repository:
