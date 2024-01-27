@@ -38,13 +38,12 @@ export const EditProfile = ({ user, setUser, token }) => {
       if (response.ok) {
         // If the update is successful, get tha response data from server & update localstorage
         const data = await response.json();
-        console.log('data:', data)
         setUser(data)
         localStorage.setItem('user', JSON.stringify(data))
         alert('You successfully updated your profile')
         // navigate to the user profile when update successfull
         navigate('/user-profile')
-        console.log('User state updated:', data)
+
       } else if (response.status === 401) {
         const data = await response.json()
         console.error('Unauthorized:', data.error)
