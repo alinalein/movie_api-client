@@ -46,7 +46,7 @@ As a user, I want to be able to access information about movies so that I can le
 As a user, I want to be able to create a profile so I can save data about my favorite movies.
 
 ## Preview
-<img width="943" alt="image" src="https://github.com/alinalein/movie_api-client/assets/111589183/9516c8e7-e4ff-41cd-96de-db29ef3f021b">
+<img width="901" alt="image" src="https://github.com/alinalein/movie_api-client/assets/111589183/fec3141f-556b-4f92-ac4f-99814cb9d505">
 
 ## Link to the live APP 🎞️
 https://myflix-alinalein.netlify.app
