@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import './login-view.scss'
 
 export const LoginView = ({ onLoggedIn }) => {
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -14,7 +15,7 @@ export const LoginView = ({ onLoggedIn }) => {
       Username: username,
       Password: password,
     }
-
+    // send data from form to backend 
     fetch('https://movie-api-lina-834bc70d6952.herokuapp.com/users/login', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -22,12 +23,17 @@ export const LoginView = ({ onLoggedIn }) => {
         'Content-Type': 'application/json',
       },
     })
+      // take the fetch response from the API, it returns an object
+      // with json() extracts the body and converst it to JS object 
       .then((response) => response.json())
       .then((data) => {
         console.log('Login response: ', data)
         if (data.user) {
+          //convert JS object to JSON string
           localStorage.setItem('user', JSON.stringify(data.user))
+          //data.token is already a string , dont need to be converted
           localStorage.setItem('token', data.token)
+          // call LoggedIn function from main and set the user and token
           onLoggedIn(data.user, data.token)
         } else {
           alert('Username or password is wrong')

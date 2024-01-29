@@ -18,6 +18,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
             <Link to={`/movies/${movie.id}`}>
               <Button variant="outline-info">Details</Button>
             </Link>
+            {/* use the FavoriteToggle component here */}
             <FavoriteToggle
               user={user}
               setUser={setUser}

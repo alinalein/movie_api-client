@@ -12,7 +12,8 @@ const MovieApi = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'))
   const [user, setUser] = useState(storedUser ? storedUser : null)
 
-  // when user not logged in, add class background-image to body of page
+  // change the state of user depending if there is one or not 
+  // if yes will show background picture 
   useEffect(() => {
     document.body.classList.toggle('background-image', !user)
   }, [user])

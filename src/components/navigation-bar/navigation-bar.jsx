@@ -3,7 +3,9 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { Search } from 'react-bootstrap-icons'
 import './navigation-bar.scss'
+
 export const NavigationBar = ({ user, onLoggedOut }) => {
+
   return (
     <Navbar data-bs-theme="dark" expand="lg" style={{ padding: '0px' }}>
       <Container style={{ background: 'black' }} className="nav__container">
@@ -13,6 +15,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+            {/* when user not logged in show this nav bar  */}
             {!user && (
               <>
                 {/* The links to have to match the paths in main-view */}
@@ -24,6 +27,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 </Nav.Link>
               </>
             )}
+            {/* when user loggen in show this bar  */}
             {user && (
               <>
                 <Nav.Link as={Link} to="/">
@@ -64,6 +68,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 <NavDropdown.Item as={Link} to="/edit-profile">
                   Edit Profile
                 </NavDropdown.Item>
+                {/* like under Edit Profile */}
                 <hr className="dropdown-divider" />
                 <NavDropdown.Item as={Link} to="/delete-profile">
                   Delete Profile

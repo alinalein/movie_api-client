@@ -2,6 +2,7 @@ import { Col, Button, Row } from 'react-bootstrap'
 import './profile-view.scss'
 
 export const DeleteProfile = ({ user, setUser, token }) => {
+
   const handleDeleteClick = (event) => {
     event.preventDefault()
 
@@ -23,7 +24,7 @@ export const DeleteProfile = ({ user, setUser, token }) => {
       )
         .then((response) => {
           if (response.ok) {
-            // If the update is successful, update the local state
+            // If the update is successful, update the local state->log out user 
             alert('You successfully deleted your profile')
             setUser(null)
             setToken(null)

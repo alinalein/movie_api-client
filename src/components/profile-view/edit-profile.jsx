@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { formatDate } from '../../utils/helpers/helpers'
 
 export const EditProfile = ({ user, setUser, token }) => {
+
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [birthday, setBirthday] = useState('')
@@ -14,10 +15,9 @@ export const EditProfile = ({ user, setUser, token }) => {
     event.preventDefault()
 
     const updatedUser = {
-      Username: username !== '' ? username : user.Username,
-      Email: email !== '' ? email : user.Email,
-      Birthday: birthday !== '' ? birthday : user.Birthday,
-      FavoriteMovies: user.FavoriteMovies,
+      Username: username,
+      Email: email,
+      Birthday: birthday,
     }
 
     console.log('updated user:', updatedUser)
@@ -26,6 +26,7 @@ export const EditProfile = ({ user, setUser, token }) => {
         `https://movie-api-lina-834bc70d6952.herokuapp.com/users/update/${user.Username}`,
         {
           method: 'PUT',
+          // send the data from form to backend , create out of JS object a JSON string 
           body: JSON.stringify(updatedUser),
           headers: {
             'Content-Type': 'application/json',
@@ -35,18 +36,21 @@ export const EditProfile = ({ user, setUser, token }) => {
       )
 
       if (response.ok) {
-        // If the update is successful, update the local state & local storage
-        setUser(updatedUser)
-        localStorage.setItem('user', JSON.stringify(updatedUser))
+        // If the update is successful, get the body data from response server & update localstorage
+        const data = await response.json();
+        setUser(data)
+        localStorage.setItem('user', JSON.stringify(data))
         alert('You successfully updated your profile')
         // navigate to the user profile when update successfull
         navigate('/user-profile')
-        console.log('User state updated:', updatedUser)
+
       } else if (response.status === 401) {
+        // show alert when username already in BD ->logic in backend 
         const data = await response.json()
         console.error('Unauthorized:', data.error)
         alert(data.error)
       } else if (response.status === 422) {
+        // response for validation error 
         const data = await response.json()
         console.error('Validation Error:', data.errors)
       } else {

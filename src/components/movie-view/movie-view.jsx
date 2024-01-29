@@ -8,7 +8,8 @@ import { FavoriteToggle } from '../toggle-favorite/toggle-favorite'
 import './movie-view.scss'
 
 export const MovieView = ({ movies, token, user, setUser }) => {
-  // only access the param from the before set path (here in main)
+
+  // only access the param from the before set path (here in main) for the movieId
   const { movieId } = useParams()
   const [showSimilarMovies, setShowSimilarMovies] = useState(false)
   // got the whole movies array from main->here look for specific movie user klicked on by id-> then show details about this movie
@@ -66,7 +67,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
           </Card.Body>
         </Card>
       </Col>
-
+      {/* when showSimilarMovies is set to thrue and the result of function bigger than 0 , then show  */}
       {showSimilarMovies && findSimilarMovies().length > 0 ? (
         <>
           <Row className="justify-content-md-center mt-2">
@@ -102,6 +103,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
       ) : (
         <Row>
           <Col className="text-center mb-3">
+            {/* sets the showSimilarMovies to true , what will open them  */}
             <Button variant="info" onClick={() => setShowSimilarMovies(true)}>
               Don't miss out, see Similar Movies!
             </Button>

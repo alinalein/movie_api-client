@@ -19,21 +19,26 @@ import { Row, Col, Button } from 'react-bootstrap'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 export const MainView = ({ user, setUser }) => {
-  // const storedUser = JSON.parse(localStorage.getItem("user"))
+  // const storedUser = JSON.parse(localStorage.getItem("user")) -> moved to index.jsx
   const storedToken = localStorage.getItem('token')
+
   //Create state variable, called user with initial stale "null". Use to check if user is logged in or not.
-  // const [user, setUser] = useState(storedUser ? storedUser : null);
+  // const [user, setUser] = useState(storedUser ? storedUser : null); -> moved to index.jsx
+
   //Create state variable, called token with initial state "null". Use to store token.
   const [token, setToken] = useState(storedToken ? storedToken : null)
   const [movies, setMovies] = useState([])
 
-  // handle state of scroll up button-> route /
+  // handle state of scroll up button-> route / 
   const [showScrollButton, setShowScrollButton] = useState(false)
+  // ensuring that the showScrollButton state is updated based on whether there are any movies in the movies array.
+  // If there are movies, showScrollButton will be set to true; otherwise, it will be set to false
   useEffect(() => {
+
     setShowScrollButton(movies.length > 0)
   }, [movies])
 
-  /*populate the movies array with the movies from the API */
+  // change the state of movies depending if there is a token (user logged in )
   useEffect(() => {
     if (!token) {
       return
@@ -88,21 +93,6 @@ export const MainView = ({ user, setUser }) => {
               </>
             }
           />
-          {/* <>
-                        {!user ? (
-                             <Navigate to="/login" replace />
-                        ) : (
-                            <>
-                                {movies.map((movie) => (
-                                    <React.Fragment key={movie.id}>
-                                        <Col className="mb-4" md={3}>
-                                            <FavoriteToggle movie={movie} token={token} user={user} setUser={setUser} />
-                                        </Col>
-                                    </React.Fragment>
-                                ))}
-                            </>
-                        )}
-                    </> */}
           {/* Route to login */}
           <Route
             path="/login"
@@ -151,6 +141,7 @@ export const MainView = ({ user, setUser }) => {
                       </Col>
                     ))}
                     {showScrollButton && (
+                      // on click scrolls to top of the page 
                       <Row className=" justify-content-md-center mb-3 text-center">
                         <Col>
                           <Button

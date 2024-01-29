@@ -3,6 +3,8 @@ import { Col, Alert, Row } from 'react-bootstrap'
 import { MovieCard } from '../movie-card/movie-card'
 
 export const FavoriteMovies = ({ movies, user, token, setUser }) => {
+
+  // returns an array of movies that meet the condition
   let favoriteMovies = movies.filter((m) => user.FavoriteMovies.includes(m.id))
 
   return (

@@ -2,7 +2,7 @@ import { MovieCard } from '../movie-card/movie-card'
 import { Col, Row } from 'react-bootstrap'
 
 export const MoviesCrime = ({ movies, token, user, setUser }) => {
-  // Filter movies with the genre "Drama"
+  // Filter movies with the genre "Crime"
 
   const dramaMovies = movies.filter((movie) => movie.Genre === 'Crime')
 
