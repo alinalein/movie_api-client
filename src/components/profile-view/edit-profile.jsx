@@ -4,13 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import { formatDate } from '../../utils/helpers/helpers'
 
 export const EditProfile = ({ user, setUser, token }) => {
+
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [birthday, setBirthday] = useState('')
 
   const navigate = useNavigate()
-  console.log('user-prop:', user)
-  // add only update when new value + check username not DB jet
 
   const handleSaveClick = async (event) => {
     event.preventDefault()

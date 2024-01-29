@@ -2,6 +2,7 @@ import { BookmarkStar, BookmarkStarFill } from 'react-bootstrap-icons'
 import './toggle-favorite.scss'
 
 export const FavoriteToggle = ({ movie, token, user, setUser }) => {
+
   const isMovieInFavorites = user.FavoriteMovies.includes(movie.id)
 
   const addToFavorites = async () => {

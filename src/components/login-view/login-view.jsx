@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import './login-view.scss'
 
 export const LoginView = ({ onLoggedIn }) => {
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 

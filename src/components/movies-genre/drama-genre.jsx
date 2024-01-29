@@ -3,7 +3,6 @@ import { Col, Row } from 'react-bootstrap'
 import './movies-gerne.scss'
 
 export const MoviesDrama = ({ movies, token, user, setUser }) => {
-  // Filter movies with the genre "Drama"
 
   const dramaMovies = movies.filter((movie) => movie.Genre === 'Drama')
 

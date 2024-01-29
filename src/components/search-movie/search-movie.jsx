@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Form, FormControl, Button, Row, Col, Alert } from 'react-bootstrap'
-
 import { MovieCard } from '../movie-card/movie-card'
 import './search-movie.scss'
 
 export const SearchMovie = ({ movies, token, user, setUser }) => {
+
   const [searchTitle, setSearchTitle] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [showNoResultMessage, setShowNoResultMessage] = useState(false)

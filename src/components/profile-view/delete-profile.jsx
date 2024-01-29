@@ -2,6 +2,7 @@ import { Col, Button, Row } from 'react-bootstrap'
 import './profile-view.scss'
 
 export const DeleteProfile = ({ user, setUser, token }) => {
+
   const handleDeleteClick = (event) => {
     event.preventDefault()
 

@@ -3,7 +3,9 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { Search } from 'react-bootstrap-icons'
 import './navigation-bar.scss'
+
 export const NavigationBar = ({ user, onLoggedOut }) => {
+
   return (
     <Navbar data-bs-theme="dark" expand="lg" style={{ padding: '0px' }}>
       <Container style={{ background: 'black' }} className="nav__container">

@@ -8,6 +8,7 @@ import { FavoriteToggle } from '../toggle-favorite/toggle-favorite'
 import './movie-view.scss'
 
 export const MovieView = ({ movies, token, user, setUser }) => {
+
   // only access the param from the before set path (here in main)
   const { movieId } = useParams()
   const [showSimilarMovies, setShowSimilarMovies] = useState(false)

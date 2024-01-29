@@ -3,6 +3,7 @@ import { Form, Button, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export const SignupView = () => {
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
