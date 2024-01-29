@@ -4,8 +4,9 @@ import { formatDate } from '../../utils/helpers/helpers'
 import { Link } from 'react-router-dom'
 import { PersonBoundingBox } from 'react-bootstrap-icons'
 import { PersonSquare } from 'react-bootstrap-icons'
+
 export const UserProfile = ({ user }) => {
-  console.log('profile:', user)
+
   return (
     <Row className="profile_component mt-2">
       <Col className="text-center mx-auto">

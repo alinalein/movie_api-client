@@ -10,8 +10,6 @@ export const EditProfile = ({ user, setUser, token }) => {
 
   const navigate = useNavigate()
 
-  // add only update when new value + check username not DB jet
-
   const handleSaveClick = async (event) => {
     event.preventDefault()
 

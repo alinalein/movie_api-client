@@ -6,11 +6,14 @@ import './search-movie.scss'
 
 export const SearchMovie = ({ movies, token, user, setUser }) => {
   const [searchTitle, setSearchTitle] = useState('')
+  // set search results to an empty array
   const [searchResults, setSearchResults] = useState([])
   const [showNoResultMessage, setShowNoResultMessage] = useState(false)
 
   const handleSearch = () => {
+    // remove white spaace and all letters to lower case
     const searchInput = searchTitle.trim().toLowerCase()
+    // if input empty string OR the movie from search is not in the array of movies
     if (
       searchInput === '' ||
       movies.every((movie) => !movie.Title.toLowerCase().includes(searchInput))
@@ -20,7 +23,9 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
     } else {
       const filteredMovies = movies.filter((movie) => {
         const movieTitle = movie.Title.toLowerCase()
+        // add spaces , to handle titels that have multiple words, splits it into an array of substrings 
         const searchInputs = searchInput.split(' ')
+        // checks of any of the array are part of every single movie
         return searchInputs.every((input) => movieTitle.includes(input))
       })
       setSearchResults(filteredMovies)
@@ -70,12 +75,6 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                 </Col>
               </Row>
             </Form.Group>
-
-            {/* <Col >
-                            <Button variant="info" onClick={handleSearch}>
-                                Start The Search
-                            </Button>
-                        </Col> */}
           </Form>
         </Col>
       </Row>

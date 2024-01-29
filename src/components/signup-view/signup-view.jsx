@@ -18,6 +18,7 @@ export const SignupView = () => {
       Birthday: birthday,
     }
 
+    // set the data from the form to data in DB and send it , convert the JS object to a JSON string 
     fetch('https://movie-api-lina-834bc70d6952.herokuapp.com/users/signup', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -28,6 +29,7 @@ export const SignupView = () => {
       .then((response) => {
         if (response.ok) {
           alert('You have been signed up')
+          // window has to reload that movies are now shown instead of the login page 
           window.location.reload()
         } else if (response.status === 422) {
           return response.json()
@@ -35,6 +37,7 @@ export const SignupView = () => {
           alert('The signup failed')
         }
       })
+      // eror catching 
       .then((data) => {
         if (data && data.errors && data.errors.length > 0) {
           data.errors.forEach((error) => {
@@ -61,6 +64,7 @@ export const SignupView = () => {
             type="text"
             value={username}
             placeholder="Username"
+            // when input in this field will change , set the it to the value of usernmame
             onChange={(e) => setUsername(e.target.value)}
             required
             minLength="5"

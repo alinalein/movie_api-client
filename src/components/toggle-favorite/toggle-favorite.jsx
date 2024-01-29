@@ -19,9 +19,11 @@ export const FavoriteToggle = ({ movie, token, user, setUser }) => {
       if (response.ok) {
         // Movie successfully added to favorites
         const updatedUser = {
+          // create copy of object user & add the movie where the id is equal to id user click on to the back of the array
           ...user,
           FavoriteMovies: [...user.FavoriteMovies, movie.id],
         }
+        //change state->update IU 
         setUser(updatedUser)
         localStorage.setItem('user', JSON.stringify(updatedUser))
         console.log('Movie added to favorites')
@@ -66,6 +68,7 @@ export const FavoriteToggle = ({ movie, token, user, setUser }) => {
 
   return (
     <>
+      {/* Toggle the like button depending if movie in fav or not  */}
       {isMovieInFavorites ? (
         <BookmarkStarFill
           className="favorite__icon"
