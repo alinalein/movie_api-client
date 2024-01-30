@@ -30,6 +30,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
   const handleClear = () => {
     setSearchTitle('')
     setShowNoResultMessage(false)
+    setSearchResults([])
   }
 
   return (
