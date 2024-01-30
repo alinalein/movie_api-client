@@ -98,7 +98,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
       </Row>
       <Row className="justify-content-md-center text-center">
         {searchResults.map((foundMovie) => (
-          <Col key={foundMovie.id} md={3} sm={6} xs={12}>
+          <Col className="mb-4" key={foundMovie.id} md={3} sm={6} xs={12}>
             <MovieCard
               movie={foundMovie}
               token={token}

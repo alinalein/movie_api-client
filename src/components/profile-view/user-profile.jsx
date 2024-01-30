@@ -8,7 +8,7 @@ import { PersonSquare } from 'react-bootstrap-icons'
 export const UserProfile = ({ user }) => {
 
   return (
-    <Row className="profile_component mt-2">
+    <Row className="profile_component mt-2 mb-3">
       <Col className="text-center mx-auto">
         <h2 className="mb-4 h2__text">Your Profile</h2>
         <PersonSquare color="white" size={180} className="mb-3" />

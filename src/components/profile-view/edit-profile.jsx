@@ -59,7 +59,7 @@ export const EditProfile = ({ user, setUser, token }) => {
   }
 
   return (
-    <Row className="mt-2 profile_component">
+    <Row className="mt-2 profile_component mb-3">
       <h2 className="text-center mb-4 h2__text">EDIT YOUR PROFILE</h2>
       <Form onSubmit={handleSaveClick}>
         <Form.Group controlId="formUsername" className="mb-2 form__text">
