@@ -37,13 +37,6 @@
   font-size: 30px;
 }
 
-.search__header {
-  background-color: #000;
-  border-radius: 10px;
-  padding-top: 8px;
-  padding-bottom: 0;
-}
-
 .profile_component {
   background-color: #000;
   border-radius: 10px;
@@ -71,6 +64,13 @@
 
 .genre__header .h2__text-gerne {
   color: #0dcaf0;
+}
+
+.search__header {
+  background-color: #000;
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 0;
 }
 
 :root, [data-bs-theme="light"] {

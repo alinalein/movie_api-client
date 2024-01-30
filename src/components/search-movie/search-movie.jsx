@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, FormControl, Button, Row, Col, Alert } from 'react-bootstrap'
 import { MovieCard } from '../movie-card/movie-card'
 import './search-movie.scss'
@@ -12,7 +12,6 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
   const handleSearch = () => {
     const searchInput = searchTitle.trim().toLowerCase()
     if (
-      searchInput === '' ||
       movies.every((movie) => !movie.Title.toLowerCase().includes(searchInput))
     ) {
       setSearchResults([])
@@ -27,6 +26,11 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
       setShowNoResultMessage(false)
     }
   }
+
+  useEffect(() => {
+    handleSearch();
+  }, [searchTitle]);
+
   const handleClear = () => {
     setSearchTitle('')
     setShowNoResultMessage(false)
@@ -48,14 +52,10 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                     className="mr-sm-2"
                     value={searchTitle}
                     onChange={(e) => {
-                      setSearchTitle(e.target.value)
-                      handleSearch()
-                    }}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        e.preventDefault()
-                        handleSearch()
-                      }
+                      const newSearchTitle = e.target.value;
+                      setSearchTitle(newSearchTitle);
+                      console.log('new input:', newSearchTitle); // Log the updated searchTitle for debugging
+                      handleSearch();
                     }}
                   />
                 </Col>
@@ -67,15 +67,12 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                   >
                     x
                   </Button>
+                  {/* <Button variant="outline-success" onClick={handleSearch}>
+                    Search
+                  </Button> */}
                 </Col>
               </div>
             </Form.Group>
-
-            {/* <Col >
-                            <Button variant="info" onClick={handleSearch}>
-                                Start The Search
-                            </Button>
-                        </Col> */}
           </Form>
         </Col>
       </Row>
