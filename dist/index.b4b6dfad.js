@@ -52581,8 +52581,6 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                 className: "justify-content-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     md: 6,
-                    sm: 8,
-                    xs: 12,
                     className: "search__header mb-4",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -52597,7 +52595,6 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                             className: "mb-3 text-center",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                                 controlId: "formSearch",
-                                className: "mx-auto",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "d-flex justify-content-between",
                                     children: [

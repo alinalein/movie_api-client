@@ -36,10 +36,10 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
   return (
     <>
       <Row className="justify-content-center">
-        <Col md={6} sm={8} xs={12} className="search__header mb-4">
+        <Col md={6} className="search__header mb-4">
           <h3 className="mb-4 h2__text text-center">SEARCH FOR YOUR MOVIE</h3>
           <Form className="mb-3 text-center">
-            <Form.Group controlId="formSearch" className="mx-auto">
+            <Form.Group controlId="formSearch">
               <div className="d-flex justify-content-between">
                 <Col md={11} sm={11} xs={11} className="search__input">
                   <FormControl
