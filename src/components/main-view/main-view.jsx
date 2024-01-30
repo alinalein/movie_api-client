@@ -69,7 +69,7 @@ export const MainView = ({ user, setUser }) => {
           localStorage.clear()
         }}
       />
-      <Row className="justify-content-md-center mt-4  ">
+      <Row className="justify-content-center mt-4  ">
         <Routes>
           {/* Route to register */}
           <Route

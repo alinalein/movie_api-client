@@ -27277,7 +27277,7 @@ const MainView = ({ user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center mt-4  ",
+                className: "justify-content-center mt-4  ",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27759,7 +27759,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","../search-movie/search-movie":"eXeEX","../profile-view/user-profile":"7Frwr","../profile-view/edit-profile":"30fNd","../favorite-movies/favorite-movies":"dhuz5","../profile-view/delete-profile":"eSmSC","../movies-genre/drama-genre":"UeQQb","../movies-genre/action-genre":"03JoT","../movies-genre/biography-genre":"ylcsM","../movies-genre/crime-genre":"jxwcM","../movies-genre/sci-fi-genre":"1fHNd"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../navigation-bar/navigation-bar":"bsPVM","react-router-dom":"9xmpe","../profile-view/user-profile":"7Frwr","../profile-view/edit-profile":"30fNd","../favorite-movies/favorite-movies":"dhuz5","../profile-view/delete-profile":"eSmSC","../movies-genre/drama-genre":"UeQQb","../movies-genre/action-genre":"03JoT","../movies-genre/biography-genre":"ylcsM","../movies-genre/crime-genre":"jxwcM","../movies-genre/sci-fi-genre":"1fHNd","../search-movie/search-movie":"eXeEX"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51523,11 +51523,12 @@ const MovieView = ({ movies, token, user, setUser })=>{
         return movies.filter((m)=>m.Genre === movie.Genre && m.id !== movie.id);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-md-center ",
+        className: "justify-content-center ",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                 className: "mb-4 movie__shadow",
                 md: 4,
+                sm: 8,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
                     className: "h-100",
                     children: [
@@ -51682,8 +51683,8 @@ const MovieView = ({ movies, token, user, setUser })=>{
                         className: "justify-content-md-center mt-2",
                         children: findSimilarMovies().map((similarmovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                 className: "mb-3 movie_img--size mb-4",
-                                md: 2,
-                                sm: 6,
+                                md: 3,
+                                sm: 4,
                                 xs: 12,
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                     movie: similarmovie,
@@ -51707,7 +51708,7 @@ const MovieView = ({ movies, token, user, setUser })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                            className: "text-center",
+                            className: "text-center mb-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                 variant: "info",
                                 onClick: ()=>setShowSimilarMovies(false),
@@ -51730,7 +51731,7 @@ const MovieView = ({ movies, token, user, setUser })=>{
                 ]
             }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "text-center",
+                    className: "text-center mb-4",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "info",
                         onClick: ()=>setShowSimilarMovies(true),
@@ -52533,213 +52534,7 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-bootstrap-icons":"c9Gza","./navigation-bar.scss":"dnXvl"}],"dnXvl":[function() {},{}],"eXeEX":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c891 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c891.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SearchMovie", ()=>SearchMovie);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactBootstrap = require("react-bootstrap");
-var _movieCard = require("../movie-card/movie-card");
-var _searchMovieScss = require("./search-movie.scss");
-var _s = $RefreshSig$();
-const SearchMovie = ({ movies, token, user, setUser })=>{
-    _s();
-    const [searchTitle, setSearchTitle] = (0, _react.useState)("");
-    const [searchResults, setSearchResults] = (0, _react.useState)([]);
-    const [showNoResultMessage, setShowNoResultMessage] = (0, _react.useState)(false);
-    const handleSearch = ()=>{
-        const searchInput = searchTitle.trim().toLowerCase();
-        if (searchInput === "" || movies.every((movie)=>!movie.Title.toLowerCase().includes(searchInput))) {
-            setSearchResults([]);
-            setShowNoResultMessage(true);
-        } else {
-            const filteredMovies = movies.filter((movie)=>{
-                const movieTitle = movie.Title.toLowerCase();
-                const searchInputs = searchInput.split(" ");
-                return searchInputs.every((input)=>movieTitle.includes(input));
-            });
-            setSearchResults(filteredMovies);
-            setShowNoResultMessage(false);
-        }
-    };
-    const handleClear = ()=>{
-        setSearchTitle("");
-        setShowNoResultMessage(false);
-        setSearchResults([]);
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center mb-4 text-center",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    md: 6,
-                    className: "search__header",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                            className: "mb-4 h2__text",
-                            children: "SEARCH FOR YOUR MOVIE"
-                        }, void 0, false, {
-                            fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 40,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
-                            className: "mb-3 text-center",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                                controlId: "formSearch",
-                                className: "mx-auto",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                                    className: "mb-3 text-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                            md: 11,
-                                            className: "search__input",
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormControl), {
-                                                type: "text",
-                                                placeholder: "Search by Title",
-                                                className: "mr-sm-2",
-                                                value: searchTitle,
-                                                onChange: (e)=>{
-                                                    setSearchTitle(e.target.value);
-                                                    handleSearch();
-                                                },
-                                                onKeyDown: (e)=>{
-                                                    if (e.key === "Enter") {
-                                                        e.preventDefault();
-                                                        handleSearch();
-                                                    }
-                                                }
-                                            }, void 0, false, {
-                                                fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 45,
-                                                columnNumber: 19
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 44,
-                                            columnNumber: 17
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                            md: 1,
-                                            className: "clear-button",
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                                variant: "link",
-                                                className: "clear-button",
-                                                onClick: handleClear,
-                                                children: "x"
-                                            }, void 0, false, {
-                                                fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 64,
-                                                columnNumber: 19
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 63,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/search-movie/search-movie.jsx",
-                                    lineNumber: 43,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/search-movie/search-movie.jsx",
-                                lineNumber: 42,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 41,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 39,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 38,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center text-center mt-5",
-                children: showNoResultMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    md: 6,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
-                        md: 5,
-                        style: {
-                            background: "black",
-                            color: "#ffffff8c",
-                            border: "black"
-                        },
-                        children: "Unfortunately, no movie matches your search."
-                    }, void 0, false, {
-                        fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 86,
-                        columnNumber: 13
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 85,
-                    columnNumber: 11
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 83,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center text-center",
-                children: searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                        className: "mb-4",
-                        md: 3,
-                        sm: 6,
-                        xs: 12,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                            movie: foundMovie,
-                            token: token,
-                            user: user,
-                            setUser: setUser
-                        }, void 0, false, {
-                            fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 102,
-                            columnNumber: 13
-                        }, undefined)
-                    }, foundMovie.id, false, {
-                        fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 101,
-                        columnNumber: 11
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 99,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(SearchMovie, "9XrG1b/WemuO7gJuKsyWo5x0+SQ=");
-_c = SearchMovie;
-var _c;
-$RefreshReg$(_c, "SearchMovie");
-
-  $parcel$ReactRefreshHelpers$c891.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./search-movie.scss":"ehmNM"}],"ehmNM":[function() {},{}],"7Frwr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-bootstrap-icons":"c9Gza","./navigation-bar.scss":"dnXvl"}],"dnXvl":[function() {},{}],"7Frwr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$61c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53285,7 +53080,7 @@ const DeleteProfile = ({ user, setUser, token })=>{
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-md-center text-center profile_component mx-auto mt-2 mb-3",
+        className: "justify-content-md-center text-center profile_component mt-2 mb-3",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 className: "mb-4 h2__text",
@@ -53715,6 +53510,212 @@ $RefreshReg$(_c, "MoviesSciFi");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}]},["5qIsR","1xC6H","d8Dch"], "d8Dch", "parcelRequirea671")
+},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eXeEX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c891 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c891.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SearchMovie", ()=>SearchMovie);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _movieCard = require("../movie-card/movie-card");
+var _searchMovieScss = require("./search-movie.scss");
+var _s = $RefreshSig$();
+const SearchMovie = ({ movies, token, user, setUser })=>{
+    _s();
+    const [searchTitle, setSearchTitle] = (0, _react.useState)("");
+    const [searchResults, setSearchResults] = (0, _react.useState)([]);
+    const [showNoResultMessage, setShowNoResultMessage] = (0, _react.useState)(false);
+    const handleSearch = ()=>{
+        const searchInput = searchTitle.trim().toLowerCase();
+        if (searchInput === "") {
+            setSearchResults([]);
+            setShowNoResultMessage(false);
+        } else {
+            const filteredMovies = movies.filter((movie)=>{
+                const movieTitle = movie.Title.toLowerCase();
+                const searchInputs = searchInput.split(" ");
+                return searchInputs.every((input)=>movieTitle.includes(input));
+            });
+            if (filteredMovies.length === 0) {
+                setSearchResults([]);
+                setShowNoResultMessage(true);
+            } else {
+                setSearchResults(filteredMovies);
+                setShowNoResultMessage(false);
+            }
+        }
+    };
+    //makes sure that handle search only executed after the state of searchResultsis updated
+    (0, _react.useEffect)(()=>{
+        if (searchTitle.trim() !== "") handleSearch();
+    }, [
+        searchTitle
+    ]);
+    const handleClear = ()=>{
+        setSearchTitle("");
+        setShowNoResultMessage(false);
+        setSearchResults([]);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "justify-content-center",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    md: 6,
+                    className: "search__header mb-4",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                            className: "mb-4 h2__text text-center",
+                            children: "SEARCH FOR YOUR MOVIE"
+                        }, void 0, false, {
+                            fileName: "src/components/search-movie/search-movie.jsx",
+                            lineNumber: 52,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
+                            className: "mb-3 text-center",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                                controlId: "formSearch",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "d-flex justify-content-between",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                            md: 11,
+                                            sm: 11,
+                                            xs: 11,
+                                            className: "search__input",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormControl), {
+                                                type: "text",
+                                                placeholder: "Search by Title",
+                                                className: "mr-sm-2",
+                                                value: searchTitle,
+                                                onChange: (e)=>{
+                                                    const newSearchTitle = e.target.value;
+                                                    setSearchTitle(newSearchTitle);
+                                                    console.log("new input:", newSearchTitle);
+                                                    handleSearch();
+                                                },
+                                                onKeyUp: (e)=>{
+                                                    if (e.key === "Backspace") handleSearch();
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "src/components/search-movie/search-movie.jsx",
+                                                lineNumber: 57,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/components/search-movie/search-movie.jsx",
+                                            lineNumber: 56,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                            md: 1,
+                                            sm: 1,
+                                            xs: 1,
+                                            className: "clear-button",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                                variant: "link",
+                                                className: "clear-button",
+                                                onClick: handleClear,
+                                                children: "x"
+                                            }, void 0, false, {
+                                                fileName: "src/components/search-movie/search-movie.jsx",
+                                                lineNumber: 76,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/components/search-movie/search-movie.jsx",
+                                            lineNumber: 75,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/search-movie/search-movie.jsx",
+                                    lineNumber: 55,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/search-movie/search-movie.jsx",
+                                lineNumber: 54,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/search-movie/search-movie.jsx",
+                            lineNumber: 53,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/search-movie/search-movie.jsx",
+                    lineNumber: 51,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/search-movie/search-movie.jsx",
+                lineNumber: 50,
+                columnNumber: 7
+            }, undefined),
+            showNoResultMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                md: 6,
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
+                    className: "text-center",
+                    md: 5,
+                    style: {
+                        background: "black",
+                        color: "#ffffff8c",
+                        border: "black"
+                    },
+                    children: "Unfortunately, no movie matches your search."
+                }, void 0, false, {
+                    fileName: "src/components/search-movie/search-movie.jsx",
+                    lineNumber: 94,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/search-movie/search-movie.jsx",
+                lineNumber: 93,
+                columnNumber: 9
+            }, undefined),
+            searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
+                    md: 3,
+                    sm: 6,
+                    xs: 12,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                        movie: foundMovie,
+                        token: token,
+                        user: user,
+                        setUser: setUser
+                    }, void 0, false, {
+                        fileName: "src/components/search-movie/search-movie.jsx",
+                        lineNumber: 108,
+                        columnNumber: 11
+                    }, undefined)
+                }, foundMovie.id, false, {
+                    fileName: "src/components/search-movie/search-movie.jsx",
+                    lineNumber: 107,
+                    columnNumber: 9
+                }, undefined))
+        ]
+    }, void 0, true);
+};
+_s(SearchMovie, "2XJCSOO8jM3d/IQaSuNrwW4FAgI=");
+_c = SearchMovie;
+var _c;
+$RefreshReg$(_c, "SearchMovie");
+
+  $parcel$ReactRefreshHelpers$c891.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./search-movie.scss":"ehmNM"}],"ehmNM":[function() {},{}],"lJZlQ":[function() {},{}]},["5qIsR","1xC6H","d8Dch"], "d8Dch", "parcelRequirea671")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
