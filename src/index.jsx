@@ -14,6 +14,11 @@ const MovieApi = () => {
   //Create state variable, called user with initial stale "null". Use to check if user is logged in or not.
   const [user, setUser] = useState(storedUser ? storedUser : null)
 
+  useEffect(() => {
+    const img = new Image();
+    img.src = '../img/final.webp';
+  }, []);
+
   // when user not logged in add class background-image to body of page
   useEffect(() => {
     document.body.classList.toggle('background-image', !user)
