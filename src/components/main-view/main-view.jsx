@@ -76,7 +76,7 @@ export const MainView = ({ user, setUser }) => {
           localStorage.clear()
         }}
       />
-      <Row className="justify-content-md-center mt-4  ">
+      <Row className="justify-content-center mt-4  ">
         <Routes>
           {/* Route to register */}
           <Route
@@ -214,6 +214,25 @@ export const MainView = ({ user, setUser }) => {
               </>
             }
           />
+          {/* Route to delete the profile */}
+          <Route
+            path="/delete-profile"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : (
+                  <Col md={5}>
+                    <DeleteProfile
+                      user={user}
+                      token={token}
+                      setUser={setUser}
+                    />
+                  </Col>
+                )}
+              </>
+            }
+          />
           {/* Route to favorite movies */}
           <Route
             path="/favorite-movies"
@@ -234,25 +253,6 @@ export const MainView = ({ user, setUser }) => {
               </>
             }
           />
-          {/* Route to delete the profile */}
-          <Route
-            path="/delete-profile"
-            element={
-              <>
-                {!user ? (
-                  <Navigate to="/login" replace />
-                ) : (
-                  <Col md={5}>
-                    <DeleteProfile
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
-                  </Col>
-                )}
-              </>
-            }
-          />
           {/* Route tom movie Genres */}
           <Route
             path="/drama"
@@ -261,14 +261,14 @@ export const MainView = ({ user, setUser }) => {
                 {!user ? (
                   <Navigate to="/login" replace />
                 ) : (
-                  <Col>
-                    <MoviesDrama
-                      movies={movies}
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
-                  </Col>
+
+                  <MoviesDrama
+                    movies={movies}
+                    user={user}
+                    token={token}
+                    setUser={setUser}
+                  />
+
                 )}
               </>
             }

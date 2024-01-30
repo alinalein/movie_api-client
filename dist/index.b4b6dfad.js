@@ -2968,7 +2968,7 @@ const MovieApi = ()=>{
     }, [
         user
     ]);
-    // makes sure pic is loaded on timew when user opens app 
+    // makes sure pic is loaded on time when user opens app 
     (0, _react.useEffect)(()=>{
         const img = new Image();
         img.src = "../img/final.webp";
@@ -27284,7 +27284,7 @@ const MainView = ({ user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center mt-4  ",
+                className: "justify-content-center mt-4  ",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27520,7 +27520,7 @@ const MainView = ({ user, setUser })=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/favorite-movies",
+                            path: "/delete-profile",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                     to: "/login",
@@ -27530,9 +27530,9 @@ const MainView = ({ user, setUser })=>{
                                     lineNumber: 223,
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favoriteMovies.FavoriteMovies), {
+                                    md: 5,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _deleteProfile.DeleteProfile), {
                                         user: user,
-                                        movies: movies,
                                         token: token,
                                         setUser: setUser
                                     }, void 0, false, {
@@ -27552,35 +27552,35 @@ const MainView = ({ user, setUser })=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/delete-profile",
+                            path: "/favorite-movies",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                     to: "/login",
                                     replace: true
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 243,
+                                    lineNumber: 242,
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                    md: 5,
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _deleteProfile.DeleteProfile), {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favoriteMovies.FavoriteMovies), {
                                         user: user,
+                                        movies: movies,
                                         token: token,
                                         setUser: setUser
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 246,
+                                        lineNumber: 245,
                                         columnNumber: 21
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 245,
+                                    lineNumber: 244,
                                     columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 238,
+                            lineNumber: 237,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27593,20 +27593,14 @@ const MainView = ({ user, setUser })=>{
                                     fileName: "src/components/main-view/main-view.jsx",
                                     lineNumber: 262,
                                     columnNumber: 19
-                                }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dramaGenre.MoviesDrama), {
-                                        movies: movies,
-                                        user: user,
-                                        token: token,
-                                        setUser: setUser
-                                    }, void 0, false, {
-                                        fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 265,
-                                        columnNumber: 21
-                                    }, void 0)
+                                }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dramaGenre.MoviesDrama), {
+                                    movies: movies,
+                                    user: user,
+                                    token: token,
+                                    setUser: setUser
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 264,
+                                    lineNumber: 265,
                                     columnNumber: 19
                                 }, void 0)
                             }, void 0, false)
@@ -51539,11 +51533,12 @@ const MovieView = ({ movies, token, user, setUser })=>{
         return movies.filter((m)=>m.Genre === movie.Genre && m.id !== movie.id);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-md-center ",
+        className: "justify-content-center ",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                 className: "mb-4 movie__shadow",
                 md: 4,
+                sm: 8,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
                     className: "h-100",
                     children: [
@@ -51695,11 +51690,11 @@ const MovieView = ({ movies, token, user, setUser })=>{
             showSimilarMovies && findSimilarMovies().length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                        className: "justify-content-md-center mt-2",
+                        className: "justify-content-center mt-2",
                         children: findSimilarMovies().map((similarmovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                 className: "mb-3 movie_img--size",
-                                md: 2,
-                                sm: 6,
+                                md: 3,
+                                sm: 4,
                                 xs: 12,
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                     movie: similarmovie,
@@ -52585,10 +52580,9 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
     const handleSearch = ()=>{
         // remove white spaace and all letters to lower case
         const searchInput = searchTitle.trim().toLowerCase();
-        // if input empty string OR the movie from search is not in the array of movies
-        if (searchInput === "" || movies.every((movie)=>!movie.Title.toLowerCase().includes(searchInput))) {
+        if (searchInput === "") {
             setSearchResults([]);
-            setShowNoResultMessage(true);
+            setShowNoResultMessage(false);
         } else {
             const filteredMovies = movies.filter((movie)=>{
                 const movieTitle = movie.Title.toLowerCase();
@@ -52597,40 +52591,54 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                 // checks of any of the array are part of every single movie
                 return searchInputs.every((input)=>movieTitle.includes(input));
             });
-            setSearchResults(filteredMovies);
-            setShowNoResultMessage(false);
+            if (filteredMovies.length === 0) {
+                setSearchResults([]);
+                setShowNoResultMessage(true);
+            } else {
+                setSearchResults(filteredMovies);
+                setShowNoResultMessage(false);
+            }
         }
     };
+    //makes sure that handle search only executed after the state of searchResults is updated
+    // also search title has to be not ''
+    (0, _react.useEffect)(()=>{
+        if (searchTitle.trim() !== "") handleSearch();
+    }, [
+        searchTitle
+    ]);
     const handleClear = ()=>{
         setSearchTitle("");
         setShowNoResultMessage(false);
+        setSearchResults([]);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center mb-4 text-center",
+                className: "justify-content-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     md: 6,
-                    className: "search__header",
+                    className: "search__header mb-4",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                            className: "mb-4 h2__text",
+                            className: "mb-4 h2__text text-center",
                             children: "SEARCH FOR YOUR MOVIE"
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 44,
+                            lineNumber: 56,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
                             className: "mb-3 text-center",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                                 controlId: "formSearch",
-                                className: "mx-auto",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                                    className: "mb-3 text-center",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "d-flex justify-content-between",
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                             md: 11,
+                                            sm: 11,
+                                            xs: 11,
                                             className: "search__input",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormControl), {
                                                 type: "text",
@@ -52638,27 +52646,27 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                                 className: "mr-sm-2",
                                                 value: searchTitle,
                                                 onChange: (e)=>{
-                                                    setSearchTitle(e.target.value);
+                                                    const newSearchTitle = e.target.value;
+                                                    setSearchTitle(newSearchTitle);
+                                                    console.log("new input:", newSearchTitle);
                                                     handleSearch();
                                                 },
-                                                onKeyDown: (e)=>{
-                                                    if (e.key === "Enter") {
-                                                        e.preventDefault();
-                                                        handleSearch();
-                                                    }
-                                                }
+                                                // makes sure search function executed when keyup
+                                                onKeyUp: handleSearch
                                             }, void 0, false, {
                                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 49,
+                                                lineNumber: 61,
                                                 columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 48,
+                                            lineNumber: 60,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                             md: 1,
+                                            sm: 1,
+                                            xs: 1,
                                             className: "clear-button",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                                 variant: "link",
@@ -52667,99 +52675,86 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                                 children: "x"
                                             }, void 0, false, {
                                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 68,
+                                                lineNumber: 85,
                                                 columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 67,
+                                            lineNumber: 84,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/search-movie/search-movie.jsx",
-                                    lineNumber: 47,
+                                    lineNumber: 59,
                                     columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                lineNumber: 46,
+                                lineNumber: 58,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 45,
+                            lineNumber: 57,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 43,
+                    lineNumber: 55,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 42,
+                lineNumber: 54,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center text-center mt-5",
-                children: showNoResultMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    md: 6,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
-                        md: 5,
-                        style: {
-                            background: "black",
-                            color: "#ffffff8c",
-                            border: "black"
-                        },
-                        children: "Unfortunately, no movie matches your search."
-                    }, void 0, false, {
-                        fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 84,
-                        columnNumber: 13
-                    }, undefined)
+            showNoResultMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                md: 6,
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
+                    className: "text-center",
+                    md: 5,
+                    style: {
+                        background: "black",
+                        color: "#ffffff8c",
+                        border: "black"
+                    },
+                    children: "Unfortunately, no movie matches your search."
                 }, void 0, false, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 83,
+                    lineNumber: 103,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 81,
-                columnNumber: 7
+                lineNumber: 102,
+                columnNumber: 9
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center text-center",
-                children: searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                        className: "mb-3",
-                        md: 3,
-                        sm: 6,
-                        xs: 12,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                            movie: foundMovie,
-                            token: token,
-                            user: user,
-                            setUser: setUser
-                        }, void 0, false, {
-                            fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 100,
-                            columnNumber: 13
-                        }, undefined)
-                    }, foundMovie.id, false, {
+            searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
+                    md: 3,
+                    sm: 6,
+                    xs: 12,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                        movie: foundMovie,
+                        token: token,
+                        user: user,
+                        setUser: setUser
+                    }, void 0, false, {
                         fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 99,
+                        lineNumber: 117,
                         columnNumber: 11
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 97,
-                columnNumber: 7
-            }, undefined)
+                    }, undefined)
+                }, foundMovie.id, false, {
+                    fileName: "src/components/search-movie/search-movie.jsx",
+                    lineNumber: 116,
+                    columnNumber: 9
+                }, undefined))
         ]
     }, void 0, true);
 };
-_s(SearchMovie, "9XrG1b/WemuO7gJuKsyWo5x0+SQ=");
+_s(SearchMovie, "2XJCSOO8jM3d/IQaSuNrwW4FAgI=");
 _c = SearchMovie;
 var _c;
 $RefreshReg$(_c, "SearchMovie");
@@ -53319,7 +53314,7 @@ const DeleteProfile = ({ user, setUser, token })=>{
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-md-center text-center profile_component mx-auto mt-2 ",
+        className: "justify-content-md-center text-center profile_component mt-2",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 className: "mb-4 h2__text",
@@ -53398,37 +53393,35 @@ var _movieCard = require("../movie-card/movie-card");
 var _reactBootstrap = require("react-bootstrap");
 var _moviesGerneScss = require("./movies-gerne.scss");
 const MoviesDrama = ({ movies, token, user, setUser })=>{
-    // Filter movies with the genre "Drama"
     const dramaMovies = movies.filter((movie)=>movie.Genre === "Drama");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-center text-center",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "genre__header mb-4",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "genre__header mb-4 text-center",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         className: "mb-2 h2__text-gerne",
                         children: "Drama Movies"
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/drama-genre.jsx",
-                        lineNumber: 13,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Drama movies dive into the complexities of human emotions and relationships, filled with real-life depth and resonance."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/drama-genre.jsx",
-                        lineNumber: 14,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/drama-genre.jsx",
-                lineNumber: 12,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53439,20 +53432,16 @@ const MoviesDrama = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/drama-genre.jsx",
-                        lineNumber: 21,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/drama-genre.jsx",
-                    lineNumber: 20,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, undefined))
         ]
-    }, void 0, true, {
-        fileName: "src/components/movies-genre/drama-genre.jsx",
-        lineNumber: 11,
-        columnNumber: 5
-    }, undefined);
+    }, void 0, true);
 };
 _c = MoviesDrama;
 var _c;
@@ -53477,37 +53466,35 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _movieCard = require("../movie-card/movie-card");
 var _reactBootstrap = require("react-bootstrap");
 const MoviesAction = ({ movies, token, user, setUser })=>{
-    // Filter movies with the genre "Action"
     const dramaMovies = movies.filter((movie)=>movie.Genre === "Action");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-center text-center",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "genre__header mb-4",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "genre__header mb-4 text-center",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         className: "mb-2 h2__text-gerne",
                         children: "Action Movies"
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/action-genre.jsx",
-                        lineNumber: 12,
+                        lineNumber: 11,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Action films guarantee an adrenaline-packed ride with intense thrills and high-stakes scenarios, ensuring an edge-of-your-seat cinematic adventure."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/action-genre.jsx",
-                        lineNumber: 13,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/action-genre.jsx",
-                lineNumber: 11,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53518,20 +53505,16 @@ const MoviesAction = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/action-genre.jsx",
-                        lineNumber: 21,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/action-genre.jsx",
-                    lineNumber: 20,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, undefined))
         ]
-    }, void 0, true, {
-        fileName: "src/components/movies-genre/action-genre.jsx",
-        lineNumber: 10,
-        columnNumber: 5
-    }, undefined);
+    }, void 0, true);
 };
 _c = MoviesAction;
 var _c;
@@ -53556,37 +53539,35 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _movieCard = require("../movie-card/movie-card");
 var _reactBootstrap = require("react-bootstrap");
 const MoviesBiography = ({ movies, token, user, setUser })=>{
-    // Filter movies with the genre "Biography"
     const dramaMovies = movies.filter((movie)=>movie.Genre === "Biography");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-center text-center",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "genre__header mb-4",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "genre__header mb-4 text-center",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         className: "mb-2 h2__text-gerne",
                         children: "Biography Movies"
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/biography-genre.jsx",
-                        lineNumber: 12,
+                        lineNumber: 11,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Biographical films vividly portray captivating life stories, achievements, and legacies, offering an engaging cinematic experience."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/biography-genre.jsx",
-                        lineNumber: 13,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/biography-genre.jsx",
-                lineNumber: 11,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53597,20 +53578,16 @@ const MoviesBiography = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/biography-genre.jsx",
-                        lineNumber: 20,
+                        lineNumber: 19,
                         columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/biography-genre.jsx",
-                    lineNumber: 19,
+                    lineNumber: 18,
                     columnNumber: 9
                 }, undefined))
         ]
-    }, void 0, true, {
-        fileName: "src/components/movies-genre/biography-genre.jsx",
-        lineNumber: 10,
-        columnNumber: 5
-    }, undefined);
+    }, void 0, true);
 };
 _c = MoviesBiography;
 var _c;
@@ -53635,37 +53612,35 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _movieCard = require("../movie-card/movie-card");
 var _reactBootstrap = require("react-bootstrap");
 const MoviesCrime = ({ movies, token, user, setUser })=>{
-    // Filter movies with the genre "Crime"
     const dramaMovies = movies.filter((movie)=>movie.Genre === "Crime");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-center text-center",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "genre__header mb-4",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "genre__header mb-4 text-center",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         className: "mb-2 h2__text-gerne",
                         children: "Crime Movies"
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/crime-genre.jsx",
-                        lineNumber: 12,
+                        lineNumber: 11,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Crime films promise a thrilling experience with suspenseful plots, mysterious twists, and a captivating exploration of criminal activities/investigations."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/crime-genre.jsx",
-                        lineNumber: 13,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/crime-genre.jsx",
-                lineNumber: 11,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53676,20 +53651,16 @@ const MoviesCrime = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/crime-genre.jsx",
-                        lineNumber: 21,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/crime-genre.jsx",
-                    lineNumber: 20,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, undefined))
         ]
-    }, void 0, true, {
-        fileName: "src/components/movies-genre/crime-genre.jsx",
-        lineNumber: 10,
-        columnNumber: 5
-    }, undefined);
+    }, void 0, true);
 };
 _c = MoviesCrime;
 var _c;
@@ -53714,37 +53685,35 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _movieCard = require("../movie-card/movie-card");
 var _reactBootstrap = require("react-bootstrap");
 const MoviesSciFi = ({ movies, token, user, setUser })=>{
-    // Filter movies with the genre "Sci-Fi"
     const dramaMovies = movies.filter((movie)=>movie.Genre === "Sci-Fi");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-center text-center",
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "genre__header mb-4",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "genre__header mb-4 text-center",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "mb-2 h2__text",
+                        className: "mb-2 h2__text-gerne",
                         children: "Sci-Fi Movies"
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                        lineNumber: 12,
+                        lineNumber: 11,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "Sci-Fi movies transport viewers into speculative worlds, exploring futuristic concepts and scientific possibilities through imaginative storytelling."
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                        lineNumber: 13,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                lineNumber: 11,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53755,20 +53724,16 @@ const MoviesSciFi = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                        lineNumber: 21,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, undefined)
                 }, movie.id, false, {
                     fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-                    lineNumber: 20,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, undefined))
         ]
-    }, void 0, true, {
-        fileName: "src/components/movies-genre/sci-fi-genre.jsx",
-        lineNumber: 10,
-        columnNumber: 5
-    }, undefined);
+    }, void 0, true);
 };
 _c = MoviesSciFi;
 var _c;

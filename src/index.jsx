@@ -18,7 +18,7 @@ const MovieApi = () => {
     document.body.classList.toggle('background-image', !user)
   }, [user])
 
-  // makes sure pic is loaded on timew when user opens app 
+  // makes sure pic is loaded on time when user opens app 
   useEffect(() => {
     const img = new Image();
     img.src = '../img/final.webp';
