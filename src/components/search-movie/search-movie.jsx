@@ -10,25 +10,33 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
   const [showNoResultMessage, setShowNoResultMessage] = useState(false)
 
   const handleSearch = () => {
-    const searchInput = searchTitle.trim().toLowerCase()
-    if (
-      movies.every((movie) => !movie.Title.toLowerCase().includes(searchInput))
-    ) {
-      setSearchResults([])
-      setShowNoResultMessage(true)
+    const searchInput = searchTitle.trim().toLowerCase();
+
+    if (searchInput === '') {
+      setSearchResults([]);
+      setShowNoResultMessage(false);
     } else {
       const filteredMovies = movies.filter((movie) => {
-        const movieTitle = movie.Title.toLowerCase()
-        const searchInputs = searchInput.split(' ')
-        return searchInputs.every((input) => movieTitle.includes(input))
-      })
-      setSearchResults(filteredMovies)
-      setShowNoResultMessage(false)
-    }
-  }
+        const movieTitle = movie.Title.toLowerCase();
+        const searchInputs = searchInput.split(' ');
+        return searchInputs.every((input) => movieTitle.includes(input));
+      });
 
+      if (filteredMovies.length === 0) {
+        setSearchResults([]);
+        setShowNoResultMessage(true);
+      } else {
+        setSearchResults(filteredMovies);
+        setShowNoResultMessage(false);
+      }
+    }
+  };
+
+  //makes sure that handle search only executed after the state of searchResultsis updated
   useEffect(() => {
-    handleSearch();
+    if (searchTitle.trim() !== '') {
+      handleSearch();
+    }
   }, [searchTitle]);
 
   const handleClear = () => {
@@ -54,8 +62,13 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                     onChange={(e) => {
                       const newSearchTitle = e.target.value;
                       setSearchTitle(newSearchTitle);
-                      console.log('new input:', newSearchTitle); // Log the updated searchTitle for debugging
+                      console.log('new input:', newSearchTitle);
                       handleSearch();
+                    }}
+                    onKeyUp={(e) => {
+                      if (e.key === "Backspace") {
+                        handleSearch();
+                      }
                     }}
                   />
                 </Col>

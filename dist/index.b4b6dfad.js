@@ -51523,11 +51523,12 @@ const MovieView = ({ movies, token, user, setUser })=>{
         return movies.filter((m)=>m.Genre === movie.Genre && m.id !== movie.id);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-md-center ",
+        className: "justify-content-center ",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                 className: "mb-4 movie__shadow",
                 md: 4,
+                sm: 8,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
                     className: "h-100",
                     children: [
@@ -51682,8 +51683,8 @@ const MovieView = ({ movies, token, user, setUser })=>{
                         className: "justify-content-md-center mt-2",
                         children: findSimilarMovies().map((similarmovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                 className: "mb-3 movie_img--size mb-4",
-                                md: 2,
-                                sm: 6,
+                                md: 3,
+                                sm: 4,
                                 xs: 12,
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                     movie: similarmovie,
@@ -53533,21 +53534,27 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
     const [showNoResultMessage, setShowNoResultMessage] = (0, _react.useState)(false);
     const handleSearch = ()=>{
         const searchInput = searchTitle.trim().toLowerCase();
-        if (movies.every((movie)=>!movie.Title.toLowerCase().includes(searchInput))) {
+        if (searchInput === "") {
             setSearchResults([]);
-            setShowNoResultMessage(true);
+            setShowNoResultMessage(false);
         } else {
             const filteredMovies = movies.filter((movie)=>{
                 const movieTitle = movie.Title.toLowerCase();
                 const searchInputs = searchInput.split(" ");
                 return searchInputs.every((input)=>movieTitle.includes(input));
             });
-            setSearchResults(filteredMovies);
-            setShowNoResultMessage(false);
+            if (filteredMovies.length === 0) {
+                setSearchResults([]);
+                setShowNoResultMessage(true);
+            } else {
+                setSearchResults(filteredMovies);
+                setShowNoResultMessage(false);
+            }
         }
     };
+    //makes sure that handle search only executed after the state of searchResultsis updated
     (0, _react.useEffect)(()=>{
-        handleSearch();
+        if (searchTitle.trim() !== "") handleSearch();
     }, [
         searchTitle
     ]);
@@ -53569,7 +53576,7 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                             children: "SEARCH FOR YOUR MOVIE"
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 44,
+                            lineNumber: 52,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
@@ -53592,17 +53599,20 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                                 onChange: (e)=>{
                                                     const newSearchTitle = e.target.value;
                                                     setSearchTitle(newSearchTitle);
-                                                    console.log("new input:", newSearchTitle); // Log the updated searchTitle for debugging
+                                                    console.log("new input:", newSearchTitle);
                                                     handleSearch();
+                                                },
+                                                onKeyUp: (e)=>{
+                                                    if (e.key === "Backspace") handleSearch();
                                                 }
                                             }, void 0, false, {
                                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 49,
+                                                lineNumber: 57,
                                                 columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 48,
+                                            lineNumber: 56,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -53617,39 +53627,39 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                                 children: "x"
                                             }, void 0, false, {
                                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 63,
+                                                lineNumber: 76,
                                                 columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 62,
+                                            lineNumber: 75,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/search-movie/search-movie.jsx",
-                                    lineNumber: 47,
+                                    lineNumber: 55,
                                     columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                lineNumber: 46,
+                                lineNumber: 54,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 45,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 43,
+                    lineNumber: 51,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 42,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined),
             showNoResultMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -53665,12 +53675,12 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                     children: "Unfortunately, no movie matches your search."
                 }, void 0, false, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 81,
+                    lineNumber: 94,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 80,
+                lineNumber: 93,
                 columnNumber: 9
             }, undefined),
             searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -53685,12 +53695,12 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 95,
+                        lineNumber: 108,
                         columnNumber: 11
                     }, undefined)
                 }, foundMovie.id, false, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 94,
+                    lineNumber: 107,
                     columnNumber: 9
                 }, undefined))
         ]

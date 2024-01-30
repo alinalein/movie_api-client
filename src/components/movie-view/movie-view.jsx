@@ -19,8 +19,8 @@ export const MovieView = ({ movies, token, user, setUser }) => {
     return movies.filter((m) => m.Genre === movie.Genre && m.id !== movie.id)
   }
   return (
-    <Row className="justify-content-md-center ">
-      <Col className="mb-4 movie__shadow" key={movie.id} md={4}>
+    <Row className="justify-content-center ">
+      <Col className="mb-4 movie__shadow" key={movie.id} md={4} sm={8}>
         <Card className="h-100">
           <Card.Img
             variant="top"
@@ -76,8 +76,8 @@ export const MovieView = ({ movies, token, user, setUser }) => {
               <Col
                 className="mb-3 movie_img--size mb-4"
                 key={similarmovie.id}
-                md={2}
-                sm={6}
+                md={3}
+                sm={4}
                 xs={12}
               >
                 <MovieCard
