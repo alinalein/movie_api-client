@@ -44,10 +44,6 @@
   padding-bottom: 0;
 }
 
-.search__header .search__input {
-  padding-right: 0;
-}
-
 .search__header .clear-button {
   padding: 0;
 }
@@ -13295,6 +13291,7 @@ body {
 .background-image {
   background-image: url("final.406f7ff0.webp");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /*# sourceMappingURL=index.e3f97e84.css.map */

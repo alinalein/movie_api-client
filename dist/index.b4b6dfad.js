@@ -2968,6 +2968,7 @@ const MovieApi = ()=>{
     }, [
         user
     ]);
+    // makes sure pic is loaded on timew when user opens app 
     (0, _react.useEffect)(()=>{
         const img = new Image();
         img.src = "../img/final.webp";
@@ -2978,12 +2979,12 @@ const MovieApi = ()=>{
             setUser: setUser
         }, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 27,
+            lineNumber: 29,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 26,
+        lineNumber: 28,
         columnNumber: 5
     }, undefined);
 };
@@ -2995,7 +2996,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MovieApi, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 37,
+    lineNumber: 39,
     columnNumber: 13
 }, undefined));
 var _c;

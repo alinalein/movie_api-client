@@ -18,10 +18,12 @@ const MovieApi = () => {
     document.body.classList.toggle('background-image', !user)
   }, [user])
 
+  // makes sure pic is loaded on timew when user opens app 
   useEffect(() => {
     const img = new Image();
     img.src = '../img/final.webp';
   }, []);
+
   return (
     <Container>
       <MainView user={user} setUser={setUser} />
