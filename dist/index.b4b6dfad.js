@@ -27277,7 +27277,7 @@ const MainView = ({ user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center mt-4  ",
+                className: "justify-content-center mt-4  ",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -51707,7 +51707,7 @@ const MovieView = ({ movies, token, user, setUser })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                            className: "text-center",
+                            className: "text-center mb-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                 variant: "info",
                                 onClick: ()=>setShowSimilarMovies(false),
@@ -51730,7 +51730,7 @@ const MovieView = ({ movies, token, user, setUser })=>{
                 ]
             }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "text-center",
+                    className: "text-center mb-4",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "info",
                         onClick: ()=>setShowSimilarMovies(true),
@@ -52578,13 +52578,15 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center mb-4 text-center",
+                className: "justify-content-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     md: 6,
-                    className: "search__header",
+                    sm: 8,
+                    xs: 12,
+                    className: "search__header mb-4",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                            className: "mb-4 h2__text",
+                            className: "mb-4 h2__text text-center",
                             children: "SEARCH FOR YOUR MOVIE"
                         }, void 0, false, {
                             fileName: "src/components/search-movie/search-movie.jsx",
@@ -52596,11 +52598,13 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                                 controlId: "formSearch",
                                 className: "mx-auto",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                                    className: "mb-3 text-center",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "d-flex justify-content-between",
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                             md: 11,
+                                            sm: 11,
+                                            xs: 11,
                                             className: "search__input",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormControl), {
                                                 type: "text",
@@ -52629,6 +52633,8 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                             md: 1,
+                                            sm: 1,
+                                            xs: 1,
                                             className: "clear-button",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                                 variant: "link",
@@ -52637,12 +52643,12 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                                 children: "x"
                                             }, void 0, false, {
                                                 fileName: "src/components/search-movie/search-movie.jsx",
-                                                lineNumber: 64,
+                                                lineNumber: 63,
                                                 columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/search-movie/search-movie.jsx",
-                                            lineNumber: 63,
+                                            lineNumber: 62,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
@@ -52672,60 +52678,47 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                 lineNumber: 38,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center text-center mt-5",
-                children: showNoResultMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    md: 6,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
-                        md: 5,
-                        style: {
-                            background: "black",
-                            color: "#ffffff8c",
-                            border: "black"
-                        },
-                        children: "Unfortunately, no movie matches your search."
-                    }, void 0, false, {
-                        fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 86,
-                        columnNumber: 13
-                    }, undefined)
+            showNoResultMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                md: 6,
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
+                    className: "text-center",
+                    md: 5,
+                    style: {
+                        background: "black",
+                        color: "#ffffff8c",
+                        border: "black"
+                    },
+                    children: "Unfortunately, no movie matches your search."
                 }, void 0, false, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 85,
+                    lineNumber: 84,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/search-movie/search-movie.jsx",
                 lineNumber: 83,
-                columnNumber: 7
+                columnNumber: 9
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                className: "justify-content-md-center text-center",
-                children: searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                        className: "mb-4",
-                        md: 3,
-                        sm: 6,
-                        xs: 12,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                            movie: foundMovie,
-                            token: token,
-                            user: user,
-                            setUser: setUser
-                        }, void 0, false, {
-                            fileName: "src/components/search-movie/search-movie.jsx",
-                            lineNumber: 102,
-                            columnNumber: 13
-                        }, undefined)
-                    }, foundMovie.id, false, {
+            searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
+                    md: 3,
+                    sm: 6,
+                    xs: 12,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                        movie: foundMovie,
+                        token: token,
+                        user: user,
+                        setUser: setUser
+                    }, void 0, false, {
                         fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 101,
+                        lineNumber: 98,
                         columnNumber: 11
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/components/search-movie/search-movie.jsx",
-                lineNumber: 99,
-                columnNumber: 7
-            }, undefined)
+                    }, undefined)
+                }, foundMovie.id, false, {
+                    fileName: "src/components/search-movie/search-movie.jsx",
+                    lineNumber: 97,
+                    columnNumber: 9
+                }, undefined))
         ]
     }, void 0, true);
 };
@@ -53285,7 +53278,7 @@ const DeleteProfile = ({ user, setUser, token })=>{
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-md-center text-center profile_component mx-auto mt-2 mb-3",
+        className: "justify-content-md-center text-center profile_component mt-2 mb-3",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 className: "mb-4 h2__text",
