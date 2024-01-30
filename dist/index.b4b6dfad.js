@@ -27378,7 +27378,7 @@ const MainView = ({ user, setUser })=>{
                                                 columnNumber: 23
                                             }, void 0)),
                                         showScrollButton && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                                            className: " justify-content-md-center mb-3 text-center",
+                                            className: " justify-content-md-center text-center",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                                     variant: "info",
@@ -51713,7 +51713,7 @@ const MovieView = ({ movies, token, user, setUser })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                            className: "text-center mb-3",
+                            className: "text-center",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                 variant: "info",
                                 onClick: ()=>setShowSimilarMovies(false),
@@ -51736,7 +51736,7 @@ const MovieView = ({ movies, token, user, setUser })=>{
                 ]
             }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "text-center mb-3",
+                    className: "text-center",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "info",
                         onClick: ()=>setShowSimilarMovies(true),
@@ -52708,7 +52708,6 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 className: "justify-content-md-center text-center",
                 children: searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                        className: "mb-3",
                         md: 3,
                         sm: 6,
                         xs: 12,
@@ -53200,7 +53199,7 @@ const FavoriteMovies = ({ movies, user, token, setUser })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
         className: "justify-content-center",
         children: favoriteMovies.length > 0 ? favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                className: "mb-3 movie_img--size",
+                className: "movie_img--size",
                 md: 3,
                 sm: 6,
                 xs: 12,
@@ -53399,7 +53398,6 @@ const MoviesDrama = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53477,7 +53475,6 @@ const MoviesAction = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53555,7 +53552,6 @@ const MoviesBiography = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53633,7 +53629,6 @@ const MoviesCrime = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53711,7 +53706,6 @@ const MoviesSciFi = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                    className: "mb-3",
                     md: 3,
                     sm: 6,
                     xs: 12,

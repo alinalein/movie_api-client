@@ -13285,12 +13285,13 @@ body {
   box-sizing: border-box;
   background-color: #222831;
   margin: 0;
-  padding: 0;
+  padding-bottom: 10px;
 }
 
 .background-image {
   background-image: url("final.406f7ff0.webp");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /*# sourceMappingURL=index.e3f97e84.css.map */

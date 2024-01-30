@@ -134,7 +134,7 @@ export const MainView = ({ user, setUser }) => {
                       </Col>
                     ))}
                     {showScrollButton && (
-                      <Row className=" justify-content-md-center mb-3 text-center">
+                      <Row className=" justify-content-md-center text-center">
                         <Col>
                           <Button
                             variant="info"
