@@ -90,7 +90,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
             ))}
           </Row>
           <Row>
-            <Col className="text-center mb-3">
+            <Col className="text-center">
               <Button
                 variant="info"
                 onClick={() => setShowSimilarMovies(false)}
@@ -102,7 +102,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
         </>
       ) : (
         <Row>
-          <Col className="text-center mb-3">
+          <Col className="text-center">
             <Button variant="info" onClick={() => setShowSimilarMovies(true)}>
               Don't miss out, see Similar Movies!
             </Button>
