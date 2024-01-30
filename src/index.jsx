@@ -18,6 +18,10 @@ const MovieApi = () => {
     document.body.classList.toggle('background-image', !user)
   }, [user])
 
+  useEffect(() => {
+    const img = new Image();
+    img.src = '../img/final.webp';
+  }, []);
   return (
     <Container>
       <MainView user={user} setUser={setUser} />
