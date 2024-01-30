@@ -6,15 +6,15 @@ export const MoviesCrime = ({ movies, token, user, setUser }) => {
   const dramaMovies = movies.filter((movie) => movie.Genre === 'Crime')
 
   return (
-    <Row className="justify-content-center text-center">
-      <Row className="genre__header mb-4">
+    <>
+      <div className="genre__header mb-4 text-center">
         <h2 className="mb-2 h2__text-gerne">Crime Movies</h2>
         <p>
           Crime films promise a thrilling experience with suspenseful plots,
           mysterious twists, and a captivating exploration of criminal
           activities/investigations.
         </p>
-      </Row>
+      </div>
       {dramaMovies.map((movie) => (
         <Col className="mb-4" key={movie.id} md={3} sm={6} xs={12}>
           <MovieCard
@@ -25,6 +25,6 @@ export const MoviesCrime = ({ movies, token, user, setUser }) => {
           />
         </Col>
       ))}
-    </Row>
+    </>
   )
 }

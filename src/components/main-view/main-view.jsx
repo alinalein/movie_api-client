@@ -253,14 +253,12 @@ export const MainView = ({ user, setUser }) => {
                 {!user ? (
                   <Navigate to="/login" replace />
                 ) : (
-                  <Col>
-                    <MoviesDrama
-                      movies={movies}
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
-                  </Col>
+                  <MoviesDrama
+                    movies={movies}
+                    user={user}
+                    token={token}
+                    setUser={setUser}
+                  />
                 )}
               </>
             }
