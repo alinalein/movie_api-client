@@ -138,7 +138,7 @@ export const MainView = ({ user, setUser }) => {
                         <Col>
                           <Button
                             variant="info"
-                            className="scroll-button"
+                            className="scroll-button mb-4"
                             onClick={() => {
                               window.scrollTo(0, 0)
                             }}

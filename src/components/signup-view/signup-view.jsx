@@ -51,7 +51,7 @@ export const SignupView = () => {
   }
 
   return (
-    <Row className="login_component mt-3">
+    <Row className="login_component mt-3 mb-4">
       <Form onSubmit={handleSubmit} className="mx-auto ">
         <h2 className="text-center mb-4 h2__text">SIGNUP</h2>
         <Form.Group controlId="formUsername" className="mb-2">

@@ -11,7 +11,7 @@ export const FavoriteMovies = ({ movies, user, token, setUser }) => {
       {favoriteMovies.length > 0 ? (
         favoriteMovies.map((movie) => (
           <Col
-            className="movie_img--size"
+            className="movie_img--size mb-4"
             key={movie.id}
             md={3}
             sm={6}

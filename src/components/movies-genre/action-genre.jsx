@@ -16,7 +16,7 @@ export const MoviesAction = ({ movies, token, user, setUser }) => {
         </p>
       </Row>
       {dramaMovies.map((movie) => (
-        <Col key={movie.id} md={3} sm={6} xs={12}>
+        <Col className="mb-4" key={movie.id} md={3} sm={6} xs={12}>
           <MovieCard
             movie={movie}
             token={token}

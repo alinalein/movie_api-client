@@ -74,7 +74,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
             {/* <h2 className="text-center mb-3">Similar movies</h2> */}
             {findSimilarMovies().map((similarmovie) => (
               <Col
-                className="mb-3 movie_img--size"
+                className="mb-3 movie_img--size mb-4"
                 key={similarmovie.id}
                 md={2}
                 sm={6}

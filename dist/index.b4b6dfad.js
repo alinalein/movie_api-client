@@ -27382,7 +27382,7 @@ const MainView = ({ user, setUser })=>{
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                                     variant: "info",
-                                                    className: "scroll-button",
+                                                    className: "scroll-button mb-4",
                                                     onClick: ()=>{
                                                         window.scrollTo(0, 0);
                                                     },
@@ -51687,7 +51687,7 @@ const MovieView = ({ movies, token, user, setUser })=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                         className: "justify-content-md-center mt-2",
                         children: findSimilarMovies().map((similarmovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "mb-3 movie_img--size",
+                                className: "mb-3 movie_img--size mb-4",
                                 md: 2,
                                 sm: 6,
                                 xs: 12,
@@ -51833,7 +51833,7 @@ const LoginView = ({ onLoggedIn })=>{
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "login_component mt-3",
+        className: "login_component mt-3 mb-4",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
             onSubmit: handleSubmit,
             className: "mx-auto",
@@ -52032,7 +52032,7 @@ const SignupView = ()=>{
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "login_component mt-3",
+        className: "login_component mt-3 mb-4",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
             onSubmit: handleSubmit,
             className: "mx-auto ",
@@ -52708,6 +52708,7 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 className: "justify-content-md-center text-center",
                 children: searchResults.map((foundMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        className: "mb-4",
                         md: 3,
                         sm: 6,
                         xs: 12,
@@ -52763,7 +52764,7 @@ var _reactRouterDom = require("react-router-dom");
 var _reactBootstrapIcons = require("react-bootstrap-icons");
 const UserProfile = ({ user })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "profile_component mt-2",
+        className: "profile_component mt-2 mb-3",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
             className: "text-center mx-auto",
             children: [
@@ -52968,7 +52969,7 @@ const EditProfile = ({ user, setUser, token })=>{
         }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "mt-2 profile_component",
+        className: "mt-2 profile_component mb-3",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 className: "text-center mb-4 h2__text",
@@ -53199,7 +53200,7 @@ const FavoriteMovies = ({ movies, user, token, setUser })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
         className: "justify-content-center",
         children: favoriteMovies.length > 0 ? favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                className: "movie_img--size",
+                className: "movie_img--size mb-4",
                 md: 3,
                 sm: 6,
                 xs: 12,
@@ -53290,7 +53291,7 @@ const DeleteProfile = ({ user, setUser, token })=>{
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "justify-content-md-center text-center profile_component mx-auto mt-2 ",
+        className: "justify-content-md-center text-center profile_component mx-auto mt-2 mb-3",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 className: "mb-4 h2__text",
@@ -53398,6 +53399,7 @@ const MoviesDrama = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53475,6 +53477,7 @@ const MoviesAction = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53552,6 +53555,7 @@ const MoviesBiography = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53629,6 +53633,7 @@ const MoviesCrime = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
@@ -53706,6 +53711,7 @@ const MoviesSciFi = ({ movies, token, user, setUser })=>{
                 columnNumber: 7
             }, undefined),
             dramaMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
                     md: 3,
                     sm: 6,
                     xs: 12,
