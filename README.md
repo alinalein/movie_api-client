@@ -41,9 +41,15 @@ npm start
 ```
 ## User stories 💃 🕺
 
-As a user, I want to be able to access information about movies so that I can learn more about movies I’ve watched or am interested in.
+As a user, I want to be able to create a profile and log in, so that I can view information about movies.
 
-As a user, I want to be able to create a profile so I can save data about my favorite movies.
+As a user, I want to be able to update my profile information, including my username, email, and date of birth, so that I can maintain accurate and up-to-date details for my account.
+
+As a user, I want to be able to see detailed information about a specific movie, so that I can learn more about it.
+
+As a user, I want to be able to remove/add a movie from/to my list of favorites, so that I can manage my collection based on my preferences.
+
+As a user, I want to search the movie catalog, so that I can easily access information about a variety of movies.
 
 ## Preview
 <img width="901" alt="image" src="https://github.com/alinalein/movie_api-client/assets/111589183/fec3141f-556b-4f92-ac4f-99814cb9d505">
