@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Form, Button, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { LoadingSpinner } from '../../utils/helpers/helpers'
 
 export const SignupView = () => {
 
@@ -8,9 +9,13 @@ export const SignupView = () => {
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
   const [birthday, setBirthday] = useState('')
+  const [loading, setLoading] = useState(false);
+  navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
+    setLoading(true);
 
     const data = {
       Username: username,
@@ -27,33 +32,36 @@ export const SignupView = () => {
       },
     })
       .then((response) => {
-        if (response.ok) {
-          alert('You have been signed up')
-          window.location.reload()
+        if (response.status === 201) {
+          alert('You have been signed up');
+          navigate('/login');
+        } else if (response.status === 401) {
+          alert(`Username ${data.Username} already exists`);
         } else if (response.status === 422) {
-          return response.json()
+          return response.json();
         } else {
-          alert('The signup failed')
+          console.error('Error during signup:', response.statusText);
+          alert('An error occurred during signup');
         }
       })
       .then((data) => {
         if (data && data.errors && data.errors.length > 0) {
           data.errors.forEach((error) => {
-            alert(error.msg)
-            console.error('Validation Error:', error.msg)
-          })
+            alert(error.msg);
+            console.error('Validation Error:', error.msg);
+          });
         }
       })
-      .catch((error) => {
-        console.error('Error during signup:', error)
-        alert('An error occurred during signup')
-      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
 
   return (
-    <Row className="login_component mt-3 mb-4">
+    <Row className="login_component mt-2 mb-2">
       <Form onSubmit={handleSubmit} className="mx-auto ">
         <h2 className="text-center mb-4 h2__text">SIGNUP</h2>
+        <LoadingSpinner loading={loading} />
         <Form.Group controlId="formUsername" className="mb-2">
           <Form.Label className="form__text">
             <strong> Username: </strong>
@@ -87,9 +95,8 @@ export const SignupView = () => {
             Password, please choose at least 8 characters
           </small>
         </Form.Group>
-        <Form.Group controlId="formEmail" className="mb-2">
+        <Form.Group controlId="formEmail" className="mb-3">
           <Form.Label className="form__text">
-            {' '}
             <strong>Email: </strong>
           </Form.Label>
           <Form.Control
@@ -104,7 +111,7 @@ export const SignupView = () => {
           <Form.Label className="form__text">
             <strong>Birthday:</strong>
           </Form.Label>
-          <div className="mb-3">
+          <div className="mb-4">
             <Form.Control
               type="date"
               value={birthday}
@@ -113,7 +120,7 @@ export const SignupView = () => {
             />
           </div>
           <div className="d-flex justify-content-between">
-            <Button variant="info" type="submit">
+            <Button variant="info" type="submit" disabled={loading}>
               Submit
             </Button>
             <p>

@@ -1,7 +1,20 @@
+import React from 'react'
+import { useState } from 'react';
+import { Toast } from 'react-bootstrap'
 import { BookmarkStar, BookmarkStarFill } from 'react-bootstrap-icons'
+
 import './toggle-favorite.scss'
 
 export const FavoriteToggle = ({ movie, token, user, setUser }) => {
+
+  // const [toastDelete, setToastDelete] = useState(false);
+
+  // const showToastDelete = () => {
+  //   setToastDelete(true);
+  //   setTimeout(() => {
+  //     setToastDelete(false);
+  //   }, 5000); // Adjust the timeout as needed
+  // };
 
   const isMovieInFavorites = user.FavoriteMovies.includes(movie.id)
 
@@ -35,7 +48,9 @@ export const FavoriteToggle = ({ movie, token, user, setUser }) => {
   }
 
   const removeFromFavorites = async () => {
+
     try {
+
       const response = await fetch(
         `https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/remove/${movie.id}`,
         {
@@ -68,12 +83,28 @@ export const FavoriteToggle = ({ movie, token, user, setUser }) => {
   return (
     <>
       {isMovieInFavorites ? (
-        <BookmarkStarFill
-          className="favorite__icon"
-          color="#0dcaf0"
-          size={35}
-          onClick={removeFromFavorites}
-        />
+        <>
+          <BookmarkStarFill
+            className="favorite__icon"
+            color="#0dcaf0"
+            size={35}
+            onClick={() => {
+              removeFromFavorites();
+              // showToastDelete();
+            }}
+          />
+          {/* <Toast
+
+            show={toastDelete}
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+            }}
+          >
+            <Toast.Body>DELETED!!</Toast.Body>
+          </Toast> */}
+        </>
       ) : (
         <BookmarkStar
           className="favorite__icon"

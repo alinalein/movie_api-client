@@ -2,17 +2,21 @@ import React, { useState } from 'react'
 import { Form, Button, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { formatDate } from '../../utils/helpers/helpers'
+import { LoadingSpinner } from '../../utils/helpers/helpers'
 
 export const EditProfile = ({ user, setUser, token }) => {
 
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [birthday, setBirthday] = useState('')
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate()
 
   const handleSaveClick = async (event) => {
+
     event.preventDefault()
+    setLoading(true)
 
     const updatedUser = {
       Username: username,
@@ -55,13 +59,18 @@ export const EditProfile = ({ user, setUser, token }) => {
       }
     } catch (error) {
       console.error('Error updating user information', error)
+    } finally {
+      setLoading(false);
     }
   }
+
+  // setTimeout(handleSaveClick, 4000);
 
   return (
     <Row className="mt-2 profile_component mb-3">
       <h2 className="text-center mb-4 h2__text">EDIT YOUR PROFILE</h2>
       <Form onSubmit={handleSaveClick}>
+        <LoadingSpinner loading={loading} />
         <Form.Group controlId="formUsername" className="mb-2 form__text">
           <Form.Label>
             <strong> Current Username:</strong>{' '}
@@ -110,7 +119,7 @@ export const EditProfile = ({ user, setUser, token }) => {
           <small>Optional field</small>
         </Form.Group>
         <div className="text-center mb-2">
-          <Button variant="info" type="submit">
+          <Button variant="info" type="submit" disabled={loading}>
             Save Changes
           </Button>
         </div>
