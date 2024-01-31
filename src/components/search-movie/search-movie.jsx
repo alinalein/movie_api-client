@@ -6,43 +6,36 @@ import './search-movie.scss'
 export const SearchMovie = ({ movies, token, user, setUser }) => {
 
   const [searchTitle, setSearchTitle] = useState('')
-  const [searchResults, setSearchResults] = useState([])
+  //when user opens all movies are shown already
+  const [searchResults, setSearchResults] = useState([movies])
   const [showNoResultMessage, setShowNoResultMessage] = useState(false)
 
   const handleSearch = () => {
-    const searchInput = searchTitle.trim().toLowerCase();
-
-    if (searchInput === '') {
-      setSearchResults([]);
-      setShowNoResultMessage(false);
+    const searchInput = searchTitle.trim().toLowerCase()
+    if (
+      movies.every((movie) => !movie.Title.toLowerCase().includes(searchInput))
+    ) {
+      setSearchResults([])
+      setShowNoResultMessage(true)
     } else {
       const filteredMovies = movies.filter((movie) => {
-        const movieTitle = movie.Title.toLowerCase();
-        const searchInputs = searchInput.split(' ');
-        return searchInputs.every((input) => movieTitle.includes(input));
-      });
-
-      if (filteredMovies.length === 0) {
-        setSearchResults([]);
-        setShowNoResultMessage(true);
-      } else {
-        setSearchResults(filteredMovies);
-        setShowNoResultMessage(false);
-      }
+        const movieTitle = movie.Title.toLowerCase()
+        const searchInputs = searchInput.split(' ')
+        return searchInputs.every((input) => movieTitle.includes(input))
+      })
+      setSearchResults(filteredMovies)
+      setShowNoResultMessage(false)
     }
-  };
+  }
 
   //makes sure that handle search only executed after the state of searchResultsis updated
   useEffect(() => {
-    if (searchTitle.trim() !== '') {
-      handleSearch();
-    }
+    handleSearch();
   }, [searchTitle]);
 
   const handleClear = () => {
     setSearchTitle('')
     setShowNoResultMessage(false)
-    setSearchResults([])
   }
 
   return (

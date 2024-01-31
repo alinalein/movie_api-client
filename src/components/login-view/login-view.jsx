@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import { Form, Button, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { LoadingSpinner } from '../../utils/helpers/helpers'
 import './login-view.scss'
 
 export const LoginView = ({ onLoggedIn }) => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault()
-
+    setLoading(true)
     const data = {
       Username: username,
       Password: password,
@@ -41,10 +43,11 @@ export const LoginView = ({ onLoggedIn }) => {
   }
 
   return (
-    <Row className="login_component mt-3 mb-4">
+    <Row className="login_component mt-2 mb-2">
       <Form onSubmit={handleSubmit} className="mx-auto">
         <h2 className="text-center mb-4 h2__text">LOGIN</h2>
-        <Form.Group controlId="formUsername" className="mb-2">
+        <LoadingSpinner loading={loading} />
+        <Form.Group controlId="formUsername" className="mb-3">
           <Form.Label className="form__text">
             <strong> Username:</strong>
           </Form.Label>
@@ -61,7 +64,7 @@ export const LoginView = ({ onLoggedIn }) => {
           <Form.Label className="form__text">
             <strong>Password: </strong>
           </Form.Label>
-          <div className="mb-3">
+          <div className="mb-4">
             <Form.Control
               type="password"
               value={password}
@@ -72,7 +75,8 @@ export const LoginView = ({ onLoggedIn }) => {
           </div>
         </Form.Group>
         <div className="d-flex justify-content-between">
-          <Button variant="info" type="submit">
+          {/* button will be disabled while loading */}
+          <Button variant="info" type="submit" disabled={loading}>
             Submit
           </Button>
           <p>

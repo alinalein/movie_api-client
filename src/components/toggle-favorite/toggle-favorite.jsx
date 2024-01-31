@@ -1,8 +1,20 @@
+import React from 'react'
+import { useState } from 'react';
+import { Toast } from 'react-bootstrap'
 import { BookmarkStar, BookmarkStarFill } from 'react-bootstrap-icons'
+
 import './toggle-favorite.scss'
 
 export const FavoriteToggle = ({ movie, token, user, setUser }) => {
 
+  const [toastDelete, setToastDelete] = useState(false);
+
+  const showToastDelete = () => {
+    setToastDelete(true);
+    setTimeout(() => {
+      setToastDelete(false);
+    }, 5000); // Adjust the timeout duration as needed (in milliseconds)
+  };
   const isMovieInFavorites = user.FavoriteMovies.includes(movie.id)
 
   const addToFavorites = async () => {
@@ -68,12 +80,28 @@ export const FavoriteToggle = ({ movie, token, user, setUser }) => {
   return (
     <>
       {isMovieInFavorites ? (
-        <BookmarkStarFill
-          className="favorite__icon"
-          color="#0dcaf0"
-          size={35}
-          onClick={removeFromFavorites}
-        />
+        <>
+          <BookmarkStarFill
+            className="favorite__icon"
+            color="#0dcaf0"
+            size={35}
+            onClick={() => {
+              removeFromFavorites();
+              showToastDelete();
+            }}
+          /><Toast
+            show={toastDelete}
+            autohide
+            onClose={() => setToastDelete(false)}
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+            }}
+          >
+            <Toast.Body>You successfully deleted the movie</Toast.Body>
+          </Toast>
+        </>
       ) : (
         <BookmarkStar
           className="favorite__icon"
