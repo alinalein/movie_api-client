@@ -25,9 +25,9 @@ const MovieApi = () => {
   }, [user])
 
   return (
-    <Container>
-      <MainView user={user} setUser={setUser} />
-    </Container>
+
+    <MainView user={user} setUser={setUser} />
+
   )
 }
 

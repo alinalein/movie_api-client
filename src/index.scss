@@ -2,8 +2,6 @@ $primary: #0dcaf0;
 $body-bg: #222831;
 $body-color: white;
 
-@import '~bootstrap/scss/bootstrap.scss';
-
 body {
   margin: 0;
   padding: 0;
@@ -16,3 +14,5 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+
+@import '~bootstrap/scss/bootstrap.scss';
