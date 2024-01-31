@@ -7,14 +7,15 @@ import './toggle-favorite.scss'
 
 export const FavoriteToggle = ({ movie, token, user, setUser }) => {
 
-  const [toastDelete, setToastDelete] = useState(false);
+  // const [toastDelete, setToastDelete] = useState(false);
 
-  const showToastDelete = () => {
-    setToastDelete(true);
-    setTimeout(() => {
-      setToastDelete(false);
-    }, 5000); // Adjust the timeout duration as needed (in milliseconds)
-  };
+  // const showToastDelete = () => {
+  //   setToastDelete(true);
+  //   setTimeout(() => {
+  //     setToastDelete(false);
+  //   }, 5000); // Adjust the timeout as needed
+  // };
+
   const isMovieInFavorites = user.FavoriteMovies.includes(movie.id)
 
   const addToFavorites = async () => {
@@ -47,7 +48,9 @@ export const FavoriteToggle = ({ movie, token, user, setUser }) => {
   }
 
   const removeFromFavorites = async () => {
+
     try {
+
       const response = await fetch(
         `https://movie-api-lina-834bc70d6952.herokuapp.com/users/${user.Username}/movies/remove/${movie.id}`,
         {
@@ -87,20 +90,20 @@ export const FavoriteToggle = ({ movie, token, user, setUser }) => {
             size={35}
             onClick={() => {
               removeFromFavorites();
-              showToastDelete();
+              // showToastDelete();
             }}
-          /><Toast
+          />
+          {/* <Toast
+
             show={toastDelete}
-            autohide
-            onClose={() => setToastDelete(false)}
             style={{
               position: 'absolute',
               top: 0,
               right: 0,
             }}
           >
-            <Toast.Body>You successfully deleted the movie</Toast.Body>
-          </Toast>
+            <Toast.Body>DELETED!!</Toast.Body>
+          </Toast> */}
         </>
       ) : (
         <BookmarkStar

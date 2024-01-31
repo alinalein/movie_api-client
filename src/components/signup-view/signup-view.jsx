@@ -32,27 +32,29 @@ export const SignupView = () => {
       },
     })
       .then((response) => {
-        if (response.ok) {
-          alert('You have been signed up')
-          navigate('/login')
+        if (response.status === 201) {
+          alert('You have been signed up');
+          navigate('/login');
+        } else if (response.status === 401) {
+          alert(`Username ${data.Username} already exists`);
         } else if (response.status === 422) {
-          return response.json()
+          return response.json();
         } else {
-          alert('The signup failed')
+          console.error('Error during signup:', response.statusText);
+          alert('An error occurred during signup');
         }
       })
       .then((data) => {
         if (data && data.errors && data.errors.length > 0) {
           data.errors.forEach((error) => {
-            alert(error.msg)
-            console.error('Validation Error:', error.msg)
-          })
+            alert(error.msg);
+            console.error('Validation Error:', error.msg);
+          });
         }
       })
-      .catch((error) => {
-        console.error('Error during signup:', error)
-        alert('An error occurred during signup')
-      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
 
   return (
