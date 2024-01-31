@@ -61,7 +61,7 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                   <FormControl
                     type="text"
                     placeholder="Search by Title"
-                    className="mr-sm-2"
+                    className="mr-sm-2 search__input"
                     value={searchTitle}
                     onChange={(e) => {
                       const newSearchTitle = e.target.value;
@@ -100,13 +100,8 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
       </Row>
       {showNoResultMessage && (
         <Col md={6}>
-          <Alert className="text-center"
+          <Alert className="text-center search__alert"
             md={5}
-            style={{
-              background: 'black',
-              color: '#ffffff8c',
-              border: 'black',
-            }}
           >
             Unfortunately, no movie matches your search.
           </Alert>

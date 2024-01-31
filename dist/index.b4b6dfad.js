@@ -55884,7 +55884,7 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormControl), {
                                                 type: "text",
                                                 placeholder: "Search by Title",
-                                                className: "mr-sm-2",
+                                                className: "mr-sm-2 search__input",
                                                 value: searchTitle,
                                                 onChange: (e)=>{
                                                     const newSearchTitle = e.target.value;
@@ -55954,13 +55954,8 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
             showNoResultMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                 md: 6,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Alert), {
-                    className: "text-center",
+                    className: "text-center search__alert",
                     md: 5,
-                    style: {
-                        background: "black",
-                        color: "#ffffff8c",
-                        border: "black"
-                    },
                     children: "Unfortunately, no movie matches your search."
                 }, void 0, false, {
                     fileName: "src/components/search-movie/search-movie.jsx",
@@ -55984,12 +55979,12 @@ const SearchMovie = ({ movies, token, user, setUser })=>{
                         setUser: setUser
                     }, void 0, false, {
                         fileName: "src/components/search-movie/search-movie.jsx",
-                        lineNumber: 117,
+                        lineNumber: 112,
                         columnNumber: 11
                     }, undefined)
                 }, foundMovie.id, false, {
                     fileName: "src/components/search-movie/search-movie.jsx",
-                    lineNumber: 116,
+                    lineNumber: 111,
                     columnNumber: 9
                 }, undefined))
         ]

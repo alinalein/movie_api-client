@@ -4,11 +4,14 @@
   padding-bottom: 0px;
   padding-top: 8px;
 
-  // .search__input {
-  //   padding-right: 0;
-  // }
-
   .clear-button {
     padding: 0;
   }
+}
+
+// overwrite bootrap style of alert
+.search__alert.alert {
+  background: red;
+  color: #ffffff8c;
+  border: black;
 }
