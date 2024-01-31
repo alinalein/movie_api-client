@@ -28,10 +28,6 @@
   padding: 4%;
 }
 
-.nav__container {
-  border-radius: 10px;
-}
-
 .nav__container .logo {
   color: #0dcaf0;
   font-size: 30px;

@@ -52302,6 +52302,7 @@ var _reactBootstrapIcons = require("react-bootstrap-icons");
 var _navigationBarScss = require("./navigation-bar.scss");
 const NavigationBar = ({ user, onLoggedOut })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
+        sticky: "top",
         "data-bs-theme": "dark",
         expand: "lg",
         style: {

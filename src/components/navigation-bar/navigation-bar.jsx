@@ -7,7 +7,7 @@ import './navigation-bar.scss'
 export const NavigationBar = ({ user, onLoggedOut }) => {
 
   return (
-    <Navbar data-bs-theme="dark" expand="lg" style={{ padding: '0px' }}>
+    <Navbar sticky="top" data-bs-theme="dark" expand="lg" style={{ padding: '0px' }}>
       <Container style={{ background: 'black' }} className="nav__container">
         <Navbar.Brand as={Link} to="/">
           <span className="logo">myFlix</span>
