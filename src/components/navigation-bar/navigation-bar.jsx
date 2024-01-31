@@ -8,7 +8,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
 
   return (
     <Navbar sticky="top" data-bs-theme="dark" expand="lg" style={{ padding: '0px' }}>
-      <Container style={{ background: 'black' }} className="nav__container">
+      <Container fluid style={{ background: 'black' }} className="nav__container">
         <Navbar.Brand as={Link} to="/">
           <span className="logo">myFlix</span>
         </Navbar.Brand>
