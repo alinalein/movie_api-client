@@ -52,7 +52,8 @@ As a user, I want to be able to remove/add a movie from/to my list of favorites,
 As a user, I want to search the movie catalog, so that I can easily access information about a variety of movies.
 
 ## Preview
-<img width="901" alt="image" src="https://github.com/alinalein/movie_api-client/assets/111589183/fec3141f-556b-4f92-ac4f-99814cb9d505">
+<img width="944" alt="image" src="https://github.com/alinalein/movie_api-client/assets/111589183/57d0884c-6882-47c7-b059-46b8c79abef3">
+
 
 ## Link to the live APP 🎞️
 https://myflix-alinalein.netlify.app
