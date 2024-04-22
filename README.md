@@ -10,13 +10,13 @@ This is the client-side of the Movie_API project. The application will incorpora
   
 ## Getting started 😎
 
-### Clone the repository:
+### Clone the repository
 
 ```
 git clone https://github.com/alinalein/movie_api-client.git
 ```
 
-### Change the directory:
+### Change the directory
 
 ```
 cd movie_api-client
