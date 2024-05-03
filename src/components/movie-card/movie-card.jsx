@@ -5,6 +5,7 @@ import './movie-card.scss'
 import { FavoriteToggle } from '../toggle-favorite/toggle-favorite'
 
 export const MovieCard = ({ movie, token, user, setUser }) => {
+
   return (
     <>
       <Card className="h-100 card__shadow">

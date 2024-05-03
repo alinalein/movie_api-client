@@ -4,18 +4,20 @@ import { MovieCard } from '../movie-card/movie-card'
 import './search-movie.scss'
 
 export const SearchMovie = ({ movies, token, user, setUser }) => {
+
   const [searchTitle, setSearchTitle] = useState('')
-  // set search results to an empty array
-  const [searchResults, setSearchResults] = useState([])
+  //when user opens all movies are shown already
+  const [searchResults, setSearchResults] = useState([movies])
   const [showNoResultMessage, setShowNoResultMessage] = useState(false)
 
   const handleSearch = () => {
-    // remove white spaace and all letters to lower case
-    const searchInput = searchTitle.trim().toLowerCase();
-
-    if (searchInput === '') {
-      setSearchResults([]);
-      setShowNoResultMessage(false);
+    // remove white space and all letters to lower case
+    const searchInput = searchTitle.trim().toLowerCase()
+    if (
+      movies.every((movie) => !movie.Title.toLowerCase().includes(searchInput))
+    ) {
+      setSearchResults([])
+      setShowNoResultMessage(true)
     } else {
       const filteredMovies = movies.filter((movie) => {
         const movieTitle = movie.Title.toLowerCase();
@@ -33,14 +35,11 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
         setShowNoResultMessage(false);
       }
     }
-  };
+  }
 
-  //makes sure that handle search only executed after the state of searchResults is updated
-  // also search title has to be not ''
+  //makes sure that handle search only executed after the state of searchResultsis updated
   useEffect(() => {
-    if (searchTitle.trim() !== '') {
-      handleSearch();
-    }
+    handleSearch();
   }, [searchTitle]);
 
   const handleClear = () => {
@@ -69,6 +68,11 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                       console.log('new input:', newSearchTitle);
                       handleSearch();
                     }}
+                    onKeyUp={(e) => {
+                      if (e.key === "Backspace") {
+                        handleSearch();
+                      }
+                    }}
                     // makes sure search function executed when keyup
                     onKeyUp={handleSearch
                     }
@@ -90,8 +94,8 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
                     x
                   </Button>
                   {/* <Button variant="outline-success" onClick={handleSearch}>
-                  Search
-                </Button> */}
+                    Search
+                  </Button> */}
                 </Col>
               </div>
             </Form.Group>
@@ -100,8 +104,13 @@ export const SearchMovie = ({ movies, token, user, setUser }) => {
       </Row>
       {showNoResultMessage && (
         <Col md={6}>
-          <Alert className="text-center search__alert"
+          <Alert className="text-center"
             md={5}
+            style={{
+              background: 'black',
+              color: '#ffffff8c',
+              border: 'black',
+            }}
           >
             Unfortunately, no movie matches your search.
           </Alert>

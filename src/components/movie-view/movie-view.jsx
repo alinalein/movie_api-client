@@ -74,7 +74,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
             {/* <h2 className="text-center mb-3">Similar movies</h2> */}
             {findSimilarMovies().map((similarmovie) => (
               <Col
-                className="mb-3 movie_img--size"
+                className="mb-3 movie_img--size mb-4"
                 key={similarmovie.id}
                 md={3}
                 sm={4}
@@ -90,7 +90,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
             ))}
           </Row>
           <Row>
-            <Col className="text-center mb-3">
+            <Col className="text-center mb-4">
               <Button
                 variant="info"
                 onClick={() => setShowSimilarMovies(false)}
@@ -102,7 +102,7 @@ export const MovieView = ({ movies, token, user, setUser }) => {
         </>
       ) : (
         <Row>
-          <Col className="text-center mb-3">
+          <Col className="text-center mb-4">
             {/* sets the showSimilarMovies to true , what will open them  */}
             <Button variant="info" onClick={() => setShowSimilarMovies(true)}>
               Don't miss out, see Similar Movies!

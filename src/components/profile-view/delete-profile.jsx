@@ -40,7 +40,7 @@ export const DeleteProfile = ({ user, setUser, token }) => {
   }
 
   return (
-    <Row className="justify-content-md-center text-center profile_component mt-2">
+    <Row className="justify-content-md-center text-center profile_component mt-2 mb-3">
       <h2 className="mb-4 h2__text">DELETE YOUR PROFILE</h2>
       <p>Do you you really want to delete your account?</p>
       <p>We're sorry we have to say GOODBYE. </p>

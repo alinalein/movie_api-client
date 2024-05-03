@@ -17,6 +17,7 @@ import { MoviesCrime } from '../movies-genre/crime-genre'
 import { MoviesSciFi } from '../movies-genre/sci-fi-genre'
 import { Row, Col, Button, Container } from 'react-bootstrap'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { LoadingSpinner } from '../../utils/helpers/helpers'
 
 export const MainView = ({ user, setUser }) => {
   // const storedUser = JSON.parse(localStorage.getItem("user")) -> moved to index.jsx
@@ -29,10 +30,13 @@ export const MainView = ({ user, setUser }) => {
   const [token, setToken] = useState(storedToken ? storedToken : null)
   const [movies, setMovies] = useState([])
 
-  // handle state of scroll up button-> route / 
-  const [showScrollButton, setShowScrollButton] = useState(false)
+  const [loading, setLoading] = useState(false);
   // ensuring that the showScrollButton state is updated based on whether there are any movies in the movies array.
   // If there are movies, showScrollButton will be set to true; otherwise, it will be set to false
+
+  // handle state of scroll up button-> route /
+  const [showScrollButton, setShowScrollButton] = useState(false)
+
   useEffect(() => {
 
     setShowScrollButton(movies.length > 0)
@@ -43,6 +47,9 @@ export const MainView = ({ user, setUser }) => {
     if (!token) {
       return
     }
+    //loading true before movies are fetched
+    setLoading(true);
+
     fetch('https://movie-api-lina-834bc70d6952.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -63,6 +70,10 @@ export const MainView = ({ user, setUser }) => {
         })
         setMovies(moviesFromApi)
       })
+      // Set loading to false once the movies are fetched
+      .finally(() => {
+        setLoading(false);
+      });
   }, [token])
 
   return (
@@ -122,7 +133,11 @@ export const MainView = ({ user, setUser }) => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : movies.length === 0 ? (
-                    <Col>The list is empty!</Col>
+                    <>
+                      <Col className='text-center'>
+                        <LoadingSpinner loading={loading} />
+                        The list is empty</Col>
+                    </>
                   ) : (
                     <>
                       {movies.map((movie) => (
@@ -141,13 +156,13 @@ export const MainView = ({ user, setUser }) => {
                           />
                         </Col>
                       ))}
+                      {/* on click scrolls to top of the page  */}
                       {showScrollButton && (
-                        // on click scrolls to top of the page 
-                        <Row className=" justify-content-md-center mb-3 text-center">
+                        <Row className=" justify-content-md-center text-center">
                           <Col>
                             <Button
                               variant="info"
-                              className="scroll-button"
+                              className="scroll-button mb-4"
                               onClick={() => {
                                 window.scrollTo(0, 0)
                               }}
@@ -215,25 +230,6 @@ export const MainView = ({ user, setUser }) => {
                 </>
               }
             />
-            {/* Route to delete the profile */}
-            <Route
-              path="/delete-profile"
-              element={
-                <>
-                  {!user ? (
-                    <Navigate to="/login" replace />
-                  ) : (
-                    <Col md={5}>
-                      <DeleteProfile
-                        user={user}
-                        token={token}
-                        setUser={setUser}
-                      />
-                    </Col>
-                  )}
-                </>
-              }
-            />
             {/* Route to favorite movies */}
             <Route
               path="/favorite-movies"
@@ -254,6 +250,25 @@ export const MainView = ({ user, setUser }) => {
                 </>
               }
             />
+            {/* Route to delete the profile */}
+            <Route
+              path="/delete-profile"
+              element={
+                <>
+                  {!user ? (
+                    <Navigate to="/login" replace />
+                  ) : (
+                    <Col md={5}>
+                      <DeleteProfile
+                        user={user}
+                        token={token}
+                        setUser={setUser}
+                      />
+                    </Col>
+                  )}
+                </>
+              }
+            />
             {/* Route tom movie Genres */}
             <Route
               path="/drama"
@@ -262,14 +277,12 @@ export const MainView = ({ user, setUser }) => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-
                     <MoviesDrama
                       movies={movies}
                       user={user}
                       token={token}
                       setUser={setUser}
                     />
-
                   )}
                 </>
               }

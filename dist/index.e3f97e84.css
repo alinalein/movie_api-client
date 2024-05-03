@@ -40,16 +40,6 @@
   padding-bottom: 0;
 }
 
-.search__header .clear-button {
-  padding: 0;
-}
-
-.search__alert.alert {
-  color: #ffffff8c;
-  background: red;
-  border: #000;
-}
-
 .profile_component {
   background-color: #000;
   border-radius: 10px;
@@ -77,6 +67,19 @@
 
 .genre__header .h2__text-gerne {
   color: #0dcaf0;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #222831;
+  margin: 0;
+  padding: 0;
+}
+
+.background-image {
+  background-image: url("final.406f7ff0.webp");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 :root, [data-bs-theme="light"] {
@@ -13281,19 +13284,6 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
-
-body {
-  box-sizing: border-box;
-  background-color: #222831;
-  margin: 0;
-  padding: 0;
-}
-
-.background-image {
-  background-image: url("final.406f7ff0.webp");
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 /*# sourceMappingURL=index.e3f97e84.css.map */

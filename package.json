@@ -1,8 +1,7 @@
 {
   "name": "movie_api-client",
   "version": "1.0.0",
-  "description": "the front end of the app movie_api",
-  "main": "index.js",
+  "description": "the front end of the backend app movie_api",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
@@ -12,7 +11,7 @@
     "type": "git",
     "url": "movie_api-client"
   },
-  "author": "",
+  "author": "alina l.",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.2",
