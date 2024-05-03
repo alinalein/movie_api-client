@@ -1,6 +1,9 @@
 ## Movie_API-Client / myFlix
 This is the client-side of the Movie_API project. The application will incorporate multiple interface views to manage data through the REST API endpoints defined in the Movie_API server-side application.
 
+## The backend used for this project
+[Movie_API](https://github.com/alinalein/movie_api)
+
 ## Technology Stack 🛠️
 - **Parcel** : A fast, zero-configuration web application bundler.
 - **React** : JavaScript library for building user interfaces, developed and maintained by Facebook.
