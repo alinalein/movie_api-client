@@ -55331,7 +55331,7 @@ const SignupView = ()=>{
     const [email, setEmail] = (0, _react.useState)("");
     const [birthday, setBirthday] = (0, _react.useState)("");
     const [loading, setLoading] = (0, _react.useState)(false);
-    navigate = (0, _reactRouterDom.useNavigate)();
+    const navigate = (0, _reactRouterDom.useNavigate)();
     const handleSubmit = (event)=>{
         event.preventDefault();
         setLoading(true);
@@ -55598,7 +55598,7 @@ const SignupView = ()=>{
         columnNumber: 5
     }, undefined);
 };
-_s(SignupView, "RV0c88kRm/8t3uUqSEBB1L5xhN8=", false, function() {
+_s(SignupView, "NRc8xq/tEiTNMleNMILXd/3m+hs=", false, function() {
     return [
         (0, _reactRouterDom.useNavigate)
     ];
