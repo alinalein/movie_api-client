@@ -10,7 +10,7 @@ export const SignupView = () => {
   const [email, setEmail] = useState('')
   const [birthday, setBirthday] = useState('')
   const [loading, setLoading] = useState(false);
-  navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -78,8 +78,7 @@ export const SignupView = () => {
             minLength="5"
           />
           <small className="small__text ">
-            Username, please choose at least 5 characters, only letters and
-            numbers
+            Please choose at least 5 characters
           </small>
         </Form.Group>
         <Form.Group controlId="formPassword" className="mb-2">
@@ -95,7 +94,7 @@ export const SignupView = () => {
             minLength="8"
           />
           <small className="small__text ">
-            Password, please choose at least 8 characters
+            Please choose at least 8 characters
           </small>
         </Form.Group>
         <Form.Group controlId="formEmail" className="mb-3">
