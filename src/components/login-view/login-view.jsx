@@ -33,6 +33,7 @@ export const LoginView = ({ onLoggedIn }) => {
           localStorage.setItem('token', data.token)
           onLoggedIn(data.user, data.token)
         } else {
+          setLoading(false)
           alert('Username or password is wrong')
         }
       })
