@@ -38,6 +38,7 @@ export const LoginView = ({ onLoggedIn }) => {
           // call LoggedIn function from main and set the user and token
           onLoggedIn(data.user, data.token)
         } else {
+          setLoading(false)
           alert('Username or password is wrong')
         }
       })
