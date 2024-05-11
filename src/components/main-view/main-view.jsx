@@ -20,11 +20,9 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { LoadingSpinner } from '../../utils/helpers/helpers'
 import { useSelector, useDispatch } from 'react-redux'
 
-export const MainView = ({ user, setUser }) => {
+export const MainView = () => {
 
-  const storedToken = localStorage.getItem('token')
-  //Create state variable, called token with initial state "null". Use to store token.
-  const [token, setToken] = useState(storedToken ? storedToken : null)
+  const { user, token } = useSelector((state) => state.user)
   const movies = useSelector((state) => state.movies.list)
   const dispatch = useDispatch()
 
@@ -73,14 +71,7 @@ export const MainView = ({ user, setUser }) => {
   return (
     <BrowserRouter>
       {/* Call NavivationBar component & send the props */}
-      <NavigationBar
-        user={user}
-        onLoggedOut={() => {
-          setUser(null)
-          setToken(null)
-          localStorage.clear()
-        }}
-      />
+      <NavigationBar />
       <Container>
         <Row className="justify-content-center mt-4  ">
           <Routes>
@@ -108,12 +99,7 @@ export const MainView = ({ user, setUser }) => {
                     <Navigate to="/" />
                   ) : (
                     <Col md={5}>
-                      <LoginView
-                        onLoggedIn={(user, token) => {
-                          setUser(user)
-                          setToken(token)
-                        }}
-                      />
+                      <LoginView />
                     </Col>
                   )}
                 </>
@@ -146,7 +132,7 @@ export const MainView = ({ user, setUser }) => {
                             movie={movie}
                             token={token}
                             user={user}
-                            setUser={setUser}
+
                           />
                         </Col>
                       ))}
@@ -185,7 +171,7 @@ export const MainView = ({ user, setUser }) => {
                       <MovieView
                         user={user}
                         token={token}
-                        setUser={setUser}
+
                       />
                     </Col>
                   )}
@@ -216,7 +202,7 @@ export const MainView = ({ user, setUser }) => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col md={5}>
-                      <EditProfile user={user} setUser={setUser} token={token} />
+                      <EditProfile user={user} token={token} />
                     </Col>
                   )}
                 </>
@@ -235,7 +221,7 @@ export const MainView = ({ user, setUser }) => {
                         user={user}
                         movies={movies}
                         token={token}
-                        setUser={setUser}
+
                       />
                     </Col>
                   )}
@@ -254,7 +240,7 @@ export const MainView = ({ user, setUser }) => {
                       <DeleteProfile
                         user={user}
                         token={token}
-                        setUser={setUser}
+
                       />
                     </Col>
                   )}
@@ -273,7 +259,7 @@ export const MainView = ({ user, setUser }) => {
                       movies={movies}
                       user={user}
                       token={token}
-                      setUser={setUser}
+
                     />
                   )}
                 </>
@@ -290,7 +276,7 @@ export const MainView = ({ user, setUser }) => {
                       movies={movies}
                       user={user}
                       token={token}
-                      setUser={setUser}
+
                     />
                   )}
                 </>
@@ -307,7 +293,7 @@ export const MainView = ({ user, setUser }) => {
                       movies={movies}
                       user={user}
                       token={token}
-                      setUser={setUser}
+
                     />
                   )}
                 </>
@@ -324,7 +310,7 @@ export const MainView = ({ user, setUser }) => {
                       movies={movies}
                       user={user}
                       token={token}
-                      setUser={setUser}
+
                     />
                   )}
                 </>
@@ -341,7 +327,7 @@ export const MainView = ({ user, setUser }) => {
                       movies={movies}
                       user={user}
                       token={token}
-                      setUser={setUser}
+
                     />
                   )}
                 </>
@@ -358,7 +344,7 @@ export const MainView = ({ user, setUser }) => {
                       movies={movies}
                       user={user}
                       token={token}
-                      setUser={setUser}
+
                     />
                   )}
                 </>

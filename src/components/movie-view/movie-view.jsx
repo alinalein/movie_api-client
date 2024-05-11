@@ -115,16 +115,16 @@ export const MovieView = ({ token, user, setUser }) => {
   )
 }
 
-MovieView.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      Title: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired,
-      Genre: PropTypes.string.isRequired,
-      Director: PropTypes.string.isRequired,
-      ImagePath: PropTypes.string.isRequired,
-      Actors: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-}
+// MovieView.propTypes = {
+//   movies: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//       Title: PropTypes.string.isRequired,
+//       Description: PropTypes.string.isRequired,
+//       Genre: PropTypes.string.isRequired,
+//       Director: PropTypes.string.isRequired,
+//       ImagePath: PropTypes.string.isRequired,
+//       Actors: PropTypes.string.isRequired,
+//     }),
+//   ).isRequired,
+// }

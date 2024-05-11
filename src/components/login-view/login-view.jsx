@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { Form, Button, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { LoadingSpinner } from '../../utils/helpers/helpers'
+import { setUser } from '../../redux/reducers/user'
+import { useDispatch } from 'react-redux'
 import './login-view.scss'
 
-export const LoginView = ({ onLoggedIn }) => {
+export const LoginView = () => {
 
+  const dispatch = useDispatch();
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false);
@@ -33,7 +36,7 @@ export const LoginView = ({ onLoggedIn }) => {
         if (data.user) {
           localStorage.setItem('user', JSON.stringify(data.user))
           localStorage.setItem('token', data.token)
-          onLoggedIn(data.user, data.token)
+          dispatch(setUser({ user: data.user, token: data.token }))
         } else {
           alert('Username or password is wrong')
         }

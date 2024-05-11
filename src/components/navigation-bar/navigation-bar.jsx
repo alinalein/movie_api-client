@@ -3,8 +3,12 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { Search } from 'react-bootstrap-icons'
 import './navigation-bar.scss'
+import { setUser } from '../../redux/reducers/user'
+import { useDispatch, useSelector } from 'react-redux'
 
-export const NavigationBar = ({ user, onLoggedOut }) => {
+export const NavigationBar = () => {
+  const user = useSelector((state) => state.user.user)
+  const dispatch = useDispatch();
 
   return (
     <Navbar sticky="top" data-bs-theme="dark" expand="md" style={{ padding: '0px' }}>
@@ -71,7 +75,10 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                   Delete Profile
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
+              <Nav.Link onClick={() => {
+                dispatch(setUser({ user: null, token: null })); // Correct structure based on the reducer
+                localStorage.clear();
+              }}>Logout</Nav.Link>
             </Nav>
           )}
         </Navbar.Collapse>
