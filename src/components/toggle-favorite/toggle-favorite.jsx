@@ -2,10 +2,11 @@ import React from 'react'
 import { useState } from 'react';
 import { Toast } from 'react-bootstrap'
 import { BookmarkStar, BookmarkStarFill } from 'react-bootstrap-icons'
-
+import { useSelector, useDispatch } from 'react-redux'
 import './toggle-favorite.scss'
 
-export const FavoriteToggle = ({ movie, token, user, setUser }) => {
+export const FavoriteToggle = ({ movie }) => {
+  const { user, token } = useSelector((state) => state.user)
 
   // const [toastDelete, setToastDelete] = useState(false);
 

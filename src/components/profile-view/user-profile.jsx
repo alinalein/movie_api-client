@@ -4,8 +4,11 @@ import { formatDate } from '../../utils/helpers/helpers'
 import { Link } from 'react-router-dom'
 import { PersonBoundingBox } from 'react-bootstrap-icons'
 import { PersonSquare } from 'react-bootstrap-icons'
+import { useSelector } from 'react-redux'
 
-export const UserProfile = ({ user }) => {
+export const UserProfile = () => {
+
+  const { user } = useSelector((state) => state.user)
 
   return (
     <Row className="profile_component mt-2 mb-3">

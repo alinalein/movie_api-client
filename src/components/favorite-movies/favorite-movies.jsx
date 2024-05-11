@@ -1,8 +1,12 @@
 import React from 'react'
 import { Col, Alert, Row } from 'react-bootstrap'
 import { MovieCard } from '../movie-card/movie-card'
+import { useSelector } from 'react-redux'
 
-export const FavoriteMovies = ({ movies, user, token, setUser }) => {
+export const FavoriteMovies = () => {
+
+  const { user } = useSelector((state) => state.user)
+  const movies = useSelector((state) => state.movies.list)
 
   let favoriteMovies = movies.filter((m) => user.FavoriteMovies.includes(m.id))
 
@@ -19,9 +23,6 @@ export const FavoriteMovies = ({ movies, user, token, setUser }) => {
           >
             <MovieCard
               movie={movie}
-              token={token}
-              user={user}
-              setUser={setUser}
             />
           </Col>
         ))

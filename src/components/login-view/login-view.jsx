@@ -38,6 +38,7 @@ export const LoginView = () => {
           localStorage.setItem('token', data.token)
           dispatch(setUser({ user: data.user, token: data.token }))
         } else {
+          setLoading(false)
           alert('Username or password is wrong')
         }
       })

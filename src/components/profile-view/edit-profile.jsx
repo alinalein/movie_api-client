@@ -3,8 +3,13 @@ import { Form, Button, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { formatDate } from '../../utils/helpers/helpers'
 import { LoadingSpinner } from '../../utils/helpers/helpers'
+import { useSelector, useDispatch } from 'react-redux'
+import { setUser } from '../../redux/reducers/user'
 
-export const EditProfile = ({ user, setUser, token }) => {
+export const EditProfile = () => {
+
+  const { user, token } = useSelector((state) => state.user)
+  const dispatch = useDispatch()
 
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -41,7 +46,7 @@ export const EditProfile = ({ user, setUser, token }) => {
       if (response.ok) {
         // If the update is successful, get tha response data from server & update localstorage
         const data = await response.json();
-        setUser(data)
+        dispatch(setUser({ user: data.user }))
         localStorage.setItem('user', JSON.stringify(data))
         alert('You successfully updated your profile')
         // navigate to the user profile when update successfull

@@ -130,9 +130,6 @@ export const MainView = () => {
                         >
                           <MovieCard
                             movie={movie}
-                            token={token}
-                            user={user}
-
                           />
                         </Col>
                       ))}
@@ -168,11 +165,7 @@ export const MainView = () => {
                   ) : (
                     // send the movies array to MovieView
                     <Col>
-                      <MovieView
-                        user={user}
-                        token={token}
-
-                      />
+                      <MovieView />
                     </Col>
                   )}
                 </>
@@ -187,7 +180,7 @@ export const MainView = () => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col md={5}>
-                      <UserProfile user={user} />
+                      <UserProfile />
                     </Col>
                   )}
                 </>
@@ -202,7 +195,7 @@ export const MainView = () => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col md={5}>
-                      <EditProfile user={user} token={token} />
+                      <EditProfile />
                     </Col>
                   )}
                 </>
@@ -217,12 +210,7 @@ export const MainView = () => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col>
-                      <FavoriteMovies
-                        user={user}
-                        movies={movies}
-                        token={token}
-
-                      />
+                      <FavoriteMovies />
                     </Col>
                   )}
                 </>
@@ -237,11 +225,7 @@ export const MainView = () => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col md={5}>
-                      <DeleteProfile
-                        user={user}
-                        token={token}
-
-                      />
+                      <DeleteProfile />
                     </Col>
                   )}
                 </>

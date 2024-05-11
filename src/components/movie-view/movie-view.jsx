@@ -8,7 +8,7 @@ import { FavoriteToggle } from '../toggle-favorite/toggle-favorite'
 import './movie-view.scss'
 import { useSelector } from "react-redux";
 
-export const MovieView = ({ token, user, setUser }) => {
+export const MovieView = () => {
   const movies = useSelector((state) => state.movies.list)
 
   // only access the param from the before set path (here in main)
@@ -60,9 +60,6 @@ export const MovieView = ({ token, user, setUser }) => {
                 </Button>
               </Link>
               <FavoriteToggle
-                user={user}
-                setUser={setUser}
-                token={token}
                 movie={movie}
               />
             </div>
@@ -84,9 +81,6 @@ export const MovieView = ({ token, user, setUser }) => {
               >
                 <MovieCard
                   movie={similarmovie}
-                  token={token}
-                  user={user}
-                  setUser={setUser}
                 />
               </Col>
             ))}
