@@ -13,6 +13,8 @@ export const LoginView = ({ onLoggedIn }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     setLoading(true)
+
+    // send this data with the body of POST request
     const data = {
       Username: username,
       Password: password,

@@ -2,6 +2,8 @@ import { createRoot } from 'react-dom/client'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { MainView } from './components/main-view/main-view'
+import { Provider } from "react-redux";
+import { store } from './redux/store';
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss'
@@ -24,9 +26,10 @@ const MovieApi = () => {
   }, [user])
 
   return (
-
-    <MainView user={user} setUser={setUser} />
-
+    // make the store available to React app
+    <Provider store={store}>
+      <MainView user={user} setUser={setUser} />
+    </Provider>
   )
 }
 

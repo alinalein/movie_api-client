@@ -6,8 +6,10 @@ import { Button, Col, Card, Row } from 'react-bootstrap'
 import { MovieCard } from '../movie-card/movie-card'
 import { FavoriteToggle } from '../toggle-favorite/toggle-favorite'
 import './movie-view.scss'
+import { useSelector } from "react-redux";
 
-export const MovieView = ({ movies, token, user, setUser }) => {
+export const MovieView = ({ token, user, setUser }) => {
+  const movies = useSelector((state) => state.movies.list)
 
   // only access the param from the before set path (here in main)
   const { movieId } = useParams()

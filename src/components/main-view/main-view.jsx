@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { MovieCard } from '../movie-card/movie-card'
-// import { FavoriteToggle } from "../toggle-favorite/toggle-favorite"
 import { MovieView } from '../movie-view/movie-view'
 import { SearchMovie } from '../search-movie/search-movie'
 import { LoginView } from '../login-view/login-view'
@@ -15,16 +14,19 @@ import { MoviesAction } from '../movies-genre/action-genre'
 import { MoviesBiography } from '../movies-genre/biography-genre'
 import { MoviesCrime } from '../movies-genre/crime-genre'
 import { MoviesSciFi } from '../movies-genre/sci-fi-genre'
+import { setMovies } from '../../redux/reducers/movies'
 import { Row, Col, Button, Container } from 'react-bootstrap'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { LoadingSpinner } from '../../utils/helpers/helpers'
+import { useSelector, useDispatch } from 'react-redux'
 
 export const MainView = ({ user, setUser }) => {
 
   const storedToken = localStorage.getItem('token')
   //Create state variable, called token with initial state "null". Use to store token.
   const [token, setToken] = useState(storedToken ? storedToken : null)
-  const [movies, setMovies] = useState([])
+  const movies = useSelector((state) => state.movies.list)
+  const dispatch = useDispatch()
 
   const [loading, setLoading] = useState(false);
   // handle state of scroll up button-> route /
@@ -60,7 +62,7 @@ export const MainView = ({ user, setUser }) => {
             Featured: featutedStatus,
           }
         })
-        setMovies(moviesFromApi)
+        dispatch(setMovies(moviesFromApi))
       })
       // Set loading to false once the movies are fetched
       .finally(() => {
@@ -181,7 +183,6 @@ export const MainView = ({ user, setUser }) => {
                     // send the movies array to MovieView
                     <Col>
                       <MovieView
-                        movies={movies}
                         user={user}
                         token={token}
                         setUser={setUser}
