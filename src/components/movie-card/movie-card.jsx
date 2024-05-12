@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './movie-card.scss'
 import { FavoriteToggle } from '../toggle-favorite/toggle-favorite'
 
-export const MovieCard = ({ movie, token, user, setUser }) => {
+export const MovieCard = ({ movie }) => {
 
   return (
     <>
@@ -20,9 +20,6 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
               <Button variant="outline-info">Details</Button>
             </Link>
             <FavoriteToggle
-              user={user}
-              setUser={setUser}
-              token={token}
               movie={movie}
             />
           </div>

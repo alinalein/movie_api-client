@@ -2,9 +2,13 @@ import { useState } from 'react'
 import { Form, Button, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { LoadingSpinner } from '../../utils/helpers/helpers'
+import { setUser } from '../../redux/reducers/user'
+import { useDispatch } from 'react-redux'
 import './login-view.scss'
 
-export const LoginView = ({ onLoggedIn }) => {
+export const LoginView = () => {
+
+  const dispatch = useDispatch();
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -13,6 +17,8 @@ export const LoginView = ({ onLoggedIn }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     setLoading(true)
+
+    // send this data with the body of POST request
     const data = {
       Username: username,
       Password: password,
@@ -31,7 +37,9 @@ export const LoginView = ({ onLoggedIn }) => {
         if (data.user) {
           localStorage.setItem('user', JSON.stringify(data.user))
           localStorage.setItem('token', data.token)
-          onLoggedIn(data.user, data.token)
+          // set the uset and token global state
+          dispatch(setUser({ user: data.user, token: data.token }))
+          document.body.classList.remove('background-image');
         } else {
           setLoading(false)
           alert('Username or password is wrong')

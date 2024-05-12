@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useParams } from 'react-router'
@@ -6,8 +5,11 @@ import { Button, Col, Card, Row } from 'react-bootstrap'
 import { MovieCard } from '../movie-card/movie-card'
 import { FavoriteToggle } from '../toggle-favorite/toggle-favorite'
 import './movie-view.scss'
+import { useSelector } from "react-redux";
 
-export const MovieView = ({ movies, token, user, setUser }) => {
+export const MovieView = () => {
+
+  const movies = useSelector((state) => state.movies.list)
 
   // only access the param from the before set path (here in main)
   const { movieId } = useParams()
@@ -58,9 +60,6 @@ export const MovieView = ({ movies, token, user, setUser }) => {
                 </Button>
               </Link>
               <FavoriteToggle
-                user={user}
-                setUser={setUser}
-                token={token}
                 movie={movie}
               />
             </div>
@@ -82,9 +81,6 @@ export const MovieView = ({ movies, token, user, setUser }) => {
               >
                 <MovieCard
                   movie={similarmovie}
-                  token={token}
-                  user={user}
-                  setUser={setUser}
                 />
               </Col>
             ))}
@@ -113,16 +109,4 @@ export const MovieView = ({ movies, token, user, setUser }) => {
   )
 }
 
-MovieView.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      Title: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired,
-      Genre: PropTypes.string.isRequired,
-      Director: PropTypes.string.isRequired,
-      ImagePath: PropTypes.string.isRequired,
-      Actors: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-}
+

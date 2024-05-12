@@ -1,7 +1,10 @@
 import { MovieCard } from '../movie-card/movie-card'
-import { Col, Row } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 
-export const MoviesAction = ({ movies, token, user, setUser }) => {
+export const MoviesAction = () => {
+
+  const movies = useSelector((state) => state.movies.list)
 
   const dramaMovies = movies.filter((movie) => movie.Genre === 'Action')
 
@@ -19,9 +22,6 @@ export const MoviesAction = ({ movies, token, user, setUser }) => {
         <Col className="mb-4" key={movie.id} md={3} sm={6} xs={12}>
           <MovieCard
             movie={movie}
-            token={token}
-            user={user}
-            setUser={setUser}
           />
         </Col>
       ))}

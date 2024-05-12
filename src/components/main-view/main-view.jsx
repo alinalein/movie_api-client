@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import { MovieCard } from '../movie-card/movie-card'
-// import { FavoriteToggle } from "../toggle-favorite/toggle-favorite"
 import { MovieView } from '../movie-view/movie-view'
-import { SearchMovie } from '../search-movie/search-movie'
+import { MovieList } from '../movie-list/movie-list'
 import { LoginView } from '../login-view/login-view'
 import { SignupView } from '../signup-view/signup-view'
 import { NavigationBar } from '../navigation-bar/navigation-bar'
@@ -15,24 +13,19 @@ import { MoviesAction } from '../movies-genre/action-genre'
 import { MoviesBiography } from '../movies-genre/biography-genre'
 import { MoviesCrime } from '../movies-genre/crime-genre'
 import { MoviesSciFi } from '../movies-genre/sci-fi-genre'
-import { Row, Col, Button, Container } from 'react-bootstrap'
+import { setMovies } from '../../redux/reducers/movies'
+import { Row, Col, Container } from 'react-bootstrap'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { LoadingSpinner } from '../../utils/helpers/helpers'
+import { useSelector, useDispatch } from 'react-redux'
 
-export const MainView = ({ user, setUser }) => {
+export const MainView = () => {
 
-  const storedToken = localStorage.getItem('token')
-  //Create state variable, called token with initial state "null". Use to store token.
-  const [token, setToken] = useState(storedToken ? storedToken : null)
-  const [movies, setMovies] = useState([])
+  const { user, token } = useSelector((state) => state.user)
+  const movies = useSelector((state) => state.movies.list)
+  const dispatch = useDispatch()
 
+  // send it to movie-list
   const [loading, setLoading] = useState(false);
-  // handle state of scroll up button-> route /
-  const [showScrollButton, setShowScrollButton] = useState(false)
-
-  useEffect(() => {
-    setShowScrollButton(movies.length > 0)
-  }, [movies])
 
   /*populate the movies array with the movies from the API */
   useEffect(() => {
@@ -60,25 +53,20 @@ export const MainView = ({ user, setUser }) => {
             Featured: featutedStatus,
           }
         })
-        setMovies(moviesFromApi)
+        dispatch(setMovies(moviesFromApi))
+
       })
       // Set loading to false once the movies are fetched
       .finally(() => {
         setLoading(false);
+        document.body.classList.remove('background-image');
       });
   }, [token])
 
   return (
     <BrowserRouter>
-      {/* Call NavivationBar component & send the props */}
-      <NavigationBar
-        user={user}
-        onLoggedOut={() => {
-          setUser(null)
-          setToken(null)
-          localStorage.clear()
-        }}
-      />
+      {/* Call NavivationBar component */}
+      <NavigationBar />
       <Container>
         <Row className="justify-content-center mt-4  ">
           <Routes>
@@ -106,12 +94,7 @@ export const MainView = ({ user, setUser }) => {
                     <Navigate to="/" />
                   ) : (
                     <Col md={5}>
-                      <LoginView
-                        onLoggedIn={(user, token) => {
-                          setUser(user)
-                          setToken(token)
-                        }}
-                      />
+                      <LoginView />
                     </Col>
                   )}
                 </>
@@ -124,46 +107,10 @@ export const MainView = ({ user, setUser }) => {
                 <>
                   {!user ? (
                     <Navigate to="/login" replace />
-                  ) : movies.length === 0 ? (
-                    <>
-                      <Col className='text-center'>
-                        <LoadingSpinner loading={loading} />
-                        The list is empty</Col>
-                    </>
                   ) : (
-                    <>
-                      {movies.map((movie) => (
-                        <Col
-                          className="mb-4"
-                          key={movie.id}
-                          md={3}
-                          sm={6}
-                          xs={12}
-                        >
-                          <MovieCard
-                            movie={movie}
-                            token={token}
-                            user={user}
-                            setUser={setUser}
-                          />
-                        </Col>
-                      ))}
-                      {showScrollButton && (
-                        <Row className=" justify-content-md-center text-center">
-                          <Col>
-                            <Button
-                              variant="info"
-                              className="scroll-button mb-4"
-                              onClick={() => {
-                                window.scrollTo(0, 0)
-                              }}
-                            >
-                              Scroll to Top
-                            </Button>
-                          </Col>
-                        </Row>
-                      )}
-                    </>
+                    <Col>
+                      <MovieList loading={loading} />
+                    </Col>
                   )}
                 </>
               }
@@ -178,14 +125,8 @@ export const MainView = ({ user, setUser }) => {
                   ) : movies.length === 0 ? (
                     <Col>The list is empty!</Col>
                   ) : (
-                    // send the movies array to MovieView
                     <Col>
-                      <MovieView
-                        movies={movies}
-                        user={user}
-                        token={token}
-                        setUser={setUser}
-                      />
+                      <MovieView />
                     </Col>
                   )}
                 </>
@@ -200,7 +141,7 @@ export const MainView = ({ user, setUser }) => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col md={5}>
-                      <UserProfile user={user} />
+                      <UserProfile />
                     </Col>
                   )}
                 </>
@@ -215,13 +156,13 @@ export const MainView = ({ user, setUser }) => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col md={5}>
-                      <EditProfile user={user} setUser={setUser} token={token} />
+                      <EditProfile />
                     </Col>
                   )}
                 </>
               }
             />
-            {/* Route to favorite movies */}
+            {/* Route to users favorite movies */}
             <Route
               path="/favorite-movies"
               element={
@@ -230,12 +171,7 @@ export const MainView = ({ user, setUser }) => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col>
-                      <FavoriteMovies
-                        user={user}
-                        movies={movies}
-                        token={token}
-                        setUser={setUser}
-                      />
+                      <FavoriteMovies />
                     </Col>
                   )}
                 </>
@@ -250,17 +186,13 @@ export const MainView = ({ user, setUser }) => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col md={5}>
-                      <DeleteProfile
-                        user={user}
-                        token={token}
-                        setUser={setUser}
-                      />
+                      <DeleteProfile />
                     </Col>
                   )}
                 </>
               }
             />
-            {/* Route tom movie Genres */}
+            {/* Routes to movie Genres */}
             <Route
               path="/drama"
               element={
@@ -268,12 +200,7 @@ export const MainView = ({ user, setUser }) => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesDrama
-                      movies={movies}
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
+                    <MoviesDrama />
                   )}
                 </>
               }
@@ -285,12 +212,7 @@ export const MainView = ({ user, setUser }) => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesCrime
-                      movies={movies}
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
+                    <MoviesCrime />
                   )}
                 </>
               }
@@ -302,12 +224,7 @@ export const MainView = ({ user, setUser }) => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesBiography
-                      movies={movies}
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
+                    <MoviesBiography />
                   )}
                 </>
               }
@@ -319,12 +236,7 @@ export const MainView = ({ user, setUser }) => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesSciFi
-                      movies={movies}
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
+                    <MoviesSciFi />
                   )}
                 </>
               }
@@ -336,29 +248,7 @@ export const MainView = ({ user, setUser }) => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesAction
-                      movies={movies}
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
-                  )}
-                </>
-              }
-            />
-            <Route
-              path="/search"
-              element={
-                <>
-                  {!user ? (
-                    <Navigate to="/login" replace />
-                  ) : (
-                    <SearchMovie
-                      movies={movies}
-                      user={user}
-                      token={token}
-                      setUser={setUser}
-                    />
+                    <MoviesAction />
                   )}
                 </>
               }
