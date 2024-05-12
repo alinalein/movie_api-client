@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import { MovieCard } from '../movie-card/movie-card'
 import { MovieView } from '../movie-view/movie-view'
-import { SearchMovie } from '../search-movie/search-movie'
+import { MovieList } from '../movie-list/movie-list'
 import { LoginView } from '../login-view/login-view'
 import { SignupView } from '../signup-view/signup-view'
 import { NavigationBar } from '../navigation-bar/navigation-bar'
@@ -17,7 +16,6 @@ import { MoviesSciFi } from '../movies-genre/sci-fi-genre'
 import { setMovies } from '../../redux/reducers/movies'
 import { Row, Col, Button, Container } from 'react-bootstrap'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { LoadingSpinner } from '../../utils/helpers/helpers'
 import { useSelector, useDispatch } from 'react-redux'
 
 export const MainView = () => {
@@ -27,12 +25,6 @@ export const MainView = () => {
   const dispatch = useDispatch()
 
   const [loading, setLoading] = useState(false);
-  // handle state of scroll up button-> route /
-  const [showScrollButton, setShowScrollButton] = useState(false)
-
-  useEffect(() => {
-    setShowScrollButton(movies.length > 0)
-  }, [movies])
 
   /*populate the movies array with the movies from the API */
   useEffect(() => {
@@ -112,43 +104,10 @@ export const MainView = () => {
                 <>
                   {!user ? (
                     <Navigate to="/login" replace />
-                  ) : movies.length === 0 ? (
-                    <>
-                      <Col className='text-center'>
-                        <LoadingSpinner loading={loading} />
-                        The list is empty</Col>
-                    </>
                   ) : (
-                    <>
-                      {movies.map((movie) => (
-                        <Col
-                          className="mb-4"
-                          key={movie.id}
-                          md={3}
-                          sm={6}
-                          xs={12}
-                        >
-                          <MovieCard
-                            movie={movie}
-                          />
-                        </Col>
-                      ))}
-                      {showScrollButton && (
-                        <Row className=" justify-content-md-center text-center">
-                          <Col>
-                            <Button
-                              variant="info"
-                              className="scroll-button mb-4"
-                              onClick={() => {
-                                window.scrollTo(0, 0)
-                              }}
-                            >
-                              Scroll to Top
-                            </Button>
-                          </Col>
-                        </Row>
-                      )}
-                    </>
+                    <Col>
+                      <MovieList loading={loading} />
+                    </Col>
                   )}
                 </>
               }
@@ -239,12 +198,7 @@ export const MainView = () => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesDrama
-                      movies={movies}
-                      user={user}
-                      token={token}
-
-                    />
+                    <MoviesDrama />
                   )}
                 </>
               }
@@ -256,12 +210,7 @@ export const MainView = () => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesCrime
-                      movies={movies}
-                      user={user}
-                      token={token}
-
-                    />
+                    <MoviesCrime />
                   )}
                 </>
               }
@@ -273,12 +222,7 @@ export const MainView = () => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesBiography
-                      movies={movies}
-                      user={user}
-                      token={token}
-
-                    />
+                    <MoviesBiography />
                   )}
                 </>
               }
@@ -290,12 +234,7 @@ export const MainView = () => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesSciFi
-                      movies={movies}
-                      user={user}
-                      token={token}
-
-                    />
+                    <MoviesSciFi />
                   )}
                 </>
               }
@@ -307,29 +246,7 @@ export const MainView = () => {
                   {!user ? (
                     <Navigate to="/login" replace />
                   ) : (
-                    <MoviesAction
-                      movies={movies}
-                      user={user}
-                      token={token}
-
-                    />
-                  )}
-                </>
-              }
-            />
-            <Route
-              path="/search"
-              element={
-                <>
-                  {!user ? (
-                    <Navigate to="/login" replace />
-                  ) : (
-                    <SearchMovie
-                      movies={movies}
-                      user={user}
-                      token={token}
-
-                    />
+                    <MoviesAction />
                   )}
                 </>
               }

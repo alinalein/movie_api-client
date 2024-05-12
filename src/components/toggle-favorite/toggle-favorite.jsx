@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { Toast } from 'react-bootstrap'
 import { BookmarkStar, BookmarkStarFill } from 'react-bootstrap-icons'
 import { useSelector, useDispatch } from 'react-redux'
+import { setUser } from '../../redux/reducers/user';
 import './toggle-favorite.scss'
 
 export const FavoriteToggle = ({ movie }) => {
   const { user, token } = useSelector((state) => state.user)
-
+  const dispatch = useDispatch();
   // const [toastDelete, setToastDelete] = useState(false);
 
   // const showToastDelete = () => {
@@ -37,7 +38,7 @@ export const FavoriteToggle = ({ movie }) => {
           ...user,
           FavoriteMovies: [...user.FavoriteMovies, movie.id],
         }
-        setUser(updatedUser)
+        dispatch(setUser({ user: updatedUser, token: token }))
         localStorage.setItem('user', JSON.stringify(updatedUser))
         console.log('Movie added to favorites')
       } else {
@@ -70,7 +71,7 @@ export const FavoriteToggle = ({ movie }) => {
           ...user,
           FavoriteMovies: user.FavoriteMovies.filter((id) => id !== movie.id),
         }
-        setUser(updatedUser)
+        dispatch(setUser({ user: updatedUser, token: token }));
         localStorage.setItem('user', JSON.stringify(updatedUser))
         console.log('Movie removed from favorites')
       } else {

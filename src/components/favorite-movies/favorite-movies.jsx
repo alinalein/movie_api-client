@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 export const FavoriteMovies = () => {
 
-  const { user } = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user.user)
   const movies = useSelector((state) => state.movies.list)
 
   let favoriteMovies = movies.filter((m) => user.FavoriteMovies.includes(m.id))

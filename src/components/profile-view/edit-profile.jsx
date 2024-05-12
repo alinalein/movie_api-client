@@ -46,7 +46,7 @@ export const EditProfile = () => {
       if (response.ok) {
         // If the update is successful, get tha response data from server & update localstorage
         const data = await response.json();
-        dispatch(setUser({ user: data.user }))
+        dispatch(setUser({ user: data, token: token }))
         localStorage.setItem('user', JSON.stringify(data))
         alert('You successfully updated your profile')
         // navigate to the user profile when update successfull

@@ -33,11 +33,10 @@
   font-size: 30px;
 }
 
-.search__header {
-  background-color: #000;
-  border-radius: 10px;
-  padding-top: 8px;
-  padding-bottom: 0;
+.filter_form {
+  height: 70%;
+  margin-top: 2.5%;
+  margin-left: 2%;
 }
 
 .profile_component {
@@ -67,6 +66,13 @@
 
 .genre__header .h2__text-gerne {
   color: #0dcaf0;
+}
+
+.search__header {
+  background-color: #000;
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 0;
 }
 
 body {
