@@ -22,11 +22,14 @@ const moviesSlice = createSlice({
         // Reset the search status
         resetSearch: (state) => {
             state.hasSearched = false;
-        }
+        },
+        clearFilter: (state) => {
+            state.filter = '';
+        },
     }
 })
 
 // export the actions from moviesSlice
-export const { setMovies, setFilter, resetSearch } = moviesSlice.actions;
+export const { setMovies, setFilter, resetSearch, clearFilter } = moviesSlice.actions;
 // export the reducer from moviesSlice
 export default moviesSlice.reducer;

@@ -1,7 +1,7 @@
 import { Col, Button, Row } from 'react-bootstrap'
 import './profile-view.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { setUser } from '../../redux/reducers/user'
+import { removeUser } from '../../redux/reducers/user'
 
 export const DeleteProfile = () => {
   const { user, token } = useSelector((state) => state.user)
@@ -30,8 +30,7 @@ export const DeleteProfile = () => {
           if (response.ok) {
             // If the update is successful, update the local state
             alert('You successfully deleted your profile')
-            dispatch(setUser({ user: null, token: null }));
-            localStorage.clear()
+            dispatch(removeUser());
           } else {
             console.error('Failed to delete your profile')
           }

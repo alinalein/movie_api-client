@@ -2960,34 +2960,24 @@ var _s = $RefreshSig$();
 // Main component (will eventually use all the others)
 const MovieApi = ()=>{
     _s();
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    //Create state variable, called user with initial stale "null". Use to check if user is logged in or not.
-    const [user] = (0, _react.useState)(storedUser ? storedUser : null);
     (0, _react.useEffect)(()=>{
-        const img = new Image();
-        img.src = "../img/final.webp";
+        document.body.classList.add("background-image");
     }, []);
-    // when user not logged in add class background-image to body of page
-    (0, _react.useEffect)(()=>{
-        document.body.classList.toggle("background-image", !user);
-    }, [
-        user
-    ]);
     return(// make the store available to React app
     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRedux.Provider), {
         store: (0, _store.store),
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 31,
+            lineNumber: 21,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 30,
+        lineNumber: 20,
         columnNumber: 5
     }, undefined));
 };
-_s(MovieApi, "JMNt/6Bs/+bZZlBwsjKhvX6hAdM=");
+_s(MovieApi, "OD7bBpZva5O2jO+Puf00hKivP7c=");
 _c = MovieApi;
 // Finds the root of your app
 const container = document.querySelector("#root");
@@ -2995,7 +2985,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MovieApi, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 41,
+    lineNumber: 31,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -56015,6 +56005,7 @@ module.exports = require("374a059340689e89");
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setUser", ()=>setUser);
+parcelHelpers.export(exports, "removeUser", ()=>removeUser);
 var _toolkit = require("@reduxjs/toolkit");
 // otherwise Redux initialize the state to null on page reload and user will need to login again
 const initialState = {
@@ -56030,10 +56021,16 @@ const userSlice = (0, _toolkit.createSlice)({
         setUser: (state, action)=>{
             state.user = action.payload.user;
             state.token = action.payload.token;
+        },
+        removeUser: (state)=>{
+            state.user = null;
+            state.token = null;
+            localStorage.clear();
+            document.body.classList.add("background-image");
         }
     }
 });
-const { setUser } = userSlice.actions;
+const { setUser, removeUser } = userSlice.actions;
 exports.default = userSlice.reducer;
 
 },{"@reduxjs/toolkit":"fuua8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fuua8":[function(require,module,exports) {
@@ -60057,6 +60054,7 @@ const LoginView = ()=>{
                     user: data.user,
                     token: data.token
                 }));
+                document.body.classList.remove("background-image");
             } else {
                 setLoading(false);
                 alert("Username or password is wrong");
@@ -60077,14 +60075,14 @@ const LoginView = ()=>{
                     children: "LOGIN"
                 }, void 0, false, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 55,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _helpers.LoadingSpinner), {
                     loading: loading
                 }, void 0, false, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 56,
+                    lineNumber: 57,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -60097,12 +60095,12 @@ const LoginView = ()=>{
                                 children: " Username:"
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 59,
+                                lineNumber: 60,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 58,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -60114,13 +60112,13 @@ const LoginView = ()=>{
                             minLength: "3"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 61,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 57,
+                    lineNumber: 58,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -60132,12 +60130,12 @@ const LoginView = ()=>{
                                 children: "Password: "
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 72,
+                                lineNumber: 73,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 71,
+                            lineNumber: 72,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -60150,18 +60148,18 @@ const LoginView = ()=>{
                                 required: true
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 75,
+                                lineNumber: 76,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 74,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 70,
+                    lineNumber: 71,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -60174,7 +60172,7 @@ const LoginView = ()=>{
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 86,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -60185,30 +60183,30 @@ const LoginView = ()=>{
                                     children: "Signup!"
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 90,
+                                    lineNumber: 91,
                                     columnNumber: 28
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 89,
+                            lineNumber: 90,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 84,
+                    lineNumber: 85,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 54,
+            lineNumber: 55,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 53,
+        lineNumber: 54,
         columnNumber: 5
     }, undefined);
 };
@@ -60814,11 +60812,7 @@ const NavigationBar = ()=>{
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                     onClick: ()=>{
-                                        dispatch((0, _user.setUser)({
-                                            user: null,
-                                            token: null
-                                        })); // Correct structure based on the reducer
-                                        localStorage.clear();
+                                        dispatch((0, _user.removeUser)());
                                     },
                                     children: "Logout"
                                 }, void 0, false, {
@@ -60890,6 +60884,10 @@ const MoviesFilter = ()=>{
     const [visible, setVisible] = (0, _react.useState)(false);
     const filter = (0, _reactRedux.useSelector)((state)=>state.movies.filter);
     const dispatch = (0, _reactRedux.useDispatch)();
+    const toggleVisibility = ()=>{
+        if (visible) dispatch((0, _movies.clearFilter)());
+        setVisible(!visible);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.InputGroup), {
         className: "seamless-input-group",
         children: [
@@ -60902,12 +60900,12 @@ const MoviesFilter = ()=>{
                 className: "filter_form"
             }, void 0, false, {
                 fileName: "src/components/movies-filter/movies-filter.jsx",
-                lineNumber: 18,
+                lineNumber: 23,
                 columnNumber: 17
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                 variant: "outline-secondary",
-                onClick: ()=>setVisible(!visible),
+                onClick: toggleVisibility,
                 style: {
                     border: "none",
                     background: "transparent"
@@ -60917,18 +60915,18 @@ const MoviesFilter = ()=>{
                     size: 15
                 }, void 0, false, {
                     fileName: "src/components/movies-filter/movies-filter.jsx",
-                    lineNumber: 27,
+                    lineNumber: 32,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movies-filter/movies-filter.jsx",
-                lineNumber: 26,
+                lineNumber: 31,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movies-filter/movies-filter.jsx",
-        lineNumber: 16,
+        lineNumber: 21,
         columnNumber: 9
     }, undefined);
 };
@@ -60953,6 +60951,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setMovies", ()=>setMovies);
 parcelHelpers.export(exports, "setFilter", ()=>setFilter);
 parcelHelpers.export(exports, "resetSearch", ()=>resetSearch);
+parcelHelpers.export(exports, "clearFilter", ()=>clearFilter);
 var _toolkit = require("@reduxjs/toolkit");
 // will define action to store the movies from API
 // createSlice, function accepts initial state , object of reducer function, it returns slice
@@ -60976,10 +60975,13 @@ const moviesSlice = (0, _toolkit.createSlice)({
         // Reset the search status
         resetSearch: (state)=>{
             state.hasSearched = false;
+        },
+        clearFilter: (state)=>{
+            state.filter = "";
         }
     }
 });
-const { setMovies, setFilter, resetSearch } = moviesSlice.actions;
+const { setMovies, setFilter, resetSearch, clearFilter } = moviesSlice.actions;
 // export the reducer from moviesSlice
 exports.default = moviesSlice.reducer;
 
@@ -61551,11 +61553,7 @@ const DeleteProfile = ()=>{
             if (response.ok) {
                 // If the update is successful, update the local state
                 alert("You successfully deleted your profile");
-                dispatch((0, _user.setUser)({
-                    user: null,
-                    token: null
-                }));
-                localStorage.clear();
+                dispatch((0, _user.removeUser)());
             } else console.error("Failed to delete your profile");
         }).catch((error)=>{
             console.error("Error deleting user", error);
@@ -61569,21 +61567,21 @@ const DeleteProfile = ()=>{
                 children: "DELETE YOUR PROFILE"
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 47,
+                lineNumber: 46,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: "Do you you really want to delete your account?"
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 48,
+                lineNumber: 47,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: "We're sorry we have to say GOODBYE. "
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 49,
+                lineNumber: 48,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -61591,7 +61589,7 @@ const DeleteProfile = ()=>{
                 children: "You are always welcome back!"
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 50,
+                lineNumber: 49,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -61602,18 +61600,18 @@ const DeleteProfile = ()=>{
                     children: "Delete Profile"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/delete-profile.jsx",
-                    lineNumber: 53,
+                    lineNumber: 52,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/delete-profile.jsx",
-                lineNumber: 52,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/delete-profile.jsx",
-        lineNumber: 46,
+        lineNumber: 45,
         columnNumber: 5
     }, undefined);
 };

@@ -11,19 +11,9 @@ import './index.scss'
 // Main component (will eventually use all the others)
 const MovieApi = () => {
 
-  const storedUser = JSON.parse(localStorage.getItem('user'))
-  //Create state variable, called user with initial stale "null". Use to check if user is logged in or not.
-  const [user] = useState(storedUser ? storedUser : null)
-
   useEffect(() => {
-    const img = new Image();
-    img.src = '../img/final.webp';
+    document.body.classList.add('background-image');
   }, []);
-
-  // when user not logged in add class background-image to body of page
-  useEffect(() => {
-    document.body.classList.toggle('background-image', !user)
-  }, [user])
 
   return (
     // make the store available to React app

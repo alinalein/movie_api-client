@@ -2,7 +2,7 @@ import React from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 import { MoviesFilter } from '../movies-filter/movies-filter'
-import { setUser } from '../../redux/reducers/user'
+import { removeUser } from '../../redux/reducers/user'
 import { useDispatch, useSelector } from 'react-redux'
 
 import './navigation-bar.scss'
@@ -80,8 +80,7 @@ export const NavigationBar = () => {
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link onClick={() => {
-                dispatch(setUser({ user: null, token: null })); // Correct structure based on the reducer
-                localStorage.clear();
+                dispatch(removeUser());
               }}>Logout</Nav.Link>
             </Nav>
           )}

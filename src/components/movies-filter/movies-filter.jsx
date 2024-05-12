@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Form, Button, InputGroup } from 'react-bootstrap'
 import { useSelector, useDispatch } from "react-redux";
-import { setFilter } from "../../redux/reducers/movies";
+import { setFilter, clearFilter } from "../../redux/reducers/movies";
 import { Search } from 'react-bootstrap-icons'
 import './movies-filter.scss'
 
@@ -11,7 +11,12 @@ export const MoviesFilter = () => {
     const filter = useSelector((state) => state.movies.filter);
     const dispatch = useDispatch();
 
-
+    const toggleVisibility = () => {
+        if (visible) {
+            dispatch(clearFilter());
+        }
+        setVisible(!visible);
+    };
     return (
         <InputGroup className="seamless-input-group">
             {visible && (
@@ -23,7 +28,7 @@ export const MoviesFilter = () => {
                     autoFocus
                     className="filter_form" />
             )}
-            <Button variant="outline-secondary" onClick={() => setVisible(!visible)} style={{ border: 'none', background: 'transparent' }}>
+            <Button variant="outline-secondary" onClick={toggleVisibility} style={{ border: 'none', background: 'transparent' }}>
                 <Search color="white" size={15} />
             </Button>
         </InputGroup>

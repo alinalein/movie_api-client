@@ -15,10 +15,15 @@ const userSlice = createSlice({
         setUser: (state, action) => {
             state.user = action.payload.user;
             state.token = action.payload.token;
+        },
+        removeUser: (state) => {
+            state.user = null;
+            state.token = null;
+            localStorage.clear();
+            document.body.classList.add('background-image');
         }
-
     }
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, removeUser } = userSlice.actions;
 export default userSlice.reducer;

@@ -38,6 +38,7 @@ export const LoginView = () => {
           localStorage.setItem('user', JSON.stringify(data.user))
           localStorage.setItem('token', data.token)
           dispatch(setUser({ user: data.user, token: data.token }))
+          document.body.classList.remove('background-image');
         } else {
           setLoading(false)
           alert('Username or password is wrong')
