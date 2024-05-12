@@ -54,10 +54,12 @@ export const MainView = () => {
           }
         })
         dispatch(setMovies(moviesFromApi))
+
       })
       // Set loading to false once the movies are fetched
       .finally(() => {
         setLoading(false);
+        document.body.classList.remove('background-image');
       });
   }, [token])
 
