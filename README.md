@@ -7,6 +7,7 @@ This is the client-side of the Movie_API project. The application will incorpora
 ## Technology Stack 🛠️
 - **Parcel** : A fast, zero-configuration web application bundler.
 - **React** : JavaScript library for building user interfaces, developed and maintained by Facebook.
+- **Redux** : Tool for managing application state in JavaScript, provides a predictable and scalable approach to state management.
 - **Bootstrap** : Front-end frameworfor web development with built-in components and responsive design features.
   
 ## Getting started 😎
@@ -52,8 +53,7 @@ As a user, I want to be able to remove a movie from or add a movie to my list of
 As a user, I want to be able to search the movie catalog, so that I can easily access information about a variety of movies.
 
 ## Preview
-<img width="944" alt="image" src="https://github.com/alinalein/movie_api-client/assets/111589183/57d0884c-6882-47c7-b059-46b8c79abef3">
-
+![image](https://github.com/alinalein/movie_api-client/assets/111589183/b2b7606a-8a87-4bc6-8672-68e29887a2e9)
 
 ## Link to the live APP 🎞️
 https://myflix-alinalein.netlify.app
