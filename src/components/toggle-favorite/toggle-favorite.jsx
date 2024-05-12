@@ -38,6 +38,7 @@ export const FavoriteToggle = ({ movie }) => {
           ...user,
           FavoriteMovies: [...user.FavoriteMovies, movie.id],
         }
+        // has to set token:token(means token stays same) as setUser expect an object with user & token
         dispatch(setUser({ user: updatedUser, token: token }))
         localStorage.setItem('user', JSON.stringify(updatedUser))
         console.log('Movie added to favorites')

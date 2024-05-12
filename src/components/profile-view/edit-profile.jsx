@@ -69,8 +69,6 @@ export const EditProfile = () => {
     }
   }
 
-  // setTimeout(handleSaveClick, 4000);
-
   return (
     <Row className="mt-2 profile_component mb-3">
       <h2 className="text-center mb-4 h2__text">EDIT YOUR PROFILE</h2>

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useParams } from 'react-router'
@@ -9,6 +8,7 @@ import './movie-view.scss'
 import { useSelector } from "react-redux";
 
 export const MovieView = () => {
+
   const movies = useSelector((state) => state.movies.list)
 
   // only access the param from the before set path (here in main)
@@ -109,16 +109,4 @@ export const MovieView = () => {
   )
 }
 
-// MovieView.propTypes = {
-//   movies: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       Title: PropTypes.string.isRequired,
-//       Description: PropTypes.string.isRequired,
-//       Genre: PropTypes.string.isRequired,
-//       Director: PropTypes.string.isRequired,
-//       ImagePath: PropTypes.string.isRequired,
-//       Actors: PropTypes.string.isRequired,
-//     }),
-//   ).isRequired,
-// }
+

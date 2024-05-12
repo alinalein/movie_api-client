@@ -11,6 +11,7 @@ export const NavigationBar = () => {
 
   const user = useSelector((state) => state.user.user)
   const dispatch = useDispatch();
+
   const location = useLocation();
   const isMainView = location.pathname === '/';
 

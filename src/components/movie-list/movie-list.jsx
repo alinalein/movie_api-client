@@ -7,21 +7,21 @@ import './movie-list.scss'
 
 export const MovieList = ({ loading }) => {
 
-  const [showScrollButton, setShowScrollButton] = useState(false)
+  // get the states from the store
   const hasSearched = useSelector((state) => state.movies.hasSearched)
-
   const movies = useSelector((state) => state.movies.list)
   const filter = useSelector(state => state.movies.filter).trim().toLowerCase();
+
+  const [showScrollButton, setShowScrollButton] = useState(false)
 
   const filteredMovies = movies.filter(movie => {
     return movie.Title.toLowerCase().includes(filter);
   });
 
-  console.log('Filtered Movies:', filteredMovies);
+  // console.log('Filtered Movies:', filteredMovies);
 
   useEffect(() => {
     setShowScrollButton(filteredMovies.length > 8)
-
   }, [filteredMovies.length])
 
   return (

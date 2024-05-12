@@ -14,7 +14,7 @@ import { MoviesBiography } from '../movies-genre/biography-genre'
 import { MoviesCrime } from '../movies-genre/crime-genre'
 import { MoviesSciFi } from '../movies-genre/sci-fi-genre'
 import { setMovies } from '../../redux/reducers/movies'
-import { Row, Col, Button, Container } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -24,6 +24,7 @@ export const MainView = () => {
   const movies = useSelector((state) => state.movies.list)
   const dispatch = useDispatch()
 
+  // send it to movie-list
   const [loading, setLoading] = useState(false);
 
   /*populate the movies array with the movies from the API */
@@ -62,7 +63,7 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
-      {/* Call NavivationBar component & send the props */}
+      {/* Call NavivationBar component */}
       <NavigationBar />
       <Container>
         <Row className="justify-content-center mt-4  ">
@@ -122,7 +123,6 @@ export const MainView = () => {
                   ) : movies.length === 0 ? (
                     <Col>The list is empty!</Col>
                   ) : (
-                    // send the movies array to MovieView
                     <Col>
                       <MovieView />
                     </Col>
@@ -160,7 +160,7 @@ export const MainView = () => {
                 </>
               }
             />
-            {/* Route to favorite movies */}
+            {/* Route to users favorite movies */}
             <Route
               path="/favorite-movies"
               element={
@@ -190,7 +190,7 @@ export const MainView = () => {
                 </>
               }
             />
-            {/* Route tom movie Genres */}
+            {/* Routes to movie Genres */}
             <Route
               path="/drama"
               element={
