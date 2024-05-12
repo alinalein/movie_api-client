@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { removeUser } from '../../redux/reducers/user'
 
 export const DeleteProfile = () => {
+
   const { user, token } = useSelector((state) => state.user)
   const dispatch = useDispatch()
 
@@ -28,7 +29,7 @@ export const DeleteProfile = () => {
       )
         .then((response) => {
           if (response.ok) {
-            // If the update is successful, update the local state
+            // If the update is successful, update the global state
             alert('You successfully deleted your profile')
             dispatch(removeUser());
           } else {

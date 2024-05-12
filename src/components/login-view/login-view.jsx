@@ -37,7 +37,7 @@ export const LoginView = () => {
         if (data.user) {
           localStorage.setItem('user', JSON.stringify(data.user))
           localStorage.setItem('token', data.token)
-          // set the uset and token global state
+          // set the user and token global state
           dispatch(setUser({ user: data.user, token: data.token }))
           document.body.classList.remove('background-image');
         } else {

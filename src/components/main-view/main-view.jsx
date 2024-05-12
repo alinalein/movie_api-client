@@ -32,7 +32,7 @@ export const MainView = () => {
     if (!token) {
       return
     }
-    //loading true before movies are fetched
+
     setLoading(true);
 
     fetch('https://movie-api-lina-834bc70d6952.herokuapp.com/movies', {

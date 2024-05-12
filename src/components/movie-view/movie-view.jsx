@@ -14,7 +14,7 @@ export const MovieView = () => {
   // only access the param from the before set path (here in main)
   const { movieId } = useParams()
   const [showSimilarMovies, setShowSimilarMovies] = useState(false)
-  // got the whole movies array from main->here look for specific movie user klicked on by id-> then show details about this movie
+  // looks for movie in array that matches id of params
   const movie = movies.find((m) => m.id === movieId)
 
   const findSimilarMovies = () => {

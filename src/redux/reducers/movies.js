@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// will define action to store the movies from API
-// createSlice, function accepts initial state , object of reducer function, it returns slice
+// createSlice, accepts initial state & reducer object, it returns slice
 // the returned slice is like isolated piece of Redux configuration, so can extract ations & reducers
 const moviesSlice = createSlice({
     name: 'movies',

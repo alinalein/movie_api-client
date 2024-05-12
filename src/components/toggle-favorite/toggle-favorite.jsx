@@ -66,12 +66,12 @@ export const FavoriteToggle = ({ movie }) => {
       )
 
       if (response.ok) {
-        //updates the state of user -> so the UI changes when user removes the movie
         // create copy of object user & keeps all movies from fav except the one where id is id of movie the user clicked on
         const updatedUser = {
           ...user,
           FavoriteMovies: user.FavoriteMovies.filter((id) => id !== movie.id),
         }
+        // update global state
         dispatch(setUser({ user: updatedUser, token: token }));
         localStorage.setItem('user', JSON.stringify(updatedUser))
         console.log('Movie removed from favorites')
