@@ -32,7 +32,7 @@ npm install
 ### Build parcel
 
 ```
-npm build
+npm run build
 ```
 
 ### Run the server
